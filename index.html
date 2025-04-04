@@ -6,12 +6,9 @@
     <title>Stella Bullo | Portfolio</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-
-
 </head>
 <body>
-    <main class="pt-20">
-    <body class="bg-gray-100 text-gray-800">
+
   <!-- Navigation -->
   <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex justify-between items-center p-4">
     <h2 class="text-xl font-bold text-indigo-700">Stella Bullo</h2>
@@ -21,16 +18,18 @@
       <li><a href="#contact" class="hover:text-indigo-500">Contact</a></li>
     </ul>
   </nav>
+
     <!-- Hero Section -->
-  <section class="flex flex-col-reverse md:flex-row items-center p-8 md:p-16 bg-white gap-8">
+<section class="flex flex-col-reverse md:flex-row items-center p-8 md:p-16 pt-24 md:pt-32 bg-white gap-8">
+
   <!-- Social icons and image -->
   <div class="md:w-1/2 flex justify-center items-center gap-6">
 
     <div class="flex flex-col gap-4 items-center">
-  <a href="https://github.com/smbu123" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-transform transform hover:scale-110">
+  <a href="https://github.com/Stella5791" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-transform transform hover:scale-110">
     <i data-lucide="github" class="w-6 h-6" stroke="currentColor"></i>
   </a>
-  <a href="https://www.linkedin.com/in/stellabullo/" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-transform transform hover:scale-110">
+  <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-transform transform hover:scale-110">
     <i data-lucide="linkedin" class="w-6 h-6" stroke="currentColor"></i>
   </a>
 </div>
@@ -137,18 +136,28 @@
   </section>
     <!-- Contact Section -->
     <section id="contact" class="p-8 md:p-16 bg-gray-50">
-            <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8">Get in Touch</h2>
-            <form class="max-w-xl mx-auto flex flex-col gap-4">
-                <input type="text" placeholder="Name" class="p-3 rounded-md border border-gray-300" required />
-                <input type="email" placeholder="Email" class="p-3 rounded-md border border-gray-300" required />
-                <textarea placeholder="Message" rows="4" class="p-3 rounded-md border border-gray-300" required></textarea>
-            </form>
+       <form name="contact" method="POST" data-netlify="true" class="max-w-xl mx-auto flex flex-col gap-4">
+  <input type="hidden" name="form-name" value="contact" />
+
+  <input type="text" name="name" placeholder="Name" class="p-3 rounded-md border border-gray-300" required />
+  <input type="email" name="email" placeholder="Email" class="p-3 rounded-md border border-gray-300" required />
+  <textarea name="message" placeholder="Message" rows="4" class="p-3 rounded-md border border-gray-300" required></textarea>
+
+  <button type="submit" class="bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700">Send</button>
+</form>
+
     </section>
       <!-- Footer -->
     <footer class="text-center py-4 text-sm text-gray-600 bg-white border-t">
         <p>&copy; 2025 Stella Bullo. All rights reserved.</p>
     </footer>
-</main>
+
+<!-- Scroll-to-top button -->
+<button id="scrollToTopBtn" class="fixed bottom-6 right-6 p-3 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 hidden z-50">
+  <i data-lucide="chevron-up" class="w-5 h-5"></i>
+</button>
+
+<!-- Scripts -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     if (typeof lucide !== "undefined") {
@@ -157,10 +166,29 @@
       console.error("Lucide failed to load.");
     }
   });
+
+  // Animate navbar on scroll
+  window.addEventListener("scroll", () => {
+    const nav = document.querySelector("nav");
+    if (window.scrollY > 10) {
+      nav.classList.add("shadow-lg", "py-2");
+      nav.classList.remove("py-4");
+    } else {
+      nav.classList.remove("shadow-lg", "py-2");
+      nav.classList.add("py-4");
+    }
+  });
+
+  // Scroll-to-top button logic
+  const scrollBtn = document.getElementById("scrollToTopBtn");
+
+  window.addEventListener("scroll", () => {
+    scrollBtn.classList.toggle("hidden", window.scrollY < 300);
+  });
+
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 </script>
-
-
-
-
 </body>
 </html>
