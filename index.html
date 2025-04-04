@@ -7,11 +7,13 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 
+
 </head>
 <body>
+    <main class="pt-20">
     <body class="bg-gray-100 text-gray-800">
   <!-- Navigation -->
-  <nav class="flex justify-between items-center p-4 bg-white shadow-md">
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex justify-between items-center p-4">
     <h2 class="text-xl font-bold text-indigo-700">Stella Bullo</h2>
     <ul class="flex gap-4 text-sm">
       <li><a href="#about" class="hover:text-indigo-500">About</a></li>
@@ -23,14 +25,16 @@
   <section class="flex flex-col-reverse md:flex-row items-center p-8 md:p-16 bg-white gap-8">
   <!-- Social icons and image -->
   <div class="md:w-1/2 flex justify-center items-center gap-6">
-    <div class="flex gap-4">
-      <a href="https://github.com/smbu123" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-transform transform hover:scale-110">
-        <i data-lucide="github" class="w-6 h-6"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/stellabullo/" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-transform transform hover:scale-110">
-        <i data-lucide="linkedin" class="w-6 h-6"></i>
-      </a>
-    </div>
+
+    <div class="flex flex-col gap-4 items-center">
+  <a href="https://github.com/smbu123" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-transform transform hover:scale-110">
+    <i data-lucide="github" class="w-6 h-6" stroke="currentColor"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/stellabullo/" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-transform transform hover:scale-110">
+    <i data-lucide="linkedin" class="w-6 h-6" stroke="currentColor"></i>
+  </a>
+</div>
+
     <img src="src/profile-pic.png" alt="Stella Bullo" class="rounded-full w-48 h-48 object-cover" />
   </div>
 
@@ -144,12 +148,17 @@
     <footer class="text-center py-4 text-sm text-gray-600 bg-white border-t">
         <p>&copy; 2025 Stella Bullo. All rights reserved.</p>
     </footer>
-
+</main>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    lucide.createIcons();
+    if (typeof lucide !== "undefined") {
+      lucide.createIcons();
+    } else {
+      console.error("Lucide failed to load.");
+    }
   });
 </script>
+
 
 
 
