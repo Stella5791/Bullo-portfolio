@@ -2,13 +2,30 @@
 <html lang="en">
 
 <head>
+  <!-- Meta tags -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Stella Bullo – API Integration Developer, NLP Specialist, and Front-end Developer.">
+  <meta name="author" content="Stella Bullo">
   <title>Stella Bullo | Portfolio</title>
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <!-- Global smooth scrolling -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
+
 
 <body>
 
@@ -92,51 +109,66 @@
   </div>
 </section>
 
-    
-  <!-- Services Section -->
-<section id="services" class="bg-white p-8 md:p-16">
-  <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8">Services</h2>
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+<!-- Services Section -->
+<section id="services" class="bg-white py-16 px-6 md:px-12">
+  <div class="max-w-6xl mx-auto text-center" data-aos="fade-up">
+    <h2 class="text-3xl font-bold text-indigo-700 mb-12">Services</h2>
 
-    <!-- NLP Consulting -->
-    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-      <h3 class="text-lg font-semibold mb-2">🧠 NLP & Linguistic Consulting</h3>
-      <p class="text-sm text-gray-700">Support with tokenization, lemmatization, Part-of-Speech tagging, and sentiment analysis. Ideal for AI or healthcare applications needing accurate language handling.</p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- NLP Consulting -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-lg font-semibold mb-2">🧠 NLP & Linguistic Consulting</h3>
+        <p class="text-gray-700 text-sm">
+          Support with tokenization, lemmatization, Part-of-Speech tagging, and sentiment analysis. Ideal for AI or healthcare applications needing accurate language handling.
+        </p>
+      </div>
+
+      <!-- Corpus Analysis -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-lg font-semibold mb-2">🔍 Corpus Linguistics & Text Analysis</h3>
+        <p class="text-gray-700 text-sm">
+          Build and analyze corpora using Python, AntConc, or custom tools. Delivering insights from large datasets through keyword analysis, collocation, and concordancing.
+        </p>
+      </div>
+
+      <!-- Text Cleaning -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-lg font-semibold mb-2">🧹 Text Preprocessing for AI</h3>
+        <p class="text-gray-700 text-sm">
+          Clean, structure, and prepare text data for NLP and machine learning pipelines using Python libraries like spaCy, NLTK, and Pandas.
+        </p>
+      </div>
+
+      <!-- API Integration -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="400">
+        <h3 class="text-lg font-semibold mb-2">🔗 API Integration</h3>
+        <p class="text-gray-700 text-sm">
+          Connect and consume third-party APIs with Axios or Python (Requests). Specialized in language-related APIs like dictionaries, OpenAI, or custom backends.
+        </p>
+      </div>
+
+      <!-- Front-End Development -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="500">
+        <h3 class="text-lg font-semibold mb-2">🎨 Front-End Development</h3>
+        <p class="text-gray-700 text-sm">
+          Build responsive, accessible interfaces using HTML, CSS, Tailwind, JavaScript, and React. Ideal for dashboards, forms, or interactive language tools.
+        </p>
+      </div>
+
+      <!-- Python Automation -->
+      <div class="bg-gray-50 p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="600">
+        <h3 class="text-lg font-semibold mb-2">⚙️ Python Scripting & Automation</h3>
+        <p class="text-gray-700 text-sm">
+          Automate repetitive language or data tasks using Python. From web scraping to data visualization and script-based analysis, I’ve got it covered.
+        </p>
+      </div>
+
     </div>
-
-    <!-- Corpus Analysis -->
-    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-      <h3 class="text-lg font-semibold mb-2">🔍 Corpus Linguistics & Text Analysis</h3>
-      <p class="text-sm text-gray-700">Build and analyze corpora using Python, AntConc, or custom tools. Delivering insights from large datasets through keyword analysis, collocation, and concordancing.</p>
-    </div>
-
-    <!-- Language Data Cleaning -->
-    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-      <h3 class="text-lg font-semibold mb-2">🧹 Text Preprocessing for AI</h3>
-      <p class="text-sm text-gray-700">Clean, structure, and prepare text data for NLP and machine learning pipelines using Python libraries like spaCy, NLTK, and Pandas.</p>
-    </div>
-
-    <!-- API Integration -->
-    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-      <h3 class="text-lg font-semibold mb-2">🔗 API Integration</h3>
-      <p class="text-sm text-gray-700">Connect and consume third-party APIs with Axios or Python (Requests). Specialized in language-related APIs like dictionaries, OpenAI, or custom backends.</p>
-    </div>
-
-    <!-- Front-End Development -->
-    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-      <h3 class="text-lg font-semibold mb-2">🎨 Front-End Development</h3>
-      <p class="text-sm text-gray-700">Build responsive, accessible interfaces using HTML, CSS, Tailwind, JavaScript, and React. Ideal for dashboards, forms, or interactive language tools.</p>
-    </div>
-
-    <!-- Python Automation -->
-    <div class="bg-gray-50 p-6 rounded-xl shadow-md">
-      <h3 class="text-lg font-semibold mb-2">⚙️ Python Scripting & Automation</h3>
-      <p class="text-sm text-gray-700">Automate repetitive language or data tasks using Python. From web scraping to data visualization and script-based analysis, I’ve got it covered.</p>
-    </div>
-
   </div>
 </section>
 
+  
     <!-- Projects Section -->
   <section id="projects" class="bg-white p-8 md:p-16">
     <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8">Featured Projects</h2>
@@ -215,7 +247,7 @@
 </button>
 
 <!-- Scripts -->
- <!-- AOS Script -->
+<!-- AOS Script -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
 <script>
@@ -256,8 +288,29 @@
       duration: 1000,
       once: true,
     });
+
+    // Smooth scroll with offset for fixed nav
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href").substring(1);
+        const target = document.getElementById(targetId);
+
+        if (target) {
+          const offset = 80; // Adjust if your nav height changes
+          const elementPosition = target.offsetTop;
+          const offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      });
+    });
   });
 </script>
+
 
 </body>
 </html>
