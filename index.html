@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stella Bullo | Portfolio</title>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
 </head>
 <body>
 
@@ -203,6 +206,7 @@
 </button>
 
 <!-- Scripts -->
+ <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     if (typeof lucide !== "undefined") {
@@ -234,6 +238,12 @@
   scrollBtn.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+
+AOS.init({
+    duration: 1000,
+    once: true,
+  });
+
 </script>
 </body>
 </html>
