@@ -1,87 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <!-- Meta tags -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfolio of Stella Bullo – API Integration Developer, NLP Specialist, and Front-end Developer.">
-  <meta name="author" content="Stella Bullo">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Stella Bullo – API Integration Developer, NLP Specialist, and Front-end Developer." />
+  <meta name="author" content="Stella Bullo" />
   <title>Stella Bullo | Portfolio</title>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- AOS (Animate on Scroll) -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 
-  <!-- Global smooth scrolling -->
+  <!-- Global smooth scrolling + transitions -->
   <style>
     html {
       scroll-behavior: smooth;
     }
+
+    a,
+    button,
+    img,
+    .card {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    img:hover {
+      transform: scale(1.03);
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #4f46e5;
+    }
   </style>
 </head>
-
-
 <body>
 
 <!-- Navigation -->
-<nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex justify-between items-center p-4">
+<nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex justify-between items-center p-4 transition-all duration-300">
   <h2 class="text-xl font-bold text-indigo-700">Stella Bullo</h2>
   <ul class="flex gap-4 text-sm">
-    <li><a href="#about" class="hover:text-indigo-500">About</a></li>
-    <li><a href="#services" class="hover:text-indigo-500">Services</a></li>
-    <li><a href="#projects" class="hover:text-indigo-500">Projects</a></li>
-    <li><a href="#contact" class="hover:text-indigo-500">Contact</a></li>
+    <li><a href="#about" class="hover:text-indigo-600">About</a></li>
+    <li><a href="#services" class="hover:text-indigo-600">Services</a></li>
+    <li><a href="#projects" class="hover:text-indigo-600">Projects</a></li>
+    <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
   </ul>
 </nav>
 
-
 <!-- Hero Section -->
 <section class="flex flex-col-reverse md:flex-row items-center p-8 md:p-20 pt-32 md:pt-40 pb-20 md:pb-32 bg-gradient-to-b from-white to-indigo-50 gap-12">
-
-  <!-- Social icons and image -->
   <div class="md:w-1/2 flex justify-center items-center gap-6">
     <div class="flex flex-col gap-4 items-center">
-      <a href="https://github.com/Stella5791" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-transform transform hover:scale-110">
-        <i data-lucide="github" class="w-6 h-6" stroke="currentColor"></i>
+      <a href="https://github.com/Stella5791" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:scale-110">
+        <i data-lucide="github" class="w-6 h-6"></i>
       </a>
-      <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition-transform transform hover:scale-110">
-        <i data-lucide="linkedin" class="w-6 h-6" stroke="currentColor"></i>
+      <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:scale-110">
+        <i data-lucide="linkedin" class="w-6 h-6"></i>
       </a>
     </div>
     <img src="src/profile-pic.png" alt="Stella Bullo" class="rounded-full w-52 h-52 object-cover shadow-lg" />
+      
   </div>
 
-  <!-- Text content -->
   <div class="md:w-1/2 text-center md:text-left">
     <h1 class="text-4xl md:text-5xl font-bold text-indigo-700 leading-tight">Stella Bullo</h1>
     <h2 class="text-lg md:text-xl mt-3 mb-6 text-gray-700">API Integration Developer | NLP Enthusiast | Front-end Developer</h2>
     <p class="mb-6 text-gray-600 max-w-xl">Aiming to bridge Language and AI: Specializing in sentiment analysis, health communication, and automation.</p>
     <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-      <a href="resume.pdf" class="bg-indigo-600 text-white px-5 py-3 rounded-md hover:bg-indigo-700 transition">Download CV</a>
-      <a href="#contact" class="border border-indigo-600 text-indigo-600 px-5 py-3 rounded-md hover:bg-indigo-100 transition">Contact Me</a>
+      <a href="resume.pdf" class="bg-indigo-600 text-white px-5 py-3 rounded-md hover:bg-indigo-700">Download CV</a>
+      <a href="#contact" class="border border-indigo-600 text-indigo-600 px-5 py-3 rounded-md hover:bg-indigo-100">Contact Me</a>
     </div>
   </div>
-
 </section>
 
-    
-   <!-- About Section -->
-  <section id="about" class="bg-gray-50 p-8 md:p-16">
+<!-- About Section -->
+<section id="about" class="bg-gray-50 p-8 md:p-16">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-    
-    <!-- Text Column -->
-    <div data-aos="fade-up" data-aos-delay="100">
+    <div data-aos="fade-up">
       <h2 class="text-2xl font-semibold text-indigo-700 mb-4">About Me</h2>
       <p class="mb-4">
         After a PhD in Linguistics and 20 years academic research in the UK specialising in Health, Marketing and Cross-cultural Communication, I transitioned into tech, combining analytical skills using corpus linguistics and sentiment analysis methodologies with programming in Python. I am passionate about AI-driven language technologies and aim to specialize in API integration, NLP, and automation.
       </p>
-
       <h3 class="font-semibold text-lg mt-6">Key Skills</h3>
       <ul class="list-disc list-inside mb-4">
         <li>Python</li>
@@ -90,7 +100,6 @@
         <li>Git/Github, NodeJS</li>
         <li>NLP training</li>
       </ul>
-
       <h3 class="font-semibold text-lg mt-6">Other Skills</h3>
       <ul class="list-disc list-inside">
         <li>20+ Years Work experience in the UK</li>
@@ -98,258 +107,172 @@
         <li>Bilingual Spanish-English</li>
       </ul>
     </div>
-
-    <!-- Image Column -->
-    <div class="flex justify-center items-start" data-aos="fade-left" data-aos-delay="200">
-      <img src="src/coding-pic.png" alt="Framed Image" class="rounded-lg w-full max-w-sm" />
+   <div class="flex justify-center flex-col items-center" data-aos="fade-left">
+  <img src="src/coding-pic-optimized.png" alt="Coding workspace with laptop, glasses, and coffee" class="rounded-lg max-w-full h-auto hover:shadow-xl object-contain" />
+  <p class="text-xs text-gray-500 mt-2 italic text-center">Image credit: <a href="https://stockcake.com/i/coding-coffee-break_855014_909099" target="_blank" class="text-indigo-500 hover:underline">"Coding Coffee Break"</a> via StockCake</p>
     </div>
-
+  </div>
+</section>
+<!-- Services Section -->
+<section id="services" class="bg-indigo-50 p-8 md:p-16">
+  <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold text-indigo-700 mb-6">What I Offer</h2>
+    <p class="text-gray-700 mb-8 max-w-2xl mx-auto">
+      I help individuals and teams bring ideas to life through thoughtful code. Whether you're building something from scratch or connecting tools that already exist, here's how I can help:
+    </p>
+    <div class="grid md:grid-cols-2 gap-8 text-left text-gray-800">
+      <div>
+        <h3 class="font-semibold mb-2">🔗 API Integration & Automation</h3>
+        <ul class="list-disc list-inside text-sm">
+          <li>Connect third-party APIs into Python apps or websites</li>
+          <li>Automate manual data tasks and reporting</li>
+          <li>Script-based solutions for repeatable workflows</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">🎨 Front-End Development</h3>
+        <ul class="list-disc list-inside text-sm">
+          <li>Build responsive websites with HTML, CSS, JS, React</li>
+          <li>Integrate APIs into front-end UI with Axios</li>
+          <li>Create clean, user-friendly components</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">📊 Data Visualization</h3>
+        <ul class="list-disc list-inside text-sm">
+          <li>Generate charts and graphs with Python + Matplotlib</li>
+          <li>Prepare and format CSV/JSON data for reports</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">🧠 NLP & Text Analysis</h3>
+        <ul class="list-disc list-inside text-sm">
+          <li>Basic NLP tasks: sentiment analysis, keyword extraction</li>
+          <li>Corpus and discourse analysis (academic/clinical)</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
-
-
-
-
-    <!-- Projects Section -->
+<hr class="border-t border-gray-200 mt-0" />
+<!-- Projects Section -->
 <section id="projects" class="bg-white p-8 md:p-16">
-  <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8">Python projects</h2>
+  <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8">Python Projects</h2>
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <!-- Python Project 1 -->
+    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up">
+      <h3 class="text-lg font-semibold">AI-Powered Travel Itinerary Generator</h3>
+      <img src="src/project1.png" alt="Travel Itinerary Project Screenshot" class="my-4 rounded" />
+      <p class="text-sm text-gray-700 mb-2">Built with: Python, Requests, OpenWeather API, Rich</p>
+      <p class="text-sm mb-4">Combines live weather data and AI-generated suggestions to create customized travel itineraries, displayed in a formatted terminal UI using the Rich library.</p>
+      <a href="https://colab.research.google.com/drive/1K43At0WutS7nvRhELn1iJQ272PSGonL9?usp=sharing" class="text-indigo-600 hover:underline">View on Google Colab</a>
+    </div>
+    <!-- Python Project 2 -->
+    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-lg font-semibold">CSV Data Visualization</h3>
+      <img src="src/project2.png" alt="Data Visualization Project Screenshot" class="my-4 rounded" />
+      <p class="text-sm text-gray-700 mb-2">Built with: Python, Matplotlib, CSV</p>
+      <p class="text-sm mb-4">Parses CSV files and creates dynamic line graphs to illustrate population growth trends over time using Matplotlib.</p>
+      <a href="https://replit.com/@smbu123/python-data-visualization-project" class="text-indigo-600 hover:underline">View Project on Replit</a>
+    </div>
+    <!-- Python Project 3 -->
+    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-lg font-semibold">Weather Forecast Console App</h3>
+      <img src="src/project3.png" alt="Weather App Screenshot" class="my-4 rounded" />
+      <p class="text-sm text-gray-700 mb-2">Built with: Python, OpenWeather API, JSON</p>
+      <p class="text-sm mb-4">Fetches current and forecasted weather conditions via API and displays the results in the console with clear formatting and error handling.</p>
+      <a href="https://replit.com/@smbu123/WeatherApp" class="text-indigo-600 hover:underline">Try it on Replit</a>
+    </div>
+  </div>
 
-   <!-- Project Card 1 -->
-<div class="bg-gray-50 p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
-  <h3 class="text-lg font-semibold mb-2">🧳 Python AI Travel Itinerary</h3>
-  <img src="src/project1.png" alt="Project Screenshot" class="my-4 rounded" />
-
-  <p class="text-sm text-gray-700 mb-2">
-    <strong>🛠 Tech Stack:</strong> Python, Requests, Rich, OpenWeather API, AI Travel API
-  </p>
-
-  <p class="text-sm mb-4">
-    A Python app that fetches real-time weather data and generates smart travel itineraries using an AI API, displayed with enhanced terminal formatting thanks to the <code>Rich</code> library.
-  </p>
-
-  <p class="text-sm mb-2">
-    <strong>✨ Features:</strong><br />
-    • Fetches real-time weather data based on user input<br />
-    • Uses an AI travel itinerary generator API to recommend activities<br />
-    • Enhanced, colorful command-line display using Rich
-  </p>
-
-  <p class="text-sm mb-4">
-    <strong>🔍 What I Learned:</strong><br />
-    • How to integrate multiple APIs in a single Python script<br />
-    • Improved handling and structuring of API responses<br />
-    • How to use Rich to make terminal apps more readable and engaging
-  </p>
-
-  <a href="https://colab.research.google.com/drive/1K43At0WutS7nvRhELn1iJQ272PSGonL9?usp=sharing"
-     class="text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer">
-    View on Google Colab
-  </a>
-  <br />
-  <a href="https://github.com/Stella5791/python-projects/tree/main/python-ai-travel-itinerary"
-     class="text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer">
-    View Source on GitHub
-  </a>
-</div>
-
-<!-- Project Card 2 -->
-<div class="bg-gray-50 p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
-  <h3 class="text-lg font-semibold mb-2">📈 Data Visualization</h3>
-  <img src="src/project2.png" alt="Project Screenshot" class="my-4 rounded" />
-
-  <p class="text-sm text-gray-700 mb-2">
-    <strong> 🛠 Tech Stack:</strong> Python, Matplotlib, CSV
-  </p>
-
-  <p class="text-sm mb-4">
-    This project reads and processes population data from CSV files and visualizes trends using line charts with <code>matplotlib</code>. It demonstrates how to extract insights from structured data and present them visually.
-  </p>
-
-  <p class="text-sm mb-2">
-    <strong>✨ Features:</strong><br />
-    • Reads and parses CSV datasets<br />
-    • Cleans and filters data for plotting<br />
-    • Generates styled line charts showing population trends over time
-  </p>
-
-  <p class="text-sm mb-4">
-    <strong>🔍 What I Learned:</strong><br />
-    • How to manipulate and filter CSV data in Python<br />
-    • Practical use of matplotlib for data storytelling<br />
-    • Styling plots for clarity and visual impact
-  </p>
-
-  <a href="https://replit.com/@smbu123/python-data-visualization-project"
-     class="text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer">
-    View Project on Replit
-  </a>
-  <br />
-  <a href="https://github.com/Stella5791/python-projects/tree/main/data-visualization"
-     class="text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer">
-    View Source on GitHub
-  </a>
-</div>
-
-<!-- Project Card 3 -->
-<div class="bg-gray-50 p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
-  <h3 class="text-lg font-semibold mb-2">🌦 Interactive Weather App</h3>
-  <img src="src/project3.png" alt="Weather App Screenshot" class="my-4 rounded" />
-
-  <p class="text-sm text-gray-700 mb-2">
-    <strong> 🛠 Tech Stack:</strong> Python, Tkinter, SheCodes Weather API, Requests
-  </p>
-
-  <p class="text-sm mb-4">
-    A desktop weather app built with Python and Tkinter that fetches real-time weather data and 3-day forecasts from the SheCodes Weather API based on user input. It provides a simple and interactive interface for checking current and upcoming weather conditions.
-  </p>
-
-  <p class="text-sm mb-2">
-    <strong>✨ Features:</strong><br />
-    • User input field for searching city-based weather<br />
-    • Real-time temperature, humidity, and conditions display<br />
-    • Forecast integration for upcoming days<br />
-    • Error handling for invalid entries or API issues
-  </p>
-
-  <p class="text-sm mb-4">
-    <strong>🔍 What I Learned:</strong><br />
-    • How to build a user-friendly GUI with Tkinter<br />
-    • Connecting to and parsing data from external APIs<br />
-    • Handling user input and edge cases gracefully in UI apps
-  </p>
-
-  <a href="https://replit.com/@smbu123/WeatherApp"
-     class="text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer">
-    View Project on Replit
-  </a>
-  <br />
-  <a href="https://github.com/Stella5791/python-projects/tree/main/weather-app"
-     class="text-indigo-600 hover:underline" target="_blank" rel="noopener noreferrer">
-    View Source on GitHub
-  </a>
-</div>
-</div>
-
-   <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8 mt-10">Front-end projects</h2>
+  <h2 class="text-2xl font-semibold text-indigo-700 text-center mt-16 mb-8">Front-end Projects</h2>
   <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-    <!-- Project Card 4 -->
-    <div class="bg-gray-50 p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="400">
-      <h3 class="text-lg font-semibold mb-2">📚 React Dictionary App</h3>
-      <img src="src/project4.png" alt="Project Screenshot" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">React, Axios, APIs, Bootstrap</p>
-      <p class="text-sm mb-4">Search for words and get definitions, synonyms, audio, and images using external APIs.</p>
+    <!-- Frontend Project 1 -->
+    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+      <h3 class="text-lg font-semibold">React Dictionary App</h3>
+      <img src="src/project4.png" alt="React Dictionary App Screenshot" class="my-4 rounded" />
+      <p class="text-sm text-gray-700 mb-2">Built with: React, Axios, Bootstrap, Dictionary API, Pexels API</p>
+      <p class="text-sm mb-4">An interactive dictionary app that fetches definitions, synonyms, audio pronunciation, and related images from multiple APIs. Designed with a clean, responsive UI.</p>
       <a href="https://playful-gecko-ed5205.netlify.app/" class="text-indigo-600 hover:underline">Live Demo</a>
     </div>
-
-    <!-- Project Card 5 -->
-    <div class="bg-gray-50 p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="500">
-      <h3 class="text-lg font-semibold mb-2">🌍 Responsive Travel Website</h3>
-      <img src="src/project5.png" alt="Project Screenshot" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">HTML, CSS, Bootstrap</p>
-      <p class="text-sm mb-4">Responsive website highlighting Córdoba’s culture, featuring Instagram embeds and maps.</p>
+    <!-- Frontend Project 2 -->
+    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="400">
+      <h3 class="text-lg font-semibold">Responsive Travel Website</h3>
+      <img src="src/project5.png" alt="Responsive Travel Website Screenshot" class="my-4 rounded" />
+      <p class="text-sm text-gray-700 mb-2">Built with: HTML, CSS, Bootstrap</p>
+      <p class="text-sm mb-4">A promotional site for Córdoba, Argentina. Includes cultural highlights, Instagram embeds, and embedded maps. Fully responsive and mobile-friendly.</p>
       <a href="https://silly-stroopwafel-ba4b16.netlify.app/" class="text-indigo-600 hover:underline">Live Demo</a>
     </div>
-
-    <!-- Project Card 6 -->
-    <div class="bg-gray-50 p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="600">
-      <h3 class="text-lg font-semibold mb-2">🌦️ JS Weather App</h3>
-      <img src="src/project6.png" alt="Project Screenshot" class="my-4 rounded" />
-      <p class="text-sm text-gray-700 mb-2">HTML, CSS, Bootstrap, JS, Axios, OpenWeather API</p>
-      <p class="text-sm mb-4">A real-time weather app using an API. Users can search for any city to view weather conditions and a 5-day forecast.</p>
+    <!-- Frontend Project 3 -->
+    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="500">
+      <h3 class="text-lg font-semibold">JavaScript Weather App</h3>
+      <img src="src/project6.png" alt="JavaScript Weather App Screenshot" class="my-4 rounded" />
+      <p class="text-sm text-gray-700 mb-2">Built with: JavaScript, HTML, CSS, Bootstrap, Axios, OpenWeather API</p>
+      <p class="text-sm mb-4">A web-based weather app that allows users to search for a city and view current weather and a 5-day forecast. Includes temperature, humidity, and wind data with responsive design.</p>
       <a href="https://sparkly-taffy-530165.netlify.app/" class="text-indigo-600 hover:underline">Live Demo</a>
     </div>
   </div>
 </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="p-8 md:p-16 bg-gray-50">
+<!-- Contact -->
+<section id="contact" class="p-8 md:p-16 bg-gray-50">
+    <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8">Contact Me</h2>
+  <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" class="max-w-xl mx-auto flex flex-col gap-4">
+    <input type="hidden" name="form-name" value="contact" />
+    <input type="text" name="name" placeholder="Name" class="p-3 rounded-md border border-gray-300" required />
+    <input type="email" name="email" placeholder="Email" class="p-3 rounded-md border border-gray-300" required />
+    <textarea name="message" placeholder="Message" rows="4" class="p-3 rounded-md border border-gray-300" required></textarea>
+    <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">Send</button>
+  </form>
+</section>
 
-<form name="contact" method="POST" action="/thank-you.html" data-netlify="true" class="max-w-xl mx-auto flex flex-col gap-4">
-  <input type="hidden" name="form-name" value="contact" />
-  <input type="text" name="name" placeholder="Name" class="p-3 rounded-md border border-gray-300" required />
-  <input type="email" name="email" placeholder="Email" class="p-3 rounded-md border border-gray-300" required />
-  <textarea name="message" placeholder="Message" rows="4" class="p-3 rounded-md border border-gray-300" required></textarea>
-  <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700">Send</button>
-</form>
-    </section>
-      <!-- Footer -->
-    <footer class="text-center py-4 text-sm text-gray-600 bg-white border-t">
-        <p>&copy; 2025 Stella Bullo. All rights reserved.</p>
-    </footer>
+<!-- Footer -->
+<footer class="text-center py-4 text-sm text-gray-600 bg-white border-t">
+  <p>&copy; 2025 Stella Bullo. All rights reserved.</p>
+</footer>
 
-<!-- Scroll-to-top button -->
+<!-- Scroll-to-top -->
 <button id="scrollToTopBtn" class="fixed bottom-6 right-6 p-3 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 hidden z-50">
   <i data-lucide="chevron-up" class="w-5 h-5"></i>
 </button>
 
 <!-- Scripts -->
-<!-- AOS Script -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    // Initialize Lucide icons
     if (typeof lucide !== "undefined") {
       lucide.createIcons();
-    } else {
-      console.error("Lucide failed to load.");
     }
 
-    // Animate navbar on scroll
     const nav = document.querySelector("nav");
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 10) {
-        nav.classList.add("shadow-lg", "py-2");
-        nav.classList.remove("py-4");
-      } else {
-        nav.classList.remove("shadow-lg", "py-2");
-        nav.classList.add("py-4");
-      }
+      nav.classList.toggle("shadow-lg", window.scrollY > 10);
     });
 
-    // Scroll-to-top button logic
     const scrollBtn = document.getElementById("scrollToTopBtn");
-    if (scrollBtn) {
-      window.addEventListener("scroll", () => {
-        scrollBtn.classList.toggle("hidden", window.scrollY < 300);
-      });
-
-      scrollBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    }
-
-    // Initialize AOS (Animate On Scroll)
-    AOS.init({
-      duration: 1000,
-      once: true,
+    window.addEventListener("scroll", () => {
+      scrollBtn.classList.toggle("hidden", window.scrollY < 300);
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Smooth scroll with offset for fixed nav
+    AOS.init({ duration: 1000, once: true });
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
-        const targetId = this.getAttribute("href").substring(1);
-        const target = document.getElementById(targetId);
-
+        const target = document.getElementById(this.getAttribute("href").substring(1));
         if (target) {
-          const offset = 80; // Adjust if your nav height changes
-          const elementPosition = target.offsetTop;
-          const offsetPosition = elementPosition - offset;
-
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth"
-          });
+          const offset = 80;
+          const offsetPosition = target.offsetTop - offset;
+          window.scrollTo({ top: offsetPosition, behavior: "smooth" });
         }
       });
     });
   });
 </script>
-
 
 </body>
 </html>
