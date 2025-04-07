@@ -22,10 +22,6 @@ Welcome to my personal developer portfolio — a clean, responsive website built
 - Direct links to GitHub and LinkedIn  
 - Contact form (can be extended with Netlify Forms or EmailJS)
 
-## 📸 Preview
-
-![Portfolio Screenshot](https://user-images.githubusercontent.com/your-image-link-here.png)  
-*Replace the image URL above with a live screenshot if desired.*
 
 ## 📮 Contact
 
