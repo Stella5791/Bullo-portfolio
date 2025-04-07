@@ -10,13 +10,16 @@
   <title>Stella Bullo | Portfolio</title>
 
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com">
+  function toggleCV(lang) {
+    document.getElementById('cv-en').classList.add('hidden');
+    document.getElementById('cv-es').classList.add('hidden');
+    document.getElementById(`cv-${lang}`).classList.remove('hidden');
+  }
+</script>
 
   <!-- AOS (Animate on Scroll) -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
-  <!-- Link to CV-->
-   <a href="stella-cv-toggle.html">CV</a>
 
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
@@ -55,17 +58,12 @@
 <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex justify-between items-center p-4 transition-all duration-300">
   <h2 class="text-xl font-bold text-indigo-700">Stella Bullo</h2>
   <ul class="flex gap-4 text-sm">
-    <li><a href="index.html" class="hover:text-indigo-600">Home</a></li>
     <li><a href="#about" class="hover:text-indigo-600">About</a></li>
     <li><a href="#services" class="hover:text-indigo-600">Services</a></li>
     <li><a href="#projects" class="hover:text-indigo-600">Projects</a></li>
     <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
-    <li><a href="stella-cv-toggle.html" class="hover:text-indigo-600 font-semibold">CV</a></li>
-    <li><a href="#" onclick="switchLanguage('en')" class="hover:text-indigo-600">English</a></li>
-    <li><a href="#" onclick="switchLanguage('es')" class="hover:text-indigo-600">Español</a></li>
   </ul>
 </nav>
-
 
 <!-- Hero Section -->
 <section class="flex flex-col-reverse md:flex-row items-center p-8 md:p-20 pt-32 md:pt-40 pb-20 md:pb-32 bg-gradient-to-b from-white to-indigo-50 gap-12">
@@ -117,7 +115,7 @@
       </ul>
     </div>
     <div class="flex justify-center flex-col items-center" data-aos="fade-left">
-  <img src="src/coding-pic-optimized.png" alt="Coding workspace with laptop, glasses, and coffee" class="rounded-lg max-w-full h-auto hover:shadow-xl object-contain" />
+  <img src="coding-pic-optimized.png" alt="Coding workspace with laptop, glasses, and coffee" class="rounded-lg max-w-full h-auto hover:shadow-xl object-contain" />
   <p class="text-xs text-gray-500 mt-2 italic text-center">Image credit: <a href="https://stockcake.com/i/coding-coffee-break_855014_909099" target="_blank" class="text-indigo-500 hover:underline">"Coding Coffee Break"</a> via StockCake</p>
     </div>
   </div>
@@ -225,6 +223,8 @@
   </div>
 </section>
 
+
+
 <!-- Contact -->
 <section id="contact" class="p-8 md:p-16 bg-gray-50">
   <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8">Contact Me</h2>
@@ -242,7 +242,7 @@
 
 <!-- Footer -->
 <footer class="text-center py-4 text-sm text-gray-600 bg-white border-t">
-  <p>Email: stella.bullo.pro@gmail.com | &copy; 2025 Stella Bullo. All rights reserved.</p>
+  <p>&copy; 2025 Stella Bullo. All rights reserved.</p>
 </footer>
 
 <!-- Scroll-to-top -->
