@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Stella Bullo CV - API Developer & Linguist" />
+  <meta name="author" content="Stella Bullo" />
+  <title>Stella Bullo | CV</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .cv-content {
+      display: none;
+    }
+    .cv-content.active {
+      display: block;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+  <header class="bg-indigo-600 text-white p-6 text-center">
+    <h1 class="text-3xl font-bold">Stella Bullo</h1>
+    <p class="text-lg">API Integration Developer | NLP Specialist | Front-End Developer</p>
+  </header>
+
+  <nav class="flex justify-center my-6 gap-4">
+    <button onclick="toggleCV('en')" class="px-4 py-2 border border-indigo-600 text-indigo-600 hover:bg-indigo-100 rounded">English</button>
+    <button onclick="toggleCV('es')" class="px-4 py-2 border border-indigo-600 text-indigo-600 hover:bg-indigo-100 rounded">Español</button>
+  </nav>
+
+  <div class="flex justify-center gap-4 mb-6">
+    <a href="index.html" class="text-indigo-600 border border-indigo-600 px-4 py-2 rounded hover:bg-indigo-100">← Back to Portfolio</a>
+    <button onclick="window.print()" class="text-indigo-600 border border-indigo-600 px-4 py-2 rounded hover:bg-indigo-100">🖨️ Print</button>
+    <a href="StellaBullo_CV.pdf" class="text-white bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700" download>⬇️ Download PDF</a>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-6">
+    <!-- English CV -->
+    <section id="cv-en" class="cv-content active">
+      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Profile Summary</h2>
+      <p class="mb-4">API Integration Developer and Front-end Developer with a PhD in Linguistics and 20+ years' experience in education and communication. Strong foundation in Python, React, and NLP, with a focus on API automation and user-centred solutions.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Qualifications</h3>
+      <ul class="list-disc list-inside mb-6">
+        <li>PhD in Linguistics – Manchester Metropolitan University</li>
+        <li>MA in Education Management and Leadership – University of Manchester</li>
+        <li>BA in English Language and TEFL – University of Manchester</li>
+        <li>Junior Developer Certificate – She Codes (In progress)</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Technical Skills</h3>
+      <ul class="list-disc list-inside mb-6">
+        <li>Languages: Python, JavaScript, HTML, CSS</li>
+        <li>Frameworks/Tools: React, Axios, Tailwind, Bootstrap</li>
+        <li>APIs: REST, JSON, OpenWeather, Dictionary, Matplotlib</li>
+        <li>Version Control: Git & GitHub</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Professional Experience</h3>
+      <ul class="list-disc list-inside mb-6">
+        <li>20+ years in UK Higher Education: Lecturer, Program Director, and Researcher</li>
+        <li>Specialised in Health, Marketing, and Cross-cultural Communication</li>
+        <li>Experience supervising PhDs and managing international exchange programs</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Selected Projects</h3>
+      <ul class="list-disc list-inside mb-6">
+        <li>AI Travel Itinerary Generator – Python, OpenWeather API, Rich</li>
+        <li>React Dictionary App – React, Axios, Bootstrap</li>
+        <li>CSV Data Visualization – Python, Matplotlib</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Languages</h3>
+      <ul class="list-disc list-inside mb-6">
+        <li>English – Native</li>
+        <li>Spanish – Fluent</li>
+      </ul>
+    </section>
+
+    <!-- Spanish CV -->
+    <section id="cv-es" class="cv-content">
+      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Resumen profesional</h2>
+      <p class="mb-4">Desarrolladora de Integración de APIs y Front-end con doctorado en Lingüística y más de 20 años de experiencia en educación y comunicación. Conocimiento sólido en Python, React y procesamiento de lenguaje natural (PLN), enfocada en automatización y soluciones centradas en el usuario.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Formación Académica</h3>
+      <ul class="list-disc list-inside mb-6">
+        <li>Doctorado en Lingüística – Manchester Metropolitan University</li>
+        <li>Maestría en Gestión y Liderazgo Educativo – University of Manchester</li>
+        <li>Licenciatura en Lengua Inglesa y Enseñanza de Inglés – University of Manchester</li>
+        <li>Certificación como Desarrolladora Junior – She Codes (en curso)</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Habilidades Técnicas</h3>
+      <ul class="list-disc list-inside mb-6">
+        <li>Lenguajes: Python, JavaScript, HTML, CSS</li>
+        <li>Frameworks/Herramientas: React, Axios, Tailwind, Bootstrap</li>
+        <li>APIs: REST, JSON, OpenWeather, Dictionary, Matplotlib</li>
+        <li>Control de versiones: Git y GitHub</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Experiencia Profesional</h3>
+      <ul class="list-disc list-inside mb-6">
+        <li>Más de 20 años en la educación superior del Reino Unido: profesora, directora de programas e investigadora</li>
+        <li>Especialista en comunicación en salud, marketing y temas interculturales</li>
+        <li>Experiencia supervisando doctorados y coordinando programas de intercambio internacional</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Proyectos Destacados</h3>
+      <ul class="list-disc list-inside mb-6">
+        <li>Generador de Itinerarios de Viaje con IA – Python, API de OpenWeather, Rich</li>
+        <li>Diccionario en React – React, Axios, Bootstrap</li>
+        <li>Visualización de Datos CSV – Python, Matplotlib</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Idiomas</h3>
+      <ul class="list-disc list-inside mb-6">
+        <li>Inglés – Nativo</li>
+        <li>Español – Fluido</li>
+      </ul>
+    </section>
+      <!-- Contact Details -->
+    <section class="mt-12 text-center text-sm text-gray-600">
+      <p><strong>Email:</strong> stella.bullo.pro@gmail.com</p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" class="text-indigo-600 hover:underline" target="_blank">linkedin.com/in/stella-bullo</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/Stella5791" class="text-indigo-600 hover:underline" target="_blank">github.com/Stella5791</a></p>
+    </section>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 mt-16 mb-6">
+    <p>&copy; 2025 Stella Bullo. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleCV(lang) {
+      document.querySelectorAll('.cv-content').forEach(div => div.classList.remove('active'));
+      document.getElementById(`cv-${lang}`).classList.add('active');
+    }
+  </script>
+</body>
+</html>
