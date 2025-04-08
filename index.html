@@ -315,9 +315,15 @@
   </form>
 </section>
 
-<!-- Footer -->
-<footer class="text-center py-4 text-sm text-gray-600 bg-white border-t">
-  <p>Email: stella.bullo.pro@gmail.com   |&copy;   2025 Stella Bullo. All rights reserved.</p>
+<!-- Custom Footer with Dark Mode Support -->
+<footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 text-center text-sm text-gray-600 dark:text-gray-400 py-6">
+  <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p>&copy; 2025 Stella Bullo — All rights reserved.</p>
+    <p>Email: <a href="mailto:stella.bullo.pro@gmail.com" class="text-indigo-600 dark:text-indigo-400 hover:underline">stella.bullo.pro@gmail.com</a></p>
+    <button id="themeToggle" class="inline-flex items-center gap-1 text-xs text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-500 px-3 py-1 rounded-full hover:bg-indigo-100 dark:hover:bg-indigo-800 transition">
+      <i data-lucide="moon" class="w-4 h-4"></i> Toggle Theme
+    </button>
+  </div>
 </footer>
 
 <!-- Scroll-to-top -->
@@ -327,7 +333,6 @@
 </button>
 
 <!-- Scripts -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     if (typeof lucide !== "undefined") {
@@ -360,6 +365,16 @@
         }
       });
     });
+
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle?.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
   });
 </script>
 
