@@ -207,3 +207,85 @@
     View More Projects on GitHub
   </a>
 </div>
+<!-- Contact -->
+<section id="contact" class="p-8 md:p-16 bg-gray-50">
+  <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8">Contact Me</h2>
+  <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" class="max-w-xl mx-auto flex flex-col gap-4">
+    <input type="hidden" name="form-name" value="contact" />
+    <input type="text" name="name" placeholder="Name" class="p-3 rounded-md border border-gray-300" required />
+    <input type="email" name="email" placeholder="Email" class="p-3 rounded-md border border-gray-300" required />
+    <textarea name="message" placeholder="Message" rows="4" class="p-3 rounded-md border border-gray-300" required></textarea>
+    <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transform hover:scale-105 transition-transform duration-300">Send</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 text-center text-sm text-gray-600 dark:text-gray-400 py-6">
+  <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p>&copy; 2025 Stella Bullo — All rights reserved.</p>
+    <p>Email: <a href="mailto:stella.bullo.pro@gmail.com" class="text-indigo-600 dark:text-indigo-400 hover:underline">stella.bullo.pro@gmail.com</a></p>
+    <button id="themeToggle" class="inline-flex items-center gap-1 text-xs text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-500 px-3 py-1 rounded-full hover:bg-indigo-100 dark:hover:bg-indigo-800 transition">
+      <i data-lucide="moon" class="w-4 h-4"></i> Toggle Theme
+    </button>
+  </div>
+</footer>
+
+<!-- Scroll-to-top -->
+<button id="scrollToTopBtn" class="fixed bottom-6 right-6 p-3 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 hidden z-50">
+  <i data-lucide="chevron-up" class="w-5 h-5"></i>
+  <span class="sr-only">Back to top</span>
+</button>
+<!-- Scripts -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof lucide !== "undefined") {
+      lucide.createIcons();
+    }
+
+    const nav = document.querySelector("nav");
+    if (nav) {
+      window.addEventListener("scroll", () => {
+        nav.classList.toggle("shadow-lg", window.scrollY > 10);
+      });
+    }
+
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+    if (scrollBtn) {
+      window.addEventListener("scroll", () => {
+        scrollBtn.classList.toggle("hidden", window.scrollY < 300);
+      });
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    }
+
+    if (typeof AOS !== "undefined") {
+      AOS.init({ duration: 1000, once: true });
+    }
+
+    document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        const hash = this.getAttribute("href");
+        if (hash.length > 1 && document.getElementById(hash.slice(1))) {
+          e.preventDefault();
+          const target = document.getElementById(hash.slice(1));
+          const offset = 80;
+          const offsetPosition = target.offsetTop - offset;
+          window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        }
+      });
+    });
+
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+      });
+    }
+
+    if (localStorage.getItem('theme') === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  });
+</script>
