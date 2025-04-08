@@ -1,15 +1,22 @@
-<!DOCTYPE html>
+ok, I attach the full code. what I'd like you to do is: (1) create a separation between the about me and what I offer/services section. Make the contact form more distinctive with some kind of heading and suggest any more changes to make the page consistant across and more UI friendly: <!DOCTYPE html>
 <html lang="en">
 <head>
   <link rel="icon" href="src/favicon.ico" type="image/x-icon" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Stella Bullo – Front-End & Python Developer with a PhD in Linguistics. Specializing in Spanish-English data, sentiment analysis, semantic tagging, corpus linguistics, health communication, and AI integration." />
-  <meta name="author" content="Stella Bullo" />
-  <title>Stella Bullo | Front-End & Python Developer | Linguist in AI</title>
+  <!-- Meta tags -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Stella Bullo – Front-End & Python Developer with a PhD in Linguistics. Specializing in Spanish-English data, sentiment analysis, semantic tagging, corpus linguistics, health communication, and AI integration." />
+<meta name="author" content="Stella Bullo" />
+<title>Stella Bullo | Front-End & Python Developer | Linguist in AI</title>
 
   <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com">
+  function toggleCV(lang) {
+    document.getElementById('cv-en').classList.add('hidden');
+    document.getElementById('cv-es').classList.add('hidden');
+    document.getElementById(`cv-${lang}`).classList.remove('hidden');
+  }
+</script>
 
   <!-- AOS (Animate on Scroll) -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
@@ -19,16 +26,30 @@
 
   <!-- Global smooth scrolling + transitions -->
   <style>
-    html { scroll-behavior: smooth; }
-    a, button, img, .card {
+    html {
+      scroll-behavior: smooth;
+    }
+
+    a,
+    button,
+    img,
+    .card {
       transition: all 0.3s ease-in-out;
     }
+
     .card:hover {
       transform: translateY(-4px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
     }
-    img:hover { transform: scale(1.03); }
-    a:hover { text-decoration: underline; color: #4f46e5; }
+
+    img:hover {
+      transform: scale(1.03);
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #4f46e5;
+    }
   </style>
 </head>
 <body>
@@ -58,98 +79,118 @@
     <img src="src/profile-pic.png" alt="Stella Bullo" class="rounded-full w-52 h-52 object-cover shadow-lg" />
   </div>
   <div class="md:w-1/2 text-center md:text-left">
-    <h1 class="text-4xl md:text-5xl font-bold text-indigo-700 leading-tight">Stella Bullo</h1>
-    <h2 class="text-lg md:text-xl mt-3 mb-6 text-gray-700">Front-End & Python Developer | Linguist Exploring AI & NLP</h2>
-    <p class="mb-6 text-gray-600 max-w-xl">Combining technical skills with deep expertise in language, sentiment, and health communication to build smarter, more human-centred tools.</p>
-    <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-      <a href="cv.html" class="bg-indigo-600 text-white px-5 py-3 rounded-md hover:bg-indigo-700">View CV</a>
-      <a href="#contact" class="border border-indigo-600 text-indigo-600 px-5 py-3 rounded-md hover:bg-indigo-100">Contact Me</a>
+  <h1 class="text-4xl md:text-5xl font-bold text-indigo-700 leading-tight">Stella Bullo</h1>
+  <h2 class="text-lg md:text-xl mt-3 mb-6 text-gray-700">Front-End & Python Developer | Linguist Exploring AI & NLP</h2>
+  <p class="mb-6 text-gray-600 max-w-xl">Combining technical skills with deep expertise in language, sentiment, and health communication to build smarter, more human-centred tools.</p>
+  <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+    <a href="cv.html" class="bg-indigo-600 text-white px-5 py-3 rounded-md hover:bg-indigo-700">View CV</a>
+    <a href="#contact" class="border border-indigo-600 text-indigo-600 px-5 py-3 rounded-md hover:bg-indigo-100">Contact Me</a>
+  </div>
+</div>
+</section>
+
+<!-- About Section (Responsive with Optimised Design) -->
+<section id="about" class="bg-gray-50 p-8 md:p-20">
+  <div class="max-w-6xl mx-auto space-y-16" data-aos="fade-up">
+
+    <!-- Intro Text & Coding Image in Grid -->
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div class="space-y-6 bg-white shadow-sm rounded-xl p-6 border border-gray-200">
+  <h2 class="text-3xl font-bold text-indigo-700">About Me</h2>
+
+  <p class="text-gray-700 leading-relaxed">
+    I’m a <span class="font-medium text-indigo-700">front-end developer and Python programmer</span> with a <span class="italic">PhD in Linguistics</span> and over 20 years of experience in academic research and education.
+    My linguistics expertise spans <span class="font-medium text-indigo-700">corpus linguistics, sentiment analysis, health communication</span>, and <span class="font-medium text-indigo-700">intercultural discourse</span>.
+  </p>
+
+  <p class="text-gray-700 leading-relaxed">
+    My current work blends <span class="font-medium text-indigo-700">language analysis</span> with code — building tools that handle data, connect APIs, and support meaningful user experiences.
+    I'm especially drawn to roles at the intersection of <span class="font-medium text-indigo-700">language, technology, and AI</span>.
+  </p>
+
+  <p class="text-gray-700 leading-relaxed">
+    I’m open to <span class="font-medium text-indigo-700">remote freelance projects</span> and can contribute across front-end, scripting, API integration, and <span class="font-medium text-indigo-700">bilingual Spanish–English</span> data analysis.
+    As I continue deepening my understanding of <span class="italic">NLP, LLMs, and ML</span>, I bring a practical, code-informed approach backed by deep linguistic insight.
+  </p>
+</div>
+      <div class="text-center">
+        <img src="src/coding-pic-optimized.png" alt="Coding workspace with laptop, glasses, and coffee" class="rounded-xl mx-auto shadow-lg w-2/3 md:w-full h-auto opacity-90 hover:opacity-100 hover:scale-105 transition-transform duration-300" />
+        <p class="text-xs text-gray-500 italic mt-2">Image credit: <a href="https://stockcake.com/i/coding-coffee-break_855014_909099" target="_blank" class="text-indigo-500 hover:underline">"Coding Coffee Break"</a> via StockCake</p>
+      </div>
+    </div>
+
+    <!-- Collage Image and Skills Grid Row -->
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <div class="text-center">
+        <img src="src/collage.png" alt="Linguistics book visual" class="rounded-xl mx-auto shadow-lg w-2/3 md:w-4/5 h-auto opacity-90 hover:opacity-100 hover:scale-105 transition-transform duration-300" />
+        <p class="text-xs text-gray-500 italic mt-2">Visual: linguistic analysis and python code</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold text-indigo-700 uppercase tracking-wide mb-4">🛠 Key Skills</h3>
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Python</span>
+          <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">API Integration</span>
+          <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">React</span>
+          <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">HTML/CSS/JS</span>
+          <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Git & GitHub</span>
+          <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Node.js</span>
+          <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Replit</span>
+          <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Spanish–English Data</span>
+          <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Learning: NLP / LLMs</span>
+        </div>
+        <h3 class="text-xl font-semibold text-indigo-700 uppercase tracking-wide mt-8 mb-4">🌍 Additional Skills</h3>
+        <div class="flex flex-wrap gap-2">
+  <span class="bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">20+ years in UK academia</span>
+  <span class="bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Project & Programme Management</span>
+  <span class="bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Corpus & Discourse Analysis</span>
+  <span class="bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Health & Consumer Communication</span>
+  <span class="bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Bilingual Spanish–English</span>
+</div>
+      </div>
     </div>
   </div>
 </section>
-<!-- Skills Grid Row -->
-<div class="grid md:grid-cols-2 gap-12 items-start mt-16">
-  <div class="text-center">
-    <img src="src/collage.png" alt="Linguistics book visual" class="rounded-xl mx-auto shadow-lg w-2/3 md:w-4/5 h-auto opacity-90 hover:opacity-100 hover:scale-105 transition-transform duration-300" />
-    <p class="text-xs text-gray-500 italic mt-2">Visual: linguistic analysis and python code</p>
-  </div>
-  <div>
-    <h3 class="text-xl font-semibold text-indigo-700 uppercase tracking-wide mb-4">🛠 Key Skills</h3>
-    <div class="flex flex-wrap gap-2 mb-6">
-      <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Python</span>
-      <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">API Integration</span>
-      <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">React</span>
-      <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">HTML/CSS/JS</span>
-      <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Git & GitHub</span>
-      <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Node.js</span>
-      <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Replit</span>
-      <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Spanish–English Data</span>
-      <span class="bg-indigo-100 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Learning: NLP / LLMs</span>
-    </div>
-    <h3 class="text-xl font-semibold text-indigo-700 uppercase tracking-wide mt-8 mb-4">🌍 Additional Skills</h3>
-    <div class="flex flex-wrap gap-2">
-      <span class="bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">20+ years in UK academia</span>
-      <span class="bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Project & Programme Management</span>
-      <span class="bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Corpus & Discourse Analysis</span>
-      <span class="bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Health & Consumer Communication</span>
-      <span class="bg-indigo-50 text-indigo-700 text-xs font-medium px-3 py-1 rounded-full">Bilingual Spanish–English</span>
-    </div>
-  </div>
-</div>
-<!-- Services Section -->
-<section id="services" class="bg-white dark:bg-gray-900 py-20 px-6 md:px-20">
+
+
+<!-- Services Section (Styled) -->
+<section id="services" class="bg-white p-8 md:p-20">
   <div class="max-w-6xl mx-auto space-y-16" data-aos="fade-up">
     <div class="text-center" data-aos="fade-down" data-aos-delay="100">
-      <h2 class="text-3xl font-bold text-indigo-700 dark:text-indigo-300">What I Offer</h2>
-      <p class="text-gray-700 dark:text-gray-300 max-w-2xl mx-auto mt-4">
+      <h2 class="text-3xl font-bold text-indigo-700">What I Offer</h2>
+      <p class="text-gray-700 max-w-2xl mx-auto mt-4">
         I help individuals and teams bring ideas to life through thoughtful code and language-aware solutions. Whether you're building something from scratch or integrating tools and data, here's how I can help:
       </p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-10">
-      <!-- Python & API Integration -->
-      <div class="bg-indigo-50 dark:bg-gray-800 hover:bg-white dark:hover:bg-gray-700 hover:shadow-lg transition-all duration-300 rounded-xl p-6 border border-indigo-100 dark:border-gray-700" data-aos="zoom-in-up" data-aos-delay="200">
-        <h3 class="text-lg font-semibold text-indigo-700 dark:text-indigo-300 mb-2 flex items-center gap-2">
-          <i data-lucide="code" class="w-5 h-5"></i> Python & API Integration
-        </h3>
-        <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 space-y-1">
+      <div class="bg-gray-50 hover:bg-white hover:shadow-lg transition-all duration-300 rounded-xl p-6 border border-gray-200" data-aos="zoom-in-up" data-aos-delay="200">
+        <h3 class="text-lg font-semibold text-indigo-700 mb-2">🔗 Python & API Integration</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
           <li>Connect third-party APIs into Python apps or websites</li>
-          <li>Streamline repetitive tasks and workflows with automation</li>
+          <li>Streamline repetitive tasks and workflows with simple automation</li>
           <li>Work with JSON, REST APIs, and Axios in front-end apps</li>
         </ul>
       </div>
-
-      <!-- Front-End Development -->
-      <div class="bg-indigo-50 dark:bg-gray-800 hover:bg-white dark:hover:bg-gray-700 hover:shadow-lg transition-all duration-300 rounded-xl p-6 border border-indigo-100 dark:border-gray-700" data-aos="zoom-in-up" data-aos-delay="300">
-        <h3 class="text-lg font-semibold text-indigo-700 dark:text-indigo-300 mb-2 flex items-center gap-2">
-          <i data-lucide="monitor" class="w-5 h-5"></i> Front-End Development
-        </h3>
-        <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 space-y-1">
+      <div class="bg-gray-50 hover:bg-white hover:shadow-lg transition-all duration-300 rounded-xl p-6 border border-gray-200" data-aos="zoom-in-up" data-aos-once="true">
+        <h3 class="text-lg font-semibold text-indigo-700 mb-2">🎨 Front-End Development</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
           <li>Build responsive websites with HTML, CSS, JS, React</li>
           <li>Integrate APIs into front-end interfaces</li>
           <li>Create clean, accessible, and user-friendly UIs</li>
         </ul>
       </div>
-
-      <!-- Text & Language Analysis -->
-      <div class="bg-indigo-50 dark:bg-gray-800 hover:bg-white dark:hover:bg-gray-700 hover:shadow-lg transition-all duration-300 rounded-xl p-6 border border-indigo-100 dark:border-gray-700" data-aos="zoom-in-up" data-aos-delay="400">
-        <h3 class="text-lg font-semibold text-indigo-700 dark:text-indigo-300 mb-2 flex items-center gap-2">
-          <i data-lucide="text" class="w-5 h-5"></i> Text & Language Analysis
-        </h3>
-        <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 space-y-1">
+      <div class="bg-gray-50 hover:bg-white hover:shadow-lg transition-all duration-300 rounded-xl p-6 border border-gray-200">
+        <h3 class="text-lg font-semibold text-indigo-700 mb-2">🧠 Text & Language Analysis</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
           <li>Entry-level NLP: sentiment analysis, keyword extraction</li>
           <li>Corpus linguistics and discourse analysis</li>
           <li>Health and consumer communication insights</li>
           <li>Bilingual (Spanish–English) text data support</li>
         </ul>
       </div>
-
-      <!-- Data Visualization -->
-      <div class="bg-indigo-50 dark:bg-gray-800 hover:bg-white dark:hover:bg-gray-700 hover:shadow-lg transition-all duration-300 rounded-xl p-6 border border-indigo-100 dark:border-gray-700" data-aos="zoom-in-up" data-aos-delay="500">
-        <h3 class="text-lg font-semibold text-indigo-700 dark:text-indigo-300 mb-2 flex items-center gap-2">
-          <i data-lucide="bar-chart-3" class="w-5 h-5"></i> Data Visualization
-        </h3>
-        <ul class="list-disc list-inside text-sm text-gray-700 dark:text-gray-300 space-y-1">
+      <div class="bg-gray-50 hover:bg-white hover:shadow-lg transition-all duration-300 rounded-xl p-6 border border-gray-200">
+        <h3 class="text-lg font-semibold text-indigo-700 mb-2">📊 Data Visualization</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
           <li>Create charts and graphs using Python + Matplotlib</li>
           <li>Work with CSV/JSON data for research or reporting</li>
           <li>Present language and user data in clear, meaningful ways</li>
@@ -158,76 +199,128 @@
     </div>
   </div>
 </section>
-<div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-  <!-- Project 1 -->
-  <div class="bg-white rounded-xl border border-gray-200 p-4 shadow-sm hover:shadow-lg hover:scale-[1.02] transition duration-300 ease-in-out" data-aos="zoom-in-up" data-aos-delay="200">
-    <img src="src/project1.png" alt="AI Travel Itinerary Generator Screenshot" class="rounded mb-4 w-full h-36 object-cover">
-    <h3 class="text-md font-semibold text-indigo-700 mb-2">🧳 AI Travel Itinerary Generator</h3>
-    <p class="text-sm text-gray-700 mb-4">Combines weather data and AI prompts to generate custom trip plans via terminal UI.</p>
-    <div class="flex flex-wrap gap-2 text-xs text-indigo-700 mb-2">
-      <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">Python</span>
-      <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">OpenWeather API</span>
-      <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">Rich</span>
-    </div>
-    <a href="https://colab.research.google.com/drive/1K43At0WutS7nvRhELn1iJQ272PSGonL9?usp=sharing" target="_blank" class="inline-block text-indigo-600 text-sm hover:underline">View on Colab</a>
-    <p class="mt-3 text-xs text-gray-600 italic">How I built this: Combined OpenWeather API data with GPT-style prompts. Output styled in terminal using Rich. Built/tested in Google Colab.</p>
-  </div>
 
-  <!-- Project 2 -->
-  <div class="bg-white rounded-xl border border-gray-200 p-4 shadow-sm hover:shadow-lg hover:scale-[1.02] transition duration-300 ease-in-out" data-aos="zoom-in-up" data-aos-delay="300">
-    <img src="src/project2.png" alt="CSV Data Visualizer Screenshot" class="rounded mb-4 w-full h-36 object-cover">
-    <h3 class="text-md font-semibold text-indigo-700 mb-2">📈 CSV Data Visualizer</h3>
-    <p class="text-sm text-gray-700 mb-4">Creates clean, readable charts from CSV files using Python and Matplotlib.</p>
-    <div class="flex flex-wrap gap-2 text-xs text-indigo-700 mb-2">
-      <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">Python</span>
-      <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">Matplotlib</span>
-      <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">CSV</span>
-    </div>
-    <a href="https://replit.com/@smbu123/python-data-visualization-project" target="_blank" class="inline-block text-indigo-600 text-sm hover:underline">View on Replit</a>
-    <p class="mt-3 text-xs text-gray-600 italic">How I built this: Parsed CSV files with Python and visualized with Matplotlib. Developed and hosted on Replit.</p>
-  </div>
+<hr class="border-t border-gray-200 mt-0" />
 
-  <!-- Project 3 -->
-  <div class="bg-white rounded-xl border border-gray-200 p-4 shadow-sm hover:shadow-lg hover:scale-[1.02] transition duration-300 ease-in-out" data-aos="zoom-in-up" data-aos-delay="400">
-    <img src="src/project3.png" alt="Weather Console App Screenshot" class="rounded mb-4 w-full h-36 object-cover">
-    <h3 class="text-md font-semibold text-indigo-700 mb-2">☁️ Weather Console App</h3>
-    <p class="text-sm text-gray-700 mb-4">Fetches and formats current and forecasted weather data via API for command-line display.</p>
-    <div class="flex flex-wrap gap-2 text-xs text-indigo-700 mb-2">
-      <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">Python</span>
-      <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">OpenWeather API</span>
-      <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">JSON</span>
-    </div>
-    <a href="https://replit.com/@smbu123/WeatherApp" target="_blank" class="inline-block text-indigo-600 text-sm hover:underline">Try on Replit</a>
-    <p class="mt-3 text-xs text-gray-600 italic">How I built this: A command-line app using OpenWeather API to fetch/display weather data. Built with formatting & error handling in Replit.</p>
+<!-- Call to Action -->
+<section class="bg-indigo-50 py-12 px-6 md:px-20">
+  <div class="max-w-4xl mx-auto text-center rounded-xl bg-white shadow-md p-8 border border-indigo-100" data-aos="fade-up" data-aos-delay="100">
+    <h2 class="text-2xl font-bold text-indigo-700 mb-4">Let’s Work Together</h2>
+    <p class="text-gray-700 mb-6 max-w-xl mx-auto">
+      I'm currently available for fully remote freelance projects. Whether you need support with API integration, front-end development, or text and language data — I'd love to hear about your project.
+    </p>
+    <a href="#contact" class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-full text-sm font-medium shadow hover:bg-indigo-700 transition-all">Contact Me</a>
   </div>
-</div>
+</section>
 
-<div class="text-center mt-12">
-  <a href="https://github.com/Stella5791?tab=repositories" target="_blank" class="inline-block text-sm font-medium text-indigo-700 bg-indigo-100 px-6 py-2 rounded-full shadow hover:bg-indigo-200 transition">
-    View More Projects on GitHub
-  </a>
-</div>
+
+<!-- Projects Section (Enhanced with Hover Effects and Icons) -->
+<section id="projects" class="bg-gray-50 p-8 md:p-20">
+  <div class="max-w-6xl mx-auto space-y-12" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
+    
+    <!-- Section Heading -->
+    <div class="text-center" data-aos="fade-down" data-aos-delay="100">
+      <h2 class="text-3xl font-bold text-indigo-700">Featured Projects</h2>
+      <p class="text-gray-700 max-w-2xl mx-auto mt-4">
+        A selection of recent projects combining front-end development, Python scripting, and API integration.
+      </p>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      
+      <!-- Project Card -->
+      <div class="bg-white rounded-xl border border-gray-200 p-4 shadow-sm hover:shadow-lg hover:scale-[1.02] transition duration-300 ease-in-out" data-aos="zoom-in-up" data-aos-delay="200">
+        <img src="src/project1.png" alt="AI Travel Itinerary Generator Screenshot" class="rounded mb-4 w-full h-36 object-cover">
+        <h3 class="text-md font-semibold text-indigo-700 mb-2">🧳 AI Travel Itinerary Generator</h3>
+        <p class="text-sm text-gray-700 mb-4">Combines weather data and AI prompts to generate custom trip plans via terminal UI.</p>
+        <div class="flex flex-wrap gap-2 text-xs text-indigo-700 mb-2">
+          <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg> Python
+          </span>
+          <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/></svg> OpenWeather API
+          </span>
+          <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg> Rich
+          </span>
+        </div>
+        <a href="https://colab.research.google.com/drive/1K43At0WutS7nvRhELn1iJQ272PSGonL9?usp=sharing" target="_blank" class="inline-block text-indigo-600 text-sm hover:underline">View on Colab</a>
+        <p class="mt-3 text-xs text-gray-600 italic">How I built this: I combined OpenWeather API data with GPT-style prompt generation using Python. Output is styled in the terminal using Rich. Fully built and tested in Google Colab.</p>
+      </div>
+
+      <!-- Project Card -->
+      <div class="bg-white rounded-xl border border-gray-200 p-4 shadow-sm hover:shadow-lg hover:scale-[1.02] transition duration-300 ease-in-out" data-aos="zoom-in-up" data-aos-delay="300">
+        <img src="src/project2.png" alt="CSV Data Visualizer Screenshot" class="rounded mb-4 w-full h-36 object-cover">
+        <h3 class="text-md font-semibold text-indigo-700 mb-2">📈 CSV Data Visualizer</h3>
+        <p class="text-sm text-gray-700 mb-4">Creates clean, readable charts from CSV files using Python and Matplotlib.</p>
+        <div class="flex flex-wrap gap-2 text-xs text-indigo-700 mb-2">
+          <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg> Python
+          </span>
+          <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/></svg> Matplotlib
+          </span>
+          <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg> CSV
+          </span>
+        </div>
+        <a href="https://replit.com/@smbu123/python-data-visualization-project" target="_blank" class="inline-block text-indigo-600 text-sm hover:underline">View on Replit</a>
+        <p class="mt-3 text-xs text-gray-600 italic">How I built this: I parsed CSV files with Python and visualised the data using Matplotlib. Developed and hosted on Replit.</p>
+      </div>
+
+      <!-- Project Card -->
+      <div class="bg-white rounded-xl border border-gray-200 p-4 shadow-sm hover:shadow-lg hover:scale-[1.02] transition duration-300 ease-in-out" data-aos="zoom-in-up" data-aos-delay="400">
+        <img src="src/project3.png" alt="Weather Console App Screenshot" class="rounded mb-4 w-full h-36 object-cover">
+        <h3 class="text-md font-semibold text-indigo-700 mb-2">☁️ Weather Console App</h3>
+        <p class="text-sm text-gray-700 mb-4">Fetches and formats current and forecasted weather data via API for command-line display.</p>
+        <div class="flex flex-wrap gap-2 text-xs text-indigo-700 mb-2">
+          <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4v16m8-8H4"/></svg> Python
+          </span>
+          <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 3h18v18H3z"/></svg> OpenWeather API
+          </span>
+          <span class="flex items-center gap-1 bg-indigo-100 px-2 py-1 rounded-full hover:bg-indigo-200 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg> JSON
+          </span>
+        </div>
+        <a href="https://replit.com/@smbu123/WeatherApp" target="_blank" class="inline-block text-indigo-600 text-sm hover:underline">Try on Replit</a>
+        <p class="mt-3 text-xs text-gray-600 italic">How I built this: A command-line app using the OpenWeather API to fetch and display weather data. Built with clear formatting and error handling in Replit.</p>
+      </div>
+
+    </div>
+
+    <!-- GitHub Link -->
+    <div class="text-center mt-12">
+      <a href="https://github.com/Stella5791?tab=repositories" target="_blank" class="inline-block text-sm font-medium text-indigo-700 bg-indigo-100 px-6 py-2 rounded-full shadow hover:bg-indigo-200 transition">
+        View More Projects on GitHub
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+
 <!-- Contact -->
 <section id="contact" class="p-8 md:p-16 bg-gray-50">
   <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8">Contact Me</h2>
   <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" class="max-w-xl mx-auto flex flex-col gap-4">
     <input type="hidden" name="form-name" value="contact" />
-    <input type="text" name="name" placeholder="Name" class="p-3 rounded-md border border-gray-300" required />
-    <input type="email" name="email" placeholder="Email" class="p-3 rounded-md border border-gray-300" required />
-    <textarea name="message" placeholder="Message" rows="4" class="p-3 rounded-md border border-gray-300" required></textarea>
+    <label for="name" class="sr-only">Name</label>
+    <input id="name" type="text" name="name" placeholder="Name" class="p-3 rounded-md border border-gray-300" required />
+    <label for="email" class="sr-only">Email</label>
+    <input id="email" type="email" name="email" placeholder="Email" class="p-3 rounded-md border border-gray-300" required />
+    <label for="message" class="sr-only">Message</label>
+    <textarea id="message" name="message" placeholder="Message" rows="4" class="p-3 rounded-md border border-gray-300" required></textarea>
     <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transform hover:scale-105 transition-transform duration-300">Send</button>
   </form>
 </section>
 
 <!-- Footer -->
-<footer class="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 text-center text-sm text-gray-600 dark:text-gray-400 py-6">
-  <div class="max-w-4xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-    <p>&copy; 2025 Stella Bullo — All rights reserved.</p>
-    <p>Email: <a href="mailto:stella.bullo.pro@gmail.com" class="text-indigo-600 dark:text-indigo-400 hover:underline">stella.bullo.pro@gmail.com</a></p>
-    <button id="themeToggle" class="inline-flex items-center gap-1 text-xs text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-500 px-3 py-1 rounded-full hover:bg-indigo-100 dark:hover:bg-indigo-800 transition">
-      <i data-lucide="moon" class="w-4 h-4"></i> Toggle Theme
-    </button>
-  </div>
+<footer class="text-center py-4 text-sm text-gray-600 bg-white border-t">
+  <p>Email: stella.bullo.pro@gmail.com   |&copy;   2025 Stella Bullo. All rights reserved.</p>
 </footer>
 
 <!-- Scroll-to-top -->
@@ -235,7 +328,9 @@
   <i data-lucide="chevron-up" class="w-5 h-5"></i>
   <span class="sr-only">Back to top</span>
 </button>
+
 <!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     if (typeof lucide !== "undefined") {
@@ -243,49 +338,33 @@
     }
 
     const nav = document.querySelector("nav");
-    if (nav) {
-      window.addEventListener("scroll", () => {
-        nav.classList.toggle("shadow-lg", window.scrollY > 10);
-      });
-    }
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("shadow-lg", window.scrollY > 10);
+    });
 
     const scrollBtn = document.getElementById("scrollToTopBtn");
-    if (scrollBtn) {
-      window.addEventListener("scroll", () => {
-        scrollBtn.classList.toggle("hidden", window.scrollY < 300);
-      });
-      scrollBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-    }
+    window.addEventListener("scroll", () => {
+      scrollBtn.classList.toggle("hidden", window.scrollY < 300);
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 
-    if (typeof AOS !== "undefined") {
-      AOS.init({ duration: 1000, once: true });
-    }
+    AOS.init({ duration: 1000, once: true });
 
-    document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", function (e) {
-        const hash = this.getAttribute("href");
-        if (hash.length > 1 && document.getElementById(hash.slice(1))) {
-          e.preventDefault();
-          const target = document.getElementById(hash.slice(1));
+        e.preventDefault();
+        const target = document.getElementById(this.getAttribute("href").substring(1));
+        if (target) {
           const offset = 80;
           const offsetPosition = target.offsetTop - offset;
           window.scrollTo({ top: offsetPosition, behavior: "smooth" });
         }
       });
     });
-
-    const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle) {
-      themeToggle.addEventListener('click', () => {
-        document.documentElement.classList.toggle('dark');
-        localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
-      });
-    }
-
-    if (localStorage.getItem('theme') === 'dark') {
-      document.documentElement.classList.add('dark');
-    }
   });
 </script>
+
+</body>
+</html>
