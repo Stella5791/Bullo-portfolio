@@ -7,45 +7,50 @@
   <meta name="author" content="Stella Bullo" />
   <title>Stella Bullo | CV</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
   <style>
     .cv-content { display: none; }
     .cv-content.active { display: block; }
+    @media print {
+      nav, .print-hidden, footer { display: none !important; }
+      .cv-content { display: block !important; }
+    }
   </style>
 </head>
 <body class="bg-white text-gray-800">
   <header class="bg-indigo-600 text-white p-6 text-center">
     <h1 class="text-3xl font-bold">Stella Bullo</h1>
-    <p class="text-lg mt-5">Entry-level Python developer | Front-End Developer</p>
+    <p class="text-lg mt-4">Python & Front-End Developer | API Integration & Linguistic Insight</p>
   </header>
 
-  <nav class="flex justify-center my-6 gap-4">
+  <nav class="flex justify-center my-6 gap-4 print-hidden">
     <button onclick="toggleCV('en')" class="px-4 py-2 border border-indigo-600 text-indigo-600 hover:bg-indigo-100 rounded">English</button>
     <button onclick="toggleCV('es')" class="px-4 py-2 border border-indigo-600 text-indigo-600 hover:bg-indigo-100 rounded">Español</button>
   </nav>
 
-  <div class="flex justify-center gap-4 mb-6">
-    <a href="index.html" class="text-indigo-600 border border-indigo-600 px-4 py-2 rounded hover:bg-indigo-100">← Back to Portfolio</a>
+  <div class="flex justify-center gap-4 mb-6 print-hidden">
+    <a href="index.html" class="text-indigo-600 border border-indigo-600 px-4 py-2 rounded hover:bg-indigo-100">&larr; Back to Portfolio</a>
     <button onclick="window.print()" class="text-indigo-600 border border-indigo-600 px-4 py-2 rounded hover:bg-indigo-100">🖨️ Print</button>
-    <a href="StellaBullo_CV.pdf" class="text-white bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700" download>📂️ Download PDF</a>
+    <a href="StellaBullo_CV_Dev.pdf" download class="text-white bg-indigo-600 px-4 py-2 rounded hover:bg-indigo-700">📂 Download PDF</a>
   </div>
 
   <main class="max-w-4xl mx-auto px-6">
     <!-- English CV -->
     <section id="cv-en" class="cv-content active">
       <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Profile Summary</h2>
-      <p class="mb-4">Entry level Python and Front-end Developer with a PhD in Linguistics and 20+ years' experience in education and communication. Solid foundation in Python, React, and basic NLP, with a focus on API automation and user-centred solutions. Available for fully remote work only.</p>
+      <p class="mb-6">Entry-level Python and front-end developer with a PhD in Linguistics and over 20 years of experience in research and communication. Skilled in Python, React, and basic NLP with a focus on API integration and user-centred solutions. Seeking fully remote freelance or contract roles that combine language and code.</p>
 
       <h3 class="text-xl font-semibold mt-6 mb-2">Qualifications</h3>
-      <ul class="list-disc list-inside mb-6">
-          <li>Junior Developer Certificate – She Codes 2025</li>
-          <li>Front-End Developer Certificate – She Codes, 2024</li>
-          <li>PhD in Linguistics – Lancaster University, UK, 2011</li>
-          <li>MA in Education Management and Leadership – Manchester Metropolitan University, UK, 2003</li>
-          <li>BA in English Language and TEFL – National University of Cordoba, Argentina, 2000</li>
+      <ul class="list-disc list-inside mb-6 space-y-2">
+        <li>Junior Developer Certificate – She Codes 2025</li>
+        <li>Front-End Developer Certificate – She Codes, 2024</li>
+        <li>PhD in Linguistics – Lancaster University, UK, 2011</li>
+        <li>MA in Education Management and Leadership – Manchester Metropolitan University, UK, 2003</li>
+        <li>BA in English Language and TEFL – National University of Cordoba, Argentina, 2000</li>
       </ul>
 
       <h3 class="text-xl font-semibold mt-6 mb-2">Technical Skills</h3>
-      <ul class="list-disc list-inside mb-6">
+      <ul class="list-disc list-inside mb-6 space-y-2">
         <li>Languages: Python, JavaScript, HTML, CSS</li>
         <li>Frameworks/Tools: React, Axios, Tailwind, Bootstrap</li>
         <li>APIs: REST, JSON, OpenWeather, Dictionary, Matplotlib</li>
@@ -53,21 +58,21 @@
       </ul>
 
       <h3 class="text-xl font-semibold mt-6 mb-2">Professional Experience</h3>
-      <ul class="list-disc list-inside mb-6">
+      <ul class="list-disc list-inside mb-6 space-y-2">
         <li>20+ years in UK Higher Education: Lecturer, Program Director, and Researcher</li>
         <li>Specialised in Health, Marketing, and Cross-cultural Communication; published in <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" class="text-indigo-600 hover:underline">Peer Reviewed Journals</a></li>
         <li>Experience of Research Project Management</li>
       </ul>
 
       <h3 class="text-xl font-semibold mt-6 mb-2">Selected Projects</h3>
-      <ul class="list-disc list-inside mb-6">
+      <ul class="list-disc list-inside mb-6 space-y-2">
         <li>AI Travel Itinerary Generator — Python, OpenWeather API, Rich [<a href="https://github.com/Stella5791/python-projects/tree/main/ai-travel-itinerary" target="_blank" class="text-indigo-600 hover:underline">GitHub</a> | <a href="https://colab.research.google.com/drive/1K43At0WutS7nvRhELn1iJQ272PSGonL9?usp=sharing" target="_blank" class="text-indigo-600 hover:underline">Live Demo</a>]</li>
-        <li>React Dictionary App — React, Axios, Bootstrap [<a href="https://github.com/Stella5791/front-end-projects/tree/main/react-dictionary-app" target="_blank" class="text-indigo-600 hover:underline">GitHub</a> | <a href="https://playful-gecko-ed5205.netlify.app/" target="_blank" class="text-indigo-600 hover:underline">Live Demo</a>]</li>
-        <li>CSV Data Visualization — Python, Matplotlib  [<a href="https://github.com/Stella5791/python-projects/tree/main/data-visualization" target="_blank" class="text-indigo-600 hover:underline">GitHub</a> | <a href="https://replit.com/@smbu123/python-data-visualization-project" target="_blank" class="text-indigo-600 hover:underline">Live Demo</a>]</li>
+        <li>React Dictionary App — React, Axios, Bootstrap [<a href="https://github.com/Stella5791/Frontend/tree/main/showcase%20projects/React-dictionaryApp" target="_blank" class="text-indigo-600 hover:underline">GitHub</a> | <a href="https://playful-gecko-ed5205.netlify.app/" target="_blank" class="text-indigo-600 hover:underline">Live Demo</a>]</li>
+        <li>CSV Data Visualization — Python, Matplotlib [<a href="https://github.com/Stella5791/python-projects/tree/main/data-visualization" target="_blank" class="text-indigo-600 hover:underline">GitHub</a> | <a href="https://replit.com/@smbu123/python-data-visualization-project" target="_blank" class="text-indigo-600 hover:underline">Live Demo</a>]</li>
       </ul>
 
       <h3 class="text-xl font-semibold mt-6 mb-2">Languages</h3>
-      <ul class="list-disc list-inside mb-6">
+      <ul class="list-disc list-inside mb-6 space-y-2">
         <li>Spanish – Native</li>
         <li>English – Near-native proficiency</li>
       </ul>
@@ -76,10 +81,10 @@
     <!-- Spanish CV -->
     <section id="cv-es" class="cv-content">
       <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Resumen Profesional</h2>
-      <p class="mb-4">Desarrolladora de nivel inicial en Python y Front-End con doctorado en Lingüística y más de 20 años de experiencia en educación y comunicación. Sólida base en Python, React y PLN básico, centrada en la automatización de APIs y soluciones centradas en el usuario. Disponible únicamente para trabajo remoto.</p>
+      <p class="mb-6">Desarrolladora de nivel inicial en Python y Front-End con doctorado en Lingüística y más de 20 años de experiencia en investigación y comunicación. Con experiencia en Python, React y PLN básico, centrada en integración de APIs y soluciones centradas en el usuario. Busco roles remotos que combinen lenguaje y código.</p>
 
       <h3 class="text-xl font-semibold mt-6 mb-2">Formación Académica</h3>
-      <ul class="list-disc list-inside mb-6">
+      <ul class="list-disc list-inside mb-6 space-y-2">
         <li>Certificado de Desarrolladora Junior – She Codes 2025</li>
         <li>Certificado de Desarrolladora Front-End – She Codes, 2024</li>
         <li>Doctorado en Lingüística – Lancaster University, Reino Unido, 2011</li>
@@ -88,7 +93,7 @@
       </ul>
 
       <h3 class="text-xl font-semibold mt-6 mb-2">Habilidades Técnicas</h3>
-      <ul class="list-disc list-inside mb-6">
+      <ul class="list-disc list-inside mb-6 space-y-2">
         <li>Lenguajes: Python, JavaScript, HTML, CSS</li>
         <li>Frameworks/Herramientas: React, Axios, Tailwind, Bootstrap</li>
         <li>APIs: REST, JSON, OpenWeather, Dictionary, Matplotlib</li>
@@ -96,43 +101,43 @@
       </ul>
 
       <h3 class="text-xl font-semibold mt-6 mb-2">Experiencia Profesional</h3>
-      <ul class="list-disc list-inside mb-6">
+      <ul class="list-disc list-inside mb-6 space-y-2">
         <li>Más de 20 años en la educación superior del Reino Unido: docente, directora de programas e investigadora</li>
         <li>Especializada en comunicación en salud, marketing y comunicación intercultural; publicaciones en <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" class="text-indigo-600 hover:underline">revistas científicas</a></li>
         <li>Experiencia en gestión de proyectos de investigación</li>
       </ul>
 
       <h3 class="text-xl font-semibold mt-6 mb-2">Proyectos Destacados</h3>
-      <ul class="list-disc list-inside mb-6">
+      <ul class="list-disc list-inside mb-6 space-y-2">
         <li>Generador de Itinerarios con IA — Python, OpenWeather API, Rich [<a href="https://github.com/Stella5791/python-projects/tree/main/ai-travel-itinerary" target="_blank" class="text-indigo-600 hover:underline">GitHub</a> | <a href="https://colab.research.google.com/drive/1K43At0WutS7nvRhELn1iJQ272PSGonL9?usp=sharing" target="_blank" class="text-indigo-600 hover:underline">Demo</a>]</li>
-        <li>Aplicación de Diccionario en React — React, Axios, Bootstrap [<a href="https://github.com/Stella5791/front-end-projects/tree/main/react-dictionary-app" target="_blank" class="text-indigo-600 hover:underline">GitHub</a> | <a href="https://playful-gecko-ed5205.netlify.app/" target="_blank" class="text-indigo-600 hover:underline">Demo</a>]</li>
+        <li>Aplicación de Diccionario en React — React, Axios, Bootstrap [<a href="https://github.com/Stella5791/Frontend/tree/main/showcase%20projects/React-dictionaryApp" target="_blank" class="text-indigo-600 hover:underline">GitHub</a> | <a href="https://playful-gecko-ed5205.netlify.app/" target="_blank" class="text-indigo-600 hover:underline">Demo</a>]</li>
         <li>Visualización de Datos CSV — Python, Matplotlib [<a href="https://github.com/Stella5791/python-projects/tree/main/data-visualization" target="_blank" class="text-indigo-600 hover:underline">GitHub</a> | <a href="https://replit.com/@smbu123/python-data-visualization-project" target="_blank" class="text-indigo-600 hover:underline">Demo</a>]</li>
       </ul>
 
       <h3 class="text-xl font-semibold mt-6 mb-2">Idiomas</h3>
-      <ul class="list-disc list-inside mb-6">
+      <ul class="list-disc list-inside mb-6 space-y-2">
         <li>Español – Nativo</li>
         <li>Inglés – Dominio casi nativo</li>
       </ul>
     </section>
 
-    <!-- Contact Details -->
+    <!-- Contact Section -->
     <section class="mt-12 text-center text-sm text-gray-600">
       <div class="flex justify-center items-center gap-8 flex-wrap">
         <span class="inline-flex items-center gap-1">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="email icon" class="w-4 h-4" />
+          <i data-lucide="mail" class="w-4 h-4"></i>
           <a href="mailto:stella.bullo.pro@gmail.com" class="text-indigo-600 hover:underline">stella.bullo.pro@gmail.com</a>
         </span>
         <span class="inline-flex items-center gap-1">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="linkedin icon" class="w-4 h-4" />
+          <i data-lucide="linkedin" class="w-4 h-4"></i>
           <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" class="text-indigo-600 hover:underline" target="_blank">linkedin.com/in/stella-bullo</a>
         </span>
         <span class="inline-flex items-center gap-1">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="github icon" class="w-4 h-4" />
+          <i data-lucide="github" class="w-4 h-4"></i>
           <a href="https://github.com/Stella5791" class="text-indigo-600 hover:underline" target="_blank">github.com/Stella5791</a>
         </span>
         <span class="inline-flex items-center gap-1">
-          <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="location icon" class="w-4 h-4" />
+          <i data-lucide="map-pin" class="w-4 h-4"></i>
           <a href="https://www.google.com/maps/place/Berrotar%C3%A1n,+C%C3%B3rdoba,+Argentina" class="text-indigo-600 hover:underline" target="_blank">Berrotarán, Córdoba, Argentina</a>
         </span>
       </div>
@@ -144,6 +149,12 @@
   </footer>
 
   <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof lucide !== "undefined") {
+        lucide.createIcons();
+      }
+    });
+
     function toggleCV(lang) {
       document.querySelectorAll('.cv-content').forEach(div => div.classList.remove('active'));
       document.getElementById(`cv-${lang}`).classList.add('active');
