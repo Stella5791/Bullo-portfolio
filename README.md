@@ -4,7 +4,7 @@ Welcome to my personal developer portfolio — a clean, responsive website built
 
 ## 🌐 Live Site
 
-👉 [Visit my portfolio] https://stellabullo-portfolio.netlify.app/
+👉 [Visit my portfolio (https://stellabullo-portfolio.netlify.app/)]
 
 ## 🛠️ Tech Stack
 
