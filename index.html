@@ -334,34 +334,30 @@
 
 
 <!-- Contact Section -->
-<section id="contact" class="bg-indigo-50 py-20 px-6">
-  <div class="max-w-3xl mx-auto rounded-xl bg-white border border-indigo-100 p-8" data-aos="fade-up">
-    <h2 class="text-3xl font-bold text-indigo-700 mb-6 text-center">📬 Get in Touch</h2>
-    <p class="text-gray-700 text-center mb-8 max-w-lg mx-auto">
-      Whether you're building a product, need custom scripts, or want to talk linguistics in tech — drop me a message below!
-    </p>
-    <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" class="flex flex-col gap-4">
-      <input type="hidden" name="form-name" value="contact" />
-      
-      <label for="name" class="sr-only">Name</label>
-      <input id="name" name="name" type="text" placeholder="Your Name" required
-             class="p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-shadow" />
-      
-      <label for="email" class="sr-only">Email</label>
-      <input id="email" name="email" type="email" placeholder="Your Email" required
-             class="p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-shadow" />
-      
-      <label for="message" class="sr-only">Message</label>
-      <textarea id="message" name="message" placeholder="Your Message" rows="5" required
-                class="p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-shadow"></textarea>
-      
-      <button type="submit"
-              class="mt-2 bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 hover:scale-105 transition-transform duration-300 text-sm font-semibold">
-        Send Message
-      </button>
-    </form>
-  </div>
-</section>
+<form name="contact" method="POST" netlify netlify-honeypot="bot-field" action="/thank-you.html" class="flex flex-col gap-4">
+  <input type="hidden" name="form-name" value="contact" />
+  <p class="hidden">
+    <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+  </p>
+
+  <label for="name" class="sr-only">Name</label>
+  <input id="name" name="name" type="text" placeholder="Your Name" required
+         class="p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-shadow" />
+  
+  <label for="email" class="sr-only">Email</label>
+  <input id="email" name="email" type="email" placeholder="Your Email" required
+         class="p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-shadow" />
+  
+  <label for="message" class="sr-only">Message</label>
+  <textarea id="message" name="message" placeholder="Your Message" rows="5" required
+            class="p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-300 transition-shadow"></textarea>
+  
+  <button type="submit"
+          class="mt-2 bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 hover:scale-105 transition-transform duration-300 text-sm font-semibold">
+    Send Message
+  </button>
+</form>
+
 
 
 
