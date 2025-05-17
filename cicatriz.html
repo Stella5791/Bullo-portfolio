@@ -3,245 +3,210 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Entre la lingüística y la cicatriz</title>
+  <title>Entre la lingüística y la cicatriz – Stella Bullo</title>
+  <meta name="description" content="Presentación metodológica sobre el lenguaje del dolor en la endometriosis, desde una perspectiva encarnada y tecnológica. Proyecto de Stella Bullo, desarrolladora y lingüista.">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="canonical" href="https://stellabullo.netlify.app/cicatriz.html">
+  <meta name="author" content="Stella Bullo">
+  <meta property="og:title" content="Entre la lingüística y la cicatriz – Stella Bullo">
+  <meta property="og:description" content="Reflexiones metodológicas sobre el análisis del dolor vivido en endometriosis, y el desarrollo del Pain Tagger">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://stellabullo.netlify.app/cicatriz.html">
+  <meta property="og:image" content="https://stellabullo.netlify.app/images/cicatriz.jpg">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body class="bg-white text-gray-800 font-sans">
-  <main class="max-w-3xl mx-auto px-6 pt-32 pb-20">
-    <header class="mb-12">
-      <h1 class="text-4xl font-bold text-indigo-700 mb-2">Entre la lingüística y la cicatriz</h1>
-      <p class="text-gray-600 text-lg italic">Reflexiones metodológicas sobre el análisis del dolor vivido y sus trayectorias hacia la aplicación tecnológica</p>
-    </header>
 
-    <section class="mb-12 py-10 px-6 rounded-xl bg-white even:bg-indigo-50">
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">1. Introducción</h2>
-      
-      <p>Soy lingüista, paciente y ahora desarrolladora.<br>
-           <div class="mt-8 display-flex flex-col items-center">
-        <img src="/src/endo-images/linguist.png" alt="Fotografía de Phd graduacion" class="rounded shadow">
-        <p class="text-red-700 font-semibold">⚠️ Advertencia: imagen médica sensible</p>
-        <img src="/src/endo-images/operation.png" alt="Imagen postoperatoria con vendajes y drenaje" class="rounded shadow mt-2">
-        <p class="text-sm text-gray-500 italic mt-2">Registro personal tras una cirugía relacionada con endometriosis. Incluye drenajes y vendajes. Compartido con fines metodológicos y testimoniales.</p>
-        <img src="/src/endo-images/developer.png" alt="Fotografía de pantalla de VScode" class="rounded shadow mt-2">
-        <p class="text-sm text-gray-500 italic mt-2">Foto de pantalla de desarrollo de esta pagina.</p>
-      
+  <!-- Navigation (insertado desde el sitio principal) -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex justify-between items-center px-6 md:px-12 lg:px-20 py-4">
+    <h2 class="text-xl font-bold text-indigo-700">Stella Bullo</h2>
+    <ul class="flex gap-4 text-sm">
+      <li><a href="/index.html#about" class="hover:text-indigo-600">About</a></li>
+      <li><a href="/index.html#services" class="hover:text-indigo-600">Services</a></li>
+      <li><a href="/index.html#projects" class="hover:text-indigo-600">Projects</a></li>
+      <li><a href="/index.html#contact" class="hover:text-indigo-600">Contact</a></li>
+      <li><a href="/cicatriz.html" class="text-indigo-700 font-semibold">Presentation</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="pt-32">
+  <!-- CONTENIDO INTEGRADO COMPLETO -->
+  <section class="bg-indigo-50 py-20 px-6 rounded-xl max-w-6xl text-xl leading-loose mx-auto">
+  <p class="text-sm italic text-gray-600 mb-6">Todas las citas que aparecen en esta presentación provienen de entradas de un diario personal que mantuve durante el desarrollo del proyecto.</p>
+  <h1 class="text-5xl font-bold text-indigo-700 mb-6">Entre la lingüística y la cicatriz</h1>
+  <h2 class="text-3xl font-semibold text-indigo-700 mb-4">Reflexiones metodológicas sobre el análisis del dolor vivido y sus trayectorias hacia la aplicación tecnológica</h2>
+</section>
+
+<section class="bg-white py-20 px-6 my-12 rounded-xl border border-indigo-100 max-w-6xl text-xl leading-loose mx-auto">
+  <h2 class="text-3xl font-semibold text-indigo-700 mb-8">Explorar desde el cuerpo y la palabra</h2>
+  <div class="grid md:grid-cols-3 gap-12">
+    <div>
+      <blockquote class="border-l-4 border-indigo-300 pl-4 italic text-gray-600 mb-4">
+        “Salí del quirófano con más cicatrices que respuestas. Entonces supe que, si quería entender lo que me estaba pasando, tenía que ponerle palabras. Y si no existían, tenía que buscarlas.”
+      </blockquote>
+      <button onclick="document.getElementById('sensitive-image').classList.toggle('hidden')" class="mt-4 inline-block bg-red-100 text-red-700 px-4 py-2 rounded hover:bg-red-200 transition">
+        ⚠️ Mostrar imagen médica sensible
+      </button>
+      <img id="sensitive-image" src="src/endo-images/operation.png" alt="Imagen de cicatrices" class="rounded shadow hidden mt-4" />
     </div>
-
-Esta charla nace de una necesidad doble: decir y comprender el dolor — y compartir lo aprendido con quienes también lo estudian, lo viven o lo acompañan.<br>
-Proyecto anclado en mi experiencia y en una comunidad global de práctica.</p>
-<p>“Salí del quirófano con más cicatrices que respuestas. Entonces supe que, si quería entender lo que me estaba pasando, tenía que ponerle palabras. Y si no existían, tenía que buscarlas.”</p>
-<p class="text-sm italic text-gray-600">Me llevé el lenguaje de la endometriosis a casa —donde sea que eso quede—, convirtiendo la endometriosis en mi idioma universal por defecto, mi destino lingüístico a largo plazo.</p>
-<p>Referencias clave:</p>
-      <ul class="list-disc list-inside text-sm text-gray-700 mb-4">
-        <li><a href="https://eprints.mdx.ac.uk/23975/" class="text-indigo-600 hover:underline" target="_blank">Explorando este empoderamiento en las experiencias de endometriosis (2018)</a></li>
-        <li><a href="https://doi.org/10.1177/10497323221134761" class="text-indigo-600 hover:underline" target="_blank">Visual reconstructions of endometriosis pain (2022)</a></li>
-        <li><a href="https://scholar.google.co.uk/citations?user=mGN9JSEAAAAJ&hl=en" class="text-indigo-600 hover:underline" target="_blank">Perfil académico en Google Scholar</a></li>
-      </ul>    
-</section>
-
-    <section class="mb-12 py-10 px-6 rounded-xl bg-white even:bg-indigo-50">
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">2. El dilema del insider-outsider</h2>
-      <p>Investigar tu propia comunidad de práctica genera tensiones: cercanía, confianza, pero también sesgos. Agar habla del <em>Professional Stranger</em> y Labov del <em>Observer’s Paradox</em>: yo soy parte, pero también observo, registro y analizo.</p>
-      <blockquote class="border-l-4 border-indigo-300 pl-4 italic text-gray-600 mt-4">“Mi tarea no era sanar, ni contener, ni corregir. Mi tarea era registrar, interpretar y devolver algo con sentido, sin hacer daño.”</blockquote>
-    </section>
-
-    <section class="mb-12 py-10 px-6 rounded-xl bg-white even:bg-indigo-50">
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">3. Lo que no soy (y lo que sí soy)</h2>
-      <ul class="list-disc list-inside mb-4">
-        <li>No soy médica → No corrijo diagnósticos.</li>
-        <li>No soy psicóloga → No doy contención terapéutica.</li>
-        <li>No soy activista → No hablo en nombre de otras.</li>
-        <li>No soy amiga → Mantengo un rol profesional.</li>
-      </ul>
-      <p>Soy investigadora situada, lingüista entrenada, y mujer con una cicatriz que se volvió lente metodológica.</p>
-    </section>
-
-    <section class="mb-12 py-10 px-6 rounded-xl bg-white even:bg-indigo-50">
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">4. Metodología encarnada</h2>
-      <div class="mb-6">
-        <h3 class="text-lg font-semibold text-gray-800 mb-2">Marco teórico</h3>
-        <ul class="list-disc list-inside text-sm text-gray-700 mb-4">
-          <li>Insider research y la figura de la 'extraña profesional' (Spradley, 1980)</li>
-          <li>Paradoja del observador (Labov, 1972)</li>
-          <li>Investigación situada, afectiva y comprometida con el cuidado</li>
-          <li>Reid (2023): investigar desde el cuerpo enfermo, sostenerse y sostener</li>
-          <li>Reflexividad como eje metodológico, no apéndice anecdótico</li>
-        </ul>
-      </div>
-      <div class="mb-6">
-        <h3 class="text-lg font-semibold text-gray-800 mb-2">Dilemas éticos y estrategias de contención</h3>
-        <ul class="list-disc list-inside text-sm text-gray-700 mb-4">
-          <li>¿Cómo corregir sin invalidar? ¿Cómo sostener sin disolverme?</li>
-          <li>Preguntas que guiaban sin imponer.</li>
-          <li>Derivaciones éticas (Endometriosis UK, apoyo emocional).</li>
-          <li>La entrevista como acto de cuidado y validación.</li>
-        </ul>
-      </div>
-      <div class="mb-6">
-        <h3 class="text-lg font-semibold text-gray-800 mb-2">Posicionarme desde el dolor</h3>
-        <ul class="list-disc list-inside text-sm text-gray-700 mb-4">
-          <li>El proyecto nació desde mi cuerpo, mis cirugías, mi silencio acumulado.</li>
-          <li>Disclosure: acceso y responsabilidad afectiva.</li>
-          <li>Me convertí en interlocutora legítima, espejo, confidente y sostén.</li>
-        </ul>
-        <blockquote class="border-l-4 border-indigo-300 pl-4 italic text-gray-600 mt-2">“No sabía que se podía decir todo esto. Gracias por abrir la puerta.”</blockquote>
-      </div>
-      <div class="mb-6">
-        <h3 class="text-lg font-semibold text-gray-800 mb-2">Tensiones metodológicas: objeciones y respuestas</h3>
-        <ul class="list-disc list-inside text-sm text-gray-700 mb-4">
-          <li>“¿Demasiado centrado en vos?” → Enmarca, no eclipsa.</li>
-          <li>“¿Demasiado emocional?” → La emoción es un dato, no una debilidad.</li>
-          <li>“¿Influencia en las participantes?” → Lo reconozco, no lo borro.</li>
-          <li>“¿Y el rigor?” → Validación externa, reflexividad constante.</li>
-        </ul>
-        <p class="italic text-sm text-gray-600">“Ser investigadora-paciente no fue un conflicto a resolver, sino un punto de partida para construir conocimiento encarnado, crítico y útil.”</p>
-      </div>
-
-      <div class="mb-6">
-        <h3 class="text-lg font-semibold text-gray-800 mb-2">Marco metodológico</h3>
-        <ul class="list-disc list-inside text-sm text-gray-700 mb-4">
-          <li>Diseño progresivo, en fases: observación, entrevistas, grupos focales, corpus digital.</li>
-          <li>Entrevistas semiestructuradas → Bullo (2018)</li>
-          <li>Focus groups + producción visual → Bullo et al. (2024)</li>
-          <li>Corpus online espontáneo → Bullo (2020)</li>
-          <li>ACD → Bullo (2021)</li>
-          <li>CMT → Bullo (2020)</li>
-          <li>SFL → Bullo (2021)</li>
-          <li>IPA → Bullo et al. (2024)</li>
-          <li>Enfoque bilingüe (inglés/español) y transcultural (UK–Argentina)</li>
-          <li>Reflexividad metodológica transversal en todo el proceso.</li>
-        </ul>
-      </div>
-      <p>Desde entrevistas y foros online hasta grupos visuales, la metodología fue tan diversa como compleja. La emocionalidad, la empatía, los silencios y las metáforas fueron datos tanto como las palabras.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-        <img src="/src/endo-images/image2.png" alt="Escultura de arcilla morada con hilo verde y aguja" class="rounded shadow">
-        <img src="/src/endo-images/image3.png" alt="Globo rosa envuelto con masa verde y alfiler" class="rounded shadow">
-        <img src="/src/endo-images/image4.png" alt="Tela negra con hilo metálico enrollado" class="rounded shadow">
-        <img src="/src/endo-images/image5.png" alt="Círculo rosa con pinzas, alfileres y textura" class="rounded shadow">
-        <img src="/src/endo-images/image7.png" alt="Tiras rojas en forma de llama y bola de algodón" class="rounded shadow">
-        <img src="/src/endo-images/image8.png" alt="Algodones con alfileres y limpiapipas rosados y violetas" class="rounded shadow">
-      </div>
-      <p class="text-sm text-gray-500 mt-4">Todas las imágenes provienen del artículo <a href="https://bpspsychub.onlinelibrary.wiley.com/doi/full/10.1111/bjhp.12720" class="text-indigo-600 hover:underline" target="_blank">Visual reconstructions of endometriosis pain</a>.</p>
-    </section>
-
-    <section class="mb-12 py-10 px-6 rounded-xl bg-white even:bg-indigo-50">
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">5. Impacto emocional</h2>
-      <p>Soñé con los relatos, confundí mis dolores con los ajenos. Mis asistentes también se vieron afectados. ¿Cuánto se puede involucrar una sin desdibujarse?</p>
-      <img src="/src/endo-images/Stella-Bleu.png" alt="Fotografía de Stella acostada en el piso con un gato acompañándola" class="rounded shadow mt-6">
-      <p class="text-sm text-gray-500 mt-2 italic">Imagen personal representando el dolor crónico: Stella acompañada por su gato.</p>
-   
-    </section>
-
-    <section class="mb-12 py-10 px-6 rounded-xl bg-white even:bg-indigo-50">
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">6. Lenguaje del dolor (1): lo inefable hecho palabra</h2>
-      <p class="text-sm text-gray-600 italic mb-4">*Los ejemplos que verán a continuación son traducciones del inglés realizadas por mí a partir de entrevistas, foros y focus groups. Buscan preservar la voz original sin perder la fuerza metafórica.*</p>
-      <ul class="list-disc list-inside text-sm text-gray-700 mb-4">
-        <li>Las pacientes luchaban por “encontrar las palabras”.</li>
-        <li>“Es como si un gato con cuchillas se rascara por dentro y no pudiera salir.”</li>
-        <li>Escalas clínicas insuficientes: cuantificar no es comunicar.</li>
-        <li>El lenguaje emergía como refugio, traducción y campo de batalla:
-          <ul class="list-disc list-inside ml-6 mt-2">
-            <li><strong>Refugio:</strong> “Nunca lo había dicho así. Me hace sentir menos sola.”</li>
-            <li><strong>Traducción:</strong> “¿Es como si algo te apretara desde dentro?”</li>
-            <li><strong>Campo de batalla:</strong> “Me dijeron que era normal. Pero yo me estaba desangrando.”</li>
-          </ul>
-        </li>
-        <li>Menú de metáforas (Bullo, 2020) como herramienta exploratoria y clínica.</li>
-        <li>Frontiers (2021): metáforas abren vías de entendimiento entre médicos y pacientes.</li>
-      </ul>
-    </section>
-
-    <section class="mb-12 py-10 px-6 rounded-xl bg-white even:bg-indigo-50">
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">6. Lenguaje del dolor (2): metáforas dominantes</h2>
-      <ul class="list-disc list-inside text-sm text-gray-700 mb-4">
-        <li><strong>Animalización:</strong> “Una criatura dentro mío que araña todo con garras.”</li>
-        <li><strong>Maquinaria:</strong> “Como si un tornillo se apretara cada vez más.”</li>
-        <li><strong>Violencia:</strong> “Me apuñalan desde adentro con algo oxidado.”</li>
-        <li><strong>Fuego:</strong> “Un horno encendido atrapado en mi vientre.”</li>
-        <li><strong>Despersonalización:</strong> “Es como si no tuviera cuerpo, sólo dolor.”</li>
-      </ul>
-      <p class="text-gray-700 text-sm mb-8">El lenguaje no sólo expresa el dolor: lo construye y lo transforma.</p>
-
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">7. Del lenguaje al código: diseñar desde el dolor</h2>
-      <p>El lenguaje del dolor es político, cultural y personal. La lingüística aplicada puede ayudar a entender, validar y traducir experiencias difíciles de nombrar. Esa fue siempre mi intención.</p>
-    </section>
-
-    <section class="mb-12 py-10 px-6 rounded-xl bg-white even:bg-indigo-50">
-      
-<h3 class="text-lg font-semibold text-gray-800 mt-8 mb-2">Del prototipo al impacto: ¿para qué sirve el Pain Tagger?</h3>
-<p class="text-sm text-gray-700 mb-2">Herramienta lingüística digital para analizar automáticamente descripciones de dolor.</p>
-<ul class="list-disc list-inside text-sm text-gray-700 mb-4">
-  <li>Clasifica expresiones según dimensiones experienciales (sensorial, afectiva) y metáforas dominantes (violencia, peso, fuego, animal, maquinaria…).</li>
-  <li>Ayuda a identificar patrones de comunicación del dolor que suelen perderse en consultas médicas breves.</li>
-  <li>Diseñada a partir de corpus reales de pacientes con endometriosis y desarrollada por una investigadora-paciente.</li>
-</ul>
-<h4 class="font-semibold text-indigo-700 mt-6 mb-2">🎯 ¿Para qué lo hice?</h4>
-<ul class="list-disc list-inside text-sm text-gray-700 mb-4">
-  <li>Porque lo que no se puede nombrar, no se puede tratar.</li>
-  <li>Porque ningún paciente debería salir de una consulta sintiendo que no fue entendido.</li>
-  <li>Porque el lenguaje del dolor no puede seguir siendo invisible ni genérico.</li>
-</ul>
-<h4 class="font-semibold text-indigo-700 mt-6 mb-2">🔜 ¿Qué sigue?</h4>
-<ul class="list-disc list-inside text-sm text-gray-700 mb-6">
-  <li>Desarrollo de una interfaz accesible para pacientes y profesionales.</li>
-  <li>Integración con escalas visuales, grabación de voz y NLP multilingüe.</li>
-  <li>Pruebas con pacientes reales en entornos clínicos.</li>
-  <li>Objetivo final: una herramienta de apoyo a la comunicación clínica del dolor, basada en lenguaje real, situada, y humanamente precisa.</li>
-</ul>
-<p>Hoy estoy en el mundo del NLP y desarrollo de aplicaciones. No fue una huida de la academia, fue una evolución. Mi objetivo es crear herramientas que ayuden a decir el dolor y a escucharlo mejor.</p>
-      <p class="text-sm text-gray-500 mt-4">Ver el proyecto en GitHub: <a href="https://github.com/Stella5791/pain-descriptor-tool" class="text-indigo-600 hover:underline" target="_blank">Pain Descriptor Auto-Tagger</a></p>
-<p class="text-sm text-gray-500 mt-2">También disponible: <a href="https://stellabullo.netlify.app/metaphor-tagger" class="text-indigo-600 hover:underline" target="_blank">Interfaz web del proyecto Metaphor Tagger</a></p>
-    </section>
-  <section class="mb-12 py-10 px-6 rounded-xl bg-white even:bg-indigo-50">
-  <h2 class="text-2xl font-semibold text-indigo-700 mb-4">8. Cierre: lo que me dejó el proyecto</h2>
-  <p class="text-gray-700 mb-4">Me dejó una cicatriz visible… y una comunidad invisible que nunca me dejó sola.</p>
-  <ul class="list-disc list-inside text-sm text-gray-700 mb-4">
-    <li>Me enseñó que investigar desde adentro no es una contradicción: es un acto ético, político y afectivo.</li>
-    <li>Me recordó que el lenguaje no es neutro: puede herir o puede sanar.</li>
-    <li>Me dio un mapa: para mí, para otras, para quienes quieran escuchar distinto.</li>
-  </ul>
-  <blockquote class="border-l-4 border-indigo-300 pl-4 italic text-gray-600 mt-2 mb-6">
-    “A veces, nombrar el dolor no lo alivia del todo. Pero lo devuelve al mundo, y eso ya es una forma de libertad.”
-  </blockquote>
-  <p class="text-gray-700">Gracias por estar.</p>
-  <p class="text-gray-700">Gracias por escuchar.</p>
-  <p class="text-gray-700 font-semibold mt-4">¿Preguntas, comentarios, resonancias?
-<br>
-<img src="/mnt/data/A_logo_for_a_digital_health_application_named_\"Thi.png" alt="Logo del proyecto This is my pain" class="w-40 mt-4"></p>
-</section>
-<section class="mb-12 py-10 px-6 rounded-xl bg-white even:bg-indigo-50">
-  <h2 class="text-2xl font-semibold text-indigo-700 mb-4">9. Next project: <em>This is my pain</em></h2>
-  <p class="text-gray-700 mb-4">A partir de lo aprendido, I'm developing a digital application, <strong>This is my pain</strong>, designed for people with chronic pain, especially endometriosis. The goal is to support patients in putting their pain into words, especially in contexts where suffering is often dismissed or misunderstood.</p>
-  <ul class="list-disc list-inside text-sm text-gray-700 mb-4">
-    <li>Formulario guiado para describir el dolor usando metáforas, emociones y contexto.</li>
-    <li>Opción de grabación de voz y análisis automático mediante NLP.</li>
-    <li>Salidas visuales que faciliten la comunicación con profesionales de salud.</li>
-    <li>Diseñada para ser usada en casa, en salas de espera o durante la consulta.</li>
-  </ul>
-  <p class="text-sm italic text-gray-600">This tool will be free, multilingual (starting with English/Spanish), and validated with real patients. I want the language of pain to become visible, legitimate, and transformative.</p>
-</section>
-<section class="mb-12 py-10 px-6 rounded-xl bg-white even:bg-indigo-50">
-  <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Referencias</h2>
-  <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
-    <li>Bullo, S. (2018). <em>Exploring disempowerment in women’s accounts of endometriosis experiences</em>. <strong>Discourse & Communication, 12</strong>(2), 211–228.</li>
-    <li>Bullo, S. (2020). <em>'I feel like I’m being stabbed by a thousand tiny men': Metaphor and embodiment in endometriosis forums</em>. <strong>Health, 24</strong>(6), 667–685.</li>
-    <li>Bullo, S. (2021). <em>The construction of agency in Spanish and English narratives of endometriosis</em>. <strong>Communication & Medicine, 18</strong>(1), 59–74.</li>
-    <li>Bullo, S. (2021). <em>Agency and representation in bilingual narratives of endometriosis</em>. <strong>British Journal of Health Psychology, 26</strong>(4), 1023–1040.</li>
-    <li>Bullo, S., & Pascual, M. (2024). <em>Visual reconstructions of endometriosis pain: Metaphor, identity and multimodal expression</em>. <strong>British Journal of Health Psychology</strong>.</li>
-    <li>Bullo, S. (2021). <em>Addressing challenges in endometriosis pain communication</em>. <strong>Frontiers in Global Women’s Health, 2</strong>, 764693.</li>
-    <li>Labov, W. (1972). <em>Sociolinguistic patterns</em>. University of Pennsylvania Press.</li>
-    <li>Spradley, J. P. (1980). <em>Participant observation</em>. Holt, Rinehart and Winston.</li>
-    <li>Reid, A. (2023). <em>'I get it, I’m sick too': An autoethnographic study of one researcher/practitioner/patient living with Lyme disease</em>. <strong>Qualitative Health Research</strong>. <a href="https://pubmed.ncbi.nlm.nih.gov/37843470/" class="text-indigo-600 hover:underline" target="_blank">https://pubmed.ncbi.nlm.nih.gov/37843470/</a></li>
-  </ul>
-</section>
-<section class="mt-16 text-center">
-  <h2 class="text-xl font-semibold text-indigo-700 mb-4">¿Te interesa colaborar o saber más?</h2>
-  <p class="text-gray-700 mb-6">Descargá esta presentación o escribime si querés ser parte del próximo paso.</p>
-  <div class="flex justify-center gap-4">
-    <a href="/presentacion-dolor.pdf" class="bg-indigo-600 text-white px-5 py-3 rounded-full text-sm font-medium hover:bg-indigo-700 transition">📄 Descargar PDF</a>
-    <a href="mailto:stella.bullo.pro@gmail.com" class="bg-white border border-indigo-600 text-indigo-700 px-5 py-3 rounded-full text-sm font-medium hover:bg-indigo-50 transition">✉️ Escribime</a>
+    <div>
+      <h3 class="text-2xl font-semibold text-indigo-700 mb-4">¿Quién soy?</h3>
+      <p class="text-lg">Soy lingüista, paciente, desarrolladora. Esta presentación nace de una necesidad doble: decir y comprender el dolor, transformarlo en conocimiento y en herramienta.</p>
+    </div>
+    <div>
+      <h3 class="text-2xl font-semibold text-indigo-700 mb-4">Motivación</h3>
+      <p class="text-lg mb-4">Proyecto anclado en mi experiencia y en una comunidad global de práctica.</p>
+      <blockquote class="border-l-4 border-indigo-300 pl-4 italic text-gray-600 my-4">
+        "El lenguaje de la endometriosis se volvió mi idioma universal por defecto, mi destino lingüístico a largo plazo."
+      </blockquote>
+      <img src="/src/endo-images/lenguage.png" alt="Lenguaje interno" class="rounded shadow mx-auto max-h-60 mt-4">
+      <p class="text-xs text-gray-500 italic mt-2">Representación simbólica: el lenguaje como forma de habitar el cuerpo.</p>
+    </div>
   </div>
 </section>
+<section class="bg-white py-10 px-6 my-12 rounded-xl border border-indigo-100 max-w-6xl text-xl leading-loose mx-auto">
+  <h2 class="text-3xl font-semibold text-indigo-700 mb-4">El contexto del dolor: La Endometriosis</h2>
+  
+  <p class="text-lg mt-6">La endometriosis es una enfermedad crónica, compleja y multifacética. 
+    <br/>La experiencia del dolor es central en su diagnóstico y tratamiento.</p>
+  <blockquote class="border-l-4 border-indigo-300 pl-4 italic text-gray-600 my-4">“El dolor no es solo un síntoma, es una experiencia vivida que necesita ser entendida y comunicada.”</blockquote>
+</section>
+
+
+  <section class="bg-indigo-50 py-10 px-6 my-12 rounded-xl max-w-6xl text-xl leading-loose mx-auto">
+    <h2 class="text-3xl font-semibold text-indigo-700 mb-4">Objetivo del Proyecto</h2>
+    <ul class="list-disc list-inside space-y-2 mb-4">
+      <li>Captar la experiencia vivida en sus propias palabras</li>
+      <li>Identificar metáforas que estructuran la conceptualización del dolor</li>
+      <li>Tender puentes entre pacientes y lenguaje clínico</li>
+      <li>Desarrollar herramientas útiles (académicas, clínicas y tecnológicas)</li>
+    </ul>
+  </section>
+
+  <section class="bg-white py-10 px-6 my-12 rounded-xl border border-indigo-100 max-w-6xl text-xl leading-loose mx-auto">
+    <h2 class="text-3xl font-semibold text-indigo-700 mb-4">Metodología y Resultados</h2>
+    <p class="text-lg mb-4">Metodología: entrevistas, focus groups, corpus online, ACD, CMT, SFL, IPA (bilingüe y transcultural).</p>
+    <ul class="list-disc list-inside space-y-2 mb-4">
+      <li>Lenguaje del dolor como violencia, animalidad, fuego, maquinaria, despersonalización</li>
+      <li>Visualización del dolor: color, textura, materiales</li>
+      <li>El lenguaje construye y transforma el dolor</li>
+    </ul>
+    <img src="images/metaforas_pain.jpg" alt="Visualización de metáforas del dolor" class="rounded shadow mx-auto mt-6" />
+  </section>
+
+ <section class="bg-indigo-100 py-20 px-6 my-12 rounded-xl border border-indigo-200 max-w-6xl text-xl leading-loose mx-auto">
+  <h2 class="text-3xl font-semibold text-indigo-700 mb-6">El cuerpo como método</h2>
+
+  <p class="mb-6">Este proyecto nació desde mi cuerpo, mis cirugías, mi silencio acumulado.</p>
+
+  <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Dilemas éticos y estrategias de contención</h3>
+  <ul class="list-disc list-inside mb-6">
+    <li>¿Cómo corregir sin invalidar? ¿Cómo sostener sin disolverme?</li>
+    <li>Preguntas que guiaban sin imponer.</li>
+    <li>Derivaciones éticas (Endometriosis UK, apoyo emocional).</li>
+    <li>La entrevista como acto de cuidado y validación.</li>
+  </ul>
+
+  <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Tensiones metodológicas: objeciones y respuestas</h3>
+  <ul class="list-disc list-inside mb-6">
+    <li>¿Demasiado centrado en mí? → Enmarca, no eclipsa.</li>
+    <li>¿Demasiado emocional? → La emoción es un dato, no una debilidad.</li>
+    <li>¿Influencia en las participantes? → Lo reconozco, no lo borro.</li>
+    <li>¿Y el rigor? → Validación externa, reflexividad constante.</li>
+  </ul>
+  <blockquote class="border-l-4 border-indigo-300 pl-4 italic text-gray-600 my-6">
+    “Ser investigadora-paciente no fue un conflicto a resolver, sino un punto de partida para construir conocimiento encarnado, crítico y útil.”
+  </blockquote>
+
+  <h3 class="text-2xl font-semibold text-indigo-700 mb-2">El dilema del “Professional Stranger” y el “Observer’s Paradox”</h3>
+  <ul class="list-disc list-inside mb-6">
+    <li>Marco teórico: Agar, Labov, autoetnografía, etic/emic.</li>
+    <li>Disclosure como estrategia metodológica: abrir el juego para ganar confianza, sabiendo que no hay vuelta atrás.</li>
+    <li>Sisterhood como recurso y riesgo: confianza, pero también sobreidentificación.</li>
+  </ul>
+
+  <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Lo que no soy (y lo que sí soy)</h3>
+  <p class="italic mb-2">"Investigar desde adentro me obligó a recordar, todo el tiempo, lo que no soy."</p>
+  <ul class="list-disc list-inside mb-4">
+    <li>No soy médica: aunque tenga información, no puedo corregir diagnósticos.</li>
+    <li>No soy psicóloga: aunque escuche con empatía, no puedo intervenir terapéuticamente.</li>
+    <li>No soy activista o portavoz: aunque muchas me veían así, no era mi rol hablar “por” ellas.</li>
+    <li>No soy amiga: aunque el tono se acercara a una charla íntima, yo tenía un rol específico.</li>
+  </ul>
+  <ul class="list-disc list-inside mb-6">
+    <li>Sí soy una investigadora con formación ética y sensibilidad situada.</li>
+    <li>Sí soy una lingüista que sabe analizar el lenguaje, pero no siempre puede contener la emoción que lo rodea.</li>
+    <li>Sí soy una persona con endometriosis que eligió usar esa cicatriz como lente metodológica, no como herramienta terapéutica.</li>
+  </ul>
+
+  <blockquote class="border-l-4 border-indigo-300 pl-4 italic text-gray-600 mt-6">
+    “Mi tarea no era sanar, ni contener, ni corregir. Mi tarea era registrar, interpretar y devolver algo con sentido, sin hacer daño.”
+  </blockquote>
+</section>
+
+
+  <section class="bg-indigo-50 py-20 px-6 my-12 rounded-xl max-w-6xl text-xl leading-loose mx-auto">
+    <h2 class="text-3xl font-semibold text-indigo-700 mb-4">Después del dolor y la escritura: <span class="bg-indigo-200 px-2 py-1 rounded">Pain Descriptor Auto-Tagger</span></h2>
+    <p class="text-lg mb-4">Herramienta emergente: Pain Descriptor Auto-Tagger</p>
+    <ul class="list-disc list-inside space-y-2 mb-4">
+      <li>Clasificación automática de metáforas y dimensiones experienciales</li>
+      <li>Basado en corpus reales y desarrollado por una investigadora-paciente</li>
+      <li>Aplicación clínica y comunicativa</li>
+    </ul>
+    <img src="images/tagger_visual.jpg" alt="Visualización del Pain Tagger" class="rounded shadow mx-auto mt-6" />
+    <blockquote class="border-l-4 border-indigo-300 pl-4 italic text-gray-600 my-4">“Porque lo que no se puede nombrar, no se puede tratar.”</blockquote>
+  </section>
+
+  <section class="bg-white py-20 px-6 my-12 rounded-xl border border-indigo-100 max-w-6xl text-xl leading-loose mx-auto">
+    <h2 class="text-3xl font-semibold text-indigo-700 mb-4">Contribuciones y Cierre</h2>
+    <ul class="list-disc list-inside space-y-2 mb-4">
+      <li>Innovación metodológica desde dentro</li>
+      <li>Vinculación entre lingüística, salud y tecnología</li>
+      <li>Propuesta ética y empática</li>
+    </ul>
+    <p class="text-lg mb-4">Lo que me dejó:</p>
+    <ul class="list-disc list-inside space-y-2 mb-4">
+      <li>Una cicatriz visible y una comunidad invisible</li>
+      <li>Un mapa para mí y para otras</li>
+      <li>Lenguaje que puede sanar</li>
+    </ul>
+    <blockquote class="border-l-4 border-indigo-300 pl-4 italic text-gray-600 my-4">“A veces, nombrar el dolor no lo alivia del todo. Pero lo devuelve al mundo, y eso ya es una forma de libertad.”</blockquote>
+    <p class="text-lg mt-6 font-semibold">Estoy abierta a colaboraciones interdisciplinarias, clínicas y tecnológicas. Si este trabajo te resonó, escribime: <a href="mailto:stella.bullo.pro@gmail.com" class="text-indigo-600 hover:underline">stella.bullo.pro@gmail.com</a></p>
+  </section>
+
+  <section class="bg-indigo-50 py-20 px-6 my-12 rounded-xl max-w-6xl text-xl leading-loose mx-auto">
+    <h2 class="text-3xl font-semibold text-indigo-700 mb-4">Referencias</h2>
+    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+      <li>Bullo, S. (2018). <em>Exploring disempowerment in women’s accounts of endometriosis experiences</em>. Discourse & Communication, 12(2), 211–228. <a href="https://doi.org/10.1177/1750481318761254" class="text-indigo-600 hover:underline" target="_blank">https://doi.org/10.1177/1750481318761254</a></li>
+      <li>Bullo, S. (2020). <em>'I feel like I’m being stabbed by a thousand tiny men': Metaphor and embodiment in endometriosis forums</em>. Health, 24(6), 667–685. <a href="https://doi.org/10.1177/1363459319847801" class="text-indigo-600 hover:underline" target="_blank">https://doi.org/10.1177/1363459319847801</a></li>
+      <li>Bullo, S. (2021). <em>The construction of agency in Spanish and English narratives of endometriosis</em>. Communication & Medicine, 18(1), 59–74. <a href="https://doi.org/10.1558/cam.18606" class="text-indigo-600 hover:underline" target="_blank">https://doi.org/10.1558/cam.18606</a></li>
+      <li>Bullo, S. (2021). <em>Agency and representation in bilingual narratives of endometriosis</em>. British Journal of Health Psychology, 26(4), 1023–1040. <a href="https://doi.org/10.1111/bjhp.12512" class="text-indigo-600 hover:underline" target="_blank">https://doi.org/10.1111/bjhp.12512</a></li>
+      <li>Bullo, S., & Pascual, M. (2024). <em>Visual reconstructions of endometriosis pain: Metaphor, identity and multimodal expression</em>. British Journal of Health Psychology.</li>
+      <li>Bullo, S. (2021). <em>Addressing challenges in endometriosis pain communication</em>. Frontiers in Global Women’s Health, 2, 764693. <a href="https://doi.org/10.3389/fgwh.2021.764693" class="text-indigo-600 hover:underline" target="_blank">https://doi.org/10.3389/fgwh.2021.764693</a></li>
+      <li>Labov, W. (1972). <em>Sociolinguistic patterns</em>. University of Pennsylvania Press.</li>
+      <li>Spradley, J. P. (1980). <em>Participant observation</em>. Holt, Rinehart and Winston.</li>
+      <li>Reid, A. (2023). <em>'I get it, I’m sick too': An autoethnographic study of one researcher/practitioner/patient living with Lyme disease</em>. Qualitative Health Research. <a href="https://pubmed.ncbi.nlm.nih.gov/37843470/" class="text-indigo-600 hover:underline" target="_blank">https://pubmed.ncbi.nlm.nih.gov/37843470/</a></li>
+    </ul>
+  </section>
 </main>
+
+  <footer class="bg-white border-t border-indigo-100 py-6 px-4 text-indigo-700 text-base font-medium mt-20">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+      <p>&copy; 2025 Stella Bullo — All rights reserved.</p>
+      <a href="mailto:stella.bullo.pro@gmail.com" class="flex items-center gap-2 hover:text-indigo-900 hover:scale-105 transition-transform duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12l-4-4-4 4m0 0l4 4m-4-4h16" />
+        </svg>
+        stella.bullo.pro@gmail.com
+      </a>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
 </html>
