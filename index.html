@@ -86,7 +86,6 @@
 </section>
 
 <!-- About Section -->
-<!-- About Section -->
 <hr class="border-t border-gray-200 mb-0" />
 <section id="about" class="bg-gray-50 p-8 md:p-16">
   <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
@@ -112,7 +111,7 @@
       <h3 class="font-semibold text-lg mt-6">Publications</h3>
       <p class="mb-4">
         View my academic publications on
-        <a href="https://scholar.google.co.uk/citations?hl=en&user=mGN9JSEAAAAJ&view_op=list_works">Google Scholar</a>.
+        <a href="https://scholar.google.co.uk/citations?hl=en&user=mGN9JSEAAAAJ&view_op=list_works" target="_blank" class="text-indigo-600 hover:underline">Google Scholar</a>.
       </p>
     </div>
     <div class="flex justify-center flex-col items-center" data-aos="fade-left">
@@ -121,7 +120,6 @@
     </div>
   </div>
 </section>
-
 
 <!-- Services Section -->
 <section id="services" class="bg-indigo-50 p-8 md:p-16">
@@ -165,8 +163,6 @@
   </div>
 </section>
 
-<hr class="border-t border-gray-200 mt-0" />
-<!-- Projects Section -->
 <hr class="border-t border-gray-200 mt-0" />
 <!-- Projects Section -->
 <section id="projects" class="bg-white p-8 md:p-16">
@@ -239,7 +235,6 @@
   </div>
 </section>
 
-
 <!-- Articles Section -->
 <section id="articles" class="bg-indigo-50 p-8 md:p-16">
   <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8">Articles</h2>
@@ -280,4 +275,47 @@
 </footer>
 
 <!-- Scroll-to-top -->
-<button id
+<button id="scrollToTopBtn" class="fixed bottom-6 right-6 p-3 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 hidden z-50">
+  <i data-lucide="chevron-up" class="w-5 h-5"></i>
+  <span class="sr-only">Back to top</span>
+</button>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof lucide !== "undefined") {
+      lucide.createIcons();
+    }
+
+    const nav = document.querySelector("nav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("shadow-lg", window.scrollY > 10);
+    });
+
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+    window.addEventListener("scroll", () => {
+      scrollBtn.classList.toggle("hidden", window.scrollY < 300);
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    AOS.init({ duration: 1000, once: true });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.getElementById(this.getAttribute("href").substring(1));
+        if (target) {
+          const offset = 80;
+          const offsetPosition = target.offsetTop - offset;
+          window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
