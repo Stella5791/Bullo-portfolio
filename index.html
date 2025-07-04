@@ -296,16 +296,28 @@
 <!-- Contact -->
 <section id="contact" class="p-8 md:p-16 bg-gray-50">
   <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8">Contact Me</h2>
-  <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" class="max-w-xl mx-auto flex flex-col gap-4">
+
+  <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" class="max-w-xl mx-auto flex flex-col gap-4">
+    <!-- Required hidden inputs -->
     <input type="hidden" name="form-name" value="contact" />
+    <p class="hidden">
+      <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+    </p>
+
+    <!-- Visible fields -->
     <label for="name" class="sr-only">Name</label>
     <input id="name" type="text" name="name" placeholder="Name" class="p-3 rounded-md border border-gray-300" required />
+
     <label for="email" class="sr-only">Email</label>
     <input id="email" type="email" name="email" placeholder="Email" class="p-3 rounded-md border border-gray-300" required />
+
     <label for="message" class="sr-only">Message</label>
     <textarea id="message" name="message" placeholder="Message" rows="4" class="p-3 rounded-md border border-gray-300" required></textarea>
+
     <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transform hover:scale-105 transition-transform duration-300">Send</button>
   </form>
+</section>
+
 </section>
 
 <!-- Footer -->
