@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why Metaphor Matters in NLP | Stella Bullo</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+      line-height: 1.7;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      color: #4f46e5;
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="../#articles" class="back-link text-indigo-600 font-semibold mb-8 inline-block cursor-pointer hover:underline">&larr; Back to Articles</a>
+
+  <h1 class="text-4xl font-bold">Why Metaphor Matters in NLP</h1>
+  <p class="mb-6 italic">What figurative language reveals about human experience and how we can teach machines to listen<br />By Dr. Stella Maris Bullo</p>
+
+  <h2 class="text-2xl font-semibold mt-10 mb-6">Machines still struggle to understand us when it matters most</h2>
+  <p class="mb-6">Natural Language Processing has made extraordinary strides in recent years. Language models can now generate fluent text, answer complex questions, and simulate conversation. But they still falter when faced with something as simple and as human as metaphor.</p>
+  <p class="mb-6">When someone says, “It feels like barbed wire is wrapped around my spine,” they are not being poetic. They are reaching for language that captures something intense, embodied, and hard to name. For people living with chronic pain, figurative language is often the only way to make suffering speakable. Yet most NLP systems overlook or misinterpret it.</p>
+
+  <h2 class="text-2xl font-semibold mt-10 mb-6">What metaphor tells us about meaning</h2>
+  <p class="mb-6">Metaphor is not decoration. It is a fundamental part of how we express ourselves, especially when literal language fails. Pain, loss, trauma, and identity often resist description. In those moments, we reach for metaphor, not to be clever, but to be understood.</p>
+  <p class="mb-6">As a linguist, I have spent years studying how people use metaphor in health communication. As someone with endometriosis, I have also experienced the frustration of trying to explain pain in ways that doctors might take seriously. These experiences shaped both my academic research and my shift into development.</p>
+
+  <h2 class="text-2xl font-semibold mt-10 mb-6">Building Explain My Pain: a tool grounded in both research and experience</h2>
+  <p class="mb-6"><em>Explain My Pain</em> is a web application that helps users describe pain using metaphor, then generates structured, clinically relevant summaries. It is built with Python, Flask, and regular expressions, but its foundation is linguistic.</p>
+  <p class="mb-6">The app recognises metaphorical expressions from a custom-built taxonomy, developed through years of research with people living with endometriosis. It includes categories like heat, intrusion, mechanical force, constriction, and predation. Each expression is linked to an explanation of what it conveys experientially, how it might be rephrased clinically, and what emotional or bodily state it implies.</p>
+  <p class="mb-6"><strong>Example:</strong><br />“It’s like something is stabbing me from the inside”<br />→ Suggests acute, localised pain with violent or invasive qualities<br />→ Clinically reframed as: “The patient describes sharp, penetrating pain that feels internal and sudden”</p>
+  <p class="mb-6">The app then creates two outputs: one for patients to take to consultations, and another for clinicians, written in plain medical terms. Both are printable and context-aware.</p>
+
+  <h2 class="text-2xl font-semibold mt-10 mb-6">Why this matters for NLP</h2>
+  <p class="mb-6">Most NLP systems treat metaphor as noise or anomaly. Even when models can classify an expression as metaphorical, they rarely understand what it means. That is because metaphor requires more than statistical association. It requires pragmatic reasoning, context sensitivity, and cultural knowledge.</p>
+  <p class="mb-6">These are areas where linguistic insight remains essential. A metaphor is not just a figure of speech. It draws on conceptual mappings, cultural conventions, and emotional resonance. If NLP is to move closer to real understanding, it needs to take figurative language seriously.</p>
+
+  <h2 class="text-2xl font-semibold mt-10 mb-6">A case for linguistically informed development</h2>
+  <p class="mb-6">I am not a traditionally trained software engineer. I came to coding through research, driven by the need to build a tool that did not yet exist. What I bring is not just syntax and structure, but depth. I understand language as a system of meaning shaped by experience, power, and culture.</p>
+  <p class="mb-6">My work sits at the intersection of linguistics and human-centred technology. I build tools that make language visible, that help people say what they feel, and that support better communication, especially in contexts where being understood can change the course of care.</p>
+
+  <h2 class="text-2xl font-semibold mt-10 mb-6">NLP needs to listen better</h2>
+  <p class="mb-6">If we want AI to be genuinely helpful in healthcare, mental health, or any emotionally charged context, it must learn to process how people actually speak. That includes metaphor, irony, exaggeration, and all the richness of real language.</p>
+  <p class="mb-6">Figurative language is not a problem to be corrected. It is a resource to be understood. Tools like <em>Explain My Pain</em> show what becomes possible when we design for the complexity of human language rather than reduce it.</p>
+
+  <h2 class="text-2xl font-semibold mt-10 mb-6">Explore the app</h2>
+  <p class="mb-6"><a href="https://github.com/Bullo-portfolio/translate-my-pain" class="text-indigo-600 hover:underline">Explain My Pain on GitHub</a></p>
+
+  <h2 class="text-2xl font-semibold mt-10 mb-6">Further reading</h2>
+  <p class="mb-6">
+    Bullo, S. (2020). <em>“I feel like I’m being stabbed by a thousand tiny men”: The challenges of communicating endometriosis pain.</em> <strong>Health</strong>, 24(5), 476–492.
+    <a href="https://e-space.mmu.ac.uk/622513/1/SBullo2019-Endo-pain-comm.pdf" class="text-indigo-600 hover:underline">Read full article (PDF)</a>
+  </p>
+  <p class="mb-6">
+    Bullo, S. & Hearn, J. H. (2021). <em>Parallel worlds and personified pain: A mixed-methods analysis of pain metaphor use by women with endometriosis.</em>
+    <strong>British Journal of Health Psychology</strong>, 26, 271–288.
+    <a href="https://bpspsychub.onlinelibrary.wiley.com/doi/full/10.1111/bjhp.12472" class="text-indigo-600 hover:underline">Read online</a>
+  </p>
+
+  <a href="../#articles" class="back-link text-indigo-600 font-semibold mb-8 inline-block cursor-pointer hover:underline">&larr; Back to Articles</a>
+  <br />
+  <a href="../#home" class="back-link text-indigo-600 font-semibold mb-8 inline-block cursor-pointer hover:underline">&larr; Back to Home</a>
+
+</body>
+</html>
