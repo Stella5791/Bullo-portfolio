@@ -1,112 +1,186 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Reflections on Life | Stella Bullo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reflections – Stella Bullo</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #fdfaf6;
+      --accent: #c88b75;
+      --text: #2d2d2d;
+      --mono: 'IBM Plex Mono', monospace;
+      --serif: 'Lora', serif;
+    }
+
     body {
-      font-family: 'Helvetica Neue', sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: var(--serif);
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      background: #fdfdfd;
-      color: #222;
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
     }
-    h1, h2 {
-      font-weight: 700;
-      color: #333;
-    }
+
     nav {
-      margin-bottom: 2rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      z-index: 1000;
     }
+
     nav a {
-      margin-right: 1rem;
       text-decoration: none;
-      color: #2a6f97;
+      color: var(--text);
+      margin-left: 1rem;
+      font-family: var(--mono);
+      font-size: 0.95rem;
     }
-    section {
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid #ddd;
+
+    header {
+      padding-top: 100px;
+      padding-bottom: 3rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      text-align: left;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
-    .lang-switch {
-      margin: 1rem 0;
+
+    header img {
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      filter: grayscale(100%);
+      flex-shrink: 0;
+    }
+
+    .header-text {
+      max-width: 600px;
+    }
+
+    .header-text h1 {
+      font-family: var(--mono);
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .header-text p {
       font-style: italic;
+      margin-top: 1rem;
     }
+
+    section {
+      padding: 3rem 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .theme-title {
+      font-family: var(--mono);
+      font-size: 1.2rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 0.5rem;
+    }
+
+    .article-card {
+      margin-bottom: 2.5rem;
+    }
+
+    .article-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .article-card time {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    .article-card p {
+      margin: 0.75rem 0 0;
+    }
+
     footer {
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid #ccc;
-      font-size: 0.9rem;
-      color: #666;
-    }
-    .back-top {
-      display: block;
-      margin-top: 2rem;
-      text-align: right;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.85rem;
+      color: #888;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Reflections on Life</h1>
-    <p>A bilingual archive of essays, metaphors, and reflections by Stella Bullo</p>
-  </header>
-
   <nav>
-    <strong>Jump to:</strong>
-    <a href="#like-a-fire-in-my-womb">Like a Fire in My Womb</a>
-    <a href="#myth-of-the-strong-woman">The Myth of the Strong Woman</a>
-    <a href="#what-i-meant-by-home">What I Meant by Home</a>
+    <div><strong>Stella Bullo</strong></div>
+    <div>
+      <a href="/">Portfolio</a>
+      <a href="/reflections.html">Reflections</a>
+      <a href="/contact">Contact</a>
+    </div>
   </nav>
 
-  <section id="like-a-fire-in-my-womb">
-    <h2>Like a Fire in My Womb</h2>
-    <p><em>What pain metaphors can reveal about invisible illnesses like endometriosis</em></p>
+  <header>
+    <img src="your-photo.jpg" alt="Stella Bullo portrait" />
+    <div class="header-text">
+      <h1>Reflections</h1>
+      <p>Thoughts, fragments, and essays on home, pain, creativity, and womanhood — a personal space where language and life meet.</p>
+    </div>
+  </header>
 
-    <p>“It’s like something is stabbing me from the inside.”<br/>
-    “It feels like an animal is clawing at my belly from within.”<br/>
-    “It’s fire. It’s pressure. It’s something that won’t let me live.”</p>
+  <main>
+    <section>
+      <div class="theme-title">Home</div>
+      <div class="article-card">
+        <h3>The Myth of the Return</h3>
+        <time>July 2025</time>
+        <p>A reflection on what it means to come back to a place that made you, and how belonging is sometimes an act of imagination.</p>
+      </div>
+    </section>
 
-    <p>These are just some of the phrases I’ve heard over the years from other women living with endometriosis.
-    And in my case, the one I repeated most often was: “It feels like someone is strangling my uterus.”</p>
+    <section>
+      <div class="theme-title">Pain</div>
+      <div class="article-card">
+        <h3>Like a Fire in My Womb</h3>
+        <time>June 2025</time>
+        <p>How metaphors shape the way we speak of endometriosis, and why the right words matter in the clinic and beyond.</p>
+      </div>
+    </section>
 
-    <p>[...English version continues...]</p>
+    <section>
+      <div class="theme-title">Creativity</div>
+      <div class="article-card">
+        <h3>A Room of My Own</h3>
+        <time>In progress</time>
+        <p>On carving space—literal and metaphorical—for making, thinking, and becoming again.</p>
+      </div>
+    </section>
 
-    <div class="lang-switch">Versión en español ↓</div>
-
-    <h2>Como si tuviera fuego en el útero</h2>
-    <p><em>Lo que las metáforas del dolor pueden revelar sobre enfermedades invisibilizadas como la endometriosis</em></p>
-
-    <p>"Es como si me clavaran algo desde adentro."<br/>
-    "Siento como si un animal rasguñara mi abdomen por dentro."<br/>
-    "Es fuego. Es presión. Es algo que no me deja vivir."</p>
-
-    <p>[...Versión en español continúa...]</p>
-
-    <a class="back-top" href="#">↑ Back to top</a>
-  </section>
-
-  <section id="myth-of-the-strong-woman">
-    <h2>The Myth of the Strong Woman</h2>
-    <p>Coming soon…</p>
-  </section>
-
-  <section id="what-i-meant-by-home">
-    <h2>What I Meant by Home</h2>
-    <p>Coming soon…</p>
-  </section>
+    <section>
+      <div class="theme-title">Motherhood</div>
+      <div class="article-card">
+        <h3>My Daughter, My Mirror</h3>
+        <time>Coming soon</time>
+        <p>Reflections on legacy, memory, and how raising a child raises you in return.</p>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© Stella Maris Bullo, PhD · Reflections on Life · All rights reserved.</p>
-    <p><a href="https://stellabullo.com">stellabullo.com</a> · <a href="#">CV</a> · <a href="#">Projects</a> · <a href="#">Ko-fi</a></p>
+    &copy; 2025 Stella Bullo — All rights reserved
   </footer>
-
 </body>
 </html>
