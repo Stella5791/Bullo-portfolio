@@ -172,12 +172,45 @@
       margin: 0.75rem 0 0;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.85rem;
-      color: #888;
-    }
+   footer {
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  font-size: 1rem;
+  color: var(--text);
+  background-color: #f2e9e1;
+  border-top: 1px solid var(--accent);
+  font-family: var(--mono);
+  margin-top: 4rem;
+}
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+    .back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 1001;
+}
+
+.back-to-top:hover {
+  background-color: #a8705f;
+}
+
   </style>
 </head>
 <body>
@@ -247,12 +280,12 @@
     
       <p class="lang-en">
   <strong>A searing metaphor. A silent epidemic. And the urgent need to say what pain really feels like.</strong><br>
-  As a linguist, I explore how language shapes the diagnosis and experience of endometriosis—and why finding the right words matters in the clinic and beyond.
+  As a linguist, I explore how language shapes the experience of endometriosis and why finding the right words matters in the clinic and beyond.
 </p>
 
 <p class="lang-es" style="display: none;">
   <strong>Una metáfora que arde. Una epidemia silenciosa. Y la urgencia de nombrar lo que duele de verdad.</strong><br>
-  Como lingüista, exploro cómo el lenguaje moldea el diagnóstico y la vivencia de la endometriosis—y por qué encontrar las palabras justas importa tanto en la consulta como fuera de ella.
+  Como lingüista, exploro cómo el lenguaje moldea la vivencia de la endometriosis y por qué encontrar las palabras justas importa tanto en la consulta como fuera de ella.
 </p>
 
     </div>
@@ -321,9 +354,14 @@
     </section>
   </main>
 
-  <footer id="contact">
-    &copy; 2025 Stella Bullo | All rights reserved | stella.bullo.pro@gmail.com
-  </footer>
+ <footer id="contact">
+  &copy; 2025 Stella Bullo — <a href="mailto:stella.bullo.pro@gmail.com">stella.bullo.pro@gmail.com</a><br>
+  <span class="lang-en">All rights reserved.</span>
+  <span class="lang-es" style="display: none;">Todos los derechos reservados.</span>
+</footer>
+
+
+<button class="back-to-top" onclick="scrollToTop()">↑ Top</button>
 
   <script>
     let currentLang = 'en';
