@@ -56,14 +56,22 @@
   <li><a href="#services" class="hover:text-indigo-600">Services</a></li>
   <li><a href="#projects" class="hover:text-indigo-600">Projects</a></li>
 
-  <!-- Dropdown for Articles -->
- <li class="group relative">
+ <!-- Dropdown for Articles -->
+<li class="group relative">
   <a href="#articles" class="hover:text-indigo-600">Articles ▾</a>
-  <ul class="absolute left-0 mt-2 w-48 rounded text-sm text-gray-700 bg-white shadow-md z-50 hidden group-hover:flex flex-col">
-    <li><a href="#articles" class="block px-4 py-2 hover:bg-indigo-50">On this page</a></li>
-    <li><a href="reflections.html" target="_blank" class="block px-4 py-2 hover:bg-indigo-50">Reflections (New)</a></li>
+  <ul class="absolute left-0 pt-1 w-48 rounded text-sm text-gray-700 bg-white shadow-md z-50 
+             opacity-0 group-hover:opacity-100 
+             transition-opacity duration-200 
+             hidden group-hover:block">
+    <li>
+      <a href="#articles" class="block px-4 py-2 hover:bg-indigo-50">On this page</a>
+    </li>
+    <li>
+      <a href="reflections.html" target="_blank" class="block px-4 py-2 hover:bg-indigo-50">Reflections (New)</a>
+    </li>
   </ul>
 </li>
+
 
   <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
 </ul>
