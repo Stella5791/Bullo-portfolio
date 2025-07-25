@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="src/favicon.ico" type="image/x-icon" />
+  <!-- Meta tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Stella Bullo – API Integration Developer, NLP Specialist, and Front-end Developer." />
+  <meta name="author" content="Stella Bullo" />
+  <title>Stella Bullo | Portfolio</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS (Animate on Scroll) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+  <!-- Global smooth scrolling + transitions -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    a,
+    button,
+    img,
+    .card {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    img:hover {
+      transform: scale(1.03);
+    }
+
+    a:hover {
+      text-decoration: underline;
+      color: #4f46e5;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex justify-between items-center p-4 transition-all duration-300">
+  <h2 class="text-xl font-bold text-indigo-700">Stella Bullo</h2>
+ <ul class="flex gap-4 text-sm relative">
+  <li><a href="#about" class="hover:text-indigo-600">About</a></li>
+  <li><a href="#services" class="hover:text-indigo-600">Services</a></li>
+  <li><a href="#projects" class="hover:text-indigo-600">Projects</a></li>
+
+ <!-- Dropdown for Articles -->
+<li class="group relative">
+  <a href="#articles" class="hover:text-indigo-600">Articles ▾</a>
+  <ul class="absolute left-0 pt-1 w-48 rounded text-sm text-gray-700 bg-white shadow-md z-50 
+             opacity-0 group-hover:opacity-100 
+             transition-opacity duration-200 
+             hidden group-hover:block">
+    <li>
+      <a href="#articles" class="block px-4 py-2 hover:bg-indigo-50">On this page</a>
+    </li>
+    <li>
+      <a href="reflections.html" target="_blank" class="block px-4 py-2 hover:bg-indigo-50">Reflections (New)</a>
+    </li>
+  </ul>
+</li>
+
+
+  <li><a href="#contact" class="hover:text-indigo-600">Contact</a></li>
+</ul>
+
+</nav>
+
+<!-- Hero Section -->
+<section class="flex flex-col-reverse md:flex-row items-center p-8 md:p-20 pt-32 md:pt-40 pb-20 md:pb-32 bg-gradient-to-b from-white to-indigo-50 gap-12">
+  <div class="md:w-1/2 flex justify-center items-center gap-6">
+    <div class="flex flex-col gap-4 items-center">
+      <a href="https://github.com/Stella5791" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:scale-110">
+        <i data-lucide="github" class="w-6 h-6"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:scale-110">
+        <i data-lucide="linkedin" class="w-6 h-6"></i>
+      </a>
+    </div>
+    <img src="src/profile-pic.png" alt="Stella Bullo" class="rounded-full w-64 h-64 object-cover shadow-lg" />
+  </div>
+
+  <div class="md:w-1/2 text-center md:text-left">
+    <h1 class="text-4xl md:text-5xl font-bold text-indigo-700 leading-tight">Stella Bullo</h1>
+    <h2 class="text-lg md:text-xl mt-3 mb-6 text-gray-700">API Integration Developer | NLP Enthusiast | Front-end Developer</h2>
+    <p class="mb-6 text-gray-600 max-w-xl">Aiming to bridge Language and AI: Specializing in sentiment analysis, health communication, and automation.</p>
+    <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+      <a href="src/StellaBullo_CV_Dev.pdf" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 text-white px-5 py-3 rounded-md hover:bg-indigo-700">Download CV</a>
+      <a href="#contact" class="border border-indigo-600 text-indigo-600 px-5 py-3 rounded-md hover:bg-indigo-100">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<hr class="border-t border-gray-200 mb-0" />
+<section id="about" class="bg-gray-50 p-8 md:p-16">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+    <div data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">About Me</h2>
+      <p class="mb-4">
+        After a PhD in Linguistics and 20 years academic research in the UK specialising in Health, Marketing and Cross-cultural Communication, I transitioned into tech, combining analytical skills using corpus linguistics and sentiment analysis methodologies with programming in Python. I am passionate about AI-driven language technologies and aim to specialize in API integration, NLP, and automation.
+      </p>
+      <h3 class="font-semibold text-lg mt-6">Key Skills</h3>
+      <ul class="list-disc list-inside mb-4">
+        <li>Python</li>
+        <li>API Integration, Axios, JSON</li>
+        <li>React and Front-end development</li>
+        <li>Git/Github, NodeJS</li>
+        <li>NLP training</li>
+      </ul>
+      <h3 class="font-semibold text-lg mt-6">Other Skills</h3>
+      <ul class="list-disc list-inside">
+        <li>20+ Years Work experience in the UK</li>
+        <li>Project and Programme Management</li>
+        <li>Bilingual Spanish-English</li>
+      </ul>
+      <h3 class="font-semibold text-lg mt-6">Publications</h3>
+      <p class="mb-4">
+        View my academic publications on
+        <a href="https://scholar.google.co.uk/citations?hl=en&user=mGN9JSEAAAAJ&view_op=list_works" target="_blank" class="text-indigo-600 hover:underline">Google Scholar</a>.
+      </p>
+    </div>
+    <div class="flex justify-center flex-col items-center" data-aos="fade-left">
+      <img src="src/coding-pic-optimized.png" alt="Coding workspace with laptop, glasses, and coffee" class="rounded-lg max-w-full h-auto hover:shadow-xl object-contain" />
+      <p class="text-xs text-gray-500 mt-2 italic text-center">Image credit: <a href="https://stockcake.com/i/coding-coffee-break_855014_909099" target="_blank" class="text-indigo-500 hover:underline">"Coding Coffee Break"</a> via StockCake</p>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="bg-indigo-50 p-8 md:p-16">
+  <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
+    <h2 class="text-2xl font-semibold text-indigo-700 mb-6">What I Offer</h2>
+    <p class="text-gray-700 mb-8 max-w-2xl mx-auto">
+      I help individuals and teams bring ideas to life through thoughtful code. Whether you're building something from scratch or connecting tools that already exist, here's how I can help:
+    </p>
+    <div class="grid md:grid-cols-2 gap-8 text-left text-gray-800">
+      <div>
+        <h3 class="font-semibold mb-2">🔗 API Integration & Automation</h3>
+        <ul class="list-disc list-inside text-sm">
+          <li>Connect third-party APIs into Python apps or websites</li>
+          <li>Automate manual data tasks and reporting</li>
+          <li>Script-based solutions for repeatable workflows</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">🎨 Front-End Development</h3>
+        <ul class="list-disc list-inside text-sm">
+          <li>Build responsive websites with HTML, CSS, JS, React</li>
+          <li>Integrate APIs into front-end UI with Axios</li>
+          <li>Create clean, user-friendly components</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">🧠 NLP & Text Analysis</h3>
+        <ul class="list-disc list-inside text-sm">
+          <li>Basic NLP tasks: sentiment analysis, keyword extraction</li>
+          <li>Corpus and discourse analysis (academic/clinical)</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">📊 Data Visualization</h3>
+        <ul class="list-disc list-inside text-sm">
+          <li>Generate charts and graphs with Python + Matplotlib</li>
+          <li>Prepare and format CSV/JSON data for reports</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="border-t border-gray-200 mt-0" />
+
+<!-- Projects Section -->
+<section id="projects" class="bg-white p-8 md:p-16">
+  <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8">Python Projects</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+    <!-- Explain My Pain Project -->
+    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-lg font-semibold">Explain My Pain App</h3>
+      <img src="src/explain-my-pain.png" alt="Explain My Pain App Screenshot" class="my-4 rounded" />
+      <p class="text-sm text-gray-700 mb-2">Built with: Python, Flask, JavaScript, NLP, HTML, CSS</p>
+      <p class="text-sm mb-4">
+        A digital tool that analyzes metaphorical pain descriptions from people with endometriosis, translating them into clinically meaningful language for patients and clinicians.
+      </p>
+     
+      <a href="https://github.com/Stella5791/translate-my-pain" target="_blank" class="text-indigo-600 hover:underline">View source code</a>
+    </div>
+
+    <!-- Metaphor Tagger Project -->
+    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-lg font-semibold">Metaphor Tagger Tool</h3>
+      <img src="src/metaphor_tagger.png" alt="Metaphor Tagger Tool Screenshot" class="my-4 rounded" />
+      <p class="text-sm text-gray-700 mb-2">Built with: Python, Regex, NLP, Flask</p>
+      <p class="text-sm mb-4">
+        A tool designed to assist researchers by automatically tagging metaphorical expressions in pain narratives, speeding up qualitative analysis.
+      </p>
+      <a href="https://github.com/Stella5791/metaphor-tagger" target="_blank" class="text-indigo-600 hover:underline">View source code</a>
+    </div>
+
+    <!-- Python Project 1 -->
+    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+      <h3 class="text-lg font-semibold">AI-Powered Travel Itinerary Generator</h3>
+      <img src="src/project1.png" alt="Travel Itinerary Project Screenshot" class="my-4 rounded" />
+      <p class="text-sm text-gray-700 mb-2">Built with: Python, Requests, OpenWeather API, Rich</p>
+      <p class="text-sm mb-4">Combines live weather data and AI-generated suggestions to create customized travel itineraries, displayed in a formatted terminal UI using the Rich library.</p>
+      <a href="https://colab.research.google.com/drive/1K43At0WutS7nvRhELn1iJQ272PSGonL9?usp=sharing" class="text-indigo-600 hover:underline">View on Google Colab</a>
+    </div>
+
+    <!-- Python Project 2 -->
+    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="400">
+      <h3 class="text-lg font-semibold">CSV Data Visualization</h3>
+      <img src="src/project2.png" alt="Data Visualization Project Screenshot" class="my-4 rounded" />
+      <p class="text-sm text-gray-700 mb-2">Built with: Python, Matplotlib, CSV</p>
+      <p class="text-sm mb-4">Parses CSV files and creates dynamic line graphs to illustrate population growth trends over time using Matplotlib.</p>
+      <a href="https://replit.com/@smbu123/python-data-visualization-project" class="text-indigo-600 hover:underline">View Project on Replit</a>
+    </div>
+
+    <!-- Python Project 3 -->
+    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="500">
+      <h3 class="text-lg font-semibold">Weather Forecast Console App</h3>
+      <img src="src/project3.png" alt="Weather App Screenshot" class="my-4 rounded" />
+      <p class="text-sm text-gray-700 mb-2">Built with: Python, OpenWeather API, JSON</p>
+      <p class="text-sm mb-4">Fetches current and forecasted weather conditions via API and displays the results in the console with clear formatting and error handling.</p>
+      <a href="https://replit.com/@smbu123/WeatherApp" class="text-indigo-600 hover:underline">Try it on Replit</a>
+    </div>
+  </div>
+
+  <h2 class="text-2xl font-semibold text-indigo-700 text-center mt-16 mb-8">Front-end Projects</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <!-- Frontend Project 1 -->
+    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="600">
+      <h3 class="text-lg font-semibold">React Dictionary App</h3>
+      <img src="src/project4.png" alt="React Dictionary App Screenshot" class="my-4 rounded" />
+      <p class="text-sm text-gray-700 mb-2">Built with: React, Axios, Bootstrap, Dictionary API, Pexels API</p>
+      <p class="text-sm mb-4">An interactive dictionary app that fetches definitions, synonyms, audio pronunciation, and related images from multiple APIs. Designed with a clean, responsive UI.</p>
+      <a href="https://playful-gecko-ed5205.netlify.app/" class="text-indigo-600 hover:underline">Live Demo</a>
+    </div>
+    <!-- Frontend Project 2 -->
+    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="700">
+      <h3 class="text-lg font-semibold">Responsive Travel Website</h3>
+      <img src="src/project5.png" alt="Responsive Travel Website Screenshot" class="my-4 rounded" />
+      <p class="text-sm text-gray-700 mb-2">Built with: HTML, CSS, Bootstrap</p>
+      <p class="text-sm mb-4">A promotional site for Córdoba, Argentina. Includes cultural highlights, Instagram embeds, and embedded maps. Fully responsive and mobile-friendly.</p>
+      <a href="https://silly-stroopwafel-ba4b16.netlify.app/" class="text-indigo-600 hover:underline">Live Demo</a>
+    </div>
+    <!-- Frontend Project 3 -->
+    <div class="bg-gray-50 p-4 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="800">
+      <h3 class="text-lg font-semibold">JavaScript Weather App</h3>
+      <img src="src/project6.png" alt="JavaScript Weather App Screenshot" class="my-4 rounded" />
+      <p class="text-sm text-gray-700 mb-2">Built with: JavaScript, HTML, CSS, Bootstrap, Axios, OpenWeather API</p>
+      <p class="text-sm mb-4">A web-based weather app that allows users to search for a city and view current weather and a 5-day forecast. Includes temperature, humidity, and wind data with responsive design.</p>
+      <a href="https://sparkly-taffy-530165.netlify.app/" class="text-indigo-600 hover:underline">Live Demo</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Articles Section -->
+ 
+<section id="articles" class="bg-indigo-50 p-8 md:p-16">
+  <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8">Articles</h2>
+  <div class="max-w-4xl mx-auto">
+    <!-- Article 1 -->
+ <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 mb-8">
+  <h3 class="text-xl font-semibold mb-2">The Intersection of Linguistics and NLP</h3>
+  <p class="mb-4 text-gray-700">
+    Exploring how linguistic principles enhance natural language processing. This article delves into metaphor theory, pragmatics, and discourse analysis, highlighting their importance in creating more effective NLP systems.
+  </p>
+  <a href="articles/intersection-linguistics-nlp.html" class="text-indigo-600 hover:underline font-semibold">Read full article</a>
+</div>
+ <!-- Article 2 -->
+    <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 mb-8">
+      <h3 class="text-xl font-semibold mb-2">Between Linguistics and the Scar</h3>
+      <p class="mb-4 text-gray-700">
+        Reflections on researching lived pain, from language to code. This article traces the development of the Explain My Pain app, from lived experience of endometriosis through linguistic research and app development.
+      </p>
+      <a href="articles/between-linguistics-and-the-scar.html" class="text-indigo-600 hover:underline font-semibold">Read full article</a>
+    </div>
+  <!-- Article 3 -->
+<div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 mb-8">
+  <h3 class="text-xl font-semibold mb-2">Why metaphors matter in NLP</h3>
+  <p class="mb-4 text-gray-700">
+    How metaphor shapes health communication and why NLP must learn to process figurative language. 
+    This article draws on both linguistic theory and personal experience to explore the role of metaphor in pain expression, 
+    and showcases the Explain My Pain app as an example of linguistically informed, human-centred NLP design.
+  </p>
+  <a href="articles/why_metaphors_matter_in_NLP.html" class="text-indigo-600 hover:underline font-semibold">Read full article</a>
+</div>
+
+  </div>
+
+  
+  <div class="flex justify-center mt-8">
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700 transition duration-300">
+      Back to Top
+    </button>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="p-8 md:p-16 bg-gray-50">
+  <h2 class="text-2xl font-semibold text-indigo-700 text-center mb-8">Contact Me</h2>
+
+  <form name="contact" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" class="max-w-xl mx-auto flex flex-col gap-4">
+
+
+  
+    <!-- Required hidden inputs -->
+    <input type="hidden" name="form-name" value="contact" />
+    <p class="hidden">
+      <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+    </p>
+
+    <!-- Visible fields -->
+    <label for="name" class="sr-only">Name</label>
+    <input id="name" type="text" name="name" placeholder="Name" class="p-3 rounded-md border border-gray-300" required />
+
+    <label for="email" class="sr-only">Email</label>
+    <input id="email" type="email" name="email" placeholder="Email" class="p-3 rounded-md border border-gray-300" required />
+
+    <label for="message" class="sr-only">Message</label>
+    <textarea id="message" name="message" placeholder="Message" rows="4" class="p-3 rounded-md border border-gray-300" required></textarea>
+
+    <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 transform hover:scale-105 transition-transform duration-300">Send</button>
+  </form>
+</section>
+
+</section>
+
+<!-- Footer -->
+<footer class="text-center py-4 text-sm text-gray-600 bg-white border-t">
+  <p>Email: stella.bullo.pro@gmail.com     |    &copy; 2025 Stella Bullo. All rights reserved.</p>
+</footer>
+
+<!-- Scroll-to-top -->
+<button id="scrollToTopBtn" class="fixed bottom-6 right-6 p-3 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 hidden z-50">
+  <i data-lucide="chevron-up" class="w-5 h-5"></i>
+  <span class="sr-only">Back to top</span>
+</button>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    if (typeof lucide !== "undefined") {
+      lucide.createIcons();
+    }
+
+    const nav = document.querySelector("nav");
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("shadow-lg", window.scrollY > 10);
+    });
+
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+    window.addEventListener("scroll", () => {
+      scrollBtn.classList.toggle("hidden", window.scrollY < 300);
+    });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    AOS.init({ duration: 1000, once: true });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.getElementById(this.getAttribute("href").substring(1));
+        if (target) {
+          const offset = 80;
+          const offsetPosition = target.offsetTop - offset;
+          window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
