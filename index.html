@@ -61,6 +61,10 @@
       gap: 2rem;
     }
 
+    nav li {
+      position: relative;
+    }
+
     nav a {
       color: var(--text);
       text-decoration: none;
@@ -70,6 +74,38 @@
 
     nav a:hover {
       color: var(--accent-light);
+    }
+
+    /* DROPDOWN FIX */
+    .dropdown-wrapper {
+      position: relative;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 2.2rem;
+      left: 0;
+      background-color: var(--navbar);
+      padding: 0.5rem 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      min-width: 240px;
+      z-index: 1000;
+    }
+
+    .dropdown-wrapper:hover .dropdown,
+    .dropdown-wrapper:focus-within .dropdown {
+      display: block;
+    }
+
+    .dropdown li {
+      margin: 0.5rem 0;
+    }
+
+    .dropdown a {
+      white-space: nowrap;
+      font-size: 0.95rem;
     }
 
     header {
@@ -160,6 +196,17 @@
         flex-direction: column;
         align-items: flex-end;
       }
+
+      .dropdown {
+        position: static;
+        box-shadow: none;
+        padding: 0;
+        background-color: transparent;
+      }
+
+      .dropdown li {
+        margin: 0.25rem 0;
+      }
     }
   </style>
 </head>
@@ -169,7 +216,12 @@
     <ul>
       <li><a href="coding/">Coding</a></li>
       <li><a href="writing/">Writing</a></li>
-      <li><a href="projects/">Projects</a></li>
+      <li class="dropdown-wrapper">
+        <a href="projects/">Projects ▾</a>
+        <ul class="dropdown">
+          <li><a href="projects/language-of-endo.html">The Language of Endometriosis</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -185,7 +237,7 @@
   <div class="buttons">
     <a href="coding/">Explore Coding</a>
     <a href="writing/">Explore Writing</a>
-    <a href="projects/">Explore Projects</a>
+    <a href="projects/The-lang-of-endo.html">Explore Projects</a>
   </div>
 
   <footer>
