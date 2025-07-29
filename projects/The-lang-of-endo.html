@@ -21,6 +21,60 @@
       color: var(--text);
       line-height: 1.6;
     }
+nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      z-index: 1000;
+      box-sizing: border-box;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      margin-left: 1rem;
+      font-family: var(--mono);
+      font-size: 0.9rem;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem 0;
+      z-index: 1;
+      border-radius: 4px;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: #2d2d2d;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f0f0ff;
+    }
+
+    .dropdown-content.show {
+      display: block !important;
+    }
 
     header {
       text-align: center;
@@ -120,7 +174,18 @@
   </style>
 </head>
 <body>
-
+<nav>
+    <div><a href="https://stellabullo.com/">Stella Bullo</a> </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-right: 2rem;">
+      <a href="#contact" class="lang-en">Contact</a>
+      <div class="dropdown">
+        <a id="portfolio-btn" href="#">Other work ▾</a>
+        <div class="dropdown-content" id="portfolio-menu">
+          <a href="index.html" target="_blank" class="lang-en">Coding work</a>
+          <a href="writing/index.html" target="_blank" class="lang-en">Writing work</a>
+        </div>
+      </div>
+  </nav>
   <header>
     <img src="src/logo-full.png" alt="The Language of Endometriosis Logo">
   </header>
