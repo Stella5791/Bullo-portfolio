@@ -4,403 +4,141 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reflections – Stella Bullo</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora&display=swap" rel="stylesheet">
+  <meta name="description" content="Reflections by Stella Bullo – Bilingual essays and fragments exploring life, pain, identity and language." />
+  <meta name="author" content="Stella Bullo" />
+  <link rel="icon" href="/src/favicon.ico" type="image/x-icon" />
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS & Icons -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
   <style>
-    :root {
-      --bg: #fdfaf6;
-      --accent: #c88b75;
-      --text: #2d2d2d;
-      --mono: 'IBM Plex Mono', monospace;
-      --serif: 'Lora', serif;
+    html {
+      scroll-behavior: smooth;
     }
 
-    body {
-      margin: 0;
-      font-family: var(--serif);
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+    a, button {
+      transition: all 0.3s ease-in-out;
     }
 
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: white;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      z-index: 1000;
-      box-sizing: border-box;
+    a:hover {
+      text-decoration: underline;
+      color: #4f46e5;
     }
-
-    nav a {
-      text-decoration: none;
-      color: var(--text);
-      margin-left: 1rem;
-      font-family: var(--mono);
-      font-size: 0.9rem;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      min-width: 180px;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-      padding: 0.5rem 0;
-      z-index: 1;
-      border-radius: 4px;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 0.5rem 1rem;
-      color: #2d2d2d;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
-
-    .dropdown-content a:hover {
-      background-color: #f0f0ff;
-    }
-
-    .dropdown-content.show {
-      display: block !important;
-    }
-
-    #lang-toggle {
-      background-color: transparent;
-      border: 1px solid var(--accent);
-      padding: 0.25rem 0.75rem;
-      border-radius: 4px;
-      cursor: pointer;
-      font-family: var(--mono);
-      font-size: 0.85rem;
-      color: var(--text);
-      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-    }
-
-    #lang-toggle:hover {
-      background-color: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-
-    .lang-en[style*="display: none"],
-    .lang-es[style*="display: none"] {
-      visibility: hidden !important;
-      position: absolute !important;
-    }
-
-    header {
-      padding: 8rem 2rem 3rem;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      text-align: left;
-      max-width: 900px;
-      margin: 0 auto;
-      gap: 3rem;
-    }
-
-    header img {
-      border-radius: 50%;
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
-      filter: grayscale(100%);
-      flex-shrink: 0;
-    }
-
-    .header-text {
-      max-width: 600px;
-    }
-
-    .header-text h1 {
-      font-family: var(--mono);
-      font-size: 2rem;
-      margin: 0 0 1rem 0;
-    }
-
-    .header-text p {
-      font-style: italic;
-      margin-top: 1rem;
-    }
-
-    section {
-      padding: 3rem 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .theme-title {
-      font-family: var(--mono);
-      font-size: 1.2rem;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid var(--accent);
-      padding-bottom: 0.5rem;
-    }
-
-    .article-card {
-      margin-bottom: 2.5rem;
-    }
-
-    .article-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .article-card time {
-      font-family: var(--mono);
-      font-size: 0.85rem;
-      color: #777;
-    }
-
-    .article-card p {
-      margin: 0.75rem 0 0;
-    }
-
-   footer {
-  text-align: center;
-  padding: 3rem 2rem 2rem;
-  font-size: 1rem;
-  color: var(--text);
-  background-color: #f2e9e1;
-  border-top: 1px solid var(--accent);
-  font-family: var(--mono);
-  margin-top: 4rem;
-}
-footer a {
-  color: var(--accent);
-  text-decoration: none;
-}
-footer a:hover {
-  text-decoration: underline;
-}
-
-
-    .back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: var(--accent);
-  color: white;
-  border: none;
-  padding: 0.6rem 1rem;
-  font-family: var(--mono);
-  font-size: 0.9rem;
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  z-index: 1001;
-}
-
-.back-to-top:hover {
-  background-color: #a8705f;
-}
-
   </style>
 </head>
-<body>
-  <nav>
-    <div><a href="https://stellabullo.com/">Stella Bullo</a> </div>
-    <div style="display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin-right: 2rem;">
-      <div class="dropdown">
-        <a id="reflections-btn" href="#">Reflections ▾</a>
-        <div class="dropdown-content" id="reflections-menu">
-          <a href="#pain" class="lang-en">Pain</a>
-          <a href="#pain" class="lang-es" style="display:none;">Dolor</a>
-          <a href="#home" class="lang-en">Home</a>
-          <a href="#home" class="lang-es" style="display:none;">Hogar</a>
-          <a href="#identity" class="lang-en">Identity</a>
-          <a href="#identity" class="lang-es" style="display:none;">Identidad</a>
-          <a href="#living-abroad" class="lang-en">Living Abroad</a>
-          <a href="#living-abroad" class="lang-es" style="display:none;">Vivir en el extranjero</a>
-          <a href="#creativity" class="lang-en">Creativity</a>
-          <a href="#creativity" class="lang-es" style="display:none;">Creatividad</a>
-          <a href="#motherhood" class="lang-en">Motherhood</a>
-          <a href="#motherhood" class="lang-es" style="display:none;">Maternidad</a>
-        </div>
-      </div>
 
-      <a href="#contact" class="lang-en">Contact</a>
-      <a href="#contact" class="lang-es" style="display:none;">Contacto</a>
+<body class="bg-white text-gray-800 font-sans">
 
-      <div class="dropdown">
-        <a id="portfolio-btn" href="/coding/index.html">Other work ▾</a>
-        <div class="dropdown-content" id="portfolio-menu">
-          <a href="/coding/index.html" target="_blank" class="lang-en">Coding work</a>
-          <a href="/coding/index.html" target="_blank" class="lang-es" style="display:none;">Trabajo en programación</a>
-        </div>
-      </div>
+<!-- NAVIGATION -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex justify-between items-center p-4 transition-all duration-300 text-sm">
+  <h2 class="text-xl font-bold text-indigo-700"><a href="/index.html">Stella Bullo</a></h2>
+  <ul class="flex gap-4 items-center">
+    <li class="relative group">
+      <a href="#pain" class="hover:text-indigo-600">Reflections ▾</a>
+      <ul class="absolute left-0 pt-1 w-40 bg-white shadow-md text-gray-700 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden group-hover:block z-50">
+        <li><a href="#pain" class="block px-4 py-2 hover:bg-indigo-50 lang-en">Pain</a></li>
+        <li><a href="#pain" class="block px-4 py-2 hover:bg-indigo-50 lang-es hidden">Dolor</a></li>
+      </ul>
+    </li>
+    <li><a href="/portfolio/coding/index.html" class="hover:text-indigo-600">Portfolio</a></li>
+    <li>
+      <button id="lang-toggle" class="border border-indigo-600 px-3 py-1 rounded text-indigo-700 hover:bg-indigo-600 hover:text-white transition font-mono">Español</button>
+    </li>
+  </ul>
+</nav>
 
-      <button id="lang-toggle">Español</button>
-    </div>
-  </nav>
+<!-- HERO -->
 
-  <header>
-    <img src="../stella-picture.png" alt="Stella Bullo" />
-    <div class="header-text">
-      <h1 class="lang-en">Reflections</h1>
-      <h1 class="lang-es" style="display:none;">Reflexiones</h1>
-      <p class="lang-en">Essays and fragments exploring life through language</p>
-      <p class="lang-es" style="display:none;">Ensayos y fragmentos que exploran la vida a través del lenguaje</p>
-    </div>
-  </header>
 
-  <main id="reflections">
-    <section id="pain">
-  <div class="theme-title lang-en">Pain</div>
-  <div class="theme-title lang-es" style="display:none;">Dolor</div>
+<header class="pt-32 pb-12 px-6 bg-gradient-to-b from-white to-indigo-50 text-left w-full">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl font-bold text-indigo-700 lang-en">Reflections</h1>
+    <h1 class="text-4xl font-bold text-indigo-700 lang-es hidden">Reflexiones</h1>
 
-  <div class="article-card">
-    <a href="reflections/like-fire-in-my-womb.html" class="lang-en">
-      <h3>Like a Fire in My Womb</h3>
-    </a>
-    <a href="reflections/like-fire-in-my-womb.html" class="lang-es" style="display:none;">
-      <h3>Como si tuviera fuego en el útero</h3>
-    </a>
+    <p class="text-lg text-gray-600 mt-4 lang-en">
+      This space gathers fragments of my journey as a linguist, researcher, developer, writer, and woman learning to embrace change.
+    I write to make sense of the world and my place within it, exploring how language shapes our reality, identity, memory, pain, and possibility.
+ </p>
 
-    <time class="lang-en">June 2025</time>
-    <time class="lang-es" style="display:none;">Junio 2025</time>
-
-    <!-- ENGLISH VERSION -->
-    
-      <p class="lang-en">
-  <strong>A searing metaphor. A silent epidemic. And the urgent need to say what pain really feels like.</strong><br>
-  As a linguist, I explore how language shapes the experience of endometriosis and why finding the right words matters in the clinic and beyond.
-</p>
-
-<p class="lang-es" style="display: none;">
-  <strong>Una metáfora que arde. Una epidemia silenciosa. Y la urgencia de nombrar lo que duele de verdad.</strong><br>
-  Como lingüista, exploro cómo el lenguaje moldea la vivencia de la endometriosis y por qué encontrar las palabras justas importa tanto en la consulta como fuera de ella.
-</p>
-
-    </div>
+    <p class="text-lg text-gray-600 mt-4 lang-es hidden">
+       Este espacio reúne fragmentos de mi camino como lingüista, investigadora, desarrolladora, escritora y mujer que aprende a habitar el cambio.
+    Escribo para darle sentido al mundo y a mi lugar en él, explorando cómo el lenguaje moldea nuestra forma de entender la realidad, la identidad, la memoria, el dolor y la posibilidad.
+ </p>
   </div>
-</section>
+</header>
 
 
-    <section id="home">
-      <div class="theme-title lang-en">Home</div>
-      <div class="theme-title lang-es" style="display:none;">Hogar</div>
-      <div class="article-card">
-        <h3 class="lang-en">The Myth of the Return</h3>
-        <h3 class="lang-es" style="display:none;">El mito del regreso</h3>
-        <time>July 2025</time>
-        <p class="lang-en">A reflection on what it means to come back to a place that made you, and how belonging is sometimes an act of imagination.</p>
-        <p class="lang-es" style="display:none;">Una reflexión sobre lo que significa volver a un lugar que te formó, y cómo pertenecer puede ser también un acto imaginativo.</p>
-      </div>
-    </section>
+<!-- MAIN CONTENT -->
+<main class="max-w-5xl mx-auto px-6 pt-12 pb-24 space-y-20" data-aos="fade-up">
 
-    <section id="identity">
-      <div class="theme-title lang-en">Identity</div>
-      <div class="theme-title lang-es" style="display:none;">Identidad</div>
-      <div class="article-card">
-        <h3 class="lang-en">Who am I?</h3>
-        <h3 class="lang-es" style="display:none;">¿Quién soy?</h3>
-        <time>Coming Soon</time>
-        <p class="lang-en">A reflection on the complexities of identity, belonging, and the stories we tell about ourselves.</p>
-        <p class="lang-es" style="display:none;">Una reflexión sobre las complejidades de la identidad, la pertenencia y los relatos que construimos sobre nosotras mismas.</p>
-      </div>
-    </section>
 
-    <section id="living-abroad">
-      <div class="theme-title lang-en">Living Abroad</div>
-      <div class="theme-title lang-es" style="display:none;">Vivir en el extranjero</div>
-      <div class="article-card">
-        <h3 class="lang-en">A Life in Another Language</h3>
-        <h3 class="lang-es" style="display:none;">Una vida en otro idioma</h3>
-        <time>Coming Soon</time>
-        <p class="lang-en">On the challenges and joys of navigating life in a foreign language, and how it shapes our sense of self.</p>
-        <p class="lang-es" style="display:none;">Sobre los desafíos y alegrías de vivir en otro idioma, y cómo eso moldea nuestro sentido del yo.</p>
-      </div>
-    </section>
+  <!-- PAIN SECTION -->
+  <section id="pain">
+    <h2 class="font-mono text-indigo-700 text-lg border-b border-indigo-200 pb-1 mb-4 lang-en">Pain</h2>
+    <h2 class="font-mono text-indigo-700 text-lg border-b border-indigo-200 pb-1 mb-4 lang-es hidden">Dolor</h2>
 
-    <section id="creativity">
-      <div class="theme-title lang-en">Creativity</div>
-      <div class="theme-title lang-es" style="display:none;">Creatividad</div>
-      <div class="article-card">
-        <h3 class="lang-en">A Room of My Own</h3>
-        <h3 class="lang-es" style="display:none;">Un cuarto propio</h3>
-        <time>Coming Soon</time>
-        <p class="lang-en">On carving space—literal and metaphorical—for making, thinking, and becoming again.</p>
-        <p class="lang-es" style="display:none;">Sobre crear un espacio —literal y simbólico— para hacer, pensar y volver a ser.</p>
-      </div>
-    </section>
+    <article class="space-y-3">
+      <a href="reflections/like-fire-in-my-womb.html" class="text-2xl font-semibold hover:underline lang-en">Like a Fire in My Womb</a>
+      <a href="reflections/like-fire-in-my-womb.html" class="text-2xl font-semibold hover:underline lang-es hidden">Como si tuviera fuego en el útero</a>
 
-    <section id="motherhood">
-      <div class="theme-title lang-en">Motherhood</div>
-      <div class="theme-title lang-es" style="display:none;">Maternidad</div>
-      <div class="article-card">
-        <h3 class="lang-en">My Daughter, My Mirror</h3>
-        <h3 class="lang-es" style="display:none;">Mi hija, mi espejo</h3>
-        <time>Coming Soon</time>
-        <p class="lang-en">Reflections on legacy, memory, and how raising a child raises you in return.</p>
-        <p class="lang-es" style="display:none;">Reflexiones sobre el legado, la memoria y cómo criar a una hija también te transforma a vos.</p>
-      </div>
-    </section>
-  </main>
+      <p class="text-sm text-gray-500 lang-en">June 2025</p>
+      <p class="text-sm text-gray-500 lang-es hidden">Junio 2025</p>
 
- <footer id="contact">
-  &copy; 2025 Stella Bullo — <a href="mailto:stella.bullo.pro@gmail.com">stella.bullo.pro@gmail.com</a><br>
-  <span class="lang-en">All rights reserved.</span>
-  <span class="lang-es" style="display: none;">Todos los derechos reservados.</span>
+      <p class="lang-en">
+        A searing metaphor. A silent epidemic. As a linguist, I explore how language shapes the experience of endometriosis and why finding the right words matters. You can find out more about  my work on language and endometriosis in the <a href="/projects/language-of-endo.html" class="text-indigo-600 hover:underline">Language of Endometriosis</a> project.
+      </p>
+      <p class="lang-es hidden">
+        Una metáfora que arde. Una epidemia silenciosa. Como lingüista, exploro cómo el lenguaje moldea la vivencia de la endometriosis y por qué encontrar las palabras justas importa. Puedes encontrar más información sobre mi trabajo en lenguaje y endometriosis en el proyecto <a href="/projects/language-of-endo.html" class="text-indigo-600 hover:underline">Language of Endometriosis</a>.
+      </p>
+    </article>
+  </section>
+
+  <!-- Future sections like Identity, Home, etc. can go here -->
+
+</main>
+
+<!-- FOOTER -->
+<footer class="text-center py-4 text-sm text-gray-600 bg-white border-t">
+  <p>Email: stella.bullo.pro@gmail.com &nbsp; | &nbsp; &copy; 2025 Stella Bullo. All rights reserved.</p>
 </footer>
 
+<!-- BACK TO TOP BUTTON -->
+<button id="scrollToTopBtn" class="fixed bottom-6 right-6 p-3 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 hidden z-50">
+  <i data-lucide="chevron-up" class="w-5 h-5"></i>
+  <span class="sr-only">Back to top</span>
+</button>
 
-<button class="back-to-top" onclick="scrollToTop()">↑ Top</button>
+<!-- SCRIPTS -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    AOS.init({ duration: 800, once: true });
 
-  <script>
-    let currentLang = 'en';
+    if (typeof lucide !== "undefined") {
+      lucide.createIcons();
+    }
 
-    const toggle = document.getElementById('lang-toggle');
-    const reflectionsBtn = document.getElementById('reflections-btn');
-    const reflectionsMenu = document.getElementById('reflections-menu');
-    const portfolioBtn = document.getElementById('portfolio-btn');
-    const portfolioMenu = document.getElementById('portfolio-menu');
-
-    toggle.addEventListener('click', () => {
-      currentLang = currentLang === 'en' ? 'es' : 'en';
-      document.querySelectorAll('.lang-en').forEach(el => {
-        el.style.display = currentLang === 'en' ? 'block' : 'none';
-      });
-      document.querySelectorAll('.lang-es').forEach(el => {
-        el.style.display = currentLang === 'es' ? 'block' : 'none';
-      });
-      toggle.textContent = currentLang === 'en' ? 'Español' : 'English';
-      reflectionsMenu.classList.remove('show');
-      portfolioMenu.classList.remove('show');
+    const toggleBtn = document.getElementById('lang-toggle');
+    toggleBtn.addEventListener('click', () => {
+      const isEnglish = document.querySelector('.lang-en:not(.hidden)');
+      document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden'));
+      document.querySelectorAll('.lang-es').forEach(el => el.classList.toggle('hidden'));
+      toggleBtn.textContent = isEnglish ? 'English' : 'Español';
     });
 
-    reflectionsBtn.addEventListener('click', e => {
-      e.preventDefault();
-      reflectionsMenu.classList.toggle('show');
+    const scrollBtn = document.getElementById("scrollToTopBtn");
+    window.addEventListener("scroll", () => {
+      scrollBtn.classList.toggle("hidden", window.scrollY < 300);
     });
+    scrollBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+</script>
 
-    portfolioBtn.addEventListener('click', e => {
-      e.preventDefault();
-      portfolioMenu.classList.toggle('show');
-    });
-
-    document.addEventListener('click', e => {
-      if (!e.target.closest('.dropdown')) {
-        reflectionsMenu.classList.remove('show');
-        portfolioMenu.classList.remove('show');
-      }
-    });
-  </script>
 </body>
 </html>
