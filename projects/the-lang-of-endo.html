@@ -3,209 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Explore The Language of Endometriosis – a project by Stella Bullo combining linguistics, health, and digital tools to make pain visible." />
+  <meta name="author" content="Stella Bullo" />
   <title>The Language of Endometriosis – Stella Bullo</title>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Lora&display=swap" rel="stylesheet">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS & Lucide -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
   <style>
-    :root {
-      --bg: #fdfaf6;
-      --accent: #c88b75;
-      --text: #2d2d2d;
-    }
-
+    html, body { height: 100%; margin: 0; padding: 0; scroll-behavior: smooth; }
     body {
-      margin: 0;
-      font-family: 'Lora', serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    body.dark {
-      background-color: #1e1e1e;
-      color: #eaeaea;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: white;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      padding: 1rem 2rem;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+      background: #f9fafb;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-family: 'IBM Plex Mono', monospace;
-      z-index: 1000;
+      flex-direction: column;
     }
-
-    nav a {
-      text-decoration: none;
-      color: inherit;
-      margin-left: 1.2rem;
-      font-size: 0.9rem;
-    }
-
-    .dark-toggle {
-      border: 1px solid var(--accent);
-      background: transparent;
-      color: inherit;
-      font-family: 'IBM Plex Mono', monospace;
-      padding: 0.3rem 0.7rem;
-      border-radius: 4px;
-      font-size: 0.85rem;
-    }
-
-    header {
-      text-align: center;
-      padding: 6rem 1rem 1rem;
-    }
-
-    header h1 {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 2rem;
-      color: var(--accent);
-    }
-
-    main {
-      max-width: 900px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
-
-    section {
-      background-color: white;
-      margin-bottom: 2rem;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    section h2 {
-      font-family: 'Lora', serif;
-      color: var(--accent);
-      font-size: 1.8rem;
-      margin-top: 0;
-    }
-
-    section p, section ul {
-      font-size: 1rem;
-    }
-
-    section ul {
-      margin-top: 1rem;
-      padding-left: 1.2rem;
-    }
-
-    section ul li {
-      margin-bottom: 0.5rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      font-family: 'IBM Plex Mono', monospace;
-      background-color: #f2e9e1;
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #1e1e1e;
-        color: #eaeaea;
-      }
-
-      section {
-        background-color: #2a2a2a;
-        box-shadow: none;
-      }
-
-      section h2 {
-        color: #e9c46a;
-      }
-
-      footer {
-        background-color: #333;
-        color: #aaa;
-      }
-    }
+    main { flex-grow: 1; }
   </style>
 </head>
 <body>
-  <nav>
-    <div>
-      <a href="/">Stella Bullo</a>
-      <a href="/coding/index.html">Coding</a>
-      <a href="/writing/index.html">Writing</a>
-    </div>
-    <button class="dark-toggle" onclick="toggleDark()">🌙 Dark</button>
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex justify-between items-center p-4">
+    <h2 class="text-xl font-bold text-indigo-700"><a href="/index.html">Stella Bullo</a></h2>
+    <ul class="flex gap-4 text-sm items-center">
+      <li><a href="/coding/index.html" class="hover:text-indigo-600">Coding</a></li>
+      <li><a href="/writing/index.html" class="hover:text-indigo-600">Writing</a></li>
+      <li class="relative group">
+        <a href="/projects/index.html" class="hover:text-indigo-600">Projects ▾</a>
+        <ul class="absolute left-0 pt-1 w-64 rounded text-sm text-gray-700 bg-white shadow-md z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden group-hover:block">
+          <li><a href="/projects/language-of-endo.html" class="block px-4 py-2 hover:bg-indigo-50">The Language of Endometriosis</a></li>
+        </ul>
+      </li>
+      <li><a href="#footer" class="hover:text-indigo-600">Contact</a></li>
+    </ul>
   </nav>
 
-  <header>
-    <h1>The Language of Endometriosis</h1>
-  </header>
+  <section class="max-w-6xl mx-auto px-6 md:px-8 pt-52 pb-12 grid grid-cols-1 md:grid-cols-[1fr_2fr] items-center gap-10" data-aos="fade-down">
+  <!-- Logo Image (Left Column) -->
+  <div class="flex justify-center md:justify-end pr-6 md:pr-12">
+    <img src="src/logo-short.png" alt="Project Logo" class="rounded-full w-48 h-48 object-contain shadow-md border border-gray-200" />
+  </div>
 
-  <main>
-    <section>
-      <h2>About the Project</h2>
-      <p><strong>The Language of Endometriosis</strong> explores how people describe pain in their own words — revealing not just symptoms, but lived experiences. This ongoing project brings together linguistics, health communication, and digital tools to better understand and communicate complex, invisible pain.</p>
-      <p>Led by <strong>Dr Stella Bullo</strong>, this work includes peer-reviewed research, public articles, a custom dataset, and a metaphor-tagging web app for patients and clinicians.</p>
+  <!-- Title & Text (Right Column) -->
+  <div class="text-center md:text-left md:pl-4">
+    <h1 class="text-4xl md:text-5xl font-bold text-indigo-700 leading-tight mb-3 whitespace-nowrap">
+  The Language of Endometriosis
+</h1>
+<p class="text-lg text-gray-700 max-w-xl leading-relaxed pt-6">
+  The language of pain is the story of invisibility.  
+  <br />
+  It holds lived experience in every word.
+</p>
+ </div>
+</section>
+
+  <!-- Main Sections -->
+  <main class="max-w-5xl mx-auto px-6 md:px-10 py-8 space-y-12">
+
+    <!-- About -->
+    <section class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">About the Project</h2>
+      <p class="text-gray-700 mb-4"><strong>The Language of Endometriosis</strong> brings together linguistics, health communication, and digital tools to better understand and express invisible, complex pain.</p>
+      <p class="text-gray-700">Led by <strong>Dr Stella Bullo</strong>, this work spans peer-reviewed research, public writing, a custom dataset, and a metaphor-tagging web app to support patients and clinicians.</p>
     </section>
 
-    <section>
-      <h2>Peer-Reviewed Articles</h2>
-      <ul>
-        <li><a href="https://e-space.mmu.ac.uk/622513/1/SBullo2019-Endo-pain-comm.pdf" target="_blank">“I feel like I'm being stabbed”: Metaphor and Pain in Endometriosis Narratives</a></li>
-        <li><a href="https://bpspsychub.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/bjhp.12472" target="_blank">Parallel Words: Chronic Pain and Language</a></li>
-        <li><a href="https://www.frontiersin.org/articles/10.3389/fgwh.2021.764693/full" target="_blank">Challenges in Pain Communication: The Role of Language</a></li>
-        <!-- More articles as needed -->
+    <!-- Peer-reviewed articles -->
+    <section class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Peer-Reviewed Articles</h2>
+      <ul class="list-disc pl-5 space-y-2 text-gray-700">
+        <li><a href="https://e-space.mmu.ac.uk/622513/1/SBullo2019-Endo-pain-comm.pdf" target="_blank" class="text-indigo-600 hover:underline">“I feel like I'm being stabbed”: Metaphor and Pain in Endometriosis Narratives</a></li>
+        <li><a href="https://bpspsychub.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/bjhp.12472" target="_blank" class="text-indigo-600 hover:underline">Parallel Words: Chronic Pain and Language</a></li>
+        <li><a href="https://www.frontiersin.org/articles/10.3389/fgwh.2021.764693/full" target="_blank" class="text-indigo-600 hover:underline">Challenges in Pain Communication: The Role of Language</a></li>
       </ul>
     </section>
 
-    <section>
-      <h2>Articles for the Public</h2>
-      <p>Accessible writing based on the research. These pieces aim to raise awareness and spark dialogue:</p>
-      <ul>
-        <li><a href="/reflections/like-fire-in-my-womb.html" target="_blank">Like a Fire in My Womb</a></li>
+    <!-- Public Articles -->
+    <section class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Articles for the Public</h2>
+      <p class="text-gray-700 mb-4">Accessible pieces based on the research. These aim to raise awareness and spark conversation:</p>
+      <ul class="list-disc pl-5 space-y-2 text-gray-700">
+        <li><a href="/reflections/like-fire-in-my-womb.html" target="_blank" class="text-indigo-600 hover:underline">Like a Fire in My Womb</a></li>
       </ul>
     </section>
 
-    <section>
-      <h2>Explain My Pain App</h2>
-      <p>A web tool that tags metaphorical pain descriptions with emotional, experiential, and clinical insight. Designed to help patients express themselves more clearly and doctors understand them more fully.</p>
-      <p><a href="https://your-app-link.com" target="_blank">🔗 Try the Explain My Pain App</a></p>
+    <!-- App -->
+    <section class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Explain My Pain App</h2>
+      <p class="text-gray-700 mb-4">A tool that tags metaphorical pain expressions with experiential, emotional, and clinical insight — helping patients communicate better and clinicians understand more clearly.</p>
+      <a href="https://your-app-link.com" target="_blank" class="inline-block mt-2 bg-indigo-600 text-white px-5 py-3 rounded-md hover:bg-indigo-700">🔗 Try the App</a>
     </section>
 
-    <section>
-      <h2>Pain Descriptions: Dataset</h2>
-      <p>This section will showcase real metaphors used by patients to describe endometriosis pain — alongside visual interpretations and taxonomic categorization.</p>
-      <p><em>Coming soon: a visual gallery + downloadable dataset.</em></p>
+    <!-- Dataset -->
+    <section class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Pain Descriptions Dataset</h2>
+      <p class="text-gray-700">Coming soon: a visual gallery and downloadable dataset of real pain metaphors used by people with endometriosis, organized by theme and function.</p>
     </section>
   </main>
 
-  <footer>
-    © 2025 Stella Bullo — ORCID: <a href="https://orcid.org/0000-0002-7402-0819" target="_blank">0000-0002-7402-0819</a>
+  <!-- Footer -->
+  <footer id="footer" class="py-6 text-sm text-gray-600 bg-white border-t mt-12">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col items-center text-center gap-4">
+      <div class="flex flex-wrap justify-center items-center gap-6 text-gray-700 text-sm">
+        <a href="mailto:stella@stellabullo.com" class="hover:text-indigo-600 flex items-center gap-1"><i data-lucide="mail" class="w-4 h-4"></i> stella@stellabullo.com</a>
+        <a href="https://github.com/Stella5791" target="_blank" class="hover:text-indigo-600 flex items-center gap-1"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="hover:text-indigo-600 flex items-center gap-1"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a>
+        <a href="https://ko-fi.com/stellabullo" target="_blank" class="hover:text-indigo-600 flex items-center gap-1"><i data-lucide="coffee" class="w-4 h-4"></i> Ko-fi</a>
+        <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" class="hover:text-indigo-600">ORCID</a>
+      </div>
+      <div class="text-xs text-gray-500">
+        &copy; 2025 Stella Bullo
+      </div>
+    </div>
   </footer>
 
+  <!-- Scroll-to-top -->
+  <button id="scrollToTopBtn" class="fixed bottom-6 right-6 p-3 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 hidden z-50">
+    <i data-lucide="chevron-up" class="w-5 h-5"></i>
+    <span class="sr-only">Back to top</span>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    function toggleDark() {
-      document.body.classList.toggle("dark");
-      localStorage.setItem("darkMode", document.body.classList.contains("dark"));
-    }
-    if (localStorage.getItem("darkMode") === "true") {
-      document.body.classList.add("dark");
-    }
+    document.addEventListener("DOMContentLoaded", () => {
+      if (typeof lucide !== "undefined") lucide.createIcons();
+
+      const scrollBtn = document.getElementById("scrollToTopBtn");
+      window.addEventListener("scroll", () => {
+        scrollBtn.classList.toggle("hidden", window.scrollY < 300);
+      });
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      AOS.init({ duration: 1000, once: true });
+    });
   </script>
 </body>
 </html>
