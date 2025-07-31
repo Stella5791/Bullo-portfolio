@@ -4,31 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Like a Fire in My Womb – Stella Bullo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      AOS.init();
-    });
-  </script>
-  <script>
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
   <style>
     body {
       font-family: 'Inter', sans-serif;
     }
-    h1, h2 {
+    h1, h2, h3, h4 {
       font-family: 'IBM Plex Mono', monospace;
     }
   </style>
 </head>
-
 <body class="bg-gray-50 text-gray-800 leading-relaxed tracking-wide">
 
   <!-- NAVIGATION + TOGGLE -->
@@ -40,31 +30,23 @@
     <button id="lang-toggle" class="border border-gray-400 px-3 py-1 rounded hover:bg-gray-200 font-mono">Español</button>
   </div>
 
+  
   <!-- HEADER FLEX SECTION -->
- <section class="max-w-5xl mx-auto px-6 md:px-12 py-12">
-  <div class="flex flex-col md:flex-row items-start gap-8">
-    <img src="fire-womb.png" alt="Like a Fire in My Womb" class="w-full md:max-w-sm rounded shadow-md" />
-    
-    <div class="flex-1">
-      <!-- ENGLISH HEADER -->
-      <div class="lang-en">
-        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-4">Like a Fire in My Womb</h1>
-        <h2 class="pt-4 text-2xl text-gray-600 italic font-medium mb-4">
-          What pain metaphors can reveal about invisible illnesses like endometriosis
-        </h2>
-      </div>
-
-      <!-- SPANISH HEADER -->
-      <div class="lang-es hidden">
-        <h1 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-4">Como si tuviera fuego en el útero</h1>
-        <h2 class="pt-4 text-2xl text-gray-600 italic font-medium mb-4">
-          Lo que las metáforas del dolor pueden revelar sobre enfermedades invisibilizadas como la endometriosis
-        </h2>
+  <section class="max-w-5xl mx-auto px-6 md:px-12 py-12">
+    <div class="flex flex-col md:flex-row items-start gap-8">
+      <img src="fire-womb.png" alt="Like a Fire in My Womb" class="w-full md:max-w-sm rounded shadow-md" />
+      <div class="flex-1">
+        <div class="lang-en">
+          <h1 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-4">Like a Fire in My Womb</h1>
+          <h2 class="pt-4 text-2xl text-gray-600 italic font-medium mb-4">What pain metaphors can reveal about invisible illnesses like endometriosis</h2>
+        </div>
+        <div class="lang-es hidden">
+          <h1 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-4">Como si tuviera fuego en el útero</h1>
+          <h2 class="pt-4 text-2xl text-gray-600 italic font-medium mb-4">Lo que las metáforas del dolor pueden revelar sobre enfermedades invisibilizadas como la endometriosis</h2>
+        </div>
       </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- ENGLISH ARTICLE -->
   <section class="lang-en max-w-5xl mx-auto px-6 md:px-12 pb-20 space-y-6 text-lg">
@@ -115,9 +97,10 @@
     </ul>
   </section>
 
-  
+  <!-- SPANISH ARTICLE -->
+  <section class="lang-es hidden max-w-5xl mx-auto px-6 md:px-12 pb-20 space-y-6 text-lg">
   <p>Metáforas como cuchillas, monstruos o fuegos internos podrían ser indicativas de una enfermedad crónica como la endometriosis.</p>
-
+    
   <blockquote class="border-l-4 border-indigo-300 pl-4 italic text-gray-700">
     "Es como si me clavaran algo desde adentro."<br>
     "Siento como si un animal rasguñara mi abdomen por dentro."<br>
@@ -183,8 +166,7 @@
   </ul>
 </section>
 
-
-  <!-- BACK TO TOP -->
+ <!-- BACK TO TOP -->
   <button onclick="scrollToTop()" class="fixed bottom-5 right-5 bg-indigo-700 text-white px-4 py-2 rounded hover:bg-indigo-600 font-mono shadow-md text-sm">↑ Top</button>
 
   <!-- FOOTER -->
@@ -195,13 +177,22 @@
     <a href="https://ko-fi.com/stellabullo" class="hover:underline" target="_blank">Ko-fi</a>
   </footer>
 
-  <!-- LANGUAGE TOGGLE -->
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      AOS.init();
+    });
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     let currentLang = 'en';
     document.getElementById('lang-toggle').addEventListener('click', () => {
       currentLang = currentLang === 'en' ? 'es' : 'en';
-      document.querySelector('.lang-en').classList.toggle('hidden', currentLang !== 'en');
-      document.querySelector('.lang-es').classList.toggle('hidden', currentLang !== 'es');
+      document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', currentLang !== 'en'));
+      document.querySelectorAll('.lang-es').forEach(el => el.classList.toggle('hidden', currentLang !== 'es'));
       document.getElementById('lang-toggle').textContent = currentLang === 'en' ? 'Español' : 'English';
     });
   </script>

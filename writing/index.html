@@ -21,6 +21,10 @@
       scroll-behavior: smooth;
     }
 
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    }
+
     a, button {
       transition: all 0.3s ease-in-out;
     }
@@ -32,7 +36,7 @@
   </style>
 </head>
 
-<body class="bg-white text-gray-800 font-sans">
+<body class="bg-white text-gray-800">
 
 <!-- NAVIGATION -->
 <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex justify-between items-center p-4 transition-all duration-300 text-sm">
@@ -53,8 +57,6 @@
 </nav>
 
 <!-- HERO -->
-
-
 <header class="pt-32 pb-12 px-6 bg-gradient-to-b from-white to-indigo-50 text-left w-full">
   <div class="max-w-4xl mx-auto">
     <h1 class="text-4xl font-bold text-indigo-700 lang-en">Reflections</h1>
@@ -62,27 +64,24 @@
 
     <p class="text-lg text-gray-600 mt-4 lang-en">
       This space gathers fragments of my journey as a linguist, researcher, developer, writer, and woman learning to embrace change.
-    I write to make sense of the world and my place within it, exploring how language shapes our reality, identity, memory, pain, and possibility.
- </p>
+      I write to make sense of the world and my place within it, exploring how language shapes our reality, identity, memory, pain, and possibility.
+    </p>
 
     <p class="text-lg text-gray-600 mt-4 lang-es hidden">
-       Este espacio reúne fragmentos de mi camino como lingüista, investigadora, desarrolladora, escritora y mujer que aprende a habitar el cambio.
-    Escribo para darle sentido al mundo y a mi lugar en él, explorando cómo el lenguaje moldea nuestra forma de entender la realidad, la identidad, la memoria, el dolor y la posibilidad.
- </p>
+      Este espacio reúce fragmentos de mi camino como lingüista, investigadora, desarrolladora, escritora y mujer que aprende a habitar el cambio.
+      Escribo para darle sentido al mundo y a mi lugar en él, explorando cómo el lenguaje moldea nuestra forma de entender la realidad, la identidad, la memoria, el dolor y la posibilidad.
+    </p>
   </div>
 </header>
 
-
 <!-- MAIN CONTENT -->
-<main class="max-w-5xl mx-auto px-6 pt-12 pb-24 space-y-20" data-aos="fade-up">
-
-
+<main class="max-w-4xl mx-auto px-6 pt-12 pb-24 space-y-20" data-aos="fade-up">
   <!-- PAIN SECTION -->
-  <section id="pain">
-    <h2 class="font-mono text-indigo-700 text-lg border-b border-indigo-200 pb-1 mb-4 lang-en">Pain</h2>
-    <h2 class="font-mono text-indigo-700 text-lg border-b border-indigo-200 pb-1 mb-4 lang-es hidden">Dolor</h2>
+  <section id="pain" class="px-6">
+    <h2 class="text-2xl font-bold text-indigo-700 mb-6 lang-en">Pain</h2>
+    <h2 class="text-2xl font-bold text-indigo-700 mb-6 lang-es hidden">Dolor</h2>
 
-    <article class="space-y-3">
+    <article class="space-y-3 max-w-4xl mx-auto">
       <a href="reflections/like-fire-in-my-womb.html" class="text-2xl font-semibold hover:underline lang-en">Like a Fire in My Womb</a>
       <a href="reflections/like-fire-in-my-womb.html" class="text-2xl font-semibold hover:underline lang-es hidden">Como si tuviera fuego en el útero</a>
 
@@ -93,13 +92,10 @@
         A searing metaphor. A silent epidemic. As a linguist, I explore how language shapes the experience of endometriosis and why finding the right words matters. You can find out more about  my work on language and endometriosis in the <a href="/projects/language-of-endo.html" class="text-indigo-600 hover:underline">Language of Endometriosis</a> project.
       </p>
       <p class="lang-es hidden">
-        Una metáfora que arde. Una epidemia silenciosa. Como lingüista, exploro cómo el lenguaje moldea la vivencia de la endometriosis y por qué encontrar las palabras justas importa. Puedes encontrar más información sobre mi trabajo en lenguaje y endometriosis en el proyecto <a href="/projects/language-of-endo.html" class="text-indigo-600 hover:underline">Language of Endometriosis</a>.
+        Una metáfora que arde. Una epidemia silenciosa. Como lingüista, exploro cómo el lenguaje moldea la vivencia de la endometriosis y por qué encontrar las palabras justas importa. Puedes encontrar más información sobre mi trabajo en lenguaje y endometriosis en el proyecto <a href="/projects/language-of-endo.html" class="text-indigo-600 hover:underline">Language of Endometriosis</a>. 
       </p>
     </article>
   </section>
-
-  <!-- Future sections like Identity, Home, etc. can go here -->
-
 </main>
 
 <!-- FOOTER -->
