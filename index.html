@@ -3,45 +3,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Stella Bullo – Linguist, Developer, Writer exploring the space between language, health, and technology." />
+  <meta name="description" content="Explore The Language of Endometriosis – a project by Stella Bullo combining linguistics, health, and digital tools to make pain visible." />
   <meta name="author" content="Stella Bullo" />
-  <title>Stella Bullo – Linguist. Developer. Writer.</title>
-  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  <title>The Language of Endometriosis – Stella Bullo</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- AOS Animation -->
+  <!-- AOS & Lucide -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
+    html, body { height: 100%; margin: 0; padding: 0; scroll-behavior: smooth; }
     body {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, "Noto Sans", sans-serif;
+      background: #f9fafb;
       display: flex;
       flex-direction: column;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-      background: #f9fafb;
     }
-
-    main {
-      flex-grow: 1;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    main { flex-grow: 1; }
   </style>
 </head>
-
 <body>
   <!-- Navbar -->
-  <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex justify-between items-center p-4 transition-all duration-300">
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md flex justify-between items-center p-4">
     <h2 class="text-xl font-bold text-indigo-700"><a href="/index.html">Stella Bullo</a></h2>
     <ul class="flex gap-4 text-sm items-center">
       <li><a href="/coding/index.html" class="hover:text-indigo-600">Coding</a></li>
@@ -56,58 +43,77 @@
     </ul>
   </nav>
 
-  <!-- Main Content -->
-  <main class="pt-52 pb-10 px-6 md:px-8 bg-gradient-to-b from-white to-indigo-50">
-    <section class="max-w-6xl mr-auto ml-0 grid grid-cols-1 md:grid-cols-[1fr_1fr_2fr] items-start gap-10 text-center md:text-left" data-aos="fade-up">
-      <!-- Column 1: Icons -->
-      <div class="flex flex-col items-center md:items-end gap-4 pt-10 md:pt-16">
-        <a href="https://github.com/Stella5791" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:scale-110">
-          <i data-lucide="github" class="w-6 h-6"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:scale-110">
-          <i data-lucide="linkedin" class="w-6 h-6"></i>
-        </a>
-        <a href="https://ko-fi.com/stellabullo" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:scale-110">
-          <i data-lucide="coffee" class="w-6 h-6"></i>
-        </a>
-      </div>
+  <section class="max-w-6xl mx-auto px-6 md:px-8 pt-52 pb-12 grid grid-cols-1 md:grid-cols-[1fr_2fr] items-center gap-10" data-aos="fade-down">
+  <!-- Logo Image (Left Column) -->
+  <div class="flex justify-center md:justify-end pr-6 md:pr-12">
+    <img src="src/logo-short.png" alt="Project Logo" class="rounded-full w-48 h-48 object-contain shadow-md border border-gray-200" />
+  </div>
 
-      <!-- Column 2: Profile Image -->
-      <div class="flex justify-center">
-        <img src="./stella-picture.png" alt="Stella Bullo" onerror="this.style.display='none';" class="rounded-full w-64 h-64 object-cover shadow-lg" />
-      </div>
+  <!-- Title & Text (Right Column) -->
+  <div class="text-center md:text-left md:pl-4">
+    <h1 class="text-4xl md:text-5xl font-bold text-indigo-700 leading-tight mb-3 whitespace-nowrap">
+  The Language of Endometriosis
+</h1>
+<p class="text-lg text-gray-700 max-w-xl leading-relaxed pt-6">
+  The language of pain is the story of invisibility.  
+  <br />
+  It holds lived experience in every word.
+</p>
+ </div>
+</section>
 
-      <!-- Column 3: Text and Buttons -->
-      <div class="flex flex-col justify-center items-center md:items-start pr-4">
-        <h1 class="text-4xl md:text-5xl font-bold text-indigo-700 leading-tight">Stella Bullo</h1>
-        <h2 class="text-lg md:text-xl mt-3 mb-6 text-gray-700">Linguist. Developer. Writer.</h2>
-        <p class="mb-6 text-gray-600 max-w-lg">I work at the intersection of language, health, and human experience. I bridge research with digital tools to help make invisible realities more visible.</p>
-        <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-          <a href="/coding/index.html" class="bg-indigo-600 text-white px-5 py-3 rounded-md hover:bg-indigo-700">Explore Coding</a>
-          <a href="writing/index.html" class="border border-indigo-600 text-indigo-600 px-5 py-3 rounded-md hover:bg-indigo-100">Explore Writing</a>
-          <a href="projects/index.html" class="border border-indigo-600 text-indigo-600 px-5 py-3 rounded-md hover:bg-indigo-100">Explore Projects</a>
-        </div>
-      </div>
+  <!-- Main Sections -->
+  <main class="max-w-5xl mx-auto px-6 md:px-10 py-8 space-y-12">
+
+    <!-- About -->
+    <section class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">About the Project</h2>
+      <p class="text-gray-700 mb-4"><strong>The Language of Endometriosis</strong> brings together linguistics, health communication, and digital tools to better understand and express invisible, complex pain.</p>
+      <p class="text-gray-700">Led by <strong>Dr Stella Bullo</strong>, this work spans peer-reviewed research, public writing, a custom dataset, and a metaphor-tagging web app to support patients and clinicians.</p>
+    </section>
+
+    <!-- Peer-reviewed articles -->
+    <section class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Peer-Reviewed Articles</h2>
+      <ul class="list-disc pl-5 space-y-2 text-gray-700">
+        <li><a href="https://e-space.mmu.ac.uk/622513/1/SBullo2019-Endo-pain-comm.pdf" target="_blank" class="text-indigo-600 hover:underline">“I feel like I'm being stabbed”: Metaphor and Pain in Endometriosis Narratives</a></li>
+        <li><a href="https://bpspsychub.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/bjhp.12472" target="_blank" class="text-indigo-600 hover:underline">Parallel Words: Chronic Pain and Language</a></li>
+        <li><a href="https://www.frontiersin.org/articles/10.3389/fgwh.2021.764693/full" target="_blank" class="text-indigo-600 hover:underline">Challenges in Pain Communication: The Role of Language</a></li>
+      </ul>
+    </section>
+
+    <!-- Public Articles -->
+    <section class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Articles for the Public</h2>
+      <p class="text-gray-700 mb-4">Accessible pieces based on the research. These aim to raise awareness and spark conversation:</p>
+      <ul class="list-disc pl-5 space-y-2 text-gray-700">
+        <li><a href="/reflections/like-fire-in-my-womb.html" target="_blank" class="text-indigo-600 hover:underline">Like a Fire in My Womb</a></li>
+      </ul>
+    </section>
+
+    <!-- App -->
+    <section class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Explain My Pain App</h2>
+      <p class="text-gray-700 mb-4">A tool that tags metaphorical pain expressions with experiential, emotional, and clinical insight — helping patients communicate better and clinicians understand more clearly.</p>
+      <a href="https://your-app-link.com" target="_blank" class="inline-block mt-2 bg-indigo-600 text-white px-5 py-3 rounded-md hover:bg-indigo-700">🔗 Try the App</a>
+    </section>
+
+    <!-- Dataset -->
+    <section class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
+      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Pain Descriptions Dataset</h2>
+      <p class="text-gray-700">Coming soon: a visual gallery and downloadable dataset of real pain metaphors used by people with endometriosis, organized by theme and function.</p>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer id="footer" class="py-6 text-sm text-gray-600 bg-white border-t mt-0">
+  <footer id="footer" class="py-6 text-sm text-gray-600 bg-white border-t mt-12">
     <div class="max-w-6xl mx-auto px-6 flex flex-col items-center text-center gap-4">
       <div class="flex flex-wrap justify-center items-center gap-6 text-gray-700 text-sm">
-        <a href="mailto:stella@stellabullo.com" class="hover:text-indigo-600 flex items-center gap-1">
-          <i data-lucide="mail" class="w-4 h-4"></i> stella@stellabullo.com
-        </a>
-        <a href="https://github.com/Stella5791" target="_blank" class="hover:text-indigo-600 flex items-center gap-1">
-          <i data-lucide="github" class="w-4 h-4"></i> GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="hover:text-indigo-600 flex items-center gap-1">
-          <i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn
-        </a>
-        <a href="https://ko-fi.com/stellabullo" target="_blank" class="hover:text-indigo-600 flex items-center gap-1">
-          <i data-lucide="coffee" class="w-4 h-4"></i> Ko-fi
-        </a>
-        <a href="https://orcid.org/0000-0002-7021-7792" target="_blank" class="hover:text-indigo-600">ORCID</a>
+        <a href="mailto:stella@stellabullo.com" class="hover:text-indigo-600 flex items-center gap-1"><i data-lucide="mail" class="w-4 h-4"></i> stella@stellabullo.com</a>
+        <a href="https://github.com/Stella5791" target="_blank" class="hover:text-indigo-600 flex items-center gap-1"><i data-lucide="github" class="w-4 h-4"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="hover:text-indigo-600 flex items-center gap-1"><i data-lucide="linkedin" class="w-4 h-4"></i> LinkedIn</a>
+        <a href="https://ko-fi.com/stellabullo" target="_blank" class="hover:text-indigo-600 flex items-center gap-1"><i data-lucide="coffee" class="w-4 h-4"></i> Ko-fi</a>
+        <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" class="hover:text-indigo-600">ORCID</a>
       </div>
       <div class="text-xs text-gray-500">
         &copy; 2025 Stella Bullo
@@ -125,9 +131,7 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      if (typeof lucide !== "undefined") {
-        lucide.createIcons();
-      }
+      if (typeof lucide !== "undefined") lucide.createIcons();
 
       const scrollBtn = document.getElementById("scrollToTopBtn");
       window.addEventListener("scroll", () => {
