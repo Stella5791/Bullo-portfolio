@@ -38,19 +38,31 @@
 
 <body class="bg-white text-gray-800">
 
+
 <!-- NAVIGATION -->
 <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md text-sm">
-  <div class="flex justify-between items-center p-4 max-w-7xl mx-auto">
+  <div class="relative flex justify-between items-center p-4 max-w-7xl mx-auto">
+    <!-- Logo -->
     <h2 class="text-xl font-bold text-indigo-700 whitespace-nowrap">
       <a href="/index.html">Stella Bullo</a>
     </h2>
 
-    <ul class="flex gap-4 items-center overflow-x-auto">
+    <!-- Hamburger Button -->
+    <button id="menu-button" class="md:hidden text-gray-700 focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Desktop Menu -->
+    <ul id="menu" class="hidden md:flex gap-4 items-center overflow-x-auto relative z-50">
       
       <!-- Reflections Dropdown -->
       <li class="relative group">
         <a href="#pain" class="hover:text-indigo-600 whitespace-nowrap">Reflections ▾</a>
-        <ul class="absolute left-0 mt-1 w-40 bg-white shadow-md text-gray-700 text-sm rounded-md z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden group-hover:block">
+        <ul class="absolute top-full left-0 mt-2 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 z-50">
           <li><a href="#pain" class="block px-4 py-2 hover:bg-indigo-50 lang-en">Pain</a></li>
           <li><a href="#pain" class="block px-4 py-2 hover:bg-indigo-50 lang-es hidden">Dolor</a></li>
         </ul>
@@ -59,29 +71,46 @@
       <!-- Other Work Dropdown -->
       <li class="relative group">
         <a href="#" class="hover:text-indigo-600 whitespace-nowrap">Other Work ▾</a>
-        <ul class="absolute left-0 mt-1 w-56 bg-white shadow-md text-gray-700 text-sm rounded-md z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden group-hover:block">
-          
-          <!-- Coding -->
-          <li><a href="/portfolio/coding/index.html" class="block px-4 py-2 hover:bg-indigo-50">Coding</a></li>
-
-          <!-- Projects Submenu -->
+        <ul class="absolute top-full left-0 mt-2 w-56 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 z-50">
+          <li><a href="/coding/index.html" class="block px-4 py-2 hover:bg-indigo-50">Coding</a></li>
           <li class="relative group">
             <a href="#" class="block px-4 py-2 hover:bg-indigo-50">Projects ▸</a>
-            <ul class="absolute top-0 left-full mt-0 w-64 bg-white shadow-md text-gray-700 text-sm rounded-md z-50 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hidden group-hover:block">
+            <ul class="absolute top-0 left-full mt-0 w-64 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-200 z-50">
               <li><a href="/projects/the-lang-of-endo.html" class="block px-4 py-2 hover:bg-indigo-50">The Language of Endometriosis</a></li>
             </ul>
           </li>
-
         </ul>
       </li>
 
       <!-- Language Toggle -->
       <li>
-        <button id="lang-toggle" class="border border-indigo-600 px-3 py-1 rounded text-indigo-700 hover:bg-indigo-600 hover:text-white transition font-mono whitespace-nowrap">Español</button>
+        <button id="lang-toggle" class="border border-indigo-600 px-3 py-1 rounded text-indigo-700 hover:bg-indigo-600 hover:text-white transition whitespace-nowrap">Español</button>
       </li>
     </ul>
   </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <ul id="mobile-menu" class="md:hidden hidden flex-col px-6 pb-4 gap-2 bg-white text-sm">
+    <li class="relative group">
+      <a href="#pain" class="hover:text-indigo-600 whitespace-nowrap">Reflections ▾</a>
+      <ul class="ml-4 mt-1 text-sm text-gray-700">
+        <li><a href="#pain" class="block py-1 hover:text-indigo-600 lang-en">Pain</a></li>
+        <li><a href="#pain" class="block py-1 hover:text-indigo-600 lang-es hidden">Dolor</a></li>
+      </ul>
+    </li>
+    <li class="relative group">
+      <a href="#" class="hover:text-indigo-600 whitespace-nowrap">Other Work ▾</a>
+      <ul class="ml-4 mt-1 text-sm text-gray-700">
+        <li><a href="/portfolio/coding/index.html" class="block py-1 hover:text-indigo-600">Coding</a></li>
+        <li><a href="/projects/the-lang-of-endo.html" class="block py-1 hover:text-indigo-600">The Language of Endometriosis</a></li>
+      </ul>
+    </li>
+    <li>
+      <button id="lang-toggle-mobile" class="border border-indigo-600 px-3 py-1 rounded text-indigo-700 hover:bg-indigo-600 hover:text-white transition w-fit">Español</button>
+    </li>
+  </ul>
 </nav>
+
 
 
 
@@ -141,10 +170,35 @@
   </section>
 </main>
 
-<!-- FOOTER -->
-<footer class="text-center py-4 text-sm text-gray-600 bg-white border-t">
-  <p>Email: stella.bullo.pro@gmail.com &nbsp; | &nbsp; &copy; 2025 Stella Bullo. All rights reserved.</p>
+<!-- Footer -->
+<footer id="footer" class="bg-white border-t border-gray-200 py-10 px-6 mt-0">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-700">
+
+    <!-- Contact Info -->
+    <div class="flex items-center gap-2 text-indigo-700 font-medium">
+      <i data-lucide="mail" class="w-5 h-5"></i>
+      <a href="mailto:info@stellabullo.com" class="hover:underline">info@stellabullo.com</a>
+    </div>
+
+    <!-- Social Links -->
+    <div class="flex flex-wrap justify-center gap-6 items-center text-indigo-700">
+    
+      <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="hover:text-indigo-900 flex items-center gap-1">
+        <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
+      </a>
+      <a href="https://ko-fi.com/stellabullo" target="_blank" class="hover:text-indigo-900 flex items-center gap-1">
+        <i data-lucide="coffee" class="w-5 h-5"></i> Ko-fi
+      </a>
+      <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" class="hover:text-indigo-900">ORCID</a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-xs text-gray-500 text-center md:text-right">
+      &copy; 2025 Stella Bullo
+    </div>
+  </div>
 </footer>
+
 
 <!-- BACK TO TOP BUTTON -->
 <button id="scrollToTopBtn" class="fixed bottom-6 right-6 p-3 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 hidden z-50">
@@ -176,8 +230,17 @@
     scrollBtn.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
+
+    // ✅ Mobile menu toggle
+    const menuButton = document.getElementById("menu-button");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
   });
 </script>
+
 
 </body>
 </html>
