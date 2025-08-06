@@ -5,83 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Between Linguistics and the Scar | Stella Bullo</title>
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
+   <style>
     body {
       font-family: 'Inter', sans-serif;
       background-color: #f9fafb;
       color: #1f2937;
       line-height: 1.7;
-      padding: 2rem;
+      padding: 2rem 1rem;
+      margin: 0 auto;
       max-width: 800px;
-      margin: auto;
+      width: 100%;
     }
+
     h1 {
-      color: #4f46e5;
-      margin-bottom: 2rem;
+       color: #4f46e5;
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
     }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+.lang-toggle {
+      color: #4f46e5;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+      background: none;
+      border: none;
+      padding: 0;
+      margin-left: 1rem;
+    }
+    
   </style>
 </head>
 <body>
 
-  <a href="../#articles" class="back-link text-indigo-600 font-semibold mb-8 inline-block cursor-pointer hover:underline">&larr; Back to Articles</a>
+  <a href="../#articles" style="color:#4f46e5; font-weight:600; text-decoration:underline;">← Back to Articles</a>
+  <button id="lang-toggle" class="lang-toggle">Español</button>
 
-  <h1 class="text-4xl font-bold">Between Linguistics and the Scar</h1>
-  <p class="mb-6 italic">Reflections on researching lived pain, from language to code<br />Dr. Stella Maris Bullo | ORCID: 0000-0002-1866-5214</p>
+  <div id="english">
+<h1>Between Linguistics and the Scar</h1>
+  <p style="font-style: italic; color: #4b5563;">Reflections on researching lived pain, from language to code</p>
+  <p style="font-style: italic; color: #4b5563;">Dr. Stella Bullo</p>
+  <br/>
 
-  <h2 class="text-2xl font-semibold mt-10 mb-6">Executive Summary</h2>
-  <p class="mb-6"><strong>Explain My Pain</strong> is a digital tool that translates metaphorical pain descriptions into clinically meaningful language for patients and clinicians. This article explains the rationale and process behind building the Explain My Pain app, tracing its roots from the developer’s lived experience with endometriosis, through academic research in linguistics and health communication, to becoming a developer.</p>
-  <p class="mb-6">The app is based on <em>The Language of Endo</em> project, which revealed how metaphor plays a vital role in expressing reproductive pain that conventional medical language cannot capture. It uncovered a significant communication gap between patients and clinicians that contributes to diagnostic delays and misunderstanding.</p>
-  <p class="mb-6">Building on findings from mixed-methods research combining patient narratives and clinical perspectives, and integrating natural language processing, Explain My Pain aims to empower patients to communicate their pain more effectively and help clinicians understand these complex experiences.</p>
+  
 
-  <h2 class="text-2xl font-semibold mt-10 mb-6">Project Summary</h2>
-  <p class="mb-6">In 2016, while I was a Senior Lecturer and researcher in Linguistics at Manchester Metropolitan University in the UK, I was living with a condition that became increasingly incapacitating. Despite my academic training and years of experience researching language and communication, I struggled to convey the severity of my endometriosis pain.</p>
-  <p class="mb-6"><em>How do you talk about a pain no one seems to believe?</em> A deceptively simple question with a viscerally complex answer.</p>
-  <p class="mb-6">It was a question I asked not only as a patient, but as an inquisitive researcher. Despite years of training in how language works, and being bilingual and professionally attuned to nuance, I could not fully explain the pain I felt. When I did manage to speak, I often wasn’t believed. Or rather, people could not accurately make sense of the dimension, acuteness, or depth of that pain. It was not just a failure of language. It was a failure of the ability to turn severe pain into words that capture its intensity and translate into empathy.</p>
-  <p class="mb-6">Between 2017 and 2022, I led a mixed-methods linguistic research project exploring how people with endometriosis describe their pain and care experiences. We collected narratives through interviews, patient surveys, online forums, creative workshops, and conversations with clinicians. These stories challenged the biomedical silence and cultural discomfort around menstruation.</p>
-  <p class="mb-6">What emerged was a set of narratives that resisted simplification. People were not just reporting symptoms; they were fighting to be heard.</p>
+  <h2>Executive Summary</h2>
+  <p ><strong>Explain My Pain</strong> is a digital tool that translates metaphorical pain descriptions into clinically meaningful language for patients and clinicians. This article explains the rationale and process behind building the Explain My Pain app, tracing its roots from the developer’s lived experience with endometriosis, through academic research in linguistics and health communication, to becoming a developer.</p>
+  <p>The app is based on <em>The Language of Endo</em> project, which revealed how metaphor plays a vital role in expressing reproductive pain that conventional medical language cannot capture. It uncovered a significant communication gap between patients and clinicians that contributes to diagnostic delays and misunderstanding.</p>
+  <p>Building on findings from mixed-methods research combining patient narratives and clinical perspectives, and integrating natural language processing, Explain My Pain aims to empower patients to communicate their pain more effectively and help clinicians understand these complex experiences.</p>
 
-  <h2 class="text-2xl font-semibold mt-10 mb-6">The Project</h2>
-  <p class="mb-6"><em>The Language of Endometriosis</em> combined discourse analysis, corpus linguistics, and interpretive phenomenology to examine how pain is communicated when no shared language exists.</p>
-  <p class="mb-6">Data came from interviews with patients and clinicians, patient surveys, social media posts, workshops, and public engagement events. Both qualitative and quantitative methods were used to trace how pain is expressed, intensified, resisted, or silenced.</p>
-  <p class="mb-6">What united these data was a focus on language — the words people chose, the imagery and metaphors they used, the silences and gestures that often said more than words.</p>
-  <p class="mb-6">Rather than treating pain as a symptom to be measured, the project treated it as something shaped through language — metaphorical, improvised, and deeply felt. It asked how language might become the only diagnostic tool available, and how people use it to make themselves heard.</p>
+  <h2>Project Summary</h2>
+  <p>In 2016, while I was a Senior Lecturer and researcher in Linguistics at Manchester Metropolitan University in the UK, I was living with a condition that became increasingly incapacitating. Despite my academic training and years of experience researching language and communication, I struggled to convey the severity of my endometriosis pain.</p>
+  <p><em>How do you talk about a pain no one seems to believe?</em> A deceptively simple question with a viscerally complex answer.</p>
+  <p>It was a question I asked not only as a patient, but as an inquisitive researcher. Despite years of training in how language works, and being bilingual and professionally attuned to nuance, I could not fully explain the pain I felt. When I did manage to speak, I often wasn’t believed. Or rather, people could not accurately make sense of the dimension, acuteness, or depth of that pain. It was not just a failure of language. It was a failure of the ability to turn severe pain into words that capture its intensity and translate into empathy.</p>
+  <p>Between 2017 and 2022, I led a mixed-methods linguistic research project exploring how people with endometriosis describe their pain and care experiences. We collected narratives through interviews, patient surveys, online forums, creative workshops, and conversations with clinicians. These stories challenged the biomedical silence and cultural discomfort around menstruation.</p>
+  <p>What emerged was a set of narratives that resisted simplification. People were not just reporting symptoms; they were fighting to be heard.</p>
 
-  <h2 class="text-2xl font-semibold mt-10 mb-6">What Patients Said</h2>
-  <p class="mb-6">Many waited more than a decade for diagnosis, describing years of dismissal and disbelief. They did not rely on clinical scales but reached for vivid, often violent metaphors — survival strategies to communicate pain when medical language failed.</p>
-  <p class="mb-6"><q>It feels like someone is strangling my womb.</q></p>
-  <p class="mb-6"><q>It’s like barbed wire is wrapped around my lower spine.</q></p>
-  <p class="mb-6"><q>I can’t find the words… it’s like trying to scream underwater.</q></p>
-  <p class="mb-6">Metaphors of intrusion and fragmentation were common. Pain was an invading force, ripping or burning. Bodies felt broken, disjointed, or alien. These metaphors conveyed frustration, urgency, and isolation. Language was not a mirror but a lifeline and a last resort.</p>
+  <h2>The Project</h2>
+  <p><em>The Language of Endometriosis</em> combined discourse analysis, corpus linguistics, and interpretive phenomenology to examine how pain is communicated when no shared language exists.</p>
+  <p>Data came from interviews with patients and clinicians, patient surveys, social media posts, workshops, and public engagement events. Both qualitative and quantitative methods were used to trace how pain is expressed, intensified, resisted, or silenced.</p>
+  <p>What united these data was a focus on language — the words people chose, the imagery and metaphors they used, the silences and gestures that often said more than words.</p>
+  <p>Rather than treating pain as a symptom to be measured, the project treated it as something shaped through language — metaphorical, improvised, and deeply felt. It asked how language might become the only diagnostic tool available, and how people use it to make themselves heard.</p>
 
-  <h2 class="text-2xl font-semibold mt-10 mb-6">What Doctors Said</h2>
-  <p class="mb-6">Clinicians described frustration with diagnostic limits and the inadequacy of biomedical language to capture patients’ rich metaphorical descriptions.</p>
-  <p class="mb-6"><q>They say something is burning inside them, but there’s nothing on the scan. So how do I code that?</q></p>
-  <p class="mb-6">Clinicians often lacked the tools to decode metaphor and distress, working under pressure with limited information. Linguistics offered a method for listening differently, recognizing metaphor as evidence rather than exaggeration.</p>
+  <h2 >What Patients Said</h2>
+  <p>Many waited more than a decade for diagnosis, describing years of dismissal and disbelief. They did not rely on clinical scales but reached for vivid, often violent metaphors — survival strategies to communicate pain when medical language failed.</p>
+  <p><q>It feels like someone is strangling my womb.</q></p>
+  <p><q>It’s like barbed wire is wrapped around my lower spine.</q></p>
+  <p><q>I can’t find the words… it’s like trying to scream underwater.</q></p>
+  <p>Metaphors of intrusion and fragmentation were common. Pain was an invading force, ripping or burning. Bodies felt broken, disjointed, or alien. These metaphors conveyed frustration, urgency, and isolation. Language was not a mirror but a lifeline and a last resort.</p>
 
-  <h2 class="text-2xl font-semibold mt-10 mb-6">Research from the Inside</h2>
-  <p class="mb-6">I did not approach this research neutrally. Living with endometriosis and trained in linguistics, I was both participant and observer. Interviewing people about experiences I shared brought emotional challenges and demanded an embodied, ethically aware methodology.</p>
-  <p class="mb-6">My commitment was to language as a medium for care and insight — not diagnosis or therapy, but compassionate listening and rigorous analysis.</p>
+  <h2 >What Doctors Said</h2>
+  <p>Clinicians described frustration with diagnostic limits and the inadequacy of biomedical language to capture patients’ rich metaphorical descriptions.</p>
+  <p><q>They say something is burning inside them, but there’s nothing on the scan. So how do I code that?</q></p>
+  <p>Clinicians often lacked the tools to decode metaphor and distress, working under pressure with limited information. Linguistics offered a method for listening differently, recognizing metaphor as evidence rather than exaggeration.</p>
 
-  <h2 class="text-2xl font-semibold mt-10 mb-6">Key Findings</h2>
-  <p class="mb-6">Invisible pain is subjective and hard to describe, leading to long diagnostic delays. Metaphor is a vital tool patients use to express pain’s intensity and social struggle. A gap exists between patients’ metaphorical language and clinicians’ biomedical terms, causing misunderstandings.</p>
-  <p class="mb-6">These insights motivated the creation of <em>Explain My Pain</em>, a digital tool translating metaphorical pain descriptions into clinical language, supporting both patients and healthcare professionals.</p>
+  <h2 >Research from the Inside</h2>
+  <p>I did not approach this research neutrally. Living with endometriosis and trained in linguistics, I was both participant and observer. Interviewing people about experiences I shared brought emotional challenges and demanded an embodied, ethically aware methodology.</p>
+  <p>My commitment was to language as a medium for care and insight — not diagnosis or therapy, but compassionate listening and rigorous analysis.</p>
 
-  <h2 class="text-2xl font-semibold mt-10 mb-6">Impact</h2>
-  <p class="mb-6">The project garnered urgent interest. Publications advanced metaphor theory and awareness of communication breakdowns. Media features amplified patient voices and brought linguistic perspectives into public discussions of chronic pain.</p>
-  <p class="mb-6">The <em>Explain My Pain</em> app represents the shift from research to practical application, helping people describe their pain in natural language and enabling clinicians to hear it more clearly.</p>
+  <h2 >Key Findings</h2>
+  <p>Invisible pain is subjective and hard to describe, leading to long diagnostic delays. Metaphor is a vital tool patients use to express pain’s intensity and social struggle. A gap exists between patients’ metaphorical language and clinicians’ biomedical terms, causing misunderstandings.</p>
+  <p>These insights motivated the creation of <em>Explain My Pain</em>, a digital tool translating metaphorical pain descriptions into clinical language, supporting both patients and healthcare professionals.</p>
 
-  <h2 class="text-2xl font-semibold mt-10 mb-6">About Explain My Pain</h2>
-  <p class="mb-6"><em>Explain My Pain</em> is a web application that uses natural language processing (NLP) to identify and classify metaphorical expressions in patient descriptions of pain. The app analyses free-text input by detecting metaphorical expressions drawn from the most common pain descriptors identified in the <em>Language of Endo</em> database. These include categories such as fire, pressure, intrusion, and fragmentation, which are frequently used by people with endometriosis to describe their experience.</p>
-  <p class="mb-6">By translating these metaphors into clinically meaningful language, the app generates plain-language summaries tailored for patients and structured reports designed for healthcare professionals. This dual output aims to improve communication, helping patients express their pain more effectively and enabling clinicians to better understand complex, metaphor-rich narratives that often evade conventional clinical language.</p>
-  <p class="mb-6">The app was developed using Python and Flask for backend processing, with JavaScript and responsive web design for the user interface. It represents a practical application of linguistic research and NLP technology to address real-world health communication challenges.</p>
+  <h2 >Impact</h2>
+  <p>The project garnered urgent interest. Publications advanced metaphor theory and awareness of communication breakdowns. Media features amplified patient voices and brought linguistic perspectives into public discussions of chronic pain.</p>
+  <p>The <em>Explain My Pain</em> app represents the shift from research to practical application, helping people describe their pain in natural language and enabling clinicians to hear it more clearly.</p>
 
-  <a href="../#index" class="back-link text-indigo-600 font-semibold mb-8 inline-block cursor-pointer hover:underline">&larr; Back to Articles</a>
-  <div class="mt-12 text-sm text-center">
-  <a href="../../index.html" class="text-indigo-600 hover:underline">← Back to main page</a>
-</div>
+  <h2 >About Explain My Pain</h2>
+  <p><em>Explain My Pain</em> is a web application that uses natural language processing (NLP) to identify and classify metaphorical expressions in patient descriptions of pain. The app analyses free-text input by detecting metaphorical expressions drawn from the most common pain descriptors identified in the <em>Language of Endo</em> database. These include categories such as fire, pressure, intrusion, and fragmentation, which are frequently used by people with endometriosis to describe their experience.</p>
+  <p>By translating these metaphors into clinically meaningful language, the app generates plain-language summaries tailored for patients and structured reports designed for healthcare professionals. This dual output aims to improve communication, helping patients express their pain more effectively and enabling clinicians to better understand complex, metaphor-rich narratives that often evade conventional clinical language.</p>
+  <p>The app was developed using Python and Flask for backend processing, with JavaScript and responsive web design for the user interface. It represents a practical application of linguistic research and NLP technology to address real-world health communication challenges.</p>
+
+  </div>
 
 <div class="bg-indigo-50 border border-indigo-200 rounded-lg p-4 mt-10 text-sm text-gray-800 text-center">
   <p>
@@ -90,7 +117,30 @@
       The Language of Endometriosis
     </a>, where I trace the intersection of pain, metaphor, and code.
   </p>
+    <h2>Explore the app</h2>
+  <p ><a href="https://github.com/Bullo-portfolio/translate-my-pain" class="text-indigo-600 hover:underline">Explain My Pain on GitHub</a></p>
+
+    <p> Go to <a href="#">Live app</a></p>
+  
+</div>
+<script>
+  const langToggle = document.getElementById('lang-toggle');
+  const englishDiv = document.getElementById('english');
+  const spanishDiv = document.getElementById('spanish');
+
+  langToggle.addEventListener('click', () => {
+    const isEnglishVisible = englishDiv.style.display !== 'none';
+    englishDiv.style.display = isEnglishVisible ? 'none' : 'block';
+    spanishDiv.style.display = isEnglishVisible ? 'block' : 'none';
+    langToggle.textContent = isEnglishVisible ? 'English' : 'Español';
+  });
+</script>
 </div>
 
+  <footer style="margin-top: 2rem; text-align: center; color: #6b7280;">
+    <p>© 2023 Stella Bullo. All rights reserved.</p>
+      <p>For inquiries, contact me at <a href="mailto:info@stellabullo.com" style="color:#4f46e5; text-decoration:underline;">info@stellabullo.com</a>.</p>
+  </footer>
+</div>
 </body>
 </html>
