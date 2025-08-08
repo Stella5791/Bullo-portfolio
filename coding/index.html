@@ -58,14 +58,8 @@
 
     <!-- Desktop menu -->
     <ul class="hidden md:flex gap-4 items-center">
-    
-       <ul class="hidden md:flex gap-4 items-center">
-      <li>
-        <a href="/coding/index.html"
-           class="hover:text-indigo-600 text-indigo-700 font-semibold"
-           aria-current="page">Coding</a>
-      </li>
-       <li><a href="/writing/index.html" class="hover:text-indigo-600">Writing</a></li>
+      <li><a href="/coding/index.html" class="hover:text-indigo-600">Coding</a></li>
+      <li><a href="/writing/index.html" class="hover:text-indigo-600 text-indigo-700 font-semibold">Writing</a></li>
       <li><a href="#footer" class="hover:text-indigo-600">Contact</a></li>
     </ul>
 
@@ -91,7 +85,7 @@
   <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white">
     <ul class="px-4 py-3 space-y-2">
       <li><a href="/coding/index.html" class="block py-2 text-indigo-700 font-semibold hover:text-indigo-600">Coding</a></li>
-       <li><a href="/writing/index.html" class="block py-2 hover:text-indigo-600">Writing</a></li>
+      <li><a href="/writing/index.html" class="block py-2 hover:text-indigo-600">Writing</a></li>
       <li><a href="#footer" class="block py-2 hover:text-indigo-600">Contact</a></li>
     </ul>
   </div>
@@ -327,19 +321,19 @@ This page showcases some of those projects: small tools that sit at the intersec
   <span class="sr-only">Back to top</span>
 </button>
 
-<!-- Scripts -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    if (typeof lucide !== "undefined") {
-      lucide.createIcons();
-    }
+    // Icons
+    if (typeof lucide !== "undefined") lucide.createIcons();
 
+    // Shadow on scroll
     const nav = document.querySelector("nav");
     window.addEventListener("scroll", () => {
       nav.classList.toggle("shadow-lg", window.scrollY > 10);
     });
 
+    // Scroll-to-top
     const scrollBtn = document.getElementById("scrollToTopBtn");
     window.addEventListener("scroll", () => {
       scrollBtn.classList.toggle("hidden", window.scrollY < 300);
@@ -348,12 +342,15 @@ This page showcases some of those projects: small tools that sit at the intersec
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
+    // AOS
     AOS.init({ duration: 1000, once: true });
 
+    // Smooth anchor scroll with offset for fixed nav
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", function (e) {
         e.preventDefault();
-        const target = document.getElementById(this.getAttribute("href").substring(1));
+        const id = this.getAttribute("href").substring(1);
+        const target = document.getElementById(id);
         if (target) {
           const offset = 80;
           const offsetPosition = target.offsetTop - offset;
@@ -361,15 +358,51 @@ This page showcases some of those projects: small tools that sit at the intersec
         }
       });
     });
-  });
-    const menuToggle = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
 
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
+    // --- MOBILE NAV TOGGLE ---
+    const btn = document.getElementById("nav-toggle");      // <-- match your HTML
+    const menu = document.getElementById("mobile-menu");
+    const iconOpen = document.getElementById("icon-open");
+    const iconClose = document.getElementById("icon-close");
 
+    const closeMenu = () => {
+      if (!menu.classList.contains("hidden")) {
+        menu.classList.add("hidden");
+        btn.setAttribute("aria-expanded", "false");
+        iconOpen.classList.remove("hidden");
+        iconClose.classList.add("hidden");
+      }
+    };
+
+    if (btn && menu) {
+      btn.addEventListener("click", () => {
+        const willOpen = menu.classList.contains("hidden");
+        menu.classList.toggle("hidden");
+        btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+        iconOpen.classList.toggle("hidden", willOpen);
+        iconClose.classList.toggle("hidden", !willOpen);
+      });
+
+      // Close on mobile link click
+      menu.querySelectorAll("a").forEach(a => {
+        a.addEventListener("click", closeMenu);
+      });
+
+      // Close on ESC
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeMenu();
+      });
+
+      // Close on click outside
+      document.addEventListener("click", (e) => {
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+          closeMenu();
+        }
+      });
+    }
+  });
 </script>
+
 
 </body>
 </html>
