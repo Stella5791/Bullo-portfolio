@@ -50,6 +50,54 @@
       padding: 0.5rem 0.9rem; text-decoration: none; width: fit-content;
     }
     abbr[title] { text-decoration: underline dotted; cursor: help; }
+/* Accessible custom tooltip for mobile + desktop */
+  .tt { position: relative; text-decoration: underline dotted; cursor: help; }
+  .tt:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
+
+  .tt::after {
+    content: attr(data-title);
+    position: absolute;
+    left: 0; bottom: 125%;
+    background: #111827;
+    color: #fff;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.375rem;
+    font-size: 0.85rem;
+    line-height: 1.2;
+    white-space: normal;
+    max-width: 260px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.18);
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity .15s ease, transform .15s ease;
+    pointer-events: none;
+    z-index: 30;
+  }
+  .tt::before {
+    content: "";
+    position: absolute;
+    left: 10px; bottom: 115%;
+    border: 6px solid transparent;
+    border-top-color: #111827;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity .15s ease, transform .15s ease;
+    z-index: 31;
+  }
+  .tt:hover::after, .tt:hover::before,
+  .tt:focus::after, .tt:focus::before {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* Small-screen type & spacing tweaks */
+  @media (max-width: 480px) {
+    body { padding: 1.25rem 0.9rem; }
+    h1 { font-size: 1.85rem; line-height: 1.2; }
+    h3 { font-size: 1.1rem; }
+  }
+
   </style>
 </head>
 <body>
@@ -64,12 +112,14 @@
     <h3 style="font-style: italic; color: #4b5563;"><strong>“Arremangate”:</strong> cómo el lenguaje cotidiano puede contener vínculos, memoria y afecto</h3>
     <p style="font-style: italic; color: #4b5563;">Dra Stella Bullo</p>
 
-    <p><em>¿Qué puede contener una sola palabra o una frase, más allá de su sentido literal? No en teoría, sino en los momentos cotidianos en que sale de la boca sin esfuerzo. Podría ocurrir, quizás, de paso en la cocina entre dos personas que se conocen bien, en la pausa entre un gesto y una mirada. ¿Puede llevar historia? ¿Puede guardar afecto? ¿Puede viajar a través de generaciones y llegar intacta al presente?</em></p>
+    <p style="padding-top: 1rem;">¿Qué puede contener una sola palabra o una frase? No en teoría, sino en los momentos cotidianos en que sale de la boca sin esfuerzo. Podría ocurrir, quizás, de paso en la cocina entre dos personas que se conocen bien, en la pausa entre un gesto y una mirada. ¿Puede llevar historia? ¿Puede guardar afecto? ¿Puede viajar a través de generaciones y llegar intacta al presente?</p>
 
-    <p style="padding-top: 1rem;">El fin de semana pasado vino a visitarme mi prima. Es hija de la hermana de mi mamá, y entre nosotras hay una afinidad profunda y casi innata de gestos, silencios y hábitos transmitidos.</p>
+    <p>El fin de semana pasado vino a visitarme mi prima. Es hija de la hermana de mi mamá, y entre nosotras hay una afinidad profunda y casi innata de gestos, silencios y hábitos transmitidos.</p>
     <p>Después del almuerzo, me levanté para lavar los platos. Sin pensarlo, metí las manos en el agua sin subirme las mangas. Ella, con un tono seco y urgente, me dijo:
-      <abbr title="Subite las mangas. Imperativo con voseo rioplatense."><em>¡Arremangate!</em></abbr>.
-    </p>
+      <abbr class="tt" tabindex="0"
+      title="Subite las mangas. Imperativo con voseo rioplatense."
+      data-title="Subite las mangas. Imperativo con voseo rioplatense."><em>¡Arremangate!</em></abbr>.
+ </p>
     <p>Lo hice. Sin pensarlo.</p>
     <p>Para cualquier otra persona, esa palabra dicha así, sin suavizadores, sin contexto, sin una sonrisa o una cargada de por medio, podría haber sonado un tanto ruda o autoritaria. Quizás hasta descortés. Pero para nosotras no fue así. Fue una especie de contraseña compartida. Un gesto con nombre propio que nos conectó, de golpe, con una forma de estar en el mundo.</p>
     <p>Como lingüista, sé más que bien que el lenguaje no se entiende por lo que se dice literalmente, sino por cómo, cuándo y entre quiénes se dice. Lo que a veces suena brusco o descortés desde afuera puede ser una muestra de intimidad desde adentro. En mi familia, como en tantas otras, hay formas de hablar que parecen duras, pero que en realidad están cargadas de afecto. No suavizamos porque no hace falta. Lo que se dice viene con una capa de historia, afecto y lenguaje compartidos.</p>
@@ -79,7 +129,7 @@
     <p><em>Arremángate.</em> Yo también te quiero, prima.</p>
     <p>Algunas palabras no se traducen, o no se deberían traducir. No porque no tengan equivalente gramatical, sino porque el contexto que las envuelve no es traducible, solo vivido. Palabras como <em>arremangate</em>, en este contexto, contienen historia, vínculo, cuerpo y pérdida.</p>
     <p>Porque en ese instante, una sola palabra sostuvo memoria, afecto y el peso de vidas entrelazadas.</p>
-    <p><em>¿Qué puede contener una sola palabra o una frase, más allá de su sentido literal?</em></p>
+    <p><em>¿Qué puede contener una sola palabra o una frase?</em></p>
   </div>
 
   <!-- ENGLISH -->
@@ -88,12 +138,14 @@
     <h3 style="font-style: italic; color: #4b5563;"><strong>“Arremangate”:</strong> how language carries care, memory, and unspoken bonds</h3>
     <p style="font-style: italic; color: #4b5563;">Dra Stella Bullo</p>
 
-    <p><em>What can a single word or sentence hold, beyond its literal meaning? Not in theory, but in the everyday moments when it slips out naturally. It could happen, perhaps, in passing in the kitchen between two people who know each other well, in the pause between a gesture and a glance. Can it carry history? Can it hold affection? Can it reach back through generations and land, intact, in the present?</em></p>
+    <p style="padding-top: 1rem;">What can a single word or sentence hold? Not in theory, but in the everyday moments when it slips out naturally. It could happen, perhaps, in passing in the kitchen between two people who know each other well, in the pause between a gesture and a glance. Can it carry history? Can it hold affection? Can it reach back through generations and land, intact, in the present?</p>
 
-    <p style="padding-top: 1rem;">Last weekend, my cousin came to visit. She is my mom’s sister’s daughter, and there is something almost innate about the gestures, silences, and small habits we share.</p>
+    <p>Last weekend, my cousin came to visit. She is my mom’s sister’s daughter, and there is something almost innate about the gestures, silences, and small habits we share.</p>
     <p>After lunch, I got up to do the dishes. Without thinking, I put my hands in the water without rolling up my sleeves. She looked at me sharply and said, in a dry and urgent tone:
-      <abbr title="Roll up your sleeves. Argentinian Spanish, imperative ‘vos’."><em>Arremangate</em></abbr>.
-    </p>
+     <abbr class="tt" tabindex="0"
+      title="Roll up your sleeves. Argentinian Spanish, imperative ‘vos’."
+      data-title="Roll up your sleeves. Argentinian Spanish, imperative ‘vos’."><em>Arremangate</em></abbr>.
+   </p>
     <p>I did. Instantly. Without thinking.</p>
     <p>To anyone else, that word, said with no softener, no smile, no teasing, might have sounded a little harsh or bossy. Maybe even rude. But for us, it was not. It was a kind of password. A named gesture that pulled us both back into a shared way of being in the world.</p>
     <p>As a linguist, I know more than well that language is not understood by what is said literally, but by how, when, and between whom it is said. What might sound abrupt or impolite from the outside can be a sign of deep trust from within. In my family, as in many others, there are ways of speaking that may sound blunt but are actually full of care. We do not soften what we say because we do not need to. What is said already carries a layer of history, affection, and shared language.</p>
@@ -103,7 +155,7 @@
     <p><em>Arremángate.</em> I love you too, coz.</p>
     <p>Some words cannot be translated. Or should not be. Not because they lack a grammatical equivalent, but because the context that wraps around them is not translatable, only lived. Words like <em>arremangate</em>, in this kind of moment, carry history, connection, embodiment, and loss.</p>
     <p>Because in that instant, a single word held memory, affection, and the weight of lives intertwined.</p>
-    <p><em>So, what can a single word or sentence hold, beyond its literal meaning?</em></p>
+    <p><em>So, what can a single word or sentence hold?</em></p>
   </div>
 
   <script>
@@ -132,8 +184,8 @@
         // switch to English
         spanishDiv.style.display = 'none';
         englishDiv.style.display = 'block';
-        langToggle.textContent = 'Léelo en Español';
-        langToggle.setAttribute('aria-label', 'Léelo en Español');
+        langToggle.textContent = 'Leer en Español';
+        langToggle.setAttribute('aria-label', 'Leer en Español');
       }
     });
   </script>
