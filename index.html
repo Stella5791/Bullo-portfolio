@@ -8,12 +8,17 @@
   <title>Stella Bullo – Linguist. Developer. Writer.</title>
   <link rel="icon" href="./favicon.ico" type="image/x-icon" />
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS & Icons -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 
   <style>
     html, body { height: 100%; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       display: flex;
       flex-direction: column;
@@ -21,31 +26,47 @@
       background: #f9fafb;
     }
     main { flex-grow: 1; }
-    html { scroll-behavior: smooth; }
   </style>
 </head>
 
 <body>
-  <!-- Responsive Navbar -->
-  <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
+  <!-- GLOBAL NAV -->
+  <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md text-sm">
     <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="/index.html" class="text-xl font-bold text-indigo-700">Stella Bullo</a>
-      <button id="menu-button" class="md:hidden text-gray-700 focus:outline-none">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
-      <ul class="hidden md:flex gap-4 text-sm items-center">
+      <h2 class="text-xl font-bold text-indigo-700 whitespace-nowrap">
+        <a href="/index.html" class="hover:text-indigo-600">Stella Bullo</a>
+      </h2>
+
+      <!-- Desktop menu -->
+      <ul class="hidden md:flex gap-4 items-center">
         <li><a href="/coding/index.html" class="hover:text-indigo-600">Coding</a></li>
         <li><a href="/writing/index.html" class="hover:text-indigo-600">Writing</a></li>
         <li><a href="#footer" class="hover:text-indigo-600">Contact</a></li>
       </ul>
+
+      <!-- Mobile hamburger -->
+      <button id="nav-toggle"
+        class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
+        <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
     </div>
-    <ul id="mobile-menu" class="md:hidden hidden px-6 pb-4 bg-white text-sm space-y-2">
-      <li><a href="/coding/index.html" class="block hover:text-indigo-600">Coding</a></li>
-      <li><a href="/writing/index.html" class="block hover:text-indigo-600">Writing</a></li>
-      <li><a href="#footer" class="block hover:text-indigo-600">Contact</a></li>
-    </ul>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white">
+      <ul class="px-4 py-3 space-y-2">
+        <li><a href="/coding/index.html" class="block py-2 hover:text-indigo-600">Coding</a></li>
+        <li><a href="/writing/index.html" class="block py-2 hover:text-indigo-600">Writing</a></li>
+        <li><a href="#footer" class="block py-2 hover:text-indigo-600">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- Main Content -->
@@ -100,7 +121,7 @@
 </main>
 
 
-  <!-- Footer -->
+  <!-- GLOBAL FOOTER -->
   <footer id="footer" class="bg-white border-t border-gray-200 py-10 px-6 mt-0">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-700">
       <div class="flex items-center gap-2 text-indigo-700 font-medium">
@@ -108,16 +129,13 @@
         <a href="mailto:info@stellabullo.com" class="hover:underline">info@stellabullo.com</a>
       </div>
       <div class="flex flex-wrap justify-center gap-6 items-center text-indigo-700">
-        <a href="https://github.com/Stella5791" target="_blank" class="hover:text-indigo-900 flex items-center gap-1">
-          <i data-lucide="github" class="w-5 h-5"></i> GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="hover:text-indigo-900 flex items-center gap-1">
+        <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900 flex items-center gap-1">
           <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
         </a>
-        <a href="https://ko-fi.com/stellabullo" target="_blank" class="hover:text-indigo-900 flex items-center gap-1">
+        <a href="https://ko-fi.com/stellabullo" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900 flex items-center gap-1">
           <i data-lucide="coffee" class="w-5 h-5"></i> Ko-fi
         </a>
-        <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" class="hover:text-indigo-900">ORCID</a>
+        <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900">ORCID</a>
       </div>
       <div class="text-xs text-gray-500 text-center md:text-right">
         &copy; 2025 Stella Bullo
@@ -125,31 +143,35 @@
     </div>
   </footer>
 
-  <!-- Scroll-to-top -->
-  <button id="scrollToTopBtn" class="fixed bottom-6 right-6 p-3 bg-indigo-600 text-white rounded-full shadow-lg hover:bg-indigo-700 hidden z-50">
-    <i data-lucide="chevron-up" class="w-5 h-5"></i>
-    <span class="sr-only">Back to top</span>
-  </button>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- NAV + ICONS/AOS INIT -->
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      if (typeof lucide !== "undefined") {
-        lucide.createIcons();
-      }
-      const scrollBtn = document.getElementById("scrollToTopBtn");
-      window.addEventListener("scroll", () => {
-        scrollBtn.classList.toggle("hidden", window.scrollY < 300);
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.AOS) AOS.init({ duration: 800, once: true });
+      if (typeof lucide !== 'undefined') lucide.createIcons();
+
+      const btn = document.getElementById('nav-toggle');
+      const menu = document.getElementById('mobile-menu');
+      const openI = document.getElementById('icon-open');
+      const closeI = document.getElementById('icon-close');
+      if (!btn || !menu) return;
+
+      btn.addEventListener('click', () => {
+        const isOpen = !menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        openI.classList.toggle('hidden');
+        closeI.classList.toggle('hidden');
       });
-      scrollBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-      AOS.init({ duration: 1000, once: true });
-      const menuButton = document.getElementById('menu-button');
-      const mobileMenu = document.getElementById('mobile-menu');
-      menuButton.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
+
+      menu.querySelectorAll('a').forEach(a => {
+        a.addEventListener('click', () => {
+          if (!menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+            btn.setAttribute('aria-expanded', 'false');
+            openI.classList.remove('hidden');
+            closeI.classList.add('hidden');
+          }
+        });
       });
     });
   </script>

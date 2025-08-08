@@ -48,40 +48,53 @@
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md px-4 py-3 transition-all duration-300">
-  <div class="flex justify-between items-center max-w-7xl mx-auto">
-    <h2 class="text-xl font-bold text-indigo-700">
+<!-- NAVIGATION -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md text-sm">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <!-- Brand -->
+    <h2 class="text-xl font-bold text-indigo-700 whitespace-nowrap">
       <a href="/index.html">Stella Bullo</a>
     </h2>
 
-    <!-- Hamburger Icon -->
-    <button id="menu-toggle" class="md:hidden text-indigo-700 focus:outline-none">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
-           viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
-
-    <!-- Menu Items -->
-    <ul id="menu" class="hidden md:flex gap-4 text-sm items-center">
-      <li><a href="#about" class="hover:text-indigo-600">About</a></li>
-      <li><a href="#services" class="hover:text-indigo-600">Services</a></li>
-      <li><a href="#work" class="hover:text-indigo-600">Work</a></li>
-      <li><a href="/writing/index.html" target="_blank" class="hover:text-indigo-600">Articles</a></li>
+    <!-- Desktop menu -->
+    <ul class="hidden md:flex gap-4 items-center">
+    
+       <ul class="hidden md:flex gap-4 items-center">
+      <li>
+        <a href="/coding/index.html"
+           class="hover:text-indigo-600 text-indigo-700 font-semibold"
+           aria-current="page">Coding</a>
+      </li>
+       <li><a href="/writing/index.html" class="hover:text-indigo-600">Writing</a></li>
       <li><a href="#footer" class="hover:text-indigo-600">Contact</a></li>
     </ul>
+
+    <!-- Mobile hamburger -->
+    <button id="nav-toggle"
+            class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-indigo-200"
+            aria-expanded="false" aria-controls="mobile-menu">
+      <!-- Icon -->
+      <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
   </div>
 
-  <!-- Mobile Dropdown -->
-  <ul id="mobile-menu" class="md:hidden hidden flex-col mt-3 gap-2 text-sm bg-white shadow-md rounded-lg px-4 py-3">
-    <li><a href="#about" class="block py-1 hover:text-indigo-600">About</a></li>
-    <li><a href="#services" class="block py-1 hover:text-indigo-600">Services</a></li>
-    <li><a href="#work" class="block py-1 hover:text-indigo-600">Work</a></li>
-    <li><a href="/writing/index.html" target="_blank" class="block py-1 hover:text-indigo-600">Articles</a></li>
-    <li><a href="#footer" class="block py-1 hover:text-indigo-600">Contact</a></li>
-  </ul>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white">
+    <ul class="px-4 py-3 space-y-2">
+      <li><a href="/coding/index.html" class="block py-2 text-indigo-700 font-semibold hover:text-indigo-600">Coding</a></li>
+       <li><a href="/writing/index.html" class="block py-2 hover:text-indigo-600">Writing</a></li>
+      <li><a href="#footer" class="block py-2 hover:text-indigo-600">Contact</a></li>
+    </ul>
+  </div>
 </nav>
 
 
@@ -285,29 +298,23 @@ This page showcases some of those projects: small tools that sit at the intersec
 
 
 
-<!-- Footer -->
-<footer id="footer" class="bg-indigo-50 pb-12 pt-6 px-6">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center text-base text-indigo-700">
-
-    <!-- Contact Info -->
-    <div class="flex flex-col gap-2">
-      <a href="mailto:info@stellabullo.com" class="hover:text-indigo-600 flex items-center justify-center gap-2 text-lg">
-        <i data-lucide="mail" class="w-7 h-7"></i> info@stellabullo.com
-      </a>
+<!-- FOOTER -->
+<footer id="footer" class="bg-indigo-50 border-t border-gray-200 py-10 px-6">
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-700">
+    <div class="flex items-center gap-2 text-indigo-700 font-medium">
+      <i data-lucide="mail" class="w-5 h-5"></i>
+      <a href="mailto:info@stellabullo.com" class="hover:underline">info@stellabullo.com</a>
     </div>
-
-    <!-- Social Icons -->
-    <div class="flex gap-10 text-lg">
-      <a href="https://github.com/Stella5791" target="_blank" class="hover:text-indigo-600 flex items-center gap-2">
-        <i data-lucide="github" class="w-7 h-7"></i> GitHub
+    <div class="flex flex-wrap justify-center gap-6 items-center text-indigo-700">
+      <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="hover:text-indigo-900 flex items-center gap-1">
+        <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
       </a>
-      <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="hover:text-indigo-600 flex items-center gap-2">
-        <i data-lucide="linkedin" class="w-7 h-7"></i> LinkedIn
+      <a href="https://ko-fi.com/stellabullo" target="_blank" class="hover:text-indigo-900 flex items-center gap-1">
+        <i data-lucide="coffee" class="w-5 h-5"></i> Ko-fi
       </a>
+      <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" class="hover:text-indigo-900">ORCID</a>
     </div>
-
-    <!-- Copyright -->
-    <div class="text-sm text-indigo-700">
+    <div class="text-xs text-gray-500 text-center md:text-right">
       &copy; 2025 Stella Bullo
     </div>
   </div>
