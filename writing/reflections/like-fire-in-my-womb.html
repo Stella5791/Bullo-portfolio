@@ -191,21 +191,30 @@ Se trata de encontrarnos en un terreno común donde el dolor no se calle ni se d
   const englishDiv = document.getElementById('english');
   const spanishDiv = document.getElementById('spanish');
 
-   const englishShowing = isVisible(englishDiv);
-      if (englishShowing) {
-        // switch to Spanish
-        englishDiv.style.display = 'none';
-        spanishDiv.style.display = 'block';
-        langToggle.textContent = 'Read it in English';
-        langToggle.setAttribute('aria-label', 'Read it in English');
-      } else {
-        // switch to English
-        spanishDiv.style.display = 'none';
-        englishDiv.style.display = 'block';
-        langToggle.textContent = 'Leer en Español';
-        langToggle.setAttribute('aria-label', 'Leer en Español');
-      }
+  // Initial state: English visible
+  englishDiv.style.display = 'block';
+  spanishDiv.style.display = 'none';
+  langToggle.textContent = 'Leer en Español';
+  langToggle.setAttribute('aria-label', 'Leer en Español');
+
+  langToggle.addEventListener('click', () => {
+    const englishVisible = englishDiv.style.display !== 'none';
+    if (englishVisible) {
+      // Switch to Spanish
+      englishDiv.style.display = 'none';
+      spanishDiv.style.display = 'block';
+      langToggle.textContent = 'Read it in English';
+      langToggle.setAttribute('aria-label', 'Read it in English');
+    } else {
+      // Switch to English
+      spanishDiv.style.display = 'none';
+      englishDiv.style.display = 'block';
+      langToggle.textContent = 'Leer en Español';
+      langToggle.setAttribute('aria-label', 'Leer en Español');
+    }
+  });
 </script>
+
 
 
    
