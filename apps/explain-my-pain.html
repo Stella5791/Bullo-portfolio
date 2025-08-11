@@ -58,7 +58,7 @@
       <textarea id="description" name="description" required placeholder="e.g. During ovulation, it feels like something is gripping and twisting my womb..."></textarea>
 
       <!-- For local testing, open /samples on Flask -->
-      <p><a href="http://localhost:5000/samples" target="_blank" class="link-button">Need help finding the words? See research-based sample expressions</a></p>
+      <p><a href="https://YOUR-RENDER-URL.onrender.com/samples" target="_blank" class="link-button">Need help finding the words? See research-based sample expressions</a></p>
 
       <button id="analyzeBtn" type="button">Explain</button>
     </div>
@@ -94,8 +94,9 @@
 
   <script>
     // Local backend during development
-    const BACKEND_URL = "http://localhost:5001";
-    const ENDPOINT = "/analyze";
+   const BACKEND_URL = "https://emp-backend-tifs.onrender.com";
+const ENDPOINT = "/analyze";
+
 
     const analyzeBtn = document.getElementById("analyzeBtn");
     const desc = document.getElementById("description");
