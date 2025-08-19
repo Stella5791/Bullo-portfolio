@@ -57,8 +57,12 @@
       <label for="description">Describe your pain:</label>
       <textarea id="description" name="description" required placeholder="e.g. During ovulation, it feels like something is gripping and twisting my womb..."></textarea>
 
-      <!-- For local testing, open /samples on Flask -->
-      <p><a href="https://YOUR-RENDER-URL.onrender.com/samples" target="_blank" class="link-button">Need help finding the words? See research-based sample expressions</a></p>
+      <!-- Samples: wired to local backend -->
+      <p>
+        <a id="samplesLink" href="#" target="_blank" class="link-button">
+          Need help finding the words? See research-based sample expressions
+        </a>
+      </p>
 
       <button id="analyzeBtn" type="button">Explain</button>
     </div>
@@ -71,8 +75,9 @@
       <pre id="doctorNarrative"></pre>
       <p class="note"><em>This section is written in medical language to support communication with healthcare providers.</em></p>
 
+      <!-- Evidence: wired to local backend -->
       <p class="note">
-        <a href="/language-of-endometriosis/evidence.html" class="link-button">View supporting evidence and research sources</a>
+        <a id="evidenceLink" href="#" class="link-button" target="_blank">View supporting evidence and research sources</a>
       </p>
 
       <button class="print-button" onclick="window.print()">🖨️ Print this page</button>
@@ -94,60 +99,68 @@
 
   <script>
     // Local backend during development
-   const BACKEND_URL = "https://emp-backend-tifs.onrender.com";
-const ENDPOINT = "/analyze";
+    const BACKEND_URL = "http://127.0.0.1:5001";
+    const ENDPOINT = "/analyze";
 
+    document.addEventListener("DOMContentLoaded", () => {
+      // Wire links to your current backend
+      const samples = document.getElementById("samplesLink");
+      if (samples) samples.href = `${BACKEND_URL}/samples`;
 
-    const analyzeBtn = document.getElementById("analyzeBtn");
-    const desc = document.getElementById("description");
-    const nameEl = document.getElementById("name");
-    const durEl  = document.getElementById("duration");
+      const evidence = document.getElementById("evidenceLink");
+      if (evidence) evidence.href = `${BACKEND_URL}/evidence`;
 
-    const resultsBox = document.getElementById("results");
-    const plainOut   = document.getElementById("plainSummary");
-    const doctorOut  = document.getElementById("doctorNarrative");
+      const analyzeBtn = document.getElementById("analyzeBtn");
+      const desc      = document.getElementById("description");
+      const nameEl    = document.getElementById("name");
+      const durEl     = document.getElementById("duration");
 
-    console.log("EMP static loaded");
+      const resultsBox = document.getElementById("results");
+      const plainOut   = document.getElementById("plainSummary");
+      const doctorOut  = document.getElementById("doctorNarrative");
 
-    analyzeBtn.addEventListener("click", async () => {
-      const text = (desc.value || "").trim();
-      if (!text) { alert("Please write a description."); return; }
+      console.log("EMP static loaded");
 
-      analyzeBtn.disabled = true;
-      const old = analyzeBtn.textContent;
-      analyzeBtn.textContent = "Analyzing…";
+      analyzeBtn.addEventListener("click", async () => {
+        const text = (desc.value || "").trim();
+        if (!text) { alert("Please write a description."); return; }
 
-      try {
-        const res = await fetch(`${BACKEND_URL}${ENDPOINT}`, {
-          method: "POST",
-          headers: {"Content-Type":"application/json"},
-          body: JSON.stringify({
-            name: (nameEl.value||"").trim(),
-            duration: (durEl.value||"").trim(),
-            text,
-            description: text
-          })
-        });
+        analyzeBtn.disabled = true;
+        const old = analyzeBtn.textContent;
+        analyzeBtn.textContent = "Analyzing…";
 
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        const data = await res.json();
-        const r = data.results || data;
+        try {
+          const res = await fetch(`${BACKEND_URL}${ENDPOINT}`, {
+            method: "POST",
+            headers: {"Content-Type":"application/json"},
+            body: JSON.stringify({
+              name: (nameEl.value||"").trim(),
+              duration: (durEl.value||"").trim(),
+              text,
+              description: text
+            })
+          });
 
-        const plain  = r.plain_summary || r.patient_summary_html || r.patient_summary || r.plain || "";
-        const doctor = r.doctor_narrative || r.doctor_summary_html || r.doctor_summary || "";
+          if (!res.ok) throw new Error(`HTTP ${res.status}`);
+          const data = await res.json();
+          const r = data.results || data;
 
-        if (/<[a-z][\s\S]*>/i.test(plain))  plainOut.innerHTML  = plain;  else plainOut.textContent  = plain || "(No summary returned.)";
-        if (/<[a-z][\s\S]*>/i.test(doctor)) doctorOut.innerHTML = doctor; else doctorOut.textContent = doctor || "(No doctor notes returned.)";
+          const plain  = r.plain_summary || r.patient_summary_html || r.patient_summary || r.plain || "";
+          const doctor = r.doctor_narrative || r.doctor_summary_html || r.doctor_summary || "";
 
-        resultsBox.style.display = "block";
-        window.scrollTo({ top: resultsBox.offsetTop - 20, behavior: "smooth" });
-      } catch (err) {
-        console.error(err);
-        alert("Something went wrong. Check the Console for details.");
-      } finally {
-        analyzeBtn.disabled = false;
-        analyzeBtn.textContent = old;
-      }
+          if (/<[a-z][\s\S]*>/i.test(plain))  plainOut.innerHTML  = plain;  else plainOut.textContent  = plain || "(No summary returned.)";
+          if (/<[a-z][\s\S]*>/i.test(doctor)) doctorOut.innerHTML = doctor; else doctorOut.textContent = doctor || "(No doctor notes returned.)";
+
+          resultsBox.style.display = "block";
+          window.scrollTo({ top: resultsBox.offsetTop - 20, behavior: "smooth" });
+        } catch (err) {
+          console.error(err);
+          alert("Something went wrong. Check the Console for details.");
+        } finally {
+          analyzeBtn.disabled = false;
+          analyzeBtn.textContent = old;
+        }
+      });
     });
   </script>
 </body>
