@@ -108,88 +108,93 @@
 
   
 
+
+
 <!-- About Section -->
-<hr class="border-t border-gray-200 mb-0" />
-<section id="about" class="bg-gray-50 p-8 md:p-16">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-    <div data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">About Me</h2>
-      <div>
-     <p class="mb-4 leading-relaxed">
-  I'm a linguist turned coder. My background in language and meaning now shapes how I build tools with Python, APIs, and rule-based NLP. I develop lightweight tools that turn everyday language into something usable for insight, communication or automation.
-</p>
-
-<p class="mb-4 leading-relaxed">
-This page showcases some of those projects: small tools that sit at the intersection of language and technology.
-</p>
-      </div>
-<h3 class="font-semibold text-lg mt-8 mb-4">Skills</h3>
-<ul class="list-disc list-inside mb-6 leading-relaxed text-sm">
-  <li>Python: requests, Flask, file handling, OOP</li>
-  <li>API integration: REST APIs, authentication, error handling</li>
-  <li>Regex-based NLP: metaphor tagging, rule-based classification</li>
-  <li>Data handling & viz: CSV, JSON, pandas, Matplotlib</li>
-  <li>Front-end: HTML, CSS, Tailwind, JavaScript</li>
-  <li>Version control & testing: Git, unit tests, debugging</li>
-  <li>Deployment: Netlify, Replit</li>
-  <li>Dev tools: VS Code, Jupyter</li>
-  <li>Languages: fluent English & Spanish</li>
-  <li>Soft skills: project coordination, communication, problem-solving</li>
-</ul>
-
-
-  <p class="mt-6 mb-2 text-gray-700">
-    You can also explore my <a href="/writing/index.html" class="text-indigo-600 hover:underline">writing page</a> for reflections on language and code, academic publications, and applied research.
+<section id="about" class="bg-gray-50">
+  <div class="max-w-6xl mx-auto px-6 py-12 md:px-12 md:py-16">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Text -->
+      <div data-aos="fade-up" class="space-y-5">
+  <h2 class="text-2xl md:text-3xl font-semibold text-indigo-700">About Me</h2>
+  <p class="text-gray-700 leading-relaxed">
+    I’m a linguist turned coder with a PhD in Linguistics. <br/> <br/>I build lightweight tools with Python, Flask, and rule-based NLP that turn everyday language into something usable for insight, communication, and automation. I also work with front-end technologies (HTML, CSS, JavaScript) and integrate APIs to connect data and applications. I can design, document, and code in <strong>English</strong> or <strong>Spanish</strong>.
   </p>
+  <p class="text-gray-700">
+    You can also explore my
+    <a href="/writing/index.html" class="text-indigo-600 hover:underline">writing page</a>
+    for reflections on language and code, academic publications, and applied research.
+  </p>
+</div>
 
 
-    </div>
-    <div class="flex justify-center flex-col items-center" data-aos="fade-left">
-      <img src="src/coding-pic-optimized.png" alt="Coding workspace" class="rounded-lg max-w-full h-auto hover:shadow-xl object-contain" />
-      <p class="text-xs text-gray-500 mt-2 italic text-center">Image credit: <a href="https://stockcake.com/i/coding-coffee-break_855014_909099" target="_blank" class="text-indigo-500 hover:underline">"Coding Coffee Break"</a> via StockCake</p>
+      <!-- Image -->
+      <div data-aos="fade-left" class="flex justify-center">
+        <figure class="w-full max-w-md">
+          <img
+            src="src/coding-pic-optimized.png"
+            alt="Laptop with code and a coffee next to it"
+            class="rounded-xl w-full h-auto object-cover shadow-sm hover:shadow-lg transition-shadow"
+            loading="lazy"
+            sizes="(min-width: 768px) 480px, 100vw"
+          />
+          <figcaption class="text-xs text-gray-500 mt-2 italic text-center">
+            Image credit:
+            <a href="https://stockcake.com/i/coding-coffee-break_855014_909099" target="_blank" class="text-indigo-500 hover:underline">“Coding Coffee Break”</a>
+            via StockCake
+          </figcaption>
+        </figure>
+      </div>
     </div>
   </div>
 </section>
 
+
 <!-- Services Section -->
-<section id="services" class="bg-indigo-50 p-8 md:p-16">
-  <div class="max-w-4xl mx-auto text-center" data-aos="fade-up">
-    <h2 class="text-2xl font-semibold text-indigo-700 mb-6">What I Offer</h2>
-    <p class="text-gray-700 mb-8 max-w-2xl mx-auto">
+<section id="services" class="bg-indigo-50">
+  <div class="max-w-6xl mx-auto px-6 py-12 md:px-12 md:py-16 text-center" data-aos="fade-up">
+    <h2 class="text-2xl md:text-3xl font-semibold text-indigo-700 mb-6">What I Offer</h2>
+    <p class="text-gray-700 mb-12 max-w-2xl mx-auto">
       I build small-scale, purposeful tools that connect language, data, and lived experience. Here’s how I can help:
     </p>
-    <div class="grid md:grid-cols-2 gap-8 text-left text-gray-800">
+
+    <!-- Cards Grid -->
+    <div class="grid md:grid-cols-2 gap-8 text-left">
       
-      <div>
-        <h3 class="font-semibold mb-2">🔗 API Integration & Automation</h3>
-        <ul class="list-disc list-inside text-sm">
+      <!-- Card -->
+      <div class="bg-white rounded-xl shadow-md hover:shadow-lg p-6 transition-shadow">
+        <h3 class="font-semibold text-lg mb-3">🔗 API Integration & Automation</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
           <li>Connect third-party APIs into Python-based tools</li>
           <li>Automate small-scale text and data workflows</li>
           <li>Build lightweight scripts for repeatable tasks</li>
         </ul>
       </div>
-      
-      <div>
-        <h3 class="font-semibold mb-2">🧠 NLP & Text Analysis</h3>
-        <ul class="list-disc list-inside text-sm">
+
+      <!-- Card -->
+      <div class="bg-white rounded-xl shadow-md hover:shadow-lg p-6 transition-shadow">
+        <h3 class="font-semibold text-lg mb-3">🧠 NLP & Text Analysis</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
           <li>Rule-based tagging and classification using regex</li>
           <li>Small-scale sentiment and keyword extraction</li>
           <li>Metaphor recognition and tagging</li>
         </ul>
       </div>
-      
-      <div>
-        <h3 class="font-semibold mb-2">💻 Front-End Support (Small-Scale)</h3>
-        <ul class="list-disc list-inside text-sm">
+
+      <!-- Card -->
+      <div class="bg-white rounded-xl shadow-md hover:shadow-lg p-6 transition-shadow">
+        <h3 class="font-semibold text-lg mb-3">💻 Front-End Support (Small-Scale)</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
           <li>Build responsive pages with HTML, CSS, and Tailwind</li>
           <li>Integrate APIs or scripts into static UIs</li>
           <li>Style and publish small-scale project sites</li>
         </ul>
       </div>
-      
-      <div>
-        <h3 class="font-semibold mb-2">📊 Data Preparation & Visualization</h3>
-        <ul class="list-disc list-inside text-sm">
+
+      <!-- Card -->
+      <div class="bg-white rounded-xl shadow-md hover:shadow-lg p-6 transition-shadow">
+        <h3 class="font-semibold text-lg mb-3">📊 Data Preparation & Visualization</h3>
+        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
           <li>Prepare and clean CSV or JSON data</li>
           <li>Create small-scale visualizations with Matplotlib</li>
           <li>Generate charts to support text or research outputs</li>
@@ -199,9 +204,7 @@ This page showcases some of those projects: small tools that sit at the intersec
     </div>
   </div>
 </section>
-
 <hr class="border-t border-gray-200 mt-0" />
-
 
 
 <!-- Projects Section -->
@@ -217,7 +220,7 @@ This page showcases some of those projects: small tools that sit at the intersec
       <p class="text-sm mb-4">
         A digital tool that analyzes metaphorical pain descriptions from people with endometriosis, translating them into clinically meaningful language for patients and clinicians.
       </p>
-     
+     <a href="https://stellabullo.com/apps/explain-my-pain.html" target="_blank" class="text-indigo-600 hover:underline">Go to live app</a> | 
       <a href="https://github.com/Stella5791/translate-my-pain" target="_blank" class="text-indigo-600 hover:underline">View source code</a>
     </div>
 
