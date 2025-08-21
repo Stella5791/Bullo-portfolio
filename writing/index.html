@@ -30,54 +30,20 @@
       text-decoration: underline;
       color: #4f46e5;
     }
+    /* pipeline items */
+    .coming-soon {
+      color:#6b7280; /* gray-500 */
+      font-style: italic;
+      pointer-events: none; /* not clickable */
+    }
+    .coming-soon:hover {
+      text-decoration: none; /* disable underline on hover */
+      color:#6b7280;
+    }
   </style>
 </head>
 
 <body class="bg-white text-gray-800">
-
-<!-- NAVIGATION -->
-<nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md text-sm">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-    <!-- Brand -->
-    <h2 class="text-xl font-bold text-indigo-700 whitespace-nowrap">
-      <a href="/index.html">Stella Bullo</a>
-    </h2>
-
-    <!-- Desktop menu -->
-    <ul class="hidden md:flex gap-4 items-center">
-      <li><a href="/coding/index.html" class="hover:text-indigo-600">Coding</a></li>
-      <li><a href="/writing/index.html" class="hover:text-indigo-600 text-indigo-700 font-semibold">Writing</a></li>
-      <li><a href="#footer" class="hover:text-indigo-600">Contact</a></li>
-    </ul>
-
-    <!-- Mobile hamburger -->
-    <button id="nav-toggle"
-            class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-indigo-200"
-            aria-expanded="false" aria-controls="mobile-menu">
-      <!-- Icon -->
-      <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12"/>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white">
-    <ul class="px-4 py-3 space-y-2">
-      <li><a href="/coding/index.html" class="block py-2 hover:text-indigo-600">Coding</a></li>
-      <li><a href="/writing/index.html" class="block py-2 text-indigo-700 font-semibold hover:text-indigo-600">Writing</a></li>
-      <li><a href="#footer" class="block py-2 hover:text-indigo-600">Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
 
 <!-- HERO -->
 <header class="pt-28 pb-16 bg-gradient-to-b from-white to-indigo-50 w-full">
@@ -86,132 +52,115 @@
     <p class="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
       Where language meets experience. Explore essays, reflections, and research across pain, identity, and expression.
     </p>
+    <p class="text-sm text-gray-500 mt-3">
+      This page includes published essays as well as pieces in progress.
+    </p>
   </section>
 </header>
-
-
 
 
 <!-- WRITING BLOCKS -->
 <section class="max-w-6xl mx-auto px-6 md:px-8 py-10">
   <div class="grid gap-6 md:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-    <!-- Culture & Society  -->
-    <article class="group border rounded-2xl p-6 flex flex-col shadow-sm bg-white/80 backdrop-blur-sm hover:shadow-md transition">
-      <div class="h-1 w-12 bg-indigo-600 rounded mb-4"></div>
-      <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Culture & Society</h3>
-      <p class="text-gray-700 mb-4">Bilingual personal essays on pain, home, identity, and healing. Many started as lectures, now rewritten as lived pieces.</p>
-      <ul class="text-sm leading-6 text-indigo-700">
-         <li><a class="hover:underline" href="culture-and-society/arremangate.html">Arremángate</a></li>
-        <li><a class="hover:underline" href="culture-and-society/emotional-geometry.html">Emotional Geometry</a></li>
-        <li><a class="hover:underline" href="culture-and-society/toc-toc.html">Toc Toc</a></li>
-      </ul>
-    </article>
 
-    <!-- Language & Tech -->
+    <!-- Language, Culture & Society -->
     <article class="group border rounded-2xl p-6 flex flex-col shadow-sm bg-white/80 backdrop-blur-sm hover:shadow-md transition">
       <div class="h-1 w-12 bg-indigo-600 rounded mb-4"></div>
-      <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Language & Tech</h3>
-      <p class="text-gray-700 mb-4">Applied articles at the intersection of linguistics and development: app write-ups, NLP how-tos, and build notes.</p>
-      <ul class="text-sm leading-6 text-indigo-700">
-        <li><a class="hover:underline" href="language-and-technology/where-linguistics-meets-nlp.html">Where Linguistics Meets NLP</a></li>
-        <li><a class="hover:underline" href="language-and-technology/between-linguistics-and-the-scar.html">Between Linguistics and the Scar</a></li>
-        <li><a class="hover:underline" href="language-and-technology/why-metaphors-matter-in-NLP.html">Why metaphors matter in NLP</a></li>
-      </ul>
-    </article>
-<!-- Language & localization -->
-    <article class="group border rounded-2xl p-6 flex flex-col shadow-sm bg-white/80 backdrop-blur-sm hover:shadow-md transition">
-      <div class="h-1 w-12 bg-indigo-600 rounded mb-4"></div>
-      <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Language & Localization</h3>
-      <p class="text-gray-700 mb-4">Explorations of language in technology, including localization strategies, cultural considerations, and user experience.</p>
-      <ul class="text-sm leading-6 text-indigo-700">
-<li><a class="hover:underline" href="language-localization/code-switching-localization.html">
-  Code Switching as Localisation
-</a></li>
-      </ul>
-    </article>
-   <!-- Language & Health -->
-<article class="group border rounded-2xl p-6 flex flex-col shadow-sm bg-white/80 backdrop-blur-sm hover:shadow-md transition">
-  <div class="h-1 w-12 bg-indigo-600 rounded mb-4"></div>
-  <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Language & Health</h3>
-  <p class="text-gray-700 mb-4">
-    Articles exploring the intersection of language and health, including patient narratives and medical communication.
-  </p>
-  <ul class="text-sm leading-6 text-indigo-700">
-    <li>
-      <a class="hover:underline" href="language-localization/code-switching-localization.html">
-        Like fire in my womb (Spanish/English)
-      </a>
-    </li>
-    <li>
-      <a href="language-of-endo/index.html" class="inline-block text-indigo-700 group-hover:underline">
-        The Language of Endometriosis
-      </a>
-      <p class="text-gray-700 mt-2 mb-4 ml-4 text-sm">
-        Research archive on metaphor, pain, and expression. Includes Explain My Pain, glossary, and publications.
+      <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Language, Culture & Society</h3>
+      <p class="text-gray-700 mb-4">
+        Essays springing from personal moments of migration, family, and belonging.
+        They explore how everyday life becomes a lesson in language, identity, and home.
       </p>
-    </li>
-  </ul>
-</article>
+      <ul class="text-sm leading-6">
+        <!-- Published -->
+        <li><a class="hover:underline text-indigo-700" href="culture-and-society/arremangate.html">Arremángate: Tracing a Shared Lexicon</a></li>
+        <li><a class="hover:underline text-indigo-700" href="culture-and-society/emotional-geometry.html">Emotional Geometry</a></li>
+        <li><a class="hover:underline text-indigo-700" href="culture-and-society/toc-toc.html">Private Grammars</a></li>
+        <!-- Pipeline -->
+        <li class="coming-soon">Ni de allá ni de acá: Immigration and Acculturation</li>
+        <li class="coming-soon">Quién educa a quién: Lessons in Motherhood from My Daughter</li>
+        <li class="coming-soon">Me quiero ir a mi casa: If Only I Knew Where It Is</li>
+        <li class="coming-soon">Who Are You When You Speak</li>
+      </ul>
+    </article>
 
-    
+    <!-- Technical Writing & Applied NLP -->
+    <article class="group border rounded-2xl p-6 flex flex-col shadow-sm bg-white/80 backdrop-blur-sm hover:shadow-md transition">
+      <div class="h-1 w-12 bg-indigo-600 rounded mb-4"></div>
+      <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Technical Writing &amp; Applied NLP</h3>
+      <p class="text-gray-700 mb-4">
+        Applied writing at the crossroads of linguistics and development.
+        From building NLP apps to turning research into tools, these pieces show how theory meets practice.
+      </p>
+      <ul class="text-sm leading-6">
+        <!-- Published -->
+        <li><a class="hover:underline text-indigo-700" href="language-and-technology/where-linguistics-meets-nlp.html">Where Linguistics Meets NLP</a></li>
+        <li><a class="hover:underline text-indigo-700" href="language-and-technology/between-linguistics-and-the-scar.html">Between Linguistics and the Scar</a></li>
+        <li><a class="hover:underline text-indigo-700" href="language-and-technology/why-metaphors-matter-in-NLP.html">Why metaphors matter in NLP</a></li>
+        <!-- Pipeline -->
+        <li class="coming-soon">Explaining Pain with Patient Metaphors</li>
+        <li class="coming-soon">From Metaphor to Mechanism</li>
+        <li class="coming-soon">Explain My Pain: Doctor-Ready Summaries</li>
+        <li class="coming-soon">Sentiment Analysis App</li>
+        <li class="coming-soon">Translation + Localisation App</li>
+      </ul>
+    </article>
+
+    <!-- Localisation & Intercultural Communication -->
+    <article class="group border rounded-2xl p-6 flex flex-col shadow-sm bg-white/80 backdrop-blur-sm hover:shadow-md transition">
+      <div class="h-1 w-12 bg-indigo-600 rounded mb-4"></div>
+      <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Localisation &amp; Intercultural Communication</h3>
+      <p class="text-gray-700 mb-4">
+        Stories of miscommunication, translation quirks, and cultural distance.
+        Each piece starts in lived experience and unfolds into reflections on localisation and intercultural communication.
+      </p>
+      <ul class="text-sm leading-6">
+        <!-- Published -->
+        <li><a class="hover:underline text-indigo-700" href="language-localization/code-switching-localization.html">Code Switching as Localisation</a></li>
+        <li><a class="hover:underline text-indigo-700" href="language-localization/misunderstandings-across-cultures-and-machines.html">Misunderstandings Across Cultures and Machines</a></li>
+        <li><a class="hover:underline text-indigo-700" href="language-localization/localisation-cheatsheet.html">Communicating Interculturally Cheat Sheet #1: Localisation</a></li>
+       <li><a class="text-700" href="language-localization/misunderstandings-cheatsheet.html">
+  Communicating Interculturally Cheatsheet: Misunderstandings
+</a></li>
+  <!-- Pipeline -->
+        <li class="coming-soon">Me da lo mismo: Lost in Translation</li>
+        <li class="coming-soon">Maybe Not Hit on Your Teacher: Social Distance in Language</li>
+        <li class="coming-soon">“Have My Perfume” and “I’m Doing You a Favour”: Compliments &amp; Rejections</li>
+        <li class="coming-soon">Read Between the Lines: Requests in Family &amp; Marriage</li>
+        <li class="coming-soon">Have Some Cake, Have Some Cake, Have Some Cake: Rejections in Algeria</li>
+        <li class="coming-soon">Communicating Interculturally Cheatsheet Series</li>
+        <li class="coming-soon">Localisation and AI Ethics</li>
+           </ul>
+    </article>
+
+    <!-- Language & Health -->
+    <article class="group border rounded-2xl p-6 flex flex-col shadow-sm bg-white/80 backdrop-blur-sm hover:shadow-md transition">
+      <div class="h-1 w-12 bg-indigo-600 rounded mb-4"></div>
+      <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Language &amp; Health</h3>
+      <p class="text-gray-700 mb-4">
+        Writing born from the language of pain and healing.
+        Patient metaphors, research, and lived accounts connect medical communication with human experience.
+      </p>
+      <ul class="text-sm leading-6">
+        <!-- Published -->
+        <li>
+          <a class="hover:underline text-indigo-700" href="language-and-health/like-fire-in-my-womb.html">
+            Like fire in my womb (Spanish/English)
+          </a>
+        </li>
+        <li>
+          <a href="language-of-endo/index.html" class="inline-block text-indigo-700 group-hover:underline">
+            The Language of Endometriosis
+          </a>
+          <p class="text-gray-700 mt-2 mb-4 ml-4 text-sm">
+            Research archive on metaphor, pain, and expression. Includes Explain My Pain, glossary, and publications.
+          </p>
+        </li>
+      </ul>
+    </article>
+
   </div>
 </section>
 
-
-
-
-
-<!-- FOOTER -->
-<footer id="footer" class="bg-indigo-50 border-t border-gray-200 py-10 px-6">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-700">
-    <div class="flex items-center gap-2 text-indigo-700 font-medium">
-      <i data-lucide="mail" class="w-5 h-5"></i>
-      <a href="mailto:info@stellabullo.com" class="hover:underline">info@stellabullo.com</a>
-    </div>
-    <div class="flex flex-wrap justify-center gap-6 items-center text-indigo-700">
-      <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="hover:text-indigo-900 flex items-center gap-1">
-        <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
-      </a>
-      <a href="https://ko-fi.com/stellabullo" target="_blank" class="hover:text-indigo-900 flex items-center gap-1">
-        <i data-lucide="coffee" class="w-5 h-5"></i> Ko-fi
-      </a>
-      <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" class="hover:text-indigo-900">ORCID</a>
-    </div>
-    <div class="text-xs text-gray-500 text-center md:text-right">
-      &copy; 2025 Stella Bullo
-    </div>
-  </div>
-</footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    AOS.init({ duration: 800, once: true });
-    if (typeof lucide !== "undefined") lucide.createIcons();
-  });
-  (function () {
-    const btn = document.getElementById('nav-toggle');
-    const menu = document.getElementById('mobile-menu');
-    const openI = document.getElementById('icon-open');
-    const closeI = document.getElementById('icon-close');
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-      btn.setAttribute('aria-expanded', menu.classList.contains('hidden') ? 'false' : 'true');
-      openI.classList.toggle('hidden');
-      closeI.classList.toggle('hidden');
-    });
-    menu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        menu.classList.add('hidden');
-        btn.setAttribute('aria-expanded', 'false');
-        openI.classList.remove('hidden');
-        closeI.classList.add('hidden');
-      });
-    });
-  })();
-</script>
-
-
 </body>
 </html>
-
-
