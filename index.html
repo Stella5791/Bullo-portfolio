@@ -3,179 +3,367 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Stella Bullo – Linguist, Developer, Writer exploring the space between language, health, and technology." />
+  <meta name="description" content="Stella Bullo — Technical & content writing that makes complex ideas clear. NLP, localisation, health communication." />
   <meta name="author" content="Stella Bullo" />
-  <title>Stella Bullo – Linguist. Developer. Writer.</title>
-  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  <title>Stella Bullo — Technical & Content Writer</title>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-  <!-- Tailwind -->
+  <!-- Font (clean, producty) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'] },
+          colors: {
+            brand: {
+              50:  '#FFFFFF',
+              100: '#EDF3FB',
+              200: '#CBE3EF',
+              500: '#5AA8D6',
+              800: '#3A4163'
+            }
+          },
+          boxShadow: {
+            card: '0 10px 24px rgba(58,65,99,0.08)',
+            soft: '0 6px 16px rgba(58,65,99,0.06)'
+          },
+          borderRadius: {
+            xl2: '1.25rem'
+          }
+        }
+      }
+    }
+  </script>
 
-  <!-- AOS & Icons -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Icons -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 
   <style>
-    html, body { height: 100%; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      display: flex;
-      flex-direction: column;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
-      background: #f9fafb;
-    }
-    main { flex-grow: 1; }
+    html{scroll-behavior:smooth}
+    .card{transition:transform .2s ease, box-shadow .2s ease}
+    .card:hover{transform:translateY(-3px); box-shadow:0 14px 32px rgba(58,65,99,.10)}
+    .btn { transition: all .2s ease }
+    .btn:active { transform: translateY(1px) }
   </style>
 </head>
+<body class="bg-brand-50 text-brand-800 font-sans">
 
-<body>
-  <!-- GLOBAL NAV -->
-  <nav class="fixed top-0 left-0 w-full z-50 bg-white shadow-md text-sm">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-      <h2 class="text-xl font-bold text-indigo-700 whitespace-nowrap">
-        <a href="/index.html" class="hover:text-indigo-600">Stella Bullo</a>
-      </h2>
-
-      <!-- Desktop menu -->
-      <ul class="hidden md:flex gap-4 items-center">
-        <li><a href="/coding/index.html" class="hover:text-indigo-600">Coding</a></li>
-        <li><a href="/writing/index.html" class="hover:text-indigo-600">Writing</a></li>
-        <li><a href="#footer" class="hover:text-indigo-600">Contact</a></li>
-      </ul>
-
-      <!-- Mobile hamburger -->
-      <button id="nav-toggle"
-        class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-indigo-200 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
-        <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
-             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white">
-      <ul class="px-4 py-3 space-y-2">
-        <li><a href="/coding/index.html" class="block py-2 hover:text-indigo-600">Coding</a></li>
-        <li><a href="/writing/index.html" class="block py-2 hover:text-indigo-600">Writing</a></li>
-        <li><a href="#footer" class="block py-2 hover:text-indigo-600">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Main Content -->
-<main class="pt-36 md:pt-40 pb-16 px-6 md:px-8 bg-gradient-to-b from-white to-indigo-50">
-  <section
-    class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[56px_1fr_1.3fr] items-center gap-10 text-center md:text-left"
-    data-aos="fade-up"
-  >
-    <!-- Socials (desktop) -->
-<div class="hidden md:flex flex-col justify-center items-end gap-3 -mr-2">
-  <a href="https://github.com/Stella5791" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:scale-110">
-    <i data-lucide="github" class="w-6 h-6"></i>
-  </a>
-  <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:scale-110">
-    <i data-lucide="linkedin" class="w-6 h-6"></i>
-  </a>
-  <a href="https://ko-fi.com/stellabullo" target="_blank" class="text-indigo-600 hover:text-indigo-800 hover:scale-110">
-    <i data-lucide="coffee" class="w-6 h-6"></i>
-  </a>
+<!-- Announcement (light, optional) -->
+<div class="hidden md:block bg-brand-500/10 text-brand-800 text-sm text-center py-2">
+  Booking writing projects now — <a class="underline hover:opacity-80" href="mailto:info@stellabullo.com">get in touch</a>.
 </div>
 
+<!-- NAV -->
+<nav class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-brand-100">
+  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+   <a href="#top" class="text-lg font-semibold tracking-tight text-brand-500">Stella Bullo</a>
 
-    <!-- Photo -->
-    <div class="flex justify-center md:justify-end">
-      <img src="./stella-picture.png" alt="Stella Bullo"
-           onerror="this.style.display='none';"
-           class="rounded-full w-64 h-64 md:w-72 md:h-72 object-cover shadow-lg" />
+    <ul class="hidden md:flex items-center gap-6 text-sm">
+      <li><a href="#samples" class="hover:text-brand-500">Samples</a></li>
+      <li><a href="#services" class="hover:text-brand-500">Services</a></li>
+      <li><a href="#contact" class="hover:text-brand-500">Contact</a></li>
+      <li>
+        <!-- De-emphasized dev link -->
+        <a href="https://sierracodes.netlify.app/" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-md border border-brand-200 text-brand-800 hover:bg-brand-100">
+          Sierra Codes <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:info@stellabullo.com" class="btn inline-flex items-center gap-2 bg-brand-500 text-white px-3.5 py-1.5 rounded-md hover:brightness-95 shadow-soft">
+          <i data-lucide="mail" class="w-4 h-4"></i> Hire me for writing
+        </a>
+      </li>
+    </ul>
+
+    <!-- Mobile -->
+    <button id="nav-toggle" class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-brand-200" aria-expanded="false">
+      <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="md:hidden hidden border-t border-brand-100 bg-white">
+    <ul class="px-4 py-3 space-y-2 text-sm">
+      <li><a href="#samples" class="block py-2">Samples</a></li>
+      <li><a href="#services" class="block py-2">Services</a></li>
+      <li><a href="#contact" class="block py-2">Contact</a></li>
+      <li><a href="https://sierracodes.netlify.app/"  class="block py-2" target="_blank" rel="noopener">Sierra Codes</a></li>
+      <li><a href="mailto:info@stellabullo.com" class="block py-2 font-medium text-brand-500">Hire me for writing</a></li>
+    </ul>
+  </div>
+</nav>
+
+<a id="top" class="block"></a>
+
+<!-- HERO (icons left, portrait slightly closer to text) -->
+<header class="pt-28 md:pt-36 pb-10 px-6 md:px-8 relative overflow-hidden">
+  <!-- soft backdrop -->
+  <div aria-hidden="true" class="absolute inset-0 -z-10 bg-gradient-to-b from-brand-100 to-brand-50"></div>
+  <div aria-hidden="true" class="pointer-events-none absolute -right-24 -top-24 w-[34rem] h-[34rem] rounded-full bg-brand-200/50 blur-3xl"></div>
+
+  <!-- Grid wrapper -->
+  <div class="mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 items-center gap-6">
+    
+    <!-- Icons + Portrait grouped -->
+    <div class="flex flex-col items-center lg:flex-row lg:items-center lg:justify-start gap-3">
+      
+      <!-- Icons (vertical on desktop, horizontal on mobile) -->
+      <div class="flex flex-row lg:flex-col gap-2 items-center">
+        <a href="mailto:info@stellabullo.com" class="p-2 rounded-full bg-white/60 hover:bg-brand-100 shadow-soft transition">
+          <i data-lucide="mail" class="w-5 h-5 text-brand-400 hover:text-brand-700 transition"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="p-2 rounded-full bg-white/60 hover:bg-brand-100 shadow-soft transition">
+          <i data-lucide="linkedin" class="w-5 h-5 text-brand-400 hover:text-brand-700 transition"></i>
+        </a>
+        <a href="#samples" class="p-2 rounded-full bg-white/60 hover:bg-brand-100 shadow-soft transition">
+          <i data-lucide="file-text" class="w-5 h-5 text-brand-400 hover:text-brand-700 transition"></i>
+        </a>
+      </div>
+
+      <!-- Portrait (nudged closer to text) -->
+      <figure class="relative lg:ml-4">
+        <img
+  src="./assets/stella-picture-nobg.png"
+  alt="Stella Bullo"
+  onerror="this.style.display='none';"
+  class="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 object-cover rounded-2xl shadow-card ring-1 ring-brand-200 lg:drop-shadow-xl"
+/>
+
+        <!-- gentle glow -->
+        <div class="absolute -inset-7 -z-10 rounded-[2rem] bg-gradient-to-tr from-brand-200/70 to-transparent blur-2xl"></div>
+        <figcaption class="sr-only">Portrait of Stella Bullo</figcaption>
+      </figure>
     </div>
 
     <!-- Text -->
-    <div class="flex flex-col justify-center items-center md:items-start md:pl-4">
-      <h1 class="text-4xl md:text-5xl font-bold text-indigo-700 leading-tight mb-2">Stella Bullo</h1>
-      <h2 class="text-lg md:text-xl mb-6 text-gray-700">Linguist. Developer. Writer.</h2>
+    <div>
+      <p class="text-xs tracking-[.18em] font-semibold text-brand-500 mb-3">
+        LINGUIST - DEVELOPER  - WRITER [EN/ES]
+      </p>
 
-    <p class="mb-8 text-gray-600 max-w-[60ch] leading-relaxed">
-  I’m passionate about how language shapes our experience of health, identity, and the world.  
-  This site brings together my background as a linguist, writer, and researcher with my current work as a developer.  
-  Here you’ll find digital tools, research, and writing that explore language, culture, and lived experience.  
-  My aim is to use writing, research, and code to make invisible realities visible.
+      <h1 class="text-3xl md:text-3xl font-semibold tracking-tight text-brand-800 leading-tight mb-4">
+  I connect words, systems and people.
+</h1>
+
+
+      <p class="text-[1.05rem] text-brand-800/90 max-w-[68ch] leading-relaxed">
+        I shape ideas into documentation, interface copy and plain language explainers people can follow. I map annotation and evaluation with care, build small tools to test language, and make localisation feel native across cultures.
+      </p>
+
+      <!-- CTAs -->
+      <div class="mt-6 flex flex-col sm:flex-row flex-wrap gap-3">
+        <a href="mailto:info@stellabullo.com" class="btn inline-flex items-center justify-center px-5 py-3 rounded-md bg-brand-500 text-white hover:brightness-95 shadow-soft">
+          <i data-lucide="mail" class="w-5 h-5 mr-2"></i> Hire me for writing
+        </a>
+        <a href="#samples" class="btn inline-flex items-center justify-center px-5 py-3 rounded-md border border-brand-200 text-brand-800 hover:bg-white">
+          Documentation & samples
+        </a>
+        <a href="https://sierracodes.netlify.app/" class="btn inline-flex items-center justify-center px-3 py-3 text-brand-800/70 hover:text-brand-800" target="_blank" rel="noopener">
+          Development with Sierra Codes
+          <i data-lucide="arrow-up-right" class="ml-2 w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- soft wave divider -->
+  <svg aria-hidden="true" class="mt-12 w-full" viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path fill="#EDF3FB" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,58.7C1120,64,1280,96,1360,112L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/>
+  </svg>
+</header>
+
+
+<!-- SAMPLES -->
+<section id="samples" class="max-w-7xl mx-auto px-6 md:px-8 py-10">
+  <h2 class="text-2xl font-semibold tracking-tight text-brand-800 mb-6">Selected writing</h2>
+
+  <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+    <!-- Language, Culture & Society -->
+    <article class="card rounded-xl2 border border-brand-100 p-6 bg-white h-full">
+      <div class="h-1 w-10 bg-brand-500 rounded mb-4"></div>
+      <h3 class="text-lg font-semibold text-brand-800 mb-2">Language, Culture &amp; Society</h3>
+      <p class="text-brand-800/80 text-sm mb-3">Essays from migration and family. Scenes where identity is built in language.</p>
+      <ul class="text-sm leading-6">
+        <li><a class="text-brand-500 hover:underline" href="culture-and-society/arremangate.html">Arremángate: Tracing a Shared Lexicon</a></li>
+        <li><a class="text-brand-500 hover:underline" href="culture-and-society/emotional-geometry.html">Emotional Geometry</a></li>
+        <li><a class="text-brand-500 hover:underline" href="culture-and-society/toc-toc.html">Private Grammars: TOC TOC</a></li>
+        <li><a class="text-brand-500 hover:underline" href="culture-and-society/accents-english-advertising.html">Accents, Authority, and English in Advertising</a></li>
+      </ul>
+    </article>
+
+    <!-- Technical Writing & Applied NLP -->
+    <article class="card rounded-xl2 border border-brand-100 p-6 bg-white h-full">
+      <div class="h-1 w-10 bg-brand-500 rounded mb-4"></div>
+      <h3 class="text-lg font-semibold text-brand-800 mb-2">Technical Writing &amp; Applied NLP</h3>
+      <p class="text-brand-800/80 text-sm mb-3">Where research meets prototypes. Clear methods, small models, honest metrics.</p>
+      <ul class="text-sm leading-6">
+        <li><a class="text-brand-500 hover:underline" href="language-and-technology/where-linguistics-meets-nlp.html">Where Linguistics Meets NLP</a></li>
+        <li><a class="text-brand-500 hover:underline" href="language-and-technology/between-linguistics-and-the-scar.html">Between Linguistics and the Scar</a></li>
+        <li><a class="text-brand-500 hover:underline" href="language-and-technology/why-metaphors-matter-in-NLP.html">Why metaphors matter in NLP</a></li>
+        <li><a class="text-brand-500 hover:underline" href="language-and-technology/explain-my-pain.html">Explain My Pain</a></li>
+        <li><a class="text-brand-500 hover:underline" href="language-and-technology/ai-annotation-vs-linguistics.html">From Linguistic Research to AI Annotation</a></li>
+        <li><a class="text-brand-500 hover:underline" href="language-and-technology/practical-nlp-primer.html">A Gentle, Practical NLP Primer</a></li>
+      </ul>
+    </article>
+
+    <!-- Localisation & Cross Cultural Communication -->
+    <article class="card rounded-xl2 border border-brand-100 p-6 bg-white h-full">
+      <div class="h-1 w-10 bg-brand-500 rounded mb-4"></div>
+      <h3 class="text-lg font-semibold text-brand-800 mb-2">Localisation &amp; Cross Cultural Communication</h3>
+      <p class="text-brand-800/80 text-sm mb-3">Moving ideas across borders. Fewer assumptions. Better testing. Native results.</p>
+      <ul class="text-sm leading-6">
+        <li><a class="text-brand-500 hover:underline" href="language-localization/code-switching-localization.html">Code Switching as Localisation</a></li>
+        <li><a class="text-brand-500 hover:underline" href="language-localization/misunderstandings-across-cultures-and-machines.html">Misunderstandings Across Cultures and Machines</a></li>
+        <li><a class="text-brand-500 hover:underline" href="language-localization/localisation-cheatsheet.html">Cheat Sheet #1: Localisation</a></li>
+        <li><a class="text-brand-500 hover:underline" href="language-localization/misunderstandings-cheatsheet.html">Cheat Sheet #2: Avoiding Misunderstanding</a></li>
+        <li><a class="text-brand-500 hover:underline" href="language-localization/localisation-crash-course.html">Cross-Cultural Localisation: Crash Course</a></li>
+        <li><a class="text-brand-500 hover:underline" href="language-localization/translation-to-localisation-nlp-pipelines.html">From Translation to Localisation: NLP Pipelines</a></li>
+      </ul>
+    </article>
+
+    <!-- Language & Health -->
+    <article class="card rounded-xl2 border border-brand-100 p-6 bg-white h-full">
+      <div class="h-1 w-10 bg-brand-500 rounded mb-4"></div>
+      <h3 class="text-lg font-semibold text-brand-800 mb-2">Language &amp; Health</h3>
+      <p class="text-brand-800/80 text-sm mb-3">Patient narratives and metaphor. Clear routes from story to care.</p>
+      <ul class="text-sm leading-6">
+        <li><a class="text-brand-500 hover:underline" href="language-and-health/like-fire-in-my-womb.html">Like fire in my womb (Spanish/English)</a></li>
+        <li><a class="text-brand-500 hover:underline" href="explain-my-pain.html">Explaining My Pain: Taxonomy &amp; Summaries</a></li>
+        <li><a class="text-brand-500 hover:underline" href="language-and-health/metaphor-health-communication.html">Explaining Pain with Metaphor: Guide</a></li>
+        <li class="mt-1">
+          <a href="language-of-endo/index.html" class="text-brand-500 hover:underline">The Language of Endometriosis</a>
+          <p class="text-brand-800/60 text-xs ml-4 mt-1">Research archive, glossary, publications.</p>
+        </li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="bg-brand-100">
+  <div class="max-w-7xl mx-auto px-6 md:px-8 pt-12 pb-8">
+    <h2 class="text-2xl font-semibold tracking-tight text-brand-800 mb-6">Services</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="rounded-xl2 border border-brand-200 p-6">
+        <h3 class="font-semibold text-brand-800 mb-2">Documentation &amp; Guides</h3>
+        <p class="text-sm text-brand-800/90">Product docs, API references, quick starts, internal playbooks.</p>
+      </div>
+      <div class="rounded-xl2 border border-brand-200 p-6">
+        <h3 class="font-semibold text-brand-800 mb-2">Content &amp; Case Studies</h3>
+        <p class="text-sm text-brand-800/90">Thought pieces, research summaries, customer stories with measurable outcomes.</p>
+      </div>
+      <div class="rounded-xl2 border border-brand-200 p-6">
+        <h3 class="font-semibold text-brand-800 mb-2">UX Writing &amp; Localisation</h3>
+        <p class="text-sm text-brand-800/90">Interface copy, in-product help, localisation strategy &amp; review.</p>
+      </div>
+    </div>
+
+<p class="mt-6 mb-10 max-w-2xl mx-auto text-sm text-brand-800 border border-brand-200 rounded-xl p-4 text-center">
+  Also: I turn academic &amp; scientific papers into clear articles, explainers and media pieces for the general public preserving accuracy while removing jargon.
 </p>
 
 
-      <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-        <a href="/coding/index.html" class="bg-indigo-600 text-white px-5 py-3 rounded-md hover:bg-indigo-700">Explore Coding</a>
-        <a href="/writing/index.html" class="border border-indigo-600 text-indigo-600 px-5 py-3 rounded-md hover:bg-indigo-100">Explore Writing</a>
-        <a href="mailto:info@stellabullo.com" class="border border-indigo-600 text-indigo-600 px-5 py-3 rounded-md hover:bg-indigo-100 flex items-center gap-2">
-          <i data-lucide="mail" class="w-4 h-4"></i>
-          Email Me
+  </div>
+</section>
+
+
+
+<!-- CONTACT (acts as footer) -->
+<section id="contact" class="bg-gradient-to-br from-brand-500 to-brand-800 text-white">
+  <div class="max-w-7xl mx-auto px-6 md:px-8 py-12 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+    <div class="md:col-span-2">
+      <h2 class="text-3xl font-semibold leading-tight">Let’s work together</h2>
+      <p class="mt-3 text-white/90 max-w-[60ch]">
+        Collaborations, commissions, or a simple question. I reply in English or Spanish.
+      </p>
+
+      <!-- Buttons row -->
+      <div class="mt-6 flex flex-nowrap items-center gap-2 overflow-x-auto">
+        <a href="mailto:info@stellabullo.com" class="btn inline-flex items-center gap-2 bg-white text-brand-800 px-4 py-3 rounded-md hover:bg-brand-100 whitespace-nowrap">
+          <i data-lucide="mail" class="w-5 h-5"></i> info@stellabullo.com
         </a>
-      </div>
-    </div>
-  </section>
-</main>
-
-
-  <!-- GLOBAL FOOTER -->
-  <footer id="footer" class="bg-white border-t border-gray-200 py-10 px-6 mt-0">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-700">
-      <div class="flex items-center gap-2 text-indigo-700 font-medium">
-        <i data-lucide="mail" class="w-5 h-5"></i>
-        <a href="mailto:info@stellabullo.com" class="hover:underline">info@stellabullo.com</a>
-      </div>
-      <div class="flex flex-wrap justify-center gap-6 items-center text-indigo-700">
-        <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900 flex items-center gap-1">
+        <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20 whitespace-nowrap">
           <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
         </a>
-        <a href="https://ko-fi.com/stellabullo" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900 flex items-center gap-1">
+        <a href="https://ko-fi.com/stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20 whitespace-nowrap">
           <i data-lucide="coffee" class="w-5 h-5"></i> Ko-fi
         </a>
-        <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-900">ORCID</a>
-      </div>
-      <div class="text-xs text-gray-500 text-center md:text-right">
-        &copy; 2025 Stella Bullo
+        <a href="https://medium.com/@stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20 whitespace-nowrap">
+          <svg class="w-5 h-5" viewBox="0 0 1043.63 592.71" fill="currentColor" aria-hidden="true">
+            <path d="M588.67 296.35c0 163.67-131.6 296.36-293.83 296.36S1 460 1 296.35C1 132.7 132.6 0 294.84 0s293.83 132.7 293.83 296.35Zm453.96 0c0 153.7-65.8 278.2-147 278.2s-147-124.5-147-278.2S814.45 18.13 895.63 18.13s147 124.5 147 278.22ZM684.8 296.35c0 146.56-36.3 265.47-81.1 265.47-44.8 0-81.1-118.9-81.1-265.47S558.9 30.88 603.7 30.88c44.8 0 81.1 118.91 81.1 265.47Z"/>
+          </svg>
+          Medium
+        </a>
+        <a href="/coding/index.html" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20 whitespace-nowrap">
+          <i data-lucide="code-2" class="w-5 h-5"></i> Sierra Codes
+        </a>
       </div>
     </div>
-  </footer>
+  </div>
 
-  <!-- NAV + ICONS/AOS INIT -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      if (window.AOS) AOS.init({ duration: 800, once: true });
-      if (typeof lucide !== 'undefined') lucide.createIcons();
+  <!-- Footer bottom -->
+<div class="text-center text-sm text-white/70 mt-6">
+  © <span id="year"></span> Stella Bullo. All rights reserved | Designed & developed by 
+  <a href="https://sierracodes.netlify.app/" target="_blank" rel="noopener" class="underline hover:text-white">Sierra Codes</a>
+</div>
 
-      const btn = document.getElementById('nav-toggle');
-      const menu = document.getElementById('mobile-menu');
-      const openI = document.getElementById('icon-open');
-      const closeI = document.getElementById('icon-close');
-      if (!btn || !menu) return;
 
-      btn.addEventListener('click', () => {
-        const isOpen = !menu.classList.contains('hidden');
-        menu.classList.toggle('hidden');
-        btn.setAttribute('aria-expanded', String(!isOpen));
-        openI.classList.toggle('hidden');
-        closeI.classList.toggle('hidden');
-      });
+</section>
 
-      menu.querySelectorAll('a').forEach(a => {
-        a.addEventListener('click', () => {
-          if (!menu.classList.contains('hidden')) {
-            menu.classList.add('hidden');
-            btn.setAttribute('aria-expanded', 'false');
-            openI.classList.remove('hidden');
-            closeI.classList.add('hidden');
-          }
-        });
-      });
+<!-- Return to top -->
+<button id="toTop"
+  class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500"
+  aria-label="Back to top" title="Back to top">
+  <i data-lucide="chevron-up" class="w-5 h-5"></i>
+</button>
+
+<!-- JS -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('shadow', window.scrollY > 10);
     });
-  </script>
 
+    const btn = document.getElementById('nav-toggle');
+    const menu = document.getElementById('mobile-menu');
+    const openI = document.getElementById('icon-open');
+    const closeI = document.getElementById('icon-close');
+    if (btn && menu) {
+      const toggle = () => {
+        const willOpen = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', String(willOpen));
+        openI.classList.toggle('hidden', willOpen);
+        closeI.classList.toggle('hidden', !willOpen);
+      };
+      btn.addEventListener('click', toggle);
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { if (!menu.classList.contains('hidden')) toggle(); }));
+    }
+   document.getElementById('year').textContent = new Date().getFullYear();
+    // Back to top
+    const toTop = document.getElementById('toTop');
+    const toggleToTop = () => { toTop.classList.toggle('hidden', window.scrollY < 400); };
+    window.addEventListener('scroll', toggleToTop);
+    toggleToTop();
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  });
+
+</script>
 </body>
 </html>
