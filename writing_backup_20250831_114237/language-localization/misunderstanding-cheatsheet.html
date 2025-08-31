@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Misunderstandings Across Cultures and Machines — Infographic | Stella Bullo</title>
+  <style>
+    :root {
+      --indigo: #4f46e5;
+      --teal: #0a766c;
+      --bg: #ffffff;
+      --slate: #0f172a;
+      --muted: #64748b;
+      --line: #e5e7eb;
+      --card: #f8fafc;
+      --accent: #eef2ff;
+      --shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: var(--bg);
+      color: var(--slate);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wrapper { max-width: 980px; margin: 0 auto; padding: 24px; }
+    .controls { display: flex; gap: 10px; justify-content: flex-end; margin-bottom: 16px; }
+    .btn { appearance: none; border: 1px solid var(--line); background: #fff; color: var(--slate); padding: 8px 12px; border-radius: 10px; font-weight: 600; cursor: pointer; }
+    .btn.primary { background: var(--indigo); border-color: transparent; color: #fff; }
+
+    .sheet { background: linear-gradient(180deg, #ffffff 0%, var(--card) 100%); border: 1px solid var(--line); border-radius: 22px; padding: 28px; box-shadow: var(--shadow); }
+
+    .header { display: grid; grid-template-columns: 60px 1fr; gap: 16px; align-items: center; margin-bottom: 10px; }
+    .header .logo svg { width: 48px; height: 48px; color: var(--indigo); }
+    .header h1 { margin: 0; font-size: clamp(24px, 3.2vw, 36px); line-height: 1.2; }
+    .header p { margin: 6px 0 0; color: var(--muted); }
+    .kicker { text-transform: uppercase; font-weight: 800; color: var(--teal); font-size: 12px; letter-spacing: .14em; margin-bottom: 6px; }
+
+    .tldr { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 16px; }
+    .tldr h2 { margin: 0 0 8px; font-size: 16px; color: var(--indigo); }
+
+    .grid { display: grid; gap: 14px; }
+    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid.cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    @media (max-width: 860px) { .grid.cols-3, .grid.cols-4 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .grid.cols-2, .grid.cols-3, .grid.cols-4 { grid-template-columns: 1fr; } }
+
+    .card { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 14px; display: grid; grid-template-columns: 28px 1fr; gap: 10px; }
+    .card svg { width: 22px; height: 22px; color: var(--teal); margin-top: 2px; }
+    .card h3 { margin: 0 0 4px; font-size: 14px; }
+    .card p { margin: 0; font-size: 13px; color: var(--muted); }
+
+    .section { margin-top: 20px; }
+    .section h2 { font-size: 18px; margin: 0 0 8px; }
+
+    .flow { display: grid; grid-template-columns: repeat(4, minmax(140px, 1fr)); gap: 12px; }
+    .step { background: var(--card); border: 1px dashed #c7d2fe; border-radius: 14px; padding: 12px; }
+    .step .num { font-weight: 800; color: var(--indigo); display: inline-block; margin-bottom: 4px; }
+    .step .label { font-weight: 700; font-size: 14px; }
+    .step .text { font-size: 13px; color: var(--muted); }
+    @media (max-width: 720px) { .flow { grid-template-columns: repeat(2, 1fr); } }
+
+    .footerbox { background: var(--accent); border: 1px solid #c7d2fe; border-radius: 14px; padding: 14px; font-weight: 600; }
+    .muted { color: var(--muted); font-weight: 500; }
+
+    /* print */
+    @media print {
+      body { background: #fff; }
+      .wrapper { padding: 0; }
+      .controls { display: none !important; }
+      .sheet { box-shadow: none; border: none; page-break-inside: avoid; }
+      @page { size: A4; margin: 16mm; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="controls" role="toolbar" aria-label="Infographic controls">
+      <button class="btn primary" onclick="window.print()" title="Print or save as PDF">Print or Save PDF</button>
+    </div>
+
+    <article class="sheet" aria-label="Misunderstandings Across Cultures and Machines — Infographic">
+      <header class="header">
+        <div class="logo" aria-hidden="true">
+          <!-- conversation bubbles icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a4 4 0 0 1-4 4H7l-4 4v-4a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4"/>
+            <path d="M17 8h2a4 4 0 0 1 4 4v8l-4-4h-2a4 4 0 0 1-4-4"/>
+          </svg>
+        </div>
+        <div>
+          <div class="kicker">Communicating Interculturally</div>
+          <h1>Misunderstandings Across Cultures and Machines</h1>
+          <p>Misunderstandings are structural. They arise from culture, pragmatics, and technology. Treat them as signals that guide design and practice.</p>
+        </div>
+      </header>
+
+      <section class="section">
+        <div class="tldr">
+          <h2>TLDR</h2>
+          <p>In healthcare, misunderstandings affect diagnosis and trust. In AI and localisation they flatten nuance and distort tone. In intercultural exchange they reveal that meaning is negotiated. The goal is not to remove misunderstanding but to respond to it with better design and practice.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Where misunderstandings occur</h2>
+        <div class="grid cols-4">
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z"/></svg>
+            <div>
+              <h3>Intercultural</h3>
+              <p>Different norms for directness and politeness lead to pragmatic mismatch.</p>
+            </div>
+          </div>
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <div>
+              <h3>Healthcare</h3>
+              <p>Intensity weakens in translation. Patients risk being under treated.</p>
+            </div>
+          </div>
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M2 20h20"/></svg>
+            <div>
+              <h3>AI and MT</h3>
+              <p>Training on dominant norms flattens sociopragmatic cues and tone.</p>
+            </div>
+          </div>
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18M5 6h14M7 14h10M9 18h6"/></svg>
+            <div>
+              <h3>Business and L10n</h3>
+              <p>Copy travels without its cultural logic and fails in local markets.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Key phenomena</h2>
+        <div class="grid cols-4">
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <div>
+              <h3>Pragmatic mismatch</h3>
+              <p>Intent and interpretation do not align across cultures.</p>
+            </div>
+          </div>
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12H4"/><path d="M14 6l6 6-6 6"/></svg>
+            <div>
+              <h3>Semantic attenuation</h3>
+              <p>Meaning loses intensity in translation. Me duele becomes it hurts.</p>
+            </div>
+          </div>
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M4 8h16"/></svg>
+            <div>
+              <h3>Dataset bias</h3>
+              <p>Dominant varieties crowd out dialects and hybrid styles.</p>
+            </div>
+          </div>
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 4 1-5A4 4 0 0 1 4 7h13a4 4 0 0 1 4 4z"/></svg>
+            <div>
+              <h3>Opaque translation</h3>
+              <p>Outputs feel fluent but hide social meaning and stance.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Consequences</h2>
+        <div class="flow">
+          <div class="step">
+            <span class="num">1</span>
+            <div class="label">Clinical risk</div>
+            <div class="text">Underestimation of symptoms and delayed care.</div>
+          </div>
+          <div class="step">
+            <span class="num">2</span>
+            <div class="label">Loss of trust</div>
+            <div class="text">Patients and users feel unheard or misread.</div>
+          </div>
+          <div class="step">
+            <span class="num">3</span>
+            <div class="label">Brand failure</div>
+            <div class="text">Copy misses tone and harms local reception.</div>
+          </div>
+          <div class="step">
+            <span class="num">4</span>
+            <div class="label">Design drift</div>
+            <div class="text">Systems optimise for fluency rather than meaning.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>What we should do</h2>
+        <div class="grid cols-3">
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17V3"/><path d="M6 7h12"/><path d="M6 11h12"/></svg>
+            <div>
+              <h3>Healthcare</h3>
+              <p>Train for pragmatic force. Build tools that flag intensity mismatch. Treat patient metaphors as clinical signals.</p>
+            </div>
+          </div>
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8"/></svg>
+            <div>
+              <h3>AI and translation</h3>
+              <p>Broaden data. Add pragmatic evaluation. Test in situated use. Read misunderstandings as redesign prompts.</p>
+            </div>
+          </div>
+          <div class="card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 7h7l-5.5 4 2.5 7-7-4.5L5.5 20 8 13 3 9h7z"/></svg>
+            <div>
+              <h3>Business and L10n</h3>
+              <p>Localise strategy not only words. Co create with local speakers. Validate tone, formality, and indirectness.</p>
+            </div>
+          </div>
+        </div>
+        <div class="footerbox" style="margin-top:12px;">
+          <p><strong>Takeaway.</strong> Misunderstandings are signals. They show where meaning shifts and where culture demands attention.</p>
+          <p class="muted">Part of the series on Communicating Interculturally.</p>
+        </div>
+      </section>
+
+      <section class="section" aria-label="References">
+        <h2>References · APA</h2>
+        <div class="grid cols-2">
+          <div class="card" style="grid-template-columns: 1fr;">
+            <h3>Books and articles</h3>
+            <p>Dewaele, J. M. (2010). Emotions in multiple languages. Palgrave Macmillan.</p>
+            <p>Hall, E. T. (1976). Beyond culture. Anchor Books.</p>
+            <p>House, J. (2006). Signalling and preventing misunderstanding in English as a lingua franca communication. International Journal of the Sociology of Language, 177, 123–150.</p>
+          </div>
+          <div class="card" style="grid-template-columns: 1fr;">
+            <h3>Further reading</h3>
+            <p>Pavlenko, A. (2005). Emotions and multilingualism. Cambridge University Press.</p>
+            <p>Scarry, E. (1985). The body in pain. Oxford University Press.</p>
+            <p>Thomas, J. (1983). Cross cultural pragmatic failure. Applied Linguistics, 4(2), 91–112.</p>
+            <p>Wierzbicka, A. (1999). Emotions across languages and cultures. Cambridge University Press.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer style="margin-top: 18px; text-align: center; color: #6b7280;">
+        <p>© 2025 Stella Bullo. All rights reserved. Contact <a href="mailto:info@stellabullo.com" style="color:var(--indigo); text-decoration:underline;">info@stellabullo.com</a></p>
+      </footer>
+    </article>
+  </div>
+</body>
+</html>

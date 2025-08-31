@@ -7,192 +7,207 @@
   <meta name="description" content="An article by Stella Bullo on family language, memory, and untranslatable affection." />
   <meta name="author" content="Stella Bullo" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f9fafb;
-      color: #1f2937;
-      line-height: 1.7;
-      padding: 2rem 1rem;
-      margin: 0 auto;
-      max-width: 800px;
-      width: 100%;
-    }
-    h1 {
-      color: #4f46e5;
-      font-size: 2.25rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-    h2 { font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; }
-    h3 { font-size: 1.25rem; font-weight: 400; color: #6b7280; margin-bottom: 1rem; }
-    p { margin-bottom: 1rem; }
-    blockquote {
-      border-left: 4px solid #818cf8;
-      padding-left: 1rem;
-      color: #4b5563;
-      font-style: italic;
-      margin: 1rem 0;
-    }
-    .topbar {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .topbar a {
-      color:#4f46e5; font-weight:600; text-decoration:underline; width: fit-content;
-    }
-    .lang-toggle {
-      display: inline-block;
-      background: #4f46e5; color: #ffffff; font-weight: 600;
-      cursor: pointer; border: none; border-radius: 0.375rem;
-      padding: 0.5rem 0.9rem; text-decoration: none; width: fit-content;
-    }
-    abbr[title] { text-decoration: underline dotted; cursor: help; }
-/* Accessible custom tooltip for mobile + desktop */
-  .tt { position: relative; text-decoration: underline dotted; cursor: help; }
-  .tt:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
 
-  .tt::after {
-    content: attr(data-title);
-    position: absolute;
-    left: 0; bottom: 125%;
-    background: #111827;
-    color: #fff;
-    padding: 0.4rem 0.6rem;
-    border-radius: 0.375rem;
-    font-size: 0.85rem;
-    line-height: 1.2;
-    white-space: normal;
-    max-width: 260px;
-    box-shadow: 0 6px 18px rgba(0,0,0,.18);
-    opacity: 0;
-    transform: translateY(4px);
-    transition: opacity .15s ease, transform .15s ease;
-    pointer-events: none;
-    z-index: 30;
-  }
-  .tt::before {
-    content: "";
-    position: absolute;
-    left: 10px; bottom: 115%;
-    border: 6px solid transparent;
-    border-top-color: #111827;
-    opacity: 0;
-    transform: translateY(4px);
-    transition: opacity .15s ease, transform .15s ease;
-    z-index: 31;
-  }
-  .tt:hover::after, .tt:hover::before,
-  .tt:focus::after, .tt:focus::before {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  /* Small-screen type & spacing tweaks */
-  @media (max-width: 480px) {
-    body { padding: 1.25rem 0.9rem; }
-    h1 { font-size: 1.85rem; line-height: 1.2; }
-    h3 { font-size: 1.1rem; }
-  }
-
-  </style>
-</head>
-<body>
-  <div class="topbar">
-    <a href="../#articles">← Back to Articles</a>
-    <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">Read it in English</button>
-  </div>
-
-  <!-- SPANISH -->
-  <div id="spanish">
-    <h1>Una palabra con historia y una herencia familiar compartida</h1>
-    <h3 style="font-style: italic; color: #4b5563;"><strong>“Arremangate”:</strong> cómo el lenguaje cotidiano puede contener vínculos, memoria y afecto</h3>
-    <p style="font-style: italic; color: #4b5563;">Dra Stella Bullo</p>
-
-    <p style="padding-top: 1rem;">¿Qué puede contener una sola palabra o una frase? No en teoría, sino en los momentos cotidianos en que sale de la boca sin esfuerzo. Podría ocurrir, quizás, de paso entre dos personas que se conocen bien, en la pausa entre un gesto y una mirada. ¿Puede llevar historia? ¿Puede guardar afecto? ¿Puede viajar a través de generaciones y llegar intacta al presente?</p>
-
-    <p>Hace unos días vino a visitarme mi prima. Es hija de la hermana de mi mamá, y entre nosotras hay una afinidad profunda y casi innata de gestos, silencios y hábitos transmitidos.</p>
-    <p>Después del almuerzo, me levanté para lavar los platos. Sin pensarlo, metí las manos en el agua sin subirme las mangas. Ella, con un tono seco y urgente, me dijo:
-      <abbr class="tt" tabindex="0"
-      title="Subite las mangas. Imperativo con voseo rioplatense."
-      data-title="Subite las mangas. Imperativo con voseo rioplatense."><em>¡Arremangate!</em></abbr>.
- </p>
-    <p>Lo hice. Sin pensarlo.</p>
-    <p>Para cualquier otra persona, esa palabra dicha así, sin suavizadores, sin contexto, sin una sonrisa o una cargada de por medio, podría haber sonado un tanto ruda o autoritaria. Quizás hasta descortés. Pero para nosotras no fue así. Fue una especie de contraseña compartida. Un gesto con nombre propio que nos conectó, de golpe, con una forma de estar en el mundo.</p>
-    <p>Como lingüista, sé más que bien que el lenguaje no se entiende por lo que se dice literalmente, sino por cómo, cuándo y entre quiénes se dice. Lo que a veces suena brusco o descortés desde afuera puede ser una muestra de intimidad desde adentro. En mi familia, como en tantas otras, hay formas de hablar que parecen duras, pero que en realidad están cargadas de afecto. No suavizamos porque no hace falta. Lo que se dice viene con una capa de historia, afecto y lenguaje compartidos.</p>
-    <p>Además, lo que se activa en ese momento no es solo una interpretación lingüística, sino un tipo de conocimiento acumulado que vive en nosotras en forma de recuerdos, imágenes, emociones y rutinas familiares. <em>Arremangate</em> no es solo un verbo reflexivo en imperativo. Es una advertencia implícita que dice: <em><strong>vos sabés muy bien</strong> que así no se hace</em>.</p>
-    <p>Esa palabra encerraba no solo una corrección conductual, sino una corriente de afecto muy arraigada. Porque cuando ella la dijo, también dijo sin decirlo: <em>te cuido</em>, <em>me importás</em>, <em>te reconozco como parte de esto que compartimos</em>. Y cuando la obedecí sin dudar ni pensar, respondí implícitamente: <em>sí, lo sé</em>, <em>yo también vengo de ahí</em>, <em>en esto estamos juntas</em>.</p>
-    <p>La mamá de mi prima ya no está. Tal vez por eso, en esa palabra también había una sombra de melancolía. Una forma de presencia. Una forma de continuidad. Y eso es lo que el lenguaje a veces nos permite: decir sin explicar. Dejar que una sola palabra, una que quizás otros tachen de brusca, funcione como abrazo, como eco, como ancla.</p>
-    <p><em>Arremángate.</em> Yo también te quiero, prima.</p>
-    <p>Algunas palabras no se traducen, o no se deberían traducir. No porque no tengan equivalente gramatical, sino porque el contexto que las envuelve no es traducible, solo vivido. Palabras como <em>arremangate</em>, en este contexto, contienen historia, vínculo, cuerpo y pérdida.</p>
-    <p>Porque en ese instante, una sola palabra sostuvo memoria, afecto y el peso de vidas entrelazadas.</p>
-    <p><em>¿Qué puede contener una sola palabra o una frase?</em></p>
-  </div>
-
-  <!-- ENGLISH -->
-  <div id="english" style="display: none;">
-    <h1>A Word with History and a Shared Family Inheritance</h1>
-    <h3 style="font-style: italic; color: #4b5563;"><strong>“Arremangate”:</strong> how language carries care, memory, and unspoken bonds</h3>
-    <p style="font-style: italic; color: #4b5563;">Dra Stella Bullo</p>
-
-    <p style="padding-top: 1rem;">What can a single word or sentence hold? Not in theory, but in the everyday moments when it slips out naturally. It could happen, perhaps, in passing between two people who know each other well, in the pause between a gesture and a glance. Can it carry history? Can it hold affection? Can it reach back through generations and land, intact, in the present?</p>
-
-    <p>A fewdays ago, my cousin came to visit. She is my mom’s sister’s daughter, and there is something almost innate about the gestures, silences, and small habits we share.</p>
-    <p>After lunch, I got up to do the dishes. Without thinking, I put my hands in the water without rolling up my sleeves. She looked at me sharply and said, in a dry and urgent tone:
-     <abbr class="tt" tabindex="0"
-      title="Roll up your sleeves. Argentinian Spanish, imperative ‘vos’."
-      data-title="Roll up your sleeves. Argentinian Spanish, imperative ‘vos’."><em>Arremangate</em></abbr>.
-   </p>
-    <p>I did. Instantly. Without thinking.</p>
-    <p>To anyone else, that word, said with no softener, no smile, no teasing, might have sounded a little harsh or bossy. Maybe even rude. But for us, it was not. It was a kind of password. A named gesture that pulled us both back into a shared way of being in the world.</p>
-    <p>As a linguist, I know more than well that language is not understood by what is said literally, but by how, when, and between whom it is said. What might sound abrupt or impolite from the outside can be a sign of deep trust from within. In my family, as in many others, there are ways of speaking that may sound blunt but are actually full of care. We do not soften what we say because we do not need to. What is said already carries a layer of history, affection, and shared language.</p>
-    <p>And in moments like that, what gets activated is not just linguistic understanding, but something deeper, an embodied kind of knowledge. <em>Arremangate</em>, roll up your sleeves, is not just an instruction. It is a quiet command wrapped in generational memory. It says: <em>You know very well this is not how it is done.</em></p>
-    <p>That one word was not just a reminder to roll up my sleeves. It was a display of affection and care. Because when she said it, she was also saying: <em>I am looking out for you</em>, <em>You matter to me</em>, <em>I see you as part of this shared fabric</em>. And when I obeyed without hesitation, I was implicitly saying: <em>I know</em>, <em>I come from there too</em>, <em>We are in this together</em>.</p>
-    <p>My cousin’s mom is no longer here. Maybe that is why the word carried a trace of melancholy too. It was a kind of presence. A kind of continuity. And that is what language sometimes allows us to do, to speak without explaining. To let a single word, one others might label as blunt, become an embrace, an echo, an anchor.</p>
-    <p><em>Arremángate.</em> I love you too, coz.</p>
-    <p>Some words cannot be translated. Or should not be. Not because they lack a grammatical equivalent, but because the context that wraps around them is not translatable, only lived. Words like <em>arremangate</em>, in this kind of moment, carry history, connection, embodiment, and loss.</p>
-    <p>Because in that instant, a single word held memory, affection, and the weight of lives intertwined.</p>
-    <p><em>So, what can a single word or sentence hold?</em></p>
-  </div>
-
+  <!-- Tailwind + Typography -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
   <script>
-    const langToggle = document.getElementById('lang-toggle');
-    const englishDiv = document.getElementById('english');
-    const spanishDiv = document.getElementById('spanish');
-
-    // visibility helper
-    const isVisible = (el) => window.getComputedStyle(el).display !== 'none';
-
-    // ensure initial state
-    englishDiv.style.display = 'none';
-    spanishDiv.style.display = 'block';
-    langToggle.textContent = 'Read it in English';
-    langToggle.setAttribute('aria-label', 'Read it in English');
-
-    langToggle.addEventListener('click', () => {
-      const englishShowing = isVisible(englishDiv);
-      if (englishShowing) {
-        // switch to Spanish
-        englishDiv.style.display = 'none';
-        spanishDiv.style.display = 'block';
-        langToggle.textContent = 'Read it in English';
-        langToggle.setAttribute('aria-label', 'Read it in English');
-      } else {
-        // switch to English
-        spanishDiv.style.display = 'none';
-        englishDiv.style.display = 'block';
-        langToggle.textContent = 'Leer en Español';
-        langToggle.setAttribute('aria-label', 'Leer en Español');
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial','sans-serif'] },
+          colors: {
+            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
+          },
+          boxShadow: {
+            soft: '0 6px 16px rgba(58,65,99,0.06)'
+          },
+          borderRadius: { xl2: '1.25rem' }
+        }
       }
-    });
+    }
   </script>
 
-  <footer style="margin-top: 2rem; text-align: center; color: #6b7280;">
+  <style>
+    html{scroll-behavior:smooth}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+    /* Accessible tooltip */
+    .tt{position:relative;text-decoration:underline dotted;cursor:help}
+    .tt::after{
+      content:attr(data-title);position:absolute;left:0;bottom:125%;
+      background:#111827;color:#fff;padding:.4rem .6rem;border-radius:.375rem;
+      font-size:.85rem;line-height:1.2;max-width:260px;box-shadow:0 6px 18px rgba(0,0,0,.18);
+      opacity:0;transform:translateY(4px);transition:opacity .15s, transform .15s;pointer-events:none;z-index:30;white-space:normal
+    }
+    .tt:hover::after,.tt:focus::after{opacity:1;transform:translateY(0)}
+  </style>
+</head>
+
+<body class="bg-brand-50 text-brand-800 font-sans">
+  <!-- Topbar -->
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 flex flex-col gap-3">
+<a href="../../index.html#samples" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">
+  ← Back to Articles
+</a>
+
+
+    <button id="lang-toggle" class="btn inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95 w-fit">
+      Read it in English
+    </button>
+  </div>
+
+  <!-- Article card (wider) -->
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <!-- SPANISH -->
+    <article id="spanish">
+      <header class="mb-8 md:mb-10">
+        <!-- smaller titles + more spacing -->
+        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">
+          Una palabra con historia y una herencia familiar compartida
+        </h1>
+        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-500 mb-3">
+          <strong>“Arremangate”:</strong> cómo el lenguaje cotidiano puede contener vínculos, memoria y afecto
+        </h2>
+        <p class="italic text-brand-800/70 text-sm">Dra Stella Bullo</p>
+      </header>
+
+      <!-- prose with relaxed leading and roomier headings -->
+      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500
+                  prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8
+                  prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
+        <p>¿Qué puede contener una sola palabra o una frase? No en teoría, sino en los momentos cotidianos en que sale de la boca sin esfuerzo. Podría ocurrir, quizás, de paso entre dos personas que se conocen bien, en la pausa entre un gesto y una mirada. ¿Puede llevar historia? ¿Puede guardar afecto? ¿Puede viajar a través de generaciones y llegar intacta al presente?</p>
+
+        <p>Hace unos días vino a visitarme mi prima. Es hija de la hermana de mi mamá, y entre nosotras hay una afinidad profunda y casi innata de gestos, silencios y hábitos transmitidos.</p>
+
+        <p>Después del almuerzo, me levanté para lavar los platos. Sin pensarlo, metí las manos en el agua sin subirme las mangas. Ella, con un tono seco y urgente, me dijo:
+          <abbr class="tt" tabindex="0" data-title="Subite las mangas. Imperativo con voseo rioplatense."><em>¡Arremangate!</em></abbr>.
+        </p>
+
+        <p>Lo hice. Sin pensarlo.</p>
+
+        <p>Para cualquier otra persona, esa palabra dicha así, sin suavizadores, sin contexto, sin una sonrisa o una cargada de por medio, podría haber sonado un tanto ruda o autoritaria. Quizás hasta descortés. Pero para nosotras no fue así. Fue una especie de contraseña compartida. Un gesto con nombre propio que nos conectó, de golpe, con una forma de estar en el mundo.</p>
+
+        <p>Como lingüista, sé más que bien que el lenguaje no se entiende por lo que se dice literalmente, sino por cómo, cuándo y entre quiénes se dice. Lo que a veces suena brusco o descortés desde afuera puede ser una muestra de intimidad desde adentro. En mi familia, como en tantas otras, hay formas de hablar que parecen duras, pero que en realidad están cargadas de afecto. No suavizamos porque no hace falta. Lo que se dice viene con una capa de historia, afecto y lenguaje compartidos.</p>
+
+        <p>Además, lo que se activa en ese momento no es solo una interpretación lingüística, sino un tipo de conocimiento acumulado que vive en nosotras en forma de recuerdos, imágenes, emociones y rutinas familiares. <em>Arremangate</em> no es solo un verbo reflexivo en imperativo. Es una advertencia implícita que dice: <em><strong>vos sabés muy bien</strong> que así no se hace</em>.</p>
+
+        <p>Esa palabra encerraba no solo una corrección conductual, sino una corriente de afecto muy arraigada. Porque cuando ella la dijo, también dijo sin decirlo: <em>te cuido</em>, <em>me importás</em>, <em>te reconozco como parte de esto que compartimos</em>. Y cuando la obedecí sin dudar ni pensar, respondí implícitamente: <em>sí, lo sé</em>, <em>yo también vengo de ahí</em>, <em>en esto estamos juntas</em>.</p>
+
+        <p>La mamá de mi prima ya no está. Tal vez por eso, en esa palabra también había una sombra de melancolía. Una forma de presencia. Una forma de continuidad. Y eso es lo que el lenguaje a veces nos permite: decir sin explicar. Dejar que una sola palabra, una que quizás otros tachen de brusca, funcione como abrazo, como eco, como ancla.</p>
+
+        <p>Algunas palabras no se traducen, o no se deberían traducir. No porque no tengan equivalente gramatical, sino porque el contexto que las envuelve no es traducible, solo vivido. Palabras como <em>arremangate</em>, en este contexto, contienen historia, vínculo, cuerpo y pérdida.</p>
+
+        <p>Porque en ese instante, una sola palabra sostuvo memoria, afecto y el peso de vidas entrelazadas.</p>
+
+          <p><em>Arremángate.</em> Yo también te quiero, prima.</p><p><em>¿Y en tu caso? ¿Qué palabra te conecta con una herencia familiar compartida?</em></p>
+      </div>
+    </article>
+
+    <!-- ENGLISH -->
+    <article id="english" class="hidden">
+      <header class="mb-8 md:mb-10">
+        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">
+          A Word with History and a Shared Family Inheritance
+        </h1>
+        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-500 mb-3">
+          <strong>“Arremangate”:</strong> how language carries care, memory, and unspoken bonds
+        </h2>
+        <p class="italic text-brand-800/70 text-sm">Dra Stella Bullo</p>
+      </header>
+
+      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500
+                  prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8
+                  prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
+        <p>What can a single word or sentence hold? Not in theory, but in the everyday moments when it slips out naturally. It could happen, perhaps, in passing between two people who know each other well, in the pause between a gesture and a glance. Can it carry history? Can it hold affection? Can it reach back through generations and land, intact, in the present?</p>
+
+        <p>A few days ago, my cousin came to visit. She is my mom’s sister’s daughter, and there is something almost innate about the gestures, silences, and small habits we share.</p>
+
+        <p>After lunch, I got up to do the dishes. Without thinking, I put my hands in the water without rolling up my sleeves. She looked at me sharply and said, in a dry and urgent tone:
+          <abbr class="tt" tabindex="0" data-title="Roll up your sleeves. Argentinian Spanish, imperative ‘vos’."><em>Arremangate</em></abbr>.
+        </p>
+
+        <p>I did. Instantly. Without thinking.</p>
+
+        <p>To anyone else, that word, said with no softener, no smile, no teasing, might have sounded a little harsh or bossy. Maybe even rude. But for us, it was not. It was a kind of password. A named gesture that pulled us both back into a shared way of being in the world.</p>
+
+        <p>As a linguist, I know more than well that language is not understood by what is said literally, but by how, when, and between whom it is said. What might sound abrupt or impolite from the outside can be a sign of deep trust from within. In my family, as in many others, there are ways of speaking that may sound blunt but are actually full of care. We do not soften what we say because we do not need to. What is said already carries a layer of history, affection, and shared language.</p>
+
+        <p>And in moments like that, what gets activated is not just linguistic understanding, but something deeper, an embodied kind of knowledge. <em>Arremangate</em>, roll up your sleeves, is not just an instruction. It is a quiet command wrapped in generational memory. It says: <em>You know very well this is not how it is done.</em></p>
+
+        <p>That one word was not just a reminder to roll up my sleeves. It was a display of affection and care. Because when she said it, she was also saying: <em>I am looking out for you</em>, <em>You matter to me</em>, <em>I see you as part of this shared fabric</em>. And when I obeyed without hesitation, I was implicitly saying: <em>I know</em>, <em>I come from there too</em>, <em>We are in this together</em>.</p>
+
+        <p>My cousin’s mom is no longer here. Maybe that is why the word carried a trace of melancholy too. It was a kind of presence. A kind of continuity. And that is what language sometimes allows us to do, to speak without explaining. To let a single word, one others might label as blunt, become an embrace, an echo, an anchor.</p>
+
+        <p>Some words cannot be translated. Or should not be. Not because they lack a grammatical equivalent, but because the context that wraps around them is not translatable, only lived. Words like <em>arremangate</em>, in this kind of moment, carry history, connection, embodiment, and loss.</p>
+
+        <p>Because in that instant, a single word held memory, affection, and the weight of lives intertwined.</p>
+
+      <p><em>Arremángate.</em> I love you too, coz.</p><p><em>And what about you? What word connects you to a shared family heritage?</em></p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
     <p>© 2025 Stella Bullo. All rights reserved.</p>
-    <p>For inquiries, contact me at <a href="mailto:info@stellabullo.com" style="color:#4f46e5; text-decoration:underline;">info@stellabullo.com</a>.</p>
+    <p>For inquiries, contact me at
+      <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a>.
+    </p>
   </footer>
+
+  <script>
+  // ------ Language toggle ------
+  const langToggle = document.getElementById('lang-toggle');
+  const englishDiv = document.getElementById('english');
+  const spanishDiv = document.getElementById('spanish');
+
+  // initial state
+  englishDiv.classList.add('hidden');
+  spanishDiv.classList.remove('hidden');
+  langToggle.textContent = 'Read it in English';
+  langToggle.setAttribute('aria-label','Read it in English');
+
+  langToggle.addEventListener('click', () => {
+    const englishShowing = !englishDiv.classList.contains('hidden');
+    if (englishShowing) {
+      englishDiv.classList.add('hidden');
+      spanishDiv.classList.remove('hidden');
+      langToggle.textContent = 'Read it in English';
+      langToggle.setAttribute('aria-label','Read it in English');
+    } else {
+      spanishDiv.classList.add('hidden');
+      englishDiv.classList.remove('hidden');
+      langToggle.textContent = 'Leer en Español';
+      langToggle.setAttribute('aria-label','Leer en Español');
+    }
+  });
+
+  // ------ Back to top button (created dynamically) ------
+  const toTop = document.createElement('button');
+  toTop.id = 'toTop';
+  toTop.type = 'button';
+  toTop.title = 'Back to top';
+  toTop.setAttribute('aria-label', 'Back to top');
+  toTop.textContent = '↑';
+  toTop.className = 'hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500';
+  document.body.appendChild(toTop);
+
+  const toggleToTop = () => {
+    if (window.scrollY > 400) toTop.classList.remove('hidden');
+    else toTop.classList.add('hidden');
+  };
+  window.addEventListener('scroll', toggleToTop);
+  toggleToTop();
+
+  toTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
 </body>
 </html>

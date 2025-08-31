@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gramáticas privadas: lo que Toc Toc me enseñó sobre lenguaje y obsesiones – Stella Bullo</title>
+  <meta name="description" content="An article by Stella Bullo on language, obsessions, and the private grammars we use to sustain our worlds." />
+  <meta name="author" content="Stella Bullo" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+      line-height: 1.7;
+      padding: 2rem 1rem;
+      margin: 0 auto;
+      max-width: 800px;
+      width: 100%;
+    }
+    h1 {
+      color: #4f46e5;
+      font-size: 2.25rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    h2 { font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; }
+    h3 { font-size: 1.25rem; font-weight: 400; color: #6b7280; margin-bottom: 1rem; }
+    p { margin-bottom: 1rem; }
+    blockquote {
+      border-left: 4px solid #818cf8;
+      padding-left: 1rem;
+      color: #4b5563;
+      font-style: italic;
+      margin: 1rem 0;
+    }
+    .topbar {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .topbar a {
+      color:#4f46e5; font-weight:600; text-decoration:underline; width: fit-content;
+    }
+    .lang-toggle {
+      display: inline-block;
+      background: #4f46e5; color: #ffffff; font-weight: 600;
+      cursor: pointer; border: none; border-radius: 0.375rem;
+      padding: 0.5rem 0.9rem; text-decoration: none; width: fit-content;
+    }
+    abbr[title] { text-decoration: underline dotted; cursor: help; }
+
+    /* Tooltip (kept for parity with your template) */
+    .tt { position: relative; text-decoration: underline dotted; cursor: help; }
+    .tt:focus-visible { outline: 2px solid #4f46e5; outline-offset: 2px; }
+    .tt::after {
+      content: attr(data-title);
+      position: absolute;
+      left: 0; bottom: 125%;
+      background: #111827; color: #fff;
+      padding: 0.4rem 0.6rem; border-radius: 0.375rem;
+      font-size: 0.85rem; line-height: 1.2; white-space: normal; max-width: 260px;
+      box-shadow: 0 6px 18px rgba(0,0,0,.18); opacity: 0; transform: translateY(4px);
+      transition: opacity .15s ease, transform .15s ease; pointer-events: none; z-index: 30;
+    }
+    .tt::before {
+      content: ""; position: absolute; left: 10px; bottom: 115%;
+      border: 6px solid transparent; border-top-color: #111827;
+      opacity: 0; transform: translateY(4px);
+      transition: opacity .15s ease, transform .15s ease; z-index: 31;
+    }
+    .tt:hover::after, .tt:hover::before,
+    .tt:focus::after, .tt:focus::before {
+      opacity: 1; transform: translateY(0); pointer-events: auto;
+    }
+
+    /* Small-screen tweaks */
+    @media (max-width: 480px) {
+      body { padding: 1.25rem 0.9rem; }
+      h1 { font-size: 1.85rem; line-height: 1.2; }
+      h3 { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a href="../#articles">← Back to Articles</a>
+    <button id="lang-toggle" class="lang-toggle" aria-label="Toggle language">Read it in English</button>
+  </div>
+
+  <!-- SPANISH -->
+  <div id="spanish">
+    <h1>Gramáticas privadas: lo que <em>Toc Toc</em> me enseñó sobre lenguaje y obsesiones</h1>
+    <p style="font-style: italic; color: #4b5563;">Dra Stella Bullo</p>
+
+    <p style="padding-top: 1rem;"><strong>¿Cuál es tu TOC?</strong> El mío, si es que lo tengo, se inclina hacia la simetría. No es incapacitante, pero está ahí, como una brújula silenciosa que se inquieta si algo se tuerce. Me incomoda un cuadro apenas inclinado, una hilera de sillas con una fuera de lugar, una estantería donde un solo libro rompe la línea. Y aunque parezca un detalle menor, entiendo que esa búsqueda de orden no es solo para que el cuadro se vea simétrico y alineado, sino también para yo estar bien, de darle forma a mi vida, de aferrarme a lo que puedo controlar.</p>
+
+    <p>Ensayando <em>Toc Toc</em> con el grupo de teatro independiente de Berrotarán, el pueblo donde vivo, esa pequeña manía mía dejó de ser una curiosidad personal para convertirse en un hilo de pensamiento. Porque al compartir escena con personajes que encarnan distintas manifestaciones del trastorno obsesivo-compulsivo, vi que lo que nos separa no es tanto la naturaleza de nuestras obsesiones como su intensidad y visibilidad.</p>
+
+    <p>La obra pone en primer plano un hecho incómodo: el mundo que vemos y tocamos es, en buena medida, una construcción que responde a nuestros miedos y condicionamientos. El lenguaje es la herramienta con la que edificamos esa realidad y, a la vez, la prueba que la legitima. En algunos casos, su función es explícita, como en quien vive con Tourette y no puede evitar que su habla rompa las normas de cortesía. En otros casos, es más sutil, como quien reza desaforadamente para sentirse protegida… hasta de sus propias acciones.</p>
+
+    <p>Y que, al final, todos usamos el lenguaje para sostener una idea del mundo que podamos habitar. En <em>Toc Toc</em>, cada personaje me recordó que el lenguaje no es solo comunicación: es refugio, límite y mapa personal que, en definitiva, nos deja una lección.</p>
+
+   
+    <h2>Gramáticas privadas: seis retratos del lenguaje en escena</h2>
+    <p>Para el que vive con Tourette, el lenguaje es un animal vivo que no se deja domar. Las palabras le brotan sin filtro, irrumpiendo en la conversación y rompiendo las normas sociales y lingüísticas de cortesía que damos por sentadas. Nos recuerda que no siempre elegimos lo que decimos.</p>
+
+    
+    <p>Para el aritmomaniaco y acumulador, cada diálogo es una contabilidad minuciosa. Su mundo es un archivo. Habla como quien pasa inventario: todo debe ser contado, registrado, archivado. Cada número es una estaca que fija la realidad en su sitio. Contar es retener, y retener es no dejar que nada —ni un objeto, ni una palabra— se pierda en el olvido. Nos recuerda que, para muchos, el lenguaje no es solo para comunicar: es para conservar.</p>
+
+  
+    <p>Para la obsesiva por la limpieza, cada frase suya está acompañada por un chorro de alcohol en spray. Cada accionar suyo marca un protocolo sagrado. Su léxico está plagado de bacterias, virus, contaminación. Habla midiendo la distancia, evitando que el otro invada su espacio. Nos recuerda que el lenguaje también puede ser un perímetro de seguridad.</p>
+
+
+    <p>Para la verificadora compulsiva, el lenguaje es un bucle de comprobaciones. Entre revisión y revisión, reza. Su plegaria es un doble cerrojo, un conjuro que la protege incluso de sí misma. Nos recuerda que el lenguaje puede ser un acto ritual: una forma de calmar lo incierto, aunque la certeza solo exista en nuestra mente.</p>
+
+
+    <p>Para la repetidora que dice todo dos veces, no es énfasis ni descuido: es supervivencia. En su cabeza, repetir es asegurarse de que el mundo no se desate. Cada duplicación de palabras es como un nudo doble en una cuerda que sostiene su realidad. Nos recuerda que el lenguaje puede ser un conjuro contra el miedo, una forma de mantener el mundo atado a un punto seguro.</p>
+
+Para el fanático de la simetría que alinea objetos con precisión milimétrica y vive en la prisión de las líneas rectas,  cada desviación es una amenaza. Se enamora de la repetidora porque, según él, la repetición es el epítome de la simetría: dos frases idénticas, una al lado de la otra, como reflejos enfrentados en un espejo. En él me reconozco: el orden externo como proyección, y a veces ilusión, del orden interno que buscamos. Nos recuerda que la armonía visual puede ser el espejo de un deseo de armonía interno, y que a veces esa simetría es solo un refugio que fabricamos para sostenernos.</p>
+   <h2>Del escenario al mundo: empatía, humor y el valor de la representación</h2>
+<p><em>Toc Toc</em> me hizo pensar que nuestras palabras no siempre describen la realidad tal cual es, sino como necesitamos que sea para poder vivir en ella. Quizá tu TOC no sea contar, rezar o repetir, pero seguro tienes un pequeño ritual, mínimo, íntimo, que, si te lo arrebataran, te dejaría expuesto. El mío, ya lo dije, es la simetría. El tuyo, quién sabe, quizá esté escondido en tu manera de hablar, en la pausa que siempre alargas o en el silencio que nunca rompes.</p>
+
+<p>Participar en esta obra me recordó que el teatro es también un laboratorio de empatía: al encarnar a otros, por un momento vivimos dentro de sus obsesiones, de sus miedos y de sus lógicas internas. Reírnos juntos de esas exageraciones no es burlarse, sino reconocer que, en mayor o menor medida, todos somos así. El humor, bien usado, abre la puerta a la comprensión y desarma el juicio. La representación nos permite, al final, volver al mundo real un poco más conscientes de nuestras propias manías, más tolerantes con las de los demás, y agradecidos por ese espacio seguro donde el juego y la verdad pueden convivir.</p>
+  </div>
+
+  <!-- ENGLISH -->
+  <div id="english" style="display: none;">
+    <h1>Private Grammars: What <em>Toc Toc</em> Taught Me About Language and Obsessions</h1>
+    <p style="font-style: italic; color: #4b5563;">Dr Stella Bullo</p>
+
+    <p style="padding-top: 1rem;"><strong>What’s your OCD?</strong> Mine, if I have one, leans toward symmetry. It isn’t disabling, but it’s there, like a quiet compass that twitches when something tilts. A picture slightly askew bothers me, a line of chairs with one out of place, a shelf where a single book breaks the line. And although it may seem a minor detail, I know that this search for order isn’t only so the picture looks symmetrical and aligned, it’s also so I can feel well, to give shape to my life, to hold on to what I can control.</p>
+
+    <p>While rehearsing <em>Toc Toc</em> with the independent theatre group in Berrotarán, the town where I live, that small quirk stopped being a personal curiosity and became a line of thought. Sharing the stage with characters who embody different manifestations of obsessive compulsive disorder, I realised that what separates us isn’t so much the nature of our obsessions as their intensity and visibility.</p>
+
+    <p>The play foregrounds an uncomfortable fact: the world we see and touch is, to a great extent, a construction shaped by our fears and conditioning. Language is the tool with which we build that reality and, at the same time, the proof that legitimises it. Sometimes its role is explicit, as with the person living with Tourette’s whose speech inevitably breaks the rules of politeness. In other cases it’s subtler, like the one who prays almost frantically to feel protected, even from her own actions.</p>
+
+    <p>And in the end, we all use language to hold up a world we can inhabit. In <em>Toc Toc</em>, each character reminded me that language is not only communication: it is shelter, boundary, and a personal map that, ultimately, leaves us with a lesson.</p>
+  <h2>Private Grammars: Six Portraits of Language on Stage</h2>
+    <p>For the person with Tourette’s, language is a living animal that won’t be tamed. Words spill out unfiltered, breaking into conversation and tearing through social and linguistic etiquette we take for granted. They remind us we don’t always choose what we say.</p>
+
+    <p>For the arithmomaniac and hoarder, every dialogue becomes meticulous accounting. Their world is an archive. They speak like someone taking inventory: everything must be counted, recorded, filed. Each number is a stake pinning reality in place. Counting is retaining, and retaining is refusing to let anything, object or word, slip into oblivion. Language here doesn’t just communicate; it conserves.</p>
+
+    <p>For the cleanliness-obsessed, each line comes with a burst of spray alcohol. Every action follows a sacred protocol. Their lexicon swarms with bacteria, viruses, contamination. They measure distance as they speak, avoiding any invasion of their space. Language becomes a perimeter of safety.</p>
+
+    <p>For the compulsive checker, language is a loop of verification. Between one check and the next, they pray. Prayer is a double lock, a spell that protects even from oneself. Language can be a ritual act: a way to quiet uncertainty, even if certainty exists only in the mind.</p>
+
+    <p>For the repeater who says everything twice, it’s not emphasis or carelessness, it’s survival. In their mind, repeating is how they make sure the world doesn’t come undone. Each doubled line is like a second knot on the rope that holds reality. Language as a charm against fear, a way to keep the world tied to a safe point.</p>
+
+      <h2>From Stage to World: Empathy, Humour and the Value of Performance</h2><p>For the symmetry fanatic who aligns objects with millimetric precision and lives in the prison of straight lines, every deviation is a threat. They fall in love with the repeater because, to them, repetition is the epitome of symmetry: two identical sentences side by side, like mirrored reflections. I recognise myself there: external order as projection—and at times illusion—of the inner order we seek. Visual harmony can mirror the desire for inner harmony, and sometimes that symmetry is simply a refuge we manufacture to keep ourselves standing.</p>
+    <br/>
+    <p><em>Toc Toc</em> left me thinking that our words don’t always describe reality as it is, but as we need it to be to live in it. Perhaps your OCD isn’t counting, praying, or repeating, but surely you have a small ritual, minimal, intimate, that, if taken away, would leave you exposed. Mine, as I said, is symmetry. Yours, who knows, may hide in the way you speak, in the pause you always stretch, or in the silence you never break.</p>
+
+    <p>Being part of this play reminded me that theatre is also a laboratory for empathy: by embodying others, for a moment we live inside their obsessions, their fears, and their internal logics. Laughing together at those exaggerations is not mockery, but a recognition that, to some degree, we are all like that. When used well, humour opens the door to understanding and disarms judgment. Performance allows us, in the end, to return to the real world a little more aware of our own quirks, more tolerant of those of others, and grateful for that safe space where play and truth can coexist.</p>
+  </div>
+
+  <script>
+    const langToggle = document.getElementById('lang-toggle');
+    const englishDiv = document.getElementById('english');
+    const spanishDiv = document.getElementById('spanish');
+
+    // visibility helper
+    const isVisible = (el) => window.getComputedStyle(el).display !== 'none';
+
+    // initial state
+    englishDiv.style.display = 'none';
+    spanishDiv.style.display = 'block';
+    langToggle.textContent = 'Read it in English';
+    langToggle.setAttribute('aria-label', 'Read it in English');
+
+    langToggle.addEventListener('click', () => {
+      const englishShowing = isVisible(englishDiv);
+      if (englishShowing) {
+        // back to Spanish
+        englishDiv.style.display = 'none';
+        spanishDiv.style.display = 'block';
+        langToggle.textContent = 'Read it in English';
+        langToggle.setAttribute('aria-label', 'Read it in English');
+      } else {
+        // switch to English
+        spanishDiv.style.display = 'none';
+        englishDiv.style.display = 'block';
+        langToggle.textContent = 'Leer en Español';
+        langToggle.setAttribute('aria-label', 'Leer en Español');
+      }
+    });
+  </script>
+
+  <footer style="margin-top: 2rem; text-align: center; color: #6b7280;">
+    <p>© 2025 Stella Bullo. All rights reserved.</p>
+    <p>For inquiries, contact me at <a href="mailto:info@stellabullo.com" style="color:#4f46e5; text-decoration:underline;">info@stellabullo.com</a>.</p>
+  </footer>
+</body>
+</html>
