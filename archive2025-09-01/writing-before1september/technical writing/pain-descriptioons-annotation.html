@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Annotating Pain Language – Stella Bullo</title>
+  <meta name="description" content="A technical article bridging Conceptual Metaphor Theory and the Metaphor Identification Procedure with an NLP-ready annotation schema for pain language. Bilingual (EN/ES)." />
+  <meta name="author" content="Stella Bullo" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind + Typography -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial','sans-serif'] },
+          colors: {
+            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
+          },
+          boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html{scroll-behavior:smooth}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+
+    /* Tooltip styling */
+    .tt{position:relative;text-decoration:underline dotted;cursor:help}
+    .tt::after{
+      content:attr(data-title);position:absolute;left:0;bottom:125%;
+      background:#111827;color:#fff;padding:.4rem .6rem;border-radius:.375rem;
+      font-size:.85rem;line-height:1.2;max-width:260px;box-shadow:0 6px 18px rgba(0,0,0,.18);
+      opacity:0;transform:translateY(4px);transition:opacity .15s, transform .15s;
+      pointer-events:none;z-index:30;white-space:normal
+    }
+    .tt:hover::after,.tt:focus::after{opacity:1;transform:translateY(0)}
+
+    /* Override Tailwind Typography defaults for h2/h3 */
+    .prose h2 {
+      font-size: 1.15rem !important;
+      font-weight: 600;
+    }
+    .prose h3 {
+      font-size: 1rem !important;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body class="bg-brand-50 text-brand-800 font-sans">
+  <!-- Topbar -->
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 flex flex-col gap-3">
+    <a href="../../index.html#samples" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">
+      ← Back to Articles
+    </a>
+    <button id="lang-toggle" class="btn inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95 w-fit">
+      Read it in English
+    </button>
+  </div>
+
+  <!-- Article container -->
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <!-- SPANISH -->
+    <article id="spanish">
+      <header class="mb-8 md:mb-10">
+        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">
+          Anotación del lenguaje del dolor: integración de la lingüística y el PLN
+        </h1>
+        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-500 mb-3">
+          CMT + MIP → un esquema de anotación listo para NLP con impacto clínico
+        </h2>
+        <p class="italic text-brand-800/70 text-sm">Dra Stella Bullo</p>
+      </header>
+
+      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500
+                  prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8
+                  prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
+
+        <h2>1. Introducción</h2>
+        <p>
+          Describir el dolor es difícil: es invisible, subjetivo y no se puede medir directamente. Solo existe para los demás cuando lo decimos. Los descriptores literales como
+          <em>“dolor agudo en la espalda baja”</em> cumplen una función clínica, pero a menudo no capturan la cualidad de la experiencia. Por eso aparecen metáforas como
+          <em>“alambre de púas alrededor de mi columna”</em> o <em>“un martillo golpeando dentro de mi cabeza”</em>, que traducen sensaciones a dominios compartidos (objetos, impactos, calor).
+        </p>
+        <p>
+          Para la lingüística y el PLN, el reto es doble: <strong>detectar</strong> usos metafóricos de forma fiable y <strong>representarlos</strong> en datos estructurados útiles para modelos y herramientas clínicas.
+          Este artículo muestra cómo combinar la <span class="tt" data-title="Conceptual Metaphor Theory">Teoría de la Metáfora Conceptual (CMT)</span> y el
+          <span class="tt" data-title="Metaphor Identification Procedure">Procedimiento de Identificación de Metáforas (MIP)</span> en un esquema de anotación compacto y accionable.
+        </p>
+
+        <h2>2. Fundamentos del método</h2>
+        <h3>2.1 Teoría de la Metáfora Conceptual (CMT)</h3>
+        <p>
+          La CMT explica cómo experiencias abstractas se expresan mediante dominios concretos. En dolor, aparecen patrones recurrentes:
+        </p>
+        <ul>
+          <li><strong>Dolor como objeto</strong> → <em>“alambre de púas alrededor de mi columna”</em></li>
+          <li><strong>Dolor como impacto</strong> → <em>“un martillo golpeando dentro de mi cabeza”</em></li>
+          <li><strong>Dolor como calor</strong> → <em>“un nudo de fuego en mi estómago”</em></li>
+        </ul>
+        <p>Estas categorías funcionan como taxonomía para anotar metáforas.</p>
+
+        <h3>2.2 Procedimiento de Identificación de Metáforas (MIP)</h3>
+        <ol>
+          <li>Leer el texto completo para el sentido global.</li>
+          <li>Identificar unidades léxicas.</li>
+          <li>Determinar el <em>significado básico</em> (más concreto/antiguo).</li>
+          <li>Comparar con el <em>significado contextual</em> en el enunciado.</li>
+          <li>Si contrastan pero se entienden por comparación, marcar como <em>metafórica</em>.</li>
+        </ol>
+
+        <h3>2.3 Ejemplo aplicado (MIP paso a paso)</h3>
+        <blockquote><em>“Se siente como alambre de púas alrededor de mi columna.”</em></blockquote>
+        <ul>
+          <li><strong>Unidades</strong>: <em>alambre de púas</em>, <em>alrededor</em>, <em>columna</em>.</li>
+          <li><strong>Básico</strong>: material de cercado con puntas; envolver físicamente; huesos de la espalda.</li>
+          <li><strong>Contextual</strong>: dolor agudo y constrictivo; sensación de envoltura; referencia anatómica literal.</li>
+          <li><strong>Decisión</strong>: <em>alambre de púas</em> y <em>alrededor</em> → metafóricos; <em>columna</em> → literal. Categoría: <strong>dolor como objeto</strong>.</li>
+        </ul>
+
+        <h2>3. Esquema de anotación</h2>
+        <p>Campos mínimos para equilibrar riqueza lingüística y viabilidad computacional:</p>
+        <ul>
+          <li><code>tipo</code> → <em>metáfora</em> | <em>literal</em></li>
+          <li><code>disparador</code> → unidad o frase que señala el dolor</li>
+          <li><code>categoría</code> → marco conceptual (si <code>tipo = metáfora</code>)</li>
+          <li><code>localización</code> → parte del cuerpo</li>
+        </ul>
+
+        <h2>4. Ejemplos anotados</h2>
+        <table>
+          <thead>
+            <tr><th>Texto</th><th>Tipo</th><th>Disparador</th><th>Categoría</th><th>Localización</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><em>Se siente como alambre de púas alrededor de mi columna.</em></td><td>metáfora</td><td>alambre de púas</td><td>dolor como objeto</td><td>columna</td></tr>
+            <tr><td><em>Un martillo golpeando dentro de mi cabeza.</em></td><td>metáfora</td><td>martillo golpeando</td><td>dolor como impacto</td><td>cabeza</td></tr>
+            <tr><td><em>Un nudo de fuego en mi estómago.</em></td><td>metáfora</td><td>nudo de fuego</td><td>dolor como calor</td><td>estómago</td></tr>
+            <tr><td><em>Tengo un dolor agudo en la espalda baja.</em></td><td>literal</td><td>dolor agudo</td><td>—</td><td>espalda baja</td></tr>
+            <tr><td><em>Siento presión en el pecho al respirar.</em></td><td>literal</td><td>presión</td><td>—</td><td>pecho</td></tr>
+          </tbody>
+        </table>
+
+        <pre><code>{
+  "texto": "Se siente como alambre de púas alrededor de mi columna.",
+  "tipo": "metáfora",
+  "disparador": "alambre de púas",
+  "categoría": "dolor como objeto",
+  "localización": "columna"
+}</code></pre>
+
+        <h2>5. Aplicaciones</h2>
+        <ol>
+          <li><strong>Detección automática de metáforas</strong>: datos anotados para entrenar modelos que identifiquen lenguaje figurado en historiales y foros.</li>
+          <li><strong>Herramientas de comunicación clínica</strong>: mapeo de metáforas a terminología estandarizada (p. ej., “martillo golpeando” → cefalea pulsátil severa).</li>
+          <li><strong>IA explicable</strong>: categorías metafóricas como rasgos interpretables en sistemas de apoyo a la decisión.</li>
+          <li><strong>Investigación multilingüe</strong>: comparación intercultural de metáforas del dolor para sistemas sensibles al contexto.</li>
+          <li><strong>Formación</strong>: casos anotados para docencia y mejora de la empatía clínica.</li>
+        </ol>
+
+        <h2>6. Bibliografía</h2>
+        <ul>
+          <li>Lakoff, G., &amp; Johnson, M. (1980). <em>Metaphors We Live By</em>. University of Chicago Press.</li>
+          <li>Pragglejaz Group. (2007). MIP: A Method for Identifying Metaphorically Used Words in Discourse. <em>Metaphor and Symbol</em>, 22(1), 1–39.</li>
+          <li>Semino, E. (2010). Describing pain: The role of metaphor. <em>Metaphor and Symbol</em>, 25(4), 250–269.</li>
+          <li>Steen, G. (2017). <em>Deliberate metaphor theory</em>. John Benjamins.</li>
+          <li>Wallington, A. et al. (2003). Metaphor annotation: A case study. In <em>Proceedings of the Workshop on Computational Lexical Semantics</em>, ACL.</li>
+        </ul>
+
+        <h2>7. Conclusión</h2>
+        <p>
+          La anotación de metáforas del dolor, basada en CMT y MIP, convierte experiencias vividas en datos estructurados y útiles. Este puente entre lingüística y PLN habilita mejores modelos, herramientas clínicas más claras y una comunicación más humana.
+        </p>
+      </div>
+    </article>
+
+    <!-- ENGLISH -->
+    <article id="english" class="hidden">
+      <header class="mb-8 md:mb-10">
+        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">
+          Annotating Pain Language: Integrating Linguistics and NLP
+        </h1>
+        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-500 mb-3">
+          CMT + MIP → an NLP-ready annotation schema with clinical impact
+        </h2>
+        <p class="italic text-brand-800/70 text-sm">Dr Stella Bullo</p>
+      </header>
+
+      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500
+                  prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8
+                  prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
+
+        <h2>1. Introduction</h2>
+        <p>
+          Pain is invisible and subjective, which makes it hard to describe. Literal phrases like
+          <em>“sharp pain in my lower back”</em> are clinically useful but often miss the lived quality of the experience. Patients therefore reach for metaphors—e.g.,
+          <em>“barbed wire around my spine”</em>, <em>“a hammer pounding inside my head”</em>—to translate sensations into shared domains (objects, impacts, heat).
+        </p>
+        <p>
+          For linguistics and NLP, the challenge is twofold: <strong>detection</strong> of metaphorical use with reliability and <strong>representation</strong> in structured, model-ready data.
+          This article combines <span class="tt" data-title="Conceptual Metaphor Theory">Conceptual Metaphor Theory (CMT)</span> and the
+          <span class="tt" data-title="Metaphor Identification Procedure">Metaphor Identification Procedure (MIP)</span> into a compact, actionable annotation schema.
+        </p>
+
+        <h2>2. Method Foundations</h2>
+        <h3>2.1 Conceptual Metaphor Theory (CMT)</h3>
+        <p>
+          CMT explains how abstract experiences are framed via concrete domains. In pain discourse we see recurring frames:
+        </p>
+        <ul>
+          <li><strong>Pain-as-object</strong> → <em>“barbed wire around my spine”</em></li>
+          <li><strong>Pain-as-impact</strong> → <em>“a hammer pounding inside my head”</em></li>
+          <li><strong>Pain-as-heat</strong> → <em>“a knot of fire in my stomach”</em></li>
+        </ul>
+        <p>These categories provide a taxonomy for annotating metaphors.</p>
+
+        <h3>2.2 Metaphor Identification Procedure (MIP)</h3>
+        <ol>
+          <li>Read the text to establish overall meaning.</li>
+          <li>Identify lexical units.</li>
+          <li>Determine each unit’s <em>basic meaning</em> (more concrete/older).</li>
+          <li>Compare with its <em>contextual meaning</em> in the utterance.</li>
+          <li>If they contrast but are understood by comparison, mark as <em>metaphorical</em>.</li>
+        </ol>
+
+        <h3>2.3 Worked example (step by step)</h3>
+        <blockquote><em>“It feels like barbed wire wrapped around my spine.”</em></blockquote>
+        <ul>
+          <li><strong>Units</strong>: <em>barbed wire</em>, <em>wrapped</em>, <em>spine</em>.</li>
+          <li><strong>Basic</strong>: fencing material with barbs; physically enclosed; bones of the back.</li>
+          <li><strong>Contextual</strong>: sharp, constricting pain; enclosing sensation; literal anatomical reference.</li>
+          <li><strong>Decision</strong>: <em>barbed wire</em> and <em>wrapped</em> → metaphorical; <em>spine</em> → literal. Category: <strong>pain-as-object</strong>.</li>
+        </ul>
+
+        <h2>3. Annotation schema</h2>
+        <p>Minimal fields that balance linguistic richness and computational tractability:</p>
+        <ul>
+          <li><code>type</code> → <em>metaphor</em> | <em>literal</em></li>
+          <li><code>trigger</code> → word/phrase signalling pain</li>
+          <li><code>category</code> → conceptual frame (if <code>type = metaphor</code>)</li>
+          <li><code>location</code> → body part</li>
+        </ul>
+
+        <h2>4. Example annotations</h2>
+        <table>
+          <thead>
+            <tr><th>Text</th><th>Type</th><th>Trigger</th><th>Category</th><th>Location</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><em>It feels like barbed wire wrapped around my spine.</em></td><td>metaphor</td><td>barbed wire</td><td>pain-as-object</td><td>spine</td></tr>
+            <tr><td><em>There’s a hammer pounding inside my head.</em></td><td>metaphor</td><td>hammer pounding</td><td>pain-as-impact</td><td>head</td></tr>
+            <tr><td><em>My stomach is a knot of fire.</em></td><td>metaphor</td><td>knot of fire</td><td>pain-as-heat</td><td>stomach</td></tr>
+            <tr><td><em>I have a sharp pain in my lower back.</em></td><td>literal</td><td>sharp pain</td><td>—</td><td>lower back</td></tr>
+            <tr><td><em>I feel pressure in my chest when I breathe.</em></td><td>literal</td><td>pressure</td><td>—</td><td>chest</td></tr>
+          </tbody>
+        </table>
+
+        <pre><code>{
+  "text": "It feels like barbed wire wrapped around my spine.",
+  "type": "metaphor",
+  "trigger": "barbed wire",
+  "category": "pain-as-object",
+  "location": "spine"
+}</code></pre>
+
+        <h2>5. Applications</h2>
+        <ol>
+          <li><strong>Automatic metaphor detection</strong>: annotated corpora to train models that identify figurative language in notes and patient forums.</li>
+          <li><strong>Clinical communication tools</strong>: mapping metaphors to standardised terminology (e.g., “hammer pounding” → severe pulsating headache).</li>
+          <li><strong>Explainable healthcare AI</strong>: metaphor categories as interpretable features in decision support.</li>
+          <li><strong>Cross-linguistic research</strong>: comparative studies informing culturally sensitive multilingual systems.</li>
+          <li><strong>Training &amp; education</strong>: annotated cases for clinician education and empathy building.</li>
+        </ol>
+
+        <h2>6. Bibliography</h2>
+        <ul>
+          <li>Lakoff, G., &amp; Johnson, M. (1980). <em>Metaphors We Live By</em>. University of Chicago Press.</li>
+          <li>Pragglejaz Group. (2007). MIP: A Method for Identifying Metaphorically Used Words in Discourse. <em>Metaphor and Symbol</em>, 22(1), 1–39.</li>
+          <li>Semino, E. (2010). Describing pain: The role of metaphor. <em>Metaphor and Symbol</em>, 25(4), 250–269.</li>
+          <li>Steen, G. (2017). <em>Deliberate metaphor theory</em>. John Benjamins.</li>
+          <li>Wallington, A. et al. (2003). Metaphor annotation: A case study. In <em>Proceedings of the Workshop on Computational Lexical Semantics</em>, ACL.</li>
+        </ul>
+
+        <h2>7. Conclusion</h2>
+        <p>
+          CMT + MIP provide a rigorous, reproducible basis for annotating pain metaphors. The resulting structured data supports better models, clearer clinical tools, and more humane communication—exactly where linguistics and NLP meet practice.
+        </p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
+    <p>© 2025 Stella Bullo. All rights reserved.</p>
+    <p>For inquiries, contact me at
+      <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a>.
+    </p>
+  </footer>
+
+  <!-- Return to top -->
+  <button id="toTop"
+    class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500"
+    aria-label="Back to top" title="Back to top">
+    ↑
+  </button>
+
+  <script>
+    // language toggle
+    const langToggle = document.getElementById('lang-toggle');
+    const englishDiv = document.getElementById('english');
+    const spanishDiv = document.getElementById('spanish');
+    englishDiv.classList.add('hidden');
+    spanishDiv.classList.remove('hidden');
+    langToggle.textContent = 'Read it in English';
+    langToggle.setAttribute('aria-label','Read it in English');
+    langToggle.addEventListener('click', () => {
+      const englishShowing = !englishDiv.classList.contains('hidden');
+      if (englishShowing) {
+        englishDiv.classList.add('hidden');
+        spanishDiv.classList.remove('hidden');
+        langToggle.textContent = 'Read it in English';
+        langToggle.setAttribute('aria-label','Read it in English');
+      } else {
+        spanishDiv.classList.add('hidden');
+        englishDiv.classList.remove('hidden');
+        langToggle.textContent = 'Leer en Español';
+        langToggle.setAttribute('aria-label','Leer en Español');
+      }
+    });
+
+    // back to top
+    const toTop = document.getElementById('toTop');
+    const toggleToTop = () => {
+      if (window.scrollY > 400) {
+        toTop.classList.remove('hidden');
+      } else {
+        toTop.classList.add('hidden');
+      }
+    };
+    window.addEventListener('scroll', toggleToTop);
+    toggleToTop();
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
