@@ -45,6 +45,17 @@
       pointer-events:none;z-index:30;white-space:normal
     }
     .tt:hover::after,.tt:focus::after{opacity:1;transform:translateY(0)}
+
+  /* Override Tailwind Typography defaults for h2/h3 */
+  .prose h2 {
+    font-size: 1.15rem !important; /* roughly matches lg */
+    font-weight: 600;
+  }
+  .prose h3 {
+    font-size: 1rem !important; /* slightly smaller */
+    font-weight: 500;
+  }
+
   </style>
 </head>
 
