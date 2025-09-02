@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Anotación y evaluación — artículos y notas de trabajo: esquemas, QA, muestreo, rúbricas, reportes."/>
+  <meta name="description" content="Bilingual content and localisation projects that make digital products feel native across cultures."/>
   <meta name="author" content="Stella Bullo"/>
-  <!-- Page-specific alternates -->
-  <link rel="alternate" hreflang="en" href="/annotation-evaluation/"/>
-  <link rel="alternate" hreflang="es" href="/es/annotation-evaluation/"/>
-<title>Anotación &amp; Evaluación — Stella Bullo</title>
-<meta name="description" content="Anotación y evaluación para datasets y modelos: esquemas, instrucciones, planes de muestreo, rúbricas, acuerdo interanotador (IAA), taxonomías de errores y plantillas de reporte."/>
+  <!-- Alternates -->
+  <link rel="alternate" hreflang="en" href="/localization/"/>
+  <link rel="alternate" hreflang="es" href="/es/localization/"/>
+  <title>Localization — Stella Bullo</title>
   <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 
   <!-- Inter -->
@@ -51,50 +50,46 @@
 
 <nav class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-brand-100">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center">
-    <!-- LEFT: brand/name -->
-    <a href="/es/" class="text-lg font-semibold tracking-tight text-brand-500">Stella Bullo</a>
+    <a href="../index.html" class="text-lg font-semibold tracking-tight text-brand-500">Stella Bullo</a>
 
-    <!-- RIGHT: desktop items -->
     <ul class="hidden md:flex items-center gap-5 text-sm ml-auto">
-      <!-- Writing dropdown (ES) -->
-      <li class="relative" id="writing-menu-es">
-        <button id="writing-trigger-es" type="button"
+      <li class="relative" id="writing-menu-en">
+        <button id="writing-trigger-en" type="button"
           class="inline-flex items-center gap-1 px-2 py-1 rounded-md hover:text-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
-          aria-haspopup="true" aria-expanded="false" aria-controls="writing-popover-es">
-          Escritura <i data-lucide="chevron-down" class="w-4 h-4"></i>
+          aria-haspopup="true" aria-expanded="false" aria-controls="writing-popover-en">
+          Writing <i data-lucide="chevron-down" class="w-4 h-4"></i>
         </button>
-        <div id="writing-popover-es"
+        <div id="writing-popover-en"
           class="invisible opacity-0 pointer-events-none absolute left-0 mt-2 w-56 z-[60]
                  rounded-lg border border-brand-100 bg-white shadow-soft ring-1 ring-black/5
                  transition transform duration-150 ease-out translate-y-1">
-          <a href="/technical-writing/es/index.html" class="block px-3 py-2 hover:bg-brand-100 rounded-t-lg">Redacción técnica</a>
-          <a href="/ux-writing/es/index.html" class="block px-3 py-2 hover:bg-brand-100">Microcopy y UX</a>
-          <a href="/content/es/index.html" class="block px-3 py-2 hover:bg-brand-100">Contenido y explicaciones</a>
-          <a href="/localization/es/index.html" class="block px-3 py-2 hover:bg-brand-100">Localización</a>
-          <a href="/annotation-evaluation/es/index.html" class="block px-3 py-2 hover:bg-brand-100">Anotación y evaluación</a>
-          <a href="/essays/es/index.html" class="block px-3 py-2 hover:bg-brand-100 rounded-b-lg">Ensayos y notas</a>
+          <a href="/technical-writing/" class="block px-3 py-2 hover:bg-brand-100 rounded-t-lg">Technical Writing</a>
+          <a href="/ux-writing/" class="block px-3 py-2 hover:bg-brand-100">UX Writing</a>
+          <a href="/content/" class="block px-3 py-2 hover:bg-brand-100">Content &amp; Explainers</a>
+          <a href="/localization/" class="block px-3 py-2 bg-brand-100">Localization</a>
+          <a href="/annotation-evaluation/" class="block px-3 py-2 hover:bg-brand-100">Annotation &amp; Evaluation</a>
+          <a href="/essays/" class="block px-3 py-2 hover:bg-brand-100 rounded-b-lg">Essays &amp; Notes</a>
         </div>
       </li>
 
-      <!-- TAYLOR TO EACH CONTENT PAGE Language switch (page-specific) -->
+      <!-- Language switch -->
       <li class="flex items-center gap-1 pl-1">
-        <a href="/annotation-evaluation/"
-           class="px-2 py-1 rounded-md border border-brand-200 text-xs hover:bg-brand-100">EN</a>
+        <a href="/localization/index.html" aria-current="page"
+           class="px-2 py-1 rounded-md bg-brand-500 text-white text-xs">EN</a>
         <span class="text-brand-800/50 text-xs">/</span>
-        <a href="/es/annotation-evaluation/" aria-current="page"
-           class="px-2 py-1 rounded-md bg-brand-500 text-white text-xs">ES</a>
+        <a href="/es/localization/index.html"
+           class="px-2 py-1 rounded-md border border-brand-200 text-xs hover:bg-brand-100">ES</a>
       </li>
 
-      <!-- Hire me -->
       <li>
         <a href="mailto:info@stellabullo.com"
            class="btn inline-flex items-center gap-2 bg-brand-500 text-white px-3.5 py-1.5 rounded-md hover:brightness-95 shadow-soft">
-          <i data-lucide="mail" class="w-4 h-4"></i> Contrátame
+          <i data-lucide="mail" class="w-4 h-4"></i> Hire me
         </a>
       </li>
     </ul>
 
-    <!-- Mobile toggle (stays on right) -->
+    <!-- Mobile toggle -->
     <button id="nav-toggle" class="md:hidden ml-auto inline-flex items-center justify-center p-2 rounded-md border border-brand-200" aria-expanded="false">
       <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -110,50 +105,41 @@
   <!-- Mobile menu -->
   <div id="mobile-menu" class="md:hidden hidden border-t border-brand-100 bg-white">
     <ul class="px-4 py-3 space-y-2 text-sm">
-      <li><a href="/technical-writing/es" class="block py-2">Redacción técnica</a></li>
-      <li><a href="/ux-writing/es" class="block py-2">Microcopy y UX</a></li>
-      <li><a href="/content/es" class="block py-2">Contenido y explicaciones</a></li>
-      <li><a href="/localization/es" class="block py-2">Localización</a></li>
-      <li><a href="/annotation-evaluation/es" class="block py-2">Anotación y evaluación</a></li>
-      <li><a href="/essays/es" class="block py-2">Ensayos y notas</a></li>
+      <li><a href="/technical-writing/" class="block py-2">Technical Writing</a></li>
+      <li><a href="/ux-writing/" class="block py-2">UX Writing</a></li>
+      <li><a href="/content/" class="block py-2">Content &amp; Explainers</a></li>
+      <li><a href="/localization/" class="block py-2 font-medium text-brand-500">Localization</a></li>
+      <li><a href="/annotation-evaluation/" class="block py-2">Annotation &amp; Evaluation</a></li>
+      <li><a href="/essays/" class="block py-2">Essays &amp; Notes</a></li>
       <li class="flex items-center gap-2 pt-2">
-        <span class="text-xs text-brand-800/60">Idioma:</span>
-        <a href="/annotation-evaluation/" class="px-2 py-1 rounded border border-brand-200 text-xs">EN</a>
-        <a href="/es/annotation-evaluation/" class="px-2 py-1 rounded border border-brand-200 text-xs bg-brand-100">ES</a>
+        <span class="text-xs text-brand-800/60">Language:</span>
+        <a href="/localization/" class="px-2 py-1 rounded border border-brand-200 text-xs bg-brand-100">EN</a>
+        <a href="/es/localization/" class="px-2 py-1 rounded border border-brand-200 text-xs">ES</a>
       </li>
-      <li><a href="mailto:info@stellabullo.com" class="block py-2 font-medium text-brand-500">Contrátame</a></li>
+      <li><a href="mailto:info@stellabullo.com" class="block py-2 font-medium text-brand-500">Hire me</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- HERO (section) -->
+<!-- HERO -->
 <header class="pt-32 md:pt-44 pb-14 md:pb-20 px-6 md:px-8 relative overflow-hidden">
   <div aria-hidden="true" class="absolute inset-0 -z-10 bg-gradient-to-b from-brand-100 to-brand-50"></div>
   <div aria-hidden="true" class="pointer-events-none absolute -right-24 -top-24 w-[34rem] h-[34rem] rounded-full bg-brand-200/50 blur-3xl"></div>
 
   <div class="mx-auto max-w-7xl">
     <nav class="text-sm text-brand-500">
-      <a href="/es/" class="hover:underline">Inicio</a>
+      <a href="/" class="hover:underline">Home</a>
       <span class="mx-2">/</span>
-      <span class="font-medium">Anotación y evaluación</span>
+      <span class="font-medium">Localization</span>
     </nav>
 
     <h1 class="mt-2 text-3xl md:text-3xl font-semibold tracking-tight text-brand-800 leading-tight">
-  Anotación &amp; Evaluación
-</h1>
-
-    <!-- small EN toggle in-hero -->
-    <div class="mt-2">
-      <a href="../es/index.html"
-         class="inline-flex items-center gap-1 text-sm text-brand-800/80 hover:underline">
-        Read this section in English <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-      </a>
-    </div>
+      Localization &amp; Cross-Cultural Adaptation
+    </h1>
 
     <p class="mt-3 max-w-3xl text-[1.05rem] text-brand-800/90 leading-relaxed">
-      Esta sección reúne notas de trabajo sobre datasets y evaluaciones: esquemas, instrucciones, muestreo,
-      rúbricas, IAA y taxonomías de errores, además de cómo reportar. Cada artículo explica decisiones y
-      trade-offs, con plantillas y checklists reutilizables.
+      EN/ES localisation that reads like it was written there first. I map linguistic nuance, cultural references
+      and UX constraints so products feel native—not translated.
     </p>
   </div>
 
@@ -166,56 +152,61 @@
 <!-- CONTENT -->
 <main class="px-6 md:px-8 pt-0 pb-14 md:pb-20">
   <section class="max-w-6xl mx-auto">
-    <h2 class="text-2xl font-semibold tracking-tight text-brand-800 mb-8 text-center">Artículos</h2>
+    <h2 class="text-2xl font-semibold tracking-tight text-brand-800 mb-8 text-center">Projects &amp; Notes</h2>
 
-    <!-- Compact cards -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="text-[11px] font-medium text-brand-500 mb-1">Estudio de caso</header>
+        <header class="text-[11px] font-medium text-brand-500 mb-1">Case study</header>
         <h3 class="text-base font-semibold leading-snug">
-          <a href="/articles/metaphor-to-measurement-pain-tagger/" class="hover:underline">De la metáfora a la medida: prototipo de “pain tagger”</a>
+          <a href="/articles/localizing-health-microcopy/" class="hover:underline">Localizing Health Microcopy</a>
         </h3>
-        <p class="mt-1.5 text-sm text-brand-800/80">Cómo convertí descripciones figurativas del dolor en categorías y un prototipo mínimo.</p>
-        <div class="mt-3 text-xs text-brand-800/70">~8 min · Actualizado ago 2025</div>
+        <p class="mt-1.5 text-sm text-brand-800/80">
+          Turning clinical terms into everyday Spanish without losing accuracy—tone, register, and risk language.
+        </p>
+        <div class="mt-3 text-xs text-brand-800/70">~7 min · Updated Aug 2025</div>
       </article>
 
       <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="text-[11px] font-medium text-brand-500 mb-1">Esquema</header>
+        <header class="text-[11px] font-medium text-brand-500 mb-1">Guidelines</header>
         <h3 class="text-base font-semibold leading-snug">
-          <a href="/articles/data-taxonomy-pain-language/" class="hover:underline">Taxonomía de datos para lenguaje del dolor</a>
+          <a href="/articles/brand-voice-bilingual-style/" class="hover:underline">Bilingual Voice &amp; Style Notes</a>
         </h3>
-        <p class="mt-1.5 text-sm text-brand-800/80">Tipos de entidades y relaciones para narrativas clínicas — chico para etiquetar, útil para debatir.</p>
-        <div class="mt-3 text-xs text-brand-800/70">~5 min · Actualizado ago 2025</div>
+        <p class="mt-1.5 text-sm text-brand-800/80">
+          Compact voice &amp; tone guidance for EN↔ES product copy: idioms, formality, punctuation, and lengths.
+        </p>
+        <div class="mt-3 text-xs text-brand-800/70">~5 min · Updated Aug 2025</div>
       </article>
 
       <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="text-[11px] font-medium text-brand-500 mb-1">Notas de trabajo</header>
+        <header class="text-[11px] font-medium text-brand-500 mb-1">Toolkit</header>
         <h3 class="text-base font-semibold leading-snug">
-          <a href="/articles/lightweight-qa-sampling-notes/" class="hover:underline">QA liviano y muestreo — notas</a>
+          <a href="/articles/l10n-checklist-release/" class="hover:underline">Pre-Release L10n Checklist</a>
         </h3>
-        <p class="mt-1.5 text-sm text-brand-800/80">Cómo revisé outputs sin grandes equipos ni presupuestos; heurísticas “suficientemente buenas”.</p>
-        <div class="mt-3 text-xs text-brand-800/70">~6 min · Actualizado ago 2025</div>
+        <p class="mt-1.5 text-sm text-brand-800/80">
+          A pragmatic checklist for strings, truncation, date/number formats, screenshots, and QA notes.
+        </p>
+        <div class="mt-3 text-xs text-brand-800/70">~4 min · Updated Aug 2025</div>
       </article>
 
       <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="text-[11px] font-medium text-brand-500 mb-1">Kit de herramientas</header>
+        <header class="text-[11px] font-medium text-brand-500 mb-1">Working notes</header>
         <h3 class="text-base font-semibold leading-snug">
-          <a href="/articles/annotation-snippets-prompts/" class="hover:underline">Fragmentos y prompts de anotación que reutilizo</a>
+          <a href="/articles/localization-edge-cases/" class="hover:underline">EN↔ES Edge Cases I Track</a>
         </h3>
-        <p class="mt-1.5 text-sm text-brand-800/70">Piezas mínimas para copiar/pegar: redacción de instrucciones, mini árboles de decisión y checklists.</p>
-        <div class="mt-3 text-xs text-brand-800/70">~4 min · Actualizado ago 2025</div>
+        <p class="mt-1.5 text-sm text-brand-800/80">
+          Placeholders, gendered nouns, verb aspect, and “you” forms—what breaks and how I decide.
+        </p>
+        <div class="mt-3 text-xs text-brand-800/70">~6 min · Updated Aug 2025</div>
       </article>
     </div>
-
-  
   </section>
 </main>
 
 <!-- CONTACT / FOOTER -->
 <section id="contact" class="bg-gradient-to-br from-brand-500 to-brand-800 text-white">
   <div class="max-w-6xl mx-auto px-6 md:px-8 py-12">
-    <h2 class="text-2xl md:text-3xl font-semibold leading-tight">Trabajemos juntos</h2>
-    <p class="mt-3 text-white/90 max-w-[60ch]">Colaboraciones, encargos o una consulta rápida. Respondo en inglés o español.</p>
+    <h2 class="text-2xl md:text-3xl font-semibold leading-tight">Let’s work together</h2>
+    <p class="mt-3 text-white/90 max-w-[60ch]">Collaborations, commissions, or a quick question. I reply in English or Spanish.</p>
 
     <div class="mt-6 flex flex-wrap items-center gap-2">
       <a href="mailto:info@stellabullo.com" class="btn inline-flex items-center gap-2 bg-white text-brand-800 px-4 py-3 rounded-md hover:bg-brand-100">
@@ -242,7 +233,7 @@
     </div>
 
     <div class="text-center text-sm text-white/70 mt-8">
-      © <span id="year"></span> Stella Bullo. Todos los derechos reservados.
+      © <span id="year"></span> Stella Bullo. All rights reserved.
     </div>
   </div>
 </section>
@@ -255,7 +246,6 @@
 <!-- JS -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Icons
     if (typeof lucide !== 'undefined' && lucide.createIcons) {
       try { lucide.createIcons(); } catch {}
     }
@@ -266,7 +256,7 @@
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    // Mobile menu (hamburger)
+    // Mobile menu
     const btn = document.getElementById('nav-toggle');
     const menu = document.getElementById('mobile-menu');
     const openI = document.getElementById('icon-open');
@@ -280,20 +270,18 @@
         if (closeI) closeI.classList.toggle('hidden', !willOpen);
       };
       btn.addEventListener('click', toggle);
-      // Close after tapping a link
       menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
         if (!menu.classList.contains('hidden')) toggle();
       }));
     }
 
-    // Desktop dropdowns (Writing / Escritura)
+    // Desktop dropdowns
     function makeDropdown(triggerId, panelId) {
       const trigger = document.getElementById(triggerId);
       const panel   = document.getElementById(panelId);
       if (!trigger || !panel) return;
 
       let open = false;
-
       const show = () => {
         panel.classList.remove('invisible','opacity-0','pointer-events-none','translate-y-1');
         panel.classList.add('opacity-100','pointer-events-auto','translate-y-0');
@@ -310,13 +298,11 @@
 
       trigger.addEventListener('click', toggle);
 
-      // Close on outside click
       document.addEventListener('click', (e) => {
         if (!open) return;
         if (!panel.contains(e.target) && !trigger.contains(e.target)) hide();
       });
 
-      // Keyboard controls
       trigger.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') { toggle(e); }
         else if (e.key === 'Escape' && open) { hide(); trigger.focus(); }
@@ -326,14 +312,12 @@
         if (e.key === 'Escape' && open) { hide(); trigger.focus(); }
       });
 
-      // Start hidden
       hide();
     }
-    makeDropdown('writing-trigger-es','writing-popover-es');
-    // If you keep EN dropdown on some ES pages, this will also auto-init:
     makeDropdown('writing-trigger-en','writing-popover-en');
+    makeDropdown('writing-trigger-es','writing-popover-es');
 
-     // Back to top button
+    // Back to top
     const toTop = document.getElementById('toTop');
     if (toTop) {
       const toggleToTop = () => { toTop.classList.toggle('hidden', window.scrollY < 400); };
@@ -341,12 +325,11 @@
       toggleToTop();
       toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
-    
+
     // Footer year
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   });
-
 </script>
 </body>
 </html>

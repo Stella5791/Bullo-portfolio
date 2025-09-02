@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Annotation & evaluation — articles and working notes: schemas, QA, sampling, rubrics, reporting."/>
+  <meta name="description" content="Technical, content & UX writing: documentation, product explainers, and interface copy that make complex systems usable."/>
   <meta name="author" content="Stella Bullo"/>
-  <!-- Page-specific alternates -->
-  <link rel="alternate" hreflang="en" href="/annotation-evaluation/"/>
-  <link rel="alternate" hreflang="es" href="/es/annotation-evaluation/"/>
-  <title>Annotation & Evaluation — Stella Bullo</title>
+  <!-- Alternates -->
+  <link rel="alternate" hreflang="en" href="/writing/"/>
+  <link rel="alternate" hreflang="es" href="/es/writing/"/>
+  <title>Technical, Content & UX Writing — Stella Bullo</title>
   <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 
   <!-- Inter -->
@@ -41,6 +41,7 @@
     html{scroll-behavior:smooth}
     .card{transition:transform .2s ease, box-shadow .2s ease}
     .card:hover{transform:translateY(-3px); box-shadow:0 14px 32px rgba(58,65,99,.10)}
+    .tag{display:inline-flex;align-items:center;gap:.35rem;border:1px solid #CBE3EF;border-radius:.5rem;padding:.15rem .5rem;font-size:.7rem}
     .btn{transition:all .2s ease}
     .btn:active{transform:translateY(1px)}
   </style>
@@ -51,7 +52,7 @@
 <nav class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-brand-100">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center">
     <!-- LEFT: brand/name -->
-    <a href="/" class="text-lg font-semibold tracking-tight text-brand-500">Stella Bullo</a>
+    <a href="../index.html" class="text-lg font-semibold tracking-tight text-brand-500">Stella Bullo</a>
 
     <!-- RIGHT: desktop items -->
     <ul class="hidden md:flex items-center gap-5 text-sm ml-auto">
@@ -63,25 +64,22 @@
           Writing <i data-lucide="chevron-down" class="w-4 h-4"></i>
         </button>
         <div id="writing-popover-en"
-          class="invisible opacity-0 pointer-events-none absolute left-0 mt-2 w-56 z-[60]
+          class="invisible opacity-0 pointer-events-none absolute left-0 mt-2 w-64 z-[60]
                  rounded-lg border border-brand-100 bg-white shadow-soft ring-1 ring-black/5
                  transition transform duration-150 ease-out translate-y-1">
-          <a href="/technical-writing/" class="block px-3 py-2 hover:bg-brand-100 rounded-t-lg">Technical Writing</a>
-          <a href="/ux-writing/" class="block px-3 py-2 hover:bg-brand-100">UX Writing</a>
-          <a href="/content/" class="block px-3 py-2 hover:bg-brand-100">Content &amp; Explainers</a>
+          <a href="/writing/" class="block px-3 py-2 bg-brand-100 rounded-t-lg">Technical, Content &amp; UX Writing</a>
           <a href="/localization/" class="block px-3 py-2 hover:bg-brand-100">Localization</a>
           <a href="/annotation-evaluation/" class="block px-3 py-2 hover:bg-brand-100">Annotation &amp; Evaluation</a>
           <a href="/essays/" class="block px-3 py-2 hover:bg-brand-100 rounded-b-lg">Essays &amp; Notes</a>
         </div>
       </li>
 
-
-      <!-- TAYLOR TO EACH CONTENT PAGE Language switch (page-specific) -->
+      <!-- Language switch -->
       <li class="flex items-center gap-1 pl-1">
-        <a href="/annotation-evaluation/index.html" aria-current="page"
+        <a href="/writing/index.html" aria-current="page"
            class="px-2 py-1 rounded-md bg-brand-500 text-white text-xs">EN</a>
         <span class="text-brand-800/50 text-xs">/</span>
-        <a href="/annotation-evaluation/es/index.html"
+        <a href="/es/writing/index.html"
            class="px-2 py-1 rounded-md border border-brand-200 text-xs hover:bg-brand-100">ES</a>
       </li>
 
@@ -94,7 +92,7 @@
       </li>
     </ul>
 
-    <!-- Mobile toggle (stays on right) -->
+    <!-- Mobile toggle -->
     <button id="nav-toggle" class="md:hidden ml-auto inline-flex items-center justify-center p-2 rounded-md border border-brand-200" aria-expanded="false">
       <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -110,43 +108,39 @@
   <!-- Mobile menu -->
   <div id="mobile-menu" class="md:hidden hidden border-t border-brand-100 bg-white">
     <ul class="px-4 py-3 space-y-2 text-sm">
-      <li><a href="/technical-writing/" class="block py-2">Technical Writing</a></li>
-      <li><a href="/ux-writing/" class="block py-2">UX Writing</a></li>
-      <li><a href="/content/" class="block py-2">Content &amp; Explainers</a></li>
+      <li><a href="/writing/" class="block py-2 font-medium text-brand-500">Technical, Content &amp; UX Writing</a></li>
       <li><a href="/localization/" class="block py-2">Localization</a></li>
       <li><a href="/annotation-evaluation/" class="block py-2">Annotation &amp; Evaluation</a></li>
       <li><a href="/essays/" class="block py-2">Essays &amp; Notes</a></li>
       <li class="flex items-center gap-2 pt-2">
         <span class="text-xs text-brand-800/60">Language:</span>
-        <a href="/annotation-evaluation/" class="px-2 py-1 rounded border border-brand-200 text-xs bg-brand-100">EN</a>
-        <a href="/es/annotation-evaluation/" class="px-2 py-1 rounded border border-brand-200 text-xs">ES</a>
+        <a href="/writing/" class="px-2 py-1 rounded border border-brand-200 text-xs bg-brand-100">EN</a>
+        <a href="/es/writing/" class="px-2 py-1 rounded border border-brand-200 text-xs">ES</a>
       </li>
       <li><a href="mailto:info@stellabullo.com" class="block py-2 font-medium text-brand-500">Hire me</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- HERO (section) -->
+<!-- HERO -->
 <header class="pt-32 md:pt-44 pb-14 md:pb-20 px-6 md:px-8 relative overflow-hidden">
   <div aria-hidden="true" class="absolute inset-0 -z-10 bg-gradient-to-b from-brand-100 to-brand-50"></div>
   <div aria-hidden="true" class="pointer-events-none absolute -right-24 -top-24 w-[34rem] h-[34rem] rounded-full bg-brand-200/50 blur-3xl"></div>
 
   <div class="mx-auto max-w-7xl">
-    <nav class="text-sm text-brand-500" >
+    <nav class="text-sm text-brand-500">
       <a href="/" class="hover:underline">Home</a>
       <span class="mx-2">/</span>
-      <span class="font-medium">Annotation &amp; Evaluation</span>
+      <span class="font-medium">Technical, Content &amp; UX Writing</span>
     </nav>
 
     <h1 class="mt-2 text-3xl md:text-3xl font-semibold tracking-tight text-brand-800 leading-tight">
-      Annotation &amp; Evaluation
+      Technical, Content &amp; UX Writing
     </h1>
 
-    
-    
     <p class="mt-3 max-w-3xl text-[1.05rem] text-brand-800/90 leading-relaxed">
-      This section collects working notes on datasets and evals: schemas, instructions, sampling, rubrics, IAA, error
-      taxonomies, and reporting. Each article explains the decisions and trade-offs, with small templates and checklists you can reuse.
+      Documentation, product explainers and interface copy that help people succeed with complex systems.
+      I write for clarity, correctness and flow—across docs, content and UX microcopy.
     </p>
   </div>
 
@@ -159,51 +153,72 @@
 <!-- CONTENT -->
 <main class="px-6 md:px-8 pt-0 pb-14 md:pb-20">
   <section class="max-w-6xl mx-auto">
-    <h2 class="text-2xl font-semibold tracking-tight text-brand-800 mb-8 text-center">Articles</h2>
-    
-    <!-- Compact cards -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="text-[11px] font-medium text-brand-500 mb-1">Case study</header>
-        <h3 class="text-base font-semibold leading-snug">
-          <a href="/articles/metaphor-to-measurement-pain-tagger/" class="hover:underline">Metaphor to Measurement: Building a Pain Tagger</a>
-        </h3>
-        <p class="mt-1.5 text-sm text-brand-800/80">How I turned figurative pain descriptions into categories and a tiny prototype.</p>
-        <div class="mt-3 text-xs text-brand-800/70">~8 min · Updated Aug 2025</div>
-      </article>
+    <h2 class="text-2xl font-semibold tracking-tight text-brand-800 mb-8 text-center">Work &amp; Samples</h2>
 
-      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="text-[11px] font-medium text-brand-500 mb-1">Schema</header>
-        <h3 class="text-base font-semibold leading-snug">
-          <a href="/articles/data-taxonomy-pain-language/" class="hover:underline">Data Taxonomy for Pain Language</a>
-        </h3>
-        <p class="mt-1.5 text-sm text-brand-800/80">Compact entity &amp; relation types for clinical narratives — small to tag, useful to discuss.</p>
-        <div class="mt-3 text-xs text-brand-800/70">~5 min · Updated Aug 2025</div>
-      </article>
+    <!-- 4-card grid: Docs / Technical / Content / UX -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
+      <!-- DOCS -->
       <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="text-[11px] font-medium text-brand-500 mb-1">Working notes</header>
+        <header class="flex items-center gap-2 mb-1">
+          <span class="tag"><i data-lucide="book-open" class="w-3.5 h-3.5"></i> Documentation</span>
+        </header>
         <h3 class="text-base font-semibold leading-snug">
-          <a href="/articles/lightweight-qa-sampling-notes/" class="hover:underline">Lightweight QA &amp; Sampling — Notes</a>
+          <a href="/articles/api-auth-quickstart/" class="hover:underline">API Auth Quickstart</a>
         </h3>
-        <p class="mt-1.5 text-sm text-brand-800/80">How I reviewed outputs without big teams or budgets; rough heuristics that were “good enough”.</p>
+        <p class="mt-1.5 text-sm text-brand-800/80">
+          A minimal path to first success: keys, flows, common errors and copy-paste snippets.
+        </p>
         <div class="mt-3 text-xs text-brand-800/70">~6 min · Updated Aug 2025</div>
       </article>
 
+      <!-- TECHNICAL -->
       <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="text-[11px] font-medium text-brand-500 mb-1">Toolkit</header>
+        <header class="flex items-center gap-2 mb-1">
+          <span class="tag"><i data-lucide="server" class="w-3.5 h-3.5"></i> Technical</span>
+        </header>
         <h3 class="text-base font-semibold leading-snug">
-          <a href="/articles/annotation-snippets-prompts/" class="hover:underline">Annotation Snippets &amp; Prompts I Reuse</a>
+          <a href="/articles/data-pipelines-overview/" class="hover:underline">Data Pipelines Overview</a>
         </h3>
-        <p class="mt-1.5 text-sm text-brand-800/70">Tiny pieces I copy-paste: instruction phrasing, decision trees, checklists.</p>
+        <p class="mt-1.5 text-sm text-brand-800/80">
+          How the pieces fit: ingestion, validation, storage and evaluation—clear mental models.
+        </p>
+        <div class="mt-3 text-xs text-brand-800/70">~7 min · Updated Aug 2025</div>
+      </article>
+
+      <!-- CONTENT -->
+      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
+        <header class="flex items-center gap-2 mb-1">
+          <span class="tag"><i data-lucide="file-text" class="w-3.5 h-3.5"></i> Content</span>
+        </header>
+        <h3 class="text-base font-semibold leading-snug">
+          <a href="/articles/plain-language-explainer-llms/" class="hover:underline">Plain-Language Explainer: LLMs</a>
+        </h3>
+        <p class="mt-1.5 text-sm text-brand-800/80">
+          Translating research into everyday terms—use cases, limits, and responsible usage.
+        </p>
+        <div class="mt-3 text-xs text-brand-800/70">~5 min · Updated Aug 2025</div>
+      </article>
+
+      <!-- UX -->
+      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
+        <header class="flex items-center gap-2 mb-1">
+          <span class="tag"><i data-lucide="cursor-click" class="w-3.5 h-3.5"></i> UX Writing</span>
+        </header>
+        <h3 class="text-base font-semibold leading-snug">
+          <a href="/articles/microcopy-signup-errors/" class="hover:underline">Signup Microcopy &amp; Errors</a>
+        </h3>
+        <p class="mt-1.5 text-sm text-brand-800/80">
+          Clarity under pressure: empty states, validation, error hierarchies and recovery actions.
+        </p>
         <div class="mt-3 text-xs text-brand-800/70">~4 min · Updated Aug 2025</div>
       </article>
-    </div>
 
+    </div>
   </section>
 </main>
 
-<!-- CONTACT / FOOTER (same as landing) -->
+<!-- CONTACT / FOOTER -->
 <section id="contact" class="bg-gradient-to-br from-brand-500 to-brand-800 text-white">
   <div class="max-w-6xl mx-auto px-6 md:px-8 py-12">
     <h2 class="text-2xl md:text-3xl font-semibold leading-tight">Let’s work together</h2>
@@ -216,10 +231,8 @@
       <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">
         <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
       </a>
-      <a href="https://medium.com/@stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">
-        <svg class="w-5 h-5" viewBox="0 0 1043.63 592.71" fill="currentColor" aria-hidden="true">
-          <path d="M588.67 296.35c0 163.67-131.6 296.36-293.83 296.36S1 460 1 296.35C1 132.7 132.6 0 294.84 0s293.83 132.7 293.83 296.35Zm453.96 0c0 153.7-65.8 278.2-147 278.2s-147-124.5-147-278.2S814.45 18.13 895.63 18.13s147 124.5 147 278.22ZM684.8 296.35c0 146.56-36.3 265.47-81.1 265.47-44.8 0-81.1-118.9-81.1-265.47S558.9 30.88 603.7 30.88c44.8 0 81.1 118.91 81.1 265.47Z"/>
-        </svg>
+      <a href="https://medium.com/@stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20" aria-label="Medium">
+        <svg class="w-5 h-5" viewBox="0 0 1043.63 592.71" fill="currentColor"><path d="M588.67 296.35c0 163.67-131.6 296.36-293.83 296.36S1 460 1 296.35C1 132.7 132.6 0 294.84 0s293.83 132.7 293.83 296.35Zm453.96 0c0 153.7-65.8 278.2-147 278.2s-147-124.5-147-278.2S814.45 18.13 895.63 18.13s147 124.5 147 278.22ZM684.8 296.35c0 146.56-36.3 265.47-81.1 265.47-44.8 0-81.1-118.9-81.1-265.47S558.9 30.88 603.7 30.88c44.8 0 81.1 118.91 81.1 265.47Z"/></svg>
         Medium
       </a>
       <a href="https://ko-fi.com/stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">
@@ -244,10 +257,9 @@
   <i data-lucide="chevron-up" class="w-5 h-5"></i>
 </button>
 
-<!-- JS (same as landing) -->
+<!-- JS -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Icons
     if (typeof lucide !== 'undefined' && lucide.createIcons) {
       try { lucide.createIcons(); } catch {}
     }
@@ -258,7 +270,7 @@
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    // Mobile menu (hamburger)
+    // Mobile menu
     const btn = document.getElementById('nav-toggle');
     const menu = document.getElementById('mobile-menu');
     const openI = document.getElementById('icon-open');
@@ -272,20 +284,18 @@
         if (closeI) closeI.classList.toggle('hidden', !willOpen);
       };
       btn.addEventListener('click', toggle);
-      // Close after tapping a link
       menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
         if (!menu.classList.contains('hidden')) toggle();
       }));
     }
 
-    // Desktop dropdowns (Writing / Escritura)
+    // Desktop dropdowns
     function makeDropdown(triggerId, panelId) {
       const trigger = document.getElementById(triggerId);
       const panel   = document.getElementById(panelId);
       if (!trigger || !panel) return;
 
       let open = false;
-
       const show = () => {
         panel.classList.remove('invisible','opacity-0','pointer-events-none','translate-y-1');
         panel.classList.add('opacity-100','pointer-events-auto','translate-y-0');
@@ -294,7 +304,6 @@
       };
       const hide = () => {
         panel.classList.add('invisible','opacity-0','pointer-events-none','translate-y-1');
-        panel.classList.remove('opacity-0'); // ensure classes align
         panel.classList.remove('opacity-100','pointer-events-auto','translate-y-0');
         trigger.setAttribute('aria-expanded', 'false');
         open = false;
@@ -319,14 +328,12 @@
         if (e.key === 'Escape' && open) { hide(); trigger.focus(); }
       });
 
-      // Start hidden
       hide();
     }
     makeDropdown('writing-trigger-en','writing-popover-en');
-    // If you add a Spanish dropdown later, this will auto-init:
     makeDropdown('writing-trigger-es','writing-popover-es');
 
-    // Back to top button (optional)
+    // Back to top
     const toTop = document.getElementById('toTop');
     if (toTop) {
       const toggleToTop = () => { toTop.classList.toggle('hidden', window.scrollY < 400); };
@@ -334,8 +341,6 @@
       toggleToTop();
       toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
-
- 
 
     // Footer year
     const yearEl = document.getElementById('year');
