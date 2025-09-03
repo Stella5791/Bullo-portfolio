@@ -71,6 +71,119 @@
 
   <!-- Article container -->
   <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+     <!-- ENGLISH -->
+    <article id="english" class="hidden">
+      <header class="mb-8 md:mb-10">
+        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">
+          Annotating Pain Language: Integrating Linguistics and NLP
+        </h1>
+        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-500 mb-3">
+          CMT + MIP → an NLP-ready annotation schema with clinical impact
+        </h2>
+        <p class="italic text-brand-800/70 text-sm">Dr Stella Bullo</p>
+      </header>
+
+      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500
+                  prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8
+                  prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
+
+        <h2>1. Introduction</h2>
+        <p>
+          Pain is invisible and subjective, which makes it hard to describe. Literal phrases like
+          <em>“sharp pain in my lower back”</em> are clinically useful but often miss the lived quality of the experience. Patients therefore reach for metaphors—e.g.,
+          <em>“barbed wire around my spine”</em>, <em>“a hammer pounding inside my head”</em>—to translate sensations into shared domains (objects, impacts, heat).
+        </p>
+        <p>
+          For linguistics and NLP, the challenge is twofold: <strong>detection</strong> of metaphorical use with reliability and <strong>representation</strong> in structured, model-ready data.
+          This article combines <span class="tt" data-title="Conceptual Metaphor Theory">Conceptual Metaphor Theory (CMT)</span> and the
+          <span class="tt" data-title="Metaphor Identification Procedure">Metaphor Identification Procedure (MIP)</span> into a compact, actionable annotation schema.
+        </p>
+
+        <h2>2. Method Foundations</h2>
+        <h3>2.1 Conceptual Metaphor Theory (CMT)</h3>
+        <p>
+          CMT explains how abstract experiences are framed via concrete domains. In pain discourse we see recurring frames:
+        </p>
+        <ul>
+          <li><strong>Pain-as-object</strong> → <em>“barbed wire around my spine”</em></li>
+          <li><strong>Pain-as-impact</strong> → <em>“a hammer pounding inside my head”</em></li>
+          <li><strong>Pain-as-heat</strong> → <em>“a knot of fire in my stomach”</em></li>
+        </ul>
+        <p>These categories provide a taxonomy for annotating metaphors.</p>
+
+        <h3>2.2 Metaphor Identification Procedure (MIP)</h3>
+        <ol>
+          <li>Read the text to establish overall meaning.</li>
+          <li>Identify lexical units.</li>
+          <li>Determine each unit’s <em>basic meaning</em> (more concrete/older).</li>
+          <li>Compare with its <em>contextual meaning</em> in the utterance.</li>
+          <li>If they contrast but are understood by comparison, mark as <em>metaphorical</em>.</li>
+        </ol>
+
+        <h3>2.3 Worked example (step by step)</h3>
+        <blockquote><em>“It feels like barbed wire wrapped around my spine.”</em></blockquote>
+        <ul>
+          <li><strong>Units</strong>: <em>barbed wire</em>, <em>wrapped</em>, <em>spine</em>.</li>
+          <li><strong>Basic</strong>: fencing material with barbs; physically enclosed; bones of the back.</li>
+          <li><strong>Contextual</strong>: sharp, constricting pain; enclosing sensation; literal anatomical reference.</li>
+          <li><strong>Decision</strong>: <em>barbed wire</em> and <em>wrapped</em> → metaphorical; <em>spine</em> → literal. Category: <strong>pain-as-object</strong>.</li>
+        </ul>
+
+        <h2>3. Annotation schema</h2>
+        <p>Minimal fields that balance linguistic richness and computational tractability:</p>
+        <ul>
+          <li><code>type</code> → <em>metaphor</em> | <em>literal</em></li>
+          <li><code>trigger</code> → word/phrase signalling pain</li>
+          <li><code>category</code> → conceptual frame (if <code>type = metaphor</code>)</li>
+          <li><code>location</code> → body part</li>
+        </ul>
+
+        <h2>4. Example annotations</h2>
+        <table>
+          <thead>
+            <tr><th>Text</th><th>Type</th><th>Trigger</th><th>Category</th><th>Location</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><em>It feels like barbed wire wrapped around my spine.</em></td><td>metaphor</td><td>barbed wire</td><td>pain-as-object</td><td>spine</td></tr>
+            <tr><td><em>There’s a hammer pounding inside my head.</em></td><td>metaphor</td><td>hammer pounding</td><td>pain-as-impact</td><td>head</td></tr>
+            <tr><td><em>My stomach is a knot of fire.</em></td><td>metaphor</td><td>knot of fire</td><td>pain-as-heat</td><td>stomach</td></tr>
+            <tr><td><em>I have a sharp pain in my lower back.</em></td><td>literal</td><td>sharp pain</td><td>—</td><td>lower back</td></tr>
+            <tr><td><em>I feel pressure in my chest when I breathe.</em></td><td>literal</td><td>pressure</td><td>—</td><td>chest</td></tr>
+          </tbody>
+        </table>
+
+        <pre><code>{
+  "text": "It feels like barbed wire wrapped around my spine.",
+  "type": "metaphor",
+  "trigger": "barbed wire",
+  "category": "pain-as-object",
+  "location": "spine"
+}</code></pre>
+
+        <h2>5. Applications</h2>
+        <ol>
+          <li><strong>Automatic metaphor detection</strong>: annotated corpora to train models that identify figurative language in notes and patient forums.</li>
+          <li><strong>Clinical communication tools</strong>: mapping metaphors to standardised terminology (e.g., “hammer pounding” → severe pulsating headache).</li>
+          <li><strong>Explainable healthcare AI</strong>: metaphor categories as interpretable features in decision support.</li>
+          <li><strong>Cross-linguistic research</strong>: comparative studies informing culturally sensitive multilingual systems.</li>
+          <li><strong>Training &amp; education</strong>: annotated cases for clinician education and empathy building.</li>
+        </ol>
+
+        <h2>6. Bibliography</h2>
+        <ul>
+          <li>Lakoff, G., &amp; Johnson, M. (1980). <em>Metaphors We Live By</em>. University of Chicago Press.</li>
+          <li>Pragglejaz Group. (2007). MIP: A Method for Identifying Metaphorically Used Words in Discourse. <em>Metaphor and Symbol</em>, 22(1), 1–39.</li>
+          <li>Semino, E. (2010). Describing pain: The role of metaphor. <em>Metaphor and Symbol</em>, 25(4), 250–269.</li>
+          <li>Steen, G. (2017). <em>Deliberate metaphor theory</em>. John Benjamins.</li>
+          <li>Wallington, A. et al. (2003). Metaphor annotation: A case study. In <em>Proceedings of the Workshop on Computational Lexical Semantics</em>, ACL.</li>
+        </ul>
+
+        <h2>7. Conclusion</h2>
+        <p>
+          CMT + MIP provide a rigorous, reproducible basis for annotating pain metaphors. The resulting structured data supports better models, clearer clinical tools, and more humane communication—exactly where linguistics and NLP meet practice.
+        </p>
+      </div>
+    </article>
     <!-- SPANISH -->
     <article id="spanish">
       <header class="mb-8 md:mb-10">
@@ -185,119 +298,7 @@
       </div>
     </article>
 
-    <!-- ENGLISH -->
-    <article id="english" class="hidden">
-      <header class="mb-8 md:mb-10">
-        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">
-          Annotating Pain Language: Integrating Linguistics and NLP
-        </h1>
-        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-500 mb-3">
-          CMT + MIP → an NLP-ready annotation schema with clinical impact
-        </h2>
-        <p class="italic text-brand-800/70 text-sm">Dr Stella Bullo</p>
-      </header>
-
-      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500
-                  prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8
-                  prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
-
-        <h2>1. Introduction</h2>
-        <p>
-          Pain is invisible and subjective, which makes it hard to describe. Literal phrases like
-          <em>“sharp pain in my lower back”</em> are clinically useful but often miss the lived quality of the experience. Patients therefore reach for metaphors—e.g.,
-          <em>“barbed wire around my spine”</em>, <em>“a hammer pounding inside my head”</em>—to translate sensations into shared domains (objects, impacts, heat).
-        </p>
-        <p>
-          For linguistics and NLP, the challenge is twofold: <strong>detection</strong> of metaphorical use with reliability and <strong>representation</strong> in structured, model-ready data.
-          This article combines <span class="tt" data-title="Conceptual Metaphor Theory">Conceptual Metaphor Theory (CMT)</span> and the
-          <span class="tt" data-title="Metaphor Identification Procedure">Metaphor Identification Procedure (MIP)</span> into a compact, actionable annotation schema.
-        </p>
-
-        <h2>2. Method Foundations</h2>
-        <h3>2.1 Conceptual Metaphor Theory (CMT)</h3>
-        <p>
-          CMT explains how abstract experiences are framed via concrete domains. In pain discourse we see recurring frames:
-        </p>
-        <ul>
-          <li><strong>Pain-as-object</strong> → <em>“barbed wire around my spine”</em></li>
-          <li><strong>Pain-as-impact</strong> → <em>“a hammer pounding inside my head”</em></li>
-          <li><strong>Pain-as-heat</strong> → <em>“a knot of fire in my stomach”</em></li>
-        </ul>
-        <p>These categories provide a taxonomy for annotating metaphors.</p>
-
-        <h3>2.2 Metaphor Identification Procedure (MIP)</h3>
-        <ol>
-          <li>Read the text to establish overall meaning.</li>
-          <li>Identify lexical units.</li>
-          <li>Determine each unit’s <em>basic meaning</em> (more concrete/older).</li>
-          <li>Compare with its <em>contextual meaning</em> in the utterance.</li>
-          <li>If they contrast but are understood by comparison, mark as <em>metaphorical</em>.</li>
-        </ol>
-
-        <h3>2.3 Worked example (step by step)</h3>
-        <blockquote><em>“It feels like barbed wire wrapped around my spine.”</em></blockquote>
-        <ul>
-          <li><strong>Units</strong>: <em>barbed wire</em>, <em>wrapped</em>, <em>spine</em>.</li>
-          <li><strong>Basic</strong>: fencing material with barbs; physically enclosed; bones of the back.</li>
-          <li><strong>Contextual</strong>: sharp, constricting pain; enclosing sensation; literal anatomical reference.</li>
-          <li><strong>Decision</strong>: <em>barbed wire</em> and <em>wrapped</em> → metaphorical; <em>spine</em> → literal. Category: <strong>pain-as-object</strong>.</li>
-        </ul>
-
-        <h2>3. Annotation schema</h2>
-        <p>Minimal fields that balance linguistic richness and computational tractability:</p>
-        <ul>
-          <li><code>type</code> → <em>metaphor</em> | <em>literal</em></li>
-          <li><code>trigger</code> → word/phrase signalling pain</li>
-          <li><code>category</code> → conceptual frame (if <code>type = metaphor</code>)</li>
-          <li><code>location</code> → body part</li>
-        </ul>
-
-        <h2>4. Example annotations</h2>
-        <table>
-          <thead>
-            <tr><th>Text</th><th>Type</th><th>Trigger</th><th>Category</th><th>Location</th></tr>
-          </thead>
-          <tbody>
-            <tr><td><em>It feels like barbed wire wrapped around my spine.</em></td><td>metaphor</td><td>barbed wire</td><td>pain-as-object</td><td>spine</td></tr>
-            <tr><td><em>There’s a hammer pounding inside my head.</em></td><td>metaphor</td><td>hammer pounding</td><td>pain-as-impact</td><td>head</td></tr>
-            <tr><td><em>My stomach is a knot of fire.</em></td><td>metaphor</td><td>knot of fire</td><td>pain-as-heat</td><td>stomach</td></tr>
-            <tr><td><em>I have a sharp pain in my lower back.</em></td><td>literal</td><td>sharp pain</td><td>—</td><td>lower back</td></tr>
-            <tr><td><em>I feel pressure in my chest when I breathe.</em></td><td>literal</td><td>pressure</td><td>—</td><td>chest</td></tr>
-          </tbody>
-        </table>
-
-        <pre><code>{
-  "text": "It feels like barbed wire wrapped around my spine.",
-  "type": "metaphor",
-  "trigger": "barbed wire",
-  "category": "pain-as-object",
-  "location": "spine"
-}</code></pre>
-
-        <h2>5. Applications</h2>
-        <ol>
-          <li><strong>Automatic metaphor detection</strong>: annotated corpora to train models that identify figurative language in notes and patient forums.</li>
-          <li><strong>Clinical communication tools</strong>: mapping metaphors to standardised terminology (e.g., “hammer pounding” → severe pulsating headache).</li>
-          <li><strong>Explainable healthcare AI</strong>: metaphor categories as interpretable features in decision support.</li>
-          <li><strong>Cross-linguistic research</strong>: comparative studies informing culturally sensitive multilingual systems.</li>
-          <li><strong>Training &amp; education</strong>: annotated cases for clinician education and empathy building.</li>
-        </ol>
-
-        <h2>6. Bibliography</h2>
-        <ul>
-          <li>Lakoff, G., &amp; Johnson, M. (1980). <em>Metaphors We Live By</em>. University of Chicago Press.</li>
-          <li>Pragglejaz Group. (2007). MIP: A Method for Identifying Metaphorically Used Words in Discourse. <em>Metaphor and Symbol</em>, 22(1), 1–39.</li>
-          <li>Semino, E. (2010). Describing pain: The role of metaphor. <em>Metaphor and Symbol</em>, 25(4), 250–269.</li>
-          <li>Steen, G. (2017). <em>Deliberate metaphor theory</em>. John Benjamins.</li>
-          <li>Wallington, A. et al. (2003). Metaphor annotation: A case study. In <em>Proceedings of the Workshop on Computational Lexical Semantics</em>, ACL.</li>
-        </ul>
-
-        <h2>7. Conclusion</h2>
-        <p>
-          CMT + MIP provide a rigorous, reproducible basis for annotating pain metaphors. The resulting structured data supports better models, clearer clinical tools, and more humane communication—exactly where linguistics and NLP meet practice.
-        </p>
-      </div>
-    </article>
+   
   </main>
 
   <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
