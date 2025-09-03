@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Linguist, developer, writer (EN/ES). I connect words, systems and people through documentation, UX writing, content & explainers, localization, and annotation & evaluation."/>
+  <meta name="description" content="Stella Bullo — Redacción técnica, de contenidos y UX, localización y anotación/evaluación. Escritura e investigación bilingüe EN/ES."/>
   <meta name="author" content="Stella Bullo"/>
   <link rel="alternate" hreflang="en" href="/"/>
   <link rel="alternate" hreflang="es" href="/es/"/>
-  <title>Stella Bullo | Writing — Documentation, UX, Content</title>
+  <title>Stella Bullo — Redacción Técnica, Contenidos, UX, Localización & Anotación</title>
   <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 
   <!-- Inter -->
@@ -44,54 +44,55 @@
     .btn:active{transform:translateY(1px)}
   </style>
 </head>
+
 <body class="bg-brand-50 text-brand-800 font-sans antialiased">
 <a id="top" class="block"></a>
 
 <!-- NAV -->
 <nav class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-brand-100">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center">
-    <!-- Left: Name -->
-    <a href="../index.html" class="text-lg font-semibold tracking-tight text-brand-500">Stella Bullo</a>
-   
-    <!-- Right: Menu -->
-    <ul class="hidden md:flex items-center gap-5 text-sm ml-auto">
-      <li><a href="#about" class="hover:text-brand-500">About</a></li>
+    <!-- IZQUIERDA: marca -->
+    <a href="/es/" class="text-lg font-semibold tracking-tight text-brand-500">Stella Bullo</a>
 
-      <li class="relative" id="writing-menu-en">
-        <button id="writing-trigger-en" type="button"
+    <!-- DERECHA (desktop) -->
+    <ul class="hidden md:flex items-center gap-5 text-sm ml-auto">
+      <!-- Escritura -->
+      <li class="relative" id="writing-menu-es">
+        <button id="writing-trigger-es" type="button"
           class="inline-flex items-center gap-1 px-2 py-1 rounded-md hover:text-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
-          aria-haspopup="true" aria-expanded="false" aria-controls="writing-popover-en">
-          Writing <i data-lucide="chevron-down" class="w-4 h-4"></i>
+          aria-haspopup="true" aria-expanded="false" aria-controls="writing-popover-es">
+          Escritura <i data-lucide="chevron-down" class="w-4 h-4"></i>
         </button>
-        <div id="writing-popover-en"
+        <div id="writing-popover-es"
           class="invisible opacity-0 pointer-events-none absolute left-0 mt-2 w-56 z-[60]
                  rounded-lg border border-brand-100 bg-white shadow-soft ring-1 ring-black/5
                  transition transform duration-150 ease-out translate-y-1">
-          <a href="#portfolio" class="block px-3 py-2 hover:bg-brand-100 rounded-t-lg">Portfolio</a>
-          <a href="/technical-content-ux/index.html" class="block px-3 py-2 hover:bg-brand-100">Technical, Content &amp; UX Writing</a>
-          <a href="/localization/index.html" class="block px-3 py-2 hover:bg-brand-100">Localization</a>
-          <a href="/annotation-evaluation/index.html" class="block px-3 py-2 hover:bg-brand-100">Annotation &amp; Evaluation</a>
-          <a href="/essays/index.html" class="block px-3 py-2 hover:bg-brand-100 rounded-b-lg">Essays &amp; Notes</a>
+          <a href="#portfolio" class="block px-3 py-2 hover:bg-brand-100 rounded-t-lg">Portafolio</a>
+          <a href="/technical-content-ux/es/index.html" class="block px-3 py-2 hover:bg-brand-100">Redacción Técnica, de Contenidos y UX</a>
+          <a href="/localization/es/index.html" class="block px-3 py-2 hover:bg-brand-100">Localización</a>
+          <a href="/annotation-evaluation/es/index.html" class="block px-3 py-2 hover:bg-brand-100">Anotación &amp; Evaluación</a>
+          <a href="/essays/es/index.html" class="block px-3 py-2 hover:bg-brand-100 rounded-b-lg">Ensayos &amp; Notas</a>
         </div>
       </li>
 
-      <!-- Language switch -->
+      <!-- Idioma -->
       <li class="flex items-center gap-1 pl-1">
-        <a href="/" class="px-2 py-1 rounded-md bg-brand-500 text-white text-xs" aria-current="page">EN</a>
+        <a href="/" class="px-2 py-1 rounded-md border border-brand-200 text-xs hover:bg-brand-100">EN</a>
         <span class="text-brand-800/50 text-xs">/</span>
-        <a href="/es/" class="px-2 py-1 rounded-md border border-brand-200 text-xs hover:bg-brand-100">ES</a>
+        <a href="/es/" aria-current="page" class="px-2 py-1 rounded-md bg-brand-500 text-white text-xs">ES</a>
       </li>
 
-      <!-- Hire me -->
+      <!-- Contrátame -->
       <li>
-        <a href="mailto:info@stellabullo.com" class="btn inline-flex items-center gap-2 bg-brand-500 text-white px-3.5 py-1.5 rounded-md hover:brightness-95 shadow-soft">
-          <i data-lucide="mail" class="w-4 h-4"></i> Hire me
+        <a href="mailto:info@stellabullo.com"
+           class="btn inline-flex items-center gap-2 bg-brand-500 text-white px-3.5 py-1.5 rounded-md hover:brightness-95 shadow-soft">
+          <i data-lucide="mail" class="w-4 h-4"></i> Contrátame
         </a>
       </li>
     </ul>
 
-    <!-- Mobile -->
-    <button id="nav-toggle" class="md:hidden ml-auto inline-flex items-center justify-center p-2 rounded-md border border-brand-200" aria-expanded="false" aria-controls="mobile-menu">
+    <!-- Botón hamburguesa (móvil) -->
+    <button id="nav-toggle" class="md:hidden ml-auto inline-flex items-center justify-center p-2 rounded-md border border-brand-200" aria-expanded="false" aria-label="Abrir menú" aria-controls="mobile-menu">
       <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
@@ -103,28 +104,28 @@
     </button>
   </div>
 
-  <!-- Mobile menu -->
+  <!-- Menú móvil (ES) -->
   <div id="mobile-menu" class="md:hidden hidden border-t border-brand-100 bg-white">
     <ul class="px-4 py-3 space-y-2 text-sm">
-      <li><a href="#about" class="block py-2">About</a></li>
-      <li><a href="#portfolio" class="block py-2">Portfolio</a></li>
-
-      <!-- Unified writing section -->
-      <li><a href="/technical-content-ux/index.html" class="block py-2">Technical, Content &amp; UX Writing</a></li>
-      <li><a href="/localization/index.html" class="block py-2">Localization</a></li>
-      <li><a href="/annotation-evaluation/index.html" class="block py-2">Annotation &amp; Evaluation</a></li>
-      <li><a href="/essays/index.html" class="block py-2">Essays &amp; Notes</a></li>
+      <li><a href="#about" class="block py-2">Sobre mí</a></li>
+      <li><a href="#portfolio" class="block py-2">Portafolio</a></li>
+      <li><a href="/technical-content-ux/es/index.html" class="block py-2">Redacción Técnica, de Contenidos y UX</a></li>
+      <li><a href="/localization/es/index.html" class="block py-2">Localización</a></li>
+      <li><a href="/annotation-evaluation/es/index.html" class="block py-2">Anotación &amp; Evaluación</a></li>
+      <li><a href="/essays/es/index.html" class="block py-2">Ensayos &amp; Notas</a></li>
 
       <li class="flex items-center gap-2 pt-2">
-        <span class="text-xs text-brand-800/60">Language:</span>
-        <a href="/" class="px-2 py-1 rounded border border-brand-200 text-xs bg-brand-100">EN</a>
-        <a href="/es/" class="px-2 py-1 rounded border border-brand-200 text-xs">ES</a>
+        <span class="text-xs text-brand-800/60">Idioma:</span>
+        <a href="/" class="px-2 py-1 rounded border border-brand-200 text-xs">EN</a>
+        <a href="/es/" class="px-2 py-1 rounded border border-brand-200 text-xs bg-brand-100">ES</a>
       </li>
 
-      <li><a href="mailto:info@stellabullo.com" class="block py-2 font-medium text-brand-500">Hire me</a></li>
+      <li><a href="mailto:info@stellabullo.com" class="block py-2 font-medium text-brand-500">Contacto</a></li>
     </ul>
   </div>
 </nav>
+
+
 
 <!-- HERO -->
 <header class="pt-32 md:pt-44 pb-14 md:pb-20 px-6 md:px-8 relative overflow-hidden">
@@ -132,7 +133,7 @@
   <div aria-hidden="true" class="pointer-events-none absolute -right-24 -top-24 w-[34rem] h-[34rem] rounded-full bg-brand-200/50 blur-3xl"></div>
 
   <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-12 items-center gap-6 md:gap-8">
-    <!-- Icons + Portrait -->
+    <!-- Iconos + retrato -->
     <div class="lg:col-span-5 flex flex-col items-center lg:flex-row lg:items-center lg:justify-center gap-3 lg:translate-x-2 xl:translate-x-3">
       <div class="flex flex-row lg:flex-col gap-2 items-center">
         <a href="mailto:info@stellabullo.com" class="p-2 rounded-full bg-white/60 hover:bg-brand-100 shadow-soft transition">
@@ -148,106 +149,109 @@
       </div>
 
       <figure class="relative lg:ml-5">
-        <img src="./assets/stella-picture-nobg.png" alt="Stella Bullo"
+        <img src="../assets/stella-picture-nobg.png" alt="Stella Bullo"
              onerror="this.style.display='none';"
              class="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 object-cover rounded-2xl shadow-card ring-1 ring-brand-200 lg:drop-shadow-xl"/>
         <div class="absolute -inset-7 -z-10 rounded-[2rem] bg-gradient-to-tr from-brand-200/70 to-transparent blur-2xl"></div>
       </figure>
     </div>
 
-    <!-- Text -->
+    <!-- Texto -->
     <div class="lg:col-span-7 relative z-10 lg:-translate-x-1 xl:-translate-x-2">
-      <!-- Name -->
+      <!-- Nombre -->
       <p class="text-[0.65rem] md:text-xs font-medium text-brand-500 tracking-[0.10em] uppercase mb-4">
-        Stella Bullo, PhD Linguistics | Technical &amp; Content Writer 
+        Dra. Stella Bullo, PhD en Lingüística | Redactora Técnica y de Contenidos
       </p>
 
       <!-- Hero line -->
       <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-brand-800 leading-tight mb-4">
-        Connecting words, systems and people.
+        Conectando palabras, sistemas y personas.
       </h1>
 
       <p class="text-[1.05rem] text-brand-800/90 max-w-[68ch] leading-relaxed">
-        I shape ideas into clear documentation, interface text, and plain language explainers.
-        I map annotation and evaluation with care, build small tools to test language, and make localization feel native across cultures.
+        Transformo ideas en documentación clara, textos de interfaz y explicaciones en lenguaje sencillo.  
+        Mapeo la anotación y la evaluación con cuidado, creo pequeñas herramientas para probar el lenguaje  
+        y hago que la localización se sienta nativa a través de culturas.
       </p>
 
       <ul class="mt-4 flex flex-wrap gap-2 text-xs text-brand-800/90">
-        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Technical docs &amp; API guides</li>
-        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">UX microcopy &amp; flows</li>
-        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Content &amp; explainers</li>
-        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Bilingual EN/ES</li>
-        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Localization (EN/ES)</li>
-        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Annotation &amp; evaluation</li>
+        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Documentación técnica &amp; guías de API</li>
+        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Microcopy &amp; flujos de UX</li>
+        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Contenidos &amp; explicadores</li>
+        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Bilingüe EN/ES</li>
+        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Localización (EN/ES)</li>
+        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Anotación &amp; evaluación</li>
       </ul>
 
       <div class="mt-6 flex flex-col sm:flex-row sm:flex-nowrap gap-3">
         <a href="mailto:info@stellabullo.com"
            class="shrink-0 btn inline-flex items-center justify-center px-5 py-3 rounded-md bg-brand-500 text-white hover:brightness-95 shadow-soft">
-          <i data-lucide="mail" class="w-5 h-5 mr-2"></i> Hire me for writing
+          <i data-lucide="mail" class="w-5 h-5 mr-2"></i> Contrátame para escribir
         </a>
         <a href="#portfolio"
            class="shrink-0 btn inline-flex items-center justify-center px-5 py-3 rounded-md border border-brand-200 text-brand-800 hover:bg-white">
-          See samples
+          Ver muestras
         </a>
         <a href="https://sierracodes.netlify.app/" target="_blank" rel="noopener"
            class="shrink-0 btn inline-flex items-center justify-center px-5 py-3 rounded-md border border-brand-200 text-brand-800 hover:bg-white">
-          <span class="hidden md:inline">Development with </span>Sierra Codes
+          <span class="hidden md:inline">Desarrollo con </span>Sierra Codes
           <i data-lucide="arrow-up-right" class="ml-2 w-4 h-4"></i>
         </a>
       </div>
     </div>
   </div>
 
-  <!-- wavy separator -->
+  <!-- Separador ondulado -->
   <svg aria-hidden="true" class="md:mt-32 -mb-10 md:-mb-14 w-full block" viewBox="0 0 1440 120" preserveAspectRatio="none">
     <path fill="#EDF3FB" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,58.7C1120,64,1280,96,1360,112L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/>
   </svg>
 </header>
 
+
 <!-- SECTIONS GRID -->
 <main id="portfolio" class="px-6 md:px-8 pt-0 md:pt-0 -mt-2 md:-mt-3 pb-14 md:pb-20">
   <section class="max-w-6xl mx-auto">
     <div class="mx-auto max-w-3xl text-center">
-      <h2 class="text-2xl font-semibold tracking-tight text-brand-800 mb-3">Portfolio</h2>
+      <h2 class="text-2xl font-semibold tracking-tight text-brand-800 mb-3">Portafolio</h2>
       <p class="mx-auto max-w-2xl text-sm md:text-base text-brand-800/80 leading-relaxed mb-8">
-        A selection of recent work across technical writing, UX writing, content &amp; explainers,
-        localization, and annotation &amp; evaluation.
+        Una selección de trabajos recientes en redacción técnica, UX writing, contenidos y explicadores,
+        localización y anotación &amp; evaluación.
       </p>
     </div>
 
-    <!-- Cards grid: same width as header -->
+    <!-- Grilla de tarjetas: misma anchura que el encabezado -->
     <div class="mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center">
-      <a href="/technical-content-ux/index.html" class="card relative block rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <h3 class="text-lg font-semibold mb-1">Technical, Content &amp; UX Writing</h3>
+      <a href="/es/writing/index.html" class="card relative block rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
+        <h3 class="text-lg font-semibold mb-1">Redacción Técnica, de Contenidos y UX</h3>
         <p class="text-sm text-brand-800/80">
-          Documentation, product explainers, and UX copy — clear writing across APIs, flows, and content.
+          Documentación, explicadores de producto y microcopy — textos claros para APIs, flujos y contenido.
         </p>
       </a>
 
-      <a href="/localization/index.html" class="card relative block rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <h3 class="text-lg font-semibold mb-1">Localization</h3>
-        <p class="text-sm text-brand-800/80">EN/ES localisation, voice &amp; tone, style guides, glossaries.</p>
+      <a href="/es/localization/index.html" class="card relative block rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
+        <h3 class="text-lg font-semibold mb-1">Localización</h3>
+        <p class="text-sm text-brand-800/80">Localización EN/ES, voz &amp; tono, guías de estilo y glosarios.</p>
       </a>
 
-      <a href="/annotation-evaluation/index.html" class="card relative block rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <h3 class="text-lg font-semibold mb-1">Annotation &amp; Evaluation</h3>
-        <p class="text-sm text-brand-800/80">Labeling guidelines, quality rubrics, eval sets &amp; reporting.</p>
+      <a href="/es/annotation-evaluation/index.html" class="card relative block rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
+        <h3 class="text-lg font-semibold mb-1">Anotación &amp; Evaluación</h3>
+        <p class="text-sm text-brand-800/80">Guías de etiquetado, rúbricas de calidad, conjuntos de eval &amp; reportes.</p>
       </a>
 
-      <a href="/essays/index.html" class="card relative block rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <h3 class="text-lg font-semibold mb-1">Essays &amp; Notes</h3>
-        <p class="text-sm text-brand-800/80">Short pieces on language, tech and culture.</p>
+      <a href="/es/essays/index.html" class="card relative block rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
+        <h3 class="text-lg font-semibold mb-1">Ensayos &amp; Notas</h3>
+        <p class="text-sm text-brand-800/80">Textos breves sobre lenguaje, tecnología y cultura.</p>
       </a>
     </div>
   </section>
 </main>
 
-<!-- CONTACT / FOOTER -->
+
+<!-- FOOTER (same as EN, translated labels) -->
 <section id="contact" class="bg-gradient-to-br from-brand-500 to-brand-800 text-white">
   <div class="max-w-6xl mx-auto px-6 md:px-8 py-12">
-    <h2 class="text-2xl md:text-3xl font-semibold leading-tight">Let’s work together</h2>
-    <p class="mt-3 text-white/90 max-w-[60ch]">Collaborations, commissions, or a quick question. I reply in English or Spanish.</p>
+    <h2 class="text-2xl md:text-3xl font-semibold leading-tight">Trabajemos juntas/os</h2>
+    <p class="mt-3 text-white/90 max-w-[60ch]">Colaboraciones, encargos o una consulta rápida. Respondo en español o inglés.</p>
 
     <div class="mt-6 flex flex-wrap items-center gap-2">
       <a href="mailto:info@stellabullo.com" class="btn inline-flex items-center gap-2 bg-white text-brand-800 px-4 py-3 rounded-md hover:bg-brand-100">
@@ -256,49 +260,40 @@
       <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">
         <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
       </a>
-      <a href="https://medium.com/@stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">
-        <svg class="w-5 h-5" viewBox="0 0 1043.63 592.71" fill="currentColor" aria-hidden="true">
-          <path d="M588.67 296.35c0 163.67-131.6 296.36-293.83 296.36S1 460 1 296.35C1 132.7 132.6 0 294.84 0s293.83 132.7 293.83 296.35Zm453.96 0c0 153.7-65.8 278.2-147 278.2s-147-124.5-147-278.2S814.45 18.13 895.63 18.13s147 124.5 147 278.22ZM684.8 296.35c0 146.56-36.3 265.47-81.1 265.47-44.8 0-81.1-118.9-81.1-265.47S558.9 30.88 603.7 30.88c44.8 0 81.1 118.91 81.1 265.47Z"/>
-        </svg>
-        Medium
-      </a>
-      <a href="https://ko-fi.com/stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">
-        <i data-lucide="coffee" class="w-5 h-5"></i> Ko-fi
-      </a>
-      <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">
-        <i data-lucide="id-card" class="w-5 h-5"></i> ORCID
-      </a>
-      <a href="https://sierracodes.netlify.app/" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">
-        <i data-lucide="code-2" class="w-5 h-5"></i> Sierra Codes
-      </a>
+      <a href="https://medium.com/@stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">Medium</a>
+      <a href="https://ko-fi.com/stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">Ko-fi</a>
+      <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">ORCID</a>
+      <a href="https://sierracodes.netlify.app/" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">Sierra Codes</a>
     </div>
 
     <div class="text-center text-sm text-white/70 mt-8">
-      © <span id="year"></span> Stella Bullo. All rights reserved.
+      © <span id="year"></span> Stella Bullo. Todos los derechos reservados.
     </div>
   </div>
 </section>
 
-<!-- Back to top -->
-<button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">
+<!-- Volver arriba -->
+<button id="toTop"
+  class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500"
+  aria-label="Volver arriba" title="Volver arriba">
   <i data-lucide="chevron-up" class="w-5 h-5"></i>
 </button>
 
 <!-- JS -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    // Icons
+    // Iconos
     if (typeof lucide !== 'undefined' && lucide.createIcons) {
       try { lucide.createIcons(); } catch {}
     }
 
-    // Nav shadow on scroll
+    // Sombra en la barra de navegación al hacer scroll
     const nav = document.querySelector('nav');
     const onScroll = () => { if (nav) nav.classList.toggle('shadow', window.scrollY > 10); };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    // Mobile menu (hamburger)
+    // Menú móvil (hamburguesa)
     const btn = document.getElementById('nav-toggle');
     const menu = document.getElementById('mobile-menu');
     const openI = document.getElementById('icon-open');
@@ -312,13 +307,13 @@
         if (closeI) closeI.classList.toggle('hidden', !willOpen);
       };
       btn.addEventListener('click', toggle);
-      // Close after tapping a link
+      // Cerrar después de tocar un enlace
       menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
         if (!menu.classList.contains('hidden')) toggle();
       }));
     }
 
-    // Desktop dropdowns (Writing / Escritura)
+    // Desplegables de escritorio (Writing / Escritura)
     function makeDropdown(triggerId, panelId) {
       const trigger = document.getElementById(triggerId);
       const panel   = document.getElementById(panelId);
@@ -340,16 +335,16 @@
       };
       const toggle = (e) => { e.preventDefault(); e.stopPropagation(); open ? hide() : show(); };
 
-      // Click to open/close
+      // Clic para abrir/cerrar
       trigger.addEventListener('click', toggle);
 
-      // Close on outside click
+      // Cerrar al hacer clic fuera
       document.addEventListener('click', (e) => {
         if (!open) return;
         if (!panel.contains(e.target) && !trigger.contains(e.target)) hide();
       });
 
-      // Keyboard: Enter/Space to toggle, Escape to close, ArrowDown to open
+      // Teclado: Enter/Espacio para abrir/cerrar, Escape para cerrar, FlechaAbajo para abrir
       trigger.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') { toggle(e); }
         else if (e.key === 'Escape' && open) { hide(); trigger.focus(); }
@@ -359,13 +354,13 @@
         if (e.key === 'Escape' && open) { hide(); trigger.focus(); }
       });
 
-      // Start hidden
+      // Inicia oculto
       hide();
     }
     makeDropdown('writing-trigger-en','writing-popover-en');
-    makeDropdown('writing-trigger-es','writing-popover-es'); // no-op unless you add ES dropdown
+    makeDropdown('writing-trigger-es','writing-popover-es'); // versión ES
 
-    // Back to top button
+    // Botón "volver arriba"
     const toTop = document.getElementById('toTop');
     if (toTop) {
       const toggleToTop = () => { toTop.classList.toggle('hidden', window.scrollY < 400); };
@@ -374,10 +369,11 @@
       toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
 
-    // Year
+    // Año en el footer
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   });
 </script>
+
 </body>
 </html>
