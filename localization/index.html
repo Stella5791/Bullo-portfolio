@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Bilingual content and localisation projects that make digital products feel native across cultures."/>
   <meta name="author" content="Stella Bullo"/>
   <!-- Alternates -->
   <link rel="alternate" hreflang="en" href="/localization/"/>
   <link rel="alternate" hreflang="es" href="/es/localization/"/>
   <title>Localization — Stella Bullo</title>
+  <meta name="description" content="EN/ES localization that reads like it was written there first. Voice & tone, cultural nuance, UX constraints, and pragmatic checklists that make products feel native."/>
   <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 
   <!-- Inter -->
@@ -48,9 +48,10 @@
 <body class="bg-brand-50 text-brand-800 font-sans antialiased">
 <a id="top" class="block"></a>
 
+<!-- NAV -->
 <nav class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-brand-100">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center">
-    <a href="../index.html" class="text-lg font-semibold tracking-tight text-brand-500">Stella Bullo</a>
+    <a href="/" class="text-lg font-semibold tracking-tight text-brand-500">Stella Bullo</a>
 
     <ul class="hidden md:flex items-center gap-5 text-sm ml-auto">
       <li class="relative" id="writing-menu-en">
@@ -63,12 +64,10 @@
           class="invisible opacity-0 pointer-events-none absolute left-0 mt-2 w-56 z-[60]
                  rounded-lg border border-brand-100 bg-white shadow-soft ring-1 ring-black/5
                  transition transform duration-150 ease-out translate-y-1">
-          <a href="/technical-writing/" class="block px-3 py-2 hover:bg-brand-100 rounded-t-lg">Technical Writing</a>
-          <a href="/ux-writing/" class="block px-3 py-2 hover:bg-brand-100">UX Writing</a>
-          <a href="/content/" class="block px-3 py-2 hover:bg-brand-100">Content &amp; Explainers</a>
-          <a href="/localization/" class="block px-3 py-2 bg-brand-100">Localization</a>
-          <a href="/annotation-evaluation/" class="block px-3 py-2 hover:bg-brand-100">Annotation &amp; Evaluation</a>
-          <a href="/essays/" class="block px-3 py-2 hover:bg-brand-100 rounded-b-lg">Essays &amp; Notes</a>
+          <a href="/technical-content-ux/index.html" class="block px-3 py-2 hover:bg-brand-100 rounded-t-lg">Technical, Content &amp; UX Writing</a>
+          <a href="/localization/index.html" class="block px-3 py-2 bg-brand-100">Localization</a>
+          <a href="/annotation-evaluation/index.html" class="block px-3 py-2 hover:bg-brand-100">Annotation &amp; Evaluation</a>
+          <a href="/essays/index.html" class="block px-3 py-2 hover:bg-brand-100 rounded-b-lg">Essays &amp; Notes</a>
         </div>
       </li>
 
@@ -90,7 +89,7 @@
     </ul>
 
     <!-- Mobile toggle -->
-    <button id="nav-toggle" class="md:hidden ml-auto inline-flex items-center justify-center p-2 rounded-md border border-brand-200" aria-expanded="false">
+    <button id="nav-toggle" class="md:hidden ml-auto inline-flex items-center justify-center p-2 rounded-md border border-brand-200" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
       <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
@@ -105,16 +104,14 @@
   <!-- Mobile menu -->
   <div id="mobile-menu" class="md:hidden hidden border-t border-brand-100 bg-white">
     <ul class="px-4 py-3 space-y-2 text-sm">
-      <li><a href="/technical-writing/" class="block py-2">Technical Writing</a></li>
-      <li><a href="/ux-writing/" class="block py-2">UX Writing</a></li>
-      <li><a href="/content/" class="block py-2">Content &amp; Explainers</a></li>
-      <li><a href="/localization/" class="block py-2 font-medium text-brand-500">Localization</a></li>
-      <li><a href="/annotation-evaluation/" class="block py-2">Annotation &amp; Evaluation</a></li>
-      <li><a href="/essays/" class="block py-2">Essays &amp; Notes</a></li>
+      <li><a href="/technical-content-ux/index.html" class="block py-2">Technical, Content &amp; UX Writing</a></li>
+      <li><a href="/localization/index.html" class="block py-2 font-medium text-brand-500">Localization</a></li>
+      <li><a href="/annotation-evaluation/index.html" class="block py-2">Annotation &amp; Evaluation</a></li>
+      <li><a href="/essays/index.html" class="block py-2">Essays &amp; Notes</a></li>
       <li class="flex items-center gap-2 pt-2">
         <span class="text-xs text-brand-800/60">Language:</span>
-        <a href="/localization/" class="px-2 py-1 rounded border border-brand-200 text-xs bg-brand-100">EN</a>
-        <a href="/es/localization/" class="px-2 py-1 rounded border border-brand-200 text-xs">ES</a>
+        <a href="/localization/index.html" class="px-2 py-1 rounded border border-brand-200 text-xs bg-brand-100">EN</a>
+        <a href="/es/localization/index.html" class="px-2 py-1 rounded border border-brand-200 text-xs">ES</a>
       </li>
       <li><a href="mailto:info@stellabullo.com" class="block py-2 font-medium text-brand-500">Hire me</a></li>
     </ul>
@@ -138,19 +135,19 @@
     </h1>
 
     <p class="mt-3 max-w-3xl text-[1.05rem] text-brand-800/90 leading-relaxed">
-      EN/ES localisation that reads like it was written there first. I map linguistic nuance, cultural references
-      and UX constraints so products feel native—not translated.
+      EN/ES localization that reads like it was written there first. I map linguistic nuance, cultural references,
+      and UX constraints so products feel native, not translated.
     </p>
   </div>
 
-  <!-- wavy separator -->
-  <svg aria-hidden="true" class="mt- md:mt-32 -mb-10 md:-mb-14 w-full block" viewBox="0 0 1440 120" preserveAspectRatio="none">
+  <!-- wavy separator (hidden on mobile) -->
+  <svg aria-hidden="true" class="hidden md:block md:mt-32 -mb-10 md:-mb-14 w-full" viewBox="0 0 1440 120" preserveAspectRatio="none">
     <path fill="#EDF3FB" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,58.7C1120,64,1280,96,1360,112L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/>
   </svg>
 </header>
 
 <!-- CONTENT -->
-<main class="px-6 md:px-8 pt-0 pb-14 md:pb-20">
+<main class="px-6 md:px-8 pt-6 md:pt-12 pb-14 md:pb-20">
   <section class="max-w-6xl mx-auto">
     <h2 class="text-2xl font-semibold tracking-tight text-brand-800 mb-8 text-center">Projects &amp; Notes</h2>
 
@@ -194,7 +191,7 @@
           <a href="/articles/localization-edge-cases/" class="hover:underline">EN↔ES Edge Cases I Track</a>
         </h3>
         <p class="mt-1.5 text-sm text-brand-800/80">
-          Placeholders, gendered nouns, verb aspect, and “you” forms—what breaks and how I decide.
+          Placeholders, gendered nouns, verb aspect, and “you” forms: what breaks and how I decide.
         </p>
         <div class="mt-3 text-xs text-brand-800/70">~6 min · Updated Aug 2025</div>
       </article>
@@ -246,6 +243,7 @@
 <!-- JS -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Icons
     if (typeof lucide !== 'undefined' && lucide.createIcons) {
       try { lucide.createIcons(); } catch {}
     }
@@ -270,6 +268,7 @@
         if (closeI) closeI.classList.toggle('hidden', !willOpen);
       };
       btn.addEventListener('click', toggle);
+      // Close after tapping a link
       menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
         if (!menu.classList.contains('hidden')) toggle();
       }));
@@ -282,6 +281,7 @@
       if (!trigger || !panel) return;
 
       let open = false;
+
       const show = () => {
         panel.classList.remove('invisible','opacity-0','pointer-events-none','translate-y-1');
         panel.classList.add('opacity-100','pointer-events-auto','translate-y-0');
@@ -298,11 +298,13 @@
 
       trigger.addEventListener('click', toggle);
 
+      // Close on outside click
       document.addEventListener('click', (e) => {
         if (!open) return;
         if (!panel.contains(e.target) && !trigger.contains(e.target)) hide();
       });
 
+      // Keyboard
       trigger.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') { toggle(e); }
         else if (e.key === 'Escape' && open) { hide(); trigger.focus(); }
@@ -312,6 +314,7 @@
         if (e.key === 'Escape' && open) { hide(); trigger.focus(); }
       });
 
+      // Start hidden
       hide();
     }
     makeDropdown('writing-trigger-en','writing-popover-en');

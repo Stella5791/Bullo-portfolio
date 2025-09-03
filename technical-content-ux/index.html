@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Technical, content & UX writing: documentation, product explainers, and interface copy that make complex systems usable."/>
   <meta name="author" content="Stella Bullo"/>
+
   <!-- Alternates -->
-  <link rel="alternate" hreflang="en" href="/writing/"/>
-  <link rel="alternate" hreflang="es" href="/es/writing/"/>
+  <link rel="alternate" hreflang="en" href="/technical-content-ux/"/>
+  <link rel="alternate" hreflang="es" href="/technical-content-ux/es/"/>
+
   <title>Technical, Content & UX Writing — Stella Bullo</title>
+  <meta name="description" content="Documentation, explainers, and UX microcopy. Articles across Technical Writing, Content, and UX — clear writing for APIs, flows, and product language."/>
+
   <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 
   <!-- Inter -->
@@ -41,22 +44,21 @@
     html{scroll-behavior:smooth}
     .card{transition:transform .2s ease, box-shadow .2s ease}
     .card:hover{transform:translateY(-3px); box-shadow:0 14px 32px rgba(58,65,99,.10)}
-    .tag{display:inline-flex;align-items:center;gap:.35rem;border:1px solid #CBE3EF;border-radius:.5rem;padding:.15rem .5rem;font-size:.7rem}
     .btn{transition:all .2s ease}
     .btn:active{transform:translateY(1px)}
+    .badge{font-size:11px}
   </style>
 </head>
 <body class="bg-brand-50 text-brand-800 font-sans antialiased">
 <a id="top" class="block"></a>
 
+<!-- NAV -->
 <nav class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-brand-100">
   <div class="max-w-7xl mx-auto px-4 py-3 flex items-center">
-    <!-- LEFT: brand/name -->
     <a href="../index.html" class="text-lg font-semibold tracking-tight text-brand-500">Stella Bullo</a>
 
-    <!-- RIGHT: desktop items -->
     <ul class="hidden md:flex items-center gap-5 text-sm ml-auto">
-      <!-- Writing dropdown (EN) -->
+      <!-- Writing dropdown -->
       <li class="relative" id="writing-menu-en">
         <button id="writing-trigger-en" type="button"
           class="inline-flex items-center gap-1 px-2 py-1 rounded-md hover:text-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
@@ -67,23 +69,22 @@
           class="invisible opacity-0 pointer-events-none absolute left-0 mt-2 w-64 z-[60]
                  rounded-lg border border-brand-100 bg-white shadow-soft ring-1 ring-black/5
                  transition transform duration-150 ease-out translate-y-1">
-          <a href="/writing/" class="block px-3 py-2 bg-brand-100 rounded-t-lg">Technical, Content &amp; UX Writing</a>
-          <a href="/localization/" class="block px-3 py-2 hover:bg-brand-100">Localization</a>
-          <a href="/annotation-evaluation/" class="block px-3 py-2 hover:bg-brand-100">Annotation &amp; Evaluation</a>
-          <a href="/essays/" class="block px-3 py-2 hover:bg-brand-100 rounded-b-lg">Essays &amp; Notes</a>
+          <a href="/technical-content-ux/index.html" class="block px-3 py-2 bg-brand-100 rounded-t-lg">Technical, Content &amp; UX Writing</a>
+          <a href="/localization/index.html" class="block px-3 py-2 hover:bg-brand-100">Localization</a>
+          <a href="/annotation-evaluation/index.html" class="block px-3 py-2 hover:bg-brand-100">Annotation &amp; Evaluation</a>
+          <a href="/essays/index.html" class="block px-3 py-2 hover:bg-brand-100 rounded-b-lg">Essays &amp; Notes</a>
         </div>
       </li>
 
       <!-- Language switch -->
       <li class="flex items-center gap-1 pl-1">
-        <a href="/writing/index.html" aria-current="page"
+        <a href="/technical-content-ux/index.html" aria-current="page"
            class="px-2 py-1 rounded-md bg-brand-500 text-white text-xs">EN</a>
         <span class="text-brand-800/50 text-xs">/</span>
-        <a href="/es/writing/index.html"
+        <a href="/technical-content-ux/es/index.html"
            class="px-2 py-1 rounded-md border border-brand-200 text-xs hover:bg-brand-100">ES</a>
       </li>
 
-      <!-- Hire me -->
       <li>
         <a href="mailto:info@stellabullo.com"
            class="btn inline-flex items-center gap-2 bg-brand-500 text-white px-3.5 py-1.5 rounded-md hover:brightness-95 shadow-soft">
@@ -93,7 +94,8 @@
     </ul>
 
     <!-- Mobile toggle -->
-    <button id="nav-toggle" class="md:hidden ml-auto inline-flex items-center justify-center p-2 rounded-md border border-brand-200" aria-expanded="false">
+    <button id="nav-toggle" class="md:hidden ml-auto inline-flex items-center justify-center p-2 rounded-md border border-brand-200"
+            aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
       <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
@@ -108,14 +110,14 @@
   <!-- Mobile menu -->
   <div id="mobile-menu" class="md:hidden hidden border-t border-brand-100 bg-white">
     <ul class="px-4 py-3 space-y-2 text-sm">
-      <li><a href="/writing/" class="block py-2 font-medium text-brand-500">Technical, Content &amp; UX Writing</a></li>
-      <li><a href="/localization/" class="block py-2">Localization</a></li>
-      <li><a href="/annotation-evaluation/" class="block py-2">Annotation &amp; Evaluation</a></li>
-      <li><a href="/essays/" class="block py-2">Essays &amp; Notes</a></li>
+      <li><a href="/technical-content-ux/index.html" class="block py-2 font-medium text-brand-500">Technical, Content &amp; UX Writing</a></li>
+      <li><a href="/localization/index.html" class="block py-2">Localization</a></li>
+      <li><a href="/annotation-evaluation/index.html" class="block py-2">Annotation &amp; Evaluation</a></li>
+      <li><a href="/essays/index.html" class="block py-2">Essays &amp; Notes</a></li>
       <li class="flex items-center gap-2 pt-2">
         <span class="text-xs text-brand-800/60">Language:</span>
-        <a href="/writing/" class="px-2 py-1 rounded border border-brand-200 text-xs bg-brand-100">EN</a>
-        <a href="/es/writing/" class="px-2 py-1 rounded border border-brand-200 text-xs">ES</a>
+        <a href="/technical-content-ux/index.html" class="px-2 py-1 rounded border border-brand-200 text-xs bg-brand-100">EN</a>
+        <a href="/technical-content-ux/es/index.html" class="px-2 py-1 rounded border border-brand-200 text-xs">ES</a>
       </li>
       <li><a href="mailto:info@stellabullo.com" class="block py-2 font-medium text-brand-500">Hire me</a></li>
     </ul>
@@ -139,81 +141,110 @@
     </h1>
 
     <p class="mt-3 max-w-3xl text-[1.05rem] text-brand-800/90 leading-relaxed">
-      Documentation, product explainers and interface copy that help people succeed with complex systems.
-      I write for clarity, correctness and flow—across docs, content and UX microcopy.
+      Documentation, product explainers, and UX microcopy. Clear writing across APIs, flows, and content — readable,
+      accurate, and practical.
     </p>
   </div>
 
-  <!-- wavy separator -->
-  <svg aria-hidden="true" class="mt- md:mt-32 -mb-10 md:-mb-14 w-full block" viewBox="0 0 1440 120" preserveAspectRatio="none">
-    <path fill="#EDF3FB" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,58.7C1120,64,1280,96,1360,112L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/>
+  <!-- wavy separator (hidden on mobile) -->
+  <svg aria-hidden="true"
+       class="hidden md:block md:mt-32 -mb-10 md:-mb-14 w-full"
+       viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path fill="#EDF3FB"
+          d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,58.7C1120,64,1280,96,1360,112L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/>
   </svg>
 </header>
 
+<!-- OPTIONAL FILTERS -->
+<section class="px-6 md:px-8 -mt-6 md:-mt-8">
+  <div class="max-w-7xl mx-auto flex flex-wrap gap-2 text-xs">
+    <button data-filter="all" class="px-2.5 py-1 rounded-full border border-brand-200 bg-white" aria-pressed="true">All</button>
+    <button data-filter="technical" class="px-2.5 py-1 rounded-full border border-brand-200 bg-white">Technical</button>
+    <button data-filter="content" class="px-2.5 py-1 rounded-full border border-brand-200 bg-white">Content</button>
+    <button data-filter="ux" class="px-2.5 py-1 rounded-full border border-brand-200 bg-white">UX</button>
+  </div>
+</section>
+
 <!-- CONTENT -->
-<main class="px-6 md:px-8 pt-0 pb-14 md:pb-20">
-  <section class="max-w-6xl mx-auto">
-    <h2 class="text-2xl font-semibold tracking-tight text-brand-800 mb-8 text-center">Work &amp; Samples</h2>
+<main class="px-6 md:px-8 pt-6 md:pt-12 pb-14 md:pb-20">
+  <section class="max-w-7xl mx-auto">
+    <h2 class="text-2xl font-semibold tracking-tight text-brand-800 mb-6 text-center">Articles</h2>
 
-    <!-- 4-card grid: Docs / Technical / Content / UX -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-
-      <!-- DOCS -->
-      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="flex items-center gap-2 mb-1">
-          <span class="tag"><i data-lucide="book-open" class="w-3.5 h-3.5"></i> Documentation</span>
-        </header>
-        <h3 class="text-base font-semibold leading-snug">
-          <a href="/articles/api-auth-quickstart/" class="hover:underline">API Auth Quickstart</a>
-        </h3>
-        <p class="mt-1.5 text-sm text-brand-800/80">
-          A minimal path to first success: keys, flows, common errors and copy-paste snippets.
-        </p>
-        <div class="mt-3 text-xs text-brand-800/70">~6 min · Updated Aug 2025</div>
-      </article>
-
+    <div id="cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
       <!-- TECHNICAL -->
-      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="flex items-center gap-2 mb-1">
-          <span class="tag"><i data-lucide="server" class="w-3.5 h-3.5"></i> Technical</span>
-        </header>
+      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md" data-cat="technical">
+        <header class="badge font-medium text-brand-500 mb-1">Technical</header>
         <h3 class="text-base font-semibold leading-snug">
-          <a href="/articles/data-pipelines-overview/" class="hover:underline">Data Pipelines Overview</a>
+          <a href="/technical-content-ux/practical-nlp-primer.html" class="hover:underline">A Practical NLP Primer</a>
         </h3>
-        <p class="mt-1.5 text-sm text-brand-800/80">
-          How the pieces fit: ingestion, validation, storage and evaluation—clear mental models.
-        </p>
+        <p class="mt-1.5 text-sm text-brand-800/80">Core ideas, tasks, and pitfalls — a compact guide for non-specialists shipping language features.</p>
         <div class="mt-3 text-xs text-brand-800/70">~7 min · Updated Aug 2025</div>
       </article>
 
-      <!-- CONTENT -->
-      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="flex items-center gap-2 mb-1">
-          <span class="tag"><i data-lucide="file-text" class="w-3.5 h-3.5"></i> Content</span>
-        </header>
+      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md" data-cat="technical">
+        <header class="badge font-medium text-brand-500 mb-1">Technical</header>
         <h3 class="text-base font-semibold leading-snug">
-          <a href="/articles/plain-language-explainer-llms/" class="hover:underline">Plain-Language Explainer: LLMs</a>
+          <a href="/technical-content-ux/where-linguistics-meets-nlp.html" class="hover:underline">Where Linguistics Meets NLP</a>
         </h3>
-        <p class="mt-1.5 text-sm text-brand-800/80">
-          Translating research into everyday terms—use cases, limits, and responsible usage.
-        </p>
+        <p class="mt-1.5 text-sm text-brand-800/80">Bridging theory and implementation: why linguistic structure still matters for products.</p>
+        <div class="mt-3 text-xs text-brand-800/70">~6 min · Updated Aug 2025</div>
+      </article>
+
+      <!-- CONTENT -->
+      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md" data-cat="content">
+        <header class="badge font-medium text-brand-500 mb-1">Content</header>
+        <h3 class="text-base font-semibold leading-snug">
+          <a href="/technical-content-ux/ai-annotation-vs-linguistics.html" class="hover:underline">AI Annotation vs. Linguistics</a>
+        </h3>
+        <p class="mt-1.5 text-sm text-brand-800/80">Two mindsets that often talk past each other and how I reconcile them in practice.</p>
+        <div class="mt-3 text-xs text-brand-800/70">~6 min · Updated Aug 2025</div>
+      </article>
+
+      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md" data-cat="content">
+        <header class="badge font-medium text-brand-500 mb-1">Content</header>
+        <h3 class="text-base font-semibold leading-snug">
+          <a href="/technical-content-ux/metaphor-health-communication.html" class="hover:underline">Metaphor in Health Communication</a>
+        </h3>
+        <p class="mt-1.5 text-sm text-brand-800/80">When figurative language clarifies and obscures for patients and clinicians.</p>
         <div class="mt-3 text-xs text-brand-800/70">~5 min · Updated Aug 2025</div>
       </article>
 
-      <!-- UX -->
-      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="flex items-center gap-2 mb-1">
-          <span class="tag"><i data-lucide="cursor-click" class="w-3.5 h-3.5"></i> UX Writing</span>
-        </header>
+      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md" data-cat="content">
+        <header class="badge font-medium text-brand-500 mb-1">Content</header>
         <h3 class="text-base font-semibold leading-snug">
-          <a href="/articles/microcopy-signup-errors/" class="hover:underline">Signup Microcopy &amp; Errors</a>
+          <a href="/technical-content-ux/why-metaphors-matter-in-NLP.html" class="hover:underline">Why Metaphors Matter in NLP</a>
         </h3>
-        <p class="mt-1.5 text-sm text-brand-800/80">
-          Clarity under pressure: empty states, validation, error hierarchies and recovery actions.
-        </p>
-        <div class="mt-3 text-xs text-brand-800/70">~4 min · Updated Aug 2025</div>
+        <p class="mt-1.5 text-sm text-brand-800/80">A quick tour of metaphor, ambiguity, and meaning and implications for modeling.</p>
+        <div class="mt-3 text-xs text-brand-800/70">~5 min · Updated Aug 2025</div>
       </article>
 
+      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md" data-cat="content">
+        <header class="badge font-medium text-brand-500 mb-1">Content</header>
+        <h3 class="text-base font-semibold leading-snug">
+          <a href="/technical-content-ux/between-linguistics-and-the-scar.html" class="hover:underline">Between Linguistics and the Scar</a>
+        </h3>
+        <p class="mt-1.5 text-sm text-brand-800/80">Research, language, and care notes from working where data meets lived experience.</p>
+        <div class="mt-3 text-xs text-brand-800/70">~9 min · Updated Aug 2025</div>
+      </article>
+
+      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md" data-cat="content">
+        <header class="badge font-medium text-brand-500 mb-1">Content</header>
+        <h3 class="text-base font-semibold leading-snug">
+          <a href="/technical-content-ux/like-fire-in-my-womb.html" class="hover:underline">Like Fire in My Womb</a>
+        </h3>
+        <p class="mt-1.5 text-sm text-brand-800/80">On language for pain and why words shape what we measure, treat, and believe.</p>
+        <div class="mt-3 text-xs text-brand-800/70">~7 min · Updated Aug 2025</div>
+      </article>
+
+      <!-- UX (project folder) -->
+      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md" data-cat="ux">
+        <header class="badge font-medium text-brand-500 mb-1">UX</header>
+        <h3 class="text-base font-semibold leading-snug">
+          <a href="/technical-content-ux/language-of-endo/" class="hover:underline">Language of Endo — Microcopy & Flows</a>
+        </h3>
+        <p class="mt-1.5 text-sm text-brand-800/80">UX patterns and wording choices for sensitive health contexts; clarity without euphemism.</p>
+        <div class="mt-3 text-xs text-brand-800/70">Case notes · Updated Aug 2025</div>
+      </article>
     </div>
   </section>
 </main>
@@ -231,8 +262,10 @@
       <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">
         <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
       </a>
-      <a href="https://medium.com/@stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20" aria-label="Medium">
-        <svg class="w-5 h-5" viewBox="0 0 1043.63 592.71" fill="currentColor"><path d="M588.67 296.35c0 163.67-131.6 296.36-293.83 296.36S1 460 1 296.35C1 132.7 132.6 0 294.84 0s293.83 132.7 293.83 296.35Zm453.96 0c0 153.7-65.8 278.2-147 278.2s-147-124.5-147-278.2S814.45 18.13 895.63 18.13s147 124.5 147 278.22ZM684.8 296.35c0 146.56-36.3 265.47-81.1 265.47-44.8 0-81.1-118.9-81.1-265.47S558.9 30.88 603.7 30.88c44.8 0 81.1 118.91 81.1 265.47Z"/></svg>
+      <a href="https://medium.com/@stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">
+        <svg class="w-5 h-5" viewBox="0 0 1043.63 592.71" fill="currentColor" aria-hidden="true">
+          <path d="M588.67 296.35c0 163.67-131.6 296.36-293.83 296.36S1 460 1 296.35C1 132.7 132.6 0 294.84 0s293.83 132.7 293.83 296.35Zm453.96 0c0 153.7-65.8 278.2-147 278.2s-147-124.5-147-278.2S814.45 18.13 895.63 18.13s147 124.5 147 278.22ZM684.8 296.35c0 146.56-36.3 265.47-81.1 265.47-44.8 0-81.1-118.9-81.1-265.47S558.9 30.88 603.7 30.88c44.8 0 81.1 118.91 81.1 265.47Z"/>
+        </svg>
         Medium
       </a>
       <a href="https://ko-fi.com/stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">
@@ -260,15 +293,13 @@
 <!-- JS -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    if (typeof lucide !== 'undefined' && lucide.createIcons) {
-      try { lucide.createIcons(); } catch {}
-    }
+    // Icons
+    if (typeof lucide !== 'undefined' && lucide.createIcons) { try { lucide.createIcons(); } catch {} }
 
-    // Nav shadow on scroll
+    // Nav shadow
     const nav = document.querySelector('nav');
     const onScroll = () => { if (nav) nav.classList.toggle('shadow', window.scrollY > 10); };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
 
     // Mobile menu
     const btn = document.getElementById('nav-toggle');
@@ -289,45 +320,31 @@
       }));
     }
 
-    // Desktop dropdowns
+    // Dropdown
     function makeDropdown(triggerId, panelId) {
       const trigger = document.getElementById(triggerId);
-      const panel   = document.getElementById(panelId);
+      const panel = document.getElementById(panelId);
       if (!trigger || !panel) return;
-
       let open = false;
       const show = () => {
         panel.classList.remove('invisible','opacity-0','pointer-events-none','translate-y-1');
         panel.classList.add('opacity-100','pointer-events-auto','translate-y-0');
-        trigger.setAttribute('aria-expanded', 'true');
-        open = true;
+        trigger.setAttribute('aria-expanded','true'); open = true;
       };
       const hide = () => {
         panel.classList.add('invisible','opacity-0','pointer-events-none','translate-y-1');
         panel.classList.remove('opacity-100','pointer-events-auto','translate-y-0');
-        trigger.setAttribute('aria-expanded', 'false');
-        open = false;
+        trigger.setAttribute('aria-expanded','false'); open = false;
       };
       const toggle = (e) => { e.preventDefault(); e.stopPropagation(); open ? hide() : show(); };
-
       trigger.addEventListener('click', toggle);
-
-      // Close on outside click
-      document.addEventListener('click', (e) => {
-        if (!open) return;
-        if (!panel.contains(e.target) && !trigger.contains(e.target)) hide();
-      });
-
-      // Keyboard controls
+      document.addEventListener('click', (e) => { if (open && !panel.contains(e.target) && !trigger.contains(e.target)) hide(); });
       trigger.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') { toggle(e); }
         else if (e.key === 'Escape' && open) { hide(); trigger.focus(); }
         else if (e.key === 'ArrowDown' && !open) { show(); }
       });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && open) { hide(); trigger.focus(); }
-      });
-
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && open) { hide(); trigger.focus(); }});
       hide();
     }
     makeDropdown('writing-trigger-en','writing-popover-en');
@@ -342,7 +359,22 @@
       toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
 
-    // Footer year
+    // Simple client-side filter
+    const buttons = document.querySelectorAll('[data-filter]');
+    const cards = document.querySelectorAll('#cards [data-cat]');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.setAttribute('aria-pressed','false'));
+        btn.setAttribute('aria-pressed','true');
+        const f = btn.getAttribute('data-filter');
+        cards.forEach(c => {
+          const show = (f === 'all') || c.getAttribute('data-cat') === f;
+          c.classList.toggle('hidden', !show);
+        });
+      });
+    });
+
+    // Year
     const yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
   });
