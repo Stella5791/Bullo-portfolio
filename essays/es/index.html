@@ -1,24 +1,23 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Reflexiones personales, comentarios culturales y escritura exploratoria sobre lenguaje, identidad y sociedad."/>
-  <meta name="author" content="Stella Bullo"/>
-  <!-- Page-specific alternates -->
-  <link rel="alternate" hreflang="en" href="/essays/"/>
-  <link rel="alternate" hreflang="es" href="/es/essays/"/>
-  <title>Ensayos — Stella Bullo</title>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
-
-  <!-- Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Personal reflections, cultural commentary, and exploratory writing on language, identity, and society." name="description"/>
+<meta content="Stella Bullo" name="author"/>
+<!-- Page-specific alternates -->
+<link href="/essays/" hreflang="en" rel="alternate"/>
+<link href="/essays/es/" hreflang="es" rel="alternate"/>
+<title>Ensayos — Stella Bullo</title>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<!-- Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
     tailwind.config = {
       theme: {
         extend: {
@@ -33,11 +32,9 @@
       }
     }
   </script>
-
-  <!-- Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-
-  <style>
+<!-- Icons -->
+<script defer="" src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
     html{scroll-behavior:smooth}
     .card{transition:transform .2s ease, box-shadow .2s ease}
     .card:hover{transform:translateY(-3px); box-shadow:0 14px 32px rgba(58,65,99,.10)}
@@ -46,201 +43,258 @@
   </style>
 </head>
 <body class="bg-brand-50 text-brand-800 font-sans antialiased">
-<a id="top" class="block"></a>
-
-<!-- NAV -->
+<a class="block" id="top"></a>
 <nav class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-brand-100">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center">
-    <!-- LEFT: marca -->
-    <a href="/es/" class="text-lg font-semibold tracking-tight text-brand-500">Stella Bullo</a>
-
-    <!-- RIGHT: escritorio -->
-    <ul class="hidden md:flex items-center gap-5 text-sm ml-auto">
-      <!-- Dropdown Escritura -->
-      <li class="relative" id="writing-menu-es">
-        <button id="writing-trigger-es" type="button"
-          class="inline-flex items-center gap-1 px-2 py-1 rounded-md hover:text-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
-          aria-haspopup="true" aria-expanded="false" aria-controls="writing-popover-es">
-          Escritura <i data-lucide="chevron-down" class="w-4 h-4"></i>
-        </button>
-        <div id="writing-popover-es"
-          class="invisible opacity-0 pointer-events-none absolute left-0 mt-2 w-56 z-[60]
-                 rounded-lg border border-brand-100 bg-white shadow-soft ring-1 ring-black/5
-                 transition transform duration-150 ease-out translate-y-1">
-          <a href="/technical-content-ux/es/index.html" class="block px-3 py-2 hover:bg-brand-100 rounded-t-lg">Redacción Técnica, de Contenidos y UX</a>
-          <a href="/localization/es/index.html" class="block px-3 py-2 hover:bg-brand-100">Localización</a>
-          <a href="/annotation-evaluation/es/index.html" class="block px-3 py-2 hover:bg-brand-100">Anotación &amp; Evaluación</a>
-          <a href="/essays/es/index.html" class="block px-3 py-2 bg-brand-100 rounded-b-lg">Ensayos &amp; Notas</a>
-        </div>
-      </li>
-
-      <!-- Idioma -->
-      <li class="flex items-center gap-1 pl-1">
-        <a href="/essays/index.html" class="px-2 py-1 rounded-md border border-brand-200 text-xs hover:bg-brand-100">EN</a>
-        <span class="text-brand-800/50 text-xs">/</span>
-        <a href="/es/essays/index.html" aria-current="page"
-           class="px-2 py-1 rounded-md bg-brand-500 text-white text-xs">ES</a>
-      </li>
-
-      <!-- Contrátame -->
-      <li>
-        <a href="mailto:info@stellabullo.com"
-           class="btn inline-flex items-center gap-2 bg-brand-500 text-white px-3.5 py-1.5 rounded-md hover:brightness-95 shadow-soft">
-          <i data-lucide="mail" class="w-4 h-4"></i> Contrátame
+<div class="max-w-7xl mx-auto px-4 py-3 flex items-center">
+<!-- LEFT: brand/name -->
+<a class="text-lg font-semibold tracking-tight text-brand-500" href="/">Stella Bullo</a>
+<!-- RIGHT: desktop items -->
+<ul class="hidden md:flex items-center gap-5 text-sm ml-auto">
+<!-- Writing dropdown (EN) -->
+<li class="relative" id="writing-menu-en">
+<button aria-controls="writing-popover-en" aria-expanded="false" aria-haspopup="true" class="inline-flex items-center gap-1 px-2 py-1 rounded-md hover:text-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200" id="writing-trigger-en" type="button">Escritura</button>
+<div class="invisible opacity-0 pointer-events-none absolute left-0 mt-2 w-56 z-[60] rounded-lg border border-brand-100 bg-white shadow-soft ring-1 ring-black/5 transition transform duration-150 ease-out translate-y-1" id="writing-popover-en">
+<a class="block px-3 py-2 hover:bg-brand-100 rounded-t-lg" href="/technical-content-ux/index.html">Redacción técnica, contenido y UX</a>
+<a class="block px-3 py-2 hover:bg-brand-100" href="/localization/index.html">Localización</a>
+<a class="block px-3 py-2 hover:bg-brand-100" href="/annotation-evaluation/index.html">Anotación y Evaluación</a>
+<a class="block px-3 py-2 bg-brand-100 rounded-b-lg" href="/essays/index.html">Ensayos y notas</a>
+</div>
+</li>
+<!-- Language switch (page-specific) -->
+<li class="flex items-center gap-1 pl-1">
+<a aria-current="page" class="px-2 py-1 rounded-md border border-brand-200 text-xs hover:bg-brand-100" href="/essays/index.html">EN</a>
+<span class="text-brand-800/50 text-xs">/</span>
+<a class="px-2 py-1 rounded-md bg-brand-500 text-white text-xs" href="/essays/es/index.html">ES</a>
+</li>
+<!-- Hire me -->
+<li>
+<a class="btn inline-flex items-center gap-2 bg-brand-500 text-white px-3.5 py-1.5 rounded-md hover:brightness-95 shadow-soft" href="mailto:info@stellabullo.com">
+<i class="w-4 h-4" data-lucide="mail"></i> Hire me
         </a>
-      </li>
-    </ul>
-
-    <!-- Botón hamburguesa móvil -->
-    <button id="nav-toggle" class="md:hidden ml-auto inline-flex items-center justify-center p-2 rounded-md border border-brand-200" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
-      <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Menú móvil -->
-  <div id="mobile-menu" class="md:hidden hidden border-t border-brand-100 bg-white">
-    <ul class="px-4 py-3 space-y-2 text-sm">
-      <li><a href="/technical-content-ux/es/index.html" class="block py-2">Redacción Técnica, de Contenidos y UX</a></li>
-      <li><a href="/localization/es/index.html" class="block py-2">Localización</a></li>
-      <li><a href="/annotation-evaluation/es/index.html" class="block py-2">Anotación &amp; Evaluación</a></li>
-      <li><a href="/essays/es/index.html" class="block py-2 font-medium text-brand-500">Ensayos &amp; Notas</a></li>
-      <li class="flex items-center gap-2 pt-2">
-        <span class="text-xs text-brand-800/60">Idioma:</span>
-        <a href="/essays/index.html" class="px-2 py-1 rounded border border-brand-200 text-xs">EN</a>
-        <a href="/es/essays/index.html" class="px-2 py-1 rounded border border-brand-200 text-xs bg-brand-100">ES</a>
-      </li>
-      <li><a href="mailto:info@stellabullo.com" class="block py-2 font-medium text-brand-500">Contacto</a></li>
-    </ul>
-  </div>
+</li>
+</ul>
+<!-- Mobile toggle (stays on right) -->
+<button aria-expanded="false" class="md:hidden ml-auto inline-flex items-center justify-center p-2 rounded-md border border-brand-200" id="nav-toggle">
+<svg class="h-6 w-6" fill="none" id="icon-open" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<svg class="h-6 w-6 hidden" fill="none" id="icon-close" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</button>
+</div>
+<!-- Mobile menu -->
+<div class="md:hidden hidden border-t border-brand-100 bg-white" id="mobile-menu">
+<ul class="px-4 py-3 space-y-2 text-sm">
+<li><a class="block py-2" href="/technical-content-ux/index.html">Technical, Content &amp; UX Writing</a></li>
+<li><a class="block py-2" href="/localization/index.html">Localization</a></li>
+<li><a class="block py-2" href="/annotation-evaluation/index.html">Annotation &amp; Evaluation</a></li>
+<li><a class="block py-2 font-medium text-brand-500" href="/essays/index.html">Essays &amp; Notes</a></li>
+<li class="flex items-center gap-2 pt-2">
+<span class="text-xs text-brand-800/60">Idioma:</span>
+<a class="px-2 py-1 rounded-md border border-brand-200 text-xs hover:bg-brand-100" href="/essays/index.html">EN</a>
+<a class="px-2 py-1 rounded-md bg-brand-500 text-white text-xs" href="/essays/es/index.html">ES</a>
+</li>
+<li><a class="block py-2 font-medium text-brand-500" href="mailto:info@stellabullo.com">Hire me</a></li>
+</ul>
+</div>
 </nav>
-
 <!-- HERO -->
 <header class="pt-32 md:pt-44 pb-14 md:pb-20 px-6 md:px-8 relative overflow-hidden">
-  <div aria-hidden="true" class="absolute inset-0 -z-10 bg-gradient-to-b from-brand-100 to-brand-50"></div>
-  <div aria-hidden="true" class="pointer-events-none absolute -right-24 -top-24 w-[34rem] h-[34rem] rounded-full bg-brand-200/50 blur-3xl"></div>
-
-  <div class="mx-auto max-w-7xl">
-    <nav class="text-sm text-brand-500">
-      <a href="/es/" class="hover:underline">Inicio</a>
-      <span class="mx-2">/</span>
-      <span class="font-medium">Ensayos</span>
-    </nav>
-
-    <h1 class="mt-2 text-3xl md:text-3xl font-semibold tracking-tight text-brand-800 leading-tight">
-      Ensayos &amp; Reflexiones
-    </h1>
-
-    <p class="mt-3 max-w-3xl text-[1.05rem] text-brand-800/90 leading-relaxed">
-      Escritura personal sobre lenguaje, identidad, cultura y las pequeñas fricciones de moverse entre lugares y roles.
-      Estos textos combinan experiencia vivida y lentes lingüísticos, con una voz clara, cercana y humana.
-    </p>
-  </div>
-
-  <!-- Separador ondulado solo en desktop -->
-  <svg aria-hidden="true"
-       class="hidden md:block md:mt-32 -mb-10 md:-mb-14 w-full"
-       viewBox="0 0 1440 120" preserveAspectRatio="none">
-    <path fill="#EDF3FB"
-          d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,58.7C1120,64,1280,96,1360,112L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/>
-  </svg>
+<div aria-hidden="true" class="absolute inset-0 -z-10 bg-gradient-to-b from-brand-100 to-brand-50"></div>
+<div aria-hidden="true" class="pointer-events-none absolute -right-24 -top-24 w-[34rem] h-[34rem] rounded-full bg-brand-200/50 blur-3xl"></div>
+<div class="mx-auto max-w-7xl">
+<nav class="text-sm text-brand-500">
+<a class="hover:underline" href="/">Inicio</a>
+<span class="mx-2">/</span>
+<span class="font-medium">Ensayos</span>
+</nav>
+<h1 class="mt-2 text-3xl md:text-3xl font-semibold tracking-tight text-brand-800 leading-tight">Ensayos y Reflexiones</h1>
+<p class="mt-3 max-w-3xl text-[1.05rem] text-brand-800/90 leading-relaxed">Escritura personal sobre lenguaje, identidad, cultura y las pequeñas fricciones de movernos entre lugares y roles. Piezas que entrelazan experiencia vivida y miradas lingüísticas: claras, con fundamento y humanas.</p>
+</div>
+<!-- wavy separator (hidden on mobile) -->
+<svg aria-hidden="true" class="hidden md:block md:mt-32 -mb-10 md:-mb-14 w-full" preserveaspectratio="none" viewbox="0 0 1440 120">
+<path d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,58.7C1120,64,1280,96,1360,112L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z" fill="#EDF3FB"></path>
+</svg>
 </header>
-
 <!-- CONTENT -->
 <main class="px-6 md:px-8 pt-6 md:pt-12 pb-14 md:pb-20">
-  <section class="max-w-6xl mx-auto">
-    <h2 class="text-2xl font-semibold tracking-tight text-brand-800 mb-8 text-center">Artículos</h2>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="text-[11px] font-medium text-brand-500 mb-1">Ensayo</header>
-        <h3 class="text-base font-semibold leading-snug">
-          <a href="/es/articles/between-linguistics-and-the-scar/" class="hover:underline">Entre la Lingüística y la Cicatriz</a>
-        </h3>
-        <p class="mt-1.5 text-sm text-brand-800/80">Investigar el dolor vivido y crear pequeñas herramientas que escuchan antes de etiquetar.</p>
-        <div class="mt-3 text-xs text-brand-800/70">~9 min · Actualizado Ago 2025</div>
-      </article>
-
-      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="text-[11px] font-medium text-brand-500 mb-1">Ensayo</header>
-        <h3 class="text-base font-semibold leading-snug">
-          <a href="/es/articles/who-are-you-when-you-speak/" class="hover:underline">¿Quién Eres Cuando Hablas?</a>
-        </h3>
-        <p class="mt-1.5 text-sm text-brand-800/80">Lenguaje, identidad y los “yo” que interpretamos a través de acentos, audiencias y espacios.</p>
-        <div class="mt-3 text-xs text-brand-800/70">~7 min · Actualizado Ago 2025</div>
-      </article>
-
-      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="text-[11px] font-medium text-brand-500 mb-1">Notas</header>
-        <h3 class="text-base font-semibold leading-snug">
-          <a href="/es/articles/notes-on-belonging-and-movement/" class="hover:underline">Notas sobre Pertenencia &amp; Movimiento</a>
-        </h3>
-        <p class="mt-1.5 text-sm text-brand-800/80">Sobre vivir entre Argentina y el Reino Unido, y el trabajo silencioso de construir hogar.</p>
-        <div class="mt-3 text-xs text-brand-800/70">~6 min · Actualizado Ago 2025</div>
-      </article>
-
-      <article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <header class="text-[11px] font-medium text-brand-500 mb-1">Ensayo</header>
-        <h3 class="text-base font-semibold leading-snug">
-          <a href="/es/articles/on-bilingual-thinking/" class="hover:underline">Sobre el Pensamiento Bilingüe</a>
-        </h3>
-        <p class="mt-1.5 text-sm text-brand-800/80">Cómo el español y el inglés tironean entre sí—y qué significa la claridad en medio de ambos.</p>
-        <div class="mt-3 text-xs text-brand-800/70">~5 min · Actualizado Ago 2025</div>
-      </article>
-    </div>
-  </section>
-</main>
-
-<!-- FOOTER -->
-<section id="contact" class="bg-gradient-to-br from-brand-500 to-brand-800 text-white">
-  <div class="max-w-6xl mx-auto px-6 md:px-8 py-12">
-    <h2 class="text-2xl md:text-3xl font-semibold leading-tight">Trabajemos juntas/os</h2>
-    <p class="mt-3 text-white/90 max-w-[60ch]">Colaboraciones, encargos o una consulta rápida. Respondo en español o inglés.</p>
-
-    <div class="mt-6 flex flex-wrap items-center gap-2">
-      <a href="mailto:info@stellabullo.com" class="btn inline-flex items-center gap-2 bg-white text-brand-800 px-4 py-3 rounded-md hover:bg-brand-100">
-        <i data-lucide="mail" class="w-5 h-5"></i> info@stellabullo.com
-      </a>
-      <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">
-        <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
-      </a>
-      <a href="https://medium.com/@stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">Medium</a>
-      <a href="https://ko-fi.com/stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">Ko-fi</a>
-      <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">ORCID</a>
-      <a href="https://sierracodes.netlify.app/" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">Sierra Codes</a>
-    </div>
-
-    <div class="text-center text-sm text-white/70 mt-8">
-      © <span id="year"></span> Stella Bullo. Todos los derechos reservados.
-    </div>
-  </div>
+<section class="max-w-6xl mx-auto">
+<h2 class="text-2xl font-semibold tracking-tight text-brand-800 mb-8 text-center">Artículos</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+<article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
+<header class="text-[11px] font-medium text-brand-500 mb-1">Ensayo</header>
+<h3 class="text-base font-semibold leading-snug">
+<a class="hover:underline" href="/like-fire-in-my-womb/index.html">Como Fuego en el Vientre</a>
+</h3>
+<p class="mt-1.5 text-sm text-brand-800/80">Lo que las metáforas del dolor pueden revelar sobre enfermedades invisibles como la endometriosis.</p>
+<div class="mt-3 text-xs text-brand-800/70">~9 min · Ago 2025</div>
+</article>
+<article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
+<header class="text-[11px] font-medium text-brand-500 mb-1">Ensayo</header>
+<h3 class="text-base font-semibold leading-snug">
+<a class="hover:underline" href="/who-are-you-when-you-speak/index.html">¿Quién Eres Cuando Hablas?</a>
+</h3>
+<p class="mt-1.5 text-sm text-brand-800/80">Lenguaje, identidad y los yoes que representamos a través de acentos, audiencias y espacios.</p>
+<div class="mt-3 text-xs text-brand-800/70">~7 min · Actualizado Ago 2025</div>
+</article>
+<article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
+<header class="text-[11px] font-medium text-brand-500 mb-1">Ensayo</header>
+<h3 class="text-base font-semibold leading-snug">
+<a class="hover:underline" href="/arremangate/index.html">Arremangate</a>
+</h3>
+<p class="mt-1.5 text-sm text-brand-800/80">Reflexiones sobre cómo el lenguaje lleva cuidado, memoria y lazos no hablados.</p>
+<div class="mt-3 text-xs text-brand-800/70">~6 min · Actualizado Ago 2025</div>
+</article>
+<article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
+<header class="text-[11px] font-medium text-brand-500 mb-1">Ensayo</header>
+<h3 class="text-base font-semibold leading-snug">
+<a class="hover:underline" href="/toc-toc/index.html">Toc Toc</a>
+</h3>
+<p class="mt-1.5 text-sm text-brand-800/80">Gramáticas Privadas: Lo que Toc Toc me enseñó sobre el lenguaje y las obsesiones.</p>
+<div class="mt-3 text-xs text-brand-800/70">~5 min · Actualizado Sep 2025</div>
+</article>
+<article class="card rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
+<header class="text-[11px] font-medium text-brand-500 mb-1">Ensayo</header>
+<h3 class="text-base font-semibold leading-snug">
+<a class="hover:underline" href="/emotional-geometry/index.html">Geometría Emocional</a>
+</h3>
+<p class="mt-1.5 text-sm text-brand-800/80">Las Formas en las que Vivimos.</p>
+<div class="mt-3 text-xs text-brand-800/70">~5 min · Actualizado Sep 2025</div>
+</article>
+</div>
 </section>
-
+</main>
+<!-- CONTACT / FOOTER -->
+<section class="bg-gradient-to-br from-brand-500 to-brand-800 text-white" id="contact">
+<div class="max-w-6xl mx-auto px-6 md:px-8 py-12">
+<h2 class="text-2xl md:text-3xl font-semibold leading-tight">Let’s work together</h2>
+<p class="mt-3 text-white/90 max-w-[60ch]">Collaborations, commissions, or a quick question. I reply in English or Spanish.</p>
+<div class="mt-6 flex flex-wrap items-center gap-2">
+<a class="btn inline-flex items-center gap-2 bg-white text-brand-800 px-4 py-3 rounded-md hover:bg-brand-100" href="mailto:info@stellabullo.com">
+<i class="w-5 h-5" data-lucide="mail"></i> info@stellabullo.com
+      </a>
+<a class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20" href="https://www.linkedin.com/in/stella-bullo-905b17230/" rel="noopener" target="_blank">
+<i class="w-5 h-5" data-lucide="linkedin"></i> LinkedIn
+      </a>
+<a class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20" href="https://medium.com/@stellabullo" rel="noopener" target="_blank">
+<svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewbox="0 0 1043.63 592.71">
+<path d="M588.67 296.35c0 163.67-131.6 296.36-293.83 296.36S1 460 1 296.35C1 132.7 132.6 0 294.84 0s293.83 132.7 293.83 296.35Zm453.96 0c0 153.7-65.8 278.2-147 278.2s-147-124.5-147-278.2S814.45 18.13 895.63 18.13s147 124.5 147 278.22ZM684.8 296.35c0 146.56-36.3 265.47-81.1 265.47-44.8 0-81.1-118.9-81.1-265.47S558.9 30.88 603.7 30.88c44.8 0 81.1 118.91 81.1 265.47Z"></path>
+</svg>
+        Medium
+      </a>
+<a class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20" href="https://ko-fi.com/stellabullo" rel="noopener" target="_blank">
+<i class="w-5 h-5" data-lucide="coffee"></i> Ko-fi
+      </a>
+<a class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20" href="https://orcid.org/0000-0002-7402-0819" rel="noopener" target="_blank">
+<i class="w-5 h-5" data-lucide="id-card"></i> ORCID
+      </a>
+<a class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20" href="https://sierracodes.netlify.app/" rel="noopener" target="_blank">
+<i class="w-5 h-5" data-lucide="code-2"></i> Sierra Codes
+      </a>
+</div>
+<div class="text-center text-sm text-white/70 mt-8">
+      © <span id="year"></span> Stella Bullo. All rights reserved.
+    </div>
+</div>
+</section>
 <!-- Back to top -->
-<button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Volver arriba" title="Volver arriba">
-  <i data-lucide="chevron-up" class="w-5 h-5"></i>
+<button aria-label="Back to top" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" id="toTop" title="Back to top">
+<i class="w-5 h-5" data-lucide="chevron-up"></i>
 </button>
-
-<!-- JS -->
+<!-- JS (same as landing) -->
 <script>
   document.addEventListener('DOMContentLoaded', () => {
+    // Icons
     if (typeof lucide !== 'undefined' && lucide.createIcons) {
       try { lucide.createIcons(); } catch {}
     }
 
-    // sombra al hacer scroll
+    // Nav shadow on scroll
     const nav = document.querySelector('nav');
     const onScroll = () => { if (nav) nav.classList.toggle('shadow', window.scrollY > 10); };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    // menú móvil
+    // Mobile menu (hamburger)
     const btn = document.getElementById('nav-toggle');
     const menu = document.getElementById('mobile-menu');
-    const openI = document.getElementById('
+    const openI = document.getElementById('icon-open');
+    const closeI = document.getElementById('icon-close');
+    if (btn && menu) {
+      const toggle = () => {
+        const willOpen = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        btn.setAttribute('aria-expanded', String(willOpen));
+        if (openI) openI.classList.toggle('hidden', willOpen);
+        if (closeI) closeI.classList.toggle('hidden', !willOpen);
+      };
+      btn.addEventListener('click', toggle);
+      // Close after tapping a link
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        if (!menu.classList.contains('hidden')) toggle();
+      }));
+    }
+
+    // Desktop dropdowns
+    function makeDropdown(triggerId, panelId) {
+      const trigger = document.getElementById(triggerId);
+      const panel   = document.getElementById(panelId);
+      if (!trigger || !panel) return;
+
+      let open = false;
+
+      const show = () => {
+        panel.classList.remove('invisible','opacity-0','pointer-events-none','translate-y-1');
+        panel.classList.add('opacity-100','pointer-events-auto','translate-y-0');
+        trigger.setAttribute('aria-expanded', 'true');
+        open = true;
+      };
+      const hide = () => {
+        panel.classList.add('invisible','opacity-0','pointer-events-none','translate-y-1');
+        panel.classList.remove('opacity-100','pointer-events-auto','translate-y-0');
+        trigger.setAttribute('aria-expanded', 'false');
+        open = false;
+      };
+      const toggle = (e) => { e.preventDefault(); e.stopPropagation(); open ? hide() : show(); };
+
+      trigger.addEventListener('click', toggle);
+
+      // Close on outside click
+      document.addEventListener('click', (e) => {
+        if (!open) return;
+        if (!panel.contains(e.target) && !trigger.contains(e.target)) hide();
+      });
+
+      // Keyboard controls
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') { toggle(e); }
+        else if (e.key === 'Escape' && open) { hide(); trigger.focus(); }
+        else if (e.key === 'ArrowDown' && !open) { show(); }
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && open) { hide(); trigger.focus(); }
+      });
+
+      // Start hidden
+      hide();
+    }
+    makeDropdown('writing-trigger-en','writing-popover-en');
+    makeDropdown('writing-trigger-es','writing-popover-es');
+
+    // Back to top button
+    const toTop = document.getElementById('toTop');
+    if (toTop) {
+      const toggleToTop = () => { toTop.classList.toggle('hidden', window.scrollY < 400); };
+      window.addEventListener('scroll', toggleToTop, { passive: true });
+      toggleToTop();
+      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    }
+
+    // Footer year
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  });
+</script>
+</body>
+</html>

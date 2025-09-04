@@ -3,51 +3,73 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Basic -->
   <title>Like a Fire in My Womb – Stella Bullo</title>
   <meta name="description" content="What pain metaphors reveal about invisible illnesses like endometriosis — a bilingual article by Dr. Stella Bullo."/>
   <meta name="author" content="Stella Bullo"/>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 
-  <!-- Inter + Tailwind Typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial','sans-serif'] },
-          colors: {
-            brand: { 50:'#FFFFFF', 100:'#EDF3FB', 200:'#CBE3EF', 500:'#5AA8D6', 800:'#3A4163' }
-          },
-          boxShadow: { soft:'0 6px 16px rgba(58,65,99,0.06)' },
-          borderRadius: { xl2:'1.25rem' }
-        }
+  <!-- Canonical + alternates -->
+  <link rel="canonical" href="https://stellabullo.com/essays/like-fire-in-my-womb/index.html"/>
+  <link rel="alternate" hreflang="en" href="https://stellabullo.com/essays/like-fire-in-my-womb/index.html"/>
+  <link rel="alternate" hreflang="es" href="https://stellabullo.com/essays/es/like-fire-in-my-womb/index.html"/>
+  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com/essays/like-fire-in-my-womb/index.html"/>
+
+  <!-- Open Graph for sharing -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Like a Fire in My Womb"/>
+  <meta property="og:description" content="What pain metaphors reveal about invisible illnesses like endometriosis — a bilingual article by Dr. Stella Bullo."/>
+  <meta property="og:url" content="https://stellabullo.com/essays/like-fire-in-my-womb/index.html"/>
+  <meta property="og:site_name" content="Stella Bullo"/>
+  <meta property="article:author" content="Stella Bullo"/>
+  <!-- Optional article dates -->
+
+  <!-- JSON-LD Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Like a Fire in My Womb",
+    "description": "What pain metaphors reveal about invisible illnesses like endometriosis — a bilingual article by Dr. Stella Bullo.",
+    "author": {
+      "@type": "Person",
+      "name": "Stella Bullo",
+      "url": "https://stellabullo.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Stella Bullo",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://stellabullo.com/favicon.ico"
       }
+    },
+    "image": [
+      "https://stellabullo.com"
+    ],
+    "inLanguage": ["en","es"],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://stellabullo.com/essays/like-fire-in-my-womb/index.html"
     }
+  }
   </script>
 
-  <style>
-    html{scroll-behavior:smooth}
-    body {font-size: 15px;}
-    .btn{transition:all .2s ease}
-    .btn:active{transform:translateY(1px)}
-    .prose h2{font-size:1.15rem !important;font-weight:600}
-    .prose h3{font-size:1rem !important;font-weight:500}
-    /* Tiny tooltip helper (optional) */
-    .tt{position:relative;text-decoration:underline dotted;cursor:help}
-    .tt::after{content:attr(data-title);position:absolute;left:0;bottom:125%;background:#111827;color:#fff;padding:.4rem .6rem;border-radius:.375rem;font-size:.85rem;line-height:1.2;max-width:260px;box-shadow:0 6px 18px rgba(0,0,0,.18);opacity:0;transform:translateY(4px);transition:opacity .15s, transform .15s;pointer-events:none;z-index:30;white-space:normal}
-    .tt:hover::after,.tt:focus::after{opacity:1;transform:translateY(0)}
-  </style>
-</head>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
+  <!-- Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/
+
+
 
 <body class="bg-brand-50 text-brand-800 font-sans antialiased">
   <!-- Topbar / breadcrumbs -->
   <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
     <nav class="flex flex-col gap-2">
       <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
-      <a id="crumb-section" href="/technical-content-ux/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Technical · Content · UX</a>
+      <a id="crumb-section" href="/essays/index.html" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Essays</a>
     </nav>
     <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
   </div>
@@ -58,65 +80,66 @@
     <article id="english">
       <header class="mb-8 md:mb-10">
         <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">Like a Fire in My Womb</h1>
-        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">What pain metaphors can reveal about invisible illnesses like endometriosis</h2>
+        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">What pain metaphors reveal about invisible illnesses like endometriosis — a bilingual article by Dr. Stella Bullo.</h2>
         <p class="italic text-brand-800/70 text-sm">Dr. Stella Bullo</p>
       </header>
 
       <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
-        <p>How do you put your pain into words? For some, it feels like blades cutting from the inside; for others, monsters lurking or an internal fire burning. Research shows that such metaphors can hold important clues to chronic conditions like endometriosis.</p>
+        <p><header class="mb-8 md:mb-10">
 
-        <blockquote>
+<h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">What pain metaphors can reveal about invisible illnesses like endometriosis</h2>
+<p class="italic text-brand-800/70 text-sm">Dr. Stella Bullo</p>
+</header>
+<div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
+<p>How do you put your pain into words? For some, it feels like blades cutting from the inside; for others, monsters lurking or an internal fire burning. Research shows that such metaphors can hold important clues to chronic conditions like endometriosis.</p>
+<blockquote>
           “It’s like something is stabbing me from the inside.”<br/>
           “It feels like an animal is clawing at my belly from within.”<br/>
           “It’s fire. It’s pressure. It’s something that won’t let me live.”
         </blockquote>
-
-        <p>These are just some of the phrases I’ve heard over the years from other women living with endometriosis.</p>
-        <p>And in my case, the one I repeated most often was: “It feels like someone is strangling my uterus.” I would scream it out, curled on the floor in the fetal position, while my cat purred and kneaded my head and my husband panicked looking for the morphine. His hand trembled as he gave it to me; minutes later, my body softened and my gaze drifted into the fog of the opioid.</p>
-        <p>By the time I was finally diagnosed with endometriosis, the disease was advanced. My quality of life was in ruins. I had spent more than a decade being told it was “normal.”</p>
-        <p>Descriptions like these are metaphors loaded with imagery, intense bodily sensations, and overwhelming emotions — desperate attempts to voice what hurts in silence.</p>
-        <p>Yet in the clinic, those words often shrink to “it hurts a lot,” and then into a 1–10 scale — useful, yes, but often inadequate for the complexity of pain.</p>
-        <p>That’s when many of us hear, “you have a low pain threshold,” “women are built to withstand pain in the reproductive area,” or “it’ll go away once you have a child” (a child that, in my case, never came because aggressive endometriosis had already caused infertility).</p>
-        <p>Between morphine, metaphors, and myths about womanhood, pain becomes invisible — or worse, normalised.</p>
-
-        <h2>Why does language matter so much?</h2>
-        <p>I say this not only from lived experience but from years of research. I hold a PhD in Linguistics (Lancaster University, UK) and founded <em>The Language of Endometriosis</em>, a project at Manchester Metropolitan University exploring how we talk about menstrual pain — and how that language can shape, or hinder, diagnosis.</p>
-        <p>For years I listened to, transcribed, and analysed accounts from people living with endometriosis: testimonies dense with imagery, metaphor, silences, gesture, and repetition — the struggle to say the unsayable.</p>
-        <p>Findings appeared in journals across linguistics, health communication, and psychology, and reached broader audiences via outlets like The New York Times, BBC Radio, and <em>Glamour</em>.</p>
-        <p>What emerged is as evident as it is worrying: clinicians and patients often don’t speak the same language. They may share English or Spanish, but not meanings.</p>
-        <p>There is a gap between what is felt, what is expressed, and what is understood in clinical settings. That gap is not trivial; it may be one reason endometriosis remains slow or uncertain to diagnose.</p>
-
-        <h2>What words can reveal</h2>
-        <p>People living with chronic pain — especially endometriosis — rarely rely solely on clinical terms.</p>
-        <p>We reach for knives, fire, pressure, internal monsters. It isn’t melodrama. It’s translating the unnameable.</p>
-        <p>In story after story, metaphors recur. Far from confusing, they can sharpen communication about a profoundly physical, emotional, often traumatic experience — if we take time to listen.</p>
-        <p>These are attempts to make the invisible visible — to turn pain into something shareable.</p>
-        <p>Of course, metaphors aren’t always understood. In some settings they seem vague or “too subjective.” That’s not a reason to dismiss them; it’s a reason to attend more closely.</p>
-        <p>When someone says “it feels like something is crushing me from the inside,” that phrase — absent from diagnostic manuals — can still be a vital clue, a red flag, an opening that changes a medical history.</p>
-        <p>This isn’t about turning patients into doctors or doctors into poets; it’s about meeting in the middle, where pain is neither silenced nor distorted.</p>
-
-        <h2>Teaching how to name pain</h2>
-        <p>Naming pain doesn’t cure it, but it can be the first step toward it being seen.</p>
-        <p>Teaching girls, teens, and anyone who menstruates to speak about pain in their own words is not trivial or “literary.” It can be a public-health tool.</p>
-        <p>We need to validate metaphors — not dismiss them — and learn to unpack them; to listen without rushing; to notice when something sounds unusual. That, too, is care.</p>
-        <p>Pain lives in the body, but it needs language to be heard. When pain has words — even imprecise or strange ones — it can begin to make sense, and begin to meet a response.</p>
-        <p>It took me over fifteen years to be diagnosed. If I’d known I could say “it feels like someone is strangling my uterus” without being labelled exaggerated or overly emotional, perhaps things would have been different.</p>
-        <p>Let’s make sure others don’t wait that long — as professionals, as parents and friends, as a society. Every story heard in time can change a life.</p>
-        <p>And you — how do you put your pain into words?</p>
-
-        <h2>Glossary</h2>
-        <ul>
-          <li><strong>Endometriosis:</strong> A chronic inflammatory condition in which tissue similar to the uterine lining grows outside the uterus, causing pain, infertility, and other symptoms.</li>
-          <li><strong>Metaphor:</strong> Describing something in terms of something else (e.g., “a fire inside” for pain).</li>
-          <li><strong>Pain scale (1–10):</strong> A subjective tool for rating pain intensity.</li>
-        </ul>
-
-        <div class="bg-brand-100 border border-brand-200 rounded-xl p-4 mt-8 text-sm text-brand-800 text-center">
-          <p>
+<p>These are just some of the phrases I’ve heard over the years from other women living with endometriosis.</p>
+<p>And in my case, the one I repeated most often was: “It feels like someone is strangling my uterus.” I would scream it out, curled on the floor in the fetal position, while my cat purred and kneaded my head and my husband panicked looking for the morphine. His hand trembled as he gave it to me; minutes later, my body softened and my gaze drifted into the fog of the opioid.</p>
+<p>By the time I was finally diagnosed with endometriosis, the disease was advanced. My quality of life was in ruins. I had spent more than a decade being told it was “normal.”</p>
+<p>Descriptions like these are metaphors loaded with imagery, intense bodily sensations, and overwhelming emotions — desperate attempts to voice what hurts in silence.</p>
+<p>Yet in the clinic, those words often shrink to “it hurts a lot,” and then into a 1–10 scale — useful, yes, but often inadequate for the complexity of pain.</p>
+<p>That’s when many of us hear, “you have a low pain threshold,” “women are built to withstand pain in the reproductive area,” or “it’ll go away once you have a child” (a child that, in my case, never came because aggressive endometriosis had already caused infertility).</p>
+<p>Between morphine, metaphors, and myths about womanhood, pain becomes invisible — or worse, normalised.</p>
+<h2>Why does language matter so much?</h2>
+<p>I say this not only from lived experience but from years of research. I hold a PhD in Linguistics (Lancaster University, UK) and founded <em>The Language of Endometriosis</em>, a project at Manchester Metropolitan University exploring how we talk about menstrual pain — and how that language can shape, or hinder, diagnosis.</p>
+<p>For years I listened to, transcribed, and analysed accounts from people living with endometriosis: testimonies dense with imagery, metaphor, silences, gesture, and repetition — the struggle to say the unsayable.</p>
+<p>Findings appeared in journals across linguistics, health communication, and psychology, and reached broader audiences via outlets like The New York Times, BBC Radio, and <em>Glamour</em>.</p>
+<p>What emerged is as evident as it is worrying: clinicians and patients often don’t speak the same language. They may share English or Spanish, but not meanings.</p>
+<p>There is a gap between what is felt, what is expressed, and what is understood in clinical settings. That gap is not trivial; it may be one reason endometriosis remains slow or uncertain to diagnose.</p>
+<h2>What words can reveal</h2>
+<p>People living with chronic pain — especially endometriosis — rarely rely solely on clinical terms.</p>
+<p>We reach for knives, fire, pressure, internal monsters. It isn’t melodrama. It’s translating the unnameable.</p>
+<p>In story after story, metaphors recur. Far from confusing, they can sharpen communication about a profoundly physical, emotional, often traumatic experience — if we take time to listen.</p>
+<p>These are attempts to make the invisible visible — to turn pain into something shareable.</p>
+<p>Of course, metaphors aren’t always understood. In some settings they seem vague or “too subjective.” That’s not a reason to dismiss them; it’s a reason to attend more closely.</p>
+<p>When someone says “it feels like something is crushing me from the inside,” that phrase — absent from diagnostic manuals — can still be a vital clue, a red flag, an opening that changes a medical history.</p>
+<p>This isn’t about turning patients into doctors or doctors into poets; it’s about meeting in the middle, where pain is neither silenced nor distorted.</p>
+<h2>Teaching how to name pain</h2>
+<p>Naming pain doesn’t cure it, but it can be the first step toward it being seen.</p>
+<p>Teaching girls, teens, and anyone who menstruates to speak about pain in their own words is not trivial or “literary.” It can be a public-health tool.</p>
+<p>We need to validate metaphors — not dismiss them — and learn to unpack them; to listen without rushing; to notice when something sounds unusual. That, too, is care.</p>
+<p>Pain lives in the body, but it needs language to be heard. When pain has words — even imprecise or strange ones — it can begin to make sense, and begin to meet a response.</p>
+<p>It took me over fifteen years to be diagnosed. If I’d known I could say “it feels like someone is strangling my uterus” without being labelled exaggerated or overly emotional, perhaps things would have been different.</p>
+<p>Let’s make sure others don’t wait that long — as professionals, as parents and friends, as a society. Every story heard in time can change a life.</p>
+<p>And you — how do you put your pain into words?</p>
+<h2>Glossary</h2>
+<ul>
+<li><strong>Endometriosis:</strong> A chronic inflammatory condition in which tissue similar to the uterine lining grows outside the uterus, causing pain, infertility, and other symptoms.</li>
+<li><strong>Metaphor:</strong> Describing something in terms of something else (e.g., “a fire inside” for pain).</li>
+<li><strong>Pain scale (1–10):</strong> A subjective tool for rating pain intensity.</li>
+</ul>
+<div class="bg-brand-100 border border-brand-200 rounded-xl p-4 mt-8 text-sm text-brand-800 text-center">
+<p>
             Learn more in
-            <a href="/writing/language-of-endo/" class="text-brand-500 underline font-medium hover:opacity-80">The Language of Endometriosis</a>.
+            <a class="text-brand-500 underline font-medium hover:opacity-80" href="/technical-content-ux/language-of-endo/index.html">The Language of Endometriosis</a>.
           </p>
-        </div>
+</div>
+</div>
+      
       </div>
     </article>
 
@@ -124,65 +147,66 @@
     <article id="spanish" class="hidden">
       <header class="mb-8 md:mb-10">
         <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">Como si tuviera fuego en el útero</h1>
-        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">Lo que las metáforas del dolor pueden revelar sobre enfermedades invisibilizadas como la endometriosis</h2>
-        <p class="italic text-brand-800/70 text-sm">Dra Stella Bullo</p>
+        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">Dra Stella Bullo</h2>
+        <p class="italic text-brand-800/70 text-sm">Dra. Stella Bullo</p>
       </header>
 
       <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
-        <p>¿Cómo ponés tu dolor en palabras? Para algunas personas, se siente como cuchillas cortando desde adentro; para otras, monstruos al acecho o un fuego interno ardiendo. Las investigaciones muestran que estas metáforas pueden ofrecer pistas importantes sobre afecciones crónicas como la endometriosis.</p>
+        <header class="mb-8 md:mb-10">
 
-        <blockquote>
+<h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">Lo que las metáforas del dolor pueden revelar sobre enfermedades invisibilizadas como la endometriosis</h2>
+<p class="italic text-brand-800/70 text-sm">Dra Stella Bullo</p>
+</header>
+<div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
+<p>¿Cómo ponés tu dolor en palabras? Para algunas personas, se siente como cuchillas cortando desde adentro; para otras, monstruos al acecho o un fuego interno ardiendo. Las investigaciones muestran que estas metáforas pueden ofrecer pistas importantes sobre afecciones crónicas como la endometriosis.</p>
+<blockquote>
           “Es como si me clavaran algo desde adentro.”<br/>
           “Siento como si un animal rasguñara mi abdomen por dentro.”<br/>
           “Es fuego. Es presión. Es algo que no me deja vivir.”
         </blockquote>
-
-        <p>Estas son algunas de las frases que escuché a lo largo de los años en boca de otras mujeres con endometriosis.</p>
-        <p>Y, en mi caso, la que más repetía era: “siento como si alguien me estuviera estrangulando el útero”. Lo gritaba tirada en el piso, en posición fetal, mientras mi gato me ronroneaba y amasaba la cabeza, y mi marido se desesperaba buscando la morfina. Le temblaba la mano al dármela; minutos después, mi cuerpo se aflojaba y mi mirada se perdía en la neblina del opioide.</p>
-        <p>Cuando finalmente me diagnosticaron endometriosis, la enfermedad ya estaba avanzada. Mi calidad de vida, destrozada. Llevaba más de una década escuchando que era “normal”.</p>
-        <p>Descripciones como estas son metáforas cargadas de imágenes, sensaciones corporales intensas y emociones difíciles de contener: intentos desesperados por poner en palabras lo que duele en silencio.</p>
-        <p>En el consultorio, sin embargo, esas palabras suelen reducirse a “me duele mucho”, y luego a una escala del 1 al 10: útil, sí, pero insuficiente para la complejidad del dolor.</p>
-        <p>Ahí aparecen frases como “tenés un umbral de dolor bajo”, “como mujer estás preparada para aguantar dolor en la zona reproductiva” o “se te va a ir cuando tengas un hijo” (ese hijo que, en mi caso, nunca llegó porque la endometriosis agresiva ya había causado infertilidad).</p>
-        <p>Entre morfina, metáforas y mitos sobre la condición de mujer, el dolor se vuelve invisible —o, peor, normalizado.</p>
-
-        <h2>¿Por qué importa tanto el lenguaje?</h2>
-        <p>No lo digo solo desde lo vivido, sino también desde años de investigación. Soy doctora en Lingüística (Universidad de Lancaster, Reino Unido) y fundadora del proyecto <em>The Language of Endometriosis</em>, que llevé adelante en Manchester Metropolitan University para explorar cómo hablamos del dolor menstrual y cómo ese lenguaje puede favorecer —o dificultar— el diagnóstico.</p>
-        <p>Durante años escuché, transcribí y analicé relatos de personas con endometriosis: testimonios densos en imágenes, metáforas, silencios, gestos y repeticiones —el intento de decir lo indecible.</p>
-        <p>Los hallazgos se publicaron en revistas de lingüística, comunicación en salud y psicología, y llegaron a públicos más amplios a través de medios como The New York Times, BBC Radio y <em>Glamour</em>.</p>
-        <p>Lo que emergió es tan evidente como preocupante: muchas veces, lxs clínicxs y lxs pacientes no hablan el mismo lenguaje. Comparten un idioma, sí, pero no necesariamente los mismos sentidos.</p>
-        <p>Existe una brecha entre lo que se siente, lo que se expresa y lo que se comprende en el ámbito clínico. Esa brecha no es menor: puede ser una de las razones por las que el diagnóstico de endometriosis sigue siendo lento o incierto.</p>
-
-        <h2>Lo que las palabras pueden revelar</h2>
-        <p>Las personas con dolor crónico —en particular, con endometriosis— no siempre recurrimos al lenguaje clínico.</p>
-        <p>Hablamos de cuchillos, de fuego, de presión, de monstruos internos. No es dramatismo: es traducir lo innombrable.</p>
-        <p>Una y otra vez, las metáforas aparecen en los relatos. Lejos de confundir, pueden afinar la comunicación sobre una experiencia profundamente corporal, emocional y muchas veces traumática —si se las escucha con atención.</p>
-        <p>Son intentos de hacer visible lo invisible, de convertir el dolor en algo compartible.</p>
-        <p>Claro que no siempre se entienden. En algunos contextos suenan vagas o “demasiado subjetivas”. No es motivo para descartarlas, sino para atender mejor.</p>
-        <p>Cuando alguien dice “es como si algo me triturara por dentro”, esa frase —aunque no figure en manuales— puede ser una pista clave, una alerta, una apertura que cambia una historia clínica.</p>
-        <p>No se trata de convertir a pacientes en médicas ni a médicas en poetas, sino de encontrarnos en un punto medio donde el dolor no se calle ni se distorsione.</p>
-
-        <h2>Educar para nombrar el dolor</h2>
-        <p>Nombrar el dolor no lo cura, pero puede ser el primer paso para que sea visto.</p>
-        <p>Enseñar a niñas, adolescentes y a quienes menstrúan a hablar de su dolor con palabras propias no es un detalle literario: puede ser una herramienta de salud pública.</p>
-        <p>Necesitamos validar las metáforas —no descartarlas— y aprender a deshilarlas; escuchar sin apuro; notar cuando algo suena inusual. Eso también es cuidado.</p>
-        <p>El dolor habita el cuerpo, pero necesita del lenguaje para ser escuchado. Cuando el dolor tiene palabras —aunque sean imprecisas o extrañas— puede empezar a tener sentido y a encontrar respuesta.</p>
-        <p>Tardé más de quince años en recibir diagnóstico. Si hubiera sabido que podía decir “siento como si alguien me estuviera estrangulando el útero” sin miedo a que me tomaran por exagerada o “demasiado emocional”, quizá todo habría sido distinto.</p>
-        <p>Asegurémonos de que otras no tengan que esperar tanto —como profesionales, como familias y amistades, como sociedad. Cada historia escuchada a tiempo puede cambiar una vida.</p>
-        <p>¿Y vos? ¿Cómo ponés tu dolor en palabras?</p>
-
-        <h2>Glosario</h2>
-        <ul>
-          <li><strong>Endometriosis:</strong> Enfermedad inflamatoria crónica en la que tejido similar al endometrio crece fuera del útero, provocando dolor, infertilidad y otros síntomas.</li>
-          <li><strong>Metáfora:</strong> Recurso que describe algo en términos de otra cosa (p. ej., “un fuego interno” para el dolor).</li>
-          <li><strong>Escala del dolor (1–10):</strong> Herramienta subjetiva para cuantificar la intensidad del dolor.</li>
-        </ul>
-
-        <div class="bg-brand-100 border border-brand-200 rounded-xl p-4 mt-8 text-sm text-brand-800 text-center">
-          <p>
+<p>Estas son algunas de las frases que escuché a lo largo de los años en boca de otras mujeres con endometriosis.</p>
+<p>Y, en mi caso, la que más repetía era: “siento como si alguien me estuviera estrangulando el útero”. Lo gritaba tirada en el piso, en posición fetal, mientras mi gato me ronroneaba y amasaba la cabeza, y mi marido se desesperaba buscando la morfina. Le temblaba la mano al dármela; minutos después, mi cuerpo se aflojaba y mi mirada se perdía en la neblina del opioide.</p>
+<p>Cuando finalmente me diagnosticaron endometriosis, la enfermedad ya estaba avanzada. Mi calidad de vida, destrozada. Llevaba más de una década escuchando que era “normal”.</p>
+<p>Descripciones como estas son metáforas cargadas de imágenes, sensaciones corporales intensas y emociones difíciles de contener: intentos desesperados por poner en palabras lo que duele en silencio.</p>
+<p>En el consultorio, sin embargo, esas palabras suelen reducirse a “me duele mucho”, y luego a una escala del 1 al 10: útil, sí, pero insuficiente para la complejidad del dolor.</p>
+<p>Ahí aparecen frases como “tenés un umbral de dolor bajo”, “como mujer estás preparada para aguantar dolor en la zona reproductiva” o “se te va a ir cuando tengas un hijo” (ese hijo que, en mi caso, nunca llegó porque la endometriosis agresiva ya había causado infertilidad).</p>
+<p>Entre morfina, metáforas y mitos sobre la condición de mujer, el dolor se vuelve invisible —o, peor, normalizado.</p>
+<h2>¿Por qué importa tanto el lenguaje?</h2>
+<p>No lo digo solo desde lo vivido, sino también desde años de investigación. Soy doctora en Lingüística (Universidad de Lancaster, Reino Unido) y fundadora del proyecto <em>The Language of Endometriosis</em>, que llevé adelante en Manchester Metropolitan University para explorar cómo hablamos del dolor menstrual y cómo ese lenguaje puede favorecer —o dificultar— el diagnóstico.</p>
+<p>Durante años escuché, transcribí y analicé relatos de personas con endometriosis: testimonios densos en imágenes, metáforas, silencios, gestos y repeticiones —el intento de decir lo indecible.</p>
+<p>Los hallazgos se publicaron en revistas de lingüística, comunicación en salud y psicología, y llegaron a públicos más amplios a través de medios como The New York Times, BBC Radio y <em>Glamour</em>.</p>
+<p>Lo que emergió es tan evidente como preocupante: muchas veces, lxs clínicxs y lxs pacientes no hablan el mismo lenguaje. Comparten un idioma, sí, pero no necesariamente los mismos sentidos.</p>
+<p>Existe una brecha entre lo que se siente, lo que se expresa y lo que se comprende en el ámbito clínico. Esa brecha no es menor: puede ser una de las razones por las que el diagnóstico de endometriosis sigue siendo lento o incierto.</p>
+<h2>Lo que las palabras pueden revelar</h2>
+<p>Las personas con dolor crónico —en particular, con endometriosis— no siempre recurrimos al lenguaje clínico.</p>
+<p>Hablamos de cuchillos, de fuego, de presión, de monstruos internos. No es dramatismo: es traducir lo innombrable.</p>
+<p>Una y otra vez, las metáforas aparecen en los relatos. Lejos de confundir, pueden afinar la comunicación sobre una experiencia profundamente corporal, emocional y muchas veces traumática —si se las escucha con atención.</p>
+<p>Son intentos de hacer visible lo invisible, de convertir el dolor en algo compartible.</p>
+<p>Claro que no siempre se entienden. En algunos contextos suenan vagas o “demasiado subjetivas”. No es motivo para descartarlas, sino para atender mejor.</p>
+<p>Cuando alguien dice “es como si algo me triturara por dentro”, esa frase —aunque no figure en manuales— puede ser una pista clave, una alerta, una apertura que cambia una historia clínica.</p>
+<p>No se trata de convertir a pacientes en médicas ni a médicas en poetas, sino de encontrarnos en un punto medio donde el dolor no se calle ni se distorsione.</p>
+<h2>Educar para nombrar el dolor</h2>
+<p>Nombrar el dolor no lo cura, pero puede ser el primer paso para que sea visto.</p>
+<p>Enseñar a niñas, adolescentes y a quienes menstrúan a hablar de su dolor con palabras propias no es un detalle literario: puede ser una herramienta de salud pública.</p>
+<p>Necesitamos validar las metáforas —no descartarlas— y aprender a deshilarlas; escuchar sin apuro; notar cuando algo suena inusual. Eso también es cuidado.</p>
+<p>El dolor habita el cuerpo, pero necesita del lenguaje para ser escuchado. Cuando el dolor tiene palabras —aunque sean imprecisas o extrañas— puede empezar a tener sentido y a encontrar respuesta.</p>
+<p>Tardé más de quince años en recibir diagnóstico. Si hubiera sabido que podía decir “siento como si alguien me estuviera estrangulando el útero” sin miedo a que me tomaran por exagerada o “demasiado emocional”, quizá todo habría sido distinto.</p>
+<p>Asegurémonos de que otras no tengan que esperar tanto —como profesionales, como familias y amistades, como sociedad. Cada historia escuchada a tiempo puede cambiar una vida.</p>
+<p>¿Y vos? ¿Cómo ponés tu dolor en palabras?</p>
+<h2>Glosario</h2>
+<ul>
+<li><strong>Endometriosis:</strong> Enfermedad inflamatoria crónica en la que tejido similar al endometrio crece fuera del útero, provocando dolor, infertilidad y otros síntomas.</li>
+<li><strong>Metáfora:</strong> Recurso que describe algo en términos de otra cosa (p. ej., “un fuego interno” para el dolor).</li>
+<li><strong>Escala del dolor (1–10):</strong> Herramienta subjetiva para cuantificar la intensidad del dolor.</li>
+</ul>
+<div class="bg-brand-100 border border-brand-200 rounded-xl p-4 mt-8 text-sm text-brand-800 text-center">
+<p>
             Conocé más en
-            <a href="/writing/language-of-endo/" class="text-brand-500 underline font-medium hover:opacity-80">The Language of Endometriosis</a>.
+            <a class="text-brand-500 underline font-medium hover:opacity-80" href="/technical-content-ux/language-of-endo/index.html">The Language of Endometriosis</a>.
           </p>
-        </div>
+</div>
+</div>
+      
       </div>
     </article>
   </main>
@@ -203,7 +227,7 @@
     const crumbSection = document.getElementById('crumb-section');
 
     function setLang(lang) {
-      if (lang === 'es') {
+      if (lang === 'es') { crumbSection.textContent = '↔ Volver a Ensayos';
         english.classList.add('hidden');
         spanish.classList.remove('hidden');
         langToggle.textContent = 'Read it in English';
@@ -219,8 +243,8 @@
         langToggle.setAttribute('aria-label','Leer en Español');
         crumbHome.textContent = '← Stella Bullo (Home)';
         crumbHome.setAttribute('href','/');
-        crumbSection.textContent = '↔ Back to Technical · Content · UX';
-        crumbSection.setAttribute('href','/technical-content-ux/');
+        crumbSection.textContent = '↔ Back to Essays';
+        crumbSection.setAttribute('href','/essays/index.html');
       }
     }
 
