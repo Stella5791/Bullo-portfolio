@@ -33,29 +33,14 @@
     "@type": "Article",
     "headline": "The Language of Pain: Why Metaphors Matter in Endometriosis Diagnosis",
     "description": "Metaphors are not exaggerations. They are diagnostic clues. A bilingual article by Dr. Stella Bullo.",
-    "author": {
-      "@type": "Person",
-      "name": "Stella Bullo",
-      "url": "https://stellabullo.com/"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Stella Bullo",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://stellabullo.com/favicon.ico"
-      }
-    },
-    "image": [
-      "https://stellabullo.com/images/language-of-pain-cover.jpg"
-    ],
+    "author": { "@type": "Person", "name": "Stella Bullo", "url": "https://stellabullo.com/" },
+    "publisher": { "@type": "Organization", "name": "Stella Bullo",
+      "logo": { "@type": "ImageObject", "url": "https://stellabullo.com/favicon.ico" } },
+    "image": [ "https://stellabullo.com/images/language-of-pain-cover.jpg" ],
     "datePublished": "2025-09-04T09:00:00-03:00",
     "dateModified": "2025-09-04T09:00:00-03:00",
     "inLanguage": ["en","es"],
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": "https://stellabullo.com/technical-content-ux/language-of-pain/"
-    }
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://stellabullo.com/technical-content-ux/language-of-pain/" }
   }
   </script>
 
@@ -94,6 +79,16 @@
     .btn{transition:all .2s ease}
     .btn:active{transform:translateY(1px)}
     .badge{font-size:11px}
+    /* Formatting tweaks */
+    .wrap{max-width:60ch} /* keep lines comfy */
+    .lead{font-size:1.05rem; line-height:1.9}
+    @media (min-width:768px){ .lead{font-size:1.15rem} }
+    .byline{opacity:.7}
+    .callout{background:#F8FAFE; border:1px solid #CBE3EF}
+    .prose h2{font-size:1.1rem !important;font-weight:600}
+    .prose h3{font-size:1rem !important;font-weight:500}
+    .prose ul{margin-top:.25rem;margin-bottom:1rem}
+    .prose li{margin:.25rem 0}
   </style>
 </head>
 
@@ -102,60 +97,96 @@
   <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
     <nav class="flex flex-col gap-2">
       <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
-      <a id="crumb-section" href="/technical-content-ux/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Technical · Content · UX</a>
+      <a id="crumb-section" href="/technical-content-ux/index.html " class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Technical · Content · UX</a>
     </nav>
     <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
   </div>
 
   <!-- Article container -->
   <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
-    <!-- ENGLISH -->
-    <article id="english">
-      <header class="mb-8 md:mb-10">
-        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">The Language of Pain: Why Metaphors Matter in Endometriosis Diagnosis</h1>
-        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">Metaphors are not exaggerations. They are diagnostic clues.</h2>
-        <p class="italic text-brand-800/70 text-sm">Dr. Stella Bullo</p>
-      </header>
+   <!-- ENGLISH -->
+<article id="english">
+  <header class="mb-6 md:mb-8 px-3 md:px-4 py-4 md:py-5 rounded-xl2 border border-brand-100 bg-brand-50/60">
+    <h1 class="text-[1.55rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-2">
+      The Language of Pain: Why Metaphors Matter in Endometriosis Diagnosis
+    </h1>
+    <p class="text-base md:text-lg lg:text-[1.05rem] italic text-brand-800 mb-2">
+      Metaphors are not exaggerations. They are diagnostic clues.
+    </p>
+    <p class="byline italic text-brand-800/70 text-sm">Dr. Stella Bullo</p>
+  </header>
 
-      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
-        <p>Patients rarely stop at it hurts. They reach for knives, fire, pressure, or something alive inside them. These images appear when pain resists measurement. They are not decoration. They are attempts to make pain visible.</p>
-        <p>For endometriosis, this language can be a clue. Clinics often compress words into numbers. Useful, yes. Complete, no. When language gets flattened, meaning goes missing. Diagnosis can drift.</p>
-        <p>Years of analysing patient accounts taught me a simple lesson. Metaphors carry detail. They hint at intensity, location, duration, and fear. They reveal what a form cannot catch. Listening well can change a clinical history.</p>
+  <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-8 prose-h2:mb-3 prose-h3:mt-6 prose-h3:mb-2">
+    <p class="mb-6">
+      Patients rarely stop at it hurts. They reach for knives, fire, pressure, or something alive inside them. These images appear when pain resists measurement. They are not decoration but attempts to make pain visible.
+    </p>
 
-        <h2>Key points for practice</h2>
-        <ul class="list-disc pl-5">
-          <li>Notice vivid imagery. It often signals information that questionnaires do not capture.</li>
-          <li>Invite free description before you ask for numbers. Let the patient speak in their own words.</li>
-          <li>Treat metaphors as clues to explore. Ask where, when, how it feels, and what it limits.</li>
-        </ul>
+    <p class="mb-6">
+      For endometriosis, this language can be a clue. Clinics often compress words into numbers. Useful, yes. Complete, no. When language gets flattened, meaning goes missing and diagnosis can drift.
+    </p>
 
-        <p>Language does not cure pain. It does something else. It lets pain be seen and heard. For people living with endometriosis, that first hearing can bring timely care. Small shift. Real impact.</p>
-      </div>
-    </article>
+    <p class="mb-6">
+      Years of analysing patient accounts taught me a simple lesson. Metaphors carry detail. They hint at intensity, location, duration, and fear. They reveal what a form cannot catch. Listening well can change a clinical history. Paying attention to these expressions is not literary indulgence but a clinical tool.
+    </p>
+  </div>
+
+  <section class="callout rounded-xl2 p-4 md:p-5 mt-6">
+    <h2 class="m-0">Key points for practice</h2>
+    <ul class="list-disc pl-5 mt-2">
+      <li>Notice vivid imagery. It often signals information that questionnaires do not capture.</li>
+      <li>Invite free description before you ask for numbers. Let the patient speak in their own words.</li>
+      <li>Treat metaphors as clues to explore. Ask where, when, how it feels, and what it limits.</li>
+    </ul>
+  </section>
+
+  <p class="mt-6">
+    Language does not cure pain. It does something else: it lets pain be seen and heard. For people living with endometriosis, that first hearing can bring timely care. Small shift, real impact.
+  </p>
+</article>
+
 
     <!-- SPANISH -->
-    <article id="spanish" class="hidden">
-      <header class="mb-8 md:mb-10">
-        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">El lenguaje del dolor: por qué las metáforas importan en el diagnóstico de la endometriosis</h1>
-        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">Las metáforas no son exageraciones. Son pistas clínicas.</h2>
-        <p class="italic text-brand-800/70 text-sm">Dra. Stella Bullo</p>
-      </header>
+     <!-- SPANISH -->
+<article id="spanish" class="hidden">
+  <header class="mb-6 md:mb-8 px-3 md:px-4 py-4 md:py-5 rounded-xl2 border border-brand-100 bg-brand-50/60">
+    <h1 class="text-[1.55rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-2">
+      El lenguaje del dolor: por qué las metáforas importan en el diagnóstico de la endometriosis
+    </h1>
+    <p class="text-base md:text-lg lg:text-[1.05rem] italic text-brand-800 mb-2">
+      Las metáforas no son exageraciones. Son pistas clínicas.
+    </p>
+    <p class="byline italic text-brand-800/70 text-sm">Dra. Stella Bullo</p>
+  </header>
 
-      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
-        <p>Las pacientes rara vez se quedan en me duele. Recurrren a cuchillos, fuego, presión o algo vivo por dentro. Estas imágenes surgen cuando el dolor se resiste a la medida. No son adorno. Son intentos de hacer visible el dolor.</p>
-        <p>En endometriosis, este lenguaje puede ser una pista. En la consulta, las palabras suelen comprimirse en números. Útiles, sí. Suficientes, no. Cuando el lenguaje se aplana, se pierde sentido. El diagnóstico puede demorarse.</p>
-        <p>Años de análisis de relatos de pacientes dejaron una lección simple. Las metáforas traen detalle. Insinúan intensidad, localización, duración y temor. Muestran lo que un formulario no alcanza. Escuchar bien puede cambiar una historia clínica.</p>
+  <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-8 prose-h2:mb-3 prose-h3:mt-6 prose-h3:mb-2">
+    <p class="mb-6">
+      Las pacientes rara vez se quedan en me duele. Recurren a cuchillos, fuego, presión o algo vivo por dentro. Estas imágenes surgen cuando el dolor se resiste a la medida. No son adorno sino intentos de hacer visible el dolor.
+    </p>
 
-        <h2>Puntos clave para la práctica</h2>
-        <ul class="list-disc pl-5">
-          <li>Preste atención a las imágenes vívidas. Suelen señalar información que los cuestionarios no capturan.</li>
-          <li>Invite a describir libremente antes de pedir números. Permita que la persona hable con sus propias palabras.</li>
-          <li>Tome las metáforas como pistas por explorar. Pregunte dónde, cuándo, cómo se siente y qué limita.</li>
-        </ul>
+    <p class="mb-6">
+      En endometriosis, este lenguaje puede ser una pista. En la consulta, las palabras suelen comprimirse en números. Útiles, sí. Suficientes, no. Cuando el lenguaje se aplana, se pierde sentido y el diagnóstico puede demorarse.
+    </p>
 
-        <p>El lenguaje no cura el dolor. Hace otra cosa. Permite que el dolor se vea y se escuche. Para quienes viven con endometriosis, esa primera escucha puede acercar una atención a tiempo. Cambio pequeño. Impacto real.</p>
-      </div>
-    </article>
+    <p class="mb-6">
+      Años de análisis de relatos de pacientes dejaron una lección simple. Las metáforas aportan detalle. Insinúan intensidad, localización, duración y temor. Muestran lo que un formulario no alcanza. Escuchar bien puede cambiar una historia clínica. Prestar atención a estas expresiones no es un lujo literario sino una herramienta de cuidado.
+    </p>
+  </div>
+
+  <section class="callout rounded-xl2 p-4 md:p-5 mt-6">
+    <h2 class="m-0">Puntos clave para la práctica</h2>
+    <ul class="list-disc pl-5 mt-2">
+      <li>Preste atención a las imágenes vívidas. Suelen señalar información que los cuestionarios no capturan.</li>
+      <li>Invite a describir libremente antes de pedir números. Permita que la persona hable con sus propias palabras.</li>
+      <li>Tome las metáforas como pistas por explorar. Pregunte dónde, cuándo, cómo se siente y qué limita.</li>
+    </ul>
+  </section>
+
+  <p class="mt-6">
+    El lenguaje no cura el dolor. Hace otra cosa: permite que el dolor se vea y se escuche. Para quienes viven con endometriosis, esa primera escucha puede acercar una atención a tiempo. Cambio pequeño, impacto real.
+  </p>
+</article>
+
+
   </main>
 
   <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
@@ -180,11 +211,11 @@
         langToggle.textContent = 'Read it in English';
         langToggle.setAttribute('aria-label','Read it in English');
         crumbHome.textContent = '← Stella Bullo (Inicio)';
-        crumbHome.setAttribute('href','/es/');
+        crumbHome.setAttribute('href','/es/index.html');
         crumbSection.textContent = '↔ Volver a Técnica · Contenidos · UX';
         crumbSection.setAttribute('href','/es/technical-content-ux/');
       } else {
-        spanish.classList.add('hidden');
+       spanish.classList.add('hidden');
         english.classList.remove('hidden');
         langToggle.textContent = 'Leer en Español';
         langToggle.setAttribute('aria-label','Leer en Español');
