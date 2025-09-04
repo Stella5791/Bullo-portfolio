@@ -60,14 +60,19 @@
 
 <body class="bg-brand-50 text-brand-800 font-sans">
   <!-- Topbar -->
-  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 flex flex-col gap-3">
-    <a href="../../index.html#samples" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">
-      ← Back to Articles
-    </a>
-    <button id="lang-toggle" class="btn inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95 w-fit">
-      Read it in English
-    </button>
-  </div>
+ <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 flex flex-col gap-3">
+  <a id="crumb-section"
+     href="/annotation-evaluation/index.html"
+     class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">
+    ↔ Back to Essays
+  </a>
+
+  <button id="lang-toggle"
+          class="btn inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95 w-fit"
+          aria-label="Leer en Español">
+    Leer en Español
+  </button>
+</div>
 
   <!-- Article container -->
   <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
@@ -317,27 +322,37 @@
 
   <script>
     // language toggle
-    const langToggle = document.getElementById('lang-toggle');
-    const englishDiv = document.getElementById('english');
-    const spanishDiv = document.getElementById('spanish');
-    englishDiv.classList.add('hidden');
-    spanishDiv.classList.remove('hidden');
-    langToggle.textContent = 'Read it in English';
-    langToggle.setAttribute('aria-label','Read it in English');
-    langToggle.addEventListener('click', () => {
-      const englishShowing = !englishDiv.classList.contains('hidden');
-      if (englishShowing) {
-        englishDiv.classList.add('hidden');
-        spanishDiv.classList.remove('hidden');
-        langToggle.textContent = 'Read it in English';
-        langToggle.setAttribute('aria-label','Read it in English');
-      } else {
-        spanishDiv.classList.add('hidden');
-        englishDiv.classList.remove('hidden');
-        langToggle.textContent = 'Leer en Español';
-        langToggle.setAttribute('aria-label','Leer en Español');
-      }
-    });
+    function setLang(lang) {
+    if (lang === 'en') {
+      // Show English
+      english?.classList.remove('hidden');
+      if (english) english.style.display = 'block';
+      // Hide Spanish
+      spanish?.classList.add('hidden');
+      if (spanish) spanish.style.display = 'none';
+
+      langToggle.textContent = 'Leer en Español';
+      langToggle.setAttribute('aria-label', 'Leer en Español');
+      document.documentElement.setAttribute('lang', 'en');
+
+      crumbSection.textContent = '↔ Back to annotation-evaluation';
+      crumbSection.setAttribute('href', '/annotation-evaluation/index.html');
+    } else {
+      // Show Spanish
+      spanish?.classList.remove('hidden');
+      if (spanish) spanish.style.display = 'block';
+      // Hide English
+      english?.classList.add('hidden');
+      if (english) english.style.display = 'none';
+
+      langToggle.textContent = 'Read it in English';
+      langToggle.setAttribute('aria-label', 'Read it in English');
+      document.documentElement.setAttribute('lang', 'es');
+
+      crumbSection.textContent = '↔ Volver a Anotación y evaluación';
+      crumbSection.setAttribute('href', '/annotation-evaluation/es/index.html');
+    }
+  }
 
     // back to top
     const toTop = document.getElementById('toTop');
