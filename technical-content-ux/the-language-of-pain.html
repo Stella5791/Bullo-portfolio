@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Language of Pain: How Clinicians and Builders Can Learn from Metaphor – Stella Bullo</title>
+  <meta name="description" content="How clinicians and builders can learn from patient metaphors — a bilingual technical article by Dr. Stella Bullo." />
+  <meta name="author" content="Stella Bullo" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind + Typography -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial','sans-serif'] },
+          colors: {
+            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
+          },
+          boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html{scroll-behavior:smooth}
+    body {font-size: 15px;}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+
+    /* Override Tailwind Typography defaults for h2/h3 */
+    .prose h2 {
+      font-size: 1.15rem !important;
+      font-weight: 600;
+    }
+    .prose h3 {
+      font-size: 1rem !important;
+      font-weight: 500;
+    }
+  </style>
+</head>
+
+<body class="bg-brand-50 text-brand-800 font-sans text-[15px] md:text-[16px]">
+  <!-- Topbar -->
+<div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/technical-content-ux/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Technical · Content · UX</a>
+    </nav>
+    <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
+  </div>
+
+  <!-- Article container -->
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <!-- ENGLISH -->
+    <article id="english">
+      <header class="mb-8 md:mb-10">
+        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">The Language of Pain: How Clinicians and Builders Can Learn from Metaphor</h1>
+        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">A practical and bilingual guide on bridging lived experience, clinical communication, and NLP implementation</h2>
+        <p class="italic text-brand-800/70 text-sm">Dr. Stella Bullo</p>
+      </header>
+
+      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
+        <h2>Overview</h2>
+        <p>Metaphor is not decoration. It is a tool patients reach for when literal words fail. In clinical contexts, metaphors transform private sensations into shareable narratives. Preserving them helps clinicians hear what patients mean, and helps builders design tools that turn figurative expressions into actionable insights. Ignoring metaphor means missing signals about intensity, urgency, and lived experience.</p>
+
+        <h2>Why this matters</h2>
+        <p>Clinicians gain empathy and accuracy when they document metaphors alongside standard notes. Product teams in digital health create better triage and dashboards when they integrate figurative language. Researchers find richer datasets when they treat metaphors as structured information rather than noise.</p>
+
+        <h2>From methodology to practice</h2>
+        <h3>Step one: collect</h3>
+        <p>Gather authentic patient phrases through interviews, forums, or intake forms. Record them verbatim.</p>
+        <h3>Step two: categorise</h3>
+        <p>Group expressions into families: fire, pressure, intrusion, tearing, weight. Patterns emerge across narratives.</p>
+        <h3>Step three: reframe</h3>
+        <p>Translate into clinical equivalents while retaining intensity. <em>“Like broken glass in the pelvis”</em> becomes <em>“sharp, cutting pelvic pain”</em>.</p>
+        <h3>Step four: flag</h3>
+        <p>Mark metaphors that suggest red-flag conditions. <em>“An elephant on my chest”</em> should trigger cardiac triage.</p>
+
+        <h2>Clinical examples</h2>
+        <ul>
+          <li><em>“It feels like glass”</em> → sharp, localised pelvic pain. Guidance: check cyclical patterns.</li>
+          <li><em>“Like a fire in my womb”</em> → burning pelvic pain. Guidance: assess inflammation.</li>
+          <li><em>“An elephant on my chest”</em> → crushing chest pressure. Guidance: triage urgently.</li>
+        </ul>
+
+        <h2>Technical implementation</h2>
+        <p>A prototype pipeline shows how linguistics guides NLP:</p>
+        <ul>
+          <li>Text normalised and segmented.</li>
+          <li>Regex and lexicons detect metaphor candidates.</li>
+          <li>Taxonomy stored in JSON for maintainability.</li>
+          <li>Lightweight classifiers handle context and ambiguity.</li>
+          <li>Dual outputs: patient-friendly summary and clinician-friendly notes aligned with ICD/SNOMED.</li>
+        </ul>
+        <p>The stack combines Python, spaCy, curated regex, JSON taxonomies, Flask APIs, and small transformer modules where extended context is needed. Rules ensure interpretability; classifiers resolve edge cases; hybrid design balances precision, recall, and usability. Governance requires GDPR/HIPAA compliance, informed consent, and anonymised storage.</p>
+
+        <h2>Pitfalls and safeguards</h2>
+        <p>Avoid over-interpreting a single metaphor. Avoid reducing narratives to sterile shorthand. Account for emotional, cultural, and social dimensions. Do not assume metaphor categories are universal. The safeguard is simple: listen closely, triangulate, and document.</p>
+
+        <h2>Practical tips</h2>
+        <ul>
+          <li>Allow free-text alongside structured symptom capture.</li>
+          <li>Show metaphors next to clinical paraphrases in dashboards.</li>
+          <li>Use colour or icons to signal figurative intensity.</li>
+          <li>Track metaphor frequency to support clinical research.</li>
+          <li>Maintain a living taxonomy that grows with patient contributions.</li>
+        </ul>
+
+        <h2>Checklist for clinicians</h2>
+        <ul>
+          <li>Record at least one metaphor verbatim.</li>
+          <li>Provide a neutral paraphrase for clarity.</li>
+          <li>Treat figurative intensity as a possible severity marker.</li>
+          <li>Use metaphors to open conversation about impact on life.</li>
+          <li>Share anonymised examples for training and research.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Metaphor is not noise; it is signal. Embedding it into healthcare and digital systems makes care more accurate and humane. For clinicians, it sharpens listening. For builders, it sharpens tools. Together, they ensure that when patients reach for metaphor, their voices are not lost in translation.</p>
+      </div>
+    </article>
+
+    <!-- SPANISH -->
+    <article id="spanish" class="hidden">
+      <header class="mb-8 md:mb-10">
+        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">El lenguaje del dolor: cómo clínicxs y desarrolladores pueden aprender de las metáforas</h1>
+        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">Una guía práctica y bilingüe para tender puentes entre la experiencia vivida, la comunicación clínica y el PLN</h2>
+        <p class="italic text-brand-800/70 text-sm">Dra. Stella Bullo</p>
+      </header>
+
+      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
+        <h2>Resumen</h2>
+        <p>La metáfora no es adorno. Es el recurso al que recurren lxs pacientes cuando las palabras literales no bastan. En contextos clínicos, transforma sensaciones privadas en relatos compartibles. Preservarlas ayuda a que lxs clínicxs comprendan mejor y a que lxs desarrolladores diseñen herramientas que conviertan expresiones figuradas en información útil. Ignorar la metáfora significa perder señales de intensidad, urgencia y experiencia vivida.</p>
+
+        <h2>Por qué importa</h2>
+        <p>Lxs clínicxs ganan empatía y precisión cuando documentan metáforas junto a las notas estándar. Los equipos de producto en salud digital mejoran triaje y tableros cuando integran lenguaje figurado. Lxs investigadores encuentran corpus más ricos cuando tratan la metáfora como información estructurada y no como ruido.</p>
+
+        <h2>De la metodología a la práctica</h2>
+        <h3>Paso uno: recopilar</h3>
+        <p>Reunir frases auténticas de pacientes en entrevistas, foros o formularios. Registrarlas textualmente.</p>
+        <h3>Paso dos: categorizar</h3>
+        <p>Agrupar expresiones en familias: fuego, presión, intrusión, desgarro, peso. Surgen patrones entre relatos.</p>
+        <h3>Paso tres: reformular</h3>
+        <p>Traducir a equivalentes clínicos manteniendo la intensidad. <em>“Como vidrios rotos en la pelvis”</em> se convierte en <em>“dolor pélvico agudo y cortante”</em>.</p>
+        <h3>Paso cuatro: señalar</h3>
+        <p>Marcar metáforas que sugieran condiciones de alarma. <em>“Un elefante en el pecho”</em> debe activar triaje cardíaco.</p>
+
+        <h2>Ejemplos clínicos</h2>
+        <ul>
+          <li><em>“Siento como si fuera vidrio”</em> → dolor pélvico agudo y localizado. Guía: revisar patrones cíclicos.</li>
+          <li><em>“Como un fuego en el útero”</em> → dolor pélvico urente. Guía: evaluar inflamación.</li>
+          <li><em>“Un elefante en el pecho”</em> → presión torácica aplastante. Guía: triaje urgente.</li>
+        </ul>
+
+        <h2>Implementación técnica</h2>
+        <p>Un flujo de trabajo prototipo muestra cómo la lingüística guía el PLN:</p>
+        <ul>
+          <li>Texto normalizado y segmentado.</li>
+          <li>Regex y léxicos detectan candidatos metafóricos.</li>
+          <li>Taxonomía en JSON para mantenibilidad.</li>
+          <li>Clasificadores ligeros manejan contexto y ambigüedad.</li>
+          <li>Salidas duales: resumen claro para pacientes y notas clínicas alineadas con ICD/SNOMED.</li>
+        </ul>
+        <p>La pila combina Python, spaCy, regex curadas, taxonomías en JSON, APIs en Flask y módulos Transformers cuando se necesita más contexto. Las reglas aseguran interpretabilidad; los clasificadores resuelven casos límite; el diseño híbrido equilibra precisión, cobertura y usabilidad. La gobernanza exige cumplimiento con GDPR/HIPAA, consentimiento informado y almacenamiento anonimizado.</p>
+
+        <h2>Errores y precauciones</h2>
+        <p>Evitar sobreinterpretar una metáfora aislada. Evitar reducir relatos a abreviaturas estériles. Considerar dimensiones emocionales, culturales y sociales. No asumir que las categorías metafóricas son universales. La salvaguarda es simple: escuchar, triangular y documentar.</p>
+
+        <h2>Consejos prácticos</h2>
+        <ul>
+          <li>Permitir texto libre junto a campos estructurados.</li>
+          <li>Mostrar metáforas junto a paráfrasis clínicas en tableros.</li>
+          <li>Usar colores o íconos para marcar intensidad figurada.</li>
+          <li>Registrar frecuencia de metáforas para investigación.</li>
+          <li>Mantener una taxonomía viva que crezca con nuevas aportaciones.</li>
+        </ul>
+
+        <h2>Lista de verificación para clínicxs</h2>
+        <ul>
+          <li>Registrar al menos una metáfora textualmente.</li>
+          <li>Proporcionar una paráfrasis neutra paralela.</li>
+          <li>Tratar la intensidad figurada como marcador de gravedad.</li>
+          <li>Usar metáforas para abrir conversación sobre impacto vital.</li>
+          <li>Compartir ejemplos anonimizados con equipos de investigación o formación.</li>
+        </ul>
+
+        <h2>Conclusión</h2>
+        <p>La metáfora no es ruido: es señal. Integrarla en salud y en sistemas digitales hace la atención más precisa y humana. Para lxs clínicxs, agudiza la escucha. Para lxs desarrolladores, afina las herramientas. Juntxs aseguran que cuando lxs pacientes recurren a metáforas, sus voces no se pierdan en la traducción.</p>
+      </div>
+    </article>
+  </main>
+  
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
+    <p>© 2025 Stella Bullo. All rights reserved.</p>
+    <p>For inquiries, contact me at <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a>.</p>
+  </footer>
+
+  <!-- Return to top -->
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
+
+  <script>
+    const langToggle = document.getElementById('lang-toggle');
+    const english = document.getElementById('english');
+    const spanish = document.getElementById('spanish');
+    const crumbHome = document.getElementById('crumb-home');
+    const crumbSection = document.getElementById('crumb-section');
+
+    function setLang(lang) {
+      if (lang === 'es') {
+        english.classList.add('hidden');
+        spanish.classList.remove('hidden');
+        langToggle.textContent = 'Read it in English';
+        langToggle.setAttribute('aria-label','Read it in English');
+        crumbHome.textContent = '← Stella Bullo (Inicio)';
+        crumbHome.setAttribute('href','/es/index.html');
+        crumbSection.textContent = '↔ Volver a Técnica · Contenidos · UX';
+        crumbSection.setAttribute('href','es/index.html');
+      } else {
+        spanish.classList.add('hidden');
+        english.classList.remove('hidden');
+        langToggle.textContent = 'Leer en Español';
+        langToggle.setAttribute('aria-label','Leer en Español');
+        crumbHome.textContent = '← Stella Bullo (Home)';
+        crumbHome.setAttribute('href','/');
+        crumbSection.textContent = '↔ Back to Technical · Content · UX';
+        crumbSection.setAttribute('href','/technical-content-ux/');
+      }
+    }
+
+    // Toggle click
+    langToggle.addEventListener('click', () => {
+      const isEnglish = !english.classList.contains('hidden');
+      setLang(isEnglish ? 'es' : 'en');
+    });
+
+    // Default to English
+    setLang('en');
+
+    // Footer year
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Back to top
+    const toTop = document.getElementById('toTop');
+    const toggleToTop = () => {
+      toTop.classList.toggle('hidden', window.scrollY < 400);
+    };
+    window.addEventListener('scroll', toggleToTop);
+    toggleToTop();
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>

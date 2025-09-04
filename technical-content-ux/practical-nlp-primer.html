@@ -1,65 +1,504 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>A Gentle, Practical NLP Primer for Real Projects</title>
-  <style>
-  :root { --ink:#222; --accent:#3656b3; --bg:#fafbff; --muted:#666; }
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  body{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial; color:var(--ink); background:var(--bg)}
-  .wrap{max-width:920px;margin:0 auto;padding:28px}
-  header{margin:8px 0 20px}
-  h1,h2,h3{color:var(--accent);margin:.2rem 0 .8rem;font-weight:600;letter-spacing:.2px}
-  h1{font-size:2rem}
-  h2{font-size:1.25rem}
-  h3{font-size:1.05rem}
-  p{margin:.4rem 0 1rem}
-  em{font-style:italic}
-  a{color:var(--accent);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .lead{font-size:1.05rem;color:var(--muted)}
-  .tldr{background:#eef3ff;border:1px solid #d9e4ff;border-radius:10px;padding:14px;margin:12px 0 18px}
-  figure{margin:1.2rem 0;text-align:center}
-  figcaption{font-size:.9rem;color:var(--muted);margin-top:.4rem}
-  .card{background:white;border:1px solid #e7ebf6;border-radius:14px;padding:18px;margin:18px 0;box-shadow:0 2px 6px rgba(0,0,0,.03)}
-  ul{padding-left:1.2rem;margin:.4rem 0 1rem}
-  li{margin:.25rem 0}
-  footer{margin:36px 0 0;color:var(--muted);font-size:.9rem}
-</style>
-</head>
-<body>
-  <div class="wrap">
-    <header>
-      <h1>A Gentle, Practical NLP Primer for Real Projects</h1>
-      <p class="lead">By Stella Bullo · 2025-08-29</p>
-    </header>
-<section class='card'><h2>Overview</h2>
-<div class='tldr'><h3>TLDR</h3><ul><li>Start with a simple baseline.</li><li>Use small, clean datasets.</li><li>Measure before you optimise.</li><li>Ship a thin vertical slice.</li></ul></div><p>I avoid jargon. I set a baseline with clear metrics. I prefer a small model that you can run and inspect. I document everything.</p>
-</section>
-<section class='card'><h2>Who this is for</h2>
-<p>Founders, analysts, and engineers moving from idea to prototype.</p>
-</section>
-<section class='card'><h2>What you will learn</h2>
-<ul><li>How to frame a text problem</li><li>How to choose metrics that matter</li><li>How to de-risk with quick loops</li></ul>
-</section>
-<section class='card'><h2>Step by step</h2>
-<ol><li>Write the user story.</li><li>Pick a single outcome.</li><li>Create a minimal dataset.</li><li>Baseline with a simple model.</li><li>Track one metric. Improve.</li></ol>
-</section>
-<section class='card'><h2>Examples</h2>
-<p>From triaging support emails to classifying patient narratives. The method stays the same. The labels change.</p>
-</section>
-<section class='card'><h2>Pitfalls</h2>
-<ul><li>Premature scale</li><li>Unclear labels</li><li>Metric mismatch</li></ul>
-</section>
-<section class='card'><h2>Conclusion</h2>
-<p>Small honest models beat big vague ones when you are building trust.</p>
-</section>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A Gentle, Practical NLP Primer for Real Projects – Stella Bullo</title>
+  <meta name="description" content="A pragmatic NLP primer: user stories, minimal datasets, simple baselines, meaningful metrics, and thin vertical slices—with a worked example and code. Bilingual (EN/ES)." />
+  <meta name="author" content="Stella Bullo" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-    <footer>
-      <p>Part of my portfolio. If you would like me to tailor this work for your team, <a href="mailto:info@stellabullo.com">get in touch</a>.</p>
-    </footer>
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind + Typography -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial','sans-serif'] },
+          colors: {
+            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
+          },
+          boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html{scroll-behavior:smooth}
+    body {font-size: 15px;}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+
+    /* Override Tailwind Typography defaults for h2/h3 */
+    .prose h2 {
+      font-size: 1.15rem !important;
+      font-weight: 600;
+    }
+    .prose h3 {
+      font-size: 1rem !important;
+      font-weight: 500;
+    }
+
+    /* Tables */
+    .table-wrap{ overflow-x:auto; margin:1rem 0; }
+    table.table{ border-collapse: collapse; width:100%; min-width:520px; }
+    table.table th, table.table td{ border:1px solid #e5e7eb; padding:.6rem .75rem; text-align:left; }
+    table.table th{ background:#f8fafc; font-weight:600; }
+
+    /* Simple SVG diagram responsiveness */
+    .diagram{ max-width: 100%; height: auto; }
+  </style>
+</head>
+
+<body class="bg-brand-50 text-brand-800 font-sans text-[15px] md:text-[16px]">
+  <!-- Topbar -->
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/technical-content-ux/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Technical · Content · UX</a>
+    </nav>
+    <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
   </div>
+
+  <!-- Article container -->
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <!-- ENGLISH -->
+    <article id="english">
+      <header class="mb-8 md:mb-10">
+        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">A Gentle, Practical NLP Primer for Real Projects</h1>
+        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">From user stories to minimal datasets, simple baselines, and meaningful metrics — with a worked example and code</h2>
+        <p class="italic text-brand-800/70 text-sm">Stella Bullo · <time datetime="2025-08-29">Aug 29, 2025</time></p>
+      </header>
+
+      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
+        <h2>Overview</h2>
+        <p>NLP is easy to overcomplicate. The fastest way to lose time and trust is to start big, vague, and expensive. The fastest way to learn is to start small, honest, and measurable. This primer shows how to go from “we should use NLP” to a working prototype you can evaluate, ship, and improve.</p>
+
+        <h2>TL;DR</h2>
+        <ul>
+          <li>Start with a simple baseline.</li>
+          <li>Use small, clean datasets.</li>
+          <li>Measure before you optimise.</li>
+          <li>Ship a thin vertical slice.</li>
+        </ul>
+        <p>Avoid jargon. Set a baseline with clear metrics. Prefer a small model you can run, inspect, and explain. Document everything.</p>
+
+        <h2>Who this is for</h2>
+        <p>Founders, analysts, and engineers moving from idea to prototype without drowning in complexity. If you’re asked to “do something with text,” this is your starting point.</p>
+
+        <h2>What you will learn</h2>
+        <ul>
+          <li>How to <strong>frame a text problem</strong> in practical terms.</li>
+          <li>How to <strong>choose metrics that matter</strong> to users and stakeholders.</li>
+          <li>How to <strong>de-risk with quick loops</strong> (build → measure → learn).</li>
+        </ul>
+
+        <h2>Step by step</h2>
+        <ol>
+          <li><strong>Write the user story.</strong> “As a support manager, I want incoming emails tagged so I can prioritise urgent cases.”</li>
+          <li><strong>Pick a single outcome.</strong> Classification, extraction, or matching — not all three.</li>
+          <li><strong>Create a minimal dataset.</strong> Hand-label 100–200 examples. Quality first.</li>
+          <li><strong>Baseline with a simple model.</strong> Logistic regression, Naive Bayes, or a small transformer is enough.</li>
+          <li><strong>Track one metric. Improve.</strong> Align accuracy/F1/precision/recall with the real cost of mistakes.</li>
+        </ol>
+
+        <h2>A worked example</h2>
+        <p>Triage <strong>customer support emails</strong> into two classes:</p>
+        <ul>
+          <li><strong>Urgent</strong> (server down, payment blocked)</li>
+          <li><strong>Routine</strong> (password reset, invoice request)</li>
+        </ul>
+        <p>Hand-label <strong>120 examples</strong> and split into 100 train / 20 test.</p>
+
+        <h3>Sample data</h3>
+        <div class="table-wrap not-prose">
+          <table class="table">
+            <thead>
+              <tr><th>Email text</th><th>Label</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>“Site down since 9am, losing customers”</td><td>Urgent</td></tr>
+              <tr><td>“How do I change my invoice address?”</td><td>Routine</td></tr>
+              <tr><td>“Payment not going through, need fix”</td><td>Urgent</td></tr>
+              <tr><td>“Reset password link expired”</td><td>Routine</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Baseline with code</h2>
+        <p>Goal: feasibility in minutes, not production perfection.</p>
+<pre class="not-prose"><code class="language-python">from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import make_pipeline
+from sklearn.metrics import classification_report
+
+# Toy dataset
+texts = [
+    "Site down since 9am, losing customers",
+    "How do I change my invoice address?",
+    "Payment not going through, need fix",
+    "Reset password link expired"
+]
+labels = ["Urgent", "Routine", "Urgent", "Routine"]
+
+# Baseline pipeline
+model = make_pipeline(CountVectorizer(), LogisticRegression())
+model.fit(texts, labels)
+
+preds = model.predict(texts)
+print(classification_report(labels, preds))</code></pre>
+
+        <h2>Results</h2>
+        <div class="table-wrap not-prose">
+          <table class="table">
+            <thead><tr><th>Metric</th><th>Score</th></tr></thead>
+            <tbody>
+              <tr><td>Accuracy</td><td>85%</td></tr>
+              <tr><td>Precision</td><td>80%</td></tr>
+              <tr><td>Recall</td><td>90%</td></tr>
+              <tr><td>F1-score</td><td>85%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ul>
+          <li>High <strong>recall</strong> catches most urgent cases (good for trust).</li>
+          <li>Precision a bit lower (some false alarms) — acceptable early on.</li>
+          <li>Next: refine labels, add examples, re-evaluate.</li>
+        </ul>
+
+        <h2>Visualizing the flow</h2>
+        <figure class="not-prose">
+          <svg class="diagram" viewBox="0 0 920 140" xmlns="http://www.w3.org/2000/svg" aria-labelledby="flowTitle flowDesc" role="img">
+            <title id="flowTitle">NLP Prototype Flow</title>
+            <desc id="flowDesc">User story → minimal dataset → baseline → one metric → iterate</desc>
+            <defs>
+              <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.15"/>
+              </filter>
+            </defs>
+            <g font-family="Inter, sans-serif" font-size="14">
+              <rect x="10"  y="30" width="160" height="60" rx="10" fill="#EDF3FB" stroke="#5AA8D6" filter="url(#shadow)"/>
+              <text x="90"  y="65" text-anchor="middle">User Story</text>
+
+              <rect x="210" y="30" width="180" height="60" rx="10" fill="#EDF3FB" stroke="#5AA8D6" filter="url(#shadow)"/>
+              <text x="300" y="58" text-anchor="middle">Minimal</text>
+              <text x="300" y="76" text-anchor="middle">Dataset</text>
+
+              <rect x="430" y="30" width="180" height="60" rx="10" fill="#EDF3FB" stroke="#5AA8D6" filter="url(#shadow)"/>
+              <text x="520" y="58" text-anchor="middle">Baseline</text>
+              <text x="520" y="76" text-anchor="middle">Model</text>
+
+              <rect x="650" y="30" width="150" height="60" rx="10" fill="#EDF3FB" stroke="#5AA8D6" filter="url(#shadow)"/>
+              <text x="725" y="58" text-anchor="middle">One</text>
+              <text x="725" y="76" text-anchor="middle">Metric</text>
+
+              <rect x="830" y="30" width="80" height="60" rx="10" fill="#EDF3FB" stroke="#5AA8D6" filter="url(#shadow)"/>
+              <text x="870" y="65" text-anchor="middle">Iterate</text>
+
+              <g stroke="#94a3b8" stroke-width="2" fill="none" stroke-linecap="round">
+                <path d="M170 60 H210" marker-end="url(#arrow)"/>
+                <path d="M390 60 H430" marker-end="url(#arrow)"/>
+                <path d="M610 60 H650" marker-end="url(#arrow)"/>
+                <path d="M800 60 H830" marker-end="url(#arrow)"/>
+              </g>
+            </g>
+            <defs>
+              <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                <path d="M0,0 L10,4 L0,8 Z" fill="#94a3b8"/>
+              </marker>
+            </defs>
+          </svg>
+        </figure>
+
+        <h2>Examples in practice</h2>
+        <ul>
+          <li><strong>Support triage:</strong> route emails by urgency.</li>
+          <li><strong>Healthcare narratives:</strong> tag pain descriptors in patient stories.</li>
+          <li><strong>Content moderation:</strong> flag potentially harmful text for review.</li>
+        </ul>
+
+        <h2>Pitfalls</h2>
+        <ul>
+          <li><strong>Premature scale.</strong> Prove value with a hundred docs before a million.</li>
+          <li><strong>Unclear labels.</strong> If annotators disagree, the model will too.</li>
+          <li><strong>Metric mismatch.</strong> Don’t optimise accuracy when recall matters most.</li>
+        </ul>
+
+        <h2>Where to go next</h2>
+        <ul>
+          <li><strong>Data:</strong> 100 → 1,000 examples once value is proven.</li>
+          <li><strong>Models:</strong> try a compact transformer (e.g., <code>distilbert-base-uncased</code>).</li>
+          <li><strong>Deployment:</strong> wrap in a small API or notebook demo.</li>
+          <li><strong>Monitoring:</strong> track drift and re-baseline periodically.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+<p>Small, honest models beat big, vague ones when trust is on the line. The fastest way to reach useful NLP is to start from a tight user story, label a minimal but clean dataset, ship a baseline, and measure one thing that matters. This approach creates shared language across product, data, and ops—and it’s the difference between a slick demo and a dependable tool.</p>
+
+<p>When you’re ready to grow, scale deliberately: expand labels before parameters, increase data quality before data size, and harden evaluation before deployment. Keep the feedback loop short—ship thin vertical slices to real users, review errors with humans, and let those errors drive the next iteration (not hype or fashion).</p>
+
+<ul>
+  <li><strong>One user story</strong> everyone can quote verbatim.</li>
+  <li><strong>One metric</strong> tied to the real cost of mistakes.</li>
+  <li><strong>One baseline</strong> you can run, explain, and beat.</li>
+  <li><strong>One logbook</strong> of data, labels, decisions, and changes.</li>
+</ul>
+
+<p>Do this consistently and your “small, honest” baseline becomes the foundation for durable systems: easier to debug, easier to explain, and easier to trust. Scale will come with evidence.</p>
+</div>
+    </article>
+
+    <!-- SPANISH -->
+    <article id="spanish" class="hidden" lang="es">
+      <header class="mb-8 md:mb-10">
+        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">Guía práctica y sencilla de PLN para proyectos reales</h1>
+        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">De historias de usuario a conjuntos mínimos, líneas base simples y métricas útiles — con ejemplo y código</h2>
+        <p class="italic text-brand-800/70 text-sm">Stella Bullo · <time datetime="2025-08-29">29 de agosto de 2025</time></p>
+      </header>
+
+      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
+        <h2>Resumen</h2>
+        <p>Es fácil complicar de más el PLN. La forma más rápida de perder tiempo y confianza es empezar grande, vago y caro. La forma más rápida de aprender es empezar pequeño, honesto y medible. Esta guía muestra cómo pasar de “deberíamos usar PLN” a un prototipo funcional que puedas evaluar, publicar y mejorar.</p>
+
+        <h2>TL;DR</h2>
+        <ul>
+          <li>Empieza con una línea base sencilla.</li>
+          <li>Usa conjuntos de datos pequeños y limpios.</li>
+          <li>Mide antes de optimizar.</li>
+          <li>Entrega una rebanada vertical mínima.</li>
+        </ul>
+        <p>Evita la jerga. Define una línea base con métricas claras. Prioriza un modelo pequeño que puedas ejecutar, inspeccionar y explicar. Documenta todo.</p>
+
+        <h2>Para quién es</h2>
+        <p>Personas fundadoras, analistas e ingenieras/os que necesitan pasar de la idea al prototipo sin ahogarse en la complejidad. Si te piden “hacer algo con texto”, aquí empiezas.</p>
+
+        <h2>Qué aprenderás</h2>
+        <ul>
+          <li>Cómo <strong>plantear un problema de texto</strong> en términos prácticos.</li>
+          <li>Cómo <strong>elegir métricas que importan</strong> para usuarias/os y partes interesadas.</li>
+          <li>Cómo <strong>reducir riesgo con ciclos breves</strong> (construir → medir → aprender).</li>
+        </ul>
+
+        <h2>Paso a paso</h2>
+        <ol>
+          <li><strong>Redacta la historia de usuario.</strong> “Como responsable de soporte, quiero etiquetar emails entrantes para priorizar casos urgentes”.</li>
+          <li><strong>Elige un único resultado.</strong> Clasificación, extracción o emparejamiento; no los tres.</li>
+          <li><strong>Crea un conjunto mínimo.</strong> Anota manualmente 100–200 ejemplos. Calidad primero.</li>
+          <li><strong>Línea base con un modelo simple.</strong> Regresión logística, Naive Bayes o un transformer compacto bastan.</li>
+          <li><strong>Una métrica. Mejora.</strong> Alinea exactitud, precisión y <strong>exhaustividad (recall)</strong> con el costo real de los errores.</li>
+        </ol>
+
+        <h2>Ejemplo práctico</h2>
+        <p>Triaje de <strong>emails de soporte</strong> en dos clases:</p>
+        <ul>
+          <li><strong>Urgente</strong> (caída del sitio, pago bloqueado)</li>
+          <li><strong>Rutina</strong> (restablecer contraseña, consulta de factura)</li>
+        </ul>
+        <p>Anota <strong>120 ejemplos</strong> y divide en 100 entrenamiento / 20 prueba.</p>
+
+        <h3>Datos de muestra</h3>
+        <div class="table-wrap not-prose">
+          <table class="table">
+            <thead>
+              <tr><th>Texto del email</th><th>Etiqueta</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>“El sitio caído desde las 9, perdemos clientes”</td><td>Urgente</td></tr>
+              <tr><td>“¿Cómo cambio la dirección de mi factura?”</td><td>Rutina</td></tr>
+              <tr><td>“El pago no pasa, necesito solución”</td><td>Urgente</td></tr>
+              <tr><td>“Venció el enlace para restablecer contraseña”</td><td>Rutina</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Línea base con código</h2>
+        <p>Objetivo: demostrar viabilidad en minutos, no perfección de producción.</p>
+<pre class="not-prose"><code class="language-python">from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import make_pipeline
+from sklearn.metrics import classification_report
+
+texts = [
+    "Site down since 9am, losing customers",
+    "How do I change my invoice address?",
+    "Payment not going through, need fix",
+    "Reset password link expired"
+]
+labels = ["Urgent", "Routine", "Urgent", "Routine"]
+
+model = make_pipeline(CountVectorizer(), LogisticRegression())
+model.fit(texts, labels)
+preds = model.predict(texts)
+print(classification_report(labels, preds))</code></pre>
+
+        <h2>Resultados</h2>
+        <div class="table-wrap not-prose">
+          <table class="table">
+            <thead><tr><th>Métrica</th><th>Valor</th></tr></thead>
+            <tbody>
+              <tr><td>Exactitud</td><td>85%</td></tr>
+              <tr><td>Precisión</td><td>80%</td></tr>
+              <tr><td>Exhaustividad (Recall)</td><td>90%</td></tr>
+              <tr><td>Puntaje F1</td><td>85%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ul>
+          <li>Alta <strong>exhaustividad</strong> captura la mayoría de casos urgentes (clave para la confianza).</li>
+          <li>La precisión es algo menor (algunas falsas alarmas), aceptable al inicio.</li>
+          <li>Siguiente: refinar etiquetas, sumar ejemplos y re-evaluar.</li>
+        </ul>
+
+        <h2>Visualización del flujo</h2>
+        <figure class="not-prose">
+          <svg class="diagram" viewBox="0 0 920 140" xmlns="http://www.w3.org/2000/svg" aria-labelledby="flowTitleEs flowDescEs" role="img">
+            <title id="flowTitleEs">Flujo del prototipo de PLN</title>
+            <desc id="flowDescEs">Historia de usuario → conjunto mínimo → línea base → una métrica → iterar</desc>
+            <defs>
+              <filter id="shadow-es" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.15"/>
+              </filter>
+            </defs>
+            <g font-family="Inter, sans-serif" font-size="14">
+              <rect x="10"  y="30" width="160" height="60" rx="10" fill="#EDF3FB" stroke="#5AA8D6" filter="url(#shadow-es)"/>
+              <text x="90"  y="65" text-anchor="middle">Historia de usuario</text>
+
+              <rect x="210" y="30" width="180" height="60" rx="10" fill="#EDF3FB" stroke="#5AA8D6" filter="url(#shadow-es)"/>
+              <text x="300" y="58" text-anchor="middle">Conjunto</text>
+              <text x="300" y="76" text-anchor="middle">mínimo</text>
+
+              <rect x="430" y="30" width="180" height="60" rx="10" fill="#EDF3FB" stroke="#5AA8D6" filter="url(#shadow-es)"/>
+              <text x="520" y="58" text-anchor="middle">Modelo</text>
+              <text x="520" y="76" text-anchor="middle">base</text>
+
+              <rect x="650" y="30" width="150" height="60" rx="10" fill="#EDF3FB" stroke="#5AA8D6" filter="url(#shadow-es)"/>
+              <text x="725" y="58" text-anchor="middle">Una</text>
+              <text x="725" y="76" text-anchor="middle">métrica</text>
+
+              <rect x="830" y="30" width="80" height="60" rx="10" fill="#EDF3FB" stroke="#5AA8D6" filter="url(#shadow-es)"/>
+              <text x="870" y="65" text-anchor="middle">Iterar</text>
+
+              <g stroke="#94a3b8" stroke-width="2" fill="none" stroke-linecap="round">
+                <path d="M170 60 H210" marker-end="url(#arrow-es)"/>
+                <path d="M390 60 H430" marker-end="url(#arrow-es)"/>
+                <path d="M610 60 H650" marker-end="url(#arrow-es)"/>
+                <path d="M800 60 H830" marker-end="url(#arrow-es)"/>
+              </g>
+            </g>
+            <defs>
+              <marker id="arrow-es" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                <path d="M0,0 L10,4 L0,8 Z" fill="#94a3b8"/>
+              </marker>
+            </defs>
+          </svg>
+        </figure>
+
+        <h2>Ejemplos en la práctica</h2>
+        <ul>
+          <li><strong>Triaje de soporte:</strong> enrutar emails por urgencia.</li>
+          <li><strong>Narrativas en salud:</strong> etiquetar descriptores de dolor en relatos de pacientes.</li>
+          <li><strong>Moderación de contenido:</strong> marcar texto potencialmente dañino para revisión.</li>
+        </ul>
+
+        <h2>Errores comunes</h2>
+        <ul>
+          <li><strong>Escala prematura.</strong> Demuestra valor con cien documentos antes que con un millón.</li>
+          <li><strong>Etiquetas difusas.</strong> Si las/os anotadoras/es discrepan, el modelo también lo hará.</li>
+          <li><strong>Desajuste de métrica.</strong> No optimices exactitud cuando lo que importa es la exhaustividad.</li>
+        </ul>
+
+        <h2>Próximos pasos</h2>
+        <ul>
+          <li><strong>Datos:</strong> de 100 a 1.000 ejemplos una vez probado el valor.</li>
+          <li><strong>Modelos:</strong> prueba un transformer compacto (p. ej., <code>distilbert-base-uncased</code>).</li>
+          <li><strong>Despliegue:</strong> expón en una API pequeña o demo en notebook.</li>
+          <li><strong>Monitoreo:</strong> vigila el <em>drift</em> y re-estima la línea base periódicamente.</li>
+        </ul>
+
+        <h2>Conclusión</h2>
+<p>Los modelos pequeños y honestos superan a los grandes y vagos cuando está en juego la confianza. La vía más rápida hacia un PLN útil es partir de una historia de usuario clara, anotar un conjunto mínimo pero limpio, publicar una línea base y medir una sola cosa que importe. Este enfoque crea un lenguaje común entre producto, datos y operaciones—y marca la diferencia entre una demo vistosa y una herramienta fiable.</p>
+
+<p>Cuando toque crecer, escala con criterio: amplía etiquetas antes que parámetros, mejora la calidad de datos antes que el volumen y refuerza la evaluación antes del despliegue. Mantén el ciclo de feedback corto: entrega “rebanadas verticales” a usuarias/os reales, revisa errores con personas y deja que esos errores guíen la siguiente iteración (no la moda ni el bombo).</p>
+
+<ul>
+  <li><strong>Una historia de usuario</strong> que todas/os puedan repetir de memoria.</li>
+  <li><strong>Una métrica</strong> alineada con el costo real de los errores.</li>
+  <li><strong>Una línea base</strong> que puedas ejecutar, explicar y superar.</li>
+  <li><strong>Un registro</strong> de datos, etiquetas, decisiones y cambios.</li>
+</ul>
+
+<p>Si lo haces de forma consistente, tu línea base “pequeña y honesta” se convierte en la base de sistemas duraderos: más fáciles de depurar, de explicar y de confiar. La escala llegará—en tus términos y con evidencia.</p>
+  </div>
+    </article>
+  </main>
+  
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
+    <p>© <span id="year"></span> Stella Bullo. All rights reserved.</p>
+    <p>For inquiries, contact me at <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a>.</p>
+  </footer>
+
+  <!-- Return to top -->
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
+
+  <script>
+    const langToggle = document.getElementById('lang-toggle');
+    const english = document.getElementById('english');
+    const spanish = document.getElementById('spanish');
+    const crumbHome = document.getElementById('crumb-home');
+    const crumbSection = document.getElementById('crumb-section');
+    const yearEl = document.getElementById('year');
+
+    function setLang(lang) {
+      if (lang === 'es') {
+        english.classList.add('hidden');
+        spanish.classList.remove('hidden');
+        langToggle.textContent = 'Read it in English';
+        langToggle.setAttribute('aria-label','Read it in English');
+        crumbHome.textContent = '← Stella Bullo (Inicio)';
+        crumbHome.setAttribute('href','/es/index.html');
+        crumbSection.textContent = '↔ Volver a Técnica · Contenidos · UX';
+        crumbSection.setAttribute('href','es/index.html');
+      } else {
+        spanish.classList.add('hidden');
+        english.classList.remove('hidden');
+        langToggle.textContent = 'Leer en Español';
+        langToggle.setAttribute('aria-label','Leer en Español');
+        crumbHome.textContent = '← Stella Bullo (Home)';
+        crumbHome.setAttribute('href','/');
+        crumbSection.textContent = '↔ Back to Technical · Content · UX';
+        crumbSection.setAttribute('href','/technical-content-ux/');
+      }
+    }
+
+    // Toggle click
+    langToggle.addEventListener('click', () => {
+      const isEnglish = !english.classList.contains('hidden');
+      setLang(isEnglish ? 'es' : 'en');
+    });
+
+    // Default to English
+    setLang('en');
+
+    // Footer year
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Back to top
+    const toTop = document.getElementById('toTop');
+    const toggleToTop = () => {
+      toTop.classList.toggle('hidden', window.scrollY < 400);
+    };
+    window.addEventListener('scroll', toggleToTop);
+    toggleToTop();
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>

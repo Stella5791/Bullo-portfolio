@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Where Linguistics Meets NLP: I Am Finally at Home – Stella Bullo</title>
-  <meta name="description" content="A reflection on bridging linguistics and NLP — from corpus research and metaphor to building Explain My Pain. By Dr. Stella Bullo." />
+  <title>Between Linguistics and the Scar – Stella Bullo</title>
+  <meta name="description" content="Reflections on researching lived pain — from language to code and the Explain My Pain app. Bilingual article by Dr. Stella Bullo." />
   <meta name="author" content="Stella Bullo" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
@@ -32,171 +32,167 @@
 
   <style>
     html{scroll-behavior:smooth}
+    body {font-size: 15px;}
     .btn{transition:all .2s ease}
     .btn:active{transform:translateY(1px)}
-    /* Force smaller h2s inside prose */
+
+    /* Override Tailwind Typography defaults for h2/h3 */
     .prose h2 {
-      font-size: 1rem !important;
+      font-size: 1.15rem !important;
       font-weight: 600;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
     }
     .prose h3 {
-      font-size: 0.9rem !important;
+      font-size: 1rem !important;
       font-weight: 500;
     }
   </style>
 </head>
 
-<body class="bg-brand-50 text-brand-800 font-sans">
+<body class="bg-brand-50 text-brand-800 font-sans text-[15px] md:text-[16px]">
   <!-- Topbar -->
-  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 flex flex-col gap-3">
-    <a href="../../index.html#samples" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">
-      ← Back to Articles
-    </a>
-    <button id="lang-toggle" class="btn inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95 w-fit">
-      Leer en Español
-    </button>
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 flex flex-col gap-2 text-sm md:text-base">
+    <a id="crumbHome" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+    <a id="crumbSection" href="/technical-content-ux/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Technical · Content · UX</a>
+    <button id="lang-toggle" class="btn inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95 w-fit mt-2 text-sm md:text-base">Leer en Español</button>
   </div>
 
   <!-- Article container -->
   <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
     <!-- ENGLISH -->
     <article id="english">
-      <header class="mb-8 md:mb-10">
-        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">
-          Where Linguistics Meets NLP: I Am Finally at Home
-        </h1>
-        <h2 class="text-sm md:text-base lg:text-[1rem] italic mb-3">
-          From corpus linguistics to building Explain My Pain.
-        </h2>
-        <p class="italic text-brand-800/70 text-sm">Dr. Stella Bullo</p>
-      </header>
+  <header class="mb-8 md:mb-10">
+    <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">Where Linguistics Meets NLP: I Am Finally at Home</h1>
+    <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">From corpus linguistics to building Explain My Pain</h2>
+    <p class="italic text-brand-800/70 text-sm">Dr. Stella Bullo</p>
+  </header>
 
-      <div class="prose max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8">
-        <h2>From Linguistics to Tech</h2>
-        <p>When I first heard developers talk about tokenisation and lemmatisation, I thought those concepts sounded strangely familiar. They did not seem like exotic new tech terms. I had heard and used them for years. My work with corpus linguistics had taught me how to slice language into parts, trace its roots, and see how meaning shifts with form. For me, this was not jargon. It was a familiar landscape, only now I was walking it with a different compass. Little did I know that my former tech-scared self would end up using these concepts in a fully technical context every day, in front of a console I once treated like a dangerous animal.</p>
+  <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
+    <h2>From Linguistics to Technology</h2>
+    <p>When I first heard developers speak of <em>tokenisation</em> and <em>lemmatisation</em>, the words felt oddly familiar. They were not foreign concepts to me. In corpus linguistics, I had spent years slicing language into parts, tracing roots, and following how meaning shifts with form. What the tech world presented as “jargon” was, for me, an old landscape seen with a new compass. What I never imagined was that my once tech-hesitant self would one day navigate these processes confidently at a console I had once treated like a dangerous animal.</p>
 
-        <h2>Translating Skills Across Worlds</h2>
-        <p>I spent two decades in academia, teaching and researching across the discipline of linguistics: from semantics, morphology and pragmatics to critical discourse analysis, corpus linguistics, conceptual metaphor theory and intercultural communication. Along the way, I wrote books on clichés and evaluative language, examined sentiment in marketing and health communication, analysed fear and resilience during the first months of the COVID-19 pandemic, and explored how language shapes public understanding. These were never just theoretical pursuits. In hindsight, they were the foundations for any technology that hopes to process language as people truly use it.</p>
-        <p>For me, language was never only a subject to study. It was the lens through which I explored human experience. I examined how we narrate pain, express desire, negotiate identity, and endure suffering. I came to understand how words can carry urgency, intimacy, and resistance, and how a single metaphor can open the door to empathy or close it entirely. In technology, those same skills mark the difference between a tool that merely processes words and one that genuinely understands the people behind them.</p>
+    <h2>Translating Skills Across Worlds</h2>
+    <p>For two decades in academia, I taught and researched across the breadth of linguistics: semantics, morphology, pragmatics, discourse analysis, corpus methods, conceptual metaphor, and intercultural communication. I wrote about clichés and evaluation, explored sentiment in marketing and health communication, and analysed fear and resilience during the first months of COVID-19. Each of these projects gave me insight into how language frames experience, not as abstraction but as lived reality.</p>
+    <p>Language was never simply an object of study. It was a way of entering human experience — how we narrate pain, express desire, negotiate identity, or endure suffering. I learned that a single metaphor can open the door to empathy or close it completely. These are the same insights that make the difference between a tool that merely processes words and one that genuinely listens to the people behind them.</p>
 
-        <h2>Building Tools with Purpose</h2>
-        <p>Then I began building a tool I wished I had during my own years of medical dismissal as an endometriosis patient. At first it was a metaphor tagger, designed as a research aid. Over time it became something more: Explain My Pain, a web application that helps patients describe their pain in ways clinicians can hear. It grew from both a research and a personal need into a tool that could bridge a gap that had long felt unbridgeable.</p>
-        <p>I did not set out to become a developer. I set out to solve a problem. To do it, I taught myself Python, front-end development, APIs, and, at some point, I realised that I was already halfway through learning natural language processing. I discovered that the processes I had honed as a linguist, such as identifying patterns, mapping meaning and interpreting context, were the same skills that could train a machine to listen more like a human.</p>
+    <h2>Building Tools with Purpose</h2>
+    <p>Out of both research and lived experience came a tool I once wished had existed for me: <em>Explain My Pain</em>. It began as a metaphor tagger for research purposes, but grew into a web app designed to help patients describe their pain in ways that clinicians can understand. What started as academic exploration and personal necessity became a bridge across a communication gap that had long felt unbridgeable.</p>
+    <p>I never set out to “become a developer.” I set out to solve a problem. That path required me to learn Python, front-end development, and APIs — and, somewhere along the way, I realised I was already practising natural language processing. The same skills I had developed as a linguist — pattern recognition, meaning-mapping, contextual interpretation — were the very ones needed to teach a machine how to listen more like a human.</p>
 
-        <h2>Where I Fit Now</h2>
-        <p>NLP appealed to me not only as a technical challenge but also as a new canvas for everything I knew about language. Tokenisation became more than splitting text. It became a way to honour each fragment of someone’s story. Lemmas were not just dictionary forms but the underlying shapes of meaning, stripped of surface distractions. Sentiment analysis was not simply a number on a scale but a way of tracing hope, fear, or determination through the turns of a sentence.</p>
-        <p>The work demanded precision and empathy. It was code, but it was also culture, pragmatics, idiomatic turns, and discourse markers that revealed more than they seemed to. My experience told me that no algorithm could truly understand language without these layers. Machines could be taught to parse what was said. Linguistics could help them sense why it mattered.</p>
-        <p>Now I work at an unusual intersection. I am a linguist, a developer, a writer, a researcher, a patient, and a builder. I can design taxonomies of figurative language, parse sentiment in pandemic discourse, map the way metaphor carries fear or resolve across cultures, and turn those insights into working software.</p>
-        <p>I am interested in the impact linguistics can have in the current world where tech plays a pivotal role. For me, NLP has become more than a set of tools. It is the place where my knowledge of language and my skills in technology belong together. It feels like home. I want to shape tools that do not just process data but understand it in the context of human lives. I want to work where data and human experience meet, where the stakes are high, and where understanding someone better can be just a click away and change what happens next.</p>
+    <h2>Where I Fit Now</h2>
+    <p>NLP became more than a technical challenge. It became a new canvas for everything I knew about language. Tokenisation was no longer just splitting text — it was honouring each fragment of a person’s story. Lemmas were not mechanical dictionary forms but the essential shapes of meaning beneath the surface. Sentiment analysis was not simply numbers on a scale but traces of fear, hope, or determination flowing through a sentence.</p>
+    <p>This work demands code, but it also demands empathy. Algorithms can parse what is said, but linguistics helps them sense why it matters. Grammar, pragmatics, culture, idioms, and discourse markers are not peripheral — they are the heart of meaning.</p>
+    <p>Today I stand at a rare intersection: linguist, developer, writer, researcher, patient, and builder. I design figurative-language taxonomies, analyse crisis discourse, map how metaphors carry fear or resolve, and transform these insights into working software. In a world where technology plays a pivotal role, I believe linguistics can give machines a deeper kind of understanding. That intersection — where language meets NLP — feels like home.</p>
 
-        <div class="bg-brand-100 border border-brand-200 rounded-xl2 p-4 mt-8">
-          <p>This reflection is linked to my app
-            <a href="https://github.com/Sierra-Codes/explain-my-pain" target="_blank">Explain My Pain</a>,
-            which grew out of my academic research project
-            <a href="./../Language-and-health/language-of-endo/index.html" target="_blank">The Language of Endometriosis</a>.
-          </p>
-          <p>Explore the <a href="https://sierracodes.netlify.app/" target="_blank">Live app</a>.</p>
-          <p>You can find my academic publications here
-            <a href="https://scholar.google.com/citations?user=mGN9JSEAAAAJ&hl=en" target="_blank">Google Scholar</a>.
-          </p>
-        </div>
-      </div>
+    <div class="bg-brand-100 border border-brand-200 rounded-xl p-4 mt-8 text-sm text-brand-800 text-center">
+      <p>
+        This reflection is linked to
+        <a href="https://github.com/Sierra-Codes/explain-my-pain" class="text-brand-500 underline font-medium hover:opacity-80">Explain My Pain</a>,
+        a tool that grew from my academic project
+        <a href="/writing/language-of-endo/index.html" class="text-brand-500 underline font-medium hover:opacity-80">The Language of Endometriosis</a>.
+      </p>
+      <h2 class="mt-4">Explore further</h2>
+      <p><a href="https://sierracodes.netlify.app/" class="text-brand-500 underline hover:opacity-80">Live app</a></p>
+      <p><a href="https://scholar.google.com/citations?user=mGN9JSEAAAAJ&hl=en" class="text-brand-500 underline hover:opacity-80">Academic publications on Google Scholar</a></p>
+    </div>
+  </div>
+</article>
     </article>
 
     <!-- SPANISH -->
     <article id="spanish" class="hidden">
-      <header class="mb-8 md:mb-10">
-        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">
-          Donde la lingüística se encuentra con el PLN: por fin en casa
-        </h1>
-        <h2 class="text-sm md:text-base lg:text-[1rem] italic mb-3">
-          De la lingüística de corpus a construir Explain My Pain.
-        </h2>
-        <p class="italic text-brand-800/70 text-sm">Dra Stella Bullo</p>
-      </header>
+      <!-- your Spanish article content here -->
+  <header class="mb-8 md:mb-10">
+    <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">Donde la lingüística se encuentra con el PLN: por fin en casa</h1>
+    <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">De la lingüística de corpus a construir Explain My Pain</h2>
+    <p class="italic text-brand-800/70 text-sm">Dra Stella Bullo</p>
+  </header>
 
-      <div class="prose max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8">
-        <h2>De la lingüística a la tecnología</h2>
-        <p>La primera vez que escuché a programadores hablar de <em>tokenización</em> y <em>lematización</em> tuve una sensación extraña: no eran términos ajenos. Los conocía de sobra. Durante años, mi trabajo en lingüística de corpus me había llevado a dividir el lenguaje en unidades, rastrear su origen y observar cómo el significado se transforma según la forma. No era jerga técnica; era un territorio que ya había recorrido, solo que ahora lo exploraba con un mapa distinto. Nunca imaginé que aquella versión de mí, que se intimidaba ante una consola como si fuera un animal peligroso, terminaría usándola todos los días para aplicar estos conceptos en un entorno plenamente técnico.</p>
+  <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
+    <h2>De la lingüística a la tecnología</h2>
+    <p>La primera vez que escuché a programadores hablar de <em>tokenización</em> y <em>lematización</em>, tuve una sensación extraña: no eran términos ajenos. Los conocía bien de mi trabajo en lingüística de corpus, donde durante años dividí el lenguaje en unidades, rastreé sus raíces y observé cómo el significado cambiaba con la forma. No era jerga nueva: era un territorio familiar, pero ahora lo recorría con otro mapa. Nunca imaginé que aquella versión de mí, temerosa de la consola, terminaría usándola cada día para aplicar estos procesos en un contexto técnico.</p>
 
-        <h2>Tejer puentes entre mundos</h2>
-        <p>Pasé más de veinte años en la academia, enseñando e investigando en semántica, morfología, pragmática, análisis del discurso, teoría de la metáfora y comunicación intercultural. Escribí sobre clichés y valoración, analicé el sentimiento en la publicidad y la comunicación en salud, estudié el miedo y la resiliencia en los primeros meses de la pandemia de COVID-19 y observé cómo el lenguaje moldea la manera en que entendemos lo que nos rodea.</p>
-        <p>Pero el lenguaje nunca fue solo un objeto de estudio: fue la puerta de entrada para explorar la experiencia humana. Analicé cómo narramos el dolor, cómo expresamos deseo, cómo negociamos la identidad y cómo encontramos formas de resistir. Aprendí que una metáfora puede abrir un espacio de empatía o cerrarlo de golpe, y que la elección de una palabra puede cambiar lo que alguien escucha. En el ámbito tecnológico, esta sensibilidad marca la diferencia entre una herramienta que procesa palabras y otra que comprende a las personas que las dicen.</p>
+    <h2>Tejiendo puentes entre mundos</h2>
+    <p>Durante más de veinte años en la academia investigué y enseñé semántica, morfología, pragmática, análisis del discurso, teoría de la metáfora y comunicación intercultural. Escribí sobre clichés y valoración, analicé el sentimiento en la publicidad y la comunicación en salud, estudié el miedo y la resiliencia en los primeros meses de la pandemia, y observé cómo el lenguaje configura nuestra comprensión del mundo.</p>
+    <p>El lenguaje nunca fue solo objeto de estudio: fue la vía para explorar la experiencia humana. Analicé cómo narramos el dolor, cómo expresamos deseo, cómo negociamos identidad y cómo resistimos. Aprendí que una metáfora puede abrir un espacio de empatía o cerrarlo de golpe. Esa sensibilidad es la que en tecnología diferencia una herramienta que procesa palabras de una que escucha a las personas detrás de ellas.</p>
 
-        <h2>Construir con propósito</h2>
-        <p>En algún momento decidí crear la herramienta que me hubiera gustado tener cuando mis síntomas de endometriosis eran ignorados. Empezó como un etiquetador de metáforas pensado para investigación, pero terminó convirtiéndose en algo mucho más práctico: <em>Explain My Pain</em>, una aplicación que ayuda a pacientes a describir su dolor de forma que los profesionales de la salud puedan interpretarlo. Nació de una necesidad personal y profesional, y con el tiempo se transformó en un puente para un diálogo que parecía imposible.</p>
-        <p>No me propuse ser desarrolladora: me propuse resolver un problema. Para lograrlo aprendí Python, desarrollo front-end e integración de APIs. En el camino me di cuenta de que ya estaba aplicando procesamiento de lenguaje natural. Las mismas destrezas que había desarrollado como lingüista, como detectar patrones, mapear significados e interpretar el contexto, servían para entrenar a una máquina a escuchar de forma más humana.</p>
+    <h2>Construir con propósito</h2>
+    <p>De esa trayectoria surgió la herramienta que me hubiera gustado tener cuando mis propios síntomas eran ignorados: <em>Explain My Pain</em>. Al principio fue un etiquetador de metáforas para la investigación, pero terminó siendo una aplicación web que ayuda a pacientes a describir su dolor de manera que lxs profesionales de la salud puedan interpretarlo. Nació de una necesidad personal y académica, y se transformó en un puente para un diálogo urgente.</p>
+    <p>No me propuse convertirme en desarrolladora: me propuse resolver un problema. Para ello aprendí Python, desarrollo front-end y APIs, y en el camino descubrí que ya estaba haciendo procesamiento de lenguaje natural. Las mismas destrezas de detectar patrones, mapear significados e interpretar contexto que aplicaba como lingüista me servían ahora para entrenar a una máquina a escuchar de forma más humana.</p>
 
-        <h2>El lugar donde encajo</h2>
-        <p>El PLN me atrajo porque combinaba precisión técnica y sentido humano. Tokenizar no era simplemente separar palabras: era reconocer cada fragmento de una historia. Lematizar no era una operación mecánica, sino encontrar la forma esencial de un significado. El análisis de sentimiento no era solo un número, sino la huella de la esperanza, el miedo o la determinación a lo largo de un relato.</p>
-        <p>Trabajar aquí exige código y empatía a partes iguales. Es conocer la gramática y la cultura, entender los giros idiomáticos y los matices del discurso. Ningún algoritmo puede comprender realmente el lenguaje sin estas capas. La tecnología puede procesar lo que se dice; la lingüística puede ayudarla a entender por qué importa.</p>
-        <p>Hoy me muevo en una intersección poco habitual: soy lingüista, desarrolladora, escritora, investigadora, paciente y creadora. Puedo diseñar taxonomías de lenguaje figurativo, analizar el sentimiento en discursos de crisis, mapear cómo la metáfora transmite miedo o esperanza y transformar esos hallazgos en software funcional.</p>
-        <p>Creo en el impacto que la lingüística puede tener en un mundo donde la tecnología ocupa un lugar central. Para mí, el PLN no es solo un conjunto de herramientas: es un espacio donde mi conocimiento del lenguaje y mis habilidades técnicas conviven. Es mi casa. Quiero crear herramientas que no solo procesen datos, sino que los lean en el contexto de vidas humanas, donde entender mejor a alguien puede cambiar el rumbo de lo que sucede después.</p>
+    <h2>El lugar donde encajo</h2>
+    <p>El PLN me atrajo como desafío técnico y como un espacio donde cabía todo lo que sabía del lenguaje. Tokenizar ya no era separar palabras: era reconocer cada fragmento de una historia. Lematizar no era un ejercicio mecánico, sino encontrar la forma esencial de un significado. El análisis de sentimiento no era un número, sino la huella de la esperanza, el miedo o la determinación a lo largo de un relato.</p>
+    <p>Este trabajo exige código y empatía. Los algoritmos pueden procesar lo que se dice, pero la lingüística les ayuda a comprender por qué importa. Gramática, cultura, giros idiomáticos y marcas discursivas son capas centrales, no periféricas.</p>
+    <p>Hoy me encuentro en una intersección poco común: soy lingüista, desarrolladora, escritora, investigadora, paciente y creadora. Puedo diseñar taxonomías de lenguaje figurado, analizar discursos de crisis, mapear cómo la metáfora transmite miedo o esperanza, y convertir esos hallazgos en software funcional. En un mundo atravesado por la tecnología, creo que la lingüística puede aportar profundidad. Ese cruce entre lenguaje y PLN es, para mí, un hogar.</p>
 
-        <div class="bg-brand-100 border border-brand-200 rounded-xl2 p-4 mt-8">
-          <p>Esta reflexión está vinculada a mi app
-            <a href="https://github.com/Sierra-Codes/explain-my-pain" target="_blank">Explain My Pain</a>,
-            que nació de mi proyecto de investigación
-            <a href="./../Language-and-health/language-of-endo/index.html" target="_blank">El lenguaje de la endometriosis</a>.
-          </p>
-          <p>Explorá la <a href="https://sierracodes.netlify.app/" target="_blank">app en vivo</a>.</p>
-          <p>Mis publicaciones académicas están
-            disponibles en
-            <a href="https://scholar.google.com/citations?user=mGN9JSEAAAAJ&hl=es" target="_blank">Google Scholar</a>.
-          </p>
-        </div>
-      </div>
-    </article>
+    <div class="bg-brand-100 border border-brand-200 rounded-xl p-4 mt-8 text-sm text-brand-800 text-center">
+      <p>
+        Esta reflexión está vinculada a
+        <a href="https://github.com/Sierra-Codes/explain-my-pain" class="text-brand-500 underline font-medium hover:opacity-80">Explain My Pain</a>,
+        una herramienta que nació de mi proyecto académico
+        <a href="/writing/language-of-endo/index.html" class="text-brand-500 underline font-medium hover:opacity-80">El lenguaje de la endometriosis</a>.
+      </p>
+      <h2 class="mt-4">Explorá más</h2>
+      <p><a href="https://sierracodes.netlify.app/" class="text-brand-500 underline hover:opacity-80">App en vivo</a></p>
+      <p><a href="https://scholar.google.com/citations?user=mGN9JSEAAAAJ&hl=es" class="text-brand-500 underline hover:opacity-80">Publicaciones académicas en Google Scholar</a></p>
+    </div>
+  </div>
+</article>
   </main>
-
+  
   <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
     <p>© 2025 Stella Bullo. All rights reserved.</p>
-    <p>For inquiries, contact me at
-      <a href="mailto:info@stellabullo.com" class="text-brand-500 underline">info@stellabullo.com</a>.
-    </p>
+    <p>For inquiries, contact me at <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a>.</p>
   </footer>
 
   <!-- Return to top -->
-  <button id="toTop"
-    class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500"
-    aria-label="Back to top" title="Back to top">
-    ↑
-  </button>
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
 
   <script>
-    // language toggle
     const langToggle = document.getElementById('lang-toggle');
-    const englishDiv = document.getElementById('english');
-    const spanishDiv = document.getElementById('spanish');
-    englishDiv.classList.remove('hidden');
-    spanishDiv.classList.add('hidden');
-    langToggle.textContent = 'Leer en Español';
-    langToggle.setAttribute('aria-label','Leer en Español');
-    langToggle.addEventListener('click', () => {
-      const englishShowing = !englishDiv.classList.contains('hidden');
-      if (englishShowing) {
-        englishDiv.classList.add('hidden');
-        spanishDiv.classList.remove('hidden');
+    const english = document.getElementById('english');
+    const spanish = document.getElementById('spanish');
+    const crumbHome = document.getElementById('crumb-home');
+    const crumbSection = document.getElementById('crumb-section');
+
+    function setLang(lang) {
+      if (lang === 'es') {
+        english.classList.add('hidden');
+        spanish.classList.remove('hidden');
         langToggle.textContent = 'Read it in English';
         langToggle.setAttribute('aria-label','Read it in English');
+        crumbHome.textContent = '← Stella Bullo (Inicio)';
+        crumbHome.setAttribute('href','/es/index.html');
+        crumbSection.textContent = '↔ Volver a Técnica · Contenidos · UX';
+        crumbSection.setAttribute('href','es/index.html');
       } else {
-        spanishDiv.classList.add('hidden');
-        englishDiv.classList.remove('hidden');
+        spanish.classList.add('hidden');
+        english.classList.remove('hidden');
         langToggle.textContent = 'Leer en Español';
         langToggle.setAttribute('aria-label','Leer en Español');
+        crumbHome.textContent = '← Stella Bullo (Home)';
+        crumbHome.setAttribute('href','/');
+        crumbSection.textContent = '↔ Back to Technical · Content · UX';
+        crumbSection.setAttribute('href','/technical-content-ux/');
       }
+    }
+
+    // Toggle click
+    langToggle.addEventListener('click', () => {
+      const isEnglish = !english.classList.contains('hidden');
+      setLang(isEnglish ? 'es' : 'en');
     });
 
-    // back to top
+    // Default to English
+    setLang('en');
+
+    // Footer year
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Back to top
     const toTop = document.getElementById('toTop');
     const toggleToTop = () => {
-      if (window.scrollY > 400) {
-        toTop.classList.remove('hidden');
-      } else {
-        toTop.classList.add('hidden');
-      }
+      toTop.classList.toggle('hidden', window.scrollY < 400);
     };
     window.addEventListener('scroll', toggleToTop);
     toggleToTop();

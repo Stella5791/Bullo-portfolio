@@ -1,66 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Between Linguistics and the Scar – Stella Bullo</title>
-<meta name="description" content="Reflections on researching lived pain — from language to code and the Explain My Pain app. Bilingual article by Dr. Stella Bullo." />
-<meta name="author" content="Stella Bullo" />
-<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Between Linguistics and the Scar – Stella Bullo</title>
+  <meta name="description" content="Reflections on researching lived pain — from language to code and the Explain My Pain app. Bilingual article by Dr. Stella Bullo."/>
+  <meta name="author" content="Stella Bullo"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 
-<!-- Inter font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Tailwind + Typography -->
-<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial','sans-serif'] },
-        colors: {
-          brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
-        },
-        boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
-        borderRadius: { xl2: '1.25rem' }
+  <!-- Inter + Tailwind Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial','sans-serif'] },
+          colors: {
+            brand: { 50:'#FFFFFF', 100:'#EDF3FB', 200:'#CBE3EF', 500:'#5AA8D6', 800:'#3A4163' }
+          },
+          boxShadow: { soft:'0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2:'1.25rem' }
+        }
       }
     }
-  }
-</script>
-
-<style>
-  html{scroll-behavior:smooth}
-  body {font-size: 15px;}
-  .btn{transition:all .2s ease}
-  .btn:active{transform:translateY(1px)}
-
-
-  /* Override Tailwind Typography defaults for h2/h3 */
-  .prose h2 {
-    font-size: 1.15rem !important; /* roughly matches lg */
-    font-weight: 600;
-  }
-  .prose h3 {
-    font-size: 1rem !important; /* slightly smaller */
-    font-weight: 500;
-  }
-</style>
-
+  </script>
+  <style>
+    html{scroll-behavior:smooth}
+    body {font-size: 15px;}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .prose h2{font-size:1.15rem !important;font-weight:600}
+    .prose h3{font-size:1rem !important;font-weight:500}
+  </style>
 </head>
 
-<body class="bg-brand-50 text-brand-800 font-sans text-[15px] md:text-[16px]">
+<body class="bg-brand-50 text-brand-800 font-sans antialiased">
   <!-- Topbar -->
-  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 flex flex-col gap-2 text-sm md:text-base">
-    <a href="../../index.html#writing" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Back to Articles</a>
-    <a href="../../index.html#language-technology" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Explore Language &amp; Technology articles</a>
-    <button id="lang-toggle" class="btn inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95 w-fit mt-2 text-sm md:text-base">Leer en Español</button>
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/technical-content-ux/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Technical · Content · UX</a>
+    </nav>
+    <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
   </div>
 
   <!-- Article container -->
   <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
-
     <!-- ENGLISH -->
     <article id="english">
       <header class="mb-8 md:mb-10">
@@ -127,7 +115,7 @@
           <p><a href="https://github.com/Sierra-Codes/explain-my-pain" class="text-brand-500 underline hover:opacity-80">Explain My Pain on GitHub</a></p>
           <p><a href="https://sierracodes.netlify.app/" class="text-brand-500 underline hover:opacity-80">Live app</a></p>
         </div>
-      </div> <!-- /prose EN -->
+      </div>
     </article>
 
     <!-- SPANISH -->
@@ -196,50 +184,64 @@
           <p><a href="https://github.com/Sierra-Codes/explain-my-pain" class="text-brand-500 underline hover:opacity-80">Explain My Pain en GitHub</a></p>
           <p><a href="https://sierracodes.netlify.app/" class="text-brand-500 underline hover:opacity-80">App en vivo</a></p>
         </div>
-      </div> <!-- /prose ES -->
+      </div>
     </article>
   </main>
-  
+
   <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
-    <p>© 2025 Stella Bullo. All rights reserved.</p>
-    <p>For inquiries, contact me at <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a>.</p>
+    <p>© <span id="year"></span> Stella Bullo. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a></p>
   </footer>
 
-  <!-- Return to top -->
+  <!-- Back to top -->
   <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
 
   <script>
-    // language toggle — EN shown first
     const langToggle = document.getElementById('lang-toggle');
-    const englishDiv = document.getElementById('english');
-    const spanishDiv = document.getElementById('spanish');
-    englishDiv.classList.remove('hidden');
-    spanishDiv.classList.add('hidden');
-    langToggle.textContent = 'Leer en Español';
-    langToggle.setAttribute('aria-label','Leer en Español');
-    langToggle.addEventListener('click', () => {
-      const englishShowing = !englishDiv.classList.contains('hidden');
-      if (englishShowing) {
-        englishDiv.classList.add('hidden');
-        spanishDiv.classList.remove('hidden');
+    const english = document.getElementById('english');
+    const spanish = document.getElementById('spanish');
+    const crumbHome = document.getElementById('crumb-home');
+    const crumbSection = document.getElementById('crumb-section');
+
+    function setLang(lang) {
+      if (lang === 'es') {
+        english.classList.add('hidden');
+        spanish.classList.remove('hidden');
         langToggle.textContent = 'Read it in English';
         langToggle.setAttribute('aria-label','Read it in English');
+        crumbHome.textContent = '← Stella Bullo (Inicio)';
+        crumbHome.setAttribute('href','/es/index.html');
+        crumbSection.textContent = '↔ Volver a Técnica · Contenidos · UX';
+        crumbSection.setAttribute('href','es/index.html');
       } else {
-        spanishDiv.classList.add('hidden');
-        englishDiv.classList.remove('hidden');
+        spanish.classList.add('hidden');
+        english.classList.remove('hidden');
         langToggle.textContent = 'Leer en Español';
         langToggle.setAttribute('aria-label','Leer en Español');
+        crumbHome.textContent = '← Stella Bullo (Home)';
+        crumbHome.setAttribute('href','/');
+        crumbSection.textContent = '↔ Back to Technical · Content · UX';
+        crumbSection.setAttribute('href','/technical-content-ux/');
       }
+    }
+
+    // Toggle click
+    langToggle.addEventListener('click', () => {
+      const isEnglish = !english.classList.contains('hidden');
+      setLang(isEnglish ? 'es' : 'en');
     });
 
-    // back to top
+    // Default to English
+    setLang('en');
+
+    // Footer year
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Back to top
     const toTop = document.getElementById('toTop');
     const toggleToTop = () => {
-      if (window.scrollY > 400) {
-        toTop.classList.remove('hidden');
-      } else {
-        toTop.classList.add('hidden');
-      }
+      toTop.classList.toggle('hidden', window.scrollY < 400);
     };
     window.addEventListener('scroll', toggleToTop);
     toggleToTop();
