@@ -3,82 +3,119 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Between Linguistics and the Scar – Stella Bullo</title>
-  <meta name="description" content="Reflections on researching lived pain — from language to code and the Explain My Pain app. Bilingual article by Dr. Stella Bullo." />
-  <meta name="author" content="Stella Bullo" />
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-  <!-- Inter font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Basic -->
+  <title>{{TITLE}} – Stella Bullo</title>
+  <meta name="description" content="{{META_DESCRIPTION}}"/>
+  <meta name="author" content="Stella Bullo"/>
 
-  <!-- Tailwind + Typography -->
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial','sans-serif'] },
-          colors: {
-            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
-          },
-          boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
-          borderRadius: { xl2: '1.25rem' }
-        }
+  <!-- Canonical + alternates -->
+  <link rel="canonical" href="https://stellabullo.com{{CANONICAL_PATH}}"/>
+  <link rel="alternate" hreflang="en" href="https://stellabullo.com{{EN_PATH}}"/>
+  <link rel="alternate" hreflang="es" href="https://stellabullo.com{{ES_PATH}}"/>
+  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com{{CANONICAL_PATH}}"/>
+
+  <!-- Open Graph for sharing -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="{{TITLE}}"/>
+  <meta property="og:description" content="{{OG_DESCRIPTION}}"/>
+  <meta property="og:url" content="https://stellabullo.com{{CANONICAL_PATH}}"/>
+  <meta property="og:image" content="https://stellabullo.com{{OG_IMAGE_PATH}}"/>
+  <meta property="og:site_name" content="Stella Bullo"/>
+  <meta property="article:author" content="Stella Bullo"/>
+  <!-- Optional article dates -->
+  <meta property="article:published_time" content="{{ISO_DATE_PUBLISHED}}"/>
+  <meta property="article:modified_time" content="{{ISO_DATE_MODIFIED}}"/>
+
+  <!-- JSON-LD Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "{{TITLE}}",
+    "description": "{{META_DESCRIPTION}}",
+    "author": {
+      "@type": "Person",
+      "name": "Stella Bullo",
+      "url": "https://stellabullo.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Stella Bullo",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://stellabullo.com/favicon.ico"
       }
+    },
+    "image": [
+      "https://stellabullo.com{{OG_IMAGE_PATH}}"
+    ],
+    "datePublished": "{{ISO_DATE_PUBLISHED}}",
+    "dateModified": "{{ISO_DATE_MODIFIED}}",
+    "inLanguage": ["en","es"],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://stellabullo.com{{CANONICAL_PATH}}"
     }
+  }
   </script>
 
-  <style>
-    html{scroll-behavior:smooth}
-    body {font-size: 15px;}
-    .btn{transition:all .2s ease}
-    .btn:active{transform:translateY(1px)}
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 
-    /* Override Tailwind Typography defaults for h2/h3 */
-    .prose h2 {
-      font-size: 1.15rem !important;
-      font-weight: 600;
-    }
-    .prose h3 {
-      font-size: 1rem !important;
-      font-weight: 500;
-    }
-  </style>
-</head>
+  <!-- Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/
 
-<body class="bg-brand-50 text-brand-800 font-sans text-[15px] md:text-[16px]">
-  <!-- Topbar -->
-  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 flex flex-col gap-2 text-sm md:text-base">
-    <a id="crumbHome" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
-    <a id="crumbSection" href="/technical-content-ux/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Technical · Content · UX</a>
-    <button id="lang-toggle" class="btn inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95 w-fit mt-2 text-sm md:text-base">Leer en Español</button>
+
+
+<body class="bg-brand-50 text-brand-800 font-sans antialiased">
+  <!-- Topbar / breadcrumbs -->
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/technical-content-ux/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Technical · Content · UX</a>
+    </nav>
+    <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
   </div>
 
   <!-- Article container -->
   <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
     <!-- ENGLISH -->
     <article id="english">
-      <!-- your English article content here -->
-      <h1 class="text-xl font-semibold">Between Linguistics and the Scar</h1>
-      <p>…</p>
+      <header class="mb-8 md:mb-10">
+        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">H1</h1>
+        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">H2</h2>
+        <p class="italic text-brand-800/70 text-sm">Dr. Stella Bullo</p>
+      </header>
+
+      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
+        <p>ARTICLE WITH <P>P</P> AND <H1>H1</H1>
+      
+      </div>
     </article>
 
     <!-- SPANISH -->
     <article id="spanish" class="hidden">
-      <!-- your Spanish article content here -->
-      <h1 class="text-xl font-semibold">Entre la lingüística y la cicatriz</h1>
-      <p>…</p>
+      <header class="mb-8 md:mb-10">
+        <h1 class="text-[1.6rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-3">H1</h1>
+        <h2 class="text-base md:text-lg lg:text-[1.1rem] italic text-brand-800 mb-3">H2</h2>
+        <p class="italic text-brand-800/70 text-sm">Dra Stella Bullo</p>
+      </header>
+
+      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-10 prose-h2:mb-4 prose-h3:mt-8 prose-h3:mb-3">
+        ARTICULO CON <P>P</P> Y <H1>H1</H1>
+      
+      </div>
     </article>
   </main>
-  
+
   <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
-    <p>© 2025 Stella Bullo. All rights reserved.</p>
-    <p>For inquiries, contact me at <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a>.</p>
+    <p>© <span id="year"></span> Stella Bullo. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a></p>
   </footer>
 
-  <!-- Return to top -->
+  <!-- Back to top -->
   <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
 
   <script>
