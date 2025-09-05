@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== BASIC ===== -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lightweight QA and Sampling Notes – Stella Bullo</title>
+  <meta name="description" content="Practical heuristics for quality assurance and sampling in annotation projects, grounded in the Language of Endometriosis corpus. Bilingual EN/ES."/>
+  <meta name="author" content="Stella Bullo"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
+  <!-- ===== FONT ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ===== TAILWIND ===== -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
+          },
+          boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+
+  <!-- ===== SEO: CANONICAL + ALTERNATES ===== -->
+  <link rel="canonical" href="https://stellabullo.com/annotation-evaluation/qa-notes/index.html"/>
+  <link rel="alternate" hreflang="en" href="https://stellabullo.com/annotation-evaluation/qa-notes/index.html"/>
+  <link rel="alternate" hreflang="es" href="https://stellabullo.com/annotation-evaluation/es/qa-notes/index.html"/>
+  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com/annotation-evaluation/qa-notes/index.html"/>
+
+  <!-- ===== OPEN GRAPH / TWITTER ===== -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Stella Bullo"/>
+  <meta property="og:title" content="Lightweight QA and Sampling Notes"/>
+  <meta property="og:description" content="Practical heuristics for QA and sampling in annotation, based on the Language of Endometriosis corpus. Bilingual EN/ES."/>
+  <meta property="og:url" content="https://stellabullo.com/annotation-evaluation/qa-notes/index.html"/>
+  <meta property="og:image" content="https://stellabullo.com/og-default.jpg"/>
+  <meta property="og:locale" content="en_GB"/>
+  <meta property="og:locale:alternate" content="es_AR"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Lightweight QA and Sampling Notes"/>
+  <meta name="twitter:description" content="Practical heuristics for QA and sampling in annotation, based on the Language of Endometriosis corpus."/>
+  <meta name="twitter:image" content="https://stellabullo.com/og-default.jpg"/>
+
+  <!-- ===== JSON-LD Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Lightweight QA and Sampling Notes",
+    "description": "Practical heuristics for QA and sampling in annotation, based on the Language of Endometriosis corpus. Bilingual EN/ES.",
+    "author": { "@type": "Person", "name": "Stella Bullo", "url": "https://stellabullo.com/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Stella Bullo",
+      "logo": { "@type": "ImageObject", "url": "https://stellabullo.com/favicon.ico" }
+    },
+    "image": ["https://stellabullo.com/og-default.jpg"],
+    "inLanguage": ["en","es"],
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://stellabullo.com/annotation-evaluation/qa-notes/index.html" }
+  }
+  </script>
+
+  <!-- ===== STYLE OVERRIDES ===== -->
+  <style>
+    html{scroll-behavior:smooth}
+    body {font-size: 15px;}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .prose h2 {font-size: 1.15rem !important;font-weight:600;}
+    .prose h3 {font-size: 1rem !important;font-weight:500;}
+    .prose table th, .prose table td {padding:.5rem .6rem;border:1px solid #e5e7eb;}
+    .prose table {border-collapse: collapse;}
+  </style>
+</head>
+
+<body class="bg-brand-50 text-brand-800 font-sans antialiased">
+  <!-- ===== TOPBAR ===== -->
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/annotation-evaluation/index.html" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Annotation & Evaluation</a>
+    </nav>
+    <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
+  </div>
+
+  <!-- ===== ARTICLE CONTAINER ===== -->
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <!-- ENGLISH -->
+    <article id="english" class="prose prose-sm md:prose-base max-w-none">
+      <h1>Lightweight QA and Sampling Notes</h1>
+      <p class="text-sm text-brand-800/70 mb-6">~6 min · Updated Sep 2025</p>
+
+      <h2>Introduction</h2>
+      <p>Annotation projects are rarely perfect. Even with a solid taxonomy, consistency can slip, annotators can disagree, and resources are limited. In large industry projects, whole teams of reviewers handle quality assurance. In smaller, research-driven projects like the <a href="/language-of-endo">Language of Endometriosis Project</a>, that kind of infrastructure is not available.</p>
+      <p>This article shares the lightweight QA and sampling methods I used to review outputs without big budgets or large teams. These heuristics were not perfect, but they were good enough to train annotators, refine categories, and build prototypes like the <a href="/annotation-evaluation">pain tagger</a> that feeds into the <a href="/explain-my-pain">Explain My Pain app</a>.</p>
+
+      <h2>Why QA matters</h2>
+      <p>Without QA, annotation quickly becomes unreliable. A patient might describe “a heavy burning in my pelvis,” and if one annotator tags it as quality, another as metaphor, and a third as intensity, the dataset loses coherence. QA ensures categories are applied in the same way, which is crucial if the data is going to support an NLP tool or clinical application.</p>
+      <p>In the endometriosis corpus, QA turned hundreds of individual descriptions into a dataset that was consistent, reusable, and trustworthy.</p>
+
+      <h2>Constraints in small projects</h2>
+      <p>Large annotation efforts rely on multiple reviewers, inter-annotator agreement scores, and detailed adjudication workflows. In my project there was:</p>
+      <ul>
+        <li>One main annotator, sometimes with a small collaborator</li>
+        <li>No budget for double annotation at scale</li>
+        <li>A need for results quickly</li>
+      </ul>
+
+      <h2>The heuristics I used</h2>
+      <h3>Sampling small but often</h3>
+      <p>I regularly sampled 5–10% of annotations instead of reviewing the whole dataset. This gave me a quick sense of consistency without slowing the workflow.</p>
+
+      <h3>Checking edge cases</h3>
+      <p>I deliberately pulled out ambiguous or unusual phrases, often metaphorical descriptions from the corpus such as “a monster clawing at me.” These revealed where the taxonomy needed clarification.</p>
+
+      <h3>Quick agreement checks</h3>
+      <p>When I worked with a collaborator, we double-annotated a small batch of about 50 lines. We did not calculate full statistics, but compared results and discussed disagreements. This gave us feedback without heavy computation.</p>
+
+      <h3>Rolling refinements</h3>
+      <p>If a category was repeatedly misapplied, I updated the guidelines immediately and noted it. For example, we clarified when something was intensity (“mild cramps”) versus quality (“throbbing pain”).</p>
+
+      <h3>Sanity scans</h3>
+      <p>Before locking a dataset, I skimmed quickly across annotations, looking for glaring inconsistencies such as categories applied to non-pain words or missing location tags. This worked as a lightweight audit.</p>
+
+      <h2>Why this worked</h2>
+      <p>The combination of small samples, edge-case focus, and rolling refinement gave me enough confidence to move forward. It did not reach the robustness of large-team QA, but it was fit for purpose.</p>
+      <p>These heuristics meant I could train the prototype pain tagger on data that was good enough for experimentation. Without them, the tool would have been unreliable.</p>
+
+      <h2>Lessons for annotators</h2>
+      <ul>
+        <li>Consistency is more important than perfection. Make the same choice every time.</li>
+        <li>Surface confusion quickly. If something feels unclear, flag it early.</li>
+        <li>Learn by sampling. Review a small set of your own tags each day.</li>
+        <li>Guidelines are living documents. Expect them to adapt.</li>
+        <li>Always think in pairs. Metaphors often co-occur with location; intensity modifies a quality.</li>
+      </ul>
+
+      <h2>Closing</h2>
+      <p>Lightweight QA and sampling are about pragmatism: doing what is possible within the limits of a small project without giving up on quality. In the <a href="/language-of-endo">Language of Endometriosis</a> data, these methods kept the taxonomy usable, the annotations consistent, and the path open toward building the <a href="/annotation-evaluation">pain tagger</a> and the <a href="/explain-my-pain">Explain My Pain app</a>.</p>
+    </article>
+
+    <!-- SPANISH -->
+    <article id="spanish" class="hidden prose prose-sm md:prose-base max-w-none">
+      <h1>Notas sobre QA y muestreo livianos</h1>
+      <p class="text-sm text-brand-800/70 mb-6">~6 min · Actualizado Sep 2025</p>
+
+      <h2>Introducción</h2>
+      <p>Los proyectos de anotación rara vez son perfectos. Incluso con una buena taxonomía, la consistencia puede fallar, las personas anotadoras pueden discrepar y los recursos son limitados. En proyectos grandes, equipos enteros se dedican al aseguramiento de calidad. En proyectos pequeños y de investigación como el <a href="/language-of-endo">Language of Endometriosis Project</a>, esa infraestructura no existe.</p>
+      <p>Este artículo comparte los métodos de QA y muestreo livianos que utilicé para revisar resultados sin grandes presupuestos ni equipos numerosos. No fueron perfectos, pero fueron suficientes para entrenar anotadoras, refinar categorías y construir prototipos como el <a href="/annotation-evaluation">tagger de dolor</a> que alimenta la <a href="/explain-my-pain">app Explain My Pain</a>.</p>
+
+      <h2>Por qué importa el QA</h2>
+      <p>Sin QA, la anotación se vuelve poco confiable. Una paciente puede describir “una quemazón pesada en la pelvis” y si una persona lo marca como cualidad, otra como metáfora y otra como intensidad, el dataset pierde coherencia. El QA asegura que las categorías se apliquen de la misma forma, lo cual es crucial para usar los datos en una herramienta de PLN o en clínica.</p>
+      <p>En el corpus de endometriosis, el QA transformó cientos de descripciones individuales en un conjunto de datos consistente, reutilizable y confiable.</p>
+
+      <h2>Limitaciones en proyectos pequeños</h2>
+      <p>Los proyectos grandes dependen de múltiples revisores, cálculos de acuerdo entre anotadores y procesos detallados de adjudicación. En mi proyecto había:</p>
+      <ul>
+        <li>Una anotadora principal, a veces con una colaboradora</li>
+        <li>Sin presupuesto para doble anotación a gran escala</li>
+        <li>Necesidad de resultados rápidos</li>
+      </ul>
+
+      <h2>Las heurísticas que usé</h2>
+      <h3>Muestrear poco pero seguido</h3>
+      <p>Revisaba un 5–10% de anotaciones en lugar de todo el dataset. Esto me daba una idea rápida de la consistencia sin frenar el flujo.</p>
+
+      <h3>Revisar casos límite</h3>
+      <p>Seleccionaba frases ambiguas o inusuales, a menudo metáforas como “un monstruo que me araña”. Estas revelaban dónde la taxonomía necesitaba ajustes.</p>
+
+      <h3>Chequeos rápidos de acuerdo</h3>
+      <p>Cuando trabajé con una colaboradora, anotamos por duplicado un pequeño lote de unas 50 líneas. No calculamos estadísticas completas, pero comparamos resultados y discutimos desacuerdos. Eso dio retroalimentación sin cálculos pesados.</p>
+
+      <h3>Refinamientos continuos</h3>
+      <p>Si una categoría se aplicaba mal repetidamente, actualizaba las guías de inmediato y lo registraba. Por ejemplo, aclaramos cuándo algo era intensidad (“cólicos leves”) y cuándo era cualidad (“dolor palpitante”).</p>
+
+      <h3>Escaneos de cordura</h3>
+      <p>Antes de cerrar un dataset, hacía un repaso rápido buscando inconsistencias notorias como categorías aplicadas a palabras que no eran de dolor o ubicaciones sin marcar. Esto funcionaba como una auditoría ligera.</p>
+
+      <h2>Por qué funcionó</h2>
+      <p>La combinación de muestreos pequeños, foco en casos límite y refinamiento continuo me dio suficiente confianza para seguir adelante. No alcanzó la robustez de un QA con equipos grandes, pero fue adecuado al propósito.</p>
+      <p>Estas heurísticas permitieron entrenar el prototipo de tagger con datos lo bastante buenos para experimentar. Sin ellas, la herramienta habría sido poco confiable.</p>
+
+      <h2>Lecciones para anotadoras</h2>
+      <ul>
+        <li>La consistencia es más importante que la perfección. Haz siempre la misma elección.</li>
+        <li>Expón las dudas rápido. Si algo no está claro, márcalo temprano.</li>
+        <li>Aprende muestreando. Revisa cada día un pequeño set de tus propias anotaciones.</li>
+        <li>Las guías son documentos vivos. Espera que cambien.</li>
+        <li>Pensar en pares. Las metáforas suelen combinarse con ubicación; la intensidad modifica una cualidad.</li>
+      </ul>
+
+      <h2>Cierre</h2>
+      <p>El QA y el muestreo livianos tienen que ver con el pragmatismo: hacer lo posible dentro de los límites de un proyecto pequeño sin renunciar a la calidad. En los datos de <a href="/language-of-endo">Language of Endometriosis</a>, estos métodos mantuvieron la taxonomía usable, las anotaciones consistentes y el camino abierto hacia el <a href="/annotation-evaluation">tagger</a> y la <a href="/explain-my-pain">app Explain My Pain</a>.</p>
+    </article>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
+    <p>© <span id="year"></span> Stella Bullo. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a></p>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    (function () {
+      const $ = (id) => document.getElementById(id);
+
+      const langToggle   = $('lang-toggle');
+      const english      = $('english');
+      const spanish      = $('spanish');
+      const crumbHome    = $('crumb-home');
+      const crumbSection = $('crumb-section');
+
+      const EN_INDEX = '/annotation-evaluation/index.html';
+      const ES_INDEX = '/annotation-evaluation/es/index.html';
+      const ES_HOME  = '/es/index.html';
+      const EN_HOME  = '/';
+
+      function setLang(lang) {
+        if (!english || !spanish) return;
+
+        if (lang === 'es') {
+          english.classList.add('hidden');
+          spanish.classList.remove('hidden');
+          if (langToggle) {
+            langToggle.textContent = 'Read it in English';
+            langToggle.setAttribute('aria-label', 'Read it in English');
+          }
+          if (crumbHome) {
+            crumbHome.textContent = '← Stella Bullo (Inicio)';
+            crumbHome.setAttribute('href', ES_HOME);
+          }
+          if (crumbSection) {
+            crumbSection.textContent = '↔ Volver a Anotación y Evaluación';
+            crumbSection.setAttribute('href', ES_INDEX);
+          }
+        } else {
+          spanish.classList.add('hidden');
+          english.classList.remove('hidden');
+          if (langToggle) {
+            langToggle.textContent = 'Leer en Español';
+            langToggle.setAttribute('aria-label', 'Leer en Español');
+          }
+          if (crumbHome) {
+            crumbHome.textContent = '← Stella Bullo (Home)';
+            crumbHome.setAttribute('href', EN_HOME);
+          }
+          if (crumbSection) {
+            crumbSection.textContent = '↔ Back to Annotation & Evaluation';
+            crumbSection.setAttribute('href', EN_INDEX);
+          }
+        }
+      }
+
+      // Toggle click
+      if (langToggle && english && spanish) {
+        langToggle.addEventListener('click', () => {
+          const isEnglish = !english.classList.contains('hidden');
+          setLang(isEnglish ? 'es' : 'en');
+        });
+      }
+
+      // Default to English first
+      setLang('en');
+
+      // Footer year
+      const yearEl = $('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Back to top
+      const toTop = $('toTop');
+      if (toTop) {
+        const toggleToTop = () => {
+          toTop.classList.toggle('hidden', window.scrollY < 400);
+        };
+        window.addEventListener('scroll', toggleToTop);
+        toggleToTop();
+        toTop.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== BASIC ===== -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Annotation Snippets and Prompts I Reuse – Stella Bullo</title>
+  <meta name="description" content="A practical toolkit of reusable annotation snippets and training prompts, distilled from the Language of Endometriosis project. Bilingual EN/ES."/>
+  <meta name="author" content="Stella Bullo"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
+  <!-- ===== FONT ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ===== TAILWIND ===== -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
+          },
+          boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+
+  <!-- ===== SEO: CANONICAL + ALTERNATES ===== -->
+  <link rel="canonical" href="https://stellabullo.com/annotation-evaluation/snippets/index.html"/>
+  <link rel="alternate" hreflang="en" href="https://stellabullo.com/annotation-evaluation/snippets/index.html"/>
+  <link rel="alternate" hreflang="es" href="https://stellabullo.com/annotation-evaluation/es/snippets/index.html"/>
+  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com/annotation-evaluation/snippets/index.html"/>
+
+  <!-- ===== OPEN GRAPH / TWITTER ===== -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Stella Bullo"/>
+  <meta property="og:title" content="Annotation Snippets and Prompts I Reuse"/>
+  <meta property="og:description" content="A practical toolkit of reusable annotation snippets and training prompts, distilled from the Language of Endometriosis project. Bilingual EN/ES."/>
+  <meta property="og:url" content="https://stellabullo.com/annotation-evaluation/snippets/index.html"/>
+  <meta property="og:image" content="https://stellabullo.com/og-default.jpg"/>
+  <meta property="og:locale" content="en_GB"/>
+  <meta property="og:locale:alternate" content="es_AR"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Annotation Snippets and Prompts I Reuse"/>
+  <meta name="twitter:description" content="Reusable annotation snippets and recruiter-friendly training prompts, based on the Language of Endometriosis corpus."/>
+  <meta name="twitter:image" content="https://stellabullo.com/og-default.jpg"/>
+
+  <!-- ===== JSON-LD Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Annotation Snippets and Prompts I Reuse",
+    "description": "A practical toolkit of reusable annotation snippets and training prompts, distilled from the Language of Endometriosis project. Bilingual EN/ES.",
+    "author": { "@type": "Person", "name": "Stella Bullo", "url": "https://stellabullo.com/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Stella Bullo",
+      "logo": { "@type": "ImageObject", "url": "https://stellabullo.com/favicon.ico" }
+    },
+    "image": ["https://stellabullo.com/og-default.jpg"],
+    "inLanguage": ["en","es"],
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://stellabullo.com/annotation-evaluation/snippets/index.html" }
+  }
+  </script>
+
+  <!-- ===== STYLE OVERRIDES ===== -->
+  <style>
+    html{scroll-behavior:smooth}
+    body {font-size: 15px;}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .prose h2 {font-size: 1.15rem !important;font-weight:600;}
+    .prose h3 {font-size: 1rem !important;font-weight:500;}
+    .prose table th, .prose table td {padding:.5rem .6rem;border:1px solid #e5e7eb;}
+    .prose table {border-collapse: collapse;}
+  </style>
+</head>
+
+<body class="bg-brand-50 text-brand-800 font-sans antialiased">
+  <!-- ===== TOPBAR ===== -->
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/annotation-evaluation/index.html" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Annotation & Evaluation</a>
+    </nav>
+    <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
+  </div>
+
+  <!-- ===== ARTICLE CONTAINER ===== -->
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <!-- ENGLISH -->
+    <article id="english" class="prose prose-sm md:prose-base max-w-none">
+      <h1>Annotation Snippets and Prompts I Reuse</h1>
+      <p class="text-sm text-brand-800/70 mb-6">~6–7 min · Updated Sep 2025</p>
+
+      <h2>Introduction</h2>
+      <p>After months annotating patient narratives, you notice the same situations repeating. The same questions come back: is this an intensity marker or a pain quality, is this metaphor violent or about weight, do I tag knife as a quality or as an entailment. Rather than reinventing the wheel every time, I built a small toolkit of snippets and prompts I reuse across projects.</p>
+      <p>These pieces come from the <a href="/language-of-endo">Language of Endometriosis Project</a> and now support onboarding, guidelines, and quick QA for tools like the <a href="/annotation-evaluation">prototype pain tagger</a> and the <a href="/explain-my-pain">Explain My Pain app</a>.</p>
+
+      <h2>Why snippets help</h2>
+      <ul>
+        <li>Faster onboarding for new annotators</li>
+        <li>Consistency of wording across projects</li>
+        <li>Scalability for recruitment and training tasks</li>
+        <li>Transparency when justifying decisions later</li>
+      </ul>
+
+      <h2>Core snippets from the taxonomy</h2>
+
+      <h3>Qualities versus intensity</h3>
+      <p><strong>Quality</strong> is what pain feels like: burning, stabbing, throbbing, dull. <strong>Intensity</strong> is how strong it is: mild, severe, unbearable, very.</p>
+      <p><em>Prompt</em> Ask yourself: if you can replace the word with how strong, it is intensity. If it describes the type, it is quality.</p>
+
+      <h3>Location tagging</h3>
+      <p>Tag the smallest clear location such as womb, knee, lower back. If the patient only says body or everywhere, tag it as a general location.</p>
+      <p><em>Prompt</em> Can I point to it on a body map. If yes, tag it as a location.</p>
+
+      <h3>Metaphors and entailments</h3>
+      <p>Violence includes knives, stabbing, war, attack. Weight includes pressure, crushing, heavy load. Heat includes fire and burning. Animal includes beast and claws. Containment includes trapped, locked, caged.</p>
+      <p><em>Prompt</em> What does the metaphor do to the patient. Attack, trap, crush, burn, or bite.</p>
+
+      <h3>Temporal markers</h3>
+      <p>Tag phrases that place pain in time such as constant, comes and goes, at night, before period.</p>
+      <p><em>Prompt</em> Does this phrase tell me when pain happens or changes.</p>
+
+      <h2>QA snippets I often reuse</h2>
+      <ul>
+        <li><strong>Annotate first, argue later</strong> Get through the batch, then review edge cases.</li>
+        <li><strong>Sample ten percent</strong> Always check a small portion for consistency before scaling.</li>
+        <li><strong>Flag and move</strong> If a phrase does not fit any category, flag it instead of forcing a tag.</li>
+      </ul>
+      <p>These saved hours in the endometriosis study and kept the workflow realistic.</p>
+
+      <h2>Prompts for training or recruitment</h2>
+      <p>Short prompts that test judgment without overwhelming candidates.</p>
+      <ol>
+        <li>
+          <p><strong>Tag all categories in</strong> “a burning knife in my stomach at night”.</p>
+          <p><em>Expected</em> Quality burning or knife, Location stomach, Temporal at night, Entailment violence plus heat.</p>
+        </li>
+        <li>
+          <p><strong>Differentiate</strong> “mild cramps” and “stabbing cramps”.</p>
+          <p><em>Expected</em> Intensity versus quality.</p>
+        </li>
+        <li>
+          <p><strong>Identify entailment</strong> “a beast clawing at me”.</p>
+          <p><em>Expected</em> Animal metaphor implying unpredictability and hostility.</p>
+        </li>
+      </ol>
+
+      <h2>Closing</h2>
+      <p>Annotation does not need to start from zero every time. A set of reusable snippets and prompts keeps projects lean, consistent, and teachable. From the <a href="/language-of-endo">Language of Endometriosis</a> corpus to the <a href="/annotation-evaluation">pain tagger</a> and the <a href="/explain-my-pain">app</a>, these small pieces are the glue that holds the work together.</p>
+      <p>The taxonomy provides the categories, QA keeps them consistent, the prototype makes them measurable, and the snippets make the whole process repeatable.</p>
+    </article>
+
+    <!-- SPANISH -->
+    <article id="spanish" class="hidden prose prose-sm md:prose-base max-w-none">
+      <h1>Fragmentos y prompts de anotación que reutilizo</h1>
+      <p class="text-sm text-brand-800/70 mb-6">~6–7 min · Actualizado Sep 2025</p>
+
+      <h2>Introducción</h2>
+      <p>Después de meses anotando narrativas de pacientes, las mismas situaciones se repiten. Vuelven las mismas preguntas: esto es un marcador de intensidad o una cualidad del dolor, esta metáfora es de violencia o de peso, etiqueto cuchillo como cualidad o como entailment. En lugar de empezar de cero cada vez, armé un pequeño kit de fragmentos y prompts que reutilizo entre proyectos.</p>
+      <p>Estas piezas surgen del <a href="/language-of-endo">Language of Endometriosis Project</a> y hoy sostienen onboarding, guías y QA rápido para herramientas como el <a href="/annotation-evaluation">prototipo de tagger de dolor</a> y la <a href="/explain-my-pain">app Explain My Pain</a>.</p>
+
+      <h2>Por qué ayudan los fragmentos</h2>
+      <ul>
+        <li>Onboarding más veloz para nuevas personas anotadoras</li>
+        <li>Uniformidad de redacción entre proyectos</li>
+        <li>Escalabilidad para tareas de reclutamiento y entrenamiento</li>
+        <li>Transparencia al justificar decisiones más adelante</li>
+      </ul>
+
+      <h2>Fragmentos clave de la taxonomía</h2>
+
+      <h3>Cualidades frente a intensidad</h3>
+      <p><strong>Cualidad</strong> es cómo se siente el dolor: urente o que quema, punzante, palpitante, sordo. <strong>Intensidad</strong> es qué tan fuerte es: leve, severo, insoportable, muy.</p>
+      <p><em>Prompt</em> Pregúntate si la palabra puede reemplazarse por qué tan fuerte. Si sí, es intensidad. Si describe el tipo, es cualidad.</p>
+
+      <h3>Etiquetado de ubicación</h3>
+      <p>Etiqueta la ubicación más pequeña y clara como útero, rodilla, zona lumbar. Si la persona solo dice cuerpo o en todas partes, márcalo como ubicación general.</p>
+      <p><em>Prompt</em> ¿Puedo señalarlo en un mapa corporal. Si sí, etiquétalo como ubicación.</p>
+
+      <h3>Metáforas y entailments</h3>
+      <p>Violencia incluye cuchillos, apuñalar, guerra, ataque. Peso incluye presión, aplastar, carga pesada. Calor incluye fuego y quemazón. Animal incluye bestia y garras. Encierro incluye atrapada, encerrada, enjaulada.</p>
+      <p><em>Prompt</em> ¿Qué le hace la metáfora a la persona. Ataca, encierra, aplasta, quema o muerde.</p>
+
+      <h3>Marcadores temporales</h3>
+      <p>Etiqueta las frases que sitúan el dolor en el tiempo como constante, va y viene, de noche, antes del período.</p>
+      <p><em>Prompt</em> ¿Esta frase me dice cuándo ocurre o cambia el dolor.</p>
+
+      <h2>Fragmentos de QA que reutilizo</h2>
+      <ul>
+        <li><strong>Anota primero, discute después</strong> Completa el lote y luego revisa los casos límite.</li>
+        <li><strong>Muestrea un diez por ciento</strong> Revisa siempre una porción pequeña antes de escalar.</li>
+        <li><strong>Marca y sigue</strong> Si una frase no encaja en ninguna categoría, márcala en lugar de forzar una etiqueta.</li>
+      </ul>
+      <p>Estas líneas ahorraron horas en el estudio de endometriosis y mantuvieron el flujo de trabajo realista.</p>
+
+      <h2>Prompts para entrenamiento o reclutamiento</h2>
+      <p>Prompts breves que evalúan criterio sin abrumar a las candidatas.</p>
+      <ol>
+        <li>
+          <p><strong>Etiqueta todas las categorías en</strong> “un cuchillo ardiente en mi estómago de noche”.</p>
+          <p><em>Esperado</em> Cualidad ardiente o cuchillo, Ubicación estómago, Temporal de noche, Entailment violencia más calor.</p>
+        </li>
+        <li>
+          <p><strong>Diferencia</strong> “cólicos leves” y “cólicos punzantes”.</p>
+          <p><em>Esperado</em> Intensidad frente a cualidad.</p>
+        </li>
+        <li>
+          <p><strong>Identifica el entailment</strong> “una bestia que me araña”.</p>
+          <p><em>Esperado</em> Metáfora de animal que implica imprevisibilidad y hostilidad.</p>
+        </li>
+      </ol>
+
+      <h2>Cierre</h2>
+      <p>La anotación no tiene que empezar de cero cada vez. Un conjunto de fragmentos y prompts reutilizables mantiene los proyectos ágiles, consistentes y enseñables. Desde el corpus de <a href="/language-of-endo">Language of Endometriosis</a> hasta el <a href="/annotation-evaluation">tagger</a> y la <a href="/explain-my-pain">app</a>, estas piezas pequeñas son el pegamento del trabajo.</p>
+      <p>La taxonomía da las categorías, el QA las mantiene consistentes, el prototipo las vuelve medibles y los fragmentos vuelven todo el proceso repetible.</p>
+    </article>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
+    <p>© <span id="year"></span> Stella Bullo. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a></p>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    (function () {
+      const $ = (id) => document.getElementById(id);
+
+      const langToggle   = $('lang-toggle');
+      const english      = $('english');
+      const spanish      = $('spanish');
+      const crumbHome    = $('crumb-home');
+      const crumbSection = $('crumb-section');
+
+      const EN_INDEX = '/annotation-evaluation/index.html';
+      const ES_INDEX = '/annotation-evaluation/es/index.html';
+      const ES_HOME  = '/es/index.html';
+      const EN_HOME  = '/';
+
+      function setLang(lang) {
+        if (!english || !spanish) return;
+
+        if (lang === 'es') {
+          english.classList.add('hidden');
+          spanish.classList.remove('hidden');
+          if (langToggle) {
+            langToggle.textContent = 'Read it in English';
+            langToggle.setAttribute('aria-label', 'Read it in English');
+          }
+          if (crumbHome) {
+            crumbHome.textContent = '← Stella Bullo (Inicio)';
+            crumbHome.setAttribute('href', ES_HOME);
+          }
+          if (crumbSection) {
+            crumbSection.textContent = '↔ Volver a Anotación y Evaluación';
+            crumbSection.setAttribute('href', ES_INDEX);
+          }
+        } else {
+          spanish.classList.add('hidden');
+          english.classList.remove('hidden');
+          if (langToggle) {
+            langToggle.textContent = 'Leer en Español';
+            langToggle.setAttribute('aria-label', 'Leer en Español');
+          }
+          if (crumbHome) {
+            crumbHome.textContent = '← Stella Bullo (Home)';
+            crumbHome.setAttribute('href', EN_HOME);
+          }
+          if (crumbSection) {
+            crumbSection.textContent = '↔ Back to Annotation & Evaluation';
+            crumbSection.setAttribute('href', EN_INDEX);
+          }
+        }
+      }
+
+      // Toggle click
+      if (langToggle && english && spanish) {
+        langToggle.addEventListener('click', () => {
+          const isEnglish = !english.classList.contains('hidden');
+          setLang(isEnglish ? 'es' : 'en');
+        });
+      }
+
+      // Default to English first
+      setLang('en');
+
+      // Footer year
+      const yearEl = $('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Back to top
+      const toTop = $('toTop');
+      if (toTop) {
+        const toggleToTop = () => {
+          toTop.classList.toggle('hidden', window.scrollY < 400);
+        };
+        window.addEventListener('scroll', toggleToTop);
+        toggleToTop();
+        toTop.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

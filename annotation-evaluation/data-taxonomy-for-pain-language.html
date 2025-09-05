@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== BASIC ===== -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Taxonomy for Pain Language – Stella Bullo</title>
+  <meta name="description" content="A compact taxonomy for annotating pain language—categories, relations, and metaphor entailments—grounded in the Language of Endometriosis project. Bilingual EN/ES."/>
+  <meta name="author" content="Stella Bullo"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
+  <!-- ===== FONT ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ===== TAILWIND ===== -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
+          },
+          boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+
+  <!-- ===== SEO: CANONICAL + ALTERNATES ===== -->
+  <link rel="canonical" href="https://stellabullo.com/annotation-evaluation/data-taxonomy/index.html"/>
+  <link rel="alternate" hreflang="en" href="https://stellabullo.com/annotation-evaluation/data-taxonomy/index.html"/>
+  <link rel="alternate" hreflang="es" href="https://stellabullo.com/annotation-evaluation/es/data-taxonomy/index.html"/>
+  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com/annotation-evaluation/data-taxonomy/index.html"/>
+
+  <!-- ===== OPEN GRAPH / TWITTER ===== -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Stella Bullo"/>
+  <meta property="og:title" content="Data Taxonomy for Pain Language"/>
+  <meta property="og:description" content="A compact taxonomy for annotating pain language—categories, relations, and metaphor entailments—grounded in the Language of Endometriosis project. Bilingual EN/ES."/>
+  <meta property="og:url" content="https://stellabullo.com/annotation-evaluation/data-taxonomy/index.html"/>
+  <meta property="og:image" content="https://stellabullo.com/og-default.jpg"/>
+  <meta property="og:locale" content="en_GB"/>
+  <meta property="og:locale:alternate" content="es_AR"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Data Taxonomy for Pain Language"/>
+  <meta name="twitter:description" content="A compact taxonomy for annotating pain language—categories, relations, and metaphor entailments—grounded in the Language of Endometriosis project."/>
+  <meta name="twitter:image" content="https://stellabullo.com/og-default.jpg"/>
+
+  <!-- ===== JSON-LD Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Data Taxonomy for Pain Language",
+    "description": "A compact taxonomy for annotating pain language—categories, relations, and metaphor entailments—grounded in the Language of Endometriosis project. Bilingual EN/ES.",
+    "author": { "@type": "Person", "name": "Stella Bullo", "url": "https://stellabullo.com/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Stella Bullo",
+      "logo": { "@type": "ImageObject", "url": "https://stellabullo.com/favicon.ico" }
+    },
+    "image": ["https://stellabullo.com/og-default.jpg"],
+    "inLanguage": ["en","es"],
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://stellabullo.com/annotation-evaluation/data-taxonomy/index.html" }
+  }
+  </script>
+
+  <!-- ===== STYLE OVERRIDES ===== -->
+  <style>
+    html{scroll-behavior:smooth}
+    body {font-size: 15px;}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .prose h2 {font-size: 1.15rem !important;font-weight:600;}
+    .prose h3 {font-size: 1rem !important;font-weight:500;}
+    .prose table th, .prose table td {padding:.5rem .6rem;border:1px solid #e5e7eb;}
+    .prose table {border-collapse: collapse;}
+  </style>
+</head>
+
+<body class="bg-brand-50 text-brand-800 font-sans antialiased">
+  <!-- ===== TOPBAR ===== -->
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/annotation-evaluation/index.html" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Annotation & Evaluation</a>
+    </nav>
+    <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
+  </div>
+
+  <!-- ===== ARTICLE CONTAINER ===== -->
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <!-- ENGLISH -->
+    <article id="english" class="prose prose-sm md:prose-base max-w-none">
+      <h1>Data Taxonomy for Pain Language</h1>
+      <p class="text-sm text-brand-800/70 mb-6">~5–6 min · Updated Sep 2025</p>
+
+      <h2>Introduction</h2>
+      <p>Pain is often described in messy, unpredictable ways. A patient might say “it burns here,” “it feels like a hammer,” or “my back screams at night.” These expressions are clinically meaningful, yet without a structure they are difficult to compare, tag, or process.</p>
+      <p>This article presents a compact <strong>data taxonomy</strong> for pain language, built from my academic linguistic research in the <a href="/language-of-endo">Language of Endometriosis Project</a>. Working directly with patient narratives revealed recurring patterns that annotators can label consistently and developers can map into tools like the <a href="/annotation-evaluation">prototype pain tagger</a> and the <a href="/explain-my-pain">Explain My Pain app</a>.</p>
+
+      <h2>What is a taxonomy</h2>
+      <p>In annotation, a taxonomy is a “menu” of categories. Instead of asking “what do I feel this means?”, annotators choose from clearly defined options. This reduces confusion, improves agreement, and enables downstream computation.</p>
+
+      <h2>Why keep it compact</h2>
+      <p>Oversized schemas slow teams and reduce consistency. For pain language, I deliberately kept the taxonomy small and practical—broad enough to capture variety, specific enough to be recognized quickly.</p>
+      <ul>
+        <li>Less training time for new annotators</li>
+        <li>Fewer disagreements and easier QA</li>
+        <li>Stronger foundations for prototypes and NLP pipelines</li>
+      </ul>
+
+      <h2>The categories</h2>
+      <p>Illustrated with examples from the Language of Endometriosis corpus.</p>
+
+      <h3>1) Pain qualities</h3>
+      <p>What the pain feels like: <em>burning, stabbing, throbbing, dull</em>.<br/>Example: “It feels like a <em>burning</em> rope around my stomach.”</p>
+
+      <h3>2) Body location</h3>
+      <p>Where pain occurs: <em>womb, lower back, knee, stomach</em>.<br/>Example: “A sharp pain in my <em>lower back</em>.”</p>
+
+      <h3>3) Intensity markers</h3>
+      <p>How strong it is: <em>mild, severe, unbearable, very</em>.<br/>Example: “It’s <em>unbearable</em> every morning.”</p>
+
+      <h3>4) Figurative or metaphorical language</h3>
+      <p>Comparisons to other domains: <em>knife, hammer, beast, fire</em>.<br/>Example: “It’s as if someone is <em>stabbing</em> me with a knife.”</p>
+
+      <h3>5) Temporal markers</h3>
+      <p>When it happens or changes: <em>constant, comes and goes, at night, before period</em>.<br/>Example: “The cramps <em>come and go</em>, but always return before my period.”</p>
+
+      <h2>Entailments in metaphorical pain language</h2>
+      <p>Beyond tagging metaphors, we can capture their <strong>entailments</strong>—the logical consequences a metaphor implies. In the Language of Endometriosis data, metaphors structured how patients understood and lived their pain.</p>
+
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr><th>Metaphor type</th><th>Example</th><th>Entailments</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Violence / Attack</td>
+              <td>“Like being <em>stabbed</em> with a knife.”</td>
+              <td>External agent; patient as victim; aggression; relentlessness.</td>
+            </tr>
+            <tr>
+              <td>Weight / Pressure</td>
+              <td>“A <em>heavy rock</em> pressing on my pelvis.”</td>
+              <td>Constancy; immobilization; oppression; limited movement.</td>
+            </tr>
+            <tr>
+              <td>Animal</td>
+              <td>“A <em>beast</em> clawing at my womb.”</td>
+              <td>Unpredictability; lack of control; hostility; ‘alive’ pain.</td>
+            </tr>
+            <tr>
+              <td>Heat / Fire</td>
+              <td>“<em>Flames</em> burning through my abdomen.”</td>
+              <td>Escalation; spread; destruction; consuming quality.</td>
+            </tr>
+            <tr>
+              <td>Containment / Trapping</td>
+              <td>“Being locked in a <em>burning cage</em>.”</td>
+              <td>Restriction; enclosure; no escape; surrounding pain.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Entailments add conceptual depth for analysis and can be mapped to higher-level “pain profiles” in the <a href="/annotation-evaluation">pain tagger</a> and the <a href="/explain-my-pain">app</a>.</p>
+
+      <h2>Relations</h2>
+      <ul>
+        <li>Intensity modifies a quality: “<em>sharp</em> pain.”</li>
+        <li>Location grounds a metaphor: “a <em>burning knife</em> in my <em>knee</em>.”</li>
+        <li>Temporal shifts intensity: “<em>worse at night</em>.”</li>
+      </ul>
+      <p>In the Endometriosis data, metaphors often co-occurred with location and intensity; capturing relations keeps the representation faithful to patient speech.</p>
+
+      <h2>Why this matters</h2>
+      <p>For annotators: a trainable, testable menu. For recruiters: lean design scales better and lowers costs. For developers: a bridge from narrative to features that power the <a href="/annotation-evaluation">tagger</a> and the <a href="/explain-my-pain">app</a>.</p>
+
+      <h2>Closing</h2>
+      <p>This compact taxonomy is a foundation. Next in the series: <a href="/annotation-evaluation/qa-notes/">Lightweight QA &amp; Sampling</a>, the <a href="/annotation-evaluation/tagger-case-study/">Metaphor to Measurement case study</a>, and a toolkit of <a href="/annotation-evaluation/snippets/">Annotation Snippets &amp; Prompts</a>.</p>
+    </article>
+
+    <!-- SPANISH -->
+    <article id="spanish" class="hidden prose prose-sm md:prose-base max-w-none">
+      <h1>Taxonomía de datos para el lenguaje del dolor</h1>
+      <p class="text-sm text-brand-800/70 mb-6">~5–6 min · Actualizado Sep 2025</p>
+
+      <h2>Introducción</h2>
+      <p>El dolor suele describirse de formas desordenadas e imprevisibles. Una persona puede decir “acá <em>quema</em>”, “se siente como un <em>martillo</em>” o “la espalda <em>me grita</em> de noche”. Estas expresiones son significativas, pero sin una estructura resultan difíciles de comparar, etiquetar o procesar.</p>
+      <p>Este artículo presenta una <strong>taxonomía de datos</strong> compacta para el lenguaje del dolor, construida a partir de mi investigación lingüística en el proyecto <a href="/language-of-endo">Language of Endometriosis</a>. Trabajar con narrativas de pacientes permitió identificar patrones recurrentes que las personas anotadoras pueden marcar con consistencia y que las personas desarrolladoras pueden mapear a herramientas como el <a href="/annotation-evaluation">prototipo de tagger de dolor</a> y la <a href="/explain-my-pain">app Explain My Pain</a>.</p>
+
+      <h2>Qué es una taxonomía</h2>
+      <p>En anotación, una taxonomía es un “menú” de categorías. En lugar de preguntar “¿qué creo que significa?”, la persona anotadora elige entre opciones definidas. Eso reduce la confusión, mejora el acuerdo y habilita el uso computacional.</p>
+
+      <h2>Por qué mantenerla compacta</h2>
+      <p>Los esquemas sobredimensionados enlentecen a los equipos y bajan la consistencia. Para el lenguaje del dolor, mantuve la taxonomía pequeña y práctica: lo bastante amplia para captar variedad y lo bastante específica para reconocerla rápido.</p>
+      <ul>
+        <li>Menos tiempo de formación para nuevas personas anotadoras</li>
+        <li>Menos desacuerdos y QA más simple</li>
+        <li>Base más sólida para prototipos y pipelines de PLN</li>
+      </ul>
+
+      <h2>Las categorías</h2>
+      <p>Con ejemplos del corpus de Language of Endometriosis.</p>
+
+      <h3>1) Cualidades del dolor</h3>
+      <p>Cómo se siente: <em>urente/que quema, punzante, palpitante, sordo</em>.<br/>Ejemplo: “Se siente como una cuerda <em>ardiendo</em> alrededor del estómago”.</p>
+
+      <h3>2) Ubicación en el cuerpo</h3>
+      <p>Dónde ocurre: <em>útero, zona lumbar, rodilla, estómago</em>.<br/>Ejemplo: “Un dolor agudo en la <em>zona lumbar</em>”.</p>
+
+      <h3>3) Marcadores de intensidad</h3>
+      <p>Qué tan fuerte es: <em>leve, severo, insoportable, muy</em>.<br/>Ejemplo: “Es <em>insoportable</em> cada mañana”.</p>
+
+      <h3>4) Lenguaje figurado o metafórico</h3>
+      <p>Comparaciones con otros dominios: <em>cuchillo, martillo, bestia, fuego</em>.<br/>Ejemplo: “Es como si alguien me <em>apuñalara</em> con un cuchillo”.</p>
+
+      <h3>5) Marcadores temporales</h3>
+      <p>Cuándo ocurre o cambia: <em>constante, va y viene, de noche, antes del período</em>.<br/>Ejemplo: “Los cólicos <em>van y vienen</em>, pero siempre vuelven antes del período”.</p>
+
+      <h2>Entailments en el lenguaje metafórico del dolor</h2>
+      <p>Además de etiquetar metáforas, podemos capturar sus <strong>entailments</strong> (consecuencias lógicas). En los datos de Endometriosis, las metáforas estructuraron cómo las pacientes comprendieron y vivieron el dolor.</p>
+
+      <div class="overflow-x-auto">
+        <table>
+          <thead>
+            <tr><th>Tipo de metáfora</th><th>Ejemplo</th><th>Entailments</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Violencia / Ataque</td>
+              <td>“Como si me <em>apuñalaran</em> con un cuchillo”.</td>
+              <td>Agente externo; paciente-víctima; agresión; carácter implacable.</td>
+            </tr>
+            <tr>
+              <td>Peso / Presión</td>
+              <td>“Una <em>piedra pesada</em> presionando la pelvis”.</td>
+              <td>Constancia; inmovilización; opresión; movimiento limitado.</td>
+            </tr>
+            <tr>
+              <td>Animal</td>
+              <td>“Una <em>bestia</em> que me araña el útero”.</td>
+              <td>Imprevisibilidad; falta de control; hostilidad; dolor “vivo”.</td>
+            </tr>
+            <tr>
+              <td>Calor / Fuego</td>
+              <td>“<em>Llamas</em> que atraviesan el abdomen”.</td>
+              <td>Escalada; propagación; destrucción; cualidad que consume.</td>
+            </tr>
+            <tr>
+              <td>Encierro / Trampa</td>
+              <td>“Estar encerrada en una <em>jaula ardiente</em>”.</td>
+              <td>Restricción; encierro; sin escape; dolor envolvente.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Los entailments aportan profundidad conceptual para el análisis y pueden mapearse a “perfiles de dolor” de mayor nivel en el <a href="/annotation-evaluation">tagger</a> y la <a href="/explain-my-pain">app</a>.</p>
+
+      <h2>Relaciones</h2>
+      <ul>
+        <li>La intensidad modifica una cualidad: “dolor <em>agudo</em>”.</li>
+        <li>La ubicación ancla la metáfora: “un <em>cuchillo ardiente</em> en la <em>rodilla</em>”.</li>
+        <li>Lo temporal modula la intensidad: “<em>peor de noche</em>”.</li>
+      </ul>
+      <p>En los datos de Endometriosis, las metáforas co-ocurrieron a menudo con ubicación e intensidad; capturar relaciones mantiene fiel la representación al habla de las pacientes.</p>
+
+      <h2>Por qué importa</h2>
+      <p>Para anotadoras/es: un menú entrenable y evaluable. Para recruiters: un diseño lean escala mejor y reduce costos. Para desarrolladoras/es: un puente del relato a las features que alimentan el <a href="/annotation-evaluation">tagger</a> y la <a href="/explain-my-pain">app</a>.</p>
+
+      <h2>Cierre</h2>
+      <p>Esta taxonomía compacta es una base. Siguiente en la serie: <a href="/annotation-evaluation/qa-notes/">QA y muestreo livianos</a>, el <a href="/annotation-evaluation/tagger-case-study/">caso Metáfora → Medición</a>, y el kit de <a href="/annotation-evaluation/snippets/">Fragmentos y prompts de anotación</a>.</p>
+    </article>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
+    <p>© <span id="year"></span> Stella Bullo. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a></p>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    (function () {
+      const $ = (id) => document.getElementById(id);
+
+      const langToggle   = $('lang-toggle');
+      const english      = $('english');
+      const spanish      = $('spanish');
+      const crumbHome    = $('crumb-home');
+      const crumbSection = $('crumb-section');
+
+      const EN_INDEX = '/annotation-evaluation/index.html';
+      const ES_INDEX = '/annotation-evaluation/es/index.html';
+      const ES_HOME  = '/es/index.html';
+      const EN_HOME  = '/';
+
+      function setLang(lang) {
+        if (!english || !spanish) return;
+
+        if (lang === 'es') {
+          english.classList.add('hidden');
+          spanish.classList.remove('hidden');
+          if (langToggle) {
+            langToggle.textContent = 'Read it in English';
+            langToggle.setAttribute('aria-label', 'Read it in English');
+          }
+          if (crumbHome) {
+            crumbHome.textContent = '← Stella Bullo (Inicio)';
+            crumbHome.setAttribute('href', ES_HOME);
+          }
+          if (crumbSection) {
+            crumbSection.textContent = '↔ Volver a Anotación y Evaluación';
+            crumbSection.setAttribute('href', ES_INDEX);
+          }
+        } else {
+          spanish.classList.add('hidden');
+          english.classList.remove('hidden');
+          if (langToggle) {
+            langToggle.textContent = 'Leer en Español';
+            langToggle.setAttribute('aria-label', 'Leer en Español');
+          }
+          if (crumbHome) {
+            crumbHome.textContent = '← Stella Bullo (Home)';
+            crumbHome.setAttribute('href', EN_HOME);
+          }
+          if (crumbSection) {
+            crumbSection.textContent = '↔ Back to Annotation & Evaluation';
+            crumbSection.setAttribute('href', EN_INDEX);
+          }
+        }
+      }
+
+      // Toggle click
+      if (langToggle && english && spanish) {
+        langToggle.addEventListener('click', () => {
+          const isEnglish = !english.classList.contains('hidden');
+          setLang(isEnglish ? 'es' : 'en');
+        });
+      }
+
+      // Default to English first
+      setLang('en');
+
+      // Footer year
+      const yearEl = $('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Back to top
+      const toTop = $('toTop');
+      if (toTop) {
+        const toggleToTop = () => {
+          toTop.classList.toggle('hidden', window.scrollY < 400);
+        };
+        window.addEventListener('scroll', toggleToTop);
+        toggleToTop();
+        toTop.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,97 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ===== BASIC ===== -->
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-  <!-- Basic -->
   <title>Annotation Across Two Worlds: Linguistics vs. NLP – Stella Bullo</title>
   <meta name="description" content="How linguistic and NLP annotation differ in purpose, unit of analysis, and outputs — and how blending them creates better data and deeper understanding."/>
   <meta name="author" content="Stella Bullo"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
 
-  <!-- Canonical + alternates -->
-  <link rel="canonical" href="https://stellabullo.com/essays/annotation-two-worlds/"/>
-  <link rel="alternate" hreflang="en" href="https://stellabullo.com/essays/annotation-two-worlds/"/>
-  <link rel="alternate" hreflang="es" href="https://stellabullo.com/essays/es/annotation-two-worlds/"/>
-  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com/essays/annotation-two-worlds/"/>
+  <!-- ===== FONT ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Open Graph -->
+  <!-- ===== TAILWIND ===== -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
+          },
+          boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+
+  <!-- ===== SEO: CANONICAL + ALTERNATES ===== -->
+  <link rel="canonical" href="https://stellabullo.com/annotation-evaluation/annotation-across-two-worlds.html"/>
+  <link rel="alternate" hreflang="en" href="https://stellabullo.com/annotation-evaluation/annotation-across-two-worlds.html"/>
+  <link rel="alternate" hreflang="es" href="https://stellabullo.com/annotation-evaluation/annotation-across-two-worlds.html"/>
+  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com/annotation-evaluation/annotation-across-two-worlds.html"/>
+
+  <!-- ===== OPEN GRAPH / TWITTER ===== -->
   <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Stella Bullo"/>
   <meta property="og:title" content="Annotation Across Two Worlds: Linguistics vs. NLP"/>
   <meta property="og:description" content="A friendly, rigorous comparison of linguistic and NLP annotation, with practical examples and why a hybrid approach matters."/>
-  <meta property="og:url" content="https://stellabullo.com/essays/annotation-two-worlds/"/>
-  <meta property="og:site_name" content="Stella Bullo"/>
-  <!-- Optional image: replace with your asset if available -->
+  <meta property="og:url" content="https://stellabullo.com/annotation-evaluation/annotation-across-two-worlds.html"/>
   <meta property="og:image" content="https://stellabullo.com/assets/og/annotation-two-worlds.jpg"/>
-  <meta property="og:image:alt" content="Notebook margin notes next to code editor window"/>
+  <meta property="og:locale" content="en_GB"/>
+  <meta property="og:locale:alternate" content="es_AR"/>
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Annotation Across Two Worlds: Linguistics vs. NLP"/>
   <meta name="twitter:description" content="How linguistic and NLP annotation differ — and how to bridge them."/>
   <meta name="twitter:image" content="https://stellabullo.com/assets/og/annotation-two-worlds.jpg"/>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Tailwind + Typography -->
-  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-  <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; }
-  </style>
-
-  <!-- JSON-LD Article -->
+  <!-- ===== JSON-LD Article ===== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": "Annotation Across Two Worlds: Linguistics vs. NLP",
     "description": "How linguistic and NLP annotation differ in purpose, unit of analysis, and outputs — and how blending them creates better data and deeper understanding.",
-    "inLanguage": "en",
-    "author": { "@type": "Person", "name": "Stella Bullo" },
-    "publisher": { "@type": "Person", "name": "Stella Bullo" },
-    "datePublished": "2025-09-04",
-    "dateModified": "2025-09-04",
-    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://stellabullo.com/essays/annotation-two-worlds/" },
-    "url": "https://stellabullo.com/essays/annotation-two-worlds/"
+    "author": {
+      "@type": "Person",
+      "name": "Stella Bullo",
+      "url": "https://stellabullo.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Stella Bullo",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://stellabullo.com/favicon.ico"
+      }
+    },
+    "image": ["https://stellabullo.com/assets/og/annotation-two-worlds.jpg"],
+    "inLanguage": ["en","es"],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://stellabullo.com/annotation-evaluation/annotation-across-two-worlds.html"
+    }
   }
   </script>
+
+  <!-- ===== STYLE OVERRIDES ===== -->
+  <style>
+    html{scroll-behavior:smooth}
+    body {font-size: 15px;}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .prose h2 {font-size: 1.15rem !important;font-weight:600;}
+    .prose h3 {font-size: 1rem !important;font-weight:500;}
+  </style>
 </head>
 
-<body class="bg-white text-slate-900 antialiased">
-  <!-- Nav (minimal, matches essays pages) -->
-  <nav class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center">
-      <a href="/" class="text-base md:text-lg font-semibold tracking-tight text-slate-800 hover:text-slate-900">Stella Bullo</a>
-      <ul class="hidden md:flex items-center gap-5 text-sm ml-auto">
-        <li><a href="/essays/" class="hover:text-slate-900 text-slate-700">Essays</a></li>
-        <li><a href="/technical-content-ux/" class="hover:text-slate-900 text-slate-700">Technical · Content · UX</a></li>
-        <li><a href="/projects/" class="hover:text-slate-900 text-slate-700">Projects</a></li>
-        <li><a href="/contact/" class="hover:text-slate-900 text-slate-700">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+<body class="bg-brand-50 text-brand-800 font-sans antialiased">
+  <!-- ===== TOPBAR ===== -->
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/annotation-evaluation/index.html" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Annotation &amp; Evaluation</a>
+    </nav>
+    <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
+  </div>
 
-  <main class="max-w-3xl mx-auto px-5 md:px-8 pt-28 pb-20">
-    <!-- Breadcrumbs + Lang toggle -->
-    <div class="text-sm md:text-base mb-6">
-      <nav class="flex flex-col gap-2">
-        <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-slate-700 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
-        <a id="crumb-section" href="/essays/" class="inline-flex items-center gap-1 text-slate-700 font-medium underline hover:opacity-80">↔ Back to Essays</a>
-      </nav>
-      <button id="lang-toggle" type="button"
-        class="mt-4 inline-flex items-center rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium hover:bg-slate-50"
-        aria-label="Leer en Español">Leer en Español</button>
-    </div>
-
-    <!-- English -->
+  <!-- ===== ARTICLE CONTAINER ===== -->
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <!-- ENGLISH -->
     <article id="english" class="prose prose-slate max-w-none">
-      <header class="mb-8">
-        <h1 class="mb-2">Annotation Across Two Worlds: Linguistics vs. NLP</h1>
-        <p class="text-sm text-slate-600">By Stella Bullo · Updated 4 September 2025</p>
+      <header class="mb-6">
+        <h1>Annotation Across Two Worlds: Linguistics vs. NLP</h1>
+        <p class="text-sm text-brand-800/70">By Stella Bullo · Updated 4 September 2025</p>
       </header>
 
       <section>
@@ -169,8 +186,8 @@
       <section>
         <h2>Side by Side Comparison</h2>
         <div class="not-prose overflow-x-auto">
-          <table class="w-full text-left border border-slate-200 rounded-md">
-            <thead class="bg-slate-50">
+          <table class="w-full text-left border border-brand-200 rounded-md">
+            <thead class="bg-brand-100">
               <tr>
                 <th class="p-3 border-b">Aspect</th>
                 <th class="p-3 border-b">Linguistics / Discourse</th>
@@ -228,11 +245,11 @@
       </section>
     </article>
 
-    <!-- Spanish -->
+    <!-- SPANISH -->
     <article id="spanish" class="prose prose-slate max-w-none hidden">
-      <header class="mb-8">
-        <h1 class="mb-2">Anotación en dos mundos: Lingüística vs. NLP</h1>
-        <p class="text-sm text-slate-600">Por Stella Bullo · Actualizado 4 de septiembre de 2025</p>
+      <header class="mb-6">
+        <h1>Anotación en dos mundos: Lingüística vs. NLP</h1>
+        <p class="text-sm text-brand-800/70">Por Stella Bullo · Actualizado 4 de septiembre de 2025</p>
       </header>
 
       <section>
@@ -310,8 +327,8 @@
       <section>
         <h2>Comparación lado a lado</h2>
         <div class="not-prose overflow-x-auto">
-          <table class="w-full text-left border border-slate-200 rounded-md">
-            <thead class="bg-slate-50">
+          <table class="w-full text-left border border-brand-200 rounded-md">
+            <thead class="bg-brand-100">
               <tr>
                 <th class="p-3 border-b">Aspecto</th>
                 <th class="p-3 border-b">Lingüística / Discurso</th>
@@ -370,48 +387,104 @@
     </article>
   </main>
 
-  <footer class="border-t border-slate-200">
-    <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 text-sm text-slate-600">
-      © <span id="y"></span> Stella Bullo • <a class="underline hover:no-underline" href="/privacy/">Privacy</a>
-    </div>
+  <!-- ===== FOOTER ===== -->
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
+    <p>© <span id="year"></span> Stella Bullo. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a></p>
   </footer>
 
-  <script>
-    // year
-    document.getElementById('y').textContent = new Date().getFullYear();
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
 
-    // language toggle
-    const english = document.getElementById('english');
-    const spanish = document.getElementById('spanish');
-    const langToggle = document.getElementById('lang-toggle');
-    const crumbHome = document.getElementById('crumb-home');
-    const crumbSection = document.getElementById('crumb-section');
+<!-- ===== SCRIPT ===== -->
+<script>
+  (function () {
+    const $ = (id) => document.getElementById(id);
 
-    function showEN() {
-      spanish.classList.add('hidden');
-      english.classList.remove('hidden');
-      langToggle.textContent = 'Leer en Español';
-      langToggle.setAttribute('aria-label','Leer en Español');
-      crumbHome.textContent = '← Stella Bullo (Home)';
-      crumbHome.setAttribute('href','/');
-      crumbSection.textContent = '↔ Back to Essays';
-      crumbSection.setAttribute('href','/essays/');
-      document.documentElement.lang = 'en';
+    const langToggle   = $('lang-toggle');
+    const english      = $('english');
+    const spanish      = $('spanish');
+    const crumbHome    = $('crumb-home');
+    const crumbSection = $('crumb-section');
+
+    // Detect if we're inside a Spanish section URL or the page is marked lang="es"
+    const inEs = /\/annotation-evaluation\/es\//.test(location.pathname) ||
+                 document.documentElement.lang === 'es';
+
+    const EN_INDEX = '/annotation-evaluation/index.html';
+    const ES_INDEX = '/annotation-evaluation/es/index.html';
+    const ES_HOME  = '/es/index.html'; // change if your Spanish home differs
+    const EN_HOME  = '/';
+
+    function setLang(lang) {
+      if (!english || !spanish) return;
+
+      if (lang === 'es') {
+        english.classList.add('hidden');
+        spanish.classList.remove('hidden');
+
+        if (langToggle) {
+          langToggle.textContent = 'Read it in English';
+          langToggle.setAttribute('aria-label', 'Read it in English');
+        }
+        if (crumbHome) {
+          crumbHome.textContent = '← Stella Bullo (Inicio)';
+          crumbHome.setAttribute('href', ES_HOME);
+        }
+        if (crumbSection) {
+          crumbSection.textContent = '↔ Volver a Anotación & Evaluación';
+          crumbSection.setAttribute('href', ES_INDEX);
+        }
+        document.documentElement.lang = 'es';
+      } else {
+        spanish.classList.add('hidden');
+        english.classList.remove('hidden');
+
+        if (langToggle) {
+          langToggle.textContent = 'Leer en Español';
+          langToggle.setAttribute('aria-label', 'Leer en Español');
+        }
+        if (crumbHome) {
+          crumbHome.textContent = '← Stella Bullo (Home)';
+          crumbHome.setAttribute('href', EN_HOME);
+        }
+        if (crumbSection) {
+          crumbSection.textContent = '↔ Back to Annotation & Evaluation';
+          crumbSection.setAttribute('href', EN_INDEX);
+        }
+        document.documentElement.lang = 'en';
+      }
     }
-    function showES() {
-      english.classList.add('hidden');
-      spanish.classList.remove('hidden');
-      langToggle.textContent = 'Read in English';
-      langToggle.setAttribute('aria-label','Read in English');
-      crumbHome.textContent = '← Stella Bullo (Inicio)';
-      crumbHome.setAttribute('href','/');
-      crumbSection.textContent = '↔ Volver a Ensayos';
-      crumbSection.setAttribute('href','/essays/es/');
-      document.documentElement.lang = 'es';
+
+    // Toggle click
+    if (langToggle && english && spanish) {
+      langToggle.addEventListener('click', () => {
+        const isEnglish = !english.classList.contains('hidden');
+        setLang(isEnglish ? 'es' : 'en');
+      });
     }
-    langToggle.addEventListener('click', () => {
-      if (spanish.classList.contains('hidden')) { showES(); } else { showEN(); }
-    });
-  </script>
+
+    // Default to the language inferred from the path
+    setLang(inEs ? 'es' : 'en');
+
+    // Footer year
+    const yearEl = $('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Back to top
+    const toTop = $('toTop');
+    if (toTop) {
+      const toggleToTop = () => {
+        toTop.classList.toggle('hidden', window.scrollY < 400);
+      };
+      window.addEventListener('scroll', toggleToTop);
+      toggleToTop();
+      toTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  })();
+</script>
+
 </body>
 </html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== BASIC ===== -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Metaphor to Measurement · Building a Pain Tagger – Stella Bullo</title>
+  <meta name="description" content="How I moved from metaphorical pain descriptions in the Language of Endometriosis corpus to a compact taxonomy, annotations, and a tiny prototype pain tagger. Bilingual EN/ES."/>
+  <meta name="author" content="Stella Bullo"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
+  <!-- ===== FONT ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ===== TAILWIND ===== -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
+          },
+          boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+
+  <!-- ===== SEO: CANONICAL + ALTERNATES ===== -->
+  <link rel="canonical" href="https://stellabullo.com/annotation-evaluation/tagger-case-study/index.html"/>
+  <link rel="alternate" hreflang="en" href="https://stellabullo.com/annotation-evaluation/tagger-case-study/index.html"/>
+  <link rel="alternate" hreflang="es" href="https://stellabullo.com/annotation-evaluation/es/tagger-case-study/index.html"/>
+  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com/annotation-evaluation/tagger-case-study/index.html"/>
+
+  <!-- ===== OPEN GRAPH / TWITTER ===== -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Stella Bullo"/>
+  <meta property="og:title" content="Metaphor to Measurement · Building a Pain Tagger"/>
+  <meta property="og:description" content="From metaphorical pain language to taxonomy, annotations, and a tiny prototype pain tagger. Based on the Language of Endometriosis corpus. Bilingual EN/ES."/>
+  <meta property="og:url" content="https://stellabullo.com/annotation-evaluation/tagger-case-study/index.html"/>
+  <meta property="og:image" content="https://stellabullo.com/og-default.jpg"/>
+  <meta property="og:locale" content="en_GB"/>
+  <meta property="og:locale:alternate" content="es_AR"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Metaphor to Measurement · Building a Pain Tagger"/>
+  <meta name="twitter:description" content="From metaphorical pain language to taxonomy, annotations, and a tiny prototype pain tagger. Based on the Language of Endometriosis corpus."/>
+  <meta name="twitter:image" content="https://stellabullo.com/og-default.jpg"/>
+
+  <!-- ===== JSON-LD Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Metaphor to Measurement · Building a Pain Tagger",
+    "description": "From metaphorical pain language to taxonomy, annotations, and a tiny prototype pain tagger. Based on the Language of Endometriosis corpus. Bilingual EN/ES.",
+    "author": { "@type": "Person", "name": "Stella Bullo", "url": "https://stellabullo.com/" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Stella Bullo",
+      "logo": { "@type": "ImageObject", "url": "https://stellabullo.com/favicon.ico" }
+    },
+    "image": ["https://stellabullo.com/og-default.jpg"],
+    "inLanguage": ["en","es"],
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://stellabullo.com/annotation-evaluation/tagger-case-study/index.html" }
+  }
+  </script>
+
+  <!-- ===== STYLE OVERRIDES ===== -->
+  <style>
+    html{scroll-behavior:smooth}
+    body {font-size: 15px;}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .prose h2 {font-size: 1.15rem !important;font-weight:600;}
+    .prose h3 {font-size: 1rem !important;font-weight:500;}
+    .prose table th, .prose table td {padding:.5rem .6rem;border:1px solid #e5e7eb;}
+    .prose table {border-collapse: collapse;}
+    figure svg, figure img {max-width: 100%; height: auto;}
+    figcaption {font-size:.9em; color:#4b5563}
+  </style>
+</head>
+
+<body class="bg-brand-50 text-brand-800 font-sans antialiased">
+  <!-- ===== TOPBAR ===== -->
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/annotation-evaluation/index.html" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Annotation & Evaluation</a>
+    </nav>
+    <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
+  </div>
+
+  <!-- ===== ARTICLE CONTAINER ===== -->
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <!-- ENGLISH -->
+    <article id="english" class="prose prose-sm md:prose-base max-w-none">
+      <h1>Metaphor to Measurement · Building a Pain Tagger</h1>
+      <p class="text-sm text-brand-800/70 mb-6">~8 min · Updated Sep 2025</p>
+
+      <h2>Introduction</h2>
+      <p>Pain language is highly metaphorical. Patients talk about pain as if it were a weapon, a wild animal, or a fire consuming their body. These metaphors are vivid, but they are also messy: no two patients use exactly the same words. For researchers, clinicians, or developers, this creates a challenge: how do you take figurative, varied expressions and make them measurable?</p>
+      <p>This article shows how I moved from metaphorical descriptions in the <a href="/language-of-endo">Language of Endometriosis Project</a> to a compact taxonomy, then to consistent annotations, and finally into a tiny prototype pain tagger. The goal was not to solve everything at once, but to prove that patient language can be captured, structured, and transformed into features that power tools like the <a href="/explain-my-pain">Explain My Pain app</a>.</p>
+
+      <figure class="my-6">
+        <img src="/annotation-evaluation/assets/pain_tagger_pipeline.svg" alt="Pipeline diagram from metaphorical pain language to taxonomy, annotation, prototype pain tagger, and the Explain My Pain app." loading="lazy" />
+        <figcaption>From corpus metaphors to structured features: taxonomy → annotation → prototype → app.</figcaption>
+      </figure>
+
+      <h2>From metaphor to taxonomy</h2>
+      <p>The first step was to define a taxonomy that handles both literal and figurative pain language. As outlined in <a href="/annotation-evaluation/data-taxonomy/">Data Taxonomy for Pain Language</a>, the schema includes five core categories and a layer of metaphor entailments.</p>
+      <ul>
+        <li>Pain qualities</li>
+        <li>Body location</li>
+        <li>Intensity markers</li>
+        <li>Temporal markers</li>
+        <li>Figurative expressions with entailments such as violence, weight, heat, animal, and containment</li>
+      </ul>
+      <p>In the Endometriosis data, metaphor was not noise. Patients reached for metaphors because literal language felt inadequate. Capturing metaphors and their entailments made it possible to quantify what the patient was actually expressing.</p>
+
+      <h2>From taxonomy to annotations</h2>
+      <p>With the categories in place, I annotated the corpus using the lightweight QA strategies in <a href="/annotation-evaluation/qa-notes/">Lightweight QA and Sampling Notes</a>. Below are simplified examples to illustrate the mapping:</p>
+      <ul>
+        <li>“It feels like a knife stabbing my womb” → Quality: stabbing; Location: womb; Entailment: violence</li>
+        <li>“A burning rope around my stomach” → Quality: burning; Location: stomach; Entailment: heat plus containment</li>
+        <li>“A heavy rock pressing on me” → Quality: heavy or pressing; Entailment: weight or pressure</li>
+      </ul>
+      <p>This transformed figurative descriptions into structured data points that could be counted, compared, and fed into a prototype.</p>
+
+      <h2>From annotations to a prototype tagger</h2>
+      <p>The first prototype was deliberately small and rule based. I used the annotated data to create feature lists and simple mappings:</p>
+      <ul>
+        <li>Keyword lists for pain qualities such as burning, stabbing, throbbing</li>
+        <li>Patterns for intensity markers such as very, unbearable, mild</li>
+        <li>Mappings from metaphorical expressions to entailments such as knife → violence, fire → heat</li>
+      </ul>
+      <p>When a new text was entered, the tagger scanned for these features and produced a structured pain profile:</p>
+      <ul>
+        <li>Qualities detected</li>
+        <li>Location mentions</li>
+        <li>Intensity markers</li>
+        <li>Metaphor entailments</li>
+        <li>Temporal markers</li>
+      </ul>
+      <p>Example input: “It is like fire ripping through my stomach at night.”</p>
+      <ul>
+        <li>Quality: burning or ripping</li>
+        <li>Location: stomach</li>
+        <li>Intensity: implied escalation</li>
+        <li>Entailment: heat or fire and violence</li>
+        <li>Temporal: at night</li>
+      </ul>
+
+      <h2>Why this matters</h2>
+      <p>For annotators, this case study shows how careful tagging captures conceptual depth, not just surface words. For recruiters and project leads, it proves that a small, well managed annotation effort can power a working prototype. For developers, it offers a bridge from narrative descriptions to computational features that can be integrated into the <a href="/explain-my-pain">Explain My Pain</a> experience.</p>
+
+      <h2>Closing</h2>
+      <p>Building the pain tagger was a proof of concept: figurative pain descriptions can be transformed into structured data without losing their richness. The Endometriosis corpus provided the metaphors, the taxonomy gave the categories, QA kept things consistent, and the prototype demonstrated feasibility.</p>
+      <p>The last article in this series shares the small pieces that make this process repeatable: <a href="/annotation-evaluation/snippets/">Annotation Snippets and Prompts I Reuse</a>.</p>
+    </article>
+
+    <!-- SPANISH -->
+    <article id="spanish" class="hidden prose prose-sm md:prose-base max-w-none">
+      <h1>De la metáfora a la medición · Construyendo un tagger de dolor</h1>
+      <p class="text-sm text-brand-800/70 mb-6">~8 min · Actualizado Sep 2025</p>
+
+      <h2>Introducción</h2>
+      <p>El lenguaje del dolor es altamente metafórico. Las personas hablan del dolor como si fuera un arma, un animal salvaje o un fuego que consume el cuerpo. Estas metáforas son vívidas, pero también desordenadas: no hay dos personas que usen exactamente las mismas palabras. Para investigación, clínica o desarrollo, el desafío es claro: ¿cómo convertir expresiones figuradas y variadas en algo medible?</p>
+      <p>Este artículo muestra cómo pasé de las descripciones metafóricas en el <a href="/language-of-endo">Language of Endometriosis Project</a> a una taxonomía compacta, luego a anotaciones consistentes y finalmente a un pequeño prototipo de tagger de dolor. La meta no fue resolverlo todo a la vez, sino demostrar que el lenguaje de pacientes puede capturarse, estructurarse y transformarse en features que alimentan herramientas como la <a href="/explain-my-pain">app Explain My Pain</a>.</p>
+
+      <figure class="my-6">
+        <img src="/annotation-evaluation/assets/pain_tagger_pipeline.svg" alt="Diagrama del pipeline desde lenguaje metafórico del dolor hasta taxonomía, anotación, prototipo de tagger y app Explain My Pain." loading="lazy" />
+        <figcaption>De metáforas del corpus a features estructuradas: taxonomía → anotación → prototipo → app.</figcaption>
+      </figure>
+
+      <h2>De la metáfora a la taxonomía</h2>
+      <p>El primer paso fue definir una taxonomía que cubra lenguaje literal y figurado. Como detallo en <a href="/annotation-evaluation/data-taxonomy/">Taxonomía de datos para el lenguaje del dolor</a>, el esquema incluye cinco categorías básicas y una capa de entailments metafóricos.</p>
+      <ul>
+        <li>Cualidades del dolor</li>
+        <li>Ubicación en el cuerpo</li>
+        <li>Marcadores de intensidad</li>
+        <li>Marcadores temporales</li>
+        <li>Expresiones figuradas con entailments como violencia, peso, calor, animal y encierro</li>
+      </ul>
+      <p>En los datos de Endometriosis, la metáfora no era ruido. Las pacientes recurrían a metáforas cuando el lenguaje literal resultaba insuficiente. Capturar metáforas y entailments permitió cuantificar lo que realmente se expresaba.</p>
+
+      <h2>De la taxonomía a las anotaciones</h2>
+      <p>Con las categorías definidas, anoté el corpus usando las estrategias de QA livianas de <a href="/annotation-evaluation/qa-notes/">Notas sobre QA y muestreo livianos</a>. Ejemplos simplificados:</p>
+      <ul>
+        <li>“Es como un cuchillo que me apuñala el útero” → Cualidad: punzante o apuñalar; Ubicación: útero; Entailment: violencia</li>
+        <li>“Una cuerda ardiendo alrededor del estómago” → Cualidad: ardiente o quemante; Ubicación: estómago; Entailment: calor más encierro</li>
+        <li>“Una piedra pesada que me presiona” → Cualidad: pesado o presionar; Entailment: peso o presión</li>
+      </ul>
+      <p>Esto transformó descripciones figuradas en puntos de datos estructurados que pueden contarse, compararse y alimentar un prototipo.</p>
+
+      <h2>De las anotaciones a un prototipo de tagger</h2>
+      <p>El primer prototipo fue deliberadamente pequeño y basado en reglas. Utilicé las anotaciones para crear listas de features y mapeos simples:</p>
+      <ul>
+        <li>Listas de palabras clave para cualidades como urente, punzante, palpitante</li>
+        <li>Patrones para intensidad como muy, insoportable, leve</li>
+        <li>Mapeos de expresiones metafóricas a entailments como cuchillo → violencia, fuego → calor</li>
+      </ul>
+      <p>Al ingresar un nuevo texto, el tagger buscaba estas señales y producía un perfil estructurado del dolor:</p>
+      <ul>
+        <li>Cualidades detectadas</li>
+        <li>Menciones de ubicación</li>
+        <li>Marcadores de intensidad</li>
+        <li>Entailments metafóricos</li>
+        <li>Marcadores temporales</li>
+      </ul>
+      <p>Ejemplo de entrada: “Es como fuego que me atraviesa el estómago de noche”.</p>
+      <ul>
+        <li>Cualidad: urente o desgarrante</li>
+        <li>Ubicación: estómago</li>
+        <li>Intensidad: escalada implícita</li>
+        <li>Entailment: calor o fuego y violencia</li>
+        <li>Temporal: de noche</li>
+      </ul>
+
+      <h2>Por qué importa</h2>
+      <p>Para anotadoras y anotadores, este caso muestra cómo un etiquetado cuidadoso capta profundidad conceptual y no solo palabras de superficie. Para recruiters y líderes de proyecto, demuestra que un esfuerzo pequeño pero bien gestionado puede sostener un prototipo funcional. Para desarrolladoras y desarrolladores, ofrece un puente entre relatos y features computacionales que pueden integrarse en la experiencia de <a href="/explain-my-pain">Explain My Pain</a>.</p>
+
+      <h2>Cierre</h2>
+      <p>Construir el tagger de dolor fue una prueba de concepto: es posible transformar descripciones figuradas en datos estructurados sin perder su riqueza. El corpus de Endometriosis aportó las metáforas, la taxonomía las categorías, el QA la consistencia y el prototipo la viabilidad.</p>
+      <p>El artículo final de la serie comparte las piezas pequeñas que vuelven esto repetible: <a href="/annotation-evaluation/snippets/">Fragmentos y prompts de anotación que reutilizo</a>.</p>
+    </article>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
+    <p>© <span id="year"></span> Stella Bullo. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a></p>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    (function () {
+      const $ = (id) => document.getElementById(id);
+
+      const langToggle   = $('lang-toggle');
+      const english      = $('english');
+      const spanish      = $('spanish');
+      const crumbHome    = $('crumb-home');
+      const crumbSection = $('crumb-section');
+
+      const EN_INDEX = '/annotation-evaluation/index.html';
+      const ES_INDEX = '/annotation-evaluation/es/index.html';
+      const ES_HOME  = '/es/index.html';
+      const EN_HOME  = '/';
+
+      function setLang(lang) {
+        if (!english || !spanish) return;
+
+        if (lang === 'es') {
+          english.classList.add('hidden');
+          spanish.classList.remove('hidden');
+          if (langToggle) {
+            langToggle.textContent = 'Read it in English';
+            langToggle.setAttribute('aria-label', 'Read it in English');
+          }
+          if (crumbHome) {
+            crumbHome.textContent = '← Stella Bullo (Inicio)';
+            crumbHome.setAttribute('href', ES_HOME);
+          }
+          if (crumbSection) {
+            crumbSection.textContent = '↔ Volver a Anotación y Evaluación';
+            crumbSection.setAttribute('href', ES_INDEX);
+          }
+        } else {
+          spanish.classList.add('hidden');
+          english.classList.remove('hidden');
+          if (langToggle) {
+            langToggle.textContent = 'Leer en Español';
+            langToggle.setAttribute('aria-label', 'Leer en Español');
+          }
+          if (crumbHome) {
+            crumbHome.textContent = '← Stella Bullo (Home)';
+            crumbHome.setAttribute('href', EN_HOME);
+          }
+          if (crumbSection) {
+            crumbSection.textContent = '↔ Back to Annotation & Evaluation';
+            crumbSection.setAttribute('href', EN_INDEX);
+          }
+        }
+      }
+
+      // Toggle click
+      if (langToggle && english && spanish) {
+        langToggle.addEventListener('click', () => {
+          const isEnglish = !english.classList.contains('hidden');
+          setLang(isEnglish ? 'es' : 'en');
+        });
+      }
+
+      // Default to English first
+      setLang('en');
+
+      // Footer year
+      const yearEl = $('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      // Back to top
+      const toTop = $('toTop');
+      if (toTop) {
+        const toggleToTop = () => {
+          toTop.classList.toggle('hidden', window.scrollY < 400);
+        };
+        window.addEventListener('scroll', toggleToTop);
+        toggleToTop();
+        toTop.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
