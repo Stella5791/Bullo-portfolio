@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Basic -->
+  <title>Annotation Across Two Worlds: Linguistics vs. NLP – Stella Bullo</title>
+  <meta name="description" content="How linguistic and NLP annotation differ in purpose, unit of analysis, and outputs — and how blending them creates better data and deeper understanding."/>
+  <meta name="author" content="Stella Bullo"/>
+
+  <!-- Canonical + alternates -->
+  <link rel="canonical" href="https://stellabullo.com/essays/annotation-two-worlds/"/>
+  <link rel="alternate" hreflang="en" href="https://stellabullo.com/essays/annotation-two-worlds/"/>
+  <link rel="alternate" hreflang="es" href="https://stellabullo.com/essays/es/annotation-two-worlds/"/>
+  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com/essays/annotation-two-worlds/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Annotation Across Two Worlds: Linguistics vs. NLP"/>
+  <meta property="og:description" content="A friendly, rigorous comparison of linguistic and NLP annotation, with practical examples and why a hybrid approach matters."/>
+  <meta property="og:url" content="https://stellabullo.com/essays/annotation-two-worlds/"/>
+  <meta property="og:site_name" content="Stella Bullo"/>
+  <!-- Optional image: replace with your asset if available -->
+  <meta property="og:image" content="https://stellabullo.com/assets/og/annotation-two-worlds.jpg"/>
+  <meta property="og:image:alt" content="Notebook margin notes next to code editor window"/>
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Annotation Across Two Worlds: Linguistics vs. NLP"/>
+  <meta name="twitter:description" content="How linguistic and NLP annotation differ — and how to bridge them."/>
+  <meta name="twitter:image" content="https://stellabullo.com/assets/og/annotation-two-worlds.jpg"/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind + Typography -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; }
+  </style>
+
+  <!-- JSON-LD Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Annotation Across Two Worlds: Linguistics vs. NLP",
+    "description": "How linguistic and NLP annotation differ in purpose, unit of analysis, and outputs — and how blending them creates better data and deeper understanding.",
+    "inLanguage": "en",
+    "author": { "@type": "Person", "name": "Stella Bullo" },
+    "publisher": { "@type": "Person", "name": "Stella Bullo" },
+    "datePublished": "2025-09-04",
+    "dateModified": "2025-09-04",
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://stellabullo.com/essays/annotation-two-worlds/" },
+    "url": "https://stellabullo.com/essays/annotation-two-worlds/"
+  }
+  </script>
+</head>
+
+<body class="bg-white text-slate-900 antialiased">
+  <!-- Nav (minimal, matches essays pages) -->
+  <nav class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center">
+      <a href="/" class="text-base md:text-lg font-semibold tracking-tight text-slate-800 hover:text-slate-900">Stella Bullo</a>
+      <ul class="hidden md:flex items-center gap-5 text-sm ml-auto">
+        <li><a href="/essays/" class="hover:text-slate-900 text-slate-700">Essays</a></li>
+        <li><a href="/technical-content-ux/" class="hover:text-slate-900 text-slate-700">Technical · Content · UX</a></li>
+        <li><a href="/projects/" class="hover:text-slate-900 text-slate-700">Projects</a></li>
+        <li><a href="/contact/" class="hover:text-slate-900 text-slate-700">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-5 md:px-8 pt-28 pb-20">
+    <!-- Breadcrumbs + Lang toggle -->
+    <div class="text-sm md:text-base mb-6">
+      <nav class="flex flex-col gap-2">
+        <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-slate-700 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+        <a id="crumb-section" href="/essays/" class="inline-flex items-center gap-1 text-slate-700 font-medium underline hover:opacity-80">↔ Back to Essays</a>
+      </nav>
+      <button id="lang-toggle" type="button"
+        class="mt-4 inline-flex items-center rounded-md border border-slate-300 px-3 py-1.5 text-sm font-medium hover:bg-slate-50"
+        aria-label="Leer en Español">Leer en Español</button>
+    </div>
+
+    <!-- English -->
+    <article id="english" class="prose prose-slate max-w-none">
+      <header class="mb-8">
+        <h1 class="mb-2">Annotation Across Two Worlds: Linguistics vs. NLP</h1>
+        <p class="text-sm text-slate-600">By Stella Bullo · Updated 4 September 2025</p>
+      </header>
+
+      <section>
+        <h2>Introduction</h2>
+        <p>Annotation sounds like one thing: adding information to data. But ask a linguist and ask an NLP engineer and you will get two very different answers. For a discourse analyst, annotation is a way of uncovering how language enacts power, identity and metaphor. For an NLP practitioner, annotation is the backbone of training data, short and consistent labels that feed machine learning models.</p>
+        <p>This piece compares the two traditions, showing how the same text can be read through the lenses of linguistic annotation and AI/NLP annotation.</p>
+
+        <h3>Personal note</h3>
+        <p>I come at annotation from both sides. My training is in linguistics and discourse analysis, where annotation is a way to unpack identity, agency and metaphor. More recently I have been working with annotation in the context of NLP projects, where the same word means something much more operational, preparing data so models can learn. Living in both of these spaces makes the differences clear, but it also shows how much the two approaches can gain from one another.</p>
+      </section>
+
+      <section>
+        <h2>What Linguists Mean by Annotation</h2>
+        <p>In linguistics and discourse studies, annotation is interpretive and theory-driven. Analysts draw on frameworks that give them categories to work with, and each framework shines a light on a different layer of meaning.</p>
+        <p><strong>Systemic Functional Linguistics (SFL)</strong> (Halliday &amp; Matthiessen, 2014) helps identify process types, material, mental, verbal, relational, and map how participants enact roles of actor, sayer or experiencer. This is a way of capturing agency and voice in clauses.</p>
+        <p><strong>Critical Discourse Analysis and Appraisal theory</strong> (Fairclough, 1992; Martin &amp; White, 2005; Wodak &amp; Meyer, 2009) provide tools for looking at stance, evaluation and ideology. Connectives like <em>but</em> or <em>even when</em> are treated seriously, as resources that shift authority or open space for resistance.</p>
+        <p><strong>Conceptual Metaphor Theory (CMT)</strong> (Lakoff &amp; Johnson, 1980) focuses on how abstract experiences are structured through source domains such as weight, battle or movement. Saying <em>push through the pain</em> draws on the physical act of pushing against resistance to frame the experience of illness as a struggle that can be overcome.</p>
+        <p>The point is to uncover layers of meaning: who is speaking, how they position themselves, what metaphors they use and which social schemas they activate. Annotation here is less about volume and more about depth, linking the small details of grammar or word choice to wider patterns of identity, ideology and lived experience.</p>
+
+        <p><strong>Example</strong></p>
+        <blockquote>
+          “Doctors keep telling me it’s just stress, but I know my body better than anyone. I push through the pain to go to work, even when it feels impossible.”
+        </blockquote>
+        <ul>
+          <li><em>Doctors keep telling me…</em> → the patient is positioned as subordinate, doctors hold institutional authority (SFL: verbal process, asymmetry of roles).</li>
+          <li><em>but I know my body better than anyone</em> → adversative stance (Appraisal: counter-expectation), reclaiming epistemic authority.</li>
+          <li><em>I push through the pain</em> → material process, resilience, warrior-like identity, and a metaphor of illness as a barrier (CMT).</li>
+          <li><em>even when it feels impossible</em> → concessive stance (Appraisal: concession), which intensifies the sense of agency.</li>
+        </ul>
+
+        <p>Using more than one framework is not just a stylistic choice but a sign of rigour. SFL maps roles and processes, CDA and Appraisal uncover stance and ideology, and CMT reveals the metaphorical scaffolding of experience. Taken together, these approaches provide a fuller picture of how language enacts identity and resistance. They also show that linguists do not sit in silos, we borrow, adapt and combine. That interdisciplinarity is essential when annotation is used not only in academic research but also in fields like AI and health communication.</p>
+      </section>
+
+      <section>
+        <h2>What NLP and ML Practitioners Mean by Annotation</h2>
+        <p>In the AI world annotation is operational. The aim is not interpretation but structured training data that models can learn from. Annotation guidelines are designed for clarity and speed, and the focus is on consistency and scalability. Annotators are expected to tag quickly and uniformly so that the dataset is machine-readable and reliable across huge volumes of examples.</p>
+
+        <h3>Common types</h3>
+        <ul>
+          <li>Text classification, categories like health, finance or politics, or simple sentiment values such as positive, negative or neutral.</li>
+          <li>Entity recognition, spans tagged as names, symptoms, locations or dates.</li>
+          <li>Intent classification in conversational AI, utterances marked as book a flight, ask a question or cancel an order.</li>
+          <li>Coreference and relations, linking “she” to “Mary,” or doctor to hospital.</li>
+          <li>Safety and moderation, harmful or misleading content flagged.</li>
+        </ul>
+
+        <h3>Layers</h3>
+        <ul>
+          <li>Token level, each word tagged for part-of-speech or entity type.</li>
+          <li>Span level, multi-word chunks such as chronic pain marked as a single unit.</li>
+          <li>Sentence level, entire utterances labelled for sentiment, intent or safety.</li>
+          <li>Document level, longer texts tagged for topic or stance.</li>
+          <li>Discourse / cross-document, references linked across sentences or documents.</li>
+        </ul>
+
+        <p><strong>Example</strong></p>
+        <blockquote>
+          “Doctors keep telling me it’s just stress, but I know my body better than anyone. I push through the pain to go to work, even when it feels impossible.”
+        </blockquote>
+        <ul>
+          <li>Token level: “Doctors” → PERSON, “stress” → CONDITION, “pain” → SYMPTOM.</li>
+          <li>Sentence-level sentiment:
+            <ul>
+              <li>“Doctors keep telling me…” → negative, dismissive.</li>
+              <li>“but I know my body…” → positive/neutral, confidence.</li>
+              <li>“I push through the pain…” → mixed, negative experience and positive resilience.</li>
+            </ul>
+          </li>
+          <li>Document-level stance: overall negative towards medical authority and positive self-assertion.</li>
+        </ul>
+
+        <p>What matters here is consistency and computability. Labels need to be unambiguous, reproducible and simple enough that annotators can agree on them. While this often trims nuance, it enables datasets to scale to millions of examples. The challenge, and the opportunity, lies in designing schemas that are efficient and still sensitive to the ethical and social realities encoded in data.</p>
+      </section>
+
+      <section>
+        <h2>Side by Side Comparison</h2>
+        <div class="not-prose overflow-x-auto">
+          <table class="w-full text-left border border-slate-200 rounded-md">
+            <thead class="bg-slate-50">
+              <tr>
+                <th class="p-3 border-b">Aspect</th>
+                <th class="p-3 border-b">Linguistics / Discourse</th>
+                <th class="p-3 border-b">NLP / Machine Learning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="p-3 border-b">Unit of analysis</td>
+                <td class="p-3 border-b">Clause or phrase</td>
+                <td class="p-3 border-b">Token, sentence, document</td>
+              </tr>
+              <tr>
+                <td class="p-3 border-b">Labels</td>
+                <td class="p-3 border-b">Identity, agency, metaphor, stance</td>
+                <td class="p-3 border-b">Sentiment, entity, intent, topic</td>
+              </tr>
+              <tr>
+                <td class="p-3 border-b">Purpose</td>
+                <td class="p-3 border-b">Interpretation and uncovering ideology</td>
+                <td class="p-3 border-b">Dataset creation for model training</td>
+              </tr>
+              <tr>
+                <td class="p-3 border-b">Output</td>
+                <td class="p-3 border-b">Narrative and layered analysis</td>
+                <td class="p-3 border-b">CSV or JSON with categorical labels</td>
+              </tr>
+              <tr>
+                <td class="p-3 border-b">Strength</td>
+                <td class="p-3 border-b">Nuance and theoretical depth</td>
+                <td class="p-3 border-b">Scale and consistency</td>
+              </tr>
+              <tr>
+                <td class="p-3">Limitation</td>
+                <td class="p-3">Small scope, subjective interpretation</td>
+                <td class="p-3">Oversimplification, hidden bias</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>What Each World Can Learn from the Other</h2>
+        <p>From linguistics, NLP can gain awareness of how identity, power and metaphor shape data. Without that awareness, AI models risk reproducing the very biases they are meant to avoid. From NLP, linguistics can borrow methods of standardisation, agreement checking and scale, strengthening corpus-based research.</p>
+        <p>The most exciting possibilities come from mixing the two, hybrid annotation frameworks where automatic tagging handles scale, while human analysts add interpretive layers that capture nuance.</p>
+      </section>
+
+      <section>
+        <h2>Conclusion</h2>
+        <p>Annotation is never neutral. Whether in a linguistics seminar or an AI lab, the act of assigning labels is also the act of assigning meaning. In linguistics, annotation shows how language encodes power, identity and metaphor. In NLP, annotation creates the datasets that will shape how machines understand human communication.</p>
+        <p>Both traditions have strengths, the nuance and theoretical depth of discourse analysis, and the scale and reliability of computational annotation. Both also have limitations, subjectivity and small scope on the linguistic side, oversimplification and bias reproduction on the computational side.</p>
+        <p>The future lies in building bridges. Hybrid annotation can bring the best of both worlds, creating large-scale datasets enriched by discourse-sensitive insights. This does not just improve models, it also ensures that the human realities in language — identity, agency, resistance, resilience — are not flattened into categories.</p>
+        <p>As someone moving between these two spaces, I see annotation not as a mechanical step but as a meeting point between humanities and technology. Done well, it can produce systems that are more accurate, more ethical and more attuned to the complexities of lived experience. And if we can sneak a little discourse analysis into the machine learning pipeline along the way, that is a win for both sides.</p>
+      </section>
+    </article>
+
+    <!-- Spanish -->
+    <article id="spanish" class="prose prose-slate max-w-none hidden">
+      <header class="mb-8">
+        <h1 class="mb-2">Anotación en dos mundos: Lingüística vs. NLP</h1>
+        <p class="text-sm text-slate-600">Por Stella Bullo · Actualizado 4 de septiembre de 2025</p>
+      </header>
+
+      <section>
+        <h2>Introducción</h2>
+        <p>La anotación suena a una sola cosa: agregar información a los datos. Si se lo preguntas a una lingüista y a una ingeniera de NLP, sin embargo, obtendrás respuestas muy distintas. Para el análisis del discurso, anotar es una forma de mostrar cómo el lenguaje pone en juego poder, identidad y metáfora. Para NLP, anotar es la base de los datos de entrenamiento, etiquetas breves y consistentes que alimentan a los modelos.</p>
+        <p>Este texto compara ambas tradiciones y muestra cómo el mismo fragmento puede leerse desde la lente de la anotación lingüística y la anotación para IA/NLP.</p>
+
+        <h3>Nota personal</h3>
+        <p>Llego a la anotación desde ambos lados. Me formé en lingüística y análisis del discurso, donde anotar sirve para desentrañar identidad, agencia y metáfora. Más recientemente trabajé con anotación en proyectos de NLP, donde la misma palabra significa algo mucho más operativo: preparar datos para que los modelos aprendan. Vivir en estos dos espacios deja claras las diferencias y también cuánto pueden enriquecerse entre sí.</p>
+      </section>
+
+      <section>
+        <h2>Qué entiende la lingüística por “anotar”</h2>
+        <p>En lingüística y estudios del discurso, la anotación es interpretativa y guiada por teoría. Las y los analistas se apoyan en marcos que ofrecen categorías de trabajo y cada marco ilumina una capa distinta del sentido.</p>
+        <p><strong>Lingüística Sistémico-Funcional (SFL)</strong> (Halliday y Matthiessen, 2014) ayuda a identificar tipos de proceso —material, mental, verbal, relacional— y a mapear cómo los participantes asumen roles de actor, hablante o experienciador. Es una forma de captar agencia y voz en la cláusula.</p>
+        <p><strong>Análisis Crítico del Discurso y teoría de la Valoración</strong> (Fairclough, 1992; Martin y White, 2005; Wodak y Meyer, 2009) ofrecen herramientas para observar postura, evaluación e ideología. Conectores como <em>pero</em> o <em>aunque</em> se tratan con seriedad, como recursos que desplazan la autoridad o abren espacio para la resistencia.</p>
+        <p><strong>Teoría de la Metáfora Conceptual (CMT)</strong> (Lakoff y Johnson, 1980) explica cómo experiencias abstractas se estructuran mediante dominios fuente como peso, batalla o movimiento. Decir <em>empujar a través del dolor</em> toma el acto físico de empujar contra una resistencia para enmarcar la enfermedad como una lucha que puede superarse.</p>
+        <p>El objetivo es descubrir capas de sentido: quién habla, cómo se posiciona, qué metáforas usa y qué esquemas sociales activa. Aquí importa menos el volumen y más la profundidad, conectando los detalles de la gramática y la elección léxica con patrones más amplios de identidad, ideología y experiencia vivida.</p>
+
+        <p><strong>Ejemplo</strong></p>
+        <blockquote>
+          «Los médicos me repiten que es solo estrés, pero yo conozco mi cuerpo mejor que nadie. Empujo a través del dolor para ir a trabajar, incluso cuando parece imposible».
+        </blockquote>
+        <ul>
+          <li><em>Los médicos me repiten…</em> → la persona paciente queda subordinada, la autoridad institucional la sostienen los médicos (SFL: proceso verbal, asimetría de roles).</li>
+          <li><em>pero yo conozco mi cuerpo…</em> → postura adversativa (Valoración: contraexpectativa) y recuperación de la autoridad epistémica.</li>
+          <li><em>Empujo a través del dolor</em> → proceso material, resiliencia e identidad combativa, además de una metáfora de la enfermedad como barrera (CMT).</li>
+          <li><em>incluso cuando parece imposible</em> → postura concesiva (Valoración: concesión) que intensifica la agencia.</li>
+        </ul>
+
+        <p>Usar más de un marco no es una preferencia de estilo, es un signo de rigor. SFL mapea roles y procesos, el ACD y la Valoración muestran postura e ideología, y CMT revela el andamiaje metafórico de la experiencia. Juntos ofrecen una visión más completa de cómo el lenguaje construye identidad y resistencia. Y, de paso, muestran que la lingüística no trabaja en silos: tomamos, adaptamos y combinamos. Esa interdisciplinariedad es clave cuando la anotación se aplica no solo en investigación, sino también en IA y comunicación en salud.</p>
+      </section>
+
+      <section>
+        <h2>Qué entiende NLP/ML por “anotar”</h2>
+        <p>En IA la anotación es operativa. No busca interpretar, sino generar datos de entrenamiento estructurados. Las guías de anotación priorizan claridad y velocidad, y el foco está en la consistencia y la escalabilidad. Se espera que quienes anotan etiqueten rápido y de forma uniforme, de modo que el conjunto sea legible por máquina y fiable a gran escala.</p>
+
+        <h3>Tipos comunes</h3>
+        <ul>
+          <li>Clasificación de texto, con categorías como salud, finanzas o política, o polaridades simples como positivo, negativo o neutral.</li>
+          <li>Reconocimiento de entidades, spans etiquetados como nombres, síntomas, lugares o fechas.</li>
+          <li>Clasificación de intención en IA conversacional, enunciados marcados como reservar un vuelo, hacer una consulta o cancelar.</li>
+          <li>Correferencia y relaciones, enlazar “ella” con “María” o doctor con hospital.</li>
+          <li>Seguridad y moderación, detección de contenido dañino o engañoso.</li>
+        </ul>
+
+        <h3>Capas</h3>
+        <ul>
+          <li>Nivel de token, cada palabra con etiqueta de categoría gramatical o entidad.</li>
+          <li>Nivel de span, grupos como dolor crónico tratados como una sola unidad.</li>
+          <li>Nivel de oración, enunciados completos con sentimiento, intención o seguridad.</li>
+          <li>Nivel de documento, textos largos con tema o postura.</li>
+          <li>Nivel discursivo / entre documentos, referencias enlazadas entre oraciones o textos.</li>
+        </ul>
+
+        <p><strong>Ejemplo</strong></p>
+        <blockquote>
+          «Los médicos me repiten que es solo estrés, pero yo conozco mi cuerpo mejor que nadie. Empujo a través del dolor para ir a trabajar, incluso cuando parece imposible».
+        </blockquote>
+        <ul>
+          <li>Nivel token: «médicos» → PERSONA, «estrés» → CONDICIÓN, «dolor» → SÍNTOMA.</li>
+          <li>Sentimiento a nivel de oración:
+            <ul>
+              <li>«Los médicos me repiten…» → negativo, desestimación.</li>
+              <li>«pero yo conozco mi cuerpo…» → positivo/neutral, confianza.</li>
+              <li>«Empujo a través del dolor…» → mixto, experiencia negativa y resiliencia positiva.</li>
+            </ul>
+          </li>
+          <li>Postura a nivel de documento: negativa hacia la autoridad médica y positiva respecto de la autoafirmación.</li>
+        </ul>
+
+        <p>Aquí lo crucial es la consistencia y la computabilidad. Las etiquetas deben ser inequívocas, reproducibles y lo bastante simples para que haya acuerdo entre anotadores. Aunque se pierda matiz, esto permite escalar a millones de ejemplos. El reto y la oportunidad están en diseñar esquemas eficientes y, a la vez, sensibles a las realidades éticas y sociales que el dato contiene.</p>
+      </section>
+
+      <section>
+        <h2>Comparación lado a lado</h2>
+        <div class="not-prose overflow-x-auto">
+          <table class="w-full text-left border border-slate-200 rounded-md">
+            <thead class="bg-slate-50">
+              <tr>
+                <th class="p-3 border-b">Aspecto</th>
+                <th class="p-3 border-b">Lingüística / Discurso</th>
+                <th class="p-3 border-b">NLP / Aprendizaje automático</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="p-3 border-b">Unidad de análisis</td>
+                <td class="p-3 border-b">Cláusula o frase</td>
+                <td class="p-3 border-b">Token, oración, documento</td>
+              </tr>
+              <tr>
+                <td class="p-3 border-b">Etiquetas</td>
+                <td class="p-3 border-b">Identidad, agencia, metáfora, postura</td>
+                <td class="p-3 border-b">Sentimiento, entidad, intención, tema</td>
+              </tr>
+              <tr>
+                <td class="p-3 border-b">Propósito</td>
+                <td class="p-3 border-b">Interpretar y revelar ideología</td>
+                <td class="p-3 border-b">Crear datos para entrenar modelos</td>
+              </tr>
+              <tr>
+                <td class="p-3 border-b">Salida</td>
+                <td class="p-3 border-b">Análisis narrativo y por capas</td>
+                <td class="p-3 border-b">CSV o JSON con categorías</td>
+              </tr>
+              <tr>
+                <td class="p-3 border-b">Fortaleza</td>
+                <td class="p-3 border-b">Matiz y profundidad teórica</td>
+                <td class="p-3 border-b">Escala y consistencia</td>
+              </tr>
+              <tr>
+                <td class="p-3">Limitación</td>
+                <td class="p-3">Alcance reducido, interpretación subjetiva</td>
+                <td class="p-3">Simplificación excesiva, sesgo oculto</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>Lo que cada mundo puede aprender del otro</h2>
+        <p>De la lingüística, NLP puede tomar una mirada atenta a identidad, poder y metáfora. Sin eso, los modelos corren el riesgo de reproducir sesgos. De NLP, la lingüística puede adoptar estandarización, chequeos de acuerdo y escala, lo que fortalece la investigación basada en corpus.</p>
+        <p>Las posibilidades más interesantes surgen al combinar ambos enfoques: marcos híbridos donde el etiquetado automático cubre la escala y el análisis humano aporta las capas interpretativas.</p>
+      </section>
+
+      <section>
+        <h2>Conclusión</h2>
+        <p>La anotación nunca es neutral. En el aula de lingüística o en un laboratorio de IA, etiquetar también es asignar sentido. En lingüística, la anotación muestra cómo el lenguaje codifica poder, identidad y metáfora. En NLP, crea los conjuntos de datos que moldearán cómo las máquinas procesan la comunicación humana.</p>
+        <p>Ambas tradiciones tienen fortalezas: el matiz y la profundidad teórica del análisis del discurso, y la escala y confiabilidad de la anotación computacional. También tienen límites: subjetividad y poco alcance del lado lingüístico, simplificación y reproducción de sesgos del lado computacional.</p>
+        <p>El futuro está en tender puentes. La anotación híbrida puede traer lo mejor de los dos mundos, conjuntos masivos enriquecidos con sensibilidad discursiva. No solo mejora los modelos, también cuida que las realidades humanas del lenguaje —identidad, agencia, resistencia, resiliencia— no queden aplastadas en categorías.</p>
+        <p>Desde mi paso entre ambos espacios, la anotación no es un trámite mecánico sino un punto de encuentro entre humanidades y tecnología. Bien hecha, produce sistemas más precisos, más éticos y más atentos a la complejidad de la experiencia. Y si de paso colamos un poco de análisis del discurso en la tubería de ML, ganamos todos.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 py-8 text-sm text-slate-600">
+      © <span id="y"></span> Stella Bullo • <a class="underline hover:no-underline" href="/privacy/">Privacy</a>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // language toggle
+    const english = document.getElementById('english');
+    const spanish = document.getElementById('spanish');
+    const langToggle = document.getElementById('lang-toggle');
+    const crumbHome = document.getElementById('crumb-home');
+    const crumbSection = document.getElementById('crumb-section');
+
+    function showEN() {
+      spanish.classList.add('hidden');
+      english.classList.remove('hidden');
+      langToggle.textContent = 'Leer en Español';
+      langToggle.setAttribute('aria-label','Leer en Español');
+      crumbHome.textContent = '← Stella Bullo (Home)';
+      crumbHome.setAttribute('href','/');
+      crumbSection.textContent = '↔ Back to Essays';
+      crumbSection.setAttribute('href','/essays/');
+      document.documentElement.lang = 'en';
+    }
+    function showES() {
+      english.classList.add('hidden');
+      spanish.classList.remove('hidden');
+      langToggle.textContent = 'Read in English';
+      langToggle.setAttribute('aria-label','Read in English');
+      crumbHome.textContent = '← Stella Bullo (Inicio)';
+      crumbHome.setAttribute('href','/');
+      crumbSection.textContent = '↔ Volver a Ensayos';
+      crumbSection.setAttribute('href','/essays/es/');
+      document.documentElement.lang = 'es';
+    }
+    langToggle.addEventListener('click', () => {
+      if (spanish.classList.contains('hidden')) { showES(); } else { showEN(); }
+    });
+  </script>
+</body>
+</html>
