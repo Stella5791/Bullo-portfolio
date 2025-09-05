@@ -171,58 +171,93 @@
   <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
 
   <!-- ===== SCRIPT ===== -->
-  <script>
-    const langToggle = document.getElementById('lang-toggle');
-    const english    = document.getElementById('english');
-    const spanish    = document.getElementById('spanish');
-    const crumbHome  = document.getElementById('crumb-home');
-    const crumbSection = document.getElementById('crumb-section');
+<!-- ===== SCRIPT ===== -->
+<script>
+  (function () {
+    const $ = (id) => document.getElementById(id);
+
+    const langToggle   = $('lang-toggle');
+    const english      = $('english');
+    const spanish      = $('spanish');
+    const crumbHome    = $('crumb-home');
+    const crumbSection = $('crumb-section');
+
+    // Detect if we're inside a Spanish essay URL or the page is marked lang="es"
+    const inEs = /\/essays\/es\//.test(location.pathname) ||
+                 document.documentElement.lang === 'es';
+
+    const EN_INDEX = '/essays/index.html';
+    const ES_INDEX = '/essays/es/index.html';
+    const ES_HOME  = '/es/index.html'; // change if your Spanish home differs
+    const EN_HOME  = '/';
 
     function setLang(lang) {
+      if (!english || !spanish) return;
+
       if (lang === 'es') {
         english.classList.add('hidden');
         spanish.classList.remove('hidden');
-        langToggle.textContent = 'Read it in English';
-        langToggle.setAttribute('aria-label','Read it in English');
-        crumbHome.textContent = '← Stella Bullo (Inicio)';
-        crumbHome.setAttribute('href','/es/index.html');
-        crumbSection.textContent = '↔ Volver a Ensayos';
-        crumbSection.setAttribute('href','/es/essays/index.html');
+
+        if (langToggle) {
+          langToggle.textContent = 'Read it in English';
+          langToggle.setAttribute('aria-label', 'Read it in English');
+        }
+        if (crumbHome) {
+          crumbHome.textContent = '← Stella Bullo (Inicio)';
+          crumbHome.setAttribute('href', ES_HOME);
+        }
+        if (crumbSection) {
+          crumbSection.textContent = '↔ Volver a Ensayos';
+          crumbSection.setAttribute('href', ES_INDEX); // ✅ correct path
+        }
       } else {
         spanish.classList.add('hidden');
         english.classList.remove('hidden');
-        langToggle.textContent = 'Leer en Español';
-        langToggle.setAttribute('aria-label','Leer en Español');
-        crumbHome.textContent = '← Stella Bullo (Home)';
-        crumbHome.setAttribute('href','/');
-        crumbSection.textContent = '↔ Back to Essays';
-        crumbSection.setAttribute('href','/essays/index.html');
+
+        if (langToggle) {
+          langToggle.textContent = 'Leer en Español';
+          langToggle.setAttribute('aria-label', 'Leer en Español');
+        }
+        if (crumbHome) {
+          crumbHome.textContent = '← Stella Bullo (Home)';
+          crumbHome.setAttribute('href', EN_HOME);
+        }
+        if (crumbSection) {
+          crumbSection.textContent = '↔ Back to Essays';
+          crumbSection.setAttribute('href', EN_INDEX);
+        }
       }
     }
 
     // Toggle click
-    langToggle.addEventListener('click', () => {
-      const isEnglish = !english.classList.contains('hidden');
-      setLang(isEnglish ? 'es' : 'en');
-    });
+    if (langToggle && english && spanish) {
+      langToggle.addEventListener('click', () => {
+        const isEnglish = !english.classList.contains('hidden');
+        setLang(isEnglish ? 'es' : 'en');
+      });
+    }
 
-    // Default to English
-    setLang('en');
+    // Default to the language inferred from the path
+    setLang(inEs ? 'es' : 'en');
 
     // Footer year
-    const yearEl = document.getElementById('year');
+    const yearEl = $('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     // Back to top
-    const toTop = document.getElementById('toTop');
-    const toggleToTop = () => {
-      toTop.classList.toggle('hidden', window.scrollY < 400);
-    };
-    window.addEventListener('scroll', toggleToTop);
-    toggleToTop();
-    toTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
+    const toTop = $('toTop');
+    if (toTop) {
+      const toggleToTop = () => {
+        toTop.classList.toggle('hidden', window.scrollY < 400);
+      };
+      window.addEventListener('scroll', toggleToTop);
+      toggleToTop();
+      toTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  })();
+</script>
+
 </body>
 </html>
