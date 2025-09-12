@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Linguistic Analysis vs. Industry Annotation – Stella Bullo</title>
+  <meta name="description" content="A portfolio piece that shows how academic conversation analysis translates into high quality annotation work for AI training. Bilingual EN/ES."/>
+  <meta name="author" content="Stella Bullo"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
+          },
+          boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+
+  <link rel="canonical" href="https://stellabullo.com/annotation-evaluation/analysis-vs-annotation.html"/>
+  <link rel="alternate" hreflang="en" href="https://stellabullo.com/annotation-evaluation/analysis-vs-annotation.html"/>
+  <link rel="alternate" hreflang="es" href="https://stellabullo.com/annotation-evaluation/es/analysis-vs-annotation.html"/>
+  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com/annotation-evaluation/analysis-vs-annotation.html"/>
+
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Stella Bullo"/>
+  <meta property="og:title" content="Linguistic Analysis vs. Industry Annotation"/>
+  <meta property="og:description" content="How conversation analysis skills translate into reliable, scalable annotation for AI projects. Bilingual EN/ES."/>
+  <meta property="og:url" content="https://stellabullo.com/annotation-evaluation/analysis-vs-annotation.html"/>
+  <meta property="og:image" content="https://stellabullo.com/og-default.jpg"/>
+  <meta property="og:locale" content="en_GB"/>
+  <meta property="og:locale:alternate" content="es_AR"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Linguistic Analysis vs. Industry Annotation"/>
+  <meta name="twitter:description" content="From academic analysis to industry annotation: the methods differ, the discipline is the same."/>
+  <meta name="twitter:image" content="https://stellabullo.com/og-default.jpg"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Linguistic Analysis vs. Industry Annotation",
+    "description": "A portfolio piece showing how conversation analysis translates into annotation for AI training. Bilingual EN/ES.",
+    "author": { "@type": "Person", "name": "Stella Bullo", "url": "https://stellabullo.com/" },
+    "publisher": { "@type": "Organization", "name": "Stella Bullo", "logo": { "@type": "ImageObject", "url": "https://stellabullo.com/favicon.ico" } },
+    "image": ["https://stellabullo.com/og-default.jpg"],
+    "inLanguage": ["en","es"],
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://stellabullo.com/annotation-evaluation/analysis-vs-annotation.html" }
+  }
+  </script>
+
+  <style>
+    html{scroll-behavior:smooth}
+    body {font-size: 15px;}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .prose h2 {font-size: 1.15rem !important;font-weight:600;}
+    .prose h3 {font-size: 1rem !important;font-weight:500;}
+    figure svg, figure img {max-width: 100%; height: auto;}
+    figcaption {font-size:.9em; color:#4b5563}
+  </style>
+</head>
+<body class="bg-brand-50 text-brand-800 font-sans antialiased">
+
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/annotation-evaluation/index.html" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Annotation & Evaluation</a>
+    </nav>
+    <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
+  </div>
+
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <article id="english" class="prose prose-sm md:prose-base max-w-none">
+      
+<h1>Linguistic Analysis vs. Industry Annotation</h1>
+<p class="text-sm text-brand-800/70 mb-6">~6 min · Updated Sep 2025</p>
+
+<h2>Bridging Two Worlds of Working with Language</h2>
+
+<h3>From Conversation Analysis to Annotation</h3>
+<p>I knew conversation analysis long before I ever heard the word annotation. It was part of my life as a linguist in academia. I spent years dissecting transcripts and tracing how people built meaning together turn by turn. I knew its rhythm by heart. Every pause, overlap, and repair could shift the meaning of a whole exchange. The work was slow and meticulous but deeply absorbing.</p>
+<p>When I began annotating speech data for AI, it felt strangely familiar. The work was presented as something entirely different, yet as I moved through the audio I realised I was doing what I had always done. I was listening for turns, marking boundaries, noticing patterns and attending to form and sequence. It turned out that what the industry called annotation had deep roots in what I had been trained to do all along: conversation analysis.</p>
+
+<h3>How the Aims and Methods Differ</h3>
+<p>In my academic work, conversation analysis often began without predefined categories. I looked closely at how people interacted and let the patterns emerge from the data. Meaning was built from the ground up, and every detail could matter. I sometimes spent weeks working on just a few minutes of talk. The aim was to understand how interaction worked, not to label or classify it.</p>
+<p>Annotation reverses that logic. It begins with a fixed schema and works deductively. The task is not to explore what could be happening but to decide, for each item, which category from the guidelines applies. There is no room for uncertainty. Every decision must be traceable, replicable, and consistent across many annotators. The goal is coverage rather than depth, and efficiency matters as much as accuracy.</p>
+<p>That shift in aim and method was the hardest part of moving from research to industry. It meant learning to focus on what the guidelines defined as relevant and to leave everything else out, even when it felt important.</p>
+
+<h3>Where the Practices Overlap</h3>
+<p>Even with such different aims, I found strong continuities. Both worlds demand systematic coding, careful documentation, and constant reflection on how decisions are made. In conversation analysis I created codebooks to record emerging categories. In annotation I follow schemas that serve the same purpose. In both cases consistency is essential.</p>
+<p>The habits I brought from research turned out to be an asset. I was already used to keeping detailed notes, writing memos, and checking my own decisions for coherence. In conversation analysis I did this to track how my interpretation developed. In annotation I do it to explain edge cases, support quality control, and feed back into the improvement of guidelines. The mindset is different, but the discipline is the same.</p>
+
+<h3>A Case Example: Two Lenses on the Same Data</h3>
+<p>Imagine a short audio clip where someone says:<br>
+<em>"I kept telling them it hurt, but no one listened. It felt like shouting into the wind."</em></p>
+<p>As a conversation analyst, I would focus on how the speaker constructs a narrative of not being heard. I would look at how the reported speech positions them, how the metaphor builds stance, and how the rhythm of the delivery enacts frustration and disempowerment. I would transcribe pauses, intonation, and overlaps, and place the utterance within the larger sequence around it.</p>
+<p>As an annotator, I approach it completely differently. I set aside the broader meaning and focus only on the categories in the schema. I might label “hurt” as a pain mention, mark the overall stance as negative, and tag “shouting into the wind” as a metaphor with an entailment of futility. I ignore everything outside the defined scope. The task is not to interpret the speaker’s experience but to produce a structured record of what is said in a way that another annotator would reproduce.</p>
+
+<h3>What This Reveals about Transferable Skills</h3>
+<p>Working in both worlds has shown me that the difference is not in the skills themselves but in how they are applied. Linguistic training teaches attention to form, sensitivity to nuance, and the habit of questioning your own assumptions. These skills are essential for annotation. What changes is the focus. In conversation analysis you search for meaning. In annotation you standardise it.</p>
+<p>Linguists are well equipped to make that shift because they understand both the richness of language and the need to model it systematically. My background in conversation analysis gave me the patience, discipline, and attention to detail that annotation work requires. Annotation has in turn sharpened my ability to work at scale without losing rigour.</p>
+<p>What began as something that felt strangely familiar has now become a bridge. It links my past as a researcher with my present as an annotator. One taught me to see nuance. The other taught me to capture it in a way machines can learn from. That combination is what I now bring to every annotation project I work on.</p>
+
+    </article>
+
+    <article id="spanish" class="hidden prose prose-sm md:prose-base max-w-none">
+      
+<h1>Análisis conversacional vs. anotación en la industria</h1>
+<p class="text-sm text-brand-800/70 mb-6">~6 min · Actualizado Sep 2025</p>
+
+<h2>Un puente entre dos formas de trabajar con el lenguaje</h2>
+
+<h3>Del análisis conversacional a la anotación</h3>
+<p>Conocía el análisis conversacional mucho antes de escuchar la palabra anotación. Era parte de mi vida como lingüista en el ámbito académico. Pasé años desmenuzando transcripciones y siguiendo cómo las personas construyen significado de manera conjunta, turno por turno. Conocía su ritmo de memoria. Cada pausa, solapamiento o reparación podía cambiar el sentido de todo un intercambio. Era un trabajo lento y minucioso, pero profundamente absorbente.</p>
+<p>Cuando empecé a anotar datos de habla para proyectos de IA, la sensación fue extrañamente familiar. El trabajo se presentaba como algo completamente distinto, pero a medida que avanzaba por los audios me di cuenta de que estaba haciendo lo que siempre había hecho. Escuchaba los turnos, marcaba los límites, detectaba patrones y prestaba atención a la forma y la secuencia. Lo que en la industria se llamaba anotación tenía raíces en aquello para lo que me había formado desde el inicio: el análisis conversacional.</p>
+
+<h3>Cómo difieren los objetivos y los métodos</h3>
+<p>En mi trabajo académico, el análisis conversacional muchas veces comenzaba sin categorías predefinidas. Observaba de cerca cómo interactuaban las personas y dejaba que los patrones surgieran de los datos. El significado se construía desde abajo hacia arriba y cada detalle podía importar. A veces pasaba semanas trabajando sobre apenas unos minutos de habla. El objetivo era entender cómo funcionaba la interacción, no clasificarla ni etiquetarla.</p>
+<p>La anotación invierte esa lógica. Parte de un esquema fijo y funciona de manera deductiva. La tarea no es explorar lo que podría estar ocurriendo sino decidir, para cada fragmento, qué categoría de las guías se aplica. No hay lugar para la ambigüedad. Cada decisión debe ser trazable, replicable y coherente entre varias personas anotadoras. El objetivo es abarcar cantidad más que profundidad, y la eficiencia importa tanto como la precisión.</p>
+<p>Ese cambio de enfoque y método fue el paso más difícil al pasar de la investigación a la industria. Tuve que aprender a concentrarme solo en lo que las guías definían como relevante y a dejar de lado todo lo demás, incluso cuando me parecía importante.</p>
+
+<h3>Dónde se superponen las prácticas</h3>
+<p>Aun con objetivos tan distintos, encontré muchas continuidades. Ambos mundos exigen codificación sistemática, documentación rigurosa y reflexión constante sobre las decisiones. En análisis conversacional solía armar codebooks para registrar las categorías que iban apareciendo. En anotación sigo esquemas que cumplen la misma función. En ambos casos, la consistencia es esencial.</p>
+<p>Los hábitos que traía de la investigación resultaron ser una ventaja. Ya estaba acostumbrada a tomar notas detalladas, escribir memos y revisar mis decisiones en busca de coherencia. En análisis conversacional hacía esto para rastrear cómo evolucionaba mi interpretación. En anotación lo hago para explicar casos límite, respaldar el control de calidad y aportar a la mejora de las guías. El enfoque es distinto, pero la disciplina es la misma.</p>
+
+<h3>Un ejemplo: dos miradas sobre los mismos datos</h3>
+<p>Imaginemos un breve audio en el que alguien dice:<br>
+<em>"Les repetí mil veces que me dolía, pero nadie escuchaba. Era como gritarle al viento."</em></p>
+<p>Como analista conversacional me enfocaría en cómo la persona construye un relato de no haber sido escuchada. Analizaría cómo el discurso referido la posiciona, cómo la metáfora construye una postura y cómo el ritmo de la narración transmite frustración y desamparo. Transcribiría pausas, entonación y solapamientos, y ubicaría ese fragmento dentro de la secuencia completa.</p>
+<p>Como anotadora, la aproximación es completamente distinta. Dejo de lado el sentido general y me concentro solo en las categorías del esquema. Etiquetaría “me dolía” como una mención de dolor, marcaría la postura como negativa y anotaría “gritarle al viento” como una metáfora con un entailment de inutilidad. Ignoro todo lo que no esté definido en las guías. La tarea no es interpretar la experiencia de la persona hablante sino producir un registro estructurado de lo que se dice, de forma tal que otra persona anotadora lo etiquete del mismo modo.</p>
+
+<h3>Lo que esto muestra sobre las competencias transferibles</h3>
+<p>Trabajar en ambos mundos me mostró que la diferencia no está en las competencias, sino en cómo se aplican. La formación lingüística enseña atención a la forma, sensibilidad al matiz y el hábito de cuestionar los propios supuestos. Estas habilidades son esenciales para anotar. Lo que cambia es el enfoque. En análisis conversacional se busca el sentido. En anotación se lo estandariza.</p>
+<p>Quienes venimos de la lingüística estamos bien posicionados para hacer ese cambio porque entendemos la riqueza del lenguaje y la necesidad de modelarlo de manera sistemática. Mi experiencia en análisis conversacional me dio la paciencia, la disciplina y la atención al detalle que la anotación exige. La anotación, a su vez, afinó mi capacidad para trabajar a gran escala sin perder rigurosidad.</p>
+<p>Lo que al principio se sentía extrañamente familiar hoy es un puente. Une mi pasado como investigadora con mi presente como anotadora. Uno me enseñó a ver los matices. El otro me enseñó a capturarlos de manera que las máquinas puedan aprender de ellos. Esa combinación es lo que ahora llevo a cada proyecto de anotación en el que trabajo.</p>
+
+    </article>
+  </main>
+
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
+    <p>© <span id="year"></span> Stella Bullo. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a></p>
+  </footer>
+
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
+
+  <script>
+    (function () {
+      const $ = (id) => document.getElementById(id);
+
+      const langToggle   = $('lang-toggle');
+      const english      = $('english');
+      const spanish      = $('spanish');
+      const crumbHome    = $('crumb-home');
+      const crumbSection = $('crumb-section');
+
+      const EN_INDEX = '/annotation-evaluation/index.html';
+      const ES_INDEX = '/annotation-evaluation/es/index.html';
+      const ES_HOME  = '/es/index.html';
+      const EN_HOME  = '/';
+
+      function setLang(lang) {
+        if (!english || !spanish) return;
+
+        if (lang === 'es') {
+          english.classList.add('hidden');
+          spanish.classList.remove('hidden');
+          if (langToggle) {
+            langToggle.textContent = 'Read it in English';
+            langToggle.setAttribute('aria-label', 'Read it in English');
+          }
+          if (crumbHome) {
+            crumbHome.textContent = '← Stella Bullo (Inicio)';
+            crumbHome.setAttribute('href', ES_HOME);
+          }
+          if (crumbSection) {
+            crumbSection.textContent = '↔ Volver a Anotación y Evaluación';
+            crumbSection.setAttribute('href', ES_INDEX);
+          }
+        } else {
+          spanish.classList.add('hidden');
+          english.classList.remove('hidden');
+          if (langToggle) {
+            langToggle.textContent = 'Leer en Español';
+            langToggle.setAttribute('aria-label', 'Leer en Español');
+          }
+          if (crumbHome) {
+            crumbHome.textContent = '← Stella Bullo (Home)';
+            crumbHome.setAttribute('href', EN_HOME);
+          }
+          if (crumbSection) {
+            crumbSection.textContent = '↔ Back to Annotation & Evaluation';
+            crumbSection.setAttribute('href', EN_INDEX);
+          }
+        }
+      }
+
+      if (langToggle && english && spanish) {
+        langToggle.addEventListener('click', () => {
+          const isEnglish = !english.classList.contains('hidden');
+          setLang(isEnglish ? 'es' : 'en');
+        });
+      }
+
+      setLang('en');
+
+      const yearEl = $('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+      const toTop = $('toTop');
+      if (toTop) {
+        const toggleToTop = () => {
+          toTop.classList.toggle('hidden', window.scrollY < 400);
+        };
+        window.addEventListener('scroll', toggleToTop);
+        toggleToTop();
+        toTop.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
