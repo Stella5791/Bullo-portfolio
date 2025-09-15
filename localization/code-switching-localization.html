@@ -1,255 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Code Switching as Localisation: Why AI Still Needs a Human Cultural Compass | Stella Bullo</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Code Switching as Localisation: Why AI Still Needs a Human Cultural Compass – Stella Bullo</title>
+  <meta name="description" content="Code switching as a localisation strategy: where AI scales and humans add cultural sense. Bilingual article by Dr. Stella Bullo."/>
+  <meta name="author" content="Stella Bullo"/>
+  <meta name="keywords" content="localisation, code switching, intercultural communication, branding, advertising, AI, LLMs, cultural competence, Stella Bullo"/>
+
+  <!-- Canonical + alternates (adjust paths to your site structure) -->
+  <link rel="canonical" href="https://stellabullo.com/localisation/code-switching-localisation/"/>
+  <link rel="alternate" hreflang="en" href="https://stellabullo.com/localisation/code-switching-localisation/"/>
+  <link rel="alternate" hreflang="es" href="https://stellabullo.com/es/localizacion/code-switching-localisation/"/>
+  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com/localisation/code-switching-localisation/"/>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="Code Switching as Localisation: Why AI Still Needs a Human Cultural Compass"/>
+  <meta property="og:description" content="Where AI scales and humans add cultural sense in multilingual markets."/>
+  <meta property="og:url" content="https://stellabullo.com/localisation/code-switching-localisation/"/>
+  <meta property="og:image" content="https://stellabullo.com/images/code-switching-localisation-cover.jpg"/>
+  <meta property="og:site_name" content="Stella Bullo"/>
+  <meta property="article:author" content="Stella Bullo"/>
+  <meta property="article:published_time" content="2025-09-15T09:00:00-03:00"/>
+  <meta property="article:modified_time" content="2025-09-15T09:00:00-03:00"/>
+
+  <!-- JSON-LD Article Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Code Switching as Localisation: Why AI Still Needs a Human Cultural Compass",
+    "description": "Code switching as a localisation strategy: where AI scales and humans add cultural sense.",
+    "author": { "@type": "Person", "name": "Stella Bullo", "url": "https://stellabullo.com/" },
+    "publisher": { "@type": "Organization", "name": "Stella Bullo",
+      "logo": { "@type": "ImageObject", "url": "https://stellabullo.com/favicon.ico" } },
+    "image": [ "https://stellabullo.com/images/code-switching-localisation-cover.jpg" ],
+    "datePublished": "2025-09-15T09:00:00-03:00",
+    "dateModified": "2025-09-15T09:00:00-03:00",
+    "inLanguage": ["en","es"],
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://stellabullo.com/localisation/code-switching-localisation/" }
+  }
+  </script>
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial','sans-serif'] },
+          colors: {
+            brand: { 50:'#FFFFFF', 100:'#EDF3FB', 200:'#CBE3EF', 500:'#5AA8D6', 800:'#3A4163' },
+            ink:   { 900:'#14161f' }
+          },
+          boxShadow: { card:'0 10px 24px rgba(58,65,99,0.08)', soft:'0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2:'1.25rem' }
+        }
+      }
+    }
+  </script>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f9fafb;
-      color: #1f2937;
-      line-height: 1.7;
-      padding: 2rem 1rem;
-      margin: 0 auto;
-      max-width: 800px;
-      width: 100%;
-    }
-    h1 {
-      color: #4f46e5;
-      font-size: 2.25rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-    }
-    h2 {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-    p { margin-bottom: 1rem; }
-    a { color:#4f46e5; text-decoration: underline; font-weight: 600; }
-
-    /* Note box (kept from your style) */
-    .note-box{background:#eef2ff;border:1px solid #c7d2fe;border-radius:12px;padding:16px 18px;margin-top:24px}
-    .note-box p{margin:8px 0}
-    .note-box a{color:#4f46e5;text-decoration:underline;font-weight:600}
-
-    /* Inline pop-up notes */
-    sup { line-height: 0; }
-    .note {
-      border: 0; background: transparent; padding: 0 .15rem; cursor: pointer;
-      font: inherit; color: #4f46e5; text-decoration: underline;
-    }
-    .note:focus { outline: 2px solid #c7d2fe; outline-offset: 2px; border-radius: 6px; }
-
-    .note-pop {
-      position: absolute; z-index: 9999; max-width: 360px;
-      background: #111827; color: #e5e7eb; padding: .85rem 1rem; border-radius: 12px;
-      box-shadow: 0 10px 20px rgba(0,0,0,.18), 0 6px 6px rgba(0,0,0,.12);
-      font-size: .95rem; line-height: 1.4;
-    }
-    .note-pop a { color: #93c5fd; }
-    .note-pop .title { display: block; font-weight: 700; margin-bottom: .25rem; color: #f9fafb; }
-    .note-pop .item { margin: .35rem 0; }
-    .note-pop .close { display: inline-block; margin-top: .5rem; background: #1f2937; color: #e5e7eb;
-      border: 0; padding: .3rem .5rem; border-radius: .35rem; cursor: pointer; font-size: .85rem; }
-
-    /* Figures */
-  
-figure { 
-    margin: 1.25rem auto; 
-    text-align: center; 
-  }
-  figure img { 
-    width: 100%; 
-    height: auto; 
-    border-radius: 12px; 
-  }
-  figcaption { 
-    font-size: .9rem; 
-    color: #4b5563; 
-    margin-top: .35rem; 
-  }
-  /* Size modifiers */
-  .small-fig { max-width: 320px; }   /* for low-res, should look sharper */
-  .medium-fig { max-width: 500px; }  /* for normal images */
-
-
-
-    /* Back link + footer */
-    .back { color:#4f46e5; font-weight:600; text-decoration:underline; display:inline-block; margin-bottom: .5rem; }
-
-    @media (max-width: 420px) { .note-pop { max-width: 86vw; } }
+    html{scroll-behavior:smooth}
+    .card{transition:transform .2s ease, box-shadow .2s ease}
+    .card:hover{transform:translateY(-3px); box-shadow:0 14px 32px rgba(58,65,99,.10)}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .badge{font-size:11px}
+    /* Formatting tweaks */
+    .wrap{max-width:60ch}
+    .lead{font-size:1.05rem; line-height:1.9}
+    @media (min-width:768px){ .lead{font-size:1.15rem} }
+    .byline{opacity:.7}
+    .callout{background:#F8FAFE; border:1px solid #CBE3EF}
+    .prose h2{font-size:1.1rem !important;font-weight:600}
+    .prose h3{font-size:1rem !important;font-weight:500}
+    .prose ul{margin-top:.25rem;margin-bottom:1rem}
+    .prose li{margin:.25rem 0}
+    figure img{border-radius:.75rem}
+    figcaption{font-size:.9rem;color:#4b5563;margin-top:.35rem}
   </style>
 </head>
-<body>
 
-  <a href="../#articles" class="back">← Back to Articles</a>
-
-  <h1>Code Switching as Localisation: Why AI Still Needs a Human Cultural Compass</h1>
-  <p style="font-style: italic; color: #4b5563;">By Dr. Stella Bullo</p>
-
-  <h2>Introduction</h2>
-  <p>Artificial intelligence promises speed and scale in global marketing. Teams use large language models to draft translations, taglines, and full campaigns. These systems produce correct sentences in many languages. They do not always produce resonance.</p>
-  <p>Authenticity often rests on subtlety. People mix languages in daily life. They blend registers and accents in ways that carry identity and status. This practice, known as code switching, can bring a message to life. It signals inclusion and cultural awareness. It also shows why human judgement still matters when brands communicate across borders.</p>
-  <p>Industry analysis from Nimdzi describes rapid adoption of AI in localisation and continued reliance on cultural expertise
-    <sup>
-      <button class="note" aria-label="Show Nimdzi references"
-        data-note='
-          <span class="title">Nimdzi industry context</span>
-          <div class="item"><strong>Nimdzi 100&nbsp;(2025)</strong>. Industry ranking and analysis with AI trends. <a href="https://www.nimdzi.com/making-the-2025-nimdzi-100/" target="_blank" rel="noopener">Open report</a>.</div>
-          <div class="item"><strong>What Buyers REALLY Want&nbsp;(2025)</strong>. Buyer insights that foreground AI and automation. <a href="https://www.nimdzi.com/what-buyers-really-want-2025/" target="_blank" rel="noopener">Open insight</a>.</div>
-          <div class="item"><strong>Language Technology Radar&nbsp;(2024)</strong>. Overview of language tech including LLMs. <a href="https://www.nimdzi.com/language-technology-radar-report/" target="_blank" rel="noopener">Open radar</a>.</div>
-        '>[N]</button>
-    </sup>.
-  </p>
-  <p>In this piece I present code switching as a form of localisation. I also show where AI delivers scale yet misses meaning. I draw on examples from Argentina, the United Arab Emirates, and the United Kingdom. I link those examples to classic work in sociolinguistics
-    <sup>
-      <button class="note" aria-label="Show linguistics references"
-        data-note='
-          <span class="title">Linguistics references</span>
-          <div class="item"><strong>Gumperz, J. (1982)</strong>. <em>Discourse Strategies</em>. Cambridge University Press.</div>
-          <div class="item"><strong>Auer, P. (1998)</strong>. <em>Code-Switching in Conversation</em>. Routledge.</div>
-          <div class="item"><strong>Myers-Scotton, C. (1993)</strong>. <em>Social Motivations for Code-Switching</em>. Clarendon Press.</div>
-          <div class="item"><strong>Poplack, S. (1980)</strong>. Sometimes I will start a sentence in Spanish y termino en Español. <em>Linguistics</em>, 18(7–8), 581–618.</div>
-          <div class="item"><strong>Kelly-Holmes, H. (2005)</strong>. <em>Advertising as Multilingual Communication</em>. Palgrave.</div>
-          <div class="item"><strong>Bishop &amp; Peterson (2011)</strong>. Comprende code switching. <em>Journal of Advertising Research</em>, 51(4).</div>
-        '>[L]</button>
-    </sup>.
-  </p>
-
-  <h2>Code Switching as Localisation</h2>
-  <p>Localisation is more than translation. It is the act of shaping a message so that it lives comfortably in a culture. Code switching often serves this purpose.</p>
-  <p>In Argentina, high end brands place English terms into Spanish copy. A department store may present a collection as trendy or eco friendly. The choice is deliberate. It signals prestige and global orientation. When Kosiuko named a collection <em>Between Worlds</em>, the English title carried cultural capital along with meaning.</p>
-
-<figure class="small-fig">
-  <img src="./assets/department-store-ad.png" alt="Department store advert from Argentina with English terms in Spanish copy">
-  <figcaption>Department store advert from Argentina. English terms travel inside Spanish copy. Source: Bahía Blanca Plaza Shopping.</figcaption>
-</figure>
-
-<p>In the United Arab Emirates, Arabic and English live side by side in daily interaction. Brands reflect that practice in campaigns. Etisalat, for example, combines Arabic and English to speak to a young and cosmopolitan audience. Fast food chains transliterate product names into Arabic script. The effect is inclusion and clarity, with a local voice.</p>
-
-<figure class="medium-fig">
-  <img src="./assets/Etisalat campaign still.png" alt="Etisalat advertising still from UAE campaign">
-  <figcaption>Etisalat campaign still. Arabic and English work together in the same visual space. Source: ArtBeat Productions.</figcaption>
-</figure>
-
-
-  <p>In the United Kingdom, style and accent also carry meaning. Companies now feature regional voices that once were absent from national advertising. O2 chose the Yorkshire actor Sean Bean for a national campaign. His voice brought authenticity and trust. You can see an example here
-<figure class="medium-fig">
-  <img src="./assets/o2-sean-bean.png" alt="Sean Bean voiceover campaign still for O2 UK">
-  <figcaption>O2 campaign featuring Sean Bean’s Yorkshire voice. <a href="https://www.youtube.com/watch?v=PsVTTL2eOTU" target="_blank" rel="noopener">Watch advert</a>.</figcaption>
-</figure>
-  </p>
-
-  <h2>Where AI Falls Short</h2>
-  <p>Generative AI produces fluent and standard text. That strength can become a weakness in marketing. Campaigns that rely only on AI often feel generic.</p>
-  <p>A model can translate an Argentine advert into impeccable Spanish. It does not know that a single English word can signal prestige in that context. A model can propose a clear Arabic message. It does not sense that Emirati youth sometimes use numerals in informal writing to represent sounds. These small choices carry social meaning. They separate messages that feel authentic from messages that feel manufactured.</p>
-
-  <h2>Bias, Inclusion, and Representation</h2>
-  <p>Language models are trained on large datasets. Those datasets often over-represent standard varieties. Dialects and hybrid styles are under-represented. As a result, outputs tend to flatten local colour.</p>
-  <p>Code switching restores balance. It mirrors the way people actually speak. It recognises identity claims and group belonging. Human localisation experts know when to invite a loanword into a line. They know when to keep a regional accent in a script. They protect inclusion while they improve clarity.</p>
-
-  <h2>Global Trends and Current Context</h2>
-  <p>Digital advertising in Latin America and the Middle East continues to grow. These are multilingual regions. Code switching is a norm rather than an exception. Brands that want to succeed in these markets need more than speed. They need cultural sense.</p>
-  <p>Across Europe, regulators are defining the boundaries for artificial intelligence. Teams that deploy AI without cultural oversight risk consumer backlash and compliance issues. The safest and most effective approach combines automation with human cultural competence.</p>
-
-  <h2>Conclusion</h2>
-  <p>Code switching shows that localisation is cultural work. AI can give reach and speed. It cannot decide when to use an English loanword in a Spanish advert. It cannot hear when a Yorkshire voice will carry trust in a national campaign. Those are human decisions. They rest on intercultural expertise.</p>
-  <p>The industry will continue to blend AI with human judgement. The companies that succeed will let AI handle scale while experts provide nuance. Code switching offers a clear example. It keeps messages alive inside the cultures they seek to reach.</p>
-
-  <div class="note-box">
-    <p><strong>Sources and further reading</strong></p>
-    <p>Industry context: <em>Nimdzi 100</em> 2025, <em>What Buyers REALLY Want</em> 2025, and the <em>Language Technology Radar</em> 2024
-      <sup>
-        <button class="note" aria-label="Show Nimdzi references again"
-          data-note='
-            <span class="title">Nimdzi links</span>
-            <div class="item"><a href="https://www.nimdzi.com/making-the-2025-nimdzi-100/" target="_blank" rel="noopener">Nimdzi 100 (2025)</a></div>
-            <div class="item"><a href="https://www.nimdzi.com/what-buyers-really-want-2025/" target="_blank" rel="noopener">What Buyers REALLY Want (2025)</a></div>
-            <div class="item"><a href="https://www.nimdzi.com/language-technology-radar-report/" target="_blank" rel="noopener">Language Technology Radar (2024)</a></div>
-          '>[N]</button>
-      </sup>.
-    </p>
-    <p>Linguistics: Gumperz, Auer, Myers-Scotton, Poplack, Kelly-Holmes, Bishop and Peterson
-      <sup>
-        <button class="note" aria-label="Show linguistics references again"
-          data-note='
-            <span class="title">Linguistics references</span>
-            <div class="item"><strong>Gumperz, J. (1982)</strong>. <em>Discourse Strategies</em>. CUP.</div>
-            <div class="item"><strong>Auer, P. (1998)</strong>. <em>Code-Switching in Conversation</em>. Routledge.</div>
-            <div class="item"><strong>Myers-Scotton, C. (1993)</strong>. <em>Social Motivations for Code-Switching</em>. Clarendon.</div>
-            <div class="item"><strong>Poplack, S. (1980)</strong>. Sometimes I will start a sentence in Spanish y termino en Español. <em>Linguistics</em>, 18(7–8).</div>
-            <div class="item"><strong>Kelly-Holmes, H. (2005)</strong>. <em>Advertising as Multilingual Communication</em>. Palgrave.</div>
-            <div class="item"><strong>Bishop, M., &amp; Peterson, M. (2011)</strong>. Comprende code switching. <em>Journal of Advertising Research</em>, 51(4).</div>
-          '>[L]</button>
-      </sup>.
-    </p>
-    <p>UK example: O2 campaign with Sean Bean
-      <a href="https://www.youtube.com/watch?v=PsVTTL2eOTU" target="_blank" rel="noopener">watch on YouTube</a>.
-    </p>
-    <p>UAE example: Etisalat campaign still via ArtBeat Productions
-      <a href="https://artbeatproductions.com/showcase/portfolio/etisalat-advertising-campaign" target="_blank" rel="noopener">project page</a>.
-    </p>
-    <p>Argentina example: Bahía Blanca Plaza Shopping
-      <a href="https://bahiablancaplazashopping.com/para-cada-mama-hay-un-regalo-especial/" target="_blank" rel="noopener">campaign page</a>;
-      Kosiuko <em>Between Worlds</em>
-      <a href="http://www.zarpado.com/kosiuko-presenta-su-coleccion-primavera-verano-2023-llamada-between-worlds-y-preparense-para-brillos-y-una-dualidad-de-elegancia-y-denim-llevada-a-otra-dimnesion/" target="_blank" rel="noopener">press link</a>.
-    </p>
+<body class="bg-brand-50 text-brand-800 font-sans antialiased">
+  <!-- Topbar / breadcrumbs -->
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/localisation/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Localisation</a>
+    </nav>
+    <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
   </div>
 
-  <footer style="margin-top: 2rem; text-align: center; color: #6b7280;">
-    <p>© 2025 Stella Bullo. All rights reserved.</p>
-    <p>For inquiries, contact me at <a href="mailto:info@stellabullo.com" style="color:#4f46e5; text-decoration:underline;">info@stellabullo.com</a>.</p>
+  <!-- Article container -->
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <!-- ENGLISH -->
+    <article id="english">
+      <header class="mb-6 md:mb-8 px-3 md:px-4 py-4 md:py-5 rounded-xl2 border border-brand-100 bg-brand-50/60">
+        <h1 class="text-[1.55rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-2">
+          Code Switching as Localisation: Why AI Still Needs a Human Cultural Compass
+        </h1>
+        <p class="text-base md:text-lg lg:text-[1.05rem] italic text-brand-800 mb-2">
+          Where AI scales, humans add cultural sense.
+        </p>
+        <p class="byline italic text-brand-800/70 text-sm">Dr. Stella Bullo</p>
+      </header>
+
+      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-8 prose-h2:mb-3 prose-h3:mt-6 prose-h3:mb-2">
+        <p>Artificial intelligence promises speed and scale in global marketing. Teams use large language models to draft translations, taglines, and full campaigns. These systems produce correct sentences in many languages. They do not always produce resonance.</p>
+        <p>Authenticity often rests on subtlety. People mix languages in daily life. They blend registers and accents in ways that carry identity and status. This practice, known as code switching, can bring a message to life. It signals inclusion and cultural awareness. It also shows why human judgement still matters when brands communicate across borders.</p>
+        <p>Industry analysis from Nimdzi describes rapid adoption of AI in localisation and continued reliance on cultural expertise. See: <a href="https://www.nimdzi.com/making-the-2025-nimdzi-100/" target="_blank" rel="noopener">Nimdzi 100 (2025)</a>, <a href="https://www.nimdzi.com/what-buyers-really-want-2025/" target="_blank" rel="noopener">What Buyers REALLY Want (2025)</a>, and the <a href="https://www.nimdzi.com/language-technology-radar-report/" target="_blank" rel="noopener">Language Technology Radar (2024)</a>.</p>
+        <p>In this piece I present code switching as a form of localisation. I also show where AI delivers scale yet misses meaning. I draw on examples from Argentina, the United Arab Emirates, and the United Kingdom. I link those examples to classic work in sociolinguistics (Gumperz 1982; Auer 1998; Myers‑Scotton 1993; Poplack 1980; Kelly‑Holmes 2005; Bishop &amp; Peterson 2011).</p>
+
+        <h2>Code Switching as Localisation</h2>
+        <p>Localisation is more than translation. It is the act of shaping a message so that it lives comfortably in a culture. Code switching often serves this purpose.</p>
+        <p>In Argentina, high‑end brands place English terms into Spanish copy. A department store may present a collection as <em>trendy</em> or <em>eco friendly</em>. The choice is deliberate. It signals prestige and global orientation. When Kosiuko named a collection <em>Between Worlds</em>, the English title carried cultural capital along with meaning.</p>
+        <figure>
+          <img src="./assets/department-store-ad.png" alt="Department store advert from Argentina with English terms in Spanish copy"/>
+          <figcaption>Department store advert from Argentina. English terms travel inside Spanish copy. Source: Bahía Blanca Plaza Shopping.</figcaption>
+        </figure>
+        <p>In the United Arab Emirates, Arabic and English live side by side in daily interaction. Brands reflect that practice in campaigns. Etisalat, for example, combines Arabic and English to speak to a young and cosmopolitan audience. Fast food chains transliterate product names into Arabic script. The effect is inclusion and clarity, with a local voice.</p>
+        <figure>
+          <img src="./assets/Etisalat campaign still.png" alt="Etisalat advertising still from UAE campaign"/>
+          <figcaption>Etisalat campaign still. Arabic and English work together in the same visual space. Source: ArtBeat Productions.</figcaption>
+        </figure>
+        <p>In the United Kingdom, style and accent also carry meaning. Companies now feature regional voices that once were absent from national advertising. O2 chose the Yorkshire actor Sean Bean for a national campaign. His voice brought authenticity and trust. See an example below.</p>
+        <figure>
+          <img src="./assets/o2-sean-bean.png" alt="Sean Bean voiceover campaign still for O2 UK"/>
+          <figcaption>O2 campaign featuring Sean Bean’s Yorkshire voice. <a href="https://www.youtube.com/watch?v=PsVTTL2eOTU" target="_blank" rel="noopener">Watch advert</a>.</figcaption>
+        </figure>
+
+        <h2>Where AI Falls Short</h2>
+        <p>Generative AI produces fluent and standard text. That strength can become a weakness in marketing. Campaigns that rely only on AI often feel generic.</p>
+        <p>A model can translate an Argentine advert into impeccable Spanish. It does not know that a single English word can signal prestige in that context. A model can propose a clear Arabic message. It does not sense that Emirati youth sometimes use numerals in informal writing to represent sounds. These small choices carry social meaning. They separate messages that feel authentic from messages that feel manufactured.</p>
+
+        <h2>Bias, Inclusion, and Representation</h2>
+        <p>Language models are trained on large datasets. Those datasets often over‑represent standard varieties. Dialects and hybrid styles are under‑represented. As a result, outputs tend to flatten local colour.</p>
+        <p>Code switching restores balance. It mirrors the way people actually speak. It recognises identity claims and group belonging. Human localisation experts know when to invite a loanword into a line. They know when to keep a regional accent in a script. They protect inclusion while they improve clarity.</p>
+
+        <h2>Global Trends and Current Context</h2>
+        <p>Digital advertising in Latin America and the Middle East continues to grow. These are multilingual regions. Code switching is a norm rather than an exception. Brands that want to succeed in these markets need more than speed. They need cultural sense.</p>
+        <p>Across Europe, regulators are defining the boundaries for artificial intelligence. Teams that deploy AI without cultural oversight risk consumer backlash and compliance issues. The safest and most effective approach combines automation with human cultural competence.</p>
+
+        <h2>Conclusion</h2>
+        <p>Code switching shows that localisation is cultural work. AI can give reach and speed. It cannot decide when to use an English loanword in a Spanish advert. It cannot hear when a Yorkshire voice will carry trust in a national campaign. Those are human decisions. They rest on intercultural expertise.</p>
+        <p>The industry will continue to blend AI with human judgement. The companies that succeed will let AI handle scale while experts provide nuance. Code switching offers a clear example. It keeps messages alive inside the cultures they seek to reach.</p>
+      </div>
+
+      <section class="callout rounded-xl2 p-4 md:p-5 mt-6">
+        <h2 class="m-0">Sources and further reading</h2>
+        <ul class="list-disc pl-5 mt-2">
+          <li>Industry context: Nimdzi 100 (2025); What Buyers REALLY Want (2025); Language Technology Radar (2024).</li>
+          <li>Linguistics: Gumperz (1982); Auer (1998); Myers‑Scotton (1993); Poplack (1980); Kelly‑Holmes (2005); Bishop &amp; Peterson (2011).</li>
+          <li>Examples: O2 + Sean Bean (YouTube); Etisalat campaign (ArtBeat Productions); Bahía Blanca Plaza Shopping; Kosiuko <em>Between Worlds</em>.</li>
+        </ul>
+      </section>
+    </article>
+
+    <!-- SPANISH -->
+    <article id="spanish" class="hidden">
+      <header class="mb-6 md:mb-8 px-3 md:px-4 py-4 md:py-5 rounded-xl2 border border-brand-100 bg-brand-50/60">
+        <h1 class="text-[1.55rem] md:text-[1.9rem] lg:text-2xl font-semibold tracking-tight text-brand-800 leading-snug mb-2">
+          El code switching como localización: por qué la IA todavía necesita una brújula cultural humana
+        </h1>
+        <p class="text-base md:text-lg lg:text-[1.05rem] italic text-brand-800 mb-2">
+          Donde la IA escala, las personas aportan sentido cultural.
+        </p>
+        <p class="byline italic text-brand-800/70 text-sm">Dra. Stella Bullo</p>
+      </header>
+
+      <div class="prose prose-base md:prose-lg max-w-none prose-headings:text-brand-800 prose-a:text-brand-500 prose-p:leading-7 md:prose-p:leading-8 lg:prose-p:leading-8 prose-h2:mt-8 prose-h2:mb-3 prose-h3:mt-6 prose-h3:mb-2">
+        <p>La inteligencia artificial promete velocidad y escala en el marketing global. Los equipos usan modelos de lenguaje para redactar traducciones, eslóganes y campañas completas. Estos sistemas producen oraciones correctas en muchos idiomas. No siempre producen resonancia.</p>
+        <p>La autenticidad suele apoyarse en lo sutil. En la vida diaria, la gente mezcla lenguas, registros y acentos que transmiten identidad y estatus. Esta práctica, conocida como <em>code switching</em>, puede dar vida a un mensaje. Señala inclusión y conciencia cultural. También muestra por qué el juicio humano sigue siendo clave cuando las marcas cruzan fronteras.</p>
+        <p>Los análisis de la industria de Nimdzi describen una adopción rápida de la IA en localización y una dependencia sostenida de la pericia cultural. Véase: <a href="https://www.nimdzi.com/making-the-2025-nimdzi-100/" target="_blank" rel="noopener">Nimdzi 100 (2025)</a>, <a href="https://www.nimdzi.com/what-buyers-really-want-2025/" target="_blank" rel="noopener">What Buyers REALLY Want (2025)</a> y <a href="https://www.nimdzi.com/language-technology-radar-report/" target="_blank" rel="noopener">Language Technology Radar (2024)</a>.</p>
+        <p>En este texto presento el <em>code switching</em> como una forma de localización. Muestro dónde la IA aporta escala pero pierde significado. Recurro a ejemplos de Argentina, Emiratos Árabes Unidos y el Reino Unido, y los vinculo con trabajos clásicos en sociolingüística (Gumperz 1982; Auer 1998; Myers‑Scotton 1993; Poplack 1980; Kelly‑Holmes 2005; Bishop y Peterson 2011).</p>
+
+        <h2>Code switching como localización</h2>
+        <p>La localización es más que traducir. Es moldear un mensaje para que habite con naturalidad una cultura. El <em>code switching</em> cumple a menudo esa función.</p>
+        <p>En Argentina, las marcas de alta gama insertan términos en inglés en copys en español. Un centro comercial puede presentar una colección como <em>trendy</em> o <em>eco friendly</em>. La elección es deliberada: señala prestigio y orientación global. Cuando Kosiuko llamó a una colección <em>Between Worlds</em>, el título en inglés aportó capital cultural además de significado.</p>
+        <figure>
+          <img src="./assets/department-store-ad.png" alt="Aviso de un centro comercial de Argentina con términos en inglés dentro de un copy en español"/>
+          <figcaption>Aviso de Argentina. Los anglicismos viajan dentro del copy en español. Fuente: Bahía Blanca Plaza Shopping.</figcaption>
+        </figure>
+        <p>En Emiratos Árabes Unidos, el árabe y el inglés conviven en la interacción cotidiana. Las marcas reflejan esa práctica en sus campañas. Etisalat, por ejemplo, combina árabe e inglés para dirigirse a un público joven y cosmopolita. Las cadenas de comida rápida transliteran nombres de productos al alfabeto árabe. El efecto es inclusión y claridad con voz local.</p>
+        <figure>
+          <img src="./assets/Etisalat campaign still.png" alt="Imagen de campaña de Etisalat (EAU)"/>
+          <figcaption>Campaña de Etisalat. Árabe e inglés comparten el mismo espacio visual. Fuente: ArtBeat Productions.</figcaption>
+        </figure>
+        <p>En el Reino Unido, el estilo y el acento también significan. Las empresas incorporan voces regionales antes ausentes de la publicidad nacional. O2 eligió al actor yorkshirense Sean Bean para una campaña. Su voz aportó autenticidad y confianza. Véase el ejemplo a continuación.</p>
+        <figure>
+          <img src="./assets/o2-sean-bean.png" alt="Imagen de campaña con la voz de Sean Bean para O2 UK"/>
+          <figcaption>Campaña de O2 con la voz de Sean Bean. <a href="https://www.youtube.com/watch?v=PsVTTL2eOTU" target="_blank" rel="noopener">Ver anuncio</a>.</figcaption>
+        </figure>
+
+        <h2>Dónde falla la IA</h2>
+        <p>La IA generativa produce textos fluidos y estándar. Esa fortaleza puede convertirse en debilidad en marketing. Las campañas que dependen solo de la IA suelen sentirse genéricas.</p>
+        <p>Un modelo puede traducir un anuncio argentino a un español impecable. No sabe que una sola palabra en inglés puede señalar prestigio en ese contexto. Un modelo puede proponer un mensaje claro en árabe. No percibe que jóvenes emiratíes a veces usan números en la escritura informal para representar sonidos. Estas decisiones pequeñas cargan significado social. Separan mensajes auténticos de mensajes fabricados.</p>
+
+        <h2>Sesgo, inclusión y representación</h2>
+        <p>Los modelos se entrenan con grandes corpus que sobrerrepresentan variedades estándar. Los dialectos y estilos híbridos quedan subrepresentados. Como resultado, las salidas tienden a aplanar el color local.</p>
+        <p>El <em>code switching</em> restituye equilibrio. Refleja cómo habla realmente la gente. Reconoce identidades y pertenencias. Quienes localizan con criterio humano saben cuándo invitar un anglicismo a una línea y cuándo conservar un acento regional en un guion. Protegen la inclusión y mejoran la claridad.</p>
+
+        <h2>Tendencias globales y contexto actual</h2>
+        <p>La publicidad digital en América Latina y Oriente Medio sigue creciendo. Son regiones multilingües. El <em>code switching</em> es norma más que excepción. Para triunfar, las marcas necesitan más que velocidad: necesitan sentido cultural.</p>
+        <p>En Europa, los reguladores definen los límites de la inteligencia artificial. Los equipos que despliegan IA sin supervisión cultural se arriesgan a reacciones adversas y a incumplimientos. El enfoque más seguro y eficaz combina automatización con competencia intercultural humana.</p>
+
+        <h2>Conclusión</h2>
+        <p>El <em>code switching</em> muestra que la localización es trabajo cultural. La IA da alcance y velocidad. No decide cuándo usar un anglicismo en un anuncio en español ni cuándo una voz yorkshirense transmitirá confianza en una campaña nacional. Esas son decisiones humanas basadas en pericia intercultural.</p>
+        <p>La industria seguirá mezclando IA con juicio humano: la escala para la máquina, el matiz para las personas. El <em>code switching</em> lo ejemplifica con claridad. Mantiene los mensajes vivos dentro de las culturas a las que apuntan.</p>
+      </div>
+
+      <section class="callout rounded-xl2 p-4 md:p-5 mt-6">
+        <h2 class="m-0">Fuentes y lecturas</h2>
+        <ul class="list-disc pl-5 mt-2">
+          <li>Contexto sectorial: Nimdzi 100 (2025); What Buyers REALLY Want (2025); Language Technology Radar (2024).</li>
+          <li>Sociolingüística: Gumperz (1982); Auer (1998); Myers‑Scotton (1993); Poplack (1980); Kelly‑Holmes (2005); Bishop y Peterson (2011).</li>
+          <li>Ejemplos: O2 + Sean Bean (YouTube); campaña de Etisalat (ArtBeat Productions); Bahía Blanca Plaza Shopping; Kosiuko <em>Between Worlds</em>.</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
+    <p>© <span id="year"></span> Stella Bullo. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a></p>
   </footer>
 
+  <!-- Back to top -->
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
+
   <script>
-    // Simple pop-up notes
-    let currentPop = null;
-    document.addEventListener('click', function(e) {
-      const btn = e.target.closest('.note');
-      if (!btn) {
-        // Clicked away from a note: close if open
-        if (currentPop && !e.target.closest('.note-pop')) {
-          currentPop.remove();
-          currentPop = null;
-        }
-        return;
+    const langToggle = document.getElementById('lang-toggle');
+    const english = document.getElementById('english');
+    const spanish = document.getElementById('spanish');
+    const crumbHome = document.getElementById('crumb-home');
+    const crumbSection = document.getElementById('crumb-section');
+
+    function setLang(lang) {
+      if (lang === 'es') {
+        english.classList.add('hidden');
+        spanish.classList.remove('hidden');
+        langToggle.textContent = 'Read it in English';
+        langToggle.setAttribute('aria-label','Read it in English');
+        crumbHome.textContent = '← Stella Bullo (Inicio)';
+        crumbHome.setAttribute('href','/es/index.html');
+        crumbSection.textContent = '↔ Volver a Localización';
+        crumbSection.setAttribute('href','/es/localizacion/');
+      } else {
+        spanish.classList.add('hidden');
+        english.classList.remove('hidden');
+        langToggle.textContent = 'Leer en Español';
+        langToggle.setAttribute('aria-label','Leer en Español');
+        crumbHome.textContent = '← Stella Bullo (Home)';
+        crumbHome.setAttribute('href','/');
+        crumbSection.textContent = '↔ Back to Localisation';
+        crumbSection.setAttribute('href','/localisation/');
       }
-      e.preventDefault();
+    }
 
-      // Close existing
-      if (currentPop) { currentPop.remove(); currentPop = null; }
-
-      const pop = document.createElement('div');
-      pop.className = 'note-pop';
-      pop.innerHTML = btn.getAttribute('data-note') +
-                      '<br><button class="close" aria-label="Close note">Close</button>';
-      document.body.appendChild(pop);
-
-      // Position near button
-      const rect = btn.getBoundingClientRect();
-      const top = window.scrollY + rect.bottom + 8;
-      const left = Math.min(window.scrollX + rect.left, window.scrollX + window.innerWidth - pop.offsetWidth - 12);
-      pop.style.top = top + 'px';
-      pop.style.left = left + 'px';
-
-      currentPop = pop;
-
-      pop.querySelector('.close').addEventListener('click', () => {
-        pop.remove();
-        currentPop = null;
-      });
+    // Toggle click
+    langToggle.addEventListener('click', () => {
+      const isEnglish = !english.classList.contains('hidden');
+      setLang(isEnglish ? 'es' : 'en');
     });
 
-    // Close on Escape
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' && currentPop) {
-        currentPop.remove();
-        currentPop = null;
-      }
+    // Default to English
+    setLang('en');
+
+    // Footer year
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Back to top
+    const toTop = document.getElementById('toTop');
+    const toggleToTop = () => {
+      toTop.classList.toggle('hidden', window.scrollY < 400);
+    };
+    window.addEventListener('scroll', toggleToTop);
+    toggleToTop();
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   </script>
 </body>
