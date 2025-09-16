@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== BASIC ===== -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code-Switching for Localization — Cheat Sheet</title>
+  <meta name="description" content="A practical, quick-reference cheat sheet for using code-switching in localization: when to use it, patterns by market, QA checklists, prompt recipes, and metrics."/>
+  <meta name="author" content="Stella Bullo"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
+  <!-- ===== FONT ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ===== TAILWIND ===== -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
+          },
+          boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+
+  <!-- ===== SEO: CANONICAL + ALTERNATES ===== -->
+  <link rel="canonical" href="https://stellabullo.com/localization/code-switching-cheatsheet.html"/>
+  <link rel="alternate" hreflang="en" href="https://stellabullo.com/localization/code-switching-cheatsheet.html"/>
+  <link rel="alternate" hreflang="es" href="https://stellabullo.com/localization/code-switching-cheatsheet.html"/>
+  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com/localization/code-switching-cheatsheet.html"/>
+
+  <!-- ===== OPEN GRAPH / TWITTER ===== -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Stella Bullo"/>
+  <meta property="og:title" content="Code-Switching for Localization — Cheat Sheet"/>
+  <meta property="og:description" content="Quick-reference patterns, QA, prompts, and metrics for culturally effective code-switching in localization."/>
+  <meta property="og:url" content="https://stellabullo.com/localization/code-switching-cheatsheet.html"/>
+  <meta property="og:image" content="https://stellabullo.com/assets/og/code-switching-localization.jpg"/>
+  <meta property="og:locale" content="en_GB"/>
+  <meta property="og:locale:alternate" content="es_AR"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Code-Switching for Localization — Cheat Sheet"/>
+  <meta name="twitter:description" content="Practical patterns, QA, prompts, and metrics for code-switching in localization."/>
+  <meta name="twitter:image" content="https://stellabullo.com/assets/og/code-switching-localization.jpg"/>
+
+  <!-- ===== STYLE OVERRIDES ===== -->
+  <style>
+    html{scroll-behavior:smooth}
+    body {font-size: 15px;}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .prose h2 {font-size: 1.15rem !important;font-weight:600;}
+    .prose h3 {font-size: 1rem !important;font-weight:600;}
+    .ref{border-bottom:1px dotted currentColor; cursor:help}
+    .card{border:1px solid #CBE3EF; border-radius:1rem; box-shadow:0 6px 16px rgba(58,65,99,0.06)}
+    .kbd{display:inline-block; padding:.1rem .35rem; border:1px solid #CBD5E1; border-bottom-width:2px; border-radius:.375rem; font-size:.8em; background:#F8FAFC}
+    @media print{
+      .no-print{display:none !important}
+      .prose h2{page-break-after:avoid}
+      .card{box-shadow:none}
+      main{border:0}
+    }
+  </style>
+</head>
+
+<body class="bg-brand-50 text-brand-800 font-sans antialiased">
+  <!-- ===== TOPBAR ===== -->
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/localization/index.html" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Localization</a>
+    </nav>
+    <div class="mt-3 flex items-center gap-2">
+      <button id="lang-toggle" class="btn inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95 no-print" aria-label="Leer en Español">Leer en Español</button>
+      <button onclick="window.print()" class="btn inline-flex items-center justify-center px-3 py-2 rounded-md border border-brand-200 text-brand-800 hover:bg-brand-100 no-print" title="Print">🖨️ Print</button>
+    </div>
+  </div>
+
+  <!-- ===== CHEAT SHEET ===== -->
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <!-- ENGLISH -->
+    <article id="english" class="prose prose-slate max-w-none">
+      <header class="mb-3">
+        <h1>Code-Switching for Localization — Cheat Sheet</h1>
+        <p class="text-sm text-brand-800/70">Quick reference · Updated 15 September 2025</p>
+      </header>
+
+      <!-- Link back to full article -->
+      <div class="not-prose my-3 text-sm bg-brand-100/60 border border-brand-200 rounded-xl2 p-3">
+        Want the full context and examples?
+        <a href="code-switching-localization.html" class="underline text-brand-500 hover:opacity-80">Read the article</a>.
+      </div>
+
+      <section class="not-prose mb-6">
+        <div class="grid md:grid-cols-3 gap-4">
+          <a href="#when" class="card p-4 hover:bg-brand-50">
+            <h3 class="mb-1">When to Use / Avoid</h3>
+            <p class="text-sm text-brand-800/70">Decision guide</p>
+          </a>
+          <a href="#patterns" class="card p-4 hover:bg-brand-50">
+            <h3 class="mb-1">Patterns by Market</h3>
+            <p class="text-sm text-brand-800/70">Argentina · UAE · UK</p>
+          </a>
+          <a href="#qa" class="card p-4 hover:bg-brand-50">
+            <h3 class="mb-1">QA Checklist</h3>
+            <p class="text-sm text-brand-800/70">Before you ship</p>
+          </a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4 mt-4">
+          <a href="#prompts" class="card p-4 hover:bg-brand-50">
+            <h3 class="mb-1">LLM Prompt Recipe</h3>
+            <p class="text-sm text-brand-800/70">Briefs that yield nuance</p>
+          </a>
+          <a href="#microcopy" class="card p-4 hover:bg-brand-50">
+            <h3 class="mb-1">Microcopy Templates</h3>
+            <p class="text-sm text-brand-800/70">Headlines · CTAs · Hashtags</p>
+          </a>
+          <a href="#metrics" class="card p-4 hover:bg-brand-50">
+            <h3 class="mb-1">Metrics</h3>
+            <p class="text-sm text-brand-800/70">What to measure</p>
+          </a>
+        </div>
+      </section>
+
+      <section id="when">
+        <h2>When to use code-switching (CS) - and when not to</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="card p-4">
+            <h3>Use CS when…</h3>
+            <ul class="list-disc pl-5">
+              <li>It aligns with audience practice (e.g., bilingual feeds, mixed registers) <span class="ref" title="Gumperz (1982); Auer (1998). Foundational work on code-switching in interaction.">theory</span>.</li>
+              <li>You need to signal identity, prestige, or belonging <span class="ref" title="Kelly-Holmes (2005). Advertising as Multilingual Communication.">ads & identity</span>.</li>
+              <li>Global brand terms carry equity locally (keep the anchor, localize the frame) <span class="ref" title="Zurita (2018). Anglicisms in marketing vocabulary (Onomázein).">anglicisms</span>.</li>
+            </ul>
+          </div>
+          <div class="card p-4">
+            <h3>Avoid CS when…</h3>
+            <ul class="list-disc pl-5">
+              <li>Legal, safety, or accessibility requires full monolingual clarity (e.g., T&Cs, medical).</li>
+              <li>Audience norms are strongly monolingual/formal in the channel or moment.</li>
+              <li>It becomes decorative English that adds status but subtracts meaning.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="patterns">
+        <h2>Patterns by market</h2>
+        <div class="card p-4">
+          <h3>Argentina</h3>
+          <ul class="list-disc pl-5">
+            <li><strong>Prestige anchor:</strong> Single English term inside Spanish copy (e.g., “Nueva cápsula <em>Limited</em>”).</li>
+            <li><strong>Campaign names:</strong> English titles carry symbolic capital <span class="ref" title="Zurita (2018). Onomázein 39, 114–139.">note</span>.</li>
+            <li><strong>Avoid:</strong> Over-anglicizing body copy; keep syntax and idiom rioplatense.</li>
+          </ul>
+        </div>
+        <div class="card p-4 mt-4">
+          <h3>United Arab Emirates</h3>
+          <ul class="list-disc pl-5">
+            <li><strong>Mixed frames:</strong> Arabic + English in the same visual/verbal space mirrors daily practice <span class="ref" title="Fathy (2020). Online marketing languages in UAE.">UAE</span>.</li>
+            <li><strong>Transliteration:</strong> Keep brand/product recognizability in Arabic script; mind formal vs. youth contexts.</li>
+            <li><strong>Youth numerals:</strong> “3/7/9” for phonemes in informal writing; use selectively and never in legal copy <span class="ref" title="Palfreyman & Khalil (2006). JCMC 9.">numerals</span>.</li>
+          </ul>
+        </div>
+        <div class="card p-4 mt-4">
+          <h3>United Kingdom</h3>
+          <ul class="list-disc pl-5">
+            <li><strong>Voice authenticity:</strong> Regional accents (e.g., Yorkshire) convey trust and inclusion in national campaigns <span class="ref" title="Bishop & Peterson (2011). Journal of Advertising Research 51(4).">inclusion</span>.</li>
+            <li><strong>Script:</strong> Keep colloquial spellings only if they match the brand’s tone; avoid tokenism.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="microcopy">
+        <h2>Microcopy templates</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="card p-4">
+            <h3>Headlines</h3>
+            <ul class="list-disc pl-5">
+              <li><em>AR:</em> “Nueva colección <strong>Weekend</strong> · edición limitada”</li>
+              <li><em>UAE:</em> “جاهز؟ Upgrade حياتك”</li>
+              <li><em>UK:</em> “Go on then — your upgrade’s here”</li>
+            </ul>
+          </div>
+          <div class="card p-4">
+            <h3>Taglines</h3>
+            <ul class="list-disc pl-5">
+              <li><em>AR:</em> “Diseñado en casa, <strong>Made for movement</strong>”</li>
+              <li><em>UAE:</em> “شبّكها <strong>your way</strong>”</li>
+              <li><em>UK:</em> “Proper performance, no fuss”</li>
+            </ul>
+          </div>
+          <div class="card p-4">
+            <h3>CTAs</h3>
+            <ul class="list-disc pl-5">
+              <li>“Comprar <strong>now</strong>” / “ابدأ <strong>now</strong>”</li>
+              <li>“Explorar <strong>the drop</strong>”</li>
+              <li>“Check availability · Ver stock”</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-sm mt-3 text-brand-800/70">Use sparingly: one English anchor per line is usually enough; keep the rest native.</p>
+      </section>
+
+      <section id="qa">
+        <h2>QA checklist (ship only if all are ✅)</h2>
+        <ul class="list-disc pl-5">
+          <li><strong>Intent clear:</strong> Prestige / belonging / clarity stated in the brief <span class="ref" title="Bishop & Peterson (2011). Identity signaling in multilingual advertising.">why</span>.</li>
+          <li><strong>Register fit:</strong> Channel + moment + audience match (no youth numerals in formal contexts).</li>
+          <li><strong>Inclusion:</strong> CS choices reflect, not stereotype, the community.</li>
+          <li><strong>Script & orthography:</strong> Transliteration consistent; diacritics if required by brand style.</li>
+          <li><strong>Accessibility:</strong> Screen readers parse mixed language; provide `lang` attributes where applicable.</li>
+          <li><strong>Compliance:</strong> Disclaimers monolingual and fully legible; no ambiguity in pricing or claims.</li>
+          <li><strong>Brand voice:</strong> Accent/lexis sits within the voice system; pass tone-of-voice checks.</li>
+        </ul>
+      </section>
+
+      <section id="prompts">
+        <h2>LLM prompt recipe (copy & adapt)</h2>
+<pre class="card p-4 text-xs overflow-x-auto"><code>You are a localization copywriter. Task: produce 3 variants using minimal code-switching.
+Market: Argentina (Rioplatense Spanish), Audience: Gen Z/young professionals, Channel: Instagram story.
+Intent: Signal prestige subtly via one English anchor per line, keep rest in natural Spanish.
+Constraints: No slang beyond common AR usage; avoid literal calques; keep CTAs 2–3 words.
+Deliver for each variant:
+1) Headline + tagline + CTA
+2) Rationale: why the English anchor works here (1–2 lines)
+3) Risk check: any inclusion/compliance pitfalls?
+</code></pre>
+        <p class="text-sm text-brand-800/70 mt-2">Swap market/audience/intent as needed (UAE: dialect notes, youth numerals only for informal channels; UK: accent/lexical regionality for VO).</p>
+      </section>
+
+      <section id="metrics">
+        <h2>Metrics & testing</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="card p-4">
+            <h3>Track</h3>
+            <ul class="list-disc pl-5">
+              <li>CTR / CVR deltas vs. non-CS controls</li>
+              <li>Watch-through rate (video VO with regional accent)</li>
+              <li>Lift in branded search for anchor terms</li>
+              <li>Sentiment & topic (comments: identity/“feels like us” cues)</li>
+            </ul>
+          </div>
+          <div class="card p-4">
+            <h3>Test design</h3>
+            <ul class="list-disc pl-5">
+              <li>A/B: 1 English anchor vs. none; keep visuals identical</li>
+              <li>Multivariate: anchor position (headline vs. CTA)</li>
+              <li>Holdout by region/segment to isolate cultural effect</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>References (hover for details)</h2>
+        <p class="text-sm text-brand-800/70">Core: <span class="ref" title="Gumperz (1982); Auer (1998).">CS theory</span> · <span class="ref" title="Kelly-Holmes (2005).">Advertising & multilingualism</span> · <span class="ref" title="Palfreyman & Khalil (2006).">UAE numerals</span> · <span class="ref" title="Zurita (2018).">Anglicisms in AR marketing</span> · <span class="ref" title="Nimdzi Insights (2024, 2025).">Industry trends</span>.</p>
+      </section>
+    </article>
+
+    <!-- SPANISH -->
+    <article id="spanish" class="prose prose-slate max-w-none hidden">
+      <header class="mb-3">
+        <h1>Code-switching para localización - Guía rápida</h1>
+        <p class="text-sm text-brand-800/70">Referencia práctica · Actualizado 15 de septiembre de 2025</p>
+      </header>
+
+      <!-- Enlace al artículo completo -->
+      <div class="not-prose my-3 text-sm bg-brand-100/60 border border-brand-200 rounded-xl2 p-3">
+        ¿Querés el contexto completo y ejemplos?
+        <a href="./code-switching-localization.html?lang=es" class="underline text-brand-500 hover:opacity-80">Leé el artículo</a>.
+      </div>
+
+      <section class="not-prose mb-6">
+        <div class="grid md:grid-cols-3 gap-4">
+          <a href="#es-cuando" class="card p-4 hover:bg-brand-50">
+            <h3 class="mb-1">Cuándo usar / evitar</h3>
+            <p class="text-sm text-brand-800/70">Guía de decisión</p>
+          </a>
+          <a href="#es-patrones" class="card p-4 hover:bg-brand-50">
+            <h3 class="mb-1">Patrones por mercado</h3>
+            <p class="text-sm text-brand-800/70">Argentina · EAU · Reino Unido</p>
+          </a>
+          <a href="#es-qa" class="card p-4 hover:bg-brand-50">
+            <h3 class="mb-1">Checklist de QA</h3>
+            <p class="text-sm text-brand-800/70">Antes de publicar</p>
+          </a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4 mt-4">
+          <a href="#es-prompts" class="card p-4 hover:bg-brand-50">
+            <h3 class="mb-1">Receta de prompts</h3>
+            <p class="text-sm text-brand-800/70">Briefs con matiz</p>
+          </a>
+          <a href="#es-microcopy" class="card p-4 hover:bg-brand-50">
+            <h3 class="mb-1">Plantillas de microcopy</h3>
+            <p class="text-sm text-brand-800/70">Titulares · CTAs · Hashtags</p>
+          </a>
+          <a href="#es-metricas" class="card p-4 hover:bg-brand-50">
+            <h3 class="mb-1">Métricas</h3>
+            <p class="text-sm text-brand-800/70">Qué medir</p>
+          </a>
+        </div>
+      </section>
+
+      <section id="es-cuando">
+        <h2>Cuándo usar el code-switching (CS) — y cuándo no</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="card p-4">
+            <h3>Usá CS cuando…</h3>
+            <ul class="list-disc pl-5">
+              <li>Se alinea con la práctica del público (feeds bilingües, registros mixtos) <span class="ref" title="Gumperz (1982); Auer (1998). Base teórica del CS.">teoría</span>.</li>
+              <li>Necesitás señalar identidad, prestigio o pertenencia <span class="ref" title="Kelly-Holmes (2005). Publicidad y multilingüismo.">publicidad</span>.</li>
+              <li>Los términos globales de marca tienen equity local (mantené el ancla, localizá el resto) <span class="ref" title="Zurita (2018). Anglicismos en marketing (Onomázein).">anglicismos</span>.</li>
+            </ul>
+          </div>
+          <div class="card p-4">
+            <h3>Evitá CS cuando…</h3>
+            <ul class="list-disc pl-5">
+              <li>Lo legal, la seguridad o la accesibilidad exigen claridad monolingüe (p. ej., T&C, salud).</li>
+              <li>Las normas del canal/momento son fuertemente monolingües o formales.</li>
+              <li>Se vuelve inglés decorativo que aporta status pero resta sentido.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="es-patrones">
+        <h2>Patrones por mercado</h2>
+        <div class="card p-4">
+          <h3>Argentina</h3>
+          <ul class="list-disc pl-5">
+            <li><strong>Ancla de prestigio:</strong> Un término en inglés en copy en español (ej.: “Nueva cápsula <em>Limited</em>”).</li>
+            <li><strong>Nombres de campaña:</strong> Títulos en inglés con capital simbólico <span class="ref" title="Zurita (2018). Onomázein 39, 114–139.">nota</span>.</li>
+            <li><strong>Evitá:</strong> Sobre-anglicizar el cuerpo; mantené sintaxis y giro rioplatense.</li>
+          </ul>
+        </div>
+        <div class="card p-4 mt-4">
+          <h3>Emiratos Árabes Unidos</h3>
+          <ul class="list-disc pl-5">
+            <li><strong>Marcos mixtos:</strong> Árabe + inglés en el mismo espacio refleja la práctica diaria <span class="ref" title="Fathy (2020). Lenguajes del marketing online en EAU.">EAU</span>.</li>
+            <li><strong>Transliteración:</strong> Conservá el reconocimiento de marca; diferenciá contexto formal vs. juvenil.</li>
+            <li><strong>Números juveniles:</strong> “3/7/9” para fonemas en escritura informal; usalos con cuidado y nunca en legal <span class="ref" title="Palfreyman & Khalil (2006). JCMC 9.">números</span>.</li>
+          </ul>
+        </div>
+        <div class="card p-4 mt-4">
+          <h3>Reino Unido</h3>
+          <ul class="list-disc pl-5">
+            <li><strong>Voz auténtica:</strong> Acentos regionales (ej., Yorkshire) transmiten confianza e inclusión <span class="ref" title="Bishop & Peterson (2011). Journal of Advertising Research 51(4).">inclusión</span>.</li>
+            <li><strong>Guion:</strong> Ortografía coloquial solo si encaja con la voz; evitá el tokenismo.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="es-microcopy">
+        <h2>Plantillas de microcopy</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div class="card p-4">
+            <h3>Titulares</h3>
+            <ul class="list-disc pl-5">
+              <li><em>AR:</em> “Nueva colección <strong>Weekend</strong> · edición limitada”</li>
+              <li><em>EAU:</em> “جاهز؟ Upgrade حياتك”</li>
+              <li><em>UK:</em> “Go on then — your upgrade’s here”</li>
+            </ul>
+          </div>
+          <div class="card p-4">
+            <h3>Taglines</h3>
+            <ul class="list-disc pl-5">
+              <li><em>AR:</em> “Diseñado en casa, <strong>Made for movement</strong>”</li>
+              <li><em>EAU:</em> “شبّكها <strong>your way</strong>”</li>
+              <li><em>UK:</em> “Proper performance, no fuss”</li>
+            </ul>
+          </div>
+          <div class="card p-4">
+            <h3>CTAs</h3>
+            <ul class="list-disc pl-5">
+              <li>“Comprar <strong>now</strong>” / “ابدأ <strong>now</strong>”</li>
+              <li>“Explorar <strong>the drop</strong>”</li>
+              <li>“Check availability · Ver stock”</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-sm mt-3 text-brand-800/70">Usalo con moderación: un ancla en inglés por línea suele alcanzar; el resto, nativo.</p>
+      </section>
+
+      <section id="es-qa">
+        <h2>Checklist de QA (publicá solo si todo está ✅)</h2>
+        <ul class="list-disc pl-5">
+          <li><strong>Intención clara:</strong> Prestigio / pertenencia / claridad en el brief <span class="ref" title="Bishop & Peterson (2011). Señalización de identidad.">por qué</span>.</li>
+          <li><strong>Registro adecuado:</strong> Canal + momento + audiencia (sin números juveniles en contextos formales).</li>
+          <li><strong>Inclusión:</strong> El CS refleja, no estereotipa, a la comunidad.</li>
+          <li><strong>Escritura:</strong> Transliteración consistente; diacríticos si lo requiere el estilo.</li>
+          <li><strong>Accesibilidad:</strong> Lectores de pantalla interpretan la mezcla; usá atributos `lang` donde corresponda.</li>
+          <li><strong>Cumplimiento:</strong> Avisos legales monolingües y legibles; sin ambigüedad en precios/claims.</li>
+          <li><strong>Voz de marca:</strong> Acento/léxico dentro del sistema de voz; pasá los chequeos de tono.</li>
+        </ul>
+      </section>
+
+      <section id="es-prompts">
+        <h2>Receta de prompts para LLM (copiá y adaptá)</h2>
+<pre class="card p-4 text-xs overflow-x-auto"><code>Sos copywriter de localización. Entrega 3 variantes con CS mínimo.
+Mercado: Argentina (español rioplatense), Audiencia: Gen Z/jóvenes profesionales, Canal: Instagram story.
+Intención: Señalar prestigio con un ancla en inglés por línea, resto en español natural.
+Restricciones: Sin calcos literales; CTAs de 2–3 palabras; sin jerga fuera de AR.
+Para cada variante:
+1) Titular + tagline + CTA
+2) Racional: por qué funciona el ancla en inglés (1–2 líneas)
+3) Riesgos: inclusión/cumplimiento a vigilar
+</code></pre>
+        <p class="text-sm text-brand-800/70 mt-2">Cambiá mercado/audiencia/intención según necesites (EAU: notas de dialecto y números juveniles solo en informal; UK: acento léxico en VO).</p>
+      </section>
+
+      <section id="es-metricas">
+        <h2>Métricas y testeo</h2>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div class="card p-4">
+            <h3>Medí</h3>
+            <ul class="list-disc pl-5">
+              <li>Diferencias de CTR/CVR vs. control sin CS</li>
+              <li>Watch-through rate (VO con acento regional)</li>
+              <li>Alza en búsquedas de marca por términos ancla</li>
+              <li>Sentimiento y temas (comentarios: “nos representa”)</li>
+            </ul>
+          </div>
+          <div class="card p-4">
+            <h3>Diseño de test</h3>
+            <ul class="list-disc pl-5">
+              <li>A/B: 1 ancla en inglés vs. ninguna; visual idéntico</li>
+              <li>Multivariable: posición del ancla (titular vs. CTA)</li>
+              <li>Holdout por región/segmento para aislar el efecto cultural</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Referencias (hover para ver detalle)</h2>
+        <p class="text-sm text-brand-800/70">Base: <span class="ref" title="Gumperz (1982); Auer (1998).">teoría del CS</span> · <span class="ref" title="Kelly-Holmes (2005).">publicidad multilingüe</span> · <span class="ref" title="Palfreyman & Khalil (2006).">números en EAU</span> · <span class="ref" title="Zurita (2018).">anglicismos en AR</span> · <span class="ref" title="Nimdzi Insights (2024, 2025).">tendencias de la industria</span>.</p>
+      </section>
+    </article>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
+    <p>© <span id="year"></span> Stella Bullo. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a></p>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500 no-print" aria-label="Back to top" title="Back to top">↑</button>
+
+<!-- ===== SCRIPT ===== -->
+<script>
+  (function () {
+    const $ = (id) => document.getElementById(id);
+
+    const langToggle   = $('lang-toggle');
+    const english      = $('english');
+    const spanish      = $('spanish');
+    const crumbHome    = $('crumb-home');
+    const crumbSection = $('crumb-section');
+
+    // Respect ?lang=
+    const params = new URLSearchParams(location.search);
+    const inEs = params.get('lang') === 'es' ||
+                 /\/localization\/es\//.test(location.pathname) ||
+                 document.documentElement.lang === 'es';
+
+    const EN_INDEX = '/localization/index.html';
+    const ES_INDEX = '/localization/es/index.html';
+    const ES_HOME  = '/es/index.html';
+    const EN_HOME  = '/';
+
+    function setLang(lang) {
+      if (!english || !spanish) return;
+
+      if (lang === 'es') {
+        english.classList.add('hidden');
+        spanish.classList.remove('hidden');
+
+        if (langToggle) {
+          langToggle.textContent = 'Read it in English';
+          langToggle.setAttribute('aria-label', 'Read it in English');
+        }
+        if (crumbHome) {
+          crumbHome.textContent = '← Stella Bullo (Inicio)';
+          crumbHome.setAttribute('href', ES_HOME);
+        }
+        if (crumbSection) {
+          crumbSection.textContent = '↔ Volver a Localización';
+          crumbSection.setAttribute('href', ES_INDEX);
+        }
+        document.documentElement.lang = 'es';
+      } else {
+        spanish.classList.add('hidden');
+        english.classList.remove('hidden');
+
+        if (langToggle) {
+          langToggle.textContent = 'Leer en Español';
+          langToggle.setAttribute('aria-label', 'Leer en Español');
+        }
+        if (crumbHome) {
+          crumbHome.textContent = '← Stella Bullo (Home)';
+          crumbHome.setAttribute('href', EN_HOME);
+        }
+        if (crumbSection) {
+          crumbSection.textContent = '↔ Back to Localization';
+          crumbSection.setAttribute('href', EN_INDEX);
+        }
+        document.documentElement.lang = 'en';
+      }
+    }
+
+    if (langToggle && english && spanish) {
+      langToggle.addEventListener('click', () => {
+        const isEnglish = !english.classList.contains('hidden');
+        const next = isEnglish ? 'es' : 'en';
+        setLang(next);
+        const url = new URL(location.href);
+        url.searchParams.set('lang', next);
+        history.replaceState({}, '', url);
+      });
+    }
+
+    setLang(inEs ? 'es' : 'en');
+
+    const yearEl = $('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const toTop = $('toTop');
+    if (toTop) {
+      const toggleToTop = () => {
+        toTop.classList.toggle('hidden', window.scrollY < 400);
+      };
+      window.addEventListener('scroll', toggleToTop);
+      toggleToTop();
+      toTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  })();
+</script>
+</body>
+</html>
