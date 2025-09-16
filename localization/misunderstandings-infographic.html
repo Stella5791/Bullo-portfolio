@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== BASIC ===== -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Misunderstandings — Types, Risk & Applications (EN/ES) · Stella Bullo</title>
+  <meta name="description" content="A bilingual infographic mapping misunderstanding types to industry risks and mitigations for Healthcare, AI/MT, and UX/L10n."/>
+  <meta name="author" content="Stella Bullo"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
+  <!-- ===== FONT ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ===== TAILWIND ===== -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
+          },
+          boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html{scroll-behavior:smooth}
+    body {font-size: 15px;}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .prose h2 {font-size: 1.15rem !important;font-weight:600;}
+    .prose h3 {font-size: 1rem !important;font-weight:500;}
+    .eyebrow { letter-spacing:.12em }
+
+    .risk-pill{ font-size: .74rem; font-weight: 700; border-radius: 999px; padding: .24rem .56rem; border-width: 1px; white-space: nowrap; }
+    .risk-high{ font-size: .86rem; padding: .3rem .68rem; }
+
+    .sep{ height:1px; background: rgba(58,65,99,0.12); }
+
+    /* Case-study darker background */
+    .casebox{ position:relative; background-color: #CBE3EF; /* brand-200 */ }
+    .casebox .bar{ position:absolute; left:-4px; top:0; bottom:0; width:8px; background:#5AA8D6; border-radius: 8px; }
+    @media (min-width: 768px){
+      .casebox .bar{ left:-6px; width:10px; }
+    }
+  </style>
+</head>
+
+<body class="bg-brand-50 text-brand-800 font-sans antialiased">
+  <!-- ===== TOPBAR ===== -->
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/localization/index.html" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Localization</a>
+    </nav>
+    <div class="mt-3 flex items-center gap-3">
+      <button id="lang-toggle" class="btn inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
+       </div>
+  </div>
+
+
+
+  <!-- ===== ARTICLE CONTAINER ===== -->
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <!-- ============== ENGLISH ============== -->
+    <article id="english">
+      <header class="mb-4">
+        <p class="uppercase text-xs tracking-widest font-extrabold text-brand-500 eyebrow">Communicating Interculturally</p>
+        <h1 class="text-2xl md:text-3xl font-semibold leading-tight">Misunderstandings: Types, Risk & What To Do</h1>
+        <p class="text-brand-800/70 mt-1">A compact map for content, UX and localisation.</p>
+      </header>
+
+      <!-- Compact top boxes -->
+      <section class="grid md:grid-cols-2 gap-3 mb-4">
+        <div class="bg-white border border-brand-200 rounded-xl p-3">
+          <h3 class="text-brand-800 font-semibold mb-1">Misunderstanding</h3>
+          <p class="text-brand-800/70">The listener builds a <strong class="text-brand-800">different</strong> meaning than the speaker intended.</p>
+        </div>
+        <div class="bg-white border border-brand-200 rounded-xl p-3">
+          <h3 class="text-brand-800 font-semibold mb-1">Non-understanding</h3>
+          <p class="text-brand-800/70">The listener <strong class="text-brand-800">can’t build</strong> any meaning at all.</p>
+        </div>
+      </section>
+
+      <!-- Case 1: Linguistic -->
+      <section class="mb-4">
+        <div class="casebox relative border border-brand-200 rounded-xl p-4">
+          <span class="bar" aria-hidden="true"></span>
+          <p class="uppercase text-[11px] tracking-widest font-extrabold text-brand-800 eyebrow mb-1 inline-flex items-center gap-2">
+            <!-- ear icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M9 9c1.657 0 3 1.343 3 3 0 2 2 3 4 3M9 9c-2.21 0-4 1.79-4 4v1c0 2.21 1.79 4 4 4h0c2.21 0 4-1.79 4-4v-1c0-1.105.895-2 2-2"/></svg>
+            Case study · Linguistic
+          </p>
+          <h3 class="font-semibold">“You being served?” in Manchester</h3>
+          <div class="mt-1 text-xs"><span class="inline-block px-2 py-0.5 rounded-full border border-brand-200 bg-white">Type: <strong>Non-understanding</strong> · Phonology/Accent</span></div>
+          <p class="text-brand-800/90 mt-1">On arrival I couldn’t parse a shop assistant’s accent. They repeated “You being served?” and I still left without buying—lost, not unwilling.</p>
+          <p class="text-brand-800/80 text-sm mt-1">Illustrates: non-understanding due to phonology/accent.</p>
+        </div>
+      </section>
+
+      <!-- Two sources -->
+      <section class="mb-4">
+        <h2 class="text-[1.15rem] font-semibold mb-2">Two sources</h2>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="bg-white border border-brand-200 rounded-xl p-3"><h3 class="font-semibold mb-1">Linguistic</h3><p class="text-brand-800/70">Words, accent, grammar, semantics.</p></div>
+          <div class="bg-white border border-brand-200 rounded-xl p-3"><h3 class="font-semibold mb-1">Pragmatic</h3><p class="text-brand-800/70">Hidden rules: politeness, distance, imposition, emotion.</p></div>
+        </div>
+      </section>
+
+      <!-- Types -->
+      <section class="mb-6">
+        <h2 class="text-[1.15rem] font-semibold mb-2">Types of misunderstanding <span class="inline-block align-middle ml-2 text-xs px-2 py-0.5 rounded-full border border-brand-200">Definition · Example · Application</span></h2>
+        <div class="grid md:grid-cols-2 gap-3">
+          <!-- Type 1 -->
+          <div class="grid grid-cols-[28px,1fr] gap-3 bg-white border border-brand-200 rounded-xl p-3">
+            <svg class="w-5 h-5 mt-1 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            <div>
+              <h3 class="font-semibold mb-1">Type 1 — Misinterpreting a speech act</h3>
+              <div class="grid grid-cols-[110px,1fr] gap-2 text-[13px]">
+                <div class="uppercase font-extrabold text-brand-500">Definition</div><div class="text-brand-800/70">Words are clear, but the <em>action</em> isn’t recognised.</div>
+                <div class="uppercase font-extrabold text-brand-500">Example</div><div class="text-brand-800/70">“It’s cold with the door open.” (intended request) → People nod, nobody closes it.</div>
+                <div class="uppercase font-extrabold text-brand-500">Application</div><div class="text-brand-800/70">Rewrite hints as actions. UX: imperative CTAs. L10n: choose directness per market.</div>
+              </div>
+            </div>
+          </div>
+          <!-- Type 2 -->
+          <div class="grid grid-cols-[28px,1fr] gap-3 bg-white border border-brand-200 rounded-xl p-3">
+            <svg class="w-5 h-5 mt-1 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            <div>
+              <h3 class="font-semibold mb-1">Type 2 — L1 transfer in L2</h3>
+              <div class="grid grid-cols-[110px,1fr] gap-2 text-[13px]">
+                <div class="uppercase font-extrabold text-brand-500">Definition</div><div class="text-brand-800/70">Expressions are carried over from L1, changing meaning in L2.</div>
+                <div class="uppercase font-extrabold text-brand-500">Example</div><div class="text-brand-800/70">“Either way” used for “it’s the same (es lo mismo)” → Ambiguous or wrong in English.</div>
+                <div class="uppercase font-extrabold text-brand-500">Application</div><div class="text-brand-800/70">Prefer plain terms. Flag idioms/glossaries. LQA: reviewer notes for tricky phrases.</div>
+              </div>
+            </div>
+          </div>
+          <!-- Type 3 -->
+          <div class="grid grid-cols-[28px,1fr] gap-3 bg-white border border-brand-200 rounded-xl p-3">
+            <svg class="w-5 h-5 mt-1 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+            <div>
+              <h3 class="font-semibold mb-1">Type 3 — Social norms & politeness</h3>
+              <div class="grid grid-cols-[110px,1fr] gap-2 text-[13px]">
+                <div class="uppercase font-extrabold text-brand-500">Definition</div><div class="text-brand-800/70">Misjudging formality, social distance or imposition.</div>
+                <div class="uppercase font-extrabold text-brand-500">Example</div><div class="text-brand-800/70">“Close the door.” polite in some settings; blunt in others.</div>
+                <div class="uppercase font-extrabold text-brand-500">Application</div><div class="text-brand-800/70">Define T/V policy (you/usted/vos). Calibrate tone and commands per market.</div>
+              </div>
+            </div>
+          </div>
+          <!-- Type 4 -->
+          <div class="grid grid-cols-[28px,1fr] gap-3 bg-white border border-brand-200 rounded-xl p-3">
+            <svg class="w-5 h-5 mt-1 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V4"/><path d="M18 10l-6-6-6 6"/></svg>
+            <div>
+              <h3 class="font-semibold mb-1">Type 4 — Emotional force across languages</h3>
+              <div class="grid grid-cols-[110px,1fr] gap-2 text-[13px]">
+                <div class="uppercase font-extrabold text-brand-500">Definition</div><div class="text-brand-800/70">Intensity of taboo/affect words shifts by language and context.</div>
+                <div class="uppercase font-extrabold text-brand-500">Example</div><div class="text-brand-800/70">Swear/love words feel weaker/stronger in L2; pain terms get “flattened”.</div>
+                <div class="uppercase font-extrabold text-brand-500">Application</div><div class="text-brand-800/70">Calibrate intensity. Keep meaningful metaphors (healthcare). Test with locals.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cases (scattered) -->
+      <section class="grid md:grid-cols-2 gap-3 mb-6">
+        <div class="casebox relative border border-brand-200 rounded-xl p-4">
+          <span class="bar" aria-hidden="true"></span>
+          <p class="uppercase text-[11px] tracking-widest font-extrabold text-brand-800 eyebrow mb-1 inline-flex items-center gap-2">
+            <!-- door icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 3h12v18H4zM16 21h4M13 12h0.01"/></svg>
+            Case study · Pragmatic
+          </p>
+          <h3 class="font-semibold">The open door</h3>
+          <div class="mt-1 text-xs"><span class="inline-block px-2 py-0.5 rounded-full border border-brand-200 bg-white">Type: <strong>Type 1 — Speech act</strong></span></div>
+          <p class="text-brand-800/90 mt-1">I said, “It’s cold with the door open,” hoping for someone to close it. People agreed—no one moved. The hint didn’t land as a request.</p>
+          <p class="text-brand-800/80 text-sm mt-1">Fix: write the action you want.</p>
+        </div>
+        <div class="casebox relative border border-brand-200 rounded-xl p-4">
+          <span class="bar" aria-hidden="true"></span>
+          <p class="uppercase text-[11px] tracking-widest font-extrabold text-brand-800 eyebrow mb-1 inline-flex items-center gap-2">
+            <!-- arrows icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M7 7h10M7 17h10M7 7l3-3M7 17l3 3"/></svg>
+            Case study · L1 → L2
+          </p>
+          <h3 class="font-semibold">“Either way” ≠ “it’s the same (es lo mismo)”</h3>
+          <div class="mt-1 text-xs"><span class="inline-block px-2 py-0.5 rounded-full border border-brand-200 bg-white">Type: <strong>Type 2 — L1→L2 transfer</strong></span></div>
+          <p class="text-brand-800/90 mt-1">I used “either way” to mean “it’s the same (es lo mismo)”. It confused my landlord. Literal transfer changed the meaning.</p>
+          <p class="text-brand-800/80 text-sm mt-1">Fix: prefer plain terms; avoid idioms when stakes are high.</p>
+        </div>
+      </section>
+
+      <!-- ====== Industry Applications mapped to TYPES + RISK ====== -->
+      <section class="mb-6">
+        <div class="flex items-center justify-between mb-2">
+          <h2 class="text-[1.15rem] font-semibold">Industry applications · by type & risk</h2>
+          <!-- Legend -->
+          <div class="flex items-center gap-2 text-xs">
+            <span class="risk-pill border-brand-200 text-brand-800/70 bg-white">Low !</span>
+            <span class="risk-pill border-brand-200 text-brand-800 bg-brand-100">Med !!</span>
+            <span class="risk-pill risk-high border-brand-200 text-white bg-brand-500">High !!!</span>
+          </div>
+        </div>
+
+        <!-- Type 1 -->
+        <div class="border border-brand-200 rounded-xl overflow-hidden mb-3">
+          <div class="bg-brand-100/70 px-4 py-2 flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            <h3 class="font-semibold">Type 1 — Misinterpreting a speech act</h3>
+          </div>
+          <div class="p-4 space-y-3">
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">Healthcare</div>
+              <div class="text-brand-800/80">Pitfall: indirect hints aren’t read as requests. <span class="block text-sm text-brand-800/70">Ex: “You might want to...” → no action.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill risk-high bg-brand-500 text-white border-brand-200">High !!!</span>
+                <span class="text-sm text-brand-800/80">Mitigation: imperative prompts; teach-back.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">AI & MT</div>
+              <div class="text-brand-800/80">Pitfall: bots miss indirect intent. <span class="block text-sm text-brand-800/70">Ex: “It’s cold...” → no follow-up.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill bg-brand-100 text-brand-800 border-brand-200">Med !!</span>
+                <span class="text-sm text-brand-800/80">Mitigation: intent resolver for indirect requests.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">UX & L10n</div>
+              <div class="text-brand-800/80">Pitfall: soft CTAs reduce conversions. <span class="block text-sm text-brand-800/70">Ex: “Maybe sign up”.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill risk-high bg-brand-500 text-white border-brand-200">High !!!</span>
+                <span class="text-sm text-brand-800/80">Mitigation: explicit CTAs; market-calibrated directness.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Type 2 -->
+        <div class="border border-brand-200 rounded-xl overflow-hidden mb-3">
+          <div class="bg-brand-100/70 px-4 py-2 flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            <h3 class="font-semibold">Type 2 — L1 transfer in L2</h3>
+          </div>
+          <div class="p-4 space-y-3">
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">Healthcare</div>
+              <div class="text-brand-800/80">Pitfall: idioms shift meaning and are normalised. <span class="block text-sm text-brand-800/70">Ex: “pressure in the chest” vs “angustia”.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill bg-white text-brand-800/70 border-brand-200">Low !</span>
+                <span class="text-sm text-brand-800/80">Mitigation: interpreter notes; glossary for symptoms.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">AI & MT</div>
+              <div class="text-brand-800/80">Pitfall: literal translation of L1 phrases. <span class="block text-sm text-brand-800/70">Ex: “either way” misread by locale.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill risk-high bg-brand-500 text-white border-brand-200">High !!!</span>
+                <span class="text-sm text-brand-800/80">Mitigation: paraphrase sets; locale synonyms.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">UX & L10n</div>
+              <div class="text-brand-800/80">Pitfall: borrowed idioms in UI strings. <span class="block text-sm text-brand-800/70">Ex: “either way” for “it’s equivalent”.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill bg-brand-100 text-brand-800 border-brand-200">Med !!</span>
+                <span class="text-sm text-brand-800/80">Mitigation: term bans; reviewer guidance.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Type 3 -->
+        <div class="border border-brand-200 rounded-xl overflow-hidden mb-3">
+          <div class="bg-brand-100/70 px-4 py-2 flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+            <h3 class="font-semibold">Type 3 — Social norms & politeness</h3>
+          </div>
+          <div class="p-4 space-y-3">
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">Healthcare</div>
+              <div class="text-brand-800/80">Pitfall: blunt directives erode trust. <span class="block text-sm text-brand-800/70">Ex: “Close the door.” to relatives.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill bg-brand-100 text-brand-800 border-brand-200">Med !!</span>
+                <span class="text-sm text-brand-800/80">Mitigation: culturally appropriate directives.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">AI & MT</div>
+              <div class="text-brand-800/80">Pitfall: wrong persona politeness. <span class="block text-sm text-brand-800/70">Ex: overly casual apologies.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill bg-brand-100 text-brand-800 border-brand-200">Med !!</span>
+                <span class="text-sm text-brand-800/80">Mitigation: politeness controls; human eval.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">UX & L10n</div>
+              <div class="text-brand-800/80">Pitfall: T/V mismatch and imposition. <span class="block text-sm text-brand-800/70">Ex: “vos” in non-Rioplatense locales.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill risk-high bg-brand-500 text-white border-brand-200">High !!!</span>
+                <span class="text-sm text-brand-800/80">Mitigation: T/V matrix; market tone kits.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Type 4 -->
+        <div class="border border-brand-200 rounded-xl overflow-hidden">
+          <div class="bg-brand-100/70 px-4 py-2 flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V4"/><path d="M18 10l-6-6-6 6"/></svg>
+            <h3 class="font-semibold">Type 4 — Emotional force across languages</h3>
+          </div>
+          <div class="p-4 space-y-3">
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">Healthcare</div>
+              <div class="text-brand-800/80">Pitfall: pain terms flattened. <span class="block text-sm text-brand-800/70">Ex: “punzante/ardor” → “it hurts”.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill risk-high bg-brand-500 text-white border-brand-200">High !!!</span>
+                <span class="text-sm text-brand-800/80">Mitigation: intensity descriptors; preserve metaphors.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">AI & MT</div>
+              <div class="text-brand-800/80">Pitfall: taboo/affect miscalibrated. <span class="block text-sm text-brand-800/70">Ex: softened hate/swearing.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill bg-brand-100 text-brand-800 border-brand-200">Med !!</span>
+                <span class="text-sm text-brand-800/80">Mitigation: intensity tests; locale raters.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">UX & L10n</div>
+              <div class="text-brand-800/80">Pitfall: tone too flat or too hot. <span class="block text-sm text-brand-800/70">Ex: overuse of exclamations.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill bg-white text-brand-800/70 border-brand-200">Low !</span>
+                <span class="text-sm text-brand-800/80">Mitigation: tone kit; remove empty intensifiers.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Case 4 under industry -->
+      <section class="mb-2">
+        <div class="casebox relative border border-brand-200 rounded-xl p-4">
+          <span class="bar" aria-hidden="true"></span>
+          <p class="uppercase text-[11px] tracking-widest font-extrabold text-brand-800 eyebrow mb-1 inline-flex items-center gap-2">
+            <!-- heart -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/><path stroke-width="1.6" d="M8 13l2-2 2 3 2-4 2 3"/></svg>
+            Case study · Healthcare/MT
+          </p>
+          <h3 class="font-semibold">“Me duele” → “it hurts”</h3>
+          <div class="mt-1 text-xs"><span class="inline-block px-2 py-0.5 rounded-full border border-brand-200 bg-white">Type: <strong>Type 4 — Emotional force</strong></span></div>
+          <p class="text-brand-800/90 mt-1">In triage notes, rich Spanish pain descriptions (“punzante”, “ardor”) were flattened into “it hurts”. The clinical team underestimated severity.</p>
+          <p class="text-brand-800/80 text-sm mt-1">Fix: preserve metaphors & intensity; add structured descriptors.</p>
+        </div>
+      </section>
+    </article>
+
+    <!-- ============== SPANISH (neutral tú) ============== -->
+    <article id="spanish" class="hidden" lang="es">
+      <header class="mb-4">
+        <p class="uppercase text-xs tracking-widest font-extrabold text-brand-500 eyebrow">Comunicar interculturalmente</p>
+        <h1 class="text-2xl md:text-3xl font-semibold leading-tight">Malentendidos: tipos, riesgo y qué hacer</h1>
+        <p class="text-brand-800/70 mt-1">Un mapa compacto para contenido, UX y localización.</p>
+      </header>
+
+      <!-- Cajas superiores compactas -->
+      <section class="grid md:grid-cols-2 gap-3 mb-4">
+        <div class="bg-white border border-brand-200 rounded-xl p-3">
+          <h3 class="text-brand-800 font-semibold mb-1">Malentendido</h3>
+          <p class="text-brand-800/70">La persona oyente construye un sentido <strong class="text-brand-800">diferente</strong> al que la persona que habla quería.</p>
+        </div>
+        <div class="bg-white border border-brand-200 rounded-xl p-3">
+          <h3 class="text-brand-800 font-semibold mb-1">No comprensión</h3>
+          <p class="text-brand-800/70">La persona oyente <strong class="text-brand-800">no logra</strong> construir ningún sentido.</p>
+        </div>
+      </section>
+
+      <!-- Caso 1: Lingüística -->
+      <section class="mb-4">
+        <div class="casebox relative border border-brand-200 rounded-xl p-4">
+          <span class="bar" aria-hidden="true"></span>
+          <p class="uppercase text-[11px] tracking-widest font-extrabold text-brand-800 eyebrow mb-1 inline-flex items-center gap-2">
+            <!-- ear icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M9 9c1.657 0 3 1.343 3 3 0 2 2 3 4 3M9 9c-2.21 0-4 1.79-4 4v1c0 2.21 1.79 4 4 4h0c2.21 0 4-1.79 4-4v-1c0-1.105.895-2 2-2"/></svg>
+            Caso · Lingüística
+          </p>
+          <h3 class="font-semibold">“You being served?” en Mánchester</h3>
+          <div class="mt-1 text-xs"><span class="inline-block px-2 py-0.5 rounded-full border border-brand-200 bg-white">Tipo: <strong>No comprensión</strong> · Fonología/Acento</span></div>
+          <p class="text-brand-800/90 mt-1">Al llegar no descodifiqué el acento de una dependienta. Repetía “You being served?”; me fui sin comprar: perdida, no desinteresada.</p>
+          <p class="text-brand-800/80 text-sm mt-1">Ilustra: no comprensión por fonología/acento.</p>
+        </div>
+      </section>
+
+      <!-- Dos fuentes -->
+      <section class="mb-4">
+        <h2 class="text-[1.15rem] font-semibold mb-2">Dos fuentes</h2>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="bg-white border border-brand-200 rounded-xl p-3"><h3 class="font-semibold mb-1">Lingüística</h3><p class="text-brand-800/70">Vocabulario, acento, gramática, semántica.</p></div>
+          <div class="bg-white border border-brand-200 rounded-xl p-3"><h3 class="font-semibold mb-1">Pragmática</h3><p class="text-brand-800/70">Reglas “ocultas”: cortesía, distancia, imposición, emoción.</p></div>
+        </div>
+      </section>
+
+      <!-- Tipos -->
+      <section class="mb-6">
+        <h2 class="text-[1.15rem] font-semibold mb-2">Tipos de malentendido <span class="inline-block align-middle ml-2 text-xs px-2 py-0.5 rounded-full border border-brand-200">Definición · Ejemplo · Aplicación</span></h2>
+        <div class="grid md:grid-cols-2 gap-3">
+          <!-- Tipo 1 -->
+          <div class="grid grid-cols-[28px,1fr] gap-3 bg-white border border-brand-200 rounded-xl p-3">
+            <svg class="w-5 h-5 mt-1 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            <div>
+              <h3 class="font-semibold mb-1">Tipo 1 — Interpretación del acto de habla</h3>
+              <div class="grid grid-cols-[110px,1fr] gap-2 text-[13px]">
+                <div class="uppercase font-extrabold text-brand-500">Definición</div><div class="text-brand-800/70">Las palabras se entienden, la <em>acción</em> no se reconoce.</div>
+                <div class="uppercase font-extrabold text-brand-500">Ejemplo</div><div class="text-brand-800/70">“Hace frío con la puerta abierta”. (petición) → Asienten, nadie la cierra.</div>
+                <div class="uppercase font-extrabold text-brand-500">Aplicación</div><div class="text-brand-800/70">Convierte indirectas en acciones. UX: CTAs imperativas. L10n: directividad por mercado.</div>
+              </div>
+            </div>
+          </div>
+          <!-- Tipo 2 -->
+          <div class="grid grid-cols-[28px,1fr] gap-3 bg-white border border-brand-200 rounded-xl p-3">
+            <svg class="w-5 h-5 mt-1 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            <div>
+              <h3 class="font-semibold mb-1">Tipo 2 — Transferencia L1 en L2</h3>
+              <div class="grid grid-cols-[110px,1fr] gap-2 text-[13px]">
+                <div class="uppercase font-extrabold text-brand-500">Definición</div><div class="text-brand-800/70">Se trasladan expresiones de L1 que en L2 cambian de sentido.</div>
+                <div class="uppercase font-extrabold text-brand-500">Ejemplo</div><div class="text-brand-800/70">“Either way” por “es lo mismo” → Ambiguo o incorrecto en inglés.</div>
+                <div class="uppercase font-extrabold text-brand-500">Aplicación</div><div class="text-brand-800/70">Prefiere términos llanos. Marca modismos/glosario. LQA: notas para frases difíciles.</div>
+              </div>
+            </div>
+          </div>
+          <!-- Tipo 3 -->
+          <div class="grid grid-cols-[28px,1fr] gap-3 bg-white border border-brand-200 rounded-xl p-3">
+            <svg class="w-5 h-5 mt-1 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+            <div>
+              <h3 class="font-semibold mb-1">Tipo 3 — Normas sociales y cortesía</h3>
+              <div class="grid grid-cols-[110px,1fr] gap-2 text-[13px]">
+                <div class="uppercase font-extrabold text-brand-500">Definición</div><div class="text-brand-800/70">Se estima mal la formalidad, la distancia o la imposición.</div>
+                <div class="uppercase font-extrabold text-brand-500">Ejemplo</div><div class="text-brand-800/70">“Cierra la puerta.” es correcto en unos contextos; brusco en otros.</div>
+                <div class="uppercase font-extrabold text-brand-500">Aplicación</div><div class="text-brand-800/70">Define política T/V (tú/usted/vos). Ajusta tono y mandatos por mercado.</div>
+              </div>
+            </div>
+          </div>
+          <!-- Tipo 4 -->
+          <div class="grid grid-cols-[28px,1fr] gap-3 bg-white border border-brand-200 rounded-xl p-3">
+            <svg class="w-5 h-5 mt-1 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V4"/><path d="M18 10l-6-6-6 6"/></svg>
+            <div>
+              <h3 class="font-semibold mb-1">Tipo 4 — Fuerza emocional entre lenguas</h3>
+              <div class="grid grid-cols-[110px,1fr] gap-2 text-[13px]">
+                <div class="uppercase font-extrabold text-brand-500">Definición</div><div class="text-brand-800/70">La intensidad de palabras de tabú/afecto cambia según lengua y contexto.</div>
+                <div class="uppercase font-extrabold text-brand-500">Ejemplo</div><div class="text-brand-800/70">Insultos/afecto suenan más débiles/fuertes en L2; el dolor se “aplana”.</div>
+                <div class="uppercase font-extrabold text-brand-500">Aplicación</div><div class="text-brand-800/70">Calibra la intensidad. Conserva metáforas útiles (salud). Prueba con personas locales.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Casos (dispersos) -->
+      <section class="grid md:grid-cols-2 gap-3 mb-6">
+        <div class="casebox relative border border-brand-200 rounded-xl p-4">
+          <span class="bar" aria-hidden="true"></span>
+          <p class="uppercase text-[11px] tracking-widest font-extrabold text-brand-800 eyebrow mb-1 inline-flex items-center gap-2">
+            <!-- door icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M4 3h12v18H4zM16 21h4M13 12h0.01"/></svg>
+            Caso · Pragmática
+          </p>
+          <h3 class="font-semibold">La puerta abierta</h3>
+          <div class="mt-1 text-xs"><span class="inline-block px-2 py-0.5 rounded-full border border-brand-200 bg-white">Tipo: <strong>Tipo 1 — Acto de habla</strong></span></div>
+          <p class="text-brand-800/90 mt-1">Dije “Hace frío con la puerta abierta” esperando que alguien la cerrara. Hubo acuerdo… nadie actuó. La indirecta no se leyó como petición.</p>
+          <p class="text-brand-800/80 text-sm mt-1">Solución: escribe la acción que quieres.</p>
+        </div>
+        <div class="casebox relative border border-brand-200 rounded-xl p-4">
+          <span class="bar" aria-hidden="true"></span>
+          <p class="uppercase text-[11px] tracking-widest font-extrabold text-brand-800 eyebrow mb-1 inline-flex items-center gap-2">
+            <!-- arrows icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M7 7h10M7 17h10M7 7l3-3M7 17l3 3"/></svg>
+            Caso · L1 → L2
+          </p>
+          <h3 class="font-semibold">“Either way” ≠ “es lo mismo”</h3>
+          <div class="mt-1 text-xs"><span class="inline-block px-2 py-0.5 rounded-full border border-brand-200 bg-white">Tipo: <strong>Tipo 2 — Transferencia L1→L2</strong></span></div>
+          <p class="text-brand-800/90 mt-1">Usé “either way” para decir “es lo mismo”. Confundió al casero. La transferencia literal cambió el sentido.</p>
+          <p class="text-brand-800/80 text-sm mt-1">Solución: prefiere términos llanos; evita modismos cuando hay riesgo.</p>
+        </div>
+      </section>
+
+      <!-- ===== Aplicaciones por industria mapeadas a TIPOS + RIESGO ===== -->
+      <section class="mb-6">
+        <div class="flex items-center justify-between mb-2">
+          <h2 class="text-[1.15rem] font-semibold">Aplicaciones por industria · por tipo y riesgo</h2>
+          <!-- Leyenda -->
+          <div class="flex items-center gap-2 text-xs">
+            <span class="risk-pill border-brand-200 text-brand-800/70 bg-white">Bajo !</span>
+            <span class="risk-pill border-brand-200 text-brand-800 bg-brand-100">Medio !!</span>
+            <span class="risk-pill risk-high border-brand-200 text-white bg-brand-500">Alto !!!</span>
+          </div>
+        </div>
+
+        <!-- Tipo 1 -->
+        <div class="border border-brand-200 rounded-xl overflow-hidden mb-3">
+          <div class="bg-brand-100/70 px-4 py-2 flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+            <h3 class="font-semibold">Tipo 1 — Interpretación del acto de habla</h3>
+          </div>
+          <div class="p-4 space-y-3">
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">Salud</div>
+              <div class="text-brand-800/80">Riesgo: indirectas no se leen como pedidos. <span class="block text-sm text-brand-800/70">Ej.: “Podrías...” → nadie actúa.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill risk-high bg-brand-500 text-white border-brand-200">Alto !!!</span>
+                <span class="text-sm text-brand-800/80">Mitigación: CTAs imperativas; teach-back.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">IA y MT</div>
+              <div class="text-brand-800/80">Riesgo: el bot no capta la intención indirecta. <span class="block text-sm text-brand-800/70">Ej.: “Hace frío...” → sin seguimiento.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill bg-brand-100 text-brand-800 border-brand-200">Medio !!</span>
+                <span class="text-sm text-brand-800/80">Mitigación: resolver indirectas en NLU.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">UX y L10n</div>
+              <div class="text-brand-800/80">Riesgo: CTAs suaves bajan conversiones. <span class="block text-sm text-brand-800/70">Ej.: “Quizá regístrate”.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill risk-high bg-brand-500 text-white border-brand-200">Alto !!!</span>
+                <span class="text-sm text-brand-800/80">Mitigación: CTAs explícitas; directividad por mercado.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tipo 2 -->
+        <div class="border border-brand-200 rounded-xl overflow-hidden mb-3">
+          <div class="bg-brand-100/70 px-4 py-2 flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            <h3 class="font-semibold">Tipo 2 — Transferencia L1 en L2</h3>
+          </div>
+          <div class="p-4 space-y-3">
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">Salud</div>
+              <div class="text-brand-800/80">Riesgo: modismos cambian sentido. <span class="block text-sm text-brand-800/70">Ej.: “presión en el pecho” vs “angustia”.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill bg-white text-brand-800/70 border-brand-200">Bajo !</span>
+                <span class="text-sm text-brand-800/80">Mitigación: glosario de síntomas; notas de intérprete.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">IA y MT</div>
+              <div class="text-brand-800/80">Riesgo: traducción literal. <span class="block text-sm text-brand-800/70">Ej.: “either way” erróneo por mercado.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill risk-high bg-brand-500 text-white border-brand-200">Alto !!!</span>
+                <span class="text-sm text-brand-800/80">Mitigación: paráfrasis y sinónimos locales.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">UX y L10n</div>
+              <div class="text-brand-800/80">Riesgo: modismos “prestados” en UI. <span class="block text-sm text-brand-800/70">Ej.: “either way” por “es equivalente”.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill bg-brand-100 text-brand-800 border-brand-200">Medio !!</span>
+                <span class="text-sm text-brand-800/80">Mitigación: términos prohibidos; guía para reviewers.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tipo 3 -->
+        <div class="border border-brand-200 rounded-xl overflow-hidden mb-3">
+          <div class="bg-brand-100/70 px-4 py-2 flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+            <h3 class="font-semibold">Tipo 3 — Normas sociales y cortesía</h3>
+          </div>
+          <div class="p-4 space-y-3">
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">Salud</div>
+              <div class="text-brand-800/80">Riesgo: directrices bruscas rompen la confianza. <span class="block text-sm text-brand-800/70">Ej.: “Cierra la puerta.” a familiares.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill bg-brand-100 text-brand-800 border-brand-200">Medio !!</span>
+                <span class="text-sm text-brand-800/80">Mitigación: directrices culturalmente adecuadas.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">IA y MT</div>
+              <div class="text-brand-800/80">Riesgo: nivel de cortesía/persona incorrecta. <span class="block text-sm text-brand-800/70">Ej.: disculpas demasiado informales.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill bg-brand-100 text-brand-800 border-brand-200">Medio !!</span>
+                <span class="text-sm text-brand-800/80">Mitigación: control de cortesía; evaluación humana.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">UX y L10n</div>
+              <div class="text-brand-800/80">Riesgo: T/V y grado de imposición. <span class="block text-sm text-brand-800/70">Ej.: “vos” en mercados no rioplatenses.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill risk-high bg-brand-500 text-white border-brand-200">Alto !!!</span>
+                <span class="text-sm text-brand-800/80">Mitigación: matriz T/V; kits de tono por mercado.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tipo 4 -->
+        <div class="border border-brand-200 rounded-xl overflow-hidden">
+          <div class="bg-brand-100/70 px-4 py-2 flex items-center gap-2">
+            <svg class="w-5 h-5 text-brand-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V4"/><path d="M18 10l-6-6-6 6"/></svg>
+            <h3 class="font-semibold">Tipo 4 — Fuerza emocional entre lenguas</h3>
+          </div>
+          <div class="p-4 space-y-3">
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">Salud</div>
+              <div class="text-brand-800/80">Riesgo: se “aplanan” términos de dolor. <span class="block text-sm text-brand-800/70">Ej.: “punzante/ardor” → “it hurts”.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill risk-high bg-brand-500 text-white border-brand-200">Alto !!!</span>
+                <span class="text-sm text-brand-800/80">Mitigación: descriptores de intensidad; metáforas.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">IA y MT</div>
+              <div class="text-brand-800/80">Riesgo: tabú/afecto mal calibrado. <span class="block text-sm text-brand-800/70">Ej.: suaviza insultos/odio.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill bg-brand-100 text-brand-800 border-brand-200">Medio !!</span>
+                <span class="text-sm text-brand-800/80">Mitigación: pruebas de intensidad; evaluadores locales.</span>
+              </div>
+            </div>
+            <div class="sep"></div>
+            <div class="grid md:grid-cols-[120px,1fr,1fr] gap-3">
+              <div class="font-semibold">UX y L10n</div>
+              <div class="text-brand-800/80">Riesgo: tono demasiado plano o alto. <span class="block text-sm text-brand-800/70">Ej.: exceso de signos.</span></div>
+              <div class="flex flex-col items-center text-center gap-1">
+                <span class="risk-pill bg-white text-brand-800/70 border-brand-200">Bajo !</span>
+                <span class="text-sm text-brand-800/80">Mitigación: kit de tono; quitar intensificadores vacíos.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Caso 4 bajo industria -->
+      <section class="mb-2">
+        <div class="casebox relative border border-brand-200 rounded-xl p-4">
+          <span class="bar" aria-hidden="true"></span>
+          <p class="uppercase text-[11px] tracking-widest font-extrabold text-brand-800 eyebrow mb-1 inline-flex items-center gap-2">
+            <!-- heart -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/><path stroke-width="1.6" d="M8 13l2-2 2 3 2-4 2 3"/></svg>
+            Caso · Salud/MT
+          </p>
+          <h3 class="font-semibold">“Me duele” → “it hurts”</h3>
+          <div class="mt-1 text-xs"><span class="inline-block px-2 py-0.5 rounded-full border border-brand-200 bg-white">Tipo: <strong>Tipo 4 — Fuerza emocional</strong></span></div>
+          <p class="text-brand-800/90 mt-1">En triage, descripciones ricas del dolor (“punzante”, “ardor”) se aplanaron a “it hurts”. El equipo subestimó la severidad.</p>
+          <p class="text-brand-800/80 text-sm mt-1">Solución: preserva metáforas e intensidad; añade descriptores estructurados.</p>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
+    <p>© <span id="year"></span> Stella Bullo. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a></p>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    (function(){
+      const $ = (id)=>document.getElementById(id);
+      const langToggle = $('lang-toggle');
+      const english = $('english');
+      const spanish = $('spanish');
+      const crumbHome = $('crumb-home');
+      const crumbSection = $('crumb-section');
+      const btnPrint = $('print');
+      const toTop = $('toTop');
+      const ES_INDEX='/essays/es/index.html', EN_INDEX='/essays/index.html', ES_HOME='/es/index.html', EN_HOME='/';
+
+      function setLang(lang){
+        if(lang==='es'){
+          english.classList.add('hidden');
+          spanish.classList.remove('hidden');
+          langToggle.textContent='Read it in English';
+          langToggle.setAttribute('aria-label','Read it in English');
+          crumbHome.textContent='← Stella Bullo (Inicio)';
+          crumbHome.setAttribute('href', ES_HOME);
+          crumbSection.textContent='↔ Volver a Ensayos';
+          crumbSection.setAttribute('href', ES_INDEX);
+          try{localStorage.setItem('inf_lang_tailwind_risk_v3','es')}catch(e){}
+        } else {
+          spanish.classList.add('hidden');
+          english.classList.remove('hidden');
+          langToggle.textContent='Leer en Español';
+          langToggle.setAttribute('aria-label','Leer en Español');
+          crumbHome.textContent='← Stella Bullo (Home)';
+          crumbHome.setAttribute('href', EN_HOME);
+          crumbSection.textContent='↔ Back to Essays';
+          crumbSection.setAttribute('href', EN_INDEX);
+          try{localStorage.setItem('inf_lang_tailwind_risk_v3','en')}catch(e){}
+        }
+      }
+
+      // init
+      try{
+        const pref = localStorage.getItem('inf_lang_tailwind_risk_v3') || (navigator.language && navigator.language.startsWith('es') ? 'es' : 'en');
+        setLang(pref);
+      }catch(e){ setLang('en'); }
+
+      langToggle.addEventListener('click', ()=>{
+        const showEs = english && !english.classList.contains('hidden');
+        setLang(showEs ? 'es' : 'en');
+      });
+
+      // Print
+      btnPrint && btnPrint.addEventListener('click', ()=> window.print());
+
+      // Back to top
+      window.addEventListener('scroll', ()=>{
+        if (window.scrollY > 600) toTop.classList.remove('hidden'); else toTop.classList.add('hidden');
+      });
+      toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+      // Year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
