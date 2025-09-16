@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== BASIC ===== -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>From Conversation Analysis to Data Annotation: Bridging Two Worlds – Stella Bullo</title>
+  <meta name="description" content="How my academic work in conversation analysis maps onto industry data annotation, including metrics, consensus, stakeholder alignment, failure modes, and prompt evaluation."/>
+  <meta name="author" content="Stella Bullo"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
+  <!-- ===== FONT ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ===== TAILWIND ===== -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
+          },
+          boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+
+  <!-- ===== SEO: CANONICAL + ALTERNATES ===== -->
+  <link rel="canonical" href="https://stellabullo.com/essays/annotation-bridge/index.html"/>
+  <link rel="alternate" hreflang="en" href="https://stellabullo.com/essays/annotation-bridge/index.html"/>
+  <link rel="alternate" hreflang="es" href="https://stellabullo.com/essays/es/annotation-bridge/index.html"/>
+  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com/essays/annotation-bridge/index.html"/>
+
+  <!-- ===== OPEN GRAPH / TWITTER ===== -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Stella Bullo"/>
+  <meta property="og:title" content="From Conversation Analysis to Data Annotation: Bridging Two Worlds"/>
+  <meta property="og:description" content="How academic conversation analysis translates into annotation practice with metrics, consensus, stakeholder alignment, failure modes, and prompt evaluation."/>
+  <meta property="og:url" content="https://stellabullo.com/essays/annotation-bridge/index.html"/>
+  <meta property="og:image" content="https://stellabullo.com/og-default.jpg"/>
+  <meta property="og:locale" content="en_GB"/>
+  <meta property="og:locale:alternate" content="es_AR"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="From Conversation Analysis to Data Annotation: Bridging Two Worlds"/>
+  <meta name="twitter:description" content="How academic conversation analysis translates into annotation practice with metrics, consensus, stakeholder alignment, failure modes, and prompt evaluation."/>
+  <meta name="twitter:image" content="https://stellabullo.com/og-default.jpg"/>
+
+  <!-- ===== JSON-LD Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "From Conversation Analysis to Data Annotation: Bridging Two Worlds",
+    "description": "How academic conversation analysis translates into industry annotation practice, including metrics, consensus, stakeholder alignment, failure modes, and prompt evaluation.",
+    "author": {
+      "@type": "Person",
+      "name": "Stella Bullo",
+      "url": "https://stellabullo.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Stella Bullo",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://stellabullo.com/favicon.ico"
+      }
+    },
+    "image": ["https://stellabullo.com/og-default.jpg"],
+    "inLanguage": ["en","es"],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://stellabullo.com/essays/annotation-bridge/index.html"
+    }
+  }
+  </script>
+
+  <!-- ===== STYLE OVERRIDES ===== -->
+  <style>
+    html{scroll-behavior:smooth}
+    body {font-size: 15px;}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .prose h2 {font-size: 1.15rem !important;font-weight:600;}
+    .prose h3 {font-size: 1rem !important;font-weight:500;}
+  </style>
+</head>
+
+<body class="bg-brand-50 text-brand-800 font-sans antialiased">
+  <!-- ===== TOPBAR ===== -->
+   <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/annotation-evaluation/index.html" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Annotation &amp; Evaluation</a>
+    </nav>
+    <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
+  </div>
+
+  <!-- ===== ARTICLE CONTAINER ===== -->
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <!-- ENGLISH -->
+    <article id="english" class="prose prose-brand max-w-none">
+      <header class="mb-6">
+        <p class="text-[11px] font-medium text-brand-500 mb-1">Essay</p>
+        <h1 class="text-2xl font-semibold leading-tight">From Conversation Analysis to Data Annotation: Bridging Two Worlds</h1>
+        <p class="mt-1.5 text-sm text-brand-800/80">How my academic work in conversation analysis translates into annotation practice, with metrics, consensus, stakeholder alignment, failure modes, and prompt evaluation.</p>
+        <div class="mt-3 text-xs text-brand-800/70">Sep 2025</div>
+      </header>
+
+      <h2> Finding Familiar Ground</h2>
+      <p>
+        When I first began verifying speech data for AI, I felt a surprising sense of déjà vu. The work of checking transcriptions, judging token level accuracy, and following detailed annotation guidelines echoed habits I had honed in conversation analysis. I was listening closely, breaking language into parts, and recording my reasoning at each step, just as I used to when building analytic transcripts in my doctoral research.
+      </p>
+      <p>
+        I had imagined annotation as something mechanical or detached. Instead, I found familiar rhythms, one token at a time, alternative interpretations considered, then a decision aligned with a shared set of rules. Academic training had prepared me for this work, only I had not recognised it before.
+      </p>
+
+      <h2> How My Linguistic Training Translates</h2>
+      <p>
+        My years in academia taught me to handle language with precision and care. In conversation analysis, I built coding frameworks to capture subtle interactional patterns, revising them as new data revealed edge cases. Every decision required documentation and justification, so others could reproduce my process or challenge my interpretation. That discipline, to be consistent, transparent, and meticulous, now anchors my annotation practice.
+      </p>
+      <p>
+        Token level scrutiny is second nature to me. I look at each unit in context while keeping the broader structure in mind. Leading multi researcher projects taught me the value of calibration. In one large study, I organised sessions where we compared coded transcripts line by line until agreement was stable enough to proceed. That instinct to pause, document, and reconcile differences carries directly into my current work, where quality depends on clarity, consistency, and trust in the data.
+      </p>
+
+      <h2>What Annotation Demands in Industry</h2>
+      <p>
+        Industry annotation brings a different rhythm. Academic analysis invites open ended exploration, while industry work needs precision at scale. The goal is not to theorise but to produce datasets reliable enough to train models, which means consistency takes priority over interpretation, and efficiency matters as much as depth.
+      </p>
+      <p>
+        Quality is measured rather than debated. Teams track inter annotator agreement with metrics such as F1 Score and Cohen’s Kappa, and feedback loops are built into the workflow. Disagreements are documented, resolved through clear escalation paths, and folded back into the guidelines as clarified rules. Guides are living documents, updated as edge cases emerge, and part of the role is proposing updates that benefit the whole team.
+      </p>
+      <p>
+        This collaboration reshaped how I work. I balance personal judgement with collective alignment, and I resist the academic instinct to chase interpretive nuance unless the task calls for it. Reliability becomes collective, one annotator’s decision should be interchangeable with another’s. Prioritising reproducibility over originality has been one of the biggest shifts in moving from conversation analysis to AI annotation, and also one of the most rewarding.
+      </p>
+
+      <h2> Expanding My Skill Set</h2>
+      <p>
+        The transition has pushed me to grow. One area is navigating competing priorities. In academia, supervisors often held different views of rigour. One prioritised theoretical precision, another needed rapid outputs for milestones. I built a compromise process, shared core definitions, documented where flexibility was allowed, and kept a log of coding decisions. I now apply the same approach when differences arise between engineers who need throughput, linguists who argue for nuanced categories, and product leads who need consistent user facing outputs.
+      </p>
+      <p>
+        I have also become attuned to failure modes, the subtle ways models can misfire. While verifying speech data, I sometimes encounter outputs that look plausible but are fabricated, or ones that under represent certain dialects or identities. Rather than simply correcting these, I flag them as patterns, explain why they may reflect systemic bias, and submit them for error analysis. Years of discourse and metaphor analysis trained me to notice what feels off, and to surface hidden assumptions that affect performance.
+      </p>
+      <p>
+        A third growth area is prompt evaluation. In personal projects, I experiment with prompt structure, comparing zero shot and few shot formats, adding reasoning scaffolds, and recording how each change affects accuracy. I treat it like annotation in reverse. Instead of labelling outputs, I design inputs, then track the errors they produce. This iterative approach sharpens how I think about instructions, for models and for human annotators.
+      </p>
+
+      <h2> A Shared Ethos</h2>
+      <p>
+        What surprised me most is how much the spirit of the work remains the same. In academia, I aimed to build knowledge with rigour, curiosity, and collaboration. In annotation, the aim differs, we build reliable datasets rather than theories, yet the same qualities still drive success.
+      </p>
+      <p>
+        Linguists notice detail without losing structure, document decisions so others can follow them, and approach disagreement as a chance to clarify rather than compete. Those habits translate powerfully into industry settings, where annotation depends on precision, shared standards, and trust in the process.
+      </p>
+      <p>
+        My path from conversation analysis to data annotation shows that context changes, mindset does not. The skills that once helped me decode the complexity of human conversation now support the clarity and consistency that AI systems depend on. That is why linguists make strong annotators.
+      </p>
+    </article>
+
+    <!-- SPANISH -->
+    <article id="spanish" class="hidden prose prose-brand max-w-none">
+      <header class="mb-6">
+        <p class="text-[11px] font-medium text-brand-500 mb-1">Ensayo</p>
+        <h1 class="text-2xl font-semibold leading-tight">Del análisis de la conversación a la anotación de datos: un puente entre dos mundos</h1>
+        <p class="mt-1.5 text-sm text-brand-800/80">Cómo mi trabajo académico en análisis de la conversación se traduce en la práctica de anotación, con métricas, consenso, alineación de actores, modos de fallo y evaluación de prompts.</p>
+        <div class="mt-3 text-xs text-brand-800/70">Sep 2025</div>
+      </header>
+
+      <h2>Reconocer un terreno familiar</h2>
+      <p>
+        Cuando empecé a verificar datos de voz para proyectos de IA, sentí un déjà vu inesperado. Revisar transcripciones, juzgar la precisión a nivel de token y seguir guías detalladas de anotación repetía hábitos que había desarrollado en el análisis de la conversación. Escuchaba con atención, descomponía el lenguaje en partes y registraba mi razonamiento paso a paso, igual que hacía al construir transcripciones analíticas en mi doctorado.
+      </p>
+      <p>
+        Imaginaba la anotación como algo mecánico o distante. En cambio, encontré ritmos conocidos, un token por vez, considerar interpretaciones alternativas, y luego tomar una decisión alineada con un conjunto compartido de reglas. Mi formación académica me había preparado para este trabajo, solo que no lo había reconocido antes.
+      </p>
+
+      <h2> Cómo se traduce mi formación lingüística</h2>
+      <p>
+        Años en la academia me enseñaron a tratar el lenguaje con precisión y cuidado. En análisis de la conversación, diseñé marcos de codificación para capturar patrones sutiles de interacción y los revisé cuando aparecían casos límite. Cada decisión requería documentación y justificación, para que otras personas pudieran reproducir el proceso o discutir la interpretación. Esa disciplina, ser consistente, transparente y meticulosa, hoy sostiene mi práctica de anotación.
+      </p>
+      <p>
+        La mirada a nivel de token ya es natural. Observo cada unidad en contexto sin perder la estructura general. Al dirigir proyectos con varias personas investigadoras aprendí el valor de la calibración. En un estudio amplio organicé sesiones donde comparamos transcripciones codificadas línea por línea hasta estabilizar el acuerdo. Ese reflejo de pausar, documentar y reconciliar diferencias se traslada a mi trabajo actual, donde la calidad depende de claridad, consistencia y confianza en los datos.
+      </p>
+
+      <h2> Qué exige la anotación en la industria</h2>
+      <p>
+        La anotación en la industria marca otro ritmo. El análisis académico invita a explorar sin un cierre predefinido, mientras que la industria necesita precisión a escala. El objetivo no es teorizar sino producir conjuntos de datos fiables para entrenar modelos, lo que prioriza la consistencia por sobre la interpretación, y valora la eficiencia tanto como la profundidad.
+      </p>
+      <p>
+        La calidad se mide y no se prolonga en debate. Los equipos siguen el acuerdo entre personas anotadoras con métricas como F1 y la kappa de Cohen, y el flujo de trabajo incorpora bucles de retroalimentación. Los desacuerdos se documentan, se resuelven con rutas claras de escalamiento y se incorporan a las guías como reglas aclaradas. Las guías son documentos vivos, se actualizan cuando aparecen casos límite, y parte del rol es proponer mejoras para el beneficio del equipo.
+      </p>
+      <p>
+        Esta colaboración cambió mi manera de trabajar. Equilibro el juicio personal con la alineación colectiva y evito perseguir matices interpretativos salvo que la tarea lo requiera. La confiabilidad es colectiva, la decisión de una persona anotadora debería ser intercambiable con la de otra. Priorizar la reproducibilidad por sobre la originalidad fue uno de los cambios más grandes al pasar del análisis de la conversación a la anotación para IA, y también uno de los más satisfactorios.
+      </p>
+
+      <h2> Ampliar mi conjunto de habilidades</h2>
+      <p>
+        El cambio también me hizo crecer. Un área clave es navegar prioridades en tensión. En la academia, la idea de rigor variaba entre directoras y directores. Una persona priorizaba la precisión teórica, otra necesitaba resultados rápidos para hitos de financiación. Construí un proceso de compromiso, definiciones compartidas, documentación de márgenes de flexibilidad y un registro de decisiones de codificación. Hoy aplico lo mismo cuando surgen diferencias entre ingeniería que necesita rendimiento, lingüística que propone categorías más finas y producto que exige consistencia para lo visible a usuarias y usuarios.
+      </p>
+      <p>
+        También me volví más sensible a los modos de fallo, esas formas sutiles en que los modelos fallan. Al verificar datos de habla, a veces aparecen salidas plausibles pero inventadas, o sesgos que sub representan dialectos o identidades. En lugar de corregir en silencio, marco los patrones, explico por qué pueden reflejar sesgos sistémicos y los envío a análisis de error. Años de análisis del discurso y de la metáfora entrenaron mi capacidad de notar lo que no cierra y de exponer supuestos ocultos que afectan el rendimiento.
+      </p>
+      <p>
+        Un tercer frente es la evaluación de prompts. En proyectos personales experimento con la estructura, comparo formatos zero shot y few shot, agrego andamiajes de razonamiento y registro cómo cada cambio afecta la precisión. Lo trato como anotación en sentido inverso. En lugar de etiquetar salidas, diseño entradas y observo los errores que producen. Este enfoque iterativo afina mi manera de escribir instrucciones, para modelos y para equipos de anotación.
+      </p>
+
+      <h2> Un mismo espíritu de trabajo</h2>
+      <p>
+        Lo que más me sorprendió fue ver que el espíritu del trabajo se mantiene. En la academia busqué crear conocimiento con rigor, curiosidad y colaboración. En anotación el objetivo es distinto, creamos datos fiables y no teorías, sin embargo las mismas cualidades siguen impulsando el éxito.
+      </p>
+      <p>
+        Quienes venimos de la lingüística cuidamos el detalle sin perder la estructura, documentamos decisiones para que otras personas las sigan y tratamos el desacuerdo como una ocasión para aclarar. Esos hábitos son valiosos en la industria, donde la anotación depende de precisión, estándares compartidos y confianza en el proceso.
+      </p>
+      <p>
+        Mi recorrido del análisis de la conversación a la anotación muestra que el contexto cambia y la mentalidad permanece. Las habilidades que me ayudaron a descifrar la complejidad de la conversación humana hoy sostienen la claridad y la consistencia que necesitan los sistemas de IA. Por eso las y los lingüistas aportan tanto a la anotación.
+      </p>
+    </article>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
+    <p>© <span id="year"></span> Stella Bullo. All rights reserved.</p>
+    <p>Contact: <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a></p>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
+
+<!-- ===== SCRIPT ===== -->
+<script>
+  (function () {
+    const $ = (id) => document.getElementById(id);
+
+    const langToggle   = $('lang-toggle');
+    const english      = $('english');
+    const spanish      = $('spanish');
+    const crumbHome    = $('crumb-home');
+    const crumbSection = $('crumb-section');
+
+    // Detect if we're inside a Spanish essay URL or the page is marked lang="es"
+    const inEs = /\/essays\/es\//.test(location.pathname) ||
+                 document.documentElement.lang === 'es';
+
+    const EN_INDEX = '/essays/index.html';
+    const ES_INDEX = '/essays/es/index.html';
+    const ES_HOME  = '/es/index.html';
+    const EN_HOME  = '/';
+
+    function setLang(lang) {
+      if (!english || !spanish) return;
+
+      if (lang === 'es') {
+        english.classList.add('hidden');
+        spanish.classList.remove('hidden');
+
+        if (langToggle) {
+          langToggle.textContent = 'Read it in English';
+          langToggle.setAttribute('aria-label', 'Read it in English');
+        }
+        if (crumbHome) {
+          crumbHome.textContent = '← Stella Bullo (Inicio)';
+          crumbHome.setAttribute('href', ES_HOME);
+        }
+        if (crumbSection) {
+          crumbSection.textContent = '↔ Volver a Ensayos';
+          crumbSection.setAttribute('href', ES_INDEX);
+        }
+      } else {
+        spanish.classList.add('hidden');
+        english.classList.remove('hidden');
+
+        if (langToggle) {
+          langToggle.textContent = 'Leer en Español';
+          langToggle.setAttribute('aria-label', 'Leer en Español');
+        }
+        if (crumbHome) {
+          crumbHome.textContent = '← Stella Bullo (Home)';
+          crumbHome.setAttribute('href', EN_HOME);
+        }
+        if (crumbSection) {
+          crumbSection.textContent = '↔ Back to Essays';
+          crumbSection.setAttribute('href', EN_INDEX);
+        }
+      }
+    }
+
+    // Toggle click
+    if (langToggle && english && spanish) {
+      langToggle.addEventListener('click', () => {
+        const isEnglish = !english.classList.contains('hidden');
+        setLang(isEnglish ? 'es' : 'en');
+      });
+    }
+
+    // Default to the language inferred from the path
+    setLang(inEs ? 'es' : 'en');
+
+    // Footer year
+    const yearEl = $('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Back to top
+    const toTop = $('toTop');
+    if (toTop) {
+      const toggleToTop = () => {
+        toTop.classList.toggle('hidden', window.scrollY < 400);
+      };
+      window.addEventListener('scroll', toggleToTop);
+      toggleToTop();
+      toTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

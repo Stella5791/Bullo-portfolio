@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== BASIC ===== -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Measuring Annotation Quality: A Mini Evaluation Project – Stella Bullo</title>
+  <meta name="description" content="A small, practical evaluation showing how I use Cohen’s Kappa and F1 to diagnose disagreement and refine annotation guidelines on pain descriptors."/>
+  <meta name="author" content="Stella Bullo"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
+  <!-- ===== FONT ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ===== TAILWIND ===== -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
+          },
+          boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+
+  <!-- ===== SEO: CANONICAL + ALTERNATES ===== -->
+  <link rel="canonical" href="https://stellabullo.com/essays/annotation-eval-mini-project/index.html"/>
+  <link rel="alternate" hreflang="en" href="https://stellabullo.com/essays/annotation-eval-mini-project/index.html"/>
+  <link rel="alternate" hreflang="es" href="https://stellabullo.com/essays/es/annotation-eval-mini-project/index.html"/>
+  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com/essays/annotation-eval-mini-project/index.html"/>
+
+  <!-- ===== OPEN GRAPH / TWITTER ===== -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Stella Bullo"/>
+  <meta property="og:title" content="Measuring Annotation Quality: A Mini Evaluation Project"/>
+  <meta property="og:description" content="Using Cohen’s Kappa and F1 to diagnose disagreement and refine annotation guidelines on pain descriptors."/>
+  <meta property="og:url" content="https://stellabullo.com/essays/annotation-eval-mini-project/index.html"/>
+  <meta property="og:image" content="https://stellabullo.com/og-default.jpg"/>
+  <meta property="og:locale" content="en_GB"/>
+  <meta property="og:locale:alternate" content="es_AR"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Measuring Annotation Quality: A Mini Evaluation Project"/>
+  <meta name="twitter:description" content="Using Cohen’s Kappa and F1 to diagnose disagreement and refine annotation guidelines on pain descriptors."/>
+  <meta name="twitter:image" content="https://stellabullo.com/og-default.jpg"/>
+
+  <!-- ===== JSON-LD Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Measuring Annotation Quality: A Mini Evaluation Project",
+    "description": "A small, practical evaluation showing how I use Cohen’s Kappa and F1 to diagnose disagreement and refine annotation guidelines on pain descriptors.",
+    "author": {"@type": "Person","name": "Stella Bullo","url": "https://stellabullo.com/"},
+    "publisher": {"@type": "Organization","name": "Stella Bullo","logo": {"@type": "ImageObject","url": "https://stellabullo.com/favicon.ico"}},
+    "image": ["https://stellabullo.com/og-default.jpg"],
+    "inLanguage": ["en","es"],
+    "mainEntityOfPage": {"@type": "WebPage","@id": "https://stellabullo.com/essays/annotation-eval-mini-project/index.html"}
+  }
+  </script>
+
+  <!-- ===== STYLE OVERRIDES ===== -->
+  <style>
+    html{scroll-behavior:smooth}
+    body {font-size: 15px;}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .prose h2 {font-size: 1.15rem !important;font-weight:600;}
+    .prose h3 {font-size: 1rem !important;font-weight:500;}
+    table {font-size: 0.9rem;}
+    th, td {padding: .4rem .6rem;}
+  </style>
+</head>
+
+<body class="bg-brand-50 text-brand-800 font-sans antialiased">
+  <!-- ===== TOPBAR ===== -->
+  <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/annotation-evaluation/index.html" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Annotation &amp; Evaluation</a>
+    </nav>
+    <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
+  </div>
+
+  <!-- ===== ARTICLE CONTAINER ===== -->
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <!-- ENGLISH -->
+    <article id="english" class="prose prose-brand max-w-none">
+      <header class="mb-6">
+        <p class="text-[11px] font-medium text-brand-500 mb-1">Mini Project</p>
+        <h1 class="text-2xl font-semibold leading-tight">Measuring Annotation Quality: A Mini Evaluation Project</h1>
+        <p class="mt-1.5 text-sm text-brand-800/80">How I used Cohen’s Kappa and F1 to diagnose disagreement and refine a pain descriptor guideline.</p>
+        <div class="mt-3 text-xs text-brand-800/70">Sep 2025</div>
+      </header>
+
+      <h2>1. Context</h2>
+      <p>Annotation quality depends on consistency between annotators. Metrics make that visible. I ran a small test on a draft pain descriptor scheme to check that different people could apply the labels the same way.</p>
+
+      <h2>2. Mini Dataset</h2>
+      <p>I built a small list of pain expressions with two compatible schemes, a metaphor based layer and a clinical layer. Two annotators labelled the same items independently.</p>
+      <div class="overflow-x-auto border border-brand-200 rounded-lg px-6 py-4">
+  <table class="min-w-full">
+    <thead class="bg-brand-100">
+      <tr>
+        <th class="text-left">Item</th>
+        <th class="text-left">Annotator A</th>
+        <th class="text-left">Annotator B</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd:bg-white even:bg-brand-50"><td>feels like burning needles</td><td>heat</td><td>heat</td></tr>
+      <tr class="odd:bg-white even:bg-brand-50"><td>stabbing in the lower back</td><td>sharp</td><td>sharp</td></tr>
+      <tr class="odd:bg-white even:bg-brand-50"><td>throbbing like a drum</td><td>rhythmic</td><td>pressure</td></tr>
+      <tr class="odd:bg-white even:bg-brand-50"><td>dull constant ache</td><td>pressure</td><td>pressure</td></tr>
+      <tr class="odd:bg-white even:bg-brand-50"><td>like fire spreading</td><td>heat</td><td>sharp</td></tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+      <p class="text-sm text-brand-800/70 mt-2">Labels shown are the metaphor based layer for clarity.</p>
+
+      <h2>3. Results</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-brand-100 border border-brand-200 rounded-lg p-4">
+          <h3 class="mb-2">Agreement</h3>
+          <ul class="list-disc pl-6 text-sm">
+            <li>Cohen’s Kappa, <strong>0.53</strong> (moderate)</li>
+            <li>Interpretation, inconsistent boundaries for one category</li>
+          </ul>
+        </div>
+        <div class="bg-brand-100 border border-brand-200 rounded-lg p-4">
+          <h3 class="mb-2">F1 per class</h3>
+          <ul class="list-disc pl-6 text-sm">
+            <li>heat, <strong>0.67</strong></li>
+            <li>sharp, <strong>0.67</strong></li>
+            <li>rhythmic, <strong>0.00</strong></li>
+            <li>pressure, <strong>0.80</strong></li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-3 text-sm text-brand-800/80">Takeaway, the class with very low F1 revealed confusion about its definition. Agreement improved after clarification.</p>
+
+      <h2>4. What I Changed</h2>
+      <ul class="list-disc pl-6">
+        <li>Clarified the <em>rhythmic</em> definition and added examples that distinguish pulsing from intermittent ache.</li>
+        <li>Added a short decision rule, if unsure between rhythmic and pressure, choose pressure unless there is explicit cyclical language.</li>
+        <li>Updated the shared sheet and ran a quick calibration session.</li>
+      </ul>
+
+      <h2>5. Retest</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-brand-100 border border-brand-200 rounded-lg p-4">
+          <h3 class="mb-2">Agreement</h3>
+          <p class="text-sm"><strong>Cohen’s Kappa, 0.81</strong> and stable across a new batch.</p>
+        </div>
+        <div class="bg-brand-100 border border-brand-200 rounded-lg p-4">
+          <h3 class="mb-2">F1 per class</h3>
+          <p class="text-sm">rhythmic increased to <strong>0.78</strong>. Other classes remained high.</p>
+        </div>
+      </div>
+
+      <h2>6. 🔧 Tools I Use for Evaluation</h2>
+      <p>I usually export the annotated data as a simple CSV table (one row per item, one column per annotator’s labels),
+      then calculate agreement scores. For small pilot sets I run the calculations in Python using
+      <code>sklearn.metrics</code> — for example <code>cohen_kappa_score</code> for inter-annotator agreement
+      and <code>f1_score</code> to check per-class performance.</p>
+      <p>For larger or ongoing projects, I use the metrics built directly into the annotation platform.
+      Tools like Prodigy, Label Studio, Doccano or LightTag include agreement reports in the interface,
+      so you can review Cohen’s Kappa or F1 scores without leaving the tool.
+      After checking the metrics, I run short calibration sessions and update the guidelines until agreement improves.</p>
+
+      <h2>7. Reflection</h2>
+      <p>This mini project shows how I move from disagreement to evidence and then to improvement. Metrics do not replace judgement. They make it easier to focus revision where it matters and to show stakeholders that a guideline is reliable at scale.</p>
+
+      <p class="mt-8 text-sm text-brand-800/70">See the companion pieces, <a class="underline text-brand-500 hover:opacity-80" href="/essays/annotation-mini-cases/index.html">Annotation in Practice, Two Mini Case Studies</a> and <a class="underline text-brand-500 hover:opacity-80" href="/essays/annotation-bridge/index.html">From Conversation Analysis to Data Annotation</a>.</p>
+    </article>
+
+    <!-- SPANISH -->
+    <article id="spanish" class="hidden prose prose-brand max-w-none">
+      <header class="mb-6">
+        <p class="text-[11px] font-medium text-brand-500 mb-1">Mini proyecto</p>
+        <h1 class="text-2xl font-semibold leading-tight">Cómo medir la calidad de la anotación, un mini proyecto de evaluación</h1>
+        <p class="mt-1.5 text-sm text-brand-800/80">Cómo utilicé la kappa de Cohen y el F1 para detectar desacuerdos y mejorar una guía de descriptores de dolor.</p>
+        <div class="mt-3 text-xs text-brand-800/70">Sep 2025</div>
+      </header>
+
+      <h2>1. Contexto</h2>
+      <p>La calidad de la anotación depende de la consistencia entre personas anotadoras. Las métricas lo hacen visible. Realicé una prueba breve sobre un esquema de descriptores de dolor para verificar que las etiquetas se aplicaran de forma similar.</p>
+
+      <h2>2. Mini conjunto de datos</h2>
+      <p>Construí una lista breve de expresiones de dolor con dos capas compatibles, una capa basada en metáforas y otra clínica. Dos personas anotaron los mismos ítems de forma independiente.</p>
+      <div class="overflow-x-auto border border-brand-200 rounded-lg px-6 py-4">
+  <table class="min-w-full">
+    <thead class="bg-brand-100">
+            <tr>
+              <th class="text-left">Ítem</th>
+              <th class="text-left">Anot. A</th>
+              <th class="text-left">Anot. B</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="odd:bg-white even:bg-brand-50">
+              <td>se siente como agujas que queman</td>
+              <td>calor</td>
+              <td>calor</td>
+            </tr>
+            <tr class="odd:bg-white even:bg-brand-50">
+              <td>punzadas en la zona lumbar</td>
+              <td>punzante</td>
+              <td>punzante</td>
+            </tr>
+            <tr class="odd:bg-white even:bg-brand-50">
+              <td>latidos como un tambor</td>
+              <td>rítmico</td>
+              <td>presión</td>
+            </tr>
+            <tr class="odd:bg-white even:bg-brand-50">
+              <td>dolor sordo y constante</td>
+              <td>presión</td>
+              <td>presión</td>
+            </tr>
+            <tr class="odd:bg-white even:bg-brand-50">
+              <td>como fuego que se expande</td>
+              <td>calor</td>
+              <td>punzante</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-sm text-brand-800/70 mt-2">Para claridad se muestra la capa basada en metáforas.</p>
+
+      <h2>3. Resultados</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-brand-100 border border-brand-200 rounded-lg p-4">
+          <h3 class="mb-2">Acuerdo</h3>
+          <ul class="list-disc pl-6 text-sm">
+            <li>Kappa de Cohen, <strong>0,53</strong> (moderado)</li>
+            <li>Lectura, límites poco claros en una categoría</li>
+          </ul>
+        </div>
+        <div class="bg-brand-100 border border-brand-200 rounded-lg p-4">
+          <h3 class="mb-2">F1 por clase</h3>
+          <ul class="list-disc pl-6 text-sm">
+            <li>calor, <strong>0,67</strong></li>
+            <li>punzante, <strong>0,67</strong></li>
+            <li>rítmico, <strong>0,00</strong></li>
+            <li>presión, <strong>0,80</strong></li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-3 text-sm text-brand-800/80">Conclusión, la clase con F1 muy bajo mostró una definición confusa. El acuerdo mejoró después de aclararla.</p>
+
+      <h2>4. Qué cambié</h2>
+      <ul class="list-disc pl-6">
+        <li>Aclaré la definición de <em>rítmico</em> y añadí ejemplos que distinguen latido de intermitencia.</li>
+        <li>Agregué una regla de decisión, si hay duda entre rítmico y presión, elegir presión salvo que haya lenguaje cíclico explícito.</li>
+        <li>Actualicé la hoja compartida y realicé una calibración breve.</li>
+      </ul>
+
+      <h2>5. Nueva prueba</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-brand-100 border border-brand-200 rounded-lg p-4">
+          <h3 class="mb-2">Acuerdo</h3>
+          <p class="text-sm"><strong>Kappa de Cohen, 0,81</strong> y estable en un nuevo lote.</p>
+        </div>
+        <div class="bg-brand-100 border border-brand-200 rounded-lg p-4">
+          <h3 class="mb-2">F1 por clase</h3>
+          <p class="text-sm">rítmico subió a <strong>0,78</strong>. Las demás clases se mantuvieron altas.</p>
+        </div>
+      </div>
+
+      <h2>6. 🔧 Herramientas que utilizo para la evaluación</h2>
+      <p>Suelo exportar los datos anotados como una tabla CSV sencilla (una fila por ítem, una columna por etiquetas de cada persona anotadora),
+      y luego calcular las métricas de acuerdo. Para lotes piloto pequeños hago los cálculos en Python con
+      <code>sklearn.metrics</code> — por ejemplo <code>cohen_kappa_score</code> para el acuerdo entre personas anotadoras
+      y <code>f1_score</code> para revisar el rendimiento por clase.</p>
+      <p>En proyectos más grandes o continuos, utilizo las métricas integradas en la propia plataforma de anotación.
+      Herramientas como Prodigy, Label Studio, Doccano o LightTag incluyen informes de acuerdo en la interfaz,
+      por lo que se pueden revisar los valores de Kappa de Cohen o F1 sin salir de la herramienta.
+      Después de revisar las métricas, realizo sesiones breves de calibración y actualizo las guías hasta mejorar el acuerdo.</p>
+
+      <h2>7. Reflexión</h2>
+      <p>Este mini proyecto muestra cómo paso de un desacuerdo a evidencia y luego a mejora. Las métricas no sustituyen el juicio. Permiten enfocar la revisión donde importa y mostrar a las partes interesadas que una guía es confiable a escala.</p>
+
+      <p class="mt-8 text-sm text-brand-800/70">Ver las piezas complementarias, <a class="underline text-brand-500 hover:opacity-80" href="/es/essays/annotation-mini-cases/index.html">Anotación en la práctica, dos mini estudios de caso</a> y <a class="underline text-brand-500 hover:opacity-80" href="/essays/annotation-bridge/index.html">Del análisis de la conversación a la anotación</a>.</p>
+    </article>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
+    <p>© <span id="year"></span> Stella Bullo. All rights reserved.</p>
+    <p>Contact, <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a></p>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
+
+<!-- ===== SCRIPT ===== -->
+<script>
+  (function () {
+    const $ = (id) => document.getElementById(id);
+
+    const langToggle   = $('lang-toggle');
+    const english      = $('english');
+    const spanish      = $('spanish');
+    const crumbHome    = $('crumb-home');
+    const crumbSection = $('crumb-section');
+
+    const inEs = /\/essays\/es\//.test(location.pathname) ||
+                 document.documentElement.lang === 'es';
+
+    const EN_INDEX = '/essays/index.html';
+    const ES_INDEX = '/essays/es/index.html';
+    const ES_HOME  = '/es/index.html';
+    const EN_HOME  = '/';
+
+    function setLang(lang) {
+      if (lang === 'es') {
+        english.classList.add('hidden');
+        spanish.classList.remove('hidden');
+        langToggle.textContent = 'Read it in English';
+        langToggle.setAttribute('aria-label', 'Read it in English');
+        crumbHome.textContent = '← Stella Bullo (Inicio)';
+        crumbHome.setAttribute('href', ES_HOME);
+        crumbSection.textContent = '↔ Volver a Ensayos';
+        crumbSection.setAttribute('href', ES_INDEX);
+      } else {
+        spanish.classList.add('hidden');
+        english.classList.remove('hidden');
+        langToggle.textContent = 'Leer en Español';
+        langToggle.setAttribute('aria-label', 'Leer en Español');
+        crumbHome.textContent = '← Stella Bullo (Home)';
+        crumbHome.setAttribute('href', EN_HOME);
+        crumbSection.textContent = '↔ Back to Essays';
+        crumbSection.setAttribute('href', EN_INDEX);
+      }
+    }
+
+    if (langToggle) {
+      langToggle.addEventListener('click', () => {
+        const isEnglish = !english.classList.contains('hidden');
+        setLang(isEnglish ? 'es' : 'en');
+      });
+    }
+
+    setLang(inEs ? 'es' : 'en');
+
+    const yearEl = $('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const toTop = $('toTop');
+    if (toTop) {
+      const toggleToTop = () => {
+        toTop.classList.toggle('hidden', window.scrollY < 400);
+      };
+      window.addEventListener('scroll', toggleToTop);
+      toggleToTop();
+      toTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

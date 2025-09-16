@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ===== BASIC ===== -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Annotation in Practice: Two Mini Case Studies – Stella Bullo</title>
+  <meta name="description" content="Two concise, real-world annotation examples: pain descriptor dual labelling and speech data verification, with token-level decisions and guideline rationale."/>
+  <meta name="author" content="Stella Bullo"/>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+
+  <!-- ===== FONT ===== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ===== TAILWIND ===== -->
+  <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
+          colors: {
+            brand: { 50:'#FFFFFF',100:'#EDF3FB',200:'#CBE3EF',500:'#5AA8D6',800:'#3A4163' }
+          },
+          boxShadow: { soft: '0 6px 16px rgba(58,65,99,0.06)' },
+          borderRadius: { xl2: '1.25rem' }
+        }
+      }
+    }
+  </script>
+
+  <!-- ===== SEO: CANONICAL + ALTERNATES ===== -->
+  <link rel="canonical" href="https://stellabullo.com/essays/annotation-mini-cases/index.html"/>
+  <link rel="alternate" hreflang="en" href="https://stellabullo.com/essays/annotation-mini-cases/index.html"/>
+  <link rel="alternate" hreflang="es" href="https://stellabullo.com/essays/es/annotation-mini-cases/index.html"/>
+  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com/essays/annotation-mini-cases/index.html"/>
+
+  <!-- ===== OPEN GRAPH / TWITTER ===== -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="Stella Bullo"/>
+  <meta property="og:title" content="Annotation in Practice: Two Mini Case Studies"/>
+  <meta property="og:description" content="Two concise, real-world annotation examples with token-level decisions and guideline rationale."/>
+  <meta property="og:url" content="https://stellabullo.com/essays/annotation-mini-cases/index.html"/>
+  <meta property="og:image" content="https://stellabullo.com/og-default.jpg"/>
+  <meta property="og:locale" content="en_GB"/>
+  <meta property="og:locale:alternate" content="es_AR"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Annotation in Practice: Two Mini Case Studies"/>
+  <meta name="twitter:description" content="Two concise, real-world annotation examples with token-level decisions and guideline rationale."/>
+  <meta name="twitter:image" content="https://stellabullo.com/og-default.jpg"/>
+
+  <!-- ===== JSON-LD Article ===== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Annotation in Practice: Two Mini Case Studies",
+    "description": "Two concise, real-world annotation examples: pain descriptor dual labelling and speech data verification, with token-level decisions and guideline rationale.",
+    "author": {"@type": "Person","name": "Stella Bullo","url": "https://stellabullo.com/"},
+    "publisher": {"@type": "Organization","name": "Stella Bullo","logo": {"@type": "ImageObject","url": "https://stellabullo.com/favicon.ico"}},
+    "image": ["https://stellabullo.com/og-default.jpg"],
+    "inLanguage": ["en","es"],
+    "mainEntityOfPage": {"@type": "WebPage","@id": "https://stellabullo.com/essays/annotation-mini-cases/index.html"}
+  }
+  </script>
+
+  <!-- ===== STYLE OVERRIDES ===== -->
+  <style>
+    html{scroll-behavior:smooth}
+    body {font-size: 15px;}
+    .btn{transition:all .2s ease}
+    .btn:active{transform:translateY(1px)}
+    .prose h2 {font-size: 1.15rem !important;font-weight:600;}
+    .prose h3 {font-size: 1rem !important;font-weight:500;}
+    code, pre {font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;}
+  </style>
+</head>
+
+<body class="bg-brand-50 text-brand-800 font-sans antialiased">
+  <!-- ===== TOPBAR ===== -->
+ <div class="max-w-5xl mx-auto px-5 md:px-8 pt-8 pb-4 text-sm md:text-base">
+    <nav class="flex flex-col gap-2">
+      <a id="crumb-home" href="/" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">← Stella Bullo (Home)</a>
+      <a id="crumb-section" href="/annotation-evaluation/index.html" class="inline-flex items-center gap-1 text-brand-500 font-medium underline hover:opacity-80">↔ Back to Annotation &amp; Evaluation</a>
+    </nav>
+    <button id="lang-toggle" class="btn mt-3 inline-flex items-center justify-center px-4 py-2 rounded-md bg-brand-500 text-white hover:brightness-95" aria-label="Leer en Español">Leer en Español</button>
+  </div>
+  <!-- ===== ARTICLE CONTAINER ===== -->
+  <main class="max-w-5xl mx-auto px-5 md:px-8 py-8 md:py-10 bg-white border border-brand-200 rounded-xl2 shadow-soft">
+    <!-- ENGLISH -->
+    <article id="english" class="prose prose-brand max-w-none">
+      <header class="mb-6">
+        <p class="text-[11px] font-medium text-brand-500 mb-1">Case Studies</p>
+        <h1 class="text-2xl font-semibold leading-tight">Annotation in Practice: Two Mini Case Studies</h1>
+        <p class="mt-1.5 text-sm text-brand-800/80">Two concise, real-world annotation examples with token level decisions and clear guideline rationale.</p>
+        <div class="mt-3 text-xs text-brand-800/70">Sep 2025</div>
+      </header>
+
+      <p>Annotation quality depends on more than abstract understanding. It lives in the decisions we make token by token. These short examples show how I apply guidelines, document edge cases, and balance consistency with context.</p>
+
+      <h2>Case Study 1, Pain Descriptor Labelling</h2>
+      <p class="text-brand-800/80 text-[13.5px]">Raw text:</p>
+      <blockquote class="not-prose border-l-4 border-brand-200 pl-4 text-sm italic">“It feels like burning needles.”</blockquote>
+      <div class="bg-brand-100 border border-brand-200 rounded-lg p-4 mt-3">
+        <h3 class="mb-2">Annotation</h3>
+        <ul class="list-disc pl-6 text-sm">
+          <li><strong>Metaphor based scheme</strong>
+            <ul class="list-disc pl-6">
+              <li><code>burning</code> → <code>pain: metaphor/heat</code></li>
+              <li><code>needles</code> → <code>pain: metaphor/sharp-object</code></li>
+            </ul>
+          </li>
+          <li class="mt-2"><strong>Clinical scheme</strong>
+            <ul class="list-disc pl-6">
+              <li>whole phrase → <code>pain: neuropathic</code></li>
+            </ul>
+          </li>
+        </ul>
+        <p class="mt-3 text-sm text-brand-800/80">Commentary, I use a dual layer approach to reconcile priorities from metaphor research, medical literature, and annotator usability. Decisions are logged in a shared sheet with definitions and examples so others can apply categories consistently.</p>
+      </div>
+
+      <h2 class="mt-8">Case Study 2, Speech Data Verification</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-brand-100 border border-brand-200 rounded-lg p-4">
+          <h3 class="mb-2">Transcript (audio)</h3>
+          <pre class="text-sm whitespace-pre-wrap">I’m gonna get it.</pre>
+        </div>
+        <div class="bg-brand-100 border border-brand-200 rounded-lg p-4">
+          <h3 class="mb-2">Model output</h3>
+          <pre class="text-sm whitespace-pre-wrap">I am going to get it.</pre>
+        </div>
+      </div>
+      <div class="bg-brand-100 border border-brand-200 rounded-lg p-4 mt-3">
+        <h3 class="mb-2">Annotation</h3>
+        <ul class="list-disc pl-6 text-sm">
+          <li><code>I’m → I am</code> → <strong>correct</strong> <span class="text-brand-800/70">(acceptable normalisation)</span></li>
+          <li><code>gonna → going to</code> → <strong>correct</strong> <span class="text-brand-800/70">(acceptable normalisation)</span></li>
+        </ul>
+        <p class="mt-3 text-sm text-brand-800/80">Commentary, I mark normalisations as correct when they preserve meaning and follow the guideline. If a model inserts words not spoken or erases dialect features, I mark <code>error: hallucination</code> or <code>error: bias</code> and log a note for error analysis.</p>
+      </div>
+
+      <p class="mt-8 text-sm text-brand-800/70">Want the quantitative side, see my companion piece, <a class="underline text-brand-500 hover:opacity-80" href="/essays/annotation-eval-mini-project.html">Measuring Annotation Quality, A Mini Evaluation Project</a>.</p>
+    </article>
+
+    <!-- SPANISH -->
+    <article id="spanish" class="hidden prose prose-brand max-w-none">
+      <header class="mb-6">
+        <p class="text-[11px] font-medium text-brand-500 mb-1">Estudios de caso</p>
+        <h1 class="text-2xl font-semibold leading-tight">Anotación en la práctica, dos mini estudios de caso</h1>
+        <p class="mt-1.5 text-sm text-brand-800/80">Dos ejemplos concisos y reales, con decisiones a nivel de token y la justificación de las guías.</p>
+        <div class="mt-3 text-xs text-brand-800/70">Sep 2025</div>
+      </header>
+
+      <p>La calidad de la anotación no es solo conceptual. Se decide token por token. Estos ejemplos muestran cómo aplico las guías, documento casos límite y equilibro consistencia y contexto.</p>
+
+      <h2>Estudio de caso 1, etiquetado de descriptores de dolor</h2>
+      <p class="text-brand-800/80 text-[13.5px]">Texto original:</p>
+      <blockquote class="not-prose border-l-4 border-brand-200 pl-4 text-sm italic">“Se siente como agujas que queman.”</blockquote>
+      <div class="bg-brand-100 border border-brand-200 rounded-lg p-4 mt-3">
+        <h3 class="mb-2">Anotación</h3>
+        <ul class="list-disc pl-6 text-sm">
+          <li><strong>Esquema basado en metáfora</strong>
+            <ul class="list-disc pl-6">
+              <li><code>queman</code> → <code>dolor: metáfora/calor</code></li>
+              <li><code>agujas</code> → <code>dolor: metáfora/objeto-punzante</code></li>
+            </ul>
+          </li>
+          <li class="mt-2"><strong>Esquema clínico</strong>
+            <ul class="list-disc pl-6">
+              <li>frase completa → <code>dolor: neuropático</code></li>
+            </ul>
+          </li>
+        </ul>
+        <p class="mt-3 text-sm text-brand-800/80">Comentario, uso una capa doble para conciliar las prioridades de la investigación en metáfora, la literatura médica y la usabilidad de quienes anotan. Registro decisiones en una hoja compartida con definiciones y ejemplos, así promovemos una aplicación consistente.</p>
+      </div>
+
+      <h2 class="mt-8">Estudio de caso 2, verificación de datos de habla</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="bg-brand-100 border border-brand-200 rounded-lg p-4">
+          <h3 class="mb-2">Transcripción (audio)</h3>
+          <pre class="text-sm whitespace-pre-wrap">Voy a agarrarlo.</pre>
+        </div>
+        <div class="bg-brand-100 border border-brand-200 rounded-lg p-4">
+          <h3 class="mb-2">Salida del modelo</h3>
+          <pre class="text-sm whitespace-pre-wrap">Lo voy a tomar.</pre>
+        </div>
+      </div>
+      <div class="bg-brand-100 border border-brand-200 rounded-lg p-4 mt-3">
+        <h3 class="mb-2">Anotación</h3>
+        <ul class="list-disc pl-6 text-sm">
+          <li><code>agarrarlo → tomar</code> → <strong>correcto</strong> <span class="text-brand-800/70">(normalización aceptable si la guía lo permite)</span></li>
+        </ul>
+        <p class="mt-3 text-sm text-brand-800/80">Comentario, marco normalizaciones como correctas cuando preservan el significado y siguen la guía. Si el modelo inserta palabras no dichas o borra rasgos dialectales, marco <code>error: alucinación</code> o <code>error: sesgo</code> y dejo registro para análisis de error.</p>
+      </div>
+
+      <p class="mt-8 text-sm text-brand-800/70">Para la parte cuantitativa, ver la pieza complementaria, <a class="underline text-brand-500 hover:opacity-80" href="/es/essays/annotation-eval-mini-project.html">Cómo medir la calidad de la anotación, un mini proyecto de evaluación</a>.</p>
+    </article>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="max-w-5xl mx-auto text-center text-brand-800/70 text-sm mt-8 py-6 px-5 md:px-8">
+    <p>© <span id="year"></span> Stella Bullo. All rights reserved.</p>
+    <p>Contact, <a href="mailto:info@stellabullo.com" class="text-brand-500 underline hover:opacity-80">info@stellabullo.com</a></p>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button id="toTop" class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500" aria-label="Back to top" title="Back to top">↑</button>
+
+<!-- ===== SCRIPT ===== -->
+<script>
+  (function () {
+    const $ = (id) => document.getElementById(id);
+
+    const langToggle   = $('lang-toggle');
+    const english      = $('english');
+    const spanish      = $('spanish');
+    const crumbHome    = $('crumb-home');
+    const crumbSection = $('crumb-section');
+
+    const inEs = /\/essays\/es\//.test(location.pathname) ||
+                 document.documentElement.lang === 'es';
+
+    const EN_INDEX = '/essays/index.html';
+    const ES_INDEX = '/essays/es/index.html';
+    const ES_HOME  = '/es/index.html';
+    const EN_HOME  = '/';
+
+    function setLang(lang) {
+      if (lang === 'es') {
+        english.classList.add('hidden');
+        spanish.classList.remove('hidden');
+        langToggle.textContent = 'Read it in English';
+        langToggle.setAttribute('aria-label', 'Read it in English');
+        crumbHome.textContent = '← Stella Bullo (Inicio)';
+        crumbHome.setAttribute('href', ES_HOME);
+        crumbSection.textContent = '↔ Volver a Ensayos';
+        crumbSection.setAttribute('href', ES_INDEX);
+      } else {
+        spanish.classList.add('hidden');
+        english.classList.remove('hidden');
+        langToggle.textContent = 'Leer en Español';
+        langToggle.setAttribute('aria-label', 'Leer en Español');
+        crumbHome.textContent = '← Stella Bullo (Home)';
+        crumbHome.setAttribute('href', EN_HOME);
+        crumbSection.textContent = '↔ Back to Essays';
+        crumbSection.setAttribute('href', EN_INDEX);
+      }
+    }
+
+    if (langToggle) {
+      langToggle.addEventListener('click', () => {
+        const isEnglish = !english.classList.contains('hidden');
+        setLang(isEnglish ? 'es' : 'en');
+      });
+    }
+
+    setLang(inEs ? 'es' : 'en');
+
+    const yearEl = $('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    const toTop = $('toTop');
+    if (toTop) {
+      const toggleToTop = () => {
+        toTop.classList.toggle('hidden', window.scrollY < 400);
+      };
+      window.addEventListener('scroll', toggleToTop);
+      toggleToTop();
+      toTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>
