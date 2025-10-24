@@ -112,26 +112,39 @@
 
 
   <!-- HERO -->
-<section class="hero">
-  <img src="./assets/ardalan-hamedani-woman-in-pain.png" alt="Woman in pain" class="hero-img opacity-80" />
-  <div class="hero-dim"></div>
-
-  <!-- Right-aligned text block -->
-  <div class="relative z-10 max-w-wrap flex flex-col items-end justify-center text-right min-h-[60vh] translate-y-[-10%]">
-    <img src="logo-short.png" alt="Project logo" class="hero-logo mb-4" />
-    <h1 class="hero-title">THE LANGUAGE OF ENDOMETRIOSIS</h1>
-    <p class="hero-tag">Turning invisible pain into words</p>
+<section class="hero relative min-h-screen flex flex-col justify-center overflow-hidden">
+  <!-- background image -->
+  <div class="absolute inset-0">
+    <img src="./assets/ardalan-hamedani-woman-in-pain.png" alt="Woman in pain"
+         class="w-full h-full object-cover object-center opacity-80" />
+    <div class="absolute inset-0 bg-black/40"></div> <!-- dark overlay -->
   </div>
 
-  <!-- Pills menu -->
+  <!-- right-aligned text -->
+  <div class="relative z-10 max-w-wrap">
+    <div class="flex justify-end">
+      <div class="relative w-full md:w-[56%] text-right min-h-[55vh] flex flex-col justify-center translate-y-[-10%]">
+        <img
+          src="./assets/logo-short.png"
+          alt="Project logo"
+          class="absolute -left-16 -top-6 w-28 md:w-40 lg:w-56 drop-shadow-[0_6px_18px_rgba(0,0,0,0.35)] pointer-events-none select-none"
+        />
+        <h1 class="hero-title">THE LANGUAGE OF<br class="hidden sm:inline" /> ENDOMETRIOSIS</h1>
+        <p class="hero-tag">Turning invisible pain into words</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pills -->
   <div class="relative z-10 mt-12 flex flex-wrap justify-center gap-4 px-4">
     <a href="#research" class="pill">Research</a>
     <a href="#pain" class="pill">Pain descriptors</a>
-    <a href="#app" class="pill">Explain My Pain App</a>
+    <a href="#app" class="pill">Explain my Pain App</a>
     <a href="#testimonials" class="pill">Testimonials</a>
     <a href="#media" class="pill">Media</a>
   </div>
 </section>
+
 
 
 
