@@ -120,20 +120,31 @@
     <div class="absolute inset-0 bg-black/40"></div> <!-- dark overlay -->
   </div>
 
-  <!-- right-aligned text -->
-  <div class="relative z-10 max-w-wrap">
-    <div class="flex justify-end">
-      <div class="relative w-full md:w-[56%] text-right min-h-[55vh] flex flex-col justify-center translate-y-[-10%]">
-        <img
-          src="./assets/logo-short.png"
-          alt="Project logo"
-          class="absolute -left-16 -top-6 w-28 md:w-40 lg:w-56 drop-shadow-[0_6px_18px_rgba(0,0,0,0.35)] pointer-events-none select-none"
-        />
-        <h1 class="hero-title">THE LANGUAGE OF<br class="hidden sm:inline" /> ENDOMETRIOSIS</h1>
-        <p class="hero-tag">Turning invisible pain into words</p>
-      </div>
-    </div>
+  <!-- Right-aligned text (desktop); centers on mobile -->
+<div class="relative z-10 max-w-wrap">
+  <div class="relative md:absolute md:right-[8vw] md:top-[16vh] md:max-w-[520px] text-center md:text-right mx-auto md:mx-0">
+
+    <!-- Logo slightly lower & to the left of the text -->
+    <img
+      src="./assets/logo-short.png"
+      alt="Project logo"
+      class="absolute -left-20 top-6 w-24 md:w-36 lg:w-44 drop-shadow-[0_6px_18px_rgba(0,0,0,0.35)] pointer-events-none select-none"
+    />
+
+    <!-- Smaller H1, forced to two lines -->
+    <h1 class="font-bold text-white leading-tight tracking-wide
+               text-3xl md:text-4xl lg:text-[44px]">
+      <span class="block">THE LANGUAGE OF</span>
+      <span class="block">ENDOMETRIOSIS</span>
+    </h1>
+
+    <!-- Smaller, single-line tagline -->
+    <p class="mt-2 text-endoYellow font-medium text-sm md:text-base">
+      Turning invisible pain into words
+    </p>
   </div>
+</div>
+
 
   <!-- Pills -->
   <div class="relative z-10 mt-12 flex flex-wrap justify-center gap-4 px-4">
