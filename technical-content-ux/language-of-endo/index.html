@@ -35,9 +35,10 @@
   <!-- Minimal project styles: only tiny, reusable atoms -->
   <style type="text/tailwindcss">
     @layer base {
-      html, body { @apply h-full scroll-smooth; }
-      body { @apply bg-gray-50 text-gray-800 font-sans; }
-    }
+  html, body { @apply scroll-smooth; } /* ← removed h-full */
+  body { @apply bg-gray-50 text-gray-800 font-sans; }
+}
+
     @layer components {
       /* Reusable “pill” buttons */
       .pill { @apply inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/90 text-gray-800 shadow-sm ring-1 ring-white/50 hover:bg-endoYellow hover:text-white transition; }
@@ -111,7 +112,7 @@
   <!-- HERO -->
 <section class="relative min-h-[100svh] h-screen overflow-hidden">
   <!-- Background image -->
-  <div class="absolute inset-0">
+  <div class="absolute inset-0 pointer-events-none">
     <img
       src="./assets/ardalan-hamedani-woman-in-pain.jpg"
       alt="Woman in pain"
@@ -139,16 +140,18 @@
     </div>
   </div>
 
-<!-- Pills navigation (hidden on mobile) -->
-<div class="hidden md:block absolute bottom-10 left-1/2 -translate-x-1/2 w-full md:w-auto px-4 z-10">
-  <div class="flex flex-nowrap justify-center gap-4 md:gap-5 lg:gap-6">
-    <a href="#research" class="pill text-sm px-3 py-1.5 whitespace-nowrap">Research</a>
-    <a href="#pain" class="pill text-sm px-3 py-1.5 whitespace-nowrap">Pain descriptors</a>
-    <a href="#app" class="pill text-sm px-3 py-1.5 whitespace-nowrap">Explain my Pain App</a>
-    <a href="#testimonials" class="pill text-sm px-3 py-1.5 whitespace-nowrap">Testimonials</a>
-    <a href="#media" class="pill text-sm px-3 py-1.5 whitespace-nowrap">Media</a>
+  <!-- Pills navigation (hidden on mobile) -->
+  <div class="hidden md:block absolute bottom-10 left-1/2 -translate-x-1/2 w-full md:w-auto px-4 z-10">
+    <div class="flex flex-nowrap justify-center gap-4 md:gap-5 lg:gap-6">
+      <a href="#research" class="pill text-sm px-3 py-1.5 whitespace-nowrap">Research</a>
+      <a href="#pain" class="pill text-sm px-3 py-1.5 whitespace-nowrap">Pain descriptors</a>
+      <a href="#app" class="pill text-sm px-3 py-1.5 whitespace-nowrap">Explain my Pain App</a>
+      <a href="#testimonials" class="pill text-sm px-3 py-1.5 whitespace-nowrap">Testimonials</a>
+      <a href="#media" class="pill text-sm px-3 py-1.5 whitespace-nowrap">Media</a>
+    </div>
   </div>
-</div>
+</section>
+
 
 <section id="about" class="bg-white text-gray-800 py-20 px-6 md:px-16 lg:px-32 text-center space-y-6" data-aos="fade-up">
   <h2 class="text-3xl md:text-4xl font-semibold text-[#b91c1c]">About the Project</h2>
@@ -161,9 +164,10 @@
   <p class="max-w-3xl mx-auto leading-relaxed">
     What started as academic research evolved into a wider advocacy project, amplifying the voices of those whose pain had long been invisible. It brought together science, storytelling, and empathy to influence awareness, education, and healthcare communication.
   </p>
-  <p class="max-w-3xl mx-auto leading-relaxed">
-    Today, The Language of Endometriosis continues as a digital initiative, translating research insights into tools that make invisible pain visible — from public resources to the Explain My Pain app. It stands as a bridge between lived experience, linguistic knowledge, and technology.
-  </p>
+ <p class="max-w-3xl mx-auto leading-relaxed">
+  Today, The Language of Endometriosis continues as a digital initiative, translating research insights into tools that make invisible pain visible, from public resources to the Explain My Pain app. It stands as a bridge between lived experience, linguistic knowledge, and technology.
+</p>
+
 </section>
 
 <section id="themes" class="bg-gray-50 py-20 px-6 md:px-16 lg:px-32" data-aos="fade-up">
@@ -198,264 +202,78 @@
   </div>
 </section>
 
-
-  <main class="max-w-5xl mx-auto px-6 md:px-10 py-8 space-y-12">
-
-    <section id="about" class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">About the Project</h2>
-      <p class="text-gray-700 mb-4"><strong>The Language of Endometriosis</strong> brings together linguistics, health communication, and digital tools to better understand and express invisible, complex pain.</p>
-      <p class="text-gray-700">Led by <strong>Dr Stella Bullo</strong>, this work spans peer-reviewed research, public writing, a custom dataset, and a metaphor-tagging web app to support patients and clinicians.</p>
-    </section>
-
-    <section id="publications" class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-6">Peer-Reviewed Publications</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <!-- Each article as card -->
-        <a href="https://doi.org/10.1016/j.jpain.2024.104733" target="_blank" class="block border border-gray-200 p-4 rounded-lg hover:bg-indigo-50">
-          <h3 class="font-semibold text-gray-800 text-sm">Metaphorical Markers of Pain Catastrophizing...</h3>
-        </a>
-        <a href="https://doi.org/10.1111/bjhp.12720" target="_blank" class="block border border-gray-200 p-4 rounded-lg hover:bg-indigo-50">
-          <h3 class="font-semibold text-gray-800 text-sm">Visual Reconstructions of Endometriosis Pain...</h3>
-        </a>
-        <a href="https://www.tandfonline.com/doi/full/10.1080/10810730.2023.2299003" target="_blank" class="block border border-gray-200 p-4 rounded-lg hover:bg-indigo-50">
-          <h3 class="font-semibold text-gray-800 text-sm">A COM-B and TDF Mapping of Barriers...</h3>
-        </a>
-        <a href="https://doi.org/10.1558/cam.18391" target="_blank" class="block border border-gray-200 p-4 rounded-lg hover:bg-indigo-50">
-          <h3 class="font-semibold text-gray-800 text-sm">Agency in Endometriosis Pain Communication...</h3>
-        </a>
-        <a href="https://doi.org/10.1075/msw.00004.bul" target="_blank" class="block border border-gray-200 p-4 rounded-lg hover:bg-indigo-50">
-          <h3 class="font-semibold text-gray-800 text-sm">The Bloodiness and Horror of It...</h3>
-        </a>
-        <a href="https://doi.org/10.3389/fgwh.2021.764693" target="_blank" class="block border border-gray-200 p-4 rounded-lg hover:bg-indigo-50">
-          <h3 class="font-semibold text-gray-800 text-sm">Addressing Challenges in Endometriosis Pain Communication...</h3>
-        </a>
-        <a href="https://doi.org/10.1111/bjhp.12472" target="_blank" class="block border border-gray-200 p-4 rounded-lg hover:bg-indigo-50">
-          <h3 class="font-semibold text-gray-800 text-sm">Parallel Worlds and Personified Pain...</h3>
-        </a>
-        <a href="https://doi.org/10.1177/1363459318800161" target="_blank" class="block border border-gray-200 p-4 rounded-lg hover:bg-indigo-50">
-          <h3 class="font-semibold text-gray-800 text-sm">I Feel Like I'm Being Stabbed by a Thousand Tiny Men...</h3>
-        </a>
-        <a href="https://doi.org/10.1515/mc-2018-0006" target="_blank" class="block border border-gray-200 p-4 rounded-lg hover:bg-indigo-50">
-          <h3 class="font-semibold text-gray-800 text-sm">Fight Like a Girl: Tattoos as Identity Constructions...</h3>
-        </a>
-        <a href="https://doi.org/10.1177/1750481318780809" target="_blank" class="block border border-gray-200 p-4 rounded-lg hover:bg-indigo-50">
-          <h3 class="font-semibold text-gray-800 text-sm">Exploring Disempowerment in Women's Accounts...</h3>
-        </a>
-      </div>
-      <div class="mt-6 flex flex-wrap gap-4">
-        <a href="src/endometriosis_references.pdf" target="_blank" class="bg-indigo-600 text-white px-4 py-2 rounded-md hover:bg-indigo-700 text-sm">Full References (APA)</a>
-        <a href="/writing/reflections/endo-publications-summaries.html" class="border border-indigo-600 text-indigo-700 px-4 py-2 rounded-md hover:bg-indigo-50 text-sm">Summary of Articles</a>
-      </div>
-    </section>
-
-    <section id="public" class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Articles for the Public</h2>
-      <ul class="list-disc pl-5 space-y-2 text-gray-700">
-        <li><a href="/writing/why-metaphors-matter-endometriosis-diagnosis.html" target="_blank" class="text-indigo-600 hover:underline">Why Metaphors Matter in Endometriosis Diagnosis</a></li>
-      </ul>
-    </section>
-
-<section id="history" class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
-  <h2 class="text-2xl font-semibold text-indigo-700 mb-3">Project History</h2>
-  <p class="text-gray-700">From first corpus insights to current tools and collaborations.</p>
-</section>
-
-<section id="events" class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
-  <h2 class="text-2xl font-semibold text-indigo-700 mb-3">Events</h2>
-  <p class="text-gray-700">Talks, workshops and demos.</p>
-</section>
-
-<section id="artifacts" class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
-  <div class="flex items-start justify-between gap-4">
-    <h2 class="text-2xl font-semibold text-indigo-700">Visual Artefacts</h2>
-    <span class="text-xs px-2 py-1 rounded-full bg-yellow-50 text-yellow-800 border border-yellow-200">Some images contain medical content</span>
-  </div>
-  <p class="text-gray-700 mt-2 mb-6">A selection of visuals used to communicate lived experience, clinical context, and language patterns of endometriosis pain.</p>
-
-  <!-- Gallery grid -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-    <!-- 1. Curled posture -->
-    <figure class="group relative overflow-hidden rounded-lg border border-gray-100 shadow-sm">
-      <img src="/assets/endo/ardalan-hamedani-_h3j4ZrkSJM-unsplash.jpg" alt="Person in curled posture on the floor, eyes closed — a common pain posture in endometriosis." class="w-full h-64 object-cover transition group-hover:scale-[1.02]" loading="lazy">
-      <figcaption class="px-4 py-3 text-sm text-gray-700">
-        Curled posture during flare-up <span class="text-gray-400">· stock photo (credit on hover)</span>
-      </figcaption>
-      <div class="absolute top-2 right-2 text-[10px] bg-white/80 backdrop-blur px-2 py-1 rounded border border-gray-200 text-gray-600 opacity-0 group-hover:opacity-100">Photo by Ardalan Hamedani (Unsplash)</div>
-    </figure>
-
-    <!-- 2. Post-op drain (graphic) with click-to-reveal -->
-    <figure class="relative overflow-hidden rounded-lg border border-gray-100 shadow-sm">
-      <button id="reveal-med" class="absolute inset-0 z-10 bg-gray-900/70 text-white text-sm flex items-center justify-center px-4 text-center">
-        This image contains post-operative content. Click to view.
-      </button>
-      <img id="med-img" src="/assets/endo/Picture1.jpg" alt="Abdomen post-operative dressings and drain after endometriosis surgery." class="w-full h-64 object-cover blur-sm transition" loading="lazy" aria-hidden="true">
-      <figcaption class="px-4 py-3 text-sm text-gray-700">
-        Post-operative drain after laparoscopic excision
-      </figcaption>
-    </figure>
-
-    <!-- 3. Uterus on fire (metaphor illustration) -->
-    <figure class="group relative overflow-hidden rounded-lg border border-gray-100 shadow-sm">
-      <img src="/assets/endo/fire-womb.png" alt="Watercolor illustration of uterus with flames inside — metaphor of burning pelvic pain." class="w-full h-64 object-cover transition group-hover:scale-[1.02]" loading="lazy">
-      <figcaption class="px-4 py-3 text-sm text-gray-700">
-        “Burning womb” metaphor — illustration
-      </figcaption>
-    </figure>
-
-    <!-- 4. Words on dark (intensity & quality terms) -->
-    <figure class="group relative overflow-hidden rounded-lg border border-gray-100 shadow-sm lg:col-span-2">
-      <img src="/assets/endo/ChatGPT Image Oct 23, 2025, 07_52_51 PM.png" alt="Dark typographic board with pain words like agony, stabbing, cramping — collected descriptors." class="w-full h-64 object-cover transition group-hover:scale-[1.02]" loading="lazy">
-      <figcaption class="px-4 py-3 text-sm text-gray-700">
-        Pain descriptors on a dark board — early typographic study
-      </figcaption>
-    </figure>
-  </div>
-
-  <!-- Simple lightbox modal (click any image) -->
-  <dialog id="lb" class="rounded-xl p-0 backdrop:bg-black/70">
-    <div class="relative bg-black">
-      <button id="lb-close" class="absolute top-3 right-3 bg-white/90 hover:bg-white rounded-full px-3 py-1 text-xs">Close</button>
-      <img id="lb-img" src="" alt="" class="max-h-[80vh] w-auto mx-auto">
-      <div id="lb-cap" class="text-white/80 text-sm px-4 py-3"></div>
-    </div>
-  </dialog>
-</section>
-
-
-<section id="conversations" class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
-  <h2 class="text-2xl font-semibold text-indigo-700 mb-3">Conversation Articles</h2>
-  <p class="text-gray-700">Short pieces that bridge research and lived experience.</p>
-</section>
-
-<section id="whitepapers" class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
-  <h2 class="text-2xl font-semibold text-indigo-700 mb-3">White Papers</h2>
-  <ul class="list-disc pl-5 space-y-2 text-gray-700">
-    <li><a href="#" class="text-indigo-600 hover:underline">Explain My Pain – Product & Method (PDF)</a></li>
-  </ul>
-</section>
-
-<section id="forums" class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
-  <h2 class="text-2xl font-semibold text-indigo-700 mb-3">Support & Community</h2>
-  <p class="text-gray-700">Selected, reputable support organisations and forums for endometriosis.</p>
-</section>
-
-
-
-<!-- TESTIMONIALS -->
-<section id="testimonials" class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
-  <h2 class="text-2xl font-semibold text-indigo-700 mb-3">Narrative Stretches</h2>
-  <p class="text-gray-700 mb-6">
-    These excerpts were shared by participants describing what pain feels like in lived experience.
-    They demonstrate how language itself becomes a tool for survival and understanding.
+<!-- FROM WORDS TO ACTION -->
+<section id="resources"
+  class="bg-gradient-to-b from-[#fdf5dc] to-[#fffaf0] py-16 sm:py-20 px-6 md:px-16 lg:px-32 text-center"
+  data-aos="fade-up"
+>
+  <h2 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-[#b91c1c]">
+    From Words to Action
+  </h2>
+  <p class="text-gray-700 max-w-2xl mx-auto mt-3 sm:mt-4 mb-10 sm:mb-12">
+    How linguistic research becomes data, insight, and technology.
   </p>
 
-  <div class="space-y-4">
-    <!-- 1 -->
-    <details class="group border border-gray-200 rounded-lg p-4">
-      <summary class="flex justify-between items-center cursor-pointer">
-        <span class="font-medium text-gray-800 group-hover:text-indigo-700">
-          “Like a rope tightening around my insides...”
-        </span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-      </summary>
-      <blockquote class="mt-3 text-gray-700 text-sm leading-relaxed border-l-4 border-indigo-300 pl-4">
-        “It’s as if ropes are tied tightly around my organs and someone keeps pulling down. Every movement feels like resistance.”
-      </blockquote>
-    </details>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
 
-    <!-- 2 -->
-    <details class="group border border-gray-200 rounded-lg p-4">
-      <summary class="flex justify-between items-center cursor-pointer">
-        <span class="font-medium text-gray-800 group-hover:text-indigo-700">
-          “Like fire under my skin...”
-        </span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-      </summary>
-      <blockquote class="mt-3 text-gray-700 text-sm leading-relaxed border-l-4 border-amber-400 pl-4">
-        “The burning never stops—like fire trapped under my skin, radiating outward and taking over everything I try to do.”
-      </blockquote>
-    </details>
+    <!-- Card 1: Dataset of Pain Metaphors -->
+    <article class="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden flex flex-col">
+      <div class="relative w-full aspect-[16/10]">
+        <img src="./assets/card-dataset.png" alt="Visual of pain metaphors dataset"
+             class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+      </div>
+      <div class="p-6 sm:p-7 flex-1 flex flex-col items-center text-center">
+        <h3 class="text-lg sm:text-xl font-semibold text-[#b91c1c]">Dataset of Pain Metaphors</h3>
+        <p class="text-gray-700 mt-2 sm:mt-3">
+          Explore how people describe endometriosis pain — metaphors, sensations, and embodied language.
+        </p>
+        <a href="#pain"
+           class="pill mt-4 sm:mt-6 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b91c1c]/60 border border-[#F5B91D]">
+          Explore Dataset
+        </a>
+      </div>
+    </article>
 
-    <!-- 3 -->
-    <details class="group border border-gray-200 rounded-lg p-4">
-      <summary class="flex justify-between items-center cursor-pointer">
-        <span class="font-medium text-gray-800 group-hover:text-indigo-700">
-          “The body becomes its own battlefield...”
-        </span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-      </summary>
-      <blockquote class="mt-3 text-gray-700 text-sm leading-relaxed border-l-4 border-rose-400 pl-4">
-        “Every flare is a fight between parts of myself—one side enduring, the other side surrendering.”
-      </blockquote>
-    </details>
+    <!-- Card 2: Research, Articles & Media -->
+    <article class="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden flex flex-col">
+      <div class="relative w-full aspect-[16/10]">
+        <img src="./assets/card-research.png" alt="Research article and media collage"
+             class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+      </div>
+      <div class="p-6 sm:p-7 flex-1 flex flex-col items-center text-center">
+        <h3 class="text-lg sm:text-xl font-semibold text-[#b91c1c]">Research, Articles &amp; Media</h3>
+        <p class="text-gray-700 mt-2 sm:mt-3">
+          Read studies, the white paper, essays, and media that connect linguistics, empathy, and care.
+        </p>
+        <a href="#articles"
+           class="pill mt-4 sm:mt-6 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b91c1c]/60 border border-[#F5B91D]">
+          Browse Publications
+        </a>
+      </div>
+    </article>
 
-    <!-- 4 -->
-    <details class="group border border-gray-200 rounded-lg p-4">
-      <summary class="flex justify-between items-center cursor-pointer">
-        <span class="font-medium text-gray-800 group-hover:text-indigo-700">
-          “After surgery, the silence of the body felt louder than pain...”
-        </span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-      </summary>
-      <blockquote class="mt-3 text-gray-700 text-sm leading-relaxed border-l-4 border-gray-400 pl-4">
-        “The quiet afterwards was eerie. I realised how long I had lived with noise—pain as a constant hum, now replaced by cautious silence.”
-      </blockquote>
-    </details>
+    <!-- Card 3: Explain My Pain App -->
+    <article class="bg-white rounded-2xl shadow-md hover:shadow-lg transition overflow-hidden flex flex-col">
+      <div class="relative w-full aspect-[16/10]">
+        <img src="./assets/card-app.png" alt="Preview of the Explain My Pain app interface"
+             class="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+      </div>
+      <div class="p-6 sm:p-7 flex-1 flex flex-col items-center text-center">
+        <h3 class="text-lg sm:text-xl font-semibold text-[#b91c1c]">Explain My Pain App</h3>
+        <p class="text-gray-700 mt-2 sm:mt-3">
+          A bilingual tool that helps patients and clinicians communicate pain clearly and humanely.
+        </p>
+        <a href="https://explainmypain.app" target="_blank" rel="noopener"
+           class="pill mt-4 sm:mt-6 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b91c1c]/60 border border-[#F5B91D]">
+          Visit App
+        </a>
+      </div>
+    </article>
 
-    <!-- 5 -->
-    <details class="group border border-gray-200 rounded-lg p-4">
-      <summary class="flex justify-between items-center cursor-pointer">
-        <span class="font-medium text-gray-800 group-hover:text-indigo-700">
-          “Some days I feel like a story half-told...”
-        </span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 group-open:rotate-180 transition-transform" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
-      </summary>
-      <blockquote class="mt-3 text-gray-700 text-sm leading-relaxed border-l-4 border-indigo-300 pl-4">
-        “Because so few words capture this illness, I borrow metaphors, stretch them until they almost fit. The story is still becoming.”
-      </blockquote>
-    </details>
   </div>
-
-  <p class="mt-8 text-xs text-gray-500 text-center">
-    If you are affected by the themes in these narratives and need support,
-    you can reach out to <a href="https://endometriosis.org/resources/support-groups/" target="_blank" class="text-indigo-600 hover:underline">verified endometriosis support organisations</a>.
-  </p>
 </section>
 
 
-    <section id="dataset" class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Pain Descriptions Dataset</h2>
-      <p class="text-gray-700">Coming soon: a visual gallery and downloadable dataset of real pain metaphors used by people with endometriosis, organized by theme and function.</p>
-    </section>
-
-    <section id="app" class="bg-white rounded-lg shadow p-6 md:p-10" data-aos="fade-up">
-      <h2 class="text-2xl font-semibold text-indigo-700 mb-4">Explain My Pain App</h2>
-      <p class="text-gray-700 mb-4">A tool that tags metaphorical pain expressions with experiential, emotional, and clinical insight — helping patients communicate better and clinicians understand more clearly.</p>
-     <a href="https://stellabullo.com/apps/explain-my-pain.html" target="_blank" class="text-indigo-600 hover:underline">Go to live app</a> 
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-<footer id="footer" class="bg-indigo-50 border-t border-gray-200 py-10 px-6">
-  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-700">
-    <div class="flex items-center gap-2 text-indigo-700 font-medium">
-      <i data-lucide="mail" class="w-5 h-5"></i>
-      <a href="mailto:info@stellabullo.com" class="hover:underline">info@stellabullo.com</a>
-    </div>
-    <div class="flex flex-wrap justify-center gap-6 items-center text-indigo-700">
-      <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" class="hover:text-indigo-900 flex items-center gap-1">
-        <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
-      </a>
-      <a href="https://ko-fi.com/stellabullo" target="_blank" class="hover:text-indigo-900 flex items-center gap-1">
-        <i data-lucide="coffee" class="w-5 h-5"></i> Ko-fi
-      </a>
-      <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" class="hover:text-indigo-900">ORCID</a>
-    </div>
-    <div class="text-xs text-gray-500 text-center md:text-right">
-      &copy; 2025 Stella Bullo
-    </div>
-  </div>
-</footer>
 
 
 <!-- Scroll-to-top -->
