@@ -61,23 +61,21 @@
 </head>
 
 <body>
-  <!-- NAV -->
-<nav class="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-[2px] border-b border-white/20 shadow-[0_2px_10px_rgba(0,0,0,0.15)]">
-  <div class="max-w-wrap flex items-center justify-between py-4">
+  <nav class="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-[2px] border-b border-white/20 shadow-[0_2px_10px_rgba(0,0,0,0.15)]">
+  <div class="max-w-[95%] mx-auto flex items-center justify-between py-4 px-6">
     <!-- Left: name -->
     <a href="/index.html" class="flex items-center gap-2 text-white font-semibold hover:text-endoYellow transition">
-     
       <span>Stella Bullo</span>
     </a>
 
     <!-- Right: menu -->
-    <ul class="hidden md:flex items-center gap-6 text-sm font-medium text-white">
+    <ul class="hidden md:flex items-center gap-10 text-sm font-medium text-white tracking-wide">
       <li><a href="#about" class="hover:text-endoYellow transition">About</a></li>
       <li><a href="#deliverables" class="hover:text-endoYellow transition">Deliverables</a></li>
       <li><a href="#testimonials" class="hover:text-endoYellow transition">Testimonials</a></li>
       <li>
         <a href="#get-involved"
-           class="px-4 py-2 rounded-full bg-endoYellow text-gray-900 hover:bg-endoTeal hover:text-white transition">
+           class="px-5 py-2 rounded-full bg-endoYellow text-gray-900 hover:bg-endoTeal hover:text-white transition font-semibold">
            Get Involved
         </a>
       </li>
@@ -100,7 +98,7 @@
       <li><a href="#testimonials" class="hover:text-endoYellow transition">Testimonials</a></li>
       <li>
         <a href="#get-involved"
-           class="px-4 py-2 rounded-full bg-endoYellow text-gray-900 hover:bg-endoTeal hover:text-white transition">
+           class="px-5 py-2 rounded-full bg-endoYellow text-gray-900 hover:bg-endoTeal hover:text-white transition font-semibold">
            Get Involved
         </a>
       </li>
@@ -110,55 +108,95 @@
 
 
 
-
   <!-- HERO -->
-<section class="hero relative min-h-screen flex flex-col justify-center overflow-hidden">
-  <!-- background image -->
+<section class="relative min-h-[100svh] h-screen overflow-hidden">
+  <!-- Background image -->
   <div class="absolute inset-0">
-    <img src="./assets/ardalan-hamedani-woman-in-pain.jpg" alt="Woman in pain"
-         class="w-full h-full object-cover object-center opacity-80" />
-    <div class="absolute inset-0 bg-black/40"></div> <!-- dark overlay -->
+    <img
+      src="./assets/ardalan-hamedani-woman-in-pain.jpg"
+      alt="Woman in pain"
+      class="w-full h-full object-cover object-center"
+    />
+    <!-- Gradient overlay: top→bottom on mobile, left→right on md+ -->
+    <div class="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-black/30 via-black/60 to-black/80"></div>
   </div>
 
-  <!-- Right-aligned text (desktop); centers on mobile -->
-<div class="relative z-10 max-w-wrap">
-  <div class="relative md:absolute md:right-[8vw] md:top-[16vh] md:max-w-[520px] text-center md:text-right mx-auto md:mx-0">
+  <!-- Text block -->
+  <div class="relative z-10 flex items-center justify-center md:justify-end h-full 
+              px-4 sm:px-8 md:px-16 lg:px-24 text-center md:text-right">
+    <div class="max-w-md sm:max-w-lg mt-[-2rem] sm:mt-[-1rem] md:mt-0">
+      <h2 class="text-[#f4d03f] font-[IM_Fell_English_SC] 
+                 text-2xl sm:text-3xl md:text-4xl tracking-widest leading-tight">
+        The Language of
+      </h2>
+      <h1 class="font-[Creepster] text-[#b91c1c] 
+                 text-4xl sm:text-5xl md:text-7xl drop-shadow-[0_4px_10px_rgba(0,0,0,0.9)] leading-none">
+        ENDOMETRIOSIS
+      </h1>
+      <p class="text-gray-100 text-base sm:text-lg md:text-xl italic pt-4 tracking-wide max-w-xs sm:max-w-none mx-auto md:mx-0">
+        Turning invisible pain into words
+      </p>
+    </div>
+  </div>
 
-    <!-- Logo slightly lower & to the left of the text -->
-    <img
-      src="./assets/logo-short.png"
-      alt="Project logo"
-      class="absolute -left-20 top-6 w-24 md:w-36 lg:w-44 drop-shadow-[0_6px_18px_rgba(0,0,0,0.35)] pointer-events-none select-none"
-    />
-
-    <!-- Smaller H1, forced to two lines -->
-    <h1 class="font-bold text-white leading-tight tracking-wide
-               text-3xl md:text-4xl lg:text-[44px]">
-      <span class="block">THE LANGUAGE OF</span>
-      <span class="block">ENDOMETRIOSIS</span>
-    </h1>
-
-    <!-- Smaller, single-line tagline -->
-    <p class="mt-2 text-endoYellow font-medium text-sm md:text-base">
-      Turning invisible pain into words
-    </p>
+<!-- Pills navigation (hidden on mobile) -->
+<div class="hidden md:block absolute bottom-10 left-1/2 -translate-x-1/2 w-full md:w-auto px-4 z-10">
+  <div class="flex flex-nowrap justify-center gap-4 md:gap-5 lg:gap-6">
+    <a href="#research" class="pill text-sm px-3 py-1.5 whitespace-nowrap">Research</a>
+    <a href="#pain" class="pill text-sm px-3 py-1.5 whitespace-nowrap">Pain descriptors</a>
+    <a href="#app" class="pill text-sm px-3 py-1.5 whitespace-nowrap">Explain my Pain App</a>
+    <a href="#testimonials" class="pill text-sm px-3 py-1.5 whitespace-nowrap">Testimonials</a>
+    <a href="#media" class="pill text-sm px-3 py-1.5 whitespace-nowrap">Media</a>
   </div>
 </div>
 
-
-  <!-- Pills -->
-  <div class="relative z-10 mt-12 flex flex-wrap justify-center gap-4 px-4">
-    <a href="#research" class="pill">Research</a>
-    <a href="#pain" class="pill">Pain descriptors</a>
-    <a href="#app" class="pill">Explain my Pain App</a>
-    <a href="#testimonials" class="pill">Testimonials</a>
-    <a href="#media" class="pill">Media</a>
-  </div>
+<section id="about" class="bg-white text-gray-800 py-20 px-6 md:px-16 lg:px-32 text-center space-y-6" data-aos="fade-up">
+  <h2 class="text-3xl md:text-4xl font-semibold text-[#b91c1c]">About the Project</h2>
+  <p class="max-w-3xl mx-auto leading-relaxed">
+    The Language of Endometriosis began as a linguistic investigation into how people describe chronic pain when ordinary words are not enough.
+  </p>
+  <p class="max-w-3xl mx-auto leading-relaxed">
+    Through research on metaphors, narratives, and patient communication, it explored the ways language shapes understanding, or misunderstanding, of endometriosis.
+  </p>
+  <p class="max-w-3xl mx-auto leading-relaxed">
+    What started as academic research evolved into a wider advocacy project, amplifying the voices of those whose pain had long been invisible. It brought together science, storytelling, and empathy to influence awareness, education, and healthcare communication.
+  </p>
+  <p class="max-w-3xl mx-auto leading-relaxed">
+    Today, The Language of Endometriosis continues as a digital initiative, translating research insights into tools that make invisible pain visible — from public resources to the Explain My Pain app. It stands as a bridge between lived experience, linguistic knowledge, and technology.
+  </p>
 </section>
 
+<section id="themes" class="bg-gray-50 py-20 px-6 md:px-16 lg:px-32" data-aos="fade-up">
+  <h2 class="text-3xl md:text-4xl font-semibold text-[#b91c1c] text-center mb-12">Four Voices of Endometriosis</h2>
+  
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+    
+    <!-- Invisibility -->
+    <div class="bg-[#f9fafb] border-l-4 border-gray-400 p-6 rounded-lg shadow-sm hover:shadow-md transition">
+      <h3 class="text-gray-600 font-semibold uppercase tracking-widest mb-2">Invisibility</h3>
+      <p class="italic text-gray-700">“That’s the problem with invisible disease. No one knows what we really deal with from day to day.”</p>
+    </div>
 
+    <!-- Suffering -->
+    <div class="bg-[#fff5f5] border-l-4 border-[#b91c1c] p-6 rounded-lg shadow-sm hover:shadow-md transition">
+      <h3 class="text-[#b91c1c] font-semibold uppercase tracking-widest mb-2">Suffering</h3>
+      <p class="italic text-gray-800">“It feels as though my pelvic organs are being carved out with a white-hot yet dull spoon. Sometimes I imagine my uterus trying to claw its way out of my body.”</p>
+    </div>
 
+    <!-- Cry for Help -->
+    <div class="bg-[#f0fdf4] border-l-4 border-[#059669] p-6 rounded-lg shadow-sm hover:shadow-md transition">
+      <h3 class="text-[#047857] font-semibold uppercase tracking-widest mb-2">Cry for Help</h3>
+      <p class="italic text-gray-800">“The next time you hear about endometriosis, please remember how devastating this disease can be… treat them with respect and compassion.”</p>
+    </div>
 
+    <!-- Relief of Diagnosis -->
+    <div class="bg-[#fffbea] border-l-4 border-[#f4d03f] p-6 rounded-lg shadow-sm hover:shadow-md transition">
+      <h3 class="text-[#a16207] font-semibold uppercase tracking-widest mb-2">Relief of Diagnosis</h3>
+      <p class="italic text-gray-800">“Having a diagnosis was a relief. It meant I wasn’t making things up or exaggerating. I was finally validated in my experiences.”</p>
+    </div>
+
+  </div>
+</section>
 
 
   <main class="max-w-5xl mx-auto px-6 md:px-10 py-8 space-y-12">
