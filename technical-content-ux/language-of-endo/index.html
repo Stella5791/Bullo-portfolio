@@ -52,10 +52,21 @@
       .hero-tag  { @apply mt-2 text-lg md:text-xl font-medium text-endoYellow; }
       .hero-logo { @apply w-32 md:w-40 mx-auto mb-6; }
     }
-    @layer utilities {
-      .max-w-wrap { @apply max-w-6xl mx-auto px-6 md:px-10; }
-    }
-  </style>
+    .perspective-\[1000px\] {
+    perspective: 1000px;
+  }
+  .flip-inner.is-flipped {
+    transform: rotateY(180deg);
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+</style>
+
+  <
 
   <!-- (Optional) Icons – keep only if you actually use them -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
@@ -269,11 +280,116 @@
         </a>
       </div>
     </article>
-
   </div>
 </section>
 
+<!-- NARRATIVES OF PAIN (Flip Cards) -->
+<section id="narratives" class="bg-white py-20 px-6 md:px-16 lg:px-32">
+  <h2 class="text-3xl md:text-4xl font-semibold text-[#b91c1c] text-center">Narratives of pain</h2>
+  <p class="text-gray-700 max-w-2xl mx-auto text-center mt-3">
+    These excerpts were shared by participants describing what pain feels like in lived experience.
+  </p>
 
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-6xl mx-auto">
+
+    <!-- CARD -->
+    <div class="fperspective-[1000px]">
+      <div class="flip-inner relative h-56 rounded-2xl shadow-md transition-transform duration-700 transform-gpu"
+           style="transform-style: preserve-3d;">
+        <!-- front -->
+        <div class="absolute inset-0 bg-[#fffaf0] border border-[#f5b91d]/40 rounded-2xl p-6 flex items-center justify-center text-center backface-hidden">
+          <p class="text-gray-800 font-medium">“Like a rope tightening around my insides…”</p>
+        </div>
+        <!-- back -->
+        <div class="absolute inset-0 bg-white border border-gray-200 rounded-2xl p-6 text-center rotate-y-180 backface-hidden">
+          <p class="text-gray-700">
+            “It’s as if ropes are tied tightly around my organs and someone keeps pulling down.
+            Every movement feels like resistance.”
+          </p>
+        </div>
+      </div>
+      <button type="button"
+        class="mt-3 w-full pill--ghost text-sm py-2 rounded-full"
+        aria-expanded="false">Flip</button>
+    </div>
+
+    <!-- CARD -->
+    <div class="flip-card perspective-[1200px]" data-flip>
+      <div class="flip-inner relative h-56 rounded-2xl shadow-md transition-transform duration-700 [transform-style:preserve-3d]">
+        <div class="flip-face flip-front absolute inset-0 bg-[#fffaf0] border border-endoYellow/40 rounded-2xl p-6
+                    flex items-center justify-center text-center">
+          <p class="text-gray-800 font-medium">“Like fire under my skin…”</p>
+        </div>
+        <div class="flip-face flip-back absolute inset-0 bg-white rounded-2xl p-6 text-center
+                    border border-gray-200">
+          <p class="text-gray-700">
+            “The burning never stops—like fire trapped under my skin, radiating outward
+            and taking over everything I try to do.”
+          </p>
+        </div>
+      </div>
+      <button type="button" class="mt-3 w-full pill--ghost text-sm py-2 rounded-full"
+              aria-expanded="false">Flip</button>
+    </div>
+
+    <!-- CARD -->
+    <div class="flip-card perspective-[1200px]" data-flip>
+      <div class="flip-inner relative h-56 rounded-2xl shadow-md transition-transform duration-700 [transform-style:preserve-3d]">
+        <div class="flip-face flip-front absolute inset-0 bg-[#fffaf0] border border-endoYellow/40 rounded-2xl p-6
+                    flex items-center justify-center text-center">
+          <p class="text-gray-800 font-medium">“The body becomes its own battlefield…”</p>
+        </div>
+        <div class="flip-face flip-back absolute inset-0 bg-white rounded-2xl p-6 text-center
+                    border border-gray-200">
+          <p class="text-gray-700">
+            “Every flare is a fight between parts of myself—one side enduring, the other side surrendering.”
+          </p>
+        </div>
+      </div>
+      <button type="button" class="mt-3 w-full pill--ghost text-sm py-2 rounded-full"
+              aria-expanded="false">Flip</button>
+    </div>
+
+    <!-- CARD -->
+    <div class="flip-card perspective-[1200px]" data-flip>
+      <div class="flip-inner relative h-56 rounded-2xl shadow-md transition-transform duration-700 [transform-style:preserve-3d]">
+        <div class="flip-face flip-front absolute inset-0 bg-[#fffaf0] border border-endoYellow/40 rounded-2xl p-6
+                    flex items-center justify-center text-center">
+          <p class="text-gray-800 font-medium">“After surgery, the silence of the body felt louder than pain…”</p>
+        </div>
+        <div class="flip-face flip-back absolute inset-0 bg-white rounded-2xl p-6 text-center
+                    border border-gray-200">
+          <p class="text-gray-700">
+            “The quiet afterwards was eerie. I realised how long I had lived with noise—pain as a constant hum,
+            now replaced by cautious silence.”
+          </p>
+        </div>
+      </div>
+      <button type="button" class="mt-3 w-full pill--ghost text-sm py-2 rounded-full"
+              aria-expanded="false">Flip</button>
+    </div>
+
+    <!-- CARD -->
+    <div class="flip-card perspective-[1200px]" data-flip>
+      <div class="flip-inner relative h-56 rounded-2xl shadow-md transition-transform duration-700 [transform-style:preserve-3d]">
+        <div class="flip-face flip-front absolute inset-0 bg-[#fffaf0] border border-endoYellow/40 rounded-2xl p-6
+                    flex items-center justify-center text-center">
+          <p class="text-gray-800 font-medium">“Some days I feel like a story half-told…”</p>
+        </div>
+        <div class="flip-face flip-back absolute inset-0 bg-white rounded-2xl p-6 text-center
+                    border border-gray-200">
+          <p class="text-gray-700">
+            “Because so few words capture this illness, I borrow metaphors, stretch them until they almost fit.
+            The story is still becoming.”
+          </p>
+        </div>
+      </div>
+      <button type="button" class="mt-3 w-full pill--ghost text-sm py-2 rounded-full"
+              aria-expanded="false">Flip</button>
+    </div>
+
+  </div>
+</section>
 
 
 <!-- Scroll-to-top -->
@@ -284,12 +400,15 @@
 
 <!-- Script to toggle mobile nav -->
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('navToggle');
-    const menu = document.getElementById('mobileNav');
-    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+ document.querySelectorAll('.flip-inner').forEach((card) => {
+    const btn = card.parentElement.querySelector('button');
+    btn.addEventListener('click', () => {
+      card.classList.toggle('is-flipped');
+      const flipped = card.classList.contains('is-flipped');
+      btn.setAttribute('aria-expanded', flipped);
+      btn.textContent = flipped ? 'Back' : 'Flip';
+    });
   });
-
 </script>
 </body>
 </html>
