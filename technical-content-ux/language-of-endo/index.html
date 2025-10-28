@@ -52,29 +52,19 @@
       .hero-tag  { @apply mt-2 text-lg md:text-xl font-medium text-endoYellow; }
       .hero-logo { @apply w-32 md:w-40 mx-auto mb-6; }
     }
-    .perspective-\[1000px\] {
-    perspective: 1000px;
-  }
-  .flip-inner.is-flipped {
-    transform: rotateY(180deg);
-  }
-  .backface-hidden {
-    backface-visibility: hidden;
-  }
-  .rotate-y-180 {
-    transform: rotateY(180deg);
-  }
+   
+  
+
 </style>
 
-  <
+  
 
   <!-- (Optional) Icons – keep only if you actually use them -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
 </head>
 
 <body>
-  <nav class="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-[2px] border-b border-white/20 shadow-[0_2px_10px_rgba(0,0,0,0.15)]">
-  <div class="max-w-[95%] mx-auto flex items-center justify-between py-4 px-6">
+  <nav class="fixed top-0 left-0 w-full z-50 bg-transparent backdrop-blur-[2px] border-b border-white/20 text-white transition-all duration-300"> <div class="max-w-[95%] mx-auto flex items-center justify-between py-4 px-6">
     <!-- Left: name -->
     <a href="/index.html" class="flex items-center gap-2 text-white font-semibold hover:text-endoYellow transition">
       <span>Stella Bullo</span>
@@ -283,113 +273,136 @@
   </div>
 </section>
 
-<!-- NARRATIVES OF PAIN (Flip Cards) -->
-<section id="narratives" class="bg-white py-20 px-6 md:px-16 lg:px-32">
-  <h2 class="text-3xl md:text-4xl font-semibold text-[#b91c1c] text-center">Narratives of pain</h2>
-  <p class="text-gray-700 max-w-2xl mx-auto text-center mt-3">
-    These excerpts were shared by participants describing what pain feels like in lived experience.
+<!-- EXPLAINING INVISIBLE PAIN -->
+<section id="explaining-pain" class="bg-white py-20 px-6 md:px-16 lg:px-32">
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-semibold text-[#b91c1c]">Explaining invisible pain</h2>
+    <p class="text-gray-700 mt-4">
+      Endometriosis pain is often invisible to others and difficult to describe with ordinary words.
+      People reach for images and comparisons to make the experience understandable.
+  Figurative language,  such as metaphors and similes, acts like a bridge between
+      what the body feels and what others can grasp.
+    <br/>
+      Here are some examples of how people with endometriosis use vivid, sensory language
+      to communicate their pain experience. For a full dataset of pain descriptors,
+      visit the <a href="#pain" class="text-endoTeal hover:underline">Explore Dataset section above</a>.
   </p>
+   
+  </div>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 max-w-6xl mx-auto">
+  <!-- Example cards -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12">
 
-    <!-- CARD -->
-    <div class="fperspective-[1000px]">
-      <div class="flip-inner relative h-56 rounded-2xl shadow-md transition-transform duration-700 transform-gpu"
-           style="transform-style: preserve-3d;">
-        <!-- front -->
-        <div class="absolute inset-0 bg-[#fffaf0] border border-[#f5b91d]/40 rounded-2xl p-6 flex items-center justify-center text-center backface-hidden">
-          <p class="text-gray-800 font-medium">“Like a rope tightening around my insides…”</p>
-        </div>
-        <!-- back -->
-        <div class="absolute inset-0 bg-white border border-gray-200 rounded-2xl p-6 text-center rotate-y-180 backface-hidden">
-          <p class="text-gray-700">
-            “It’s as if ropes are tied tightly around my organs and someone keeps pulling down.
-            Every movement feels like resistance.”
-          </p>
-        </div>
-      </div>
-      <button type="button"
-        class="mt-3 w-full pill--ghost text-sm py-2 rounded-full"
-        aria-expanded="false">Flip</button>
-    </div>
+    <!-- Sensory 1 -->
+    <article class="rounded-2xl border border-[#b91c1c]/20 bg-[#fff5f5] shadow-sm p-6">
+      <h3 class="text-sm uppercase tracking-widest text-[#b91c1c] mb-2">Sensory</h3>
+      <p class="italic text-gray-900">“Like fire under my skin…”</p>
+      <details class="mt-4 group">
+        <summary class="cursor-pointer text-sm text-[#b91c1c] hover:underline select-none">
+          Read full
+        </summary>
+        <p class="text-gray-700 mt-3">
+          “The burning never stops...like fire trapped under my skin, radiating outward
+          and taking over everything I try to do.”
+        </p>
+      </details>
+    </article>
 
-    <!-- CARD -->
-    <div class="flip-card perspective-[1200px]" data-flip>
-      <div class="flip-inner relative h-56 rounded-2xl shadow-md transition-transform duration-700 [transform-style:preserve-3d]">
-        <div class="flip-face flip-front absolute inset-0 bg-[#fffaf0] border border-endoYellow/40 rounded-2xl p-6
-                    flex items-center justify-center text-center">
-          <p class="text-gray-800 font-medium">“Like fire under my skin…”</p>
-        </div>
-        <div class="flip-face flip-back absolute inset-0 bg-white rounded-2xl p-6 text-center
-                    border border-gray-200">
-          <p class="text-gray-700">
-            “The burning never stops—like fire trapped under my skin, radiating outward
-            and taking over everything I try to do.”
-          </p>
-        </div>
-      </div>
-      <button type="button" class="mt-3 w-full pill--ghost text-sm py-2 rounded-full"
-              aria-expanded="false">Flip</button>
-    </div>
+    <!-- Sensory 2 -->
+    <article class="rounded-2xl border border-[#b91c1c]/20 bg-[#fff5f5] shadow-sm p-6">
+      <h3 class="text-sm uppercase tracking-widest text-[#b91c1c] mb-2">Sensory</h3>
+      <p class="italic text-gray-900">“Like a rope tightening around my insides…”</p>
+      <details class="mt-4 group">
+        <summary class="cursor-pointer text-sm text-[#b91c1c] hover:underline select-none">
+          Read full
+        </summary>
+        <p class="text-gray-700 mt-3">
+          “It’s as if ropes are tied tightly around my organs and someone keeps pulling down.
+          Every movement feels like resistance.”
+        </p>
+      </details>
+    </article>
 
-    <!-- CARD -->
-    <div class="flip-card perspective-[1200px]" data-flip>
-      <div class="flip-inner relative h-56 rounded-2xl shadow-md transition-transform duration-700 [transform-style:preserve-3d]">
-        <div class="flip-face flip-front absolute inset-0 bg-[#fffaf0] border border-endoYellow/40 rounded-2xl p-6
-                    flex items-center justify-center text-center">
-          <p class="text-gray-800 font-medium">“The body becomes its own battlefield…”</p>
-        </div>
-        <div class="flip-face flip-back absolute inset-0 bg-white rounded-2xl p-6 text-center
-                    border border-gray-200">
-          <p class="text-gray-700">
-            “Every flare is a fight between parts of myself—one side enduring, the other side surrendering.”
-          </p>
-        </div>
-      </div>
-      <button type="button" class="mt-3 w-full pill--ghost text-sm py-2 rounded-full"
-              aria-expanded="false">Flip</button>
-    </div>
-
-    <!-- CARD -->
-    <div class="flip-card perspective-[1200px]" data-flip>
-      <div class="flip-inner relative h-56 rounded-2xl shadow-md transition-transform duration-700 [transform-style:preserve-3d]">
-        <div class="flip-face flip-front absolute inset-0 bg-[#fffaf0] border border-endoYellow/40 rounded-2xl p-6
-                    flex items-center justify-center text-center">
-          <p class="text-gray-800 font-medium">“After surgery, the silence of the body felt louder than pain…”</p>
-        </div>
-        <div class="flip-face flip-back absolute inset-0 bg-white rounded-2xl p-6 text-center
-                    border border-gray-200">
-          <p class="text-gray-700">
-            “The quiet afterwards was eerie. I realised how long I had lived with noise—pain as a constant hum,
-            now replaced by cautious silence.”
-          </p>
-        </div>
-      </div>
-      <button type="button" class="mt-3 w-full pill--ghost text-sm py-2 rounded-full"
-              aria-expanded="false">Flip</button>
-    </div>
-
-    <!-- CARD -->
-    <div class="flip-card perspective-[1200px]" data-flip>
-      <div class="flip-inner relative h-56 rounded-2xl shadow-md transition-transform duration-700 [transform-style:preserve-3d]">
-        <div class="flip-face flip-front absolute inset-0 bg-[#fffaf0] border border-endoYellow/40 rounded-2xl p-6
-                    flex items-center justify-center text-center">
-          <p class="text-gray-800 font-medium">“Some days I feel like a story half-told…”</p>
-        </div>
-        <div class="flip-face flip-back absolute inset-0 bg-white rounded-2xl p-6 text-center
-                    border border-gray-200">
-          <p class="text-gray-700">
-            “Because so few words capture this illness, I borrow metaphors, stretch them until they almost fit.
-            The story is still becoming.”
-          </p>
-        </div>
-      </div>
-      <button type="button" class="mt-3 w-full pill--ghost text-sm py-2 rounded-full"
-              aria-expanded="false">Flip</button>
-    </div>
+    <!-- Emotional -->
+    <article class="rounded-2xl border border-endoTeal/30 bg-[#f0fdfa] shadow-sm p-6">
+      <h3 class="text-sm uppercase tracking-widest text-endoTeal mb-2">Emotional</h3>
+      <p class="italic text-gray-900">“Some days I feel like a story half-told…”</p>
+      <details class="mt-4 group">
+        <summary class="cursor-pointer text-sm text-endoTeal hover:underline select-none">
+          Read full
+        </summary>
+        <p class="text-gray-700 mt-3">
+          “Because so few words capture this illness, I borrow metaphors, stretch them until they almost fit.
+          The story is still becoming.”
+        </p>
+      </details>
+    </article>
 
   </div>
 </section>
+
+<!-- GET INVOLVED -->
+<section id="get-involved"
+  class="relative z-10 scroll-mt-[88px] bg-gradient-to-b from-[#fde49a] to-[#fff3c9] py-20 px-6 md:px-16 lg:px-32">
+
+  <div class="max-w-4xl mx-auto text-center">
+    <h2 class="text-3xl md:text-4xl font-semibold text-[#1f2937]">Help us grow the database</h2>
+    <p class="text-gray-700 mt-3">
+      Share your experience to improve communication and care. Choose one of the options below.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12 items-stretch">
+
+    <!-- Card 1: Describe your pain -->
+    <article class="h-full rounded-2xl bg-white shadow-md ring-1 ring-black/5 p-6 flex flex-col">
+      <div class="w-12 h-12 rounded-xl bg-[#f5b91d]/20 text-[#f5b91d] grid place-items-center mb-4 text-xl" aria-hidden="true">📝</div>
+      <h3 class="text-lg font-semibold text-gray-900">Send a description of how your pain feels</h3>
+      <p class="text-gray-700 mt-2 flex-1">
+        Use your own words—metaphors, comparisons, anything that helps others “get it”.
+      </p>
+      <a href="https://forms.gle/your-text-form" target="_blank" rel="noopener"
+         class="mt-5 inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#f5b91d] text-gray-900 font-medium hover:bg-[#0f8f8a] hover:text-white transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0f8f8a]/60">
+        Open form
+      </a>
+    </article>
+
+    <!-- Card 2: Images that represent your pain -->
+    <article class="h-full rounded-2xl bg-[#e6f7f6] shadow-md ring-1 ring-[#0f8f8a]/15 p-6 flex flex-col">
+      <div class="w-12 h-12 rounded-xl bg-[#0f8f8a]/15 text-[#0f8f8a] grid place-items-center mb-4 text-xl" aria-hidden="true">🖼️</div>
+      <h3 class="text-lg font-semibold text-gray-900">Send an image that represents your pain</h3>
+      <p class="text-gray-700 mt-2 flex-1">
+        A drawing, photo, or collage that shows how you visualise it. (JPG/PNG preferred)
+      </p>
+      <a href="https://forms.gle/your-image-form" target="_blank" rel="noopener"
+         class="mt-5 inline-flex items-center justify-center px-4 py-2 rounded-full bg-[#0f8f8a] text-white font-medium hover:bg-[#b91c1c] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0f8f8a]/60">
+        Upload image
+      </a>
+    </article>
+
+    <!-- Card 3: Narratives / advice -->
+    <article class="h-full rounded-2xl bg-[#b74127] text-white shadow-md p-6 flex flex-col">
+      <div class="w-12 h-12 rounded-xl bg-white/15 grid place-items-center mb-4 text-xl" aria-hidden="true">📖</div>
+      <h3 class="text-lg font-semibold">Share a short narrative or advice</h3>
+      <p class="text-white/90 mt-2 flex-1">
+        Tell us about an episode, a consultation, what helped, or what you wish others knew.
+      </p>
+      <a href="https://forms.gle/your-narrative-form" target="_blank" rel="noopener"
+         class="mt-5 inline-flex items-center justify-center px-4 py-2 rounded-full bg-white text-[#b74127] font-medium hover:bg-[#f5b91d] hover:text-gray-900 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70">
+        Submit story
+      </a>
+    </article>
+
+  </div>
+
+  <!-- microcopy -->
+  <div class="max-w-4xl mx-auto text-center text-sm text-gray-700 mt-10">
+    Submissions are <span class="font-medium">anonymous by default</span>. Please don’t include identifying details.
+    By contributing, you agree that your de-identified words/images may be used for research, education, and
+    communication resources. Questions? <a href="mailto:hello@stellabullo.com" class="underline">Contact us</a>.
+  </div>
+</section>
+
 
 
 <!-- Scroll-to-top -->
@@ -400,15 +413,20 @@
 
 <!-- Script to toggle mobile nav -->
 <script>
- document.querySelectorAll('.flip-inner').forEach((card) => {
-    const btn = card.parentElement.querySelector('button');
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('navToggle');
+    const menu = document.getElementById('mobileNav');
+
     btn.addEventListener('click', () => {
-      card.classList.toggle('is-flipped');
-      const flipped = card.classList.contains('is-flipped');
-      btn.setAttribute('aria-expanded', flipped);
-      btn.textContent = flipped ? 'Back' : 'Flip';
+      menu.classList.toggle('hidden');
     });
   });
 </script>
+
 </body>
 </html>
