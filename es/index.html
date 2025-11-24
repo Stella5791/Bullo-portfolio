@@ -1,381 +1,819 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Stella Bullo — Redacción técnica, de contenidos y UX, localización y anotación/evaluación. Escritura e investigación bilingüe EN/ES."/>
-  <meta name="author" content="Stella Bullo"/>
-  <link rel="alternate" hreflang="en" href="/"/>
-  <link rel="alternate" hreflang="es" href="/es/"/>
-  <title>Stella Bullo — Redacción Técnica, Contenidos, UX, Localización & Anotación</title>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stella Bullo Studio | Lingüista · Tecnología del lenguaje aplicada · NLP</title>
+  <meta
+    name="description"
+    content="Stella Bullo es lingüista especializada en metáfora, comunicación en salud y tecnología del lenguaje aplicada. Este studio reúne ensayos y dossiers de investigación sobre lenguaje, dolor, anotación y NLP explicable que alimentan proyectos como Explain My Pain, Sierra Codes y LinguaMind."
+  />
+  <meta name="author" content="Stella Bullo" />
 
-  <!-- Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Canonical & hreflang -->
+  <link rel="canonical" href="https://stellabullo.com/es/" />
+  <link rel="alternate" hreflang="en" href="https://stellabullo.com/" />
+  <link rel="alternate" hreflang="es" href="https://stellabullo.com/es/" />
+  <link rel="alternate" hreflang="x-default" href="https://stellabullo.com/" />
 
-  <!-- Tailwind -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui','Segoe UI','Roboto','Helvetica Neue','Arial','sans-serif'] },
-          colors: {
-            brand: { 50:'#FFFFFF', 100:'#EDF3FB', 200:'#CBE3EF', 500:'#5AA8D6', 800:'#3A4163' },
-            ink:   { 900:'#14161f' }
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
           },
-          boxShadow: { card:'0 10px 24px rgba(58,65,99,0.08)', soft:'0 6px 16px rgba(58,65,99,0.06)' },
-          borderRadius: { xl2:'1.25rem' }
-        }
-      }
-    }
+        },
+      },
+    };
   </script>
 
-  <!-- Icons -->
-  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
-
+  <!-- Global smooth scroll -->
   <style>
-    html{scroll-behavior:smooth}
-    .card{transition:transform .2s ease, box-shadow .2s ease}
-    .card:hover{transform:translateY(-3px); box-shadow:0 14px 32px rgba(58,65,99,.10)}
-    .btn{transition:all .2s ease}
-    .btn:active{transform:translateY(1px)}
+    html {
+      scroll-behavior: smooth;
+    }
   </style>
+
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
 
-<body class="bg-brand-50 text-brand-800 font-sans antialiased">
-<a id="top" class="block"></a>
+<body class="bg-stone-50 text-stone-900 font-sans antialiased">
+  <div class="min-h-screen flex flex-col">
 
-<!-- NAV -->
-<nav class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-brand-100">
-  <div class="max-w-7xl mx-auto px-4 py-3 flex items-center">
-    <!-- IZQUIERDA: marca -->
-    <a href="/es/" class="text-lg font-semibold tracking-tight text-brand-500">Stella Bullo</a>
+    <header class="border-b border-stone-200 bg-white/80 backdrop-blur">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="flex h-16 items-center justify-between">
 
-    <!-- DERECHA (desktop) -->
-    <ul class="hidden md:flex items-center gap-5 text-sm ml-auto">
-      <!-- Escritura -->
-      <li class="relative" id="writing-menu-es">
-        <button id="writing-trigger-es" type="button"
-          class="inline-flex items-center gap-1 px-2 py-1 rounded-md hover:text-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-200"
-          aria-haspopup="true" aria-expanded="false" aria-controls="writing-popover-es">
-          Escritura <i data-lucide="chevron-down" class="w-4 h-4"></i>
-        </button>
-        <div id="writing-popover-es"
-          class="invisible opacity-0 pointer-events-none absolute left-0 mt-2 w-56 z-[60]
-                 rounded-lg border border-brand-100 bg-white shadow-soft ring-1 ring-black/5
-                 transition transform duration-150 ease-out translate-y-1">
-          <a href="#portfolio" class="block px-3 py-2 hover:bg-brand-100 rounded-t-lg">Portafolio</a>
-          <a href="/technical-content-ux/es/index.html" class="block px-3 py-2 hover:bg-brand-100">Redacción Técnica, de Contenidos y UX</a>
-          <a href="/localization/es/index.html" class="block px-3 py-2 hover:bg-brand-100">Localización</a>
-          <a href="/annotation-evaluation/es/index.html" class="block px-3 py-2 hover:bg-brand-100">Anotación &amp; Evaluación</a>
-          <a href="/essays/es/index.html" class="block px-3 py-2 hover:bg-brand-100 rounded-b-lg">Ensayos &amp; Notas</a>
+          <!-- Elegant minimal wordmark -->
+          <div class="text-sm font-semibold tracking-[0.22em] uppercase text-[#8e4748]">
+            Stella Bullo
+          </div>
+
+          <!-- Nav + language grouped -->
+          <div class="flex items-center gap-6">
+
+            <!-- Nav -->
+            <nav class="hidden md:flex items-center gap-5 text-sm">
+              <a href="#articles" class="text-stone-800 font-medium hover:text-[#8e4748] hover:underline underline-offset-4">
+                Artículos
+              </a>
+              <a href="#expertise" class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4">
+                Qué hago
+              </a>
+              <a href="#portfolio" class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4">
+                Portfolio
+              </a>
+              <a href="#story" class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4">
+                Historia
+              </a>
+              <a href="#publications" class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4">
+                Publicaciones
+              </a>
+              <a href="#contact" class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4">
+                Contacto
+              </a>
+            </nav>
+
+            <!-- Language toggle -->
+            <div class="flex items-center gap-2 text-xs font-medium pl-4 border-l border-stone-300">
+              <a href="/"
+                 class="text-stone-500 hover:text-[#8e4748] transition">
+                EN
+              </a>
+              <span class="text-stone-400">/</span>
+              <span class="text-stone-900">
+                ES
+              </span>
+            </div>
+          </div>
+
         </div>
-      </li>
-
-      <!-- Idioma -->
-      <li class="flex items-center gap-1 pl-1">
-        <a href="/" class="px-2 py-1 rounded-md border border-brand-200 text-xs hover:bg-brand-100">EN</a>
-        <span class="text-brand-800/50 text-xs">/</span>
-        <a href="/es/" aria-current="page" class="px-2 py-1 rounded-md bg-brand-500 text-white text-xs">ES</a>
-      </li>
-
-      <!-- Contrátame -->
-      <li>
-        <a href="mailto:info@stellabullo.com"
-           class="btn inline-flex items-center gap-2 bg-brand-500 text-white px-3.5 py-1.5 rounded-md hover:brightness-95 shadow-soft">
-          <i data-lucide="mail" class="w-4 h-4"></i> Contrátame
-        </a>
-      </li>
-    </ul>
-
-    <!-- Botón hamburguesa (móvil) -->
-    <button id="nav-toggle" class="md:hidden ml-auto inline-flex items-center justify-center p-2 rounded-md border border-brand-200" aria-expanded="false" aria-label="Abrir menú" aria-controls="mobile-menu">
-      <svg id="icon-open" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
-    </button>
-  </div>
-
-  <!-- Menú móvil (ES) -->
-  <div id="mobile-menu" class="md:hidden hidden border-t border-brand-100 bg-white">
-    <ul class="px-4 py-3 space-y-2 text-sm">
-      <li><a href="#about" class="block py-2">Sobre mí</a></li>
-      <li><a href="#portfolio" class="block py-2">Portafolio</a></li>
-      <li><a href="/technical-content-ux/es/index.html" class="block py-2">Redacción Técnica, de Contenidos y UX</a></li>
-      <li><a href="/localization/es/index.html" class="block py-2">Localización</a></li>
-      <li><a href="/annotation-evaluation/es/index.html" class="block py-2">Anotación &amp; Evaluación</a></li>
-      <li><a href="/essays/es/index.html" class="block py-2">Ensayos &amp; Notas</a></li>
-
-      <li class="flex items-center gap-2 pt-2">
-        <span class="text-xs text-brand-800/60">Idioma:</span>
-        <a href="/" class="px-2 py-1 rounded border border-brand-200 text-xs">EN</a>
-        <a href="/es/" class="px-2 py-1 rounded border border-brand-200 text-xs bg-brand-100">ES</a>
-      </li>
-
-      <li><a href="mailto:info@stellabullo.com" class="block py-2 font-medium text-brand-500">Contacto</a></li>
-    </ul>
-  </div>
-</nav>
-
-
-
-<!-- HERO -->
-<header class="pt-32 md:pt-44 pb-14 md:pb-20 px-6 md:px-8 relative overflow-hidden">
-  <div aria-hidden="true" class="absolute inset-0 -z-10 bg-gradient-to-b from-brand-100 to-brand-50"></div>
-  <div aria-hidden="true" class="pointer-events-none absolute -right-24 -top-24 w-[34rem] h-[34rem] rounded-full bg-brand-200/50 blur-3xl"></div>
-
-  <div class="mx-auto max-w-7xl grid grid-cols-1 lg:grid-cols-12 items-center gap-6 md:gap-8">
-    <!-- Iconos + retrato -->
-    <div class="lg:col-span-5 flex flex-col items-center lg:flex-row lg:items-center lg:justify-center gap-3 lg:translate-x-2 xl:translate-x-3">
-      <div class="flex flex-row lg:flex-col gap-2 items-center">
-        <a href="mailto:info@stellabullo.com" class="p-2 rounded-full bg-white/60 hover:bg-brand-100 shadow-soft transition">
-          <i data-lucide="mail" class="w-5 h-5 text-brand-400 hover:text-brand-700 transition"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" rel="noopener"
-           class="p-2 rounded-full bg-white/60 hover:bg-brand-100 shadow-soft transition">
-          <i data-lucide="linkedin" class="w-5 h-5 text-brand-400 hover:text-brand-700 transition"></i>
-        </a>
-        <a href="#portfolio" class="p-2 rounded-full bg-white/60 hover:bg-brand-100 shadow-soft transition">
-          <i data-lucide="file-text" class="w-5 h-5 text-brand-400 hover:text-brand-700 transition"></i>
-        </a>
       </div>
+    </header>
 
-      <figure class="relative lg:ml-5">
-        <img src="../assets/stella-picture-nobg.png" alt="Stella Bullo"
-             onerror="this.style.display='none';"
-             class="w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 object-cover rounded-2xl shadow-card ring-1 ring-brand-200 lg:drop-shadow-xl"/>
-        <div class="absolute -inset-7 -z-10 rounded-[2rem] bg-gradient-to-tr from-brand-200/70 to-transparent blur-2xl"></div>
-      </figure>
-    </div>
 
-    <!-- Texto -->
-    <div class="lg:col-span-7 relative z-10 lg:-translate-x-1 xl:-translate-x-2">
-      <!-- Nombre -->
-      <p class="text-[0.65rem] md:text-xs font-medium text-brand-500 tracking-[0.10em] uppercase mb-4">
-        Dra. Stella Bullo, PhD en Lingüística | Redactora Técnica y de Contenidos
-      </p>
+    <!-- HERO -->
+    <section class="bg-[#8e4748]/10 border-b border-[#8e4748]/20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
 
-      <!-- Hero line -->
-      <h1 class="text-3xl md:text-4xl font-semibold tracking-tight text-brand-800 leading-tight mb-4">
-        Conectando palabras, sistemas y personas.
-      </h1>
+        <!-- Top label -->
+        <header class="pt-2 sm:pt-4 border-b border-[#8e4748]/30 pb-3 mb-7">
+          <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8e4748]">
+            Stella Bullo · Lingüista aplicada y especialista en lenguaje (EN/ES)
+          </p>
+        </header>
 
-      <p class="text-[1.05rem] text-brand-800/90 max-w-[68ch] leading-relaxed">
-        Transformo ideas en documentación clara, textos de interfaz y explicaciones en lenguaje sencillo.  
-        Mapeo la anotación y la evaluación con cuidado, creo pequeñas herramientas para probar el lenguaje  
-        y hago que la localización se sienta nativa a través de culturas.
-      </p>
+        <!-- Main content -->
+        <div class="max-w-3xl">
 
-      <ul class="mt-4 flex flex-wrap gap-2 text-xs text-brand-800/90">
-        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Documentación técnica &amp; guías de API</li>
-        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Microcopy &amp; flujos de UX</li>
-        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Contenidos &amp; explicadores</li>
-        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Bilingüe EN/ES</li>
-        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Localización (EN/ES)</li>
-        <li class="px-2.5 py-1 rounded-full bg-white/70 border border-brand-200">Anotación &amp; evaluación</li>
-      </ul>
+          <!-- Headline -->
+          <h1 class="text-2xl sm:text-[2.05rem] font-semibold leading-snug tracking-tight text-stone-900 mb-5">
+            Analizo cómo las personas comunican significado, emoción y experiencia vivida, e integro esa mirada lingüística en sistemas digitales que mejoran la interpretación del lenguaje natural.
+          </h1>
 
-      <div class="mt-6 flex flex-col sm:flex-row sm:flex-nowrap gap-3">
-        <a href="mailto:info@stellabullo.com"
-           class="shrink-0 btn inline-flex items-center justify-center px-5 py-3 rounded-md bg-brand-500 text-white hover:brightness-95 shadow-soft">
-          <i data-lucide="mail" class="w-5 h-5 mr-2"></i> Contrátame para escribir
-        </a>
-        <a href="#portfolio"
-           class="shrink-0 btn inline-flex items-center justify-center px-5 py-3 rounded-md border border-brand-200 text-brand-800 hover:bg-white">
-          Ver muestras
-        </a>
-        <a href="https://sierracodes.netlify.app/" target="_blank" rel="noopener"
-           class="shrink-0 btn inline-flex items-center justify-center px-5 py-3 rounded-md border border-brand-200 text-brand-800 hover:bg-white">
-          <span class="hidden md:inline">Desarrollo con </span>Sierra Codes
-          <i data-lucide="arrow-up-right" class="ml-2 w-4 h-4"></i>
-        </a>
+          <!-- Subheading -->
+          <p class="text-[15px] sm:text-[16px] text-stone-700 leading-relaxed mb-7">
+            Este sitio reúne ensayos y dossiers de investigación sobre lenguaje, anotación e interfaces lingüísticas aplicadas. Conecta la indagación lingüística con los prototipos y herramientas que desarrollo a partir de mi trabajo sobre comunicación y significado.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap gap-3 mt-1 mb-5">
+
+            <!-- Primary -->
+            <a
+              href="#articles"
+              class="inline-flex items-center justify-center rounded-full bg-[#8e4748] px-6 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-[#733D40] transition">
+              Leer artículos
+            </a>
+
+            <!-- Secondary -->
+            <a
+              href="#expertise"
+              class="inline-flex items-center justify-center rounded-full bg-white border border-[#8e4748]/40 text-stone-900 px-6 py-2.5 text-sm font-medium hover:bg-[#8e4748]/10 transition">
+              Qué hago
+            </a>
+          </div>
+
+          <!-- Tags -->
+          <div class="flex flex-wrap gap-2 text-[11px] text-stone-700">
+            <span class="rounded-full bg-white border border-[#8e4748]/40 px-3 py-1">
+              Modelado del significado
+            </span>
+            <span class="rounded-full bg-white border border-[#8e4748]/40 px-3 py-1">
+              Anotación y evaluación (EN/ES)
+            </span>
+            <span class="rounded-full bg-white border border-[#8e4748]/40 px-3 py-1">
+              Lingüística para sistemas digitales
+            </span>
+          </div>
+
+        </div>
+
       </div>
-    </div>
-  </div>
-
-  <!-- Separador ondulado -->
-  <svg aria-hidden="true" class="md:mt-32 -mb-10 md:-mb-14 w-full block" viewBox="0 0 1440 120" preserveAspectRatio="none">
-    <path fill="#EDF3FB" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,58.7C1120,64,1280,96,1360,112L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/>
-  </svg>
-</header>
+    </section>
 
 
-<!-- SECTIONS GRID -->
-<main id="portfolio" class="px-6 md:px-8 pt-0 md:pt-0 -mt-2 md:-mt-3 pb-14 md:pb-20">
-  <section class="max-w-6xl mx-auto">
-    <div class="mx-auto max-w-3xl text-center">
-      <h2 class="text-2xl font-semibold tracking-tight text-brand-800 mb-3">Portafolio</h2>
-      <p class="mx-auto max-w-2xl text-sm md:text-base text-brand-800/80 leading-relaxed mb-8">
-        Una selección de trabajos recientes en redacción técnica, UX writing, contenidos y explicadores,
-        localización y anotación &amp; evaluación.
-      </p>
-    </div>
+    <!-- ARTICLES & RESEARCH DOSSIERS -->
+    <section id="articles" class="bg-stone-50 border-t border-[#8e4748]/15 pt-14 pb-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
-    <!-- Grilla de tarjetas-->
-    <div class="mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center">
-      
-
-
-      <a href="/annotation-evaluation/es/index.html" class="card relative block rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <h3 class="text-lg font-semibold mb-1">Anotación &amp; Evaluación</h3>
-        <p class="text-sm text-brand-800/80">Guías de etiquetado, rúbricas de calidad, conjuntos de eval &amp; reportes.</p>
-      </a>
-
-      <a href="/essays/es/index.html" class="card relative block rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <h3 class="text-lg font-semibold mb-1">Ensayos &amp; Notas</h3>
-        <p class="text-sm text-brand-800/80">Textos breves sobre lenguaje, tecnología y cultura.</p>
-      </a>
-      <a href="/technical-content-ux/es/index.html" class="card relative block rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <h3 class="text-lg font-semibold mb-1">Redacción Técnica, de Contenidos y UX</h3>
-        <p class="text-sm text-brand-800/80">
-          Documentación, explicadores de producto y microcopy: textos claros para APIs, flujos y contenido.
+        <!-- Section label -->
+        <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8e4748] mb-4">
+          Artículos y dossiers de investigación
         </p>
-      </a>
 
-      <a href="/localization/es/index.html" class="card relative block rounded-xl2 border border-brand-100 p-5 bg-white hover:shadow-md">
-        <h3 class="text-lg font-semibold mb-1">Localización</h3>
-        <p class="text-sm text-brand-800/80">Localización EN/ES, voz &amp; tono, guías de estilo y glosarios.</p>
-      </a>
-    </div>
-  </section>
-</main>
+        <!-- Title -->
+        <h2 class="text-2xl sm:text-3xl font-semibold text-stone-900 leading-snug max-w-3xl mb-2">
+          Escritura sobre modelado lingüístico, anotación y puentes entre investigación y aplicación.
+        </h2>
+
+        <!-- Subheading -->
+        <p class="mt-2 text-[15px] sm:text-[16px] text-stone-700 leading-relaxed max-w-3xl">
+          Trabajos que siguen cómo la intuición lingüística se transforma en marcos conceptuales, informes técnicos,
+          prácticas de anotación y herramientas de lenguaje explicables: donde el análisis se encuentra con la ingeniería lingüística aplicada.
+        </p>
+
+        <!-- Tag filters row -->
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="rounded-full bg-white border border-[#8e4748]/30 px-3 py-1 text-[11px] text-stone-700">
+            Modelado del significado
+          </span>
+          <span class="rounded-full bg-white border border-[#8e4748]/30 px-3 py-1 text-[11px] text-stone-700">
+            Anotación y evaluación
+          </span>
+          <span class="rounded-full bg-white border border-[#8e4748]/30 px-3 py-1 text-[11px] text-stone-700">
+            Investigación → aplicación
+          </span>
+        </div>
+
+        <!-- GRID: THREE CARDS -->
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+          <!-- CARD 1-->
+          <article class="flex flex-col rounded-xl bg-white border border-[#8e4748]/15 p-6 hover:shadow-md transition-shadow">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-[#8e4748] mb-3">
+              Significado y modelado
+            </p>
+            <h3 class="text-lg font-semibold text-stone-900 leading-snug">
+              Cuando las palabras hacen más que describir: modelar la experiencia vivida
+            </h3>
+            <p class="mt-2 text-[14px] text-stone-700 leading-relaxed">
+              Qué revelan la metáfora y los patrones de lenguaje sobre cómo conceptualizamos la experiencia,
+              y cómo el modelado lingüístico puede apoyar el análisis de sentimiento, la valoración y las interfaces explicables en distintos dominios.
+            </p>
+            <a href="#"
+               class="inline-block mt-4 text-sm font-medium text-[#8e4748] hover:underline underline-offset-2">
+              Ver artículos
+            </a>
+          </article>
+
+          <!-- CARD 2 -->
+          <article class="flex flex-col rounded-xl bg-white border border-[#8e4748]/15 p-6 hover:shadow-md transition-shadow">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-[#8e4748] mb-3">
+              Anotación y evaluación
+            </p>
+            <h3 class="text-lg font-semibold text-stone-900 leading-snug">
+              Anotar es escuchar: cómo entrenamos y evaluamos IA a través del lenguaje
+            </h3>
+            <p class="mt-2 text-[14px] text-stone-700 leading-relaxed">
+              Por qué la anotación es una forma de interpretación lingüística y cómo el diseño de etiquetas,
+              los criterios de evaluación y el prompting claro moldean el comportamiento de los modelos.
+              Una mirada al pensamiento lingüístico detrás del entrenamiento, el control de calidad y la calidad de los datasets.
+            </p>
+            <a href="#"
+               class="inline-block mt-4 text-sm font-medium text-[#8e4748] hover:underline underline-offset-2">
+              Ver artículos
+            </a>
+          </article>
+
+          <!-- CARD 3 -->
+          <article class="flex flex-col rounded-xl bg-white border border-[#8e4748]/15 p-6 hover:shadow-md transition-shadow">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-[#8e4748] mb-3">
+              Investigación → aplicación
+            </p>
+
+            <h3 class="text-lg font-semibold text-stone-900 leading-snug">
+              Modelar la experiencia humana: de los datos cualitativos a las herramientas digitales
+            </h3>
+
+            <p class="mt-2 text-[14px] text-stone-700 leading-relaxed">
+              Un estudio de caso que muestra cómo la investigación sobre experiencias de endometriosis,
+              primero explorada en mi proyecto
+              <a href="/language-of-endometriosis/"
+                 class="underline underline-offset-2 text-[#8e4748] hover:text-[#733D40]">
+                Language of Endometriosis
+              </a>,
+              evolucionó hacia el prototipo
+              <a
+                href="https://explain-my-pain.onrender.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="underline underline-offset-2 text-[#8e4748] hover:text-[#733D40]">
+                Explain My Pain
+              </a>.
+              Un ejemplo de cómo convierto investigación cualitativa en marcos y herramientas digitales que apoyan una comunicación más clara.
+            </p>
+
+            <a href="#"
+               class="inline-block mt-4 text-sm font-medium text-[#8e4748] hover:underline underline-offset-2">
+              Ver artículos
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
 
 
-<!-- FOOTER (same as EN, translated labels) -->
-<section id="contact" class="bg-gradient-to-br from-brand-500 to-brand-800 text-white">
-  <div class="max-w-6xl mx-auto px-6 md:px-8 py-12">
-    <h2 class="text-2xl md:text-3xl font-semibold leading-tight">Trabajemos juntas/os</h2>
-    <p class="mt-3 text-white/90 max-w-[60ch]">Colaboraciones, encargos o una consulta rápida. Respondo en español o inglés.</p>
+    <!-- STUDIO NOTES / ESSAYS -->
+    <section id="essays" class="bg-white border-t border-[#8e4748]/15 py-14">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section label -->
+        <p class="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#8e4748] mb-4">
+          Notas de lenguaje y ensayos
+        </p>
 
-    <div class="mt-6 flex flex-wrap items-center gap-2">
-      <a href="mailto:info@stellabullo.com" class="btn inline-flex items-center gap-2 bg-white text-brand-800 px-4 py-3 rounded-md hover:bg-brand-100">
-        <i data-lucide="mail" class="w-5 h-5"></i> info@stellabullo.com
-      </a>
-      <a href="https://www.linkedin.com/in/stella-bullo-905b17230/" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">
-        <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
-      </a>
-      <a href="https://medium.com/@stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">Medium</a>
-      <a href="https://ko-fi.com/stellabullo" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">Ko-fi</a>
-      <a href="https://orcid.org/0000-0002-7402-0819" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">ORCID</a>
-      <a href="https://sierracodes.netlify.app/" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 bg-white/10 px-4 py-3 rounded-md hover:bg-white/20">Sierra Codes</a>
-    </div>
+        <!-- Title -->
+        <h2 class="text-2xl sm:text-3xl font-semibold text-stone-900 leading-snug max-w-3xl mb-2">
+          Ensayos sobre lengua, cultura y significado.
+        </h2>
 
-    <div class="text-center text-sm text-white/70 mt-8">
-      © <span id="year"></span> Stella Bullo. Todos los derechos reservados.
-    </div>
+        <!-- Subheading -->
+        <p class="mt-2 text-[15px] sm:text-[16px] text-stone-700 leading-relaxed max-w-3xl">
+          Reflexiones más breves desde la lingüística, la comunicación intercultural y la vida cotidiana.
+          Estas piezas complementan los dossiers más formales y trazan cómo pienso el lenguaje en uso,
+          entre culturas y en la experiencia vivida.
+        </p>
+
+        <!-- GRID: THREE CARDS -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <!-- CARD 1: LANGUAGE & CULTURE -->
+          <article class="flex flex-col rounded-xl bg-stone-50 border border-[#8e4748]/15 p-6 hover:shadow-md transition-shadow">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-[#8e4748] mb-2">
+              Lengua y cultura
+            </p>
+            <h3 class="text-base font-semibold text-stone-900 leading-snug mb-2">
+              Cómo la cultura moldea la claridad, el malentendido y el tono.
+            </h3>
+            <p class="text-[14px] text-stone-700 leading-relaxed">
+              Ensayos y chuletas sobre pragmática, cambio de código, localización y
+              los pequeños supuestos culturales que hacen que la comunicación funcione… o se rompa.
+            </p>
+            <ul class="mt-4 space-y-1 text-sm">
+              <li>
+                <a href="#" class="text-[#8e4748] hover:underline underline-offset-2">
+                  Malentendidos entre culturas y máquinas
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-[#8e4748] hover:underline underline-offset-2">
+                  Cambio de código y localización
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-[#8e4748] hover:underline underline-offset-2">
+                  Checklist pragmático para equipos internacionales
+                </a>
+              </li>
+            </ul>
+          </article>
+
+          <!-- CARD 2: LANGUAGE & MEANING -->
+          <article class="flex flex-col rounded-xl bg-stone-50 border border-[#8e4748]/15 p-6 hover:shadow-md transition-shadow">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-[#8e4748] mb-2">
+              Lengua y significado
+            </p>
+            <h3 class="text-base font-semibold text-stone-900 leading-snug mb-2">
+              Metáfora, emoción y cómo las palabras cargan experiencia.
+            </h3>
+            <p class="text-[14px] text-stone-700 leading-relaxed">
+              Piezas que exploran cómo se construye el significado en el lenguaje:
+              cómo codificamos emoción, postura y yo en lo que decimos y escribimos.
+            </p>
+            <ul class="mt-4 space-y-1 text-sm">
+              <li>
+                <a href="#" class="text-[#8e4748] hover:underline underline-offset-2">
+                  Geometrías emocionales: mapear sentimientos en el lenguaje
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-[#8e4748] hover:underline underline-offset-2">
+                  Quién sos cuando hablás
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-[#8e4748] hover:underline underline-offset-2">
+                  Como fuego en el vientre
+                </a>
+              </li>
+            </ul>
+          </article>
+
+          <!-- CARD 3: LANGUAGE & LIFE -->
+          <article class="flex flex-col rounded-xl bg-stone-50 border border-[#8e4748]/15 p-6 hover:shadow-md transition-shadow">
+            <p class="text-[11px] font-semibold uppercase tracking-wider text-[#8e4748] mb-2">
+              Lengua y vida
+            </p>
+            <h3 class="text-base font-semibold text-stone-900 leading-snug mb-2">
+              Historias mínimas donde el lenguaje hace algo más.
+            </h3>
+            <p class="text-[14px] text-stone-700 leading-relaxed">
+              Relatos breves y notas de studio de la vida diaria:
+              historias de familia, momentos de aula e interacciones pequeñas que muestran
+              cómo el lenguaje moldea la experiencia.
+            </p>
+            <ul class="mt-4 space-y-1 text-sm">
+              <li>
+                <a href="#" class="text-[#8e4748] hover:underline underline-offset-2">
+                  Arremangate
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-[#8e4748] hover:underline underline-offset-2">
+                  Marina
+                </a>
+              </li>
+              <li>
+                <a href="#" class="text-[#8e4748] hover:underline underline-offset-2">
+                  Toc toc
+                </a>
+              </li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- WHAT I DO -->
+    <section id="expertise" class="bg-[#8e4748] text-[#F6F3F1] py-24">
+      <div class="max-w-6xl mx-auto px-6 lg:px-10 grid gap-16 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1.1fr)] items-center">
+
+        <!-- LEFT COLUMN -->
+        <div class="space-y-6">
+
+          <p class="text-xs tracking-[0.3em] uppercase text-[#F3D4D5]">
+            Qué hago
+          </p>
+
+          <div class="h-0.5 w-14 bg-gradient-to-r from-[#F3D4D5] via-[#F6E9E4] to-transparent rounded-full"></div>
+
+          <h2 class="text-3xl sm:text-4xl font-semibold leading-tight text-[#FFF9F8]">
+            Lingüística diseñada para productos, sistemas y herramientas explicables.
+          </h2>
+
+          <p class="text-sm sm:text-base text-[#F6E9E4] max-w-xl">
+            Construyo la capa de lenguaje de productos y datasets: modelo significado,
+            diseño flujos de anotación y evaluación, y transformo investigación cualitativa
+            en herramientas explicables en inglés y español.
+          </p>
+
+          <p class="text-sm sm:text-base text-[#F6E9E4]/90 max-w-xl">
+            Combino teoría lingüística con diseño de sistemas aplicados para que modelos,
+            interfaces y workflows reflejen cómo la gente realmente se comunica.
+          </p>
+
+          <p class="text-xs sm:text-sm text-[#F6E9E4]/80">
+            Si necesitás a alguien que diseñe la capa lingüística de tu producto,
+            dataset o investigación,
+            <a href="#contact"
+              class="underline underline-offset-4 decoration-[#F3D4D5] hover:text-[#FFFFFF] transition-colors">
+              hablemos
+            </a>.
+          </p>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="relative flex items-center lg:-ml-4 xl:-ml-6">
+          <div class="grid w-full grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-7">
+
+            <!-- Card 1 -->
+            <div class="group h-full">
+              <div
+                class="h-full bg-[#733D40] border border-[#E7C2C3]/25 rounded-2xl p-6 lg:p-7
+                       shadow-[0_10px_25px_rgba(0,0,0,0.25)]
+                       transition-transform duration-300
+                       flex flex-col justify-between
+                       group-hover:-translate-y-1
+                       group-hover:shadow-[0_20px_45px_rgba(0,0,0,0.4)]">
+
+                <p class="text-[11px] tracking-[0.25em] uppercase text-[#F3D4D5] mb-2">
+                  Modelado aplicado del significado
+                </p>
+
+                <p class="text-sm text-[#FFF9F8] leading-snug">
+                  Transformo cómo las personas describen y valoran experiencias en modelos estructurados para herramientas explicables.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="group h-full">
+              <div
+                class="h-full bg-[#733D40] border border-[#E7C2C3]/25 rounded-2xl p-6 lg:p-7
+                       shadow-[0_10px_25px_rgba(0,0,0,0.25)]
+                       transition-transform duration-300
+                       flex flex-col justify-between
+                       group-hover:-translate-y-1
+                       group-hover:shadow-[0_20px_45px_rgba(0,0,0,0.4)]">
+
+                <p class="text-[11px] tracking-[0.25em] uppercase text-[#F3D4D5] mb-2">
+                  Anotación y evaluación (EN/ES)
+                </p>
+
+                <p class="text-sm text-[#FFF9F8] leading-snug">
+                  Diseño etiquetas, guías, prompts y controles de calidad para habla y texto multilingües que capturen cómo interpretamos el significado.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="group h-full">
+              <div
+                class="h-full bg-[#733D40] border border-[#E7C2C3]/25 rounded-2xl p-6 lg:p-7
+                       shadow-[0_10px_25px_rgba(0,0,0,0.25)]
+                       transition-transform duration-300
+                       flex flex-col justify-between
+                       group-hover:-translate-y-1
+                       group-hover:shadow-[0_20px_45px_rgba(0,0,0,0.4)]">
+
+                <p class="text-[11px] tracking-[0.25em] uppercase text-[#F3D4D5] mb-2">
+                  Lingüística para sistemas digitales
+                </p>
+
+                <p class="text-sm text-[#FFF9F8] leading-snug">
+                  Traduzco conocimiento lingüístico en taxonomías, estructuras de contenido y componentes explicables para sistemas digitales.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="group h-full">
+              <div
+                class="h-full bg-[#733D40] border border-[#E7C2C3]/25 rounded-2xl p-6 lg:p-7
+                       shadow-[0_10px_25px_rgba(0,0,0,0.25)]
+                       transition-transform duration-300
+                       flex flex-col justify-between
+                       group-hover:-translate-y-1
+                       group-hover:shadow-[0_20px_45px_rgba(0,0,0,0.4)]">
+
+                <p class="text-[11px] tracking-[0.25em] uppercase text-[#F3D4D5] mb-2">
+                  Investigación → aplicación
+                </p>
+
+                <p class="text-sm text-[#FFF9F8] leading-snug">
+                  Convierto investigación cualitativa en taxonomías, informes claros y prototipos iniciales para mejorar la comunicación clínica y digital.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="bg-[#A86566]/15 py-20">
+      <div class="max-w-6xl mx-auto px-6 lg:px-10 space-y-14">
+
+        <!-- Header -->
+        <div>
+          <p class="text-xs tracking-[0.3em] uppercase text-[#8e4748] mb-2">Portfolio</p>
+          <h2 class="text-2xl sm:text-3xl font-semibold text-[#2A2A2A]">
+            Trabajo seleccionado donde la investigación lingüística se convierte en herramientas, marcos y flujos de trabajo.
+          </h2>
+        </div>
+
+        <!-- GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+          <!-- Card 1 -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-[#8e4748]/15 hover:shadow-md transition-shadow">
+            <h3 class="font-semibold text-xl text-[#8e4748] mb-3">
+              Explain My Pain: resúmenes estructurados a partir del lenguaje real
+            </h3>
+            <p class="text-sm text-[#444] mb-4">
+              Una herramienta que transforma metáforas y descripciones de dolor de pacientes
+              en resúmenes estructurados para análisis y comunicación clínica.
+            </p>
+            <ul class="text-sm text-[#555] space-y-1 mb-4">
+              <li>• Diseño del modelo lingüístico y la taxonomía</li>
+              <li>• Lógica de etiquetado y texto de interfaz</li>
+            </ul>
+            <div class="space-y-1">
+              <a href="#" class="text-[#8e4748] underline underline-offset-2">Probar el prototipo</a><br>
+              <a href="#" class="text-[#8e4748] underline underline-offset-2">Leer el artículo</a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-[#8e4748]/15 hover:shadow-md transition-shadow">
+            <h3 class="font-semibold text-xl text-[#8e4748] mb-3">
+              Language of Endometriosis: corpus y marco de significado
+            </h3>
+            <p class="text-sm text-[#444] mb-4">
+              Un corpus y marco analítico para estudiar descripciones de dolor,
+              patrones metafóricos y cómo la comunicación influye en el diagnóstico.
+            </p>
+            <ul class="text-sm text-[#555] space-y-1 mb-4">
+              <li>• Diseño del corpus y curaduría ética de datos</li>
+              <li>• Categorías semánticas y patrones metafóricos</li>
+            </ul>
+            <a href="#" class="text-[#8e4748] underline underline-offset-2">Ver dossier de investigación</a>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bg-white rounded-2xl p-6 shadow-sm border border-[#8e4748]/15 hover:shadow-md transition-shadow">
+            <h3 class="font-semibold text-xl text-[#8e4748] mb-3">
+              Anotación y evaluación: proyectos de habla y lenguaje
+            </h3>
+            <p class="text-sm text-[#444] mb-4">
+              Trabajo freelance de anotación y evaluación en habla y texto,
+              basado en la interpretación lingüística y revisiones de calidad detalladas.
+            </p>
+            <ul class="text-sm text-[#555] space-y-1 mb-4">
+              <li>• Verificación de habla en español (LATAM)</li>
+              <li>• QA de instrucciones</li>
+              <li>• Evaluación centrada en el significado</li>
+            </ul>
+            <a href="#" class="text-[#8e4748] underline underline-offset-2">Ver notas de studio</a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- STORY -->
+    <section id="story" class="py-16 sm:py-20 bg-white">
+      <div class="mx-auto max-w-6xl px-6 lg:px-8">
+        <div class="max-w-3xl space-y-4">
+
+          <!-- Label + heading -->
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-[#8e4748]">
+            Historia
+          </p>
+          <h2 class="text-2xl sm:text-3xl font-semibold text-stone-900">
+            De la lingüística académica a la tecnología del lenguaje aplicada.
+          </h2>
+          <div class="h-0.5 w-16 bg-gradient-to-r from-[#8e4748] via-[#F3D4D5] to-transparent rounded-full"></div>
+
+          <!-- Body copy -->
+          <p class="mt-2 text-sm sm:text-base text-stone-700">
+            Me formé como lingüista en Argentina y el Reino Unido, completando un doctorado en Lingüística
+            en la Universidad de Lancaster. Pasé 17 años como docente e investigadora en universidades británicas,
+            trabajando sobre evaluación, metáfora y cómo la gente usa el lenguaje para expresar experiencia:
+            especialmente dolor, emoción y actitud en entrevistas, foros y contextos clínicos o profesionales.
+          </p>
+
+          <p class="text-sm sm:text-base text-stone-700">
+            Con el tiempo, mi foco pasó del análisis textual a la pregunta por cómo ese conocimiento podía vivir dentro de herramientas:
+            cómo una taxonomía de metáforas podría apoyar conversaciones clínicas,
+            o cómo los esquemas de anotación y guías podían mejorar la calidad de los datasets lingüísticos.
+          </p>
+
+          <p class="text-sm sm:text-base text-stone-700 bg-[#8e4748]/5 border-l-4 border-[#8e4748] px-4 py-3 rounded-md">
+            Hoy trabajo en la intersección entre lingüística, anotación y NLP. Diseño marcos que respetan la sutileza del lenguaje
+            y hacen posible conectar narrativas humanas con datos estructurados e interpretables para productos, investigación y sistemas de IA.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PUBLICATIONS & MEDIA -->
+    <section id="publications" class="py-16 sm:py-20 bg-stone-50">
+      <div class="mx-auto max-w-6xl px-6 lg:px-8">
+        
+        <!-- Heading block -->
+        <div class="max-w-3xl space-y-3">
+          <p class="text-xs font-semibold uppercase tracking-[0.3em] text-[#8e4748]">
+            Publicaciones y medios
+          </p>
+          <h2 class="text-2xl sm:text-3xl font-semibold text-stone-900">
+            Selección de publicaciones académicas y apariciones en medios.
+          </h2>
+          <p class="text-sm sm:text-base text-stone-700">
+            Una selección concisa de trabajos de investigación y notas en medios que alimentan mi práctica aplicada,
+            desde la comunicación del dolor hasta el modelado del significado y el análisis del discurso.
+          </p>
+          <div class="h-0.5 w-16 bg-gradient-to-r from-[#8e4748] via-[#F3D4D5] to-transparent rounded-full"></div>
+        </div>
+
+        <!-- Grid -->
+        <div class="mt-10 grid gap-10 md:grid-cols-2">
+
+          <!-- Publications -->
+          <div>
+            <h3 class="text-sm font-semibold text-stone-800 uppercase tracking-wide mb-3">
+              Publicaciones seleccionadas
+            </h3>
+            <ul class="space-y-3 text-sm text-stone-700 leading-relaxed">
+              <li>
+                • Investigación sobre comunicación del dolor, metáfora y demora diagnóstica (2020–2025),
+                  con artículos en <em>Frontiers</em>, <em>Health</em> y el <em>British Journal of Health Psychology</em>.
+              </li>
+              <li>
+                • Trabajo sobre evaluación, postura, intertextualidad y dimensiones cognitivas del discurso.
+              </li>
+              <li>
+                • Libros con Cambridge University Press y Palgrave sobre clichés y lenguaje evaluativo.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Media -->
+          <div>
+            <h3 class="text-sm font-semibold text-stone-800 uppercase tracking-wide mb-3">
+              Medios y divulgación
+            </h3>
+            <ul class="space-y-3 text-sm text-stone-700 leading-relaxed">
+              <li>
+                • Apariciones en <em>The New York Times</em>, <em>The Guardian</em> y <em>The Conversation</em>
+                  sobre cómo el lenguaje moldea la visibilidad del dolor y la experiencia diagnóstica.
+              </li>
+              <li>
+                • Entrevistas en BBC Radio World Service sobre metáfora, narrativas del dolor y comunicación.
+              </li>
+              <li>
+                • Escritura divulgativa que traduce investigación lingüística para audiencias más amplias.
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- FOOTER / CONTACT -->
+    <footer id="contact" class="bg-[#733D40] text-[#F6F3F1] pt-10 pb-8 mt-0">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 space-y-5">
+
+        <!-- Main contact + links, centered -->
+        <div class="flex flex-col items-center gap-3 text-sm text-center">
+
+          <!-- Email -->
+          <a href="mailto:info@stellabullo.com"
+             class="font-medium hover:underline underline-offset-2">
+            info@stellabullo.com
+          </a>
+
+          <!-- Links row -->
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="https://www.linkedin.com/in/stella-bullo-905b17230/"
+               target="_blank"
+               class="hover:underline underline-offset-2">
+              LinkedIn
+            </a>
+            <span class="text-[#F6F3F1]/40">•</span>
+            <a href="https://orcid.org/0000-0002-7402-0819"
+               target="_blank"
+               class="hover:underline underline-offset-2">
+              ORCID
+            </a>
+            <span class="text-[#F6F3F1]/40">•</span>
+            <a href="https://sierracodes.netlify.app/"
+               target="_blank"
+               class="hover:underline underline-offset-2">
+              Sierra Codes
+            </a>
+            <span class="text-[#F6F3F1]/40">•</span>
+            <a href="#"
+               class="hover:underline underline-offset-2">
+              LinguaMind Technologies
+            </a>
+          </div>
+
+          <!-- Location line -->
+          <p class="text-xs text-[#F6F3F1]/80">
+            Argentina (Córdoba) · Trabajo y colaboraciones vinculadas al Reino Unido
+          </p>
+        </div>
+
+        <!-- Divider -->
+        <div class="h-px bg-[#F3D4D5]/30"></div>
+
+        <!-- Bottom row -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs">
+
+          <!-- Languages -->
+       <div class="flex items-center gap-3">
+  <button onclick="window.location.href='/'" class="hover:underline underline-offset-2">EN</button>
+  <span class="text-[#F6F3F1]/40">/</span>
+  <button onclick="window.location.href='/es/'" class="hover:underline underline-offset-2">ES</button>
+</div>
+
+
+          <!-- Working languages -->
+          <p class="text-[#F6F3F1]/80 text-center">
+            Lenguas de trabajo: inglés · español (LATAM)
+          </p>
+
+          <!-- Back to top + copyright -->
+          <div class="flex items-center gap-4">
+            <button
+              onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+              class="text-[#F3D4D5] hover:underline underline-offset-2">
+              Volver arriba ↑
+            </button>
+            <p class="text-[#F6F3F1]/80">
+              © <span id="year">2025</span> Stella Bullo. Todos los derechos reservados.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </footer>
+
+
+    <!-- BACK TO TOP ICON BUTTON -->
+    <button
+      id="backToTop"
+      type="button"
+      aria-label="Volver arriba"
+      class="hidden fixed bottom-6 right-6 bg-[#8e4748] text-white w-10 h-10 rounded-full shadow-lg 
+             flex items-center justify-center text-lg hover:bg-[#733D40] transition-all duration-300">
+      ↑
+    </button>
+
   </div>
-</section>
 
-<!-- Volver arriba -->
-<button id="toTop"
-  class="hidden fixed bottom-6 right-6 z-[60] p-3 bg-brand-500 text-white rounded-full shadow-soft hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500"
-  aria-label="Volver arriba" title="Volver arriba">
-  <i data-lucide="chevron-up" class="w-5 h-5"></i>
-</button>
+  <script>
+    const btn = document.getElementById('backToTop');
 
-<!-- JS -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    // Iconos
-    if (typeof lucide !== 'undefined' && lucide.createIcons) {
-      try { lucide.createIcons(); } catch {}
-    }
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) btn.classList.remove('hidden');
+      else btn.classList.add('hidden');
+    });
 
-    // Sombra en la barra de navegación al hacer scroll
-    const nav = document.querySelector('nav');
-    const onScroll = () => { if (nav) nav.classList.toggle('shadow', window.scrollY > 10); };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-    // Menú móvil (hamburguesa)
-    const btn = document.getElementById('nav-toggle');
-    const menu = document.getElementById('mobile-menu');
-    const openI = document.getElementById('icon-open');
-    const closeI = document.getElementById('icon-close');
-    if (btn && menu) {
-      const toggle = () => {
-        const willOpen = menu.classList.contains('hidden');
-        menu.classList.toggle('hidden');
-        btn.setAttribute('aria-expanded', String(willOpen));
-        if (openI) openI.classList.toggle('hidden', willOpen);
-        if (closeI) closeI.classList.toggle('hidden', !willOpen);
-      };
-      btn.addEventListener('click', toggle);
-      // Cerrar después de tocar un enlace
-      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-        if (!menu.classList.contains('hidden')) toggle();
-      }));
-    }
+    // Dynamic year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
-    // Desplegables de escritorio (Writing / Escritura)
-    function makeDropdown(triggerId, panelId) {
-      const trigger = document.getElementById(triggerId);
-      const panel   = document.getElementById(panelId);
-      if (!trigger || !panel) return;
-
-      let open = false;
-
-      const show = () => {
-        panel.classList.remove('invisible','opacity-0','pointer-events-none','translate-y-1');
-        panel.classList.add('opacity-100','pointer-events-auto','translate-y-0');
-        trigger.setAttribute('aria-expanded', 'true');
-        open = true;
-      };
-      const hide = () => {
-        panel.classList.add('invisible','opacity-0','pointer-events-none','translate-y-1');
-        panel.classList.remove('opacity-100','pointer-events-auto','translate-y-0');
-        trigger.setAttribute('aria-expanded', 'false');
-        open = false;
-      };
-      const toggle = (e) => { e.preventDefault(); e.stopPropagation(); open ? hide() : show(); };
-
-      // Clic para abrir/cerrar
-      trigger.addEventListener('click', toggle);
-
-      // Cerrar al hacer clic fuera
-      document.addEventListener('click', (e) => {
-        if (!open) return;
-        if (!panel.contains(e.target) && !trigger.contains(e.target)) hide();
-      });
-
-      // Teclado: Enter/Espacio para abrir/cerrar, Escape para cerrar, FlechaAbajo para abrir
-      trigger.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { toggle(e); }
-        else if (e.key === 'Escape' && open) { hide(); trigger.focus(); }
-        else if (e.key === 'ArrowDown' && !open) { show(); }
-      });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && open) { hide(); trigger.focus(); }
-      });
-
-      // Inicia oculto
-      hide();
-    }
-    makeDropdown('writing-trigger-en','writing-popover-en');
-    makeDropdown('writing-trigger-es','writing-popover-es'); // versión ES
-
-    // Botón "volver arriba"
-    const toTop = document.getElementById('toTop');
-    if (toTop) {
-      const toggleToTop = () => { toTop.classList.toggle('hidden', window.scrollY < 400); };
-      window.addEventListener('scroll', toggleToTop, { passive: true });
-      toggleToTop();
-      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-    }
-
-    // Año en el footer
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
-  });
-</script>
 
 </body>
 </html>
