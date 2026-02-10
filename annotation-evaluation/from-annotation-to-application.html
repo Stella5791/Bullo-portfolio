@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sierra Codes — Artículo</title>
+  <meta name="description" content="De la anotación a la aplicación — un flujo de trabajo para lenguaje metafórico. Por Stella Bullo." />
+
+  <!-- Tailwind + brand colors -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#1d7f96', dark: '#156270', light: '#4fa7b5' }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    a { transition: all 0.3s ease-in-out; }
+    a:hover { text-decoration: underline; color: #1d7f96; }
+  </style>
+</head>
+<body class="font-sans text-gray-900" id="top">
+
+<!-- HEADER -->
+<header class="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
+  <div class="max-w-5xl mx-auto flex items-center justify-between px-5 py-3">
+    <a href="/index.html" class="text-brand font-bold">← Volver</a>
+    <button id="langToggle" class="border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20" aria-pressed="false" aria-label="Cambiar idioma">
+      EN
+    </button>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<main class="max-w-3xl mx-auto pt-24 pb-16 px-5 leading-relaxed">
+
+  <!-- Español (visible por defecto) -->
+  <div id="content-es">
+    <h2 class="text-lg text-brand mb-2">De la anotación a la aplicación</h2>
+    <h1 class="text-3xl md:text-4xl font-bold mb-6">Un flujo de trabajo para el lenguaje metafórico</h1>
+
+    <p class="mb-4">Las metáforas moldean la forma en que hablamos de casi todo. Hablamos de ambición <em>ardiente</em>, responsabilidades <em>pesadas</em> o culpa que <em>punza</em>. Estas expresiones son vívidas y poderosas, pero también difíciles para quienes investigan el lenguaje y para los sistemas que intentan analizarlo.</p>
+
+    <p class="mb-4">Las metáforas importan en la comunicación cotidiana y también en contextos específicos como la salud. Las personas describen sus experiencias con términos metafóricos, y esas palabras influyen en cómo se percibe y se gestiona su sufrimiento. También importan en la política, en los debates sobre migración y en los relatos culturales. Están en todas partes y cargan significado.</p>
+
+    <p class="mb-4">Para capturar estos significados necesitamos más de una herramienta. Necesitamos una forma de recopilar y estructurar anotaciones humanas, una forma de poner a prueba la detección automática y una forma de comunicar hallazgos de manera clara a públicos más amplios.</p>
+
+    <p class="mb-8">Por eso construí tres herramientas conectadas: <strong>Annotation App</strong> (conjuntos de datos basados en esquemas), <strong>Metaphor Tagger</strong> (detección automática) y <strong>Explain My Pain</strong> (informes orientados a personas usuarias). En conjunto forman un flujo de trabajo que une lingüística, PLN y comunicación intercultural.</p>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">Paso 1: Annotation App</h3>
+    <p class="mb-4">La mayoría de las plataformas de anotación están diseñadas por y para personas ingenieras. Son buenas para recolectar etiquetas, pero rara vez capturan los matices que importan en la investigación lingüística.</p>
+    <p class="mb-4"><strong>Annotation App</strong> es distinta porque parte de un <strong>esquema lingüístico</strong>. Esto implica:</p>
+    <ul class="list-disc pl-6 mb-4">
+      <li>Los campos reflejan distinciones de la teoría de la metáfora, el análisis de la actitud/posición y la comunicación intercultural.</li>
+      <li>En lugar de una etiqueta genérica, puedes codificar categorías como <code>phenomenon</code> (metáfora vs literalidad), <code>stance_tone</code> (desasosiego, resignación, proactividad) o <code>translation_shift</code> (literalización, metaforización, cambio de registro).</li>
+      <li>Cada esquema tiene versión, de modo que el marco teórico que guía la anotación queda preservado junto con los datos.</li>
+    </ul>
+    <p class="mb-6">Esta perspectiva viene de mi formación académica: las categorías no son neutrales. Determinan lo que podemos ver y lo que los modelos pueden aprender. La app puede adaptarse al lenguaje del dolor, pero también al discurso político, a la expresión emocional o a los cambios interculturales.</p>
+
+    <div class="bg-gray-50 rounded-lg p-4 mb-8 border border-gray-200">
+      <div class="text-sm text-gray-600 mb-2 font-semibold">Flujo de trabajo</div>
+      <pre class="text-sm"><code>         ┌──────────────────────┐
+         │   Datos textuales    │
+         │ (entrevistas, notas, │
+         │  encuestas, corpus)  │
+         └─────────┬────────────┘
+                   ▼
+         ┌──────────────────────┐
+         │   Annotation App     │
+         │  - Importar CSV/JSONL│
+         │  - Aplicar esquema   │
+         │  - Anotación humana  │
+         │  - Exportar dataset  │
+         └─────────┬────────────┘</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">Paso 2: Metaphor Tagger</h3>
+    <p class="mb-4"><strong>Metaphor Tagger</strong> no es un buscador de palabras clave genérico. Se basa en la <strong>teoría lingüística de la metáfora</strong>.</p>
+    <ul class="list-disc pl-6 mb-4">
+      <li>Su taxonomía se nutre de la metáfora conceptual: FUEGO (intensidad), PESO (carga), OBJETOS CORTANTES (dolor), entre otras.</li>
+      <li>Las reglas parten del análisis de narrativas, diferenciando usos verdaderamente metafóricos de usos literales según el contexto.</li>
+      <li>No reemplaza el juicio humano; escala ideas lingüísticas a grandes colecciones de texto.</li>
+    </ul>
+    <p class="mb-6">El lenguaje del dolor es un caso de estudio eficaz, pero el método se aplica a metáforas políticas, discurso educativo o narrativas climáticas.</p>
+
+    <div class="bg-gray-50 rounded-lg p-4 mb-8 border border-gray-200">
+      <div class="text-sm text-gray-600 mb-2 font-semibold">Flujo de trabajo</div>
+      <pre class="text-sm"><code>         ┌──────────────────────┐
+         │   Annotation App     │
+         └─────────┬────────────┘
+                   │ Anotaciones de referencia
+                   ▼
+         ┌──────────────────────┐
+         │   Metaphor Tagger    │
+         │  - Detección automática │
+         │  - Asignar categorías   │
+         └─────────┬────────────┘
+                   │ Salidas del sistema
+                   ▼
+         ┌──────────────────────────────┐
+         │ Evaluación y comparación     │
+         │ - Sistema vs humano          │
+         │ - Métricas: Precisión, Recall│
+         │   F1, κ                      │
+         └──────────────────────────────┘</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">Paso 3: Explain My Pain</h3>
+    <p class="mb-4"><strong>Explain My Pain</strong> convierte las salidas del modelo en retroalimentación útil para pacientes y profesionales de la salud.</p>
+    <ul class="list-disc pl-6 mb-4">
+      <li>Resalta metáforas en la descripción de la persona.</li>
+      <li>Explica, en lenguaje accesible, por qué importan esas metáforas.</li>
+      <li>Sugiere cómo el lenguaje metafórico puede incidir en la comunicación clínica.</li>
+    </ul>
+    <p class="mb-6">Es un caso de cómo las herramientas de investigación pueden transformarse en aplicaciones accesibles. La idea puede extenderse a otros dominios: “Explain My Politics” o “Explain My Climate”.</p>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">Por qué las tres juntas</h3>
+    <ul class="list-disc pl-6 mb-6">
+      <li><strong>Annotation App</strong> captura el conocimiento humano de forma estructurada y reproducible.</li>
+      <li><strong>Metaphor Tagger</strong> aplica taxonomías lingüísticas de manera automática y a escala.</li>
+      <li><strong>Explain My Pain</strong> traduce hallazgos en apoyo práctico y comprensible.</li>
+    </ul>
+    <p class="mb-8">Lo singular de este flujo de trabajo no es solo la tecnología, sino la <strong>lingüística que lo sostiene</strong>. Los esquemas se anclan en teoría. Las taxonomías derivan de la investigación en metáfora. Las salidas se diseñan con aplicaciones interculturales y comunicativas en mente.</p>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">Próximos pasos</h3>
+    <p class="mb-4">El siguiente paso es la localización. Al anotar corpus paralelos en inglés y español, podemos explorar cómo cambian las metáforas entre lenguas y culturas. ¿Una metáfora de fuego pesa igual en español que en inglés? ¿Cambia el registro cuando se traducen descripciones para contextos clínicos o políticos?</p>
+
+    <div class="bg-gray-50 rounded-lg p-4 mb-8 border border-gray-200">
+      <div class="text-sm text-gray-600 mb-2 font-semibold">Flujo con localización</div>
+      <pre class="text-sm"><code>         ┌─────────────────────────┐
+         │   Datos EN/ES           │
+         │ (traducciones paralelas,│
+         │  entrevistas, corpus)   │
+         └───────────┬─────────────┘
+                     ▼
+         ┌─────────────────────────┐
+         │   Annotation App        │
+         │  - Esquema con campos   │
+         │    phenomenon, severity │
+         │    translation_shift    │
+         │    register             │
+         │  - Enlaces parallel_id  │
+         └───────────┬─────────────┘
+                     ▼
+         ┌─────────────────────────┐
+         │   Metaphor Tagger       │
+         │  - EN                   │
+         │  - ES                   │
+         └───────────┬─────────────┘
+                     ▼
+         ┌───────────────────────────────────┐
+         │ Evaluación e intercambio cultural │
+         │ - Comparar EN vs ES               │
+         │ - Identificar cambios de traducción│
+         │ - Reportar hallazgos interculturales│
+         └───────────────────────────────────┘</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">Conclusión</h3>
+    <p class="mb-4">Las metáforas no son solo figuras retóricas; son realidades lingüísticas que moldean cómo experimentamos el mundo. Las personas dan sentido a sus vivencias a través de metáforas, y esas metáforas pesan en la salud, la política y la vida cotidiana.</p>
+    <p class="mb-4">Con Annotation App, Metaphor Tagger y Explain My Pain, podemos capturar, analizar y compartir metáforas de forma sistemática, escalable y significativa.</p>
+    <p class="mb-6">Este flujo de trabajo no es solo tecnología. Es hacer que el lenguaje sea visible, comparable y utilizable en distintos contextos y culturas.</p>
+  </div>
+ 
+
+  <!-- English (oculto por defecto) -->
+  <div id="content-en" class="hidden">
+    <h2 class="text-lg text-brand mb-2">From Annotation to Application</h2>
+    <h1 class="text-3xl md:text-4xl font-bold mb-6">Building a Pipeline for Metaphor Language</h1>
+
+    <p class="mb-4">Metaphors shape the way we speak about almost everything. We talk about <em>burning</em> ambition, <em>heavy</em> responsibilities, or <em>stabbing</em> guilt. These expressions are vivid and powerful, but they are also challenging for researchers and systems that try to analyse them.</p>
+
+    <p class="mb-4">Metaphors matter in everyday communication, and also in specific contexts such as health. Patients often describe their experiences in metaphorical terms, and those words influence how their suffering is perceived and managed. Metaphors also matter in politics, migration debates, and cultural narratives. They are everywhere, and they carry meaning.</p>
+
+    <p class="mb-4">To capture these meanings, we need more than one tool. We need a way to collect and structure human annotations, a way to test automatic detection, and a way to communicate insights clearly to wider audiences.</p>
+
+    <p class="mb-8">This is why I have been building three connected tools: <strong>Annotation App</strong> (schema-driven datasets), <strong>Metaphor Tagger</strong> (automatic detection), and <strong>Explain My Pain</strong> (human-facing reports). Together, they form a pipeline that bridges linguistics, NLP, and intercultural communication.</p>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">Step 1: Annotation App</h3>
+    <p class="mb-4">Most annotation platforms are designed by engineers for engineers. They are good at collecting labels but rarely capture the nuances that matter in linguistic research.</p>
+    <p class="mb-4">The <strong>Annotation App</strong> is different because it is built from a <strong>linguistic schema</strong>. That means:</p>
+    <ul class="list-disc pl-6 mb-4">
+      <li>Fields reflect distinctions from metaphor theory, stance analysis, and intercultural communication.</li>
+      <li>Instead of a generic label, you can encode categories like <code>phenomenon</code> (metaphor vs literal), <code>stance_tone</code> (distress, resignation, proactive), or <code>translation_shift</code> (literalisation, metaphorisation, register shift).</li>
+      <li>Each schema is versioned, so the theoretical framework that guided the annotations is preserved alongside the data.</li>
+    </ul>
+    <p class="mb-6">This approach comes directly from my academic background: categories are not neutral. They shape what researchers can see and what models can learn. The app can be adapted to pain language, but also to political discourse, emotional expression, or intercultural shifts.</p>
+
+    <div class="bg-gray-50 rounded-lg p-4 mb-8 border border-gray-200">
+      <div class="text-sm text-gray-600 mb-2 font-semibold">Workflow</div>
+      <pre class="text-sm"><code>         ┌──────────────────────┐
+         │   Raw Text Data      │
+         │ (interviews, notes,  │
+         │  surveys, corpora)   │
+         └─────────┬────────────┘
+                   ▼
+         ┌──────────────────────┐
+         │  Annotation App      │
+         │  - Import CSV/JSONL  │
+         │  - Apply schema      │
+         │  - Human annotation  │
+         │  - Export dataset    │
+         └─────────┬────────────┘</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">Step 2: Metaphor Tagger</h3>
+    <p class="mb-4">The <strong>Metaphor Tagger</strong> is not a generic keyword matcher. It is rooted in <strong>linguistic metaphor theory</strong>.</p>
+    <ul class="list-disc pl-6 mb-4">
+      <li>Its taxonomy draws on conceptual metaphor research: FIRE (intensity), WEIGHT (burden), SHARP OBJECTS (pain), and more.</li>
+      <li>The rules are informed by narrative analysis, distinguishing truly metaphorical uses from literal ones in context.</li>
+      <li>It does not replace human judgment; it scales linguistic insights across large collections of text.</li>
+    </ul>
+    <p class="mb-6">Pain language is one effective case study, but the same method applies to political metaphors, educational discourse, or climate communication.</p>
+
+    <div class="bg-gray-50 rounded-lg p-4 mb-8 border border-gray-200">
+      <div class="text-sm text-gray-600 mb-2 font-semibold">Workflow</div>
+      <pre class="text-sm"><code>         ┌──────────────────────┐
+         │  Annotation App      │
+         └─────────┬────────────┘
+                   │ Gold-standard annotations
+                   ▼
+         ┌──────────────────────┐
+         │   Metaphor Tagger    │
+         │  - Auto-detect spans │
+         │  - Assign categories │
+         └─────────┬────────────┘
+                   │ System-generated annotations
+                   ▼
+         ┌──────────────────────────────┐
+         │    Evaluation & Comparison   │
+         │  - Tagger vs Human           │
+         │  - Metrics: Precision, Recall│
+         │    F1, κ                     │
+         └──────────────────────────────┘</code></pre>
+    </div>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">Step 3: Explain My Pain</h3>
+    <p class="mb-4"><strong>Explain My Pain</strong> turns model outputs into meaningful feedback for patients and clinicians.</p>
+    <ul class="list-disc pl-6 mb-4">
+      <li>It highlights metaphors in a patient’s description.</li>
+      <li>It explains, in accessible language, why these metaphors matter.</li>
+      <li>It suggests how metaphorical language might affect communication in clinical encounters.</li>
+    </ul>
+    <p class="mb-6">This is a case study of how research tools can become accessible applications. The same idea could extend to public discourse (Explain My Politics) or climate narratives (Explain My Climate).</p>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">Conclusion</h3>
+    <p class="mb-4">Metaphors are not only figures of speech; they are linguistic realities that shape how we experience the world. People give meaning to their experiences through metaphors, and those metaphors carry weight in health, politics, and everyday life.</p>
+    <p class="mb-4">With Annotation App, Metaphor Tagger, and Explain My Pain, we can capture, analyse, and share metaphors in ways that are systematic, scalable, and meaningful.</p>
+    <p class="mb-6">This pipeline is not only about technology. It is about making language visible, comparable, and usable across contexts and cultures.</p>
+  </div>
+  <div class="mt-8 text-center">
+  <a href="https://github.com/Stella5791/metaphor-tagger" target="_blank" rel="noopener noreferrer"
+     class="inline-flex items-center px-4 py-2 border-2 border-[#1d7f96] text-[#1d7f96] rounded-lg hover:bg-[#1d7f96]/10 transition">
+     Pain Tagger 
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+    </svg>
+  </a>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-brand-light/20 border-t border-gray-200">
+  <div class="max-w-3xl mx-auto px-5 py-6 text-sm flex flex-col md:flex-row justify-between items-center gap-3">
+    <div>© 2025 <span class="font-semibold">Sierra Codes</span> — Stella Bullo</div>
+    <div class="flex gap-4 text-brand">
+      <a href="mailto:info@stellabullo.com">Email</a>
+      <a href="#top">Arriba ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll-to-top button -->
+<button id="scrollToTopBtn"
+        class="fixed bottom-6 right-6 p-3 bg-brand text-white rounded-full shadow-lg hover:bg-brand-dark hidden z-50"
+        aria-label="Back to top">
+  ↑
+</button>
+
+<script>
+  // Scroll-to-top
+  const scrollBtn = document.getElementById("scrollToTopBtn");
+  window.addEventListener("scroll", () => {
+    scrollBtn.classList.toggle("hidden", window.scrollY < 300);
+  });
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Toggle de idioma (ES visible por defecto)
+  const toggleBtn = document.getElementById("langToggle");
+  const esContent = document.getElementById("content-es");
+  const enContent = document.getElementById("content-en");
+
+  toggleBtn.addEventListener("click", () => {
+    const isSpanishVisible = !esContent.classList.contains("hidden");
+    esContent.classList.toggle("hidden", isSpanishVisible);
+    enContent.classList.toggle("hidden", !isSpanishVisible);
+    toggleBtn.textContent = isSpanishVisible ? "ES" : "EN";
+    document.documentElement.lang = isSpanishVisible ? "en" : "es";
+    toggleBtn.setAttribute("aria-pressed", String(!isSpanishVisible));
+  });
+</script>
+
+</body>
+</html>

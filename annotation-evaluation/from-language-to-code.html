@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Del lenguaje al código — Sierra Codes</title>
+  <meta name="description" content="Un camino de vuelta a casa: de la lingüística y la investigación al desarrollo web y las micro‑aplicaciones locales. Por Stella Bullo." />
+
+  <!-- Tailwind + brand colors -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: { DEFAULT: '#1d7f96', dark: '#156270', light: '#4fa7b5' }
+          },
+          fontFamily: {
+            sans: ['Montserrat', 'ui-sans-serif', 'system-ui']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    a { transition: all 0.3s ease-in-out; }
+    a:hover { text-decoration: underline; color: #1d7f96; }
+  </style>
+</head>
+<body class="font-sans text-gray-900" id="top">
+
+<!-- HEADER -->
+<header class="w-full bg-white shadow-sm fixed top-0 left-0 z-50">
+  <div class="max-w-5xl mx-auto flex items-center justify-between px-5 py-3">
+    <a href="/index.html" class="text-brand font-bold">← Volver</a>
+    <button id="langToggle" class="border border-brand text-brand px-3 py-1 rounded-md hover:bg-brand-light/20" aria-pressed="false" aria-label="Cambiar idioma">
+      EN
+    </button>
+  </div>
+</header>
+
+<!-- CONTENT -->
+<main class="max-w-3xl mx-auto pt-24 pb-16 px-5 leading-relaxed">
+
+  <!-- Spanish version FIRST (visible by default) -->
+  <article id="content-es">
+    <h2 class="text-lg text-brand mb-2">Sierra Codes — Artículo</h2>
+    <h1 class="text-3xl md:text-4xl font-bold mb-6">Del lenguaje al código: un camino de vuelta a casa</h1>
+    <p class="italic mb-6">Por Stella Bullo</p>
+
+    <p class="mb-4">Volví a Berrotarán con una certeza: quería que todo lo que aprendí afuera, en la investigación, en mi doctorado en lingüística y en los equipos internacionales en los que trabajé, sirviera para algo cercano. Para mi pueblo, para Córdoba, para emprendedores y profesionales que necesitan mover sus ideas sin complicarse. Ese es el corazón de Sierra Codes.</p>
+
+    <p class="mb-4">Mi puerta de entrada fue el inglés: lengua, lectura, enseñanza, traducción. Estudié Profesorado en Inglés en la Universidad Nacional de Córdoba, una formación que me abrió las puertas a otros mundos y me enseñó a mirar el lenguaje con precisión y sensibilidad. Ese camino me llevó después a Inglaterra, a la lingüística y, con el tiempo, a un doctorado. Viví más de veinte años en el Reino Unido, donde trabajé como profesora e investigadora en lingüística.</p>
+
+    <p class="mb-4">Después llegó mi hija, la pandemia y un regreso largo a mi pueblo. Ya en Manchester, en familia decidimos que nuestro futuro no estaba más en Europa ni tampoco en una gran ciudad argentina, sino en el pueblo donde crecí y donde queremos criar a nuestra hija. Con ese cierre también dejé atrás la docencia, aunque no la curiosidad ni las habilidades que había desarrollado. En plena expansión de la inteligencia artificial empecé a mirar hacia otros horizontes. La lingüística y la investigación ya me habían acercado al análisis y la anotación de datos, y en varios proyectos usaba pequeños scripts para automatizar tareas o procesar lenguaje.</p>
+
+    <p class="mb-4">Cuando esos dos mundos, el del lenguaje y el del código, finalmente se conectaron, entendí algo simple: programar también es trabajar con lenguaje, y la lingüística, lejos de quedar atrás, se volvió una ventaja.</p>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">Lenguaje y código en diálogo</h3>
+    <p class="mb-4">Aprendí que la sintaxis de una oración y la de una función comparten la necesidad de estructura clara para ser legibles, que no alcanza con que el código <em>compile</em> si no comunica algo útil, que el contexto siempre importa porque una misma función puede servir distinto según el usuario o el objetivo, y que así como un discurso necesita cohesión, una aplicación necesita una arquitectura que guíe la experiencia. También confirmé que los datos, igual que los corpus lingüísticos, son formas de entender cómo las personas realmente usan las palabras.</p>
+
+    <p class="mb-4">No dejé la lingüística para empezar a programar, la usé para programar mejor. Y descubrí que esa mezcla de lenguaje y código es muy práctica cuando lo que se busca es comunicar, vender o automatizar sin perder la humanidad.</p>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">Experiencia global, ejecución local</h3>
+    <p class="mb-4">Trabajar en una universidad del llamado primer mundo me enseñó el valor de la claridad, de los procesos y de las métricas. Aprendí a definir qué significa que algo esté listo, a medir el rendimiento y a traducir visitas o clics en conversaciones reales. Esa disciplina hoy la aplico desde Berrotarán, con un foco completamente local.</p>
+
+    <ul class="list-disc pl-6 mb-6">
+      <li>Hago sitios claros y adaptables al celular, que cargan rápido y explican en segundos qué hacés.</li>
+      <li>Integro WhatsApp e Instagram, porque ahí es donde la gente te escribe y te recomienda.</li>
+      <li>Diseño microaplicaciones y automatizaciones simples cuando suman: formularios, cuestionarios, tableros y seguimientos por correo.</li>
+      <li>Creo contenido en español, y en inglés cuando hace falta, pensado para el público real que lo va a leer o usar.</li>
+    </ul>
+
+    <p class="mb-4">Antes de esta etapa más técnica hubo un proyecto que marcó el puente: <em>El lenguaje de la endometriosis</em>. Nació de mi triple mirada, la de lingüista, paciente e investigadora, y buscó algo tan humano como urgente: entender cómo las mujeres ponen en palabras un dolor que muchas veces no se ve ni se cree. Ese trabajo, además de acompañar mi propio proceso de recuperación, me mostró con claridad que la tecnología puede estar al servicio del lenguaje y del bienestar.</p>
+
+    <p class="mb-4">De esa búsqueda nació también <em>Explain My Pain</em>, una aplicación bilingüe que traduce descripciones metafóricas del dolor en información útil para pacientes y profesionales. Podría decirse que <em>El lenguaje de la endometriosis</em> fue la semilla y <em>Explain My Pain</em>, su versión aplicada. Ambos proyectos siguen vivos dentro de Sierra Codes, como ejemplo de lo que me mueve: usar la lingüística, y ahora también el código, para mejorar la comunicación en salud y hacer visible lo que cuesta decir.</p>
+
+    <div class="bg-gray-50 rounded-lg p-4 mb-6 border border-gray-200">
+      <p class="mb-2">Lecturas relacionadas:</p>
+      <ul class="list-disc pl-6">
+        <li><a href="/articles/from-annotation-to-application.html">De la anotación a la aplicación</a></li>
+        <li><a href="/articles/where-linguistics-meets-nlp.html">Donde la Lingüística se encuentra con el PLN</a></li>
+        <li><a href="https://stellabullo.com/technical-content-ux/language-of-endo/" target="_blank" rel="noopener">El lenguaje de la endometriosis</a></li>
+        <li><a href="https://explain-my-pain.onrender.com/" target="_blank" rel="noopener">Explain My Pain (demo)</a></li>
+      </ul>
+    </div>
+
+    <p class="mb-4">Mi convicción es simple: lo internacional se puede hacer a escala local sin sobreactuar complejidad, y cuando hace falta algo más técnico, como anotación de datos, control de calidad de contenido o pequeñas integraciones de inteligencia artificial, también está cubierto.</p>
+
+    <p class="mb-8 italic">Volver a casa no fue cerrar una puerta, fue abrir muchas, más cerca.</p>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">Cómo trabajo y qué podés esperar</h3>
+    <ol class="list-decimal pl-6 mb-6">
+      <li>Escucharte: quién sos, qué ofrecés y quién es tu cliente.</li>
+      <li>Mensajes clave: títulos, beneficios y llamados a la acción.</li>
+      <li>Estructura: una página que respire, se lea fácil y convierta.</li>
+      <li>Entrega rápida: una versión viva en pocos días para ajustar con datos reales.</li>
+      <li>Medición simple: saber de dónde llegan y qué hacen quienes visitan el sitio.</li>
+    </ol>
+
+    <p class="mb-6">Empecé en el lenguaje y lo sigo eligiendo todos los días, ahora con código. Ese cruce es Sierra Codes: experiencia global, ejecución local, para poner online lo que hacés sin dolores de cabeza y con resultados que se puedan medir. Si te resuena, hablemos. Me encantará escuchar tu idea.</p>
+  </article>
+
+  <!-- English version SECOND (hidden by default) -->
+  <article id="content-en" class="hidden">
+    <h2 class="text-lg text-brand mb-2">Sierra Codes — Article</h2>
+    <h1 class="text-3xl md:text-4xl font-bold mb-6">From Language to Code: A Way Back Home</h1>
+    <p class="italic mb-6">By Stella Bullo</p>
+
+    <p class="mb-4">I returned to Berrotarán with one clear intention: to bring everything I learned abroad, in research, during my PhD in linguistics, and across international teams, back to something close to home. For my town, for Córdoba, for entrepreneurs and professionals who need to move their ideas forward without extra complexity. That is the heart of Sierra Codes.</p>
+
+    <p class="mb-4">My entry point was English: language, reading, teaching, translation. I studied a BA in English Teaching at the National University of Córdoba, which opened doors and trained me to look at language with precision and care. That path later took me to England, to linguistics and, in time, to a PhD. I lived over twenty years in the UK, where I worked as a lecturer and researcher in linguistics.</p>
+
+    <p class="mb-4">Then my daughter arrived, the pandemic reshaped everything, and I spent a long period back in my hometown. From Manchester, as a family we decided our future was no longer in Europe nor in a large Argentine city, but in the town where I grew up and where we want to raise our daughter. I left formal teaching behind, but not my curiosity nor the skills I had developed. As AI expanded into everyday life, I began looking toward a different horizon. Linguistics and research had already brought me closer to data analysis and annotation, and in several projects I used small scripts to automate tasks or process language.</p>
+
+    <p class="mb-4">When those two worlds, language and code, finally connected, I realised something simple: programming is also working with language, and linguistics became an advantage rather than something of the past.</p>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">Language and code in conversation</h3>
+    <p class="mb-4">I learned that the syntax of a sentence and the syntax of a function both require clear structure to be readable, that compiling is not enough if the code does not communicate something useful, that context always matters because the same function can serve different goals depending on users and scenarios, and that just as a discourse needs cohesion, an application needs an architecture that guides the experience. I also confirmed that data, much like linguistic corpora, are a way to see how people actually use words.</p>
+
+    <p class="mb-4">I did not leave linguistics to start coding, I used linguistics to code better. That blend of language and code is very practical when your aim is to communicate, sell or automate without losing humanity.</p>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">Global experience, local execution</h3>
+    <p class="mb-4">Working in a university in the so‑called first world taught me the value of clarity, process and metrics. I learned how to define what “done” means, how to measure performance, and how to turn visits or clicks into real conversations. I now apply that discipline from Berrotarán, with a fully local focus.</p>
+
+    <ul class="list-disc pl-6 mb-6">
+      <li>I build clear, mobile‑first websites that load fast and explain in seconds what you do.</li>
+      <li>I integrate WhatsApp and Instagram because that is where people contact and recommend you.</li>
+      <li>I design small apps and simple automations where they help: forms, questionnaires, dashboards and email follow‑ups.</li>
+      <li>I write content in Spanish and, when needed, in English, always tailored to real audiences.</li>
+    </ul>
+
+    <p class="mb-4">Before this more technical stage, one project served as a bridge: <em>The Language of Endometriosis</em>. It grew from my triple standpoint as linguist, patient and researcher, and it aimed at something human and urgent: to understand how women put into words a pain that often goes unseen or unbelieved. Beyond my own recovery, that work showed me clearly that technology can serve language and wellbeing.</p>
+
+    <p class="mb-4">From that same search, <em>Explain My Pain</em> emerged, a bilingual application that translates metaphorical descriptions of pain into useful information for patients and clinicians. You could say that <em>The Language of Endometriosis</em> was the seed and <em>Explain My Pain</em> its applied version. Both projects live on within Sierra Codes as examples of what drives my work: using linguistics, and now also code, to improve communication in health and to make visible what is hard to say.</p>
+
+    <div class="bg-gray-50 rounded-lg p-4 mb-6 border border-gray-200">
+      <p class="mb-2">Related reading:</p>
+      <ul class="list-disc pl-6">
+        <li><a href="/articles/from-annotation-to-application.html">From Annotation to Application</a></li>
+        <li><a href="/articles/where-linguistics-meets-nlp.html">Where Linguistics Meets NLP</a></li>
+        <li><a href="https://stellabullo.com/technical-content-ux/language-of-endo/" target="_blank" rel="noopener">The Language of Endometriosis</a></li>
+        <li><a href="https://explain-my-pain.onrender.com/" target="_blank" rel="noopener">Explain My Pain (demo)</a></li>
+      </ul>
+    </div>
+
+    <p class="mb-4">My conviction is simple: international‑level work can be done at local scale without overcomplicating things, and whenever a more technical layer is needed, such as data annotation, content QA or small AI integrations, it is covered.</p>
+
+    <p class="mb-8 italic">Coming back home did not close a door, it opened many, closer to where I stand.</p>
+
+    <h3 class="text-2xl font-semibold mt-10 mb-3">How I work and what to expect</h3>
+    <ol class="list-decimal pl-6 mb-6">
+      <li>Listening first: who you are, what you offer and who your client is.</li>
+      <li>Key messages: headlines, benefits and calls to action.</li>
+      <li>Structure: a page that breathes, reads easily and converts.</li>
+      <li>Fast delivery: a live version in a few days so we can adjust with real data.</li>
+      <li>Simple measurement: knowing where visitors come from and what they do.</li>
+    </ol>
+
+    <p class="mb-6">I started with language and I still choose it every day, now with code. That crossing is Sierra Codes: global experience, local execution, to put your work online without headaches and with results you can measure. If this resonates, let us talk. I would love to hear your idea.</p>
+  </article>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-brand-light/20 border-t border-gray-200">
+  <div class="max-w-3xl mx-auto px-5 py-6 text-sm flex flex-col md:flex-row justify-between items-center gap-3">
+    <div>© 2025 <span class="font-semibold">Sierra Codes</span> — Stella Bullo</div>
+    <div class="flex gap-4 text-brand">
+      <a href="mailto:info@stellabullo.com">Email</a>
+      <a href="#top">Arriba ↑</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll-to-top button -->
+<button id="scrollToTopBtn"
+        class="fixed bottom-6 right-6 p-3 bg-brand text-white rounded-full shadow-lg hover:bg-brand-dark hidden z-50"
+        aria-label="Back to top">
+  ↑
+</button>
+
+<script>
+  // Scroll-to-top
+  const scrollBtn = document.getElementById("scrollToTopBtn");
+  window.addEventListener("scroll", () => {
+    scrollBtn.classList.toggle("hidden", window.scrollY < 300);
+  });
+  scrollBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Language toggle (Spanish visible by default)
+  const toggleBtn = document.getElementById("langToggle");
+  const esContent = document.getElementById("content-es");
+  const enContent = document.getElementById("content-en");
+
+  toggleBtn.addEventListener("click", () => {
+    const isSpanishVisible = !esContent.classList.contains("hidden");
+    esContent.classList.toggle("hidden", isSpanishVisible);
+    enContent.classList.toggle("hidden", !isSpanishVisible);
+    // Update button label and document lang
+    toggleBtn.textContent = isSpanishVisible ? "ES" : "EN";
+    document.documentElement.lang = isSpanishVisible ? "en" : "es";
+    toggleBtn.setAttribute("aria-pressed", String(isSpanishVisible));
+  });
+</script>
+
+</body>
+</html>
