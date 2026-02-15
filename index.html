@@ -52,42 +52,121 @@
   <div class="min-h-screen flex flex-col">
 
     <header class="border-b border-stone-200 bg-white/80 backdrop-blur">
-      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div class="flex h-16 items-center justify-between">
-          <div class="text-sm font-semibold tracking-[0.22em] uppercase text-[#8e4748]">
-            Stella Bullo
-          </div>
-          <div class="flex items-center gap-6">
-            <nav class="hidden md:flex items-center gap-6 text-sm">
-              <a href="#portfolio"
-               class="text-stone-800 font-medium hover:text-[#8e4748] hover:underline underline-offset-4">Case studies</a>
-               <a href="#expertise"
-                class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4"> What I do</a>
-                <a href="#story"
-                class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4">Story</a>
-                <a href="/articles"
-                class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4">Articles</a>
-                 <a href="/publications"
-                  class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4"> Research</a>
-                  <a href="#contact"
-                  class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4">Contact</a>
-                </nav>
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between">
 
+      <!-- Brand -->
+      <a href="#top" class="text-sm font-semibold tracking-[0.22em] uppercase text-[#8e4748]
+                            focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8e4748]/40 rounded">
+        Stella Bullo
+      </a>
 
-            <!-- Language toggle -->
-            <div class="flex items-center gap-2 text-xs font-medium pl-4 border-l border-stone-300">
-              <span class="text-stone-900">EN</span>
-              <span class="text-stone-400">/</span>
-              <a href="/es/"
-                 class="text-stone-500 hover:text-[#8e4748] transition">
-                ES
-              </a>
-            </div>
-          </div>
+      <div class="flex items-center gap-6">
 
+        <!-- Desktop nav -->
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#what-i-do"
+             class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4
+                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8e4748]/35 rounded">
+            What I do
+          </a>
+          <a href="#case-studies"
+             class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4
+                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8e4748]/35 rounded">
+            Case studies
+          </a>
+          <a href="#story"
+             class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4
+                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8e4748]/35 rounded">
+            Story
+          </a>
+          <a href="#articles"
+             class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4
+                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8e4748]/35 rounded">
+            Articles
+          </a>
+          <a href="#contact"
+             class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4
+                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8e4748]/35 rounded">
+            Contact
+          </a>
+        </nav>
+
+        <!-- Language toggle (desktop) -->
+        <div class="hidden md:flex items-center gap-2 text-xs font-medium pl-4 border-l border-stone-300">
+          <span class="text-stone-900">EN</span>
+          <span class="text-stone-400">/</span>
+          <a href="/es/"
+             class="text-stone-500 hover:text-[#8e4748] transition
+                    focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8e4748]/35 rounded">
+            ES
+          </a>
         </div>
+
+        <!-- Mobile menu button -->
+        <button id="menuBtn" type="button"
+                class="md:hidden inline-flex items-center justify-center rounded-xl border border-stone-200
+                       bg-white/70 px-3 py-2 text-stone-700 shadow-sm
+                       hover:bg-white transition
+                       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8e4748]/35"
+                aria-controls="mobileMenu"
+                aria-expanded="false"
+                aria-label="Open menu">
+          <!-- Hamburger icon -->
+          <svg id="iconHamburger" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5">
+            <path d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+
+          <!-- Close icon -->
+          <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+               class="h-5 w-5 hidden">
+            <path d="M6 6l12 12M18 6l-12 12"/>
+          </svg>
+        </button>
+
       </div>
-    </header>
+    </div>
+
+    <!-- Mobile panel -->
+    <div id="mobileMenu" class="md:hidden hidden pb-4">
+      <div class="mt-3 rounded-2xl border border-stone-200 bg-white/80 backdrop-blur
+                  shadow-[0_14px_40px_rgba(0,0,0,0.06)] overflow-hidden">
+        <nav class="flex flex-col p-3 text-sm">
+          <a href="#what-i-do"
+             class="px-3 py-2 rounded-xl text-stone-700 hover:bg-stone-50 hover:text-[#8e4748] transition">
+            What I do
+          </a>
+          <a href="#case-studies"
+             class="px-3 py-2 rounded-xl text-stone-700 hover:bg-stone-50 hover:text-[#8e4748] transition">
+            Case studies
+          </a>
+          <a href="#articles"
+             class="px-3 py-2 rounded-xl text-stone-700 hover:bg-stone-50 hover:text-[#8e4748] transition">
+            Articles
+          </a>
+          <a href="#story"
+             class="px-3 py-2 rounded-xl text-stone-700 hover:bg-stone-50 hover:text-[#8e4748] transition">
+            Story
+          </a>
+          <a href="#contact"
+             class="px-3 py-2 rounded-xl text-stone-700 hover:bg-stone-50 hover:text-[#8e4748] transition">
+            Contact
+          </a>
+
+          <div class="mt-2 pt-3 border-t border-stone-200 flex items-center gap-2 text-xs font-medium px-3">
+            <span class="text-stone-900">EN</span>
+            <span class="text-stone-400">/</span>
+            <a href="/es/" class="text-stone-600 hover:text-[#8e4748] transition">ES</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+  </div>
+</header>
 
 
    <!-- HERO -->
@@ -231,7 +310,7 @@
 
 
     <!-- APPLIED LANGUAGE SYSTEMS -->
-<section id="applied-language-systems" class="relative overflow-hidden py-28">
+<section id="case-studies" class="relative overflow-hidden py-28">
   <div class="relative max-w-6xl mx-auto px-6 lg:px-10">
 
     <!-- Section Header -->
@@ -271,9 +350,13 @@
               Featured system
             </p>
 
-            <h3 class="text-2xl sm:text-3xl font-semibold text-neutral-900 mb-4">
-              Explain My Pain — Rule-Based Language System
-            </h3>
+            <h3 class="text-2xl sm:text-3xl font-semibold text-neutral-900 leading-tight">
+               Explain My Pain
+              </h3>
+              <h4 class="mt-1 mb-6 text-xs sm:text-sm font-semibold tracking-[0.18em] uppercase text-neutral-500">
+                Rule-Based Language System
+              </h4>
+
 
             <p class="text-neutral-700 leading-relaxed max-w-3xl">
               A linguistically grounded, rule-based application that translates
@@ -329,7 +412,7 @@
     </article>
 
     <!-- SUPPORTING GRID -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div id="articles" class="grid grid-cols-1 md:grid-cols-2 gap-10">
 
       <!-- Card 1 -->
       <article class="group rounded-2xl border border-neutral-200 bg-white/60 backdrop-blur
@@ -625,8 +708,10 @@
   </div>
 
   <script>
-    const btn = document.getElementById('backToTop');
+  // BACK TO TOP
+  const btn = document.getElementById('backToTop');
 
+  if (btn) {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 300) btn.classList.remove('hidden');
       else btn.classList.add('hidden');
@@ -635,10 +720,48 @@
     btn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+  }
 
-    // Dynamic year in footer
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  // MOBILE MENU
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const iconHamburger = document.getElementById('iconHamburger');
+  const iconClose = document.getElementById('iconClose');
+
+  if (menuBtn && mobileMenu) {
+
+    function setMenuState(isOpen) {
+      mobileMenu.classList.toggle('hidden', !isOpen);
+      if (iconHamburger) iconHamburger.classList.toggle('hidden', isOpen);
+      if (iconClose) iconClose.classList.toggle('hidden', !isOpen);
+
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
+      menuBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    }
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+      setMenuState(!isOpen);
+    });
+
+    // Close when clicking a section link
+    mobileMenu.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', () => setMenuState(false));
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setMenuState(false);
+    });
+  }
+
+  // DYNAMIC YEAR
+  const yearEl = document.getElementById('year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
+  }
+</script>
+
 
 </body>
 </html>
