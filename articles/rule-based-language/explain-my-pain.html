@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explain My Pain | Stella Bullo</title>
+  <link rel="stylesheet" href="/assets/article.css" />
+</head>
+
+
+
+<body>
+
+<header class="article-header">
+  <div class="container">
+    <a href="../../index.html" class="brand">Stella Bullo</a>
+    <div class="lang-toggle">
+      <a href="#">EN</a> | <a href="#">ES</a>
+    </div>
+  </div>
+</header>
+
+
+<main class="article-container">
+
+  <h1>The Language of Endometriosis</h1>
+  <h2>A Taxonomy of Pain Descriptors and a Rule-Based Language System</h2>
+
+  <p class="author-line">
+    Stella Bullo, PhD · Applied Linguistics · Language Systems · Health Communication
+  </p>
+
+  <section>
+    <h3>Abstract</h3>
+    <p>
+      Pain in endometriosis is frequently described through metaphor, evaluation, and embodied imagery. 
+      These descriptions are semantically rich yet difficult to translate into structured clinical documentation. 
+      This article presents (1) a linguistically grounded taxonomy of endometriosis pain descriptors derived from corpus-based research, 
+      and (2) the design of a rule-based language system that operationalises this taxonomy to generate structured patient and clinician summaries. 
+      The paper argues that transparent linguistic modelling offers an interpretable alternative to opaque AI-driven approaches in sensitive health contexts.
+    </p>
+  </section>
+
+  <section>
+    <h3>1. The Translation Gap in Pain Communication</h3>
+
+    <p>
+      Endometriosis pain is persistent, cyclical, context-dependent, and multidimensional. 
+      Patients frequently rely on metaphor to make invisible sensations communicable:
+    </p>
+
+    <ul>
+      <li>“Like broken glass”</li>
+      <li>“A tightening band”</li>
+      <li>“Electric shocks”</li>
+      <li>“Like something burning inside”</li>
+    </ul>
+
+    <p>
+      Clinicians, however, require structured documentation, categorical clarity, and reproducible summaries. 
+      Numeric pain scales capture intensity but not mechanism. Free text preserves experience but resists standardisation. 
+      This creates a structural translation gap between lived experience and medical record.
+    </p>
+  </section>
+
+  <section>
+    <h3>2. Research Foundations</h3>
+
+    <p>
+      The taxonomy presented here derives from corpus-based analysis of endometriosis pain discourse 
+      (≈ 241,000 words). Quantitative analysis showed that <em>pain</em> occurred 2,131 times 
+      (≈ 8.8 per 1,000 words), over 120 times more frequently than in the British National Corpus.
+    </p>
+
+    <p>
+      31% of instances were figurative. These metaphors were not random; 
+      they formed recurring semantic patterns structured around mechanisms such as cutting, burning, pressure, invasion, and entrapment.
+    </p>
+
+    <p>
+      The taxonomy follows Conceptual Metaphor Theory and discourse-based evaluation analysis.
+    </p>
+  </section>
+
+  <section>
+    <h3>3. Taxonomy of Pain Descriptors</h3>
+
+    <p>
+      The taxonomy is curated, finite, and auditable. Each descriptor is mapped to:
+    </p>
+
+    <ul>
+      <li>Semantic domain</li>
+      <li>Metaphor category (if applicable)</li>
+      <li>Normalised clinical heading</li>
+      <li>Interpretive entailment</li>
+    </ul>
+
+    <h4>3.1 Sensory–Physical Domains</h4>
+
+    <table class="taxonomy-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Example Expressions</th>
+          <th>Type</th>
+          <th>Semantic Entailment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Cutting Tools</td>
+          <td>knife, blade, broken glass</td>
+          <td>Sensory</td>
+          <td>Pain as penetration or sharp intrusion</td>
+        </tr>
+        <tr>
+          <td>Pressure / Constriction</td>
+          <td>tight band, crushing, clamped</td>
+          <td>Sensory</td>
+          <td>Pain as compression or restriction</td>
+        </tr>
+        <tr>
+          <td>Heat</td>
+          <td>burning, on fire</td>
+          <td>Sensory</td>
+          <td>Pain as inflammation or internal heat</td>
+        </tr>
+        <tr>
+          <td>Electric Force</td>
+          <td>zapping, electric shock</td>
+          <td>Sensory</td>
+          <td>Pain as sudden discharge of energy</td>
+        </tr>
+        <tr>
+          <td>Weight</td>
+          <td>heavy, dragging</td>
+          <td>Sensory</td>
+          <td>Pain as gravitational burden</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>3.2 Emotional and Evaluative Domains</h4>
+
+    <table class="taxonomy-table">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Example Expressions</th>
+          <th>Type</th>
+          <th>Semantic Entailment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Entrapment</td>
+          <td>trapped, locked in</td>
+          <td>Emotional</td>
+          <td>Lack of escape or control</td>
+        </tr>
+        <tr>
+          <td>Predator / Attack</td>
+          <td>biting, attacking</td>
+          <td>Emotional</td>
+          <td>Pain as external threat</td>
+        </tr>
+        <tr>
+          <td>Transformation</td>
+          <td>alien inside me, twisted</td>
+          <td>Emotional</td>
+          <td>Bodily intrusion or loss of integrity</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4>3.3 Contextual Occurrence</h4>
+
+    <table class="taxonomy-table">
+      <thead>
+        <tr>
+          <th>Context</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Menstruation-related</td><td>Cyclical menstrual pain</td></tr>
+        <tr><td>Ovulation-related</td><td>Mid-cycle pain</td></tr>
+        <tr><td>Intercourse-related</td><td>Dyspareunia</td></tr>
+        <tr><td>Bowel-related</td><td>Pain during defecation</td></tr>
+        <tr><td>Persistent / Background</td><td>Chronic baseline pain</td></tr>
+      </tbody>
+    </table>
+
+  </section>
+
+  <section>
+    <h3>4. From Taxonomy to System Design</h3>
+
+    <p>
+      The taxonomy is operationalised in the <strong>Explain My Pain</strong> system, 
+      a rule-based, deterministic application built with a Flask backend and YAML taxonomy.
+    </p>
+
+    <p>
+      User selections are mapped to structured outputs across three dimensions:
+    </p>
+
+    <ul>
+      <li><strong>Sensation</strong> (mechanism and quality)</li>
+      <li><strong>Emotion</strong> (evaluative stance)</li>
+      <li><strong>Context</strong> (trigger or cyclical pattern)</li>
+    </ul>
+
+    <p>
+      No predictive modelling is used. The system prioritises interpretability, traceability, and ethical transparency.
+    </p>
+  </section>
+
+  <section>
+    <h3>5. Why Rule-Based Modelling?</h3>
+
+    <p>
+      In sensitive health contexts, black-box AI systems risk hallucination, overgeneralisation, 
+      and loss of patient nuance. A structured taxonomy offers:
+    </p>
+
+    <ul>
+      <li>Explicit descriptor → category mapping</li>
+      <li>Controlled vocabulary</li>
+      <li>Auditable semantic logic</li>
+      <li>Reproducible outputs</li>
+    </ul>
+
+    <p>
+      This does not reject AI. It proposes semantic infrastructure beneath it.
+    </p>
+  </section>
+
+  <section>
+    <h3>6. Conclusion</h3>
+
+    <p>
+      The Language of Endometriosis taxonomy demonstrates how applied linguistics 
+      can function as infrastructure for digital health systems. 
+      Rather than replacing human interpretation, structured modelling supports it.
+    </p>
+
+    <p>
+      Interpretability can be designed deliberately. 
+      Language can be structured without being flattened.
+    </p>
+  </section>
+
+</main>
+
+<footer class="article-footer">
+  <div class="container">
+    <p>© Stella Bullo · LinguaMind Technologies</p>
+  </div>
+</footer>
+
+</body>
+</html>

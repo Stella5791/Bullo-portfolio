@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Título del artículo | Stella Bullo</title>
+  <meta name="description" content="Descripción breve del artículo (1–2 líneas)." />
+
+  <link rel="stylesheet" href="/assets/article.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="site-header">
+      <div class="container">
+        <div class="header-row">
+
+          <a class="brand" href="/index.html">Stella Bullo</a>
+
+          <div class="lang" aria-label="Selector de idioma">
+            <!-- English version: same filename at site root -->
+            <a href="/article-template.html">EN</a>
+            <span>/</span>
+            <span class="active">ES</span>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+
+        <p class="kicker">Sistemas lingüísticos aplicados</p>
+        <h1>Título del artículo</h1>
+
+        <p class="subtitle">
+          Una frase de posicionamiento del artículo. Breve, clara y técnica.
+        </p>
+
+        <div class="meta">
+          <span>Por Stella Bullo</span>
+          <span>·</span>
+          <span>Actualizado: 2026-02-15</span>
+          <span>·</span>
+          <span>Etiquetas: anotación, evaluación, modelado del significado</span>
+        </div>
+
+        <article class="article">
+
+          <p>
+            Párrafo de apertura. Planteá el problema y por qué importa. Evitá preámbulos largos.
+          </p>
+
+          <div class="callout">
+            <p class="label">Idea clave</p>
+            <p>
+              Un mensaje nítido y memorable para alguien que lee rápido.
+            </p>
+          </div>
+
+          <h2>Título de sección</h2>
+          <p>
+            Contenido. Párrafos cortos y lógica explícita.
+          </p>
+
+          <h3>Subtítulo</h3>
+          <ul>
+            <li>Punto 1 con detalle concreto</li>
+            <li>Punto 2 con restricciones o trade-offs</li>
+            <li>Punto 3 con implicancias</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <h2>Ejemplo</h2>
+          <pre><code># opcional: snippet de esquema / pseudocódigo
+taxonomy:
+  heat:
+    - "ardor"
+    - "como fuego"</code></pre>
+
+          <p>
+            Cierre breve: “¿y entonces?” / “¿para qué sirve?”.
+          </p>
+
+        </article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© <span id="year"></span> Stella Bullo</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

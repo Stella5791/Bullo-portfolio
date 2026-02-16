@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Article Title | Stella Bullo</title>
+  <meta name="description" content="Short description of this article (1–2 lines)." />
+
+  <link rel="stylesheet" href="/assets/article.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="site-header">
+      <div class="container">
+        <div class="header-row">
+
+          <a class="brand" href="/index.html">Stella Bullo</a>
+
+          <div class="lang" aria-label="Language switcher">
+            <span class="active">EN</span>
+            <span>/</span>
+            <!-- Spanish version: same filename under /es/ -->
+            <a href="/es/article-template.html">ES</a>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+
+        <p class="kicker">Applied Language Systems</p>
+        <h1>Article Title</h1>
+
+        <p class="subtitle">
+          One-sentence positioning of the article. Keep it crisp and technical.
+        </p>
+
+        <div class="meta">
+          <span>By Stella Bullo</span>
+          <span>·</span>
+          <span>Updated: 2026-02-15</span>
+          <span>·</span>
+          <span>Tags: annotation, evaluation, meaning modelling</span>
+        </div>
+
+        <article class="article">
+
+          <p>
+            Opening paragraph. State the problem and why it matters. Avoid long preambles.
+          </p>
+
+          <div class="callout">
+            <p class="label">Key idea</p>
+            <p>
+              A single sharp takeaway that a hiring manager or collaborator can remember.
+            </p>
+          </div>
+
+          <h2>Section Heading</h2>
+          <p>
+            Your content here. Use short paragraphs. Keep the logic explicit.
+          </p>
+
+          <h3>Subheading</h3>
+          <ul>
+            <li>Point one with concrete detail</li>
+            <li>Point two with constraints or trade-offs</li>
+            <li>Point three with implications</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <h2>Example</h2>
+          <pre><code>// optional code / schema snippet
+taxonomy:
+  heat:
+    - "burning"
+    - "like fire"</code></pre>
+
+          <p>
+            Close with a short conclusion or “so what”.
+          </p>
+
+        </article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© <span id="year"></span> Stella Bullo</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
