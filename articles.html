@@ -4,16 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Articles | Stella Bullo</title>
-  <meta name="description" content="Articles and notes on annotation, evaluation, meaning modelling, and research-to-application work (EN/ES)." />
-  <link rel="canonical" href="https://stellabullo.com/articles/" />
+  <meta name="description" content="Short, applied writing on language systems, annotation & evaluation, and public-facing linguistic interpretation (EN/ES)." />
+  <link rel="canonical" href="https://stellabullo.com/articles.html" />
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } } };
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    };
   </script>
 
-  <style>html { scroll-behavior: smooth; }</style>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -34,6 +43,7 @@
           <div class="flex items-center gap-6">
             <nav class="hidden md:flex items-center gap-6 text-sm">
               <a href="/index.html" class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4">Home</a>
+              <a href="/#portfolio" class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4">Case studies</a>
               <a href="/#contact" class="text-stone-600 hover:text-[#8e4748] hover:underline underline-offset-4">Contact</a>
             </nav>
 
@@ -57,85 +67,185 @@
         </p>
 
         <h1 class="text-3xl sm:text-[2.4rem] font-semibold leading-snug tracking-tight text-stone-900 mb-5">
-          Notes on annotation, evaluation, and meaning modelling.
+          Notes across three strands of work.
         </h1>
 
         <p class="text-base sm:text-[17px] text-stone-700 leading-relaxed max-w-3xl">
-          Short, applied writing that documents how linguistic insight becomes frameworks, QA logic, and interpretable language components (EN/ES).
+          Applied writing that documents how linguistic insight becomes system design, evaluation logic,
+          and public-facing interpretation (EN/ES).
         </p>
 
         <div class="mt-6 flex flex-wrap gap-2 text-xs text-stone-700">
-          <span class="rounded-full bg-white border border-[#8e4748]/40 px-3 py-1">Annotation &amp; evaluation</span>
-          <span class="rounded-full bg-white border border-[#8e4748]/40 px-3 py-1">Meaning modelling</span>
-          <span class="rounded-full bg-white border border-[#8e4748]/40 px-3 py-1">Research → application</span>
+          <a href="#language-systems" class="rounded-full bg-white border border-[#8e4748]/40 px-3 py-1 hover:bg-[#8e4748]/10 transition">Language systems &amp; modelling</a>
+          <a href="#annotation-evaluation" class="rounded-full bg-white border border-[#8e4748]/40 px-3 py-1 hover:bg-[#8e4748]/10 transition">Annotation &amp; evaluation</a>
+          <a href="#public-writing" class="rounded-full bg-white border border-[#8e4748]/40 px-3 py-1 hover:bg-[#8e4748]/10 transition">Public writing</a>
         </div>
 
       </div>
     </section>
 
-    <!-- LIST -->
+    <!-- CONTENT -->
     <main class="flex-1">
       <section class="py-16">
         <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
 
-          <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
 
-            <!-- Left: list -->
-            <div class="lg:col-span-2 space-y-6">
+            <!-- MAIN -->
+            <div class="lg:col-span-8 space-y-14">
 
-              <!-- Article card -->
-              <article class="bg-white rounded-2xl border border-[#8e4748]/15 p-6 hover:shadow-md transition-shadow">
-                <div class="flex flex-wrap items-center gap-2 text-xs text-stone-600 mb-2">
-                  <span class="uppercase tracking-[0.18em] text-[#8e4748] font-semibold">Annotation</span>
-                  <span class="text-stone-300">•</span>
-                  <time datetime="2026-02-10">Feb 10, 2026</time>
+              <!-- SECTION: Language systems & modelling -->
+              <section id="language-systems" class="scroll-mt-24">
+                <div class="mb-5">
+                  <p class="text-[11px] tracking-[0.28em] uppercase text-stone-500 mb-2">
+                    Language systems &amp; modelling
+                  </p>
+                  <h2 class="text-2xl font-semibold tracking-tight text-stone-900">
+                    Taxonomies, rules, and interpretable components
+                  </h2>
+                  <p class="mt-2 text-sm text-stone-700 leading-relaxed max-w-2xl">
+                    System notes on structuring meaning: controlled vocabularies, mapping logic, and rule-based outputs that remain auditable.
+                  </p>
                 </div>
-                <h2 class="text-xl font-semibold text-stone-900">
-                  <a href="#" class="hover:underline underline-offset-4 decoration-[#8e4748]/40">
-                    Placeholder title: Designing evaluation criteria that models can follow
-                  </a>
-                </h2>
-                <p class="mt-2 text-sm text-stone-700 leading-relaxed">
-                  A short piece on how tag definitions, edge cases, and QA checks reduce ambiguity and improve dataset reliability.
-                </p>
-              </article>
 
-              <article class="bg-white rounded-2xl border border-[#8e4748]/15 p-6 hover:shadow-md transition-shadow">
-                <div class="flex flex-wrap items-center gap-2 text-xs text-stone-600 mb-2">
-                  <span class="uppercase tracking-[0.18em] text-[#8e4748] font-semibold">Meaning</span>
-                  <span class="text-stone-300">•</span>
-                  <time datetime="2026-02-10">Feb 10, 2026</time>
-                </div>
-                <h2 class="text-xl font-semibold text-stone-900">
-                  <a href="#" class="hover:underline underline-offset-4 decoration-[#8e4748]/40">
-                    Placeholder title: Meaning modelling for interpretable outputs
-                  </a>
-                </h2>
-                <p class="mt-2 text-sm text-stone-700 leading-relaxed">
-                  How semantic categories and controlled vocabularies support explainability without flattening nuance.
-                </p>
-              </article>
+                <div class="space-y-6">
+                  <!-- Replace href + copy when ready -->
+                  <article class="bg-white rounded-2xl border border-[#8e4748]/15 p-6 hover:shadow-md transition-shadow">
+                    <div class="flex flex-wrap items-center gap-2 text-xs text-stone-600 mb-2">
+                      <span class="uppercase tracking-[0.18em] text-[#8e4748] font-semibold">Modelling</span>
+                      <span class="text-stone-300">•</span>
+                      <time datetime="2026-02-17">Feb 17, 2026</time>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900">
+                      <a href="/articles/language-systems-modelling/from-annotation-to-application.html"
+                         class="hover:underline underline-offset-4 decoration-[#8e4748]/40">
+                        From annotation to application: building a modelling pipeline
+                      </a>
+                    </h3>
+                    <p class="mt-2 text-sm text-stone-700 leading-relaxed">
+                      How schema-driven annotation, metaphor tagging, and rule-based outputs connect as a single modelling workflow.
+                    </p>
+                  </article>
 
-              <article class="bg-white rounded-2xl border border-[#8e4748]/15 p-6 hover:shadow-md transition-shadow">
-                <div class="flex flex-wrap items-center gap-2 text-xs text-stone-600 mb-2">
-                  <span class="uppercase tracking-[0.18em] text-[#8e4748] font-semibold">Pipeline</span>
-                  <span class="text-stone-300">•</span>
-                  <time datetime="2026-02-10">Feb 10, 2026</time>
+                  <article class="bg-white rounded-2xl border border-[#8e4748]/15 p-6 hover:shadow-md transition-shadow">
+                    <div class="flex flex-wrap items-center gap-2 text-xs text-stone-600 mb-2">
+                      <span class="uppercase tracking-[0.18em] text-[#8e4748] font-semibold">Rules</span>
+                      <span class="text-stone-300">•</span>
+                      <time datetime="2026-02-17">Feb 17, 2026</time>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900">
+                      <a href="#"
+                         class="hover:underline underline-offset-4 decoration-[#8e4748]/40">
+                        Rule-based language: why explicit mappings still matter
+                      </a>
+                    </h3>
+                    <p class="mt-2 text-sm text-stone-700 leading-relaxed">
+                      A practical note on interpretability: bounded categories, traceable logic, and controlled outputs in sensitive contexts.
+                    </p>
+                  </article>
                 </div>
-                <h2 class="text-xl font-semibold text-stone-900">
-                  <a href="#" class="hover:underline underline-offset-4 decoration-[#8e4748]/40">
-                    Placeholder title: From qualitative data to language tools
-                  </a>
-                </h2>
-                <p class="mt-2 text-sm text-stone-700 leading-relaxed">
-                  A compact case-based note on converting research insights into taxonomies, tags, and early prototypes.
-                </p>
-              </article>
+              </section>
+
+              <!-- SECTION: Annotation & evaluation -->
+              <section id="annotation-evaluation" class="scroll-mt-24">
+                <div class="mb-5">
+                  <p class="text-[11px] tracking-[0.28em] uppercase text-stone-500 mb-2">
+                    Annotation &amp; evaluation (EN/ES)
+                  </p>
+                  <h2 class="text-2xl font-semibold tracking-tight text-stone-900">
+                    QA logic, schema clarity, and evaluation practice
+                  </h2>
+                  <p class="mt-2 text-sm text-stone-700 leading-relaxed max-w-2xl">
+                    Applied articles on designing annotation guidance, verifying speech/text outputs, and reducing ambiguity through evaluation criteria.
+                  </p>
+                </div>
+
+                <div class="space-y-6">
+                  <article class="bg-white rounded-2xl border border-[#8e4748]/15 p-6 hover:shadow-md transition-shadow">
+                    <div class="flex flex-wrap items-center gap-2 text-xs text-stone-600 mb-2">
+                      <span class="uppercase tracking-[0.18em] text-[#8e4748] font-semibold">Evaluation</span>
+                      <span class="text-stone-300">•</span>
+                      <time datetime="2026-02-10">Feb 10, 2026</time>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900">
+                      <a href="#"
+                         class="hover:underline underline-offset-4 decoration-[#8e4748]/40">
+                        Designing evaluation criteria that models and humans can follow
+                      </a>
+                    </h3>
+                    <p class="mt-2 text-sm text-stone-700 leading-relaxed">
+                      How definitions, edge cases, and QA checks make annotation decisions reproducible and comparable.
+                    </p>
+                  </article>
+
+                  <article class="bg-white rounded-2xl border border-[#8e4748]/15 p-6 hover:shadow-md transition-shadow">
+                    <div class="flex flex-wrap items-center gap-2 text-xs text-stone-600 mb-2">
+                      <span class="uppercase tracking-[0.18em] text-[#8e4748] font-semibold">QA</span>
+                      <span class="text-stone-300">•</span>
+                      <time datetime="2026-02-10">Feb 10, 2026</time>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900">
+                      <a href="#"
+                         class="hover:underline underline-offset-4 decoration-[#8e4748]/40">
+                        Where annotation breaks: common failure modes and fixes
+                      </a>
+                    </h3>
+                    <p class="mt-2 text-sm text-stone-700 leading-relaxed">
+                      A compact taxonomy of errors (over-tagging, vague descriptors, baseline phrasing) and how to correct them systematically.
+                    </p>
+                  </article>
+                </div>
+              </section>
+
+              <!-- SECTION: Public writing -->
+              <section id="public-writing" class="scroll-mt-24">
+                <div class="mb-5">
+                  <p class="text-[11px] tracking-[0.28em] uppercase text-stone-500 mb-2">
+                    Public writing
+                  </p>
+                  <h2 class="text-2xl font-semibold tracking-tight text-stone-900">
+                    Language, meaning, and everyday interpretation
+                  </h2>
+                  <p class="mt-2 text-sm text-stone-700 leading-relaxed max-w-2xl">
+                    Short essays that translate linguistic ideas into everyday terms without losing analytical precision.
+                  </p>
+                </div>
+
+                <div class="space-y-6">
+                  <article class="bg-white rounded-2xl border border-[#8e4748]/15 p-6 hover:shadow-md transition-shadow">
+                    <div class="flex flex-wrap items-center gap-2 text-xs text-stone-600 mb-2">
+                      <span class="uppercase tracking-[0.18em] text-[#8e4748] font-semibold">Essay</span>
+                      <span class="text-stone-300">•</span>
+                      <time datetime="2026-02-10">Feb 10, 2026</time>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-900">
+                      <a href="#"
+                         class="hover:underline underline-offset-4 decoration-[#8e4748]/40">
+                        What people mean vs what systems need
+                      </a>
+                    </h3>
+                    <p class="mt-2 text-sm text-stone-700 leading-relaxed">
+                      A short reflection on why lived experience is expressive, but structured documentation requires different constraints.
+                    </p>
+                  </article>
+                </div>
+              </section>
 
             </div>
 
-            <!-- Right: sidebar -->
-            <aside class="space-y-6">
+            <!-- SIDEBAR -->
+            <aside class="lg:col-span-4 space-y-6 lg:sticky lg:top-24 h-fit">
+
+              <div class="bg-white rounded-2xl border border-[#8e4748]/15 p-6">
+                <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-[#8e4748] mb-2">
+                  Navigate
+                </h3>
+                <ul class="text-sm text-stone-700 space-y-2">
+                  <li><a class="hover:underline underline-offset-4" href="#language-systems">Language systems &amp; modelling</a></li>
+                  <li><a class="hover:underline underline-offset-4" href="#annotation-evaluation">Annotation &amp; evaluation (EN/ES)</a></li>
+                  <li><a class="hover:underline underline-offset-4" href="#public-writing">Public writing</a></li>
+                </ul>
+              </div>
 
               <div class="bg-white rounded-2xl border border-[#8e4748]/15 p-6">
                 <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-[#8e4748] mb-2">
@@ -151,14 +261,14 @@
 
               <div class="bg-white rounded-2xl border border-[#8e4748]/15 p-6">
                 <h3 class="text-sm font-semibold uppercase tracking-[0.2em] text-[#8e4748] mb-2">
-                  Topics
+                  Research
                 </h3>
-                <ul class="text-sm text-stone-700 space-y-2">
-                  <li>• Annotation guidelines &amp; QA</li>
-                  <li>• Meaning modelling &amp; taxonomies</li>
-                  <li>• Evaluation design</li>
-                  <li>• Research → application workflows</li>
-                </ul>
+                <p class="text-sm text-stone-700 leading-relaxed">
+                  Research outputs and foundations live separately (book, publications, media). This page is for applied notes and essays.
+                </p>
+                <a href="/#research" class="inline-block mt-3 text-sm font-medium text-[#8e4748] underline underline-offset-2">
+                  Explore research →
+                </a>
               </div>
 
             </aside>
@@ -174,7 +284,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8">
 
           <div class="flex items-center justify-center md:justify-start gap-3 text-xs">
-            <a href="/" class="hover:underline underline-offset-2">Home</a>
+            <a href="/index.html" class="hover:underline underline-offset-2">Home</a>
             <span class="text-[#F6F3F1]/40">•</span>
             <a href="/#contact" class="hover:underline underline-offset-2">Contact</a>
           </div>
