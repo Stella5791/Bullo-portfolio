@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>From Linguistics to Language Engineering | Stella Bullo</title>
+  <meta name="description" content="How research, annotation, and system design converge in interpretable language systems." />
+
+  <link rel="stylesheet" href="../assets/article.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="site-header">
+  <div class="container">
+    <div class="header-row">
+
+      <a class="brand" href="/index.html">Stella Bullo</a>
+
+      <div class="header-actions">
+        <a class="back" href="/articles.html">Back to Articles</a>
+
+        <div class="lang" aria-label="Language switcher">
+          <span class="active">EN</span>
+          <span>/</span>
+          <a href="/es/from-linguistics-to-language-engineering.html">ES</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+    <main>
+      <div class="container">
+
+        <p class="kicker">Language Systems & Modelling</p>
+
+        <h1>From Linguistics to Language Engineering</h1>
+
+        <p class="subtitle">
+          How research, annotation, and system design converge in interpretable language systems.
+        </p>
+
+        <div class="meta">
+          <span>By Stella Bullo</span>
+          <span>·</span>
+          <span>Updated: 2026-02-20</span>
+          <span>·</span>
+          <span>Tags: modelling, annotation, NLP, systems design</span>
+        </div>
+
+        <article class="article">
+
+          <p>
+            My work began in linguistics, in disciplines concerned with how meaning is constructed, negotiated,
+            and patterned across real-life language use. Over years of analysing conversations, metaphors,
+            and discourse, I developed structured interpretive frameworks to make complex language visible
+            and systematically describable.
+          </p>
+
+          <p>
+            What I did not fully anticipate at the time was how directly that training would translate
+            into structured data work, annotation frameworks, and the design of interpretable language systems.
+          </p>
+
+          <div class="callout">
+            <p class="label">Core principle</p>
+            <p>
+              Moving from language to systems is not a career shift, it is a shift in operational context.
+              The method remains disciplined modelling of meaning.
+            </p>
+          </div>
+
+          <h2>Research as structured modelling</h2>
+
+          <p>
+            Academic linguistics is already a form of modelling. Conversation analysis requires transcription
+            conventions and sequential coding. Corpus linguistics depends on controlled tag sets and reproducible
+            search strategies. Metaphor research involves clustering expressions and defining conceptual mappings
+            that hold across datasets.
+          </p>
+
+          <p>
+            In each case, the task is structural: define categories, test boundaries, refine edge cases,
+            and document decisions for replication.
+          </p>
+
+          <h2>From interpretation to annotation</h2>
+
+          <p>
+            Professional annotation introduces scale, speed, and strict guideline adherence.
+            Unlike academic research, schemas are predefined and must be applied consistently across large datasets.
+          </p>
+
+          <h3>High-quality annotation requires:</h3>
+
+          <ul>
+            <li>Mutually exclusive, clearly defined categories</li>
+            <li>Explicit handling of ambiguity</li>
+            <li>Awareness of downstream propagation effects</li>
+            <li>Transparent decision logic supporting agreement</li>
+          </ul>
+
+          <p>
+            Annotation is structured linguistic judgement under constraint. The interpretation remains,
+            but it is operationalised.
+          </p>
+
+          <h2>Language and code</h2>
+
+          <p>
+            Programming is another formal language environment. It depends on syntax, compositional structure,
+            and explicit rule definition. Ambiguity, if left unresolved, produces systemic error.
+          </p>
+
+          <ul>
+            <li>Sentences and functions rely on compositional logic</li>
+            <li>Discourse coherence mirrors architectural coherence</li>
+            <li>Context determines interpretation in both natural and formal systems</li>
+            <li>Structural decisions shape downstream behaviour</li>
+          </ul>
+
+          <p>
+            When building rule-based pipelines or structured JSON outputs,
+            the objective is not only functional output but traceable internal logic.
+          </p>
+
+          <div class="hr"></div>
+
+          <h2>From data to tool</h2>
+
+          <p>
+            A concrete example of this trajectory is <em>Explain My Pain</em>,
+            a deterministic prototype derived from corpus-based metaphor research.
+          </p>
+
+          <p>
+            The system translates structured taxonomies into rule-based matching logic,
+            generating bilingual outputs for patients and clinicians.
+          </p>
+
+          <pre><code>input → taxonomy match → validated schema → report rendering</code></pre>
+
+          <p>
+            The architecture preserves separation between input, processing, and output.
+            The logic remains inspectable and auditable.
+          </p>
+
+          <h2>Convergence</h2>
+
+          <p>
+            Research trained pattern recognition.
+            Annotation trained operational discipline.
+            Programming enables formal encoding and deployment.
+          </p>
+
+          <p>
+            The through-line is continuity of method: modelling meaning carefully,
+            documenting decisions rigorously, and building interpretable systems.
+          </p>
+
+          <p>
+            In an era dominated by opaque statistical systems, there remains a place
+            for deterministic language architectures that make reasoning visible.
+          </p>
+
+        </article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© <span id="year"></span> Stella Bullo</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

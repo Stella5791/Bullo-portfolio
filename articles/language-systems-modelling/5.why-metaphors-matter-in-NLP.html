@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Why Metaphor Matters in NLP | Stella Bullo</title>
+  <meta name="description" content="What figurative language reveals about human experience and why NLP systems should treat metaphor as signal, not noise." />
+
+  <link rel="stylesheet" href="../assets/article.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="site-header">
+  <div class="container">
+    <div class="header-row">
+
+      <a class="brand" href="/index.html">Stella Bullo</a>
+
+      <div class="header-actions">
+        <a class="back" href="/articles.html">Back to Articles</a>
+
+        <div class="lang" aria-label="Language switcher">
+          <span class="active">EN</span>
+          <span>/</span>
+          <a href="/es/why-metaphor-matters-in-nlp.html">ES</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+    <main>
+      <div class="container">
+
+        <p class="kicker">Applied Language Systems</p>
+        <h1>Why Metaphor Matters in NLP</h1>
+
+        <p class="subtitle">
+          What figurative language reveals about lived experience, and how NLP can learn to listen for meaning, not just keywords.
+        </p>
+
+        <div class="meta">
+          <span>By Stella Bullo</span>
+          <span>·</span>
+          <span>Updated: 2026-02-20</span>
+          <span>·</span>
+          <span>Tags: metaphor, NLP, semantics, health communication, evaluation</span>
+        </div>
+
+        <article class="article">
+
+          <p>
+            NLP systems can autocomplete, summarise, and generate fluent text. But when language stretches beyond the literal into the figurative, systems often fail. That blind spot matters because metaphor is where lived experience becomes visible — especially in domains like health, where people rely on imagery to communicate sensation, urgency, and emotion.
+          </p>
+
+          <div class="callout">
+            <p class="label">Key idea</p>
+            <p>
+              Metaphor is not decorative language. It encodes meaning that affects extraction, classification, summarisation, and support outcomes.
+            </p>
+          </div>
+
+          <h2>What metaphor reveals</h2>
+          <p>
+            Metaphor makes experience graspable when literal words fall short. A patient who says “barbed wire around my spine” communicates constriction, sharpness, and persistence. Someone describing asthma as “a fist closing inside my lungs” conveys suffocation and panic more directly than a numeric scale. If NLP ignores this language, it ignores signals that matter.
+          </p>
+
+          <div class="hr"></div>
+
+          <h2>Where metaphor affects NLP tasks</h2>
+          <p>
+            Treating metaphor as noise undermines core applications:
+          </p>
+          <ul>
+            <li><strong>Sentiment and emotion analysis.</strong> Figurative language often signals intensified affect and distress.</li>
+            <li><strong>Information extraction.</strong> Symptoms and attributes appear through imagery, not only keywords (“burns like fire”).</li>
+            <li><strong>Summarisation.</strong> Good summaries preserve experiential meaning; deleting metaphor flattens voice.</li>
+            <li><strong>Classification and triage.</strong> Expressions like “knives twisting” can function as severity evidence.</li>
+            <li><strong>Search and retrieval.</strong> Conceptual normalisation links “crushing weight on my chest” to “chest pressure.”</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <h2>How linguistics guides better modelling</h2>
+          <p>
+            Linguistics offers methods that make figurative meaning interpretable rather than opaque:
+          </p>
+          <ul>
+            <li><strong>Taxonomies.</strong> Metaphors cluster into families (heat, intrusion, force, predation, containment, weight).</li>
+            <li><strong>Patterns and cues.</strong> Lexical and syntactic signals can provide high-precision rule anchors.</li>
+            <li><strong>Pragmatics.</strong> Speaker, audience, and purpose shape figurative choices across contexts.</li>
+            <li><strong>Appraisal and stance.</strong> Boosters and evaluations calibrate urgency and certainty.</li>
+            <li><strong>Register variation.</strong> Metaphor selection varies by community, dialect, and domain.</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <h2>From research to tooling</h2>
+          <p>
+            These principles are implementable. In my prototypes, metaphor modelling is treated as infrastructure: a compact taxonomy plus transparent rules, with lightweight classification for boundary cases. The goal is not literary analysis but practical interpretation — hearing what someone is trying to convey and producing outputs that are useful in context.
+          </p>
+
+          <h3>Hybrid architecture</h3>
+          <p>
+            Rules keep decisions interpretable and reduce false positives. A small classifier resolves ambiguous cases that require wider context. Together, this supports clarity, auditability, and robustness across speakers and registers.
+          </p>
+
+          <div class="hr"></div>
+
+          <h2>Conclusion</h2>
+          <p>
+            Figurative language is not a defect to correct. It is a resource to understand. In health communication and other high-stakes domains, metaphors carry structured meaning about pain, urgency, and emotion. When NLP treats metaphor as signal, systems become more faithful to human experience and more useful in practice.
+          </p>
+
+        </article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© <span id="year"></span> Stella Bullo</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!-- FILE: /annotation-evaluation/designing-reliable-annotation.html -->
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Designing Reliable Annotation: Guidelines, QA, and Evaluation | Stella Bullo</title>
+  <meta name="description" content="A practical narrative about reliability: how annotation becomes trustworthy through unit clarity, teachable categories, sampling QA, and error analysis." />
+
+  <link rel="stylesheet" href="../assets/article.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="site-header">
+  <div class="container">
+    <div class="header-row">
+
+      <a class="brand" href="/index.html">Stella Bullo</a>
+
+      <div class="header-actions">
+        <a class="back" href="/articles.html">Back to Articles</a>
+
+        <div class="lang" aria-label="Language switcher">
+          <span class="active">EN</span>
+          <span>/</span>
+          <a href="/es/annotation-evaluation/designing-reliable-annotation.html">ES</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+    <main>
+      <div class="container">
+
+        <p class="kicker">Annotation and Evaluation</p>
+        <h1>Designing Reliable Annotation: Guidelines, QA, and Evaluation</h1>
+
+        <p class="subtitle">
+          Annotation is not “data entry”. It is a reliability system. This article explains how to design that system so the dataset stays stable as it scales.
+        </p>
+
+        <div class="meta">
+          <span>By Stella Bullo</span>
+          <span>·</span>
+          <span>Updated: 2026-02-20</span>
+          <span>·</span>
+          <span>Tags: reliability, QA sampling, evaluation, schema design</span>
+        </div>
+
+        <article class="article">
+
+          <p>
+            Most annotation failures look like model failures later. A classifier performs badly. A tagger produces messy spans. A speech system learns the wrong normalisations. By the time you see these outcomes, the damage is already in the training data. That is why I treat annotation as a reliability system, not a labelling step.
+          </p>
+
+          <p>
+            Reliability is designed. It comes from decisions you can explain, teach, and audit. It also comes from a feedback loop that catches drift early and turns recurring errors into better guidance.
+          </p>
+
+          <div class="callout">
+            <p class="label">Key idea</p>
+            <p>
+              If annotators cannot justify labels with rules, models will inherit inconsistency, not intelligence.
+            </p>
+          </div>
+
+          <h2>Start with the unit of analysis</h2>
+          <p>
+            A dataset can look consistent while doing different tasks underneath. One person labels a token. Another labels a phrase. Another labels a whole sentence. When the unit is unstable, agreement scores become meaningless because people are not aligning on what the work actually is.
+          </p>
+
+          <p>
+            The fix is simple and often skipped. Define the unit in plain language and enforce it. In pain language you might decide that triggers are short spans while locations are single body parts. In speech verification, you might decide that the unit is a word, not a phonetic event, unless the guideline explicitly asks for event tags. Whatever the unit is, it should be non negotiable.
+          </p>
+
+          <h2>Design categories that people can learn</h2>
+          <p>
+            Categories are not neutral. They decide what you can see and what you cannot. But a category that sounds clever and cannot be applied consistently is worse than no category at all. The practical target is a taxonomy that is small enough to be teachable and precise enough to be informative.
+          </p>
+
+          <p>
+            Teachable categories need definitions, positive examples, boundary examples, and explicit exclusions. They also need a place for uncertainty. If every instance must be forced into a label, you will create noise disguised as confidence.
+          </p>
+
+          <h2>Calibrate before you scale</h2>
+          <p>
+            A reliable workflow calibrates early. Two or three annotators label the same small batch. Disagreements are reviewed. Definitions are tightened. Examples are added. Only then does production annotation begin. This is the stage where you discover silent confusion. It is cheap to fix early and expensive to fix later.
+          </p>
+
+          <h2>Sampling QA is more useful than heroic full review</h2>
+          <p>
+            Many teams treat QA as inspection at the end. The more effective approach is continuous sampling. You do not need to review everything. You need to review enough to detect drift, category collapse, and recurring error patterns while there is still time to respond.
+          </p>
+
+          <p>
+            The operational goal of QA is not punishment. It is stability. You sample from each batch, review quickly, and then feed the findings back into the next batch through micro updates to guidelines and examples. Over time, the guideline becomes a living system that reflects the dataset’s real failure modes.
+          </p>
+
+          <h2>Agreement is a diagnostic tool</h2>
+          <p>
+            Agreement measures can be useful, but they are not trophies. High agreement can mean a clear task, or it can mean categories are too coarse. Low agreement can mean the task is genuinely hard, or it can mean the guideline is unclear. The most useful way to treat agreement is as a signal that tells you where the design needs attention.
+          </p>
+
+          <h2>Evaluation continues the same logic</h2>
+          <p>
+            When models enter the picture, evaluation should not become a numbers only exercise. Precision and recall are important, but the real improvement comes from structured error analysis. False positives and false negatives show you where categories blur, where data coverage is thin, and where the annotation scheme might need refinement.
+          </p>
+
+          <p>
+            In that sense, evaluation is not separate from annotation. It is the continuation of the same reliability design. You make errors visible, interpret them carefully, and improve the structures that produce them.
+          </p>
+
+          <div class="hr"></div>
+
+          <h2>So what</h2>
+          <p>
+            Trustworthy datasets do not happen because people are careful. They happen because the system makes careful work possible. Define units. Teach categories. Calibrate early. Sample continuously. Use agreement as diagnosis. Evaluate with error analysis, not wishful metrics.
+          </p>
+
+          <p>
+            When annotation is designed this way, it becomes an asset. It produces data you can trust, models you can explain, and language systems that behave predictably in the real world.
+          </p>
+
+        </article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© <span id="year"></span> Stella Bullo</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!-- FILE: /annotation-evaluation/annotating-pain-language.html -->
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Annotating Pain Language: Making Metaphor Measurable | Stella Bullo</title>
+  <meta name="description" content="How to turn vivid pain descriptions into structured, interpretable data: a practical annotation approach grounded in metaphor research." />
+
+  <link rel="stylesheet" href="../assets/article.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="site-header">
+  <div class="container">
+    <div class="header-row">
+
+      <a class="brand" href="/index.html">Stella Bullo</a>
+
+      <div class="header-actions">
+        <a class="back" href="/articles.html">Back to Articles</a>
+
+        <div class="lang" aria-label="Language switcher">
+          <span class="active">EN</span>
+          <span>/</span>
+          <a href="/es/annotation-evaluation/annotating-pain-language.html">ES</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+    <main>
+      <div class="container">
+
+        <p class="kicker">Annotation and Evaluation</p>
+        <h1>Annotating Pain Language: Making Metaphor Measurable</h1>
+
+        <p class="subtitle">
+          Pain is hard to measure and even harder to describe. This article shows how metaphor can be annotated in a way that stays human, stays rigorous, and becomes usable for NLP.
+        </p>
+
+        <div class="meta">
+          <span>By Stella Bullo</span>
+          <span>·</span>
+          <span>Updated: 2026-02-20</span>
+          <span>·</span>
+          <span>Tags: annotation, pain language, metaphor, schema design</span>
+        </div>
+
+        <article class="article">
+
+          <p>
+            Pain creates a communication problem. Clinicians want precision, but the experience itself is private, internal, and often diffuse. That is why people reach for language that is more vivid than a number on a scale. They describe burning wires, knives twisting, a tight band around the abdomen, electric shocks down the leg. Those phrases are not rhetorical decoration. They are practical attempts to make a sensation legible.
+          </p>
+
+          <p>
+            For linguistics and NLP, the problem is not simply to identify that a metaphor is present. The problem is to represent what the metaphor is doing in a form that can be counted, compared, audited, and used in systems. That is where annotation becomes more than labelling. It becomes modelling.
+          </p>
+
+          <div class="callout">
+            <p class="label">Key idea</p>
+            <p>
+              Metaphor annotation should capture structured meaning, not just mark “metaphor present”.
+            </p>
+          </div>
+
+          <h2>Why metaphor carries information</h2>
+          <p>
+            When a person says “it feels like barbed wire around my spine”, the point is not that the statement is imaginative. The point is that the metaphor encodes properties that are clinically and psychologically salient. Barbed wire implies sharpness, threat, repeated contact, and constriction. Around my spine adds location. Even when the speaker cannot name a mechanism, the metaphor helps them express the behaviour of pain as if it were an agent acting on the body.
+          </p>
+
+          <p>
+            Metaphors also cluster. Across corpora, certain domains recur. Heat, pressure, impact, cutting tools, electricity, machinery, entrapment. That recurrence is not random. It reflects how humans map abstract internal states to concrete embodied experience. If we capture those clusters systematically, we gain a way to compare descriptions across patients, contexts, and languages.
+          </p>
+
+          <h2>From theory to annotation decisions</h2>
+          <p>
+            A reliable scheme needs both a conceptual backbone and an operational procedure. Conceptual metaphor research helps define families of mappings that recur in pain talk. A disciplined identification procedure helps decide when a particular word or phrase is being used metaphorically rather than literally.
+          </p>
+
+          <p>
+            In practice, this means reading the utterance, locating candidate lexical units, comparing their basic meaning with their contextual meaning, and marking metaphor when a contrastive comparison is doing the work. The goal is not to make annotation “academic”. The goal is to make it reproducible.
+          </p>
+
+          <h2>A minimal schema that stays interpretable</h2>
+          <p>
+            Annotation schemes often fail in one of two ways. They become too thin and erase meaning, or they become too rich and collapse under inconsistency. For pain language, a useful compromise is a minimal schema that preserves the core interpretive moves while remaining feasible for human annotation and downstream modelling.
+          </p>
+
+          <p>
+            The fields below are intentionally simple. They can be expressed as columns in CSV, as JSONL records, or as entries in a small database. They also remain interpretable to non technical stakeholders, which matters if the output is ever used in health communication.
+          </p>
+
+          <pre><code>{
+  "text": "It feels like barbed wire wrapped around my spine.",
+  "type": "metaphor",
+  "trigger": "barbed wire",
+  "category": "sharp-object / constriction",
+  "location": "spine"
+}</code></pre>
+
+          <h2>What this enables</h2>
+          <p>
+            Once pain metaphors are represented as structured data, a range of practical tasks becomes possible. You can analyse how metaphor categories change with context. You can test whether certain metaphors correlate with reported severity or particular triggers. You can evaluate an automatic tagger by comparing its output to a gold standard. You can also translate a metaphor rich description into a clinician facing summary without deleting the patient voice.
+          </p>
+
+          <div class="hr"></div>
+
+          <h2>So what</h2>
+          <p>
+            Annotation is a bridge between lived experience and computable structure. In pain communication, that bridge matters because the cost of misunderstanding is high. A good pain language schema does not reduce people to numbers. It makes their descriptions usable, interpretable, and comparable while keeping the original meaning visible.
+          </p>
+
+        </article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© <span id="year"></span> Stella Bullo</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Data Taxonomy for Pain Language | Stella Bullo</title>
+  <meta name="description" content="A compact taxonomy for annotating pain language: categories, relations, and metaphor entailments grounded in corpus research." />
+
+  <link rel="stylesheet" href="../assets/article.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="site-header">
+  <div class="container">
+    <div class="header-row">
+
+      <a class="brand" href="/index.html">Stella Bullo</a>
+
+      <div class="header-actions">
+        <a class="back" href="/articles.html">Back to Articles</a>
+
+        <div class="lang" aria-label="Language switcher">
+          <span class="active">EN</span>
+          <span>/</span>
+          <a href="/es/data-taxonomy-for-pain-language.html">ES</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+    <main>
+      <div class="container">
+
+        <p class="kicker">Applied Language Systems</p>
+        <h1>Data Taxonomy for Pain Language</h1>
+
+        <p class="subtitle">
+          A compact annotation taxonomy capturing pain qualities, metaphor domains, entailments, and relational structure.
+        </p>
+
+        <div class="meta">
+          <span>By Stella Bullo</span>
+          <span>·</span>
+          <span>Updated: 2026-02-20</span>
+          <span>·</span>
+          <span>Tags: taxonomy design, pain language, metaphor modelling, annotation</span>
+        </div>
+
+        <article class="article">
+
+          <p>
+            Pain descriptions are linguistically rich but structurally inconsistent. Patients describe sensations as burning, stabbing, heavy, or like being attacked. Without a controlled taxonomy, these expressions remain difficult to compare, annotate, and operationalise.
+          </p>
+
+          <div class="callout">
+            <p class="label">Key idea</p>
+            <p>
+              A compact taxonomy improves annotation agreement, reduces QA friction, and enables downstream modelling.
+            </p>
+          </div>
+
+          <h2>What Is a Taxonomy?</h2>
+
+          <p>
+            In annotation workflows, a taxonomy functions as a constrained menu of categories. Rather than inferring meaning ad hoc, annotators select from defined options, preserving interpretive consistency.
+          </p>
+
+          <ul>
+            <li>Reduced ambiguity during annotation</li>
+            <li>Improved inter-annotator agreement</li>
+            <li>Structured outputs suitable for modelling</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <h2>Core Category Structure</h2>
+
+          <h3>1 · Pain Qualities</h3>
+          <p>Descriptors of sensation: burning, stabbing, throbbing, dull.</p>
+
+          <h3>2 · Body Location</h3>
+          <p>Spatial grounding: pelvis, lower back, abdomen, knee.</p>
+
+          <h3>3 · Intensity Markers</h3>
+          <p>Severity indicators: mild, severe, unbearable.</p>
+
+          <h3>4 · Figurative Domains</h3>
+          <p>Metaphorical mappings: knife, hammer, fire, beast, weight.</p>
+
+          <h3>5 · Temporal Markers</h3>
+          <p>Duration and recurrence: constant, comes and goes, worse at night.</p>
+
+          <div class="hr"></div>
+
+          <h2>Metaphor Entailments</h2>
+
+          <p>
+            Beyond surface tagging, metaphors carry structured entailments — conceptual implications that shape how pain is experienced and interpreted.
+          </p>
+
+<pre><code>Violence / Attack
+→ External agent
+→ Victim positioning
+→ Aggression / relentlessness
+
+Weight / Pressure
+→ Constancy
+→ Immobilisation
+→ Oppression
+
+Heat / Fire
+→ Escalation
+→ Spread
+→ Consumption</code></pre>
+
+          <p>
+            Entailments provide a second modelling layer, enabling higher-level pain profiles within rule-based systems.
+          </p>
+
+          <div class="hr"></div>
+
+          <h2>Relational Encoding</h2>
+
+          <p>
+            Pain expressions rarely occur in isolation. Categories interact.
+          </p>
+
+          <ul>
+            <li>Intensity modifies quality: “sharp pain”</li>
+            <li>Location grounds metaphor: “burning knife in my knee”</li>
+            <li>Temporal markers shift severity: “worse at night”</li>
+          </ul>
+
+          <p>
+            Encoding relations maintains fidelity to natural patient language and strengthens modelling robustness.
+          </p>
+
+          <div class="hr"></div>
+
+          <h2>Why Compact Design Matters</h2>
+
+          <p>
+            Oversized schemas reduce annotation efficiency and increase disagreement. A lean taxonomy:
+          </p>
+
+          <ul>
+            <li>Shortens annotator training time</li>
+            <li>Simplifies quality assurance</li>
+            <li>Supports scalable NLP integration</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <h2>Conclusion</h2>
+
+          <p>
+            A compact taxonomy transforms narrative pain descriptions into structured, reproducible data. It functions as infrastructure: enabling agreement at annotation level and interpretability at application level.
+          </p>
+
+          <p>
+            When aligned with rule-based modelling, such taxonomies provide a transparent alternative to opaque language processing systems.
+          </p>
+
+        </article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© <span id="year"></span> Stella Bullo</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

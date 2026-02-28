@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>The Language of Pain: How Clinicians and Builders Can Learn from Metaphor | Stella Bullo</title>
+  <meta name="description" content="A practical guide to treating patient metaphors as interpretable signal — for clinical communication and rule-based NLP." />
+
+  <link rel="stylesheet" href="../assets/article.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="site-header">
+  <div class="container">
+    <div class="header-row">
+
+      <a class="brand" href="/index.html">Stella Bullo</a>
+
+      <div class="header-actions">
+        <a class="back" href="/articles.html">Back to Articles</a>
+
+        <div class="lang" aria-label="Language switcher">
+          <span class="active">EN</span>
+          <span>/</span>
+          <a href="/es/how-clinicians-and-builders-can-learn-from-metaphor.html">ES</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+    <main>
+      <div class="container">
+
+        <p class="kicker">Language Systems &amp; Modelling</p>
+
+        <h1>The Language of Pain: How Clinicians and Builders Can Learn from Metaphor</h1>
+
+        <p class="subtitle">
+          A practical guide to bridging lived experience, clinical communication, and interpretable NLP implementation.
+        </p>
+
+        <div class="meta">
+          <span>By Stella Bullo</span>
+          <span>·</span>
+          <span>Updated: 2026-02-20</span>
+          <span>·</span>
+          <span>Tags: metaphor, clinical communication, rule-based NLP, taxonomy design</span>
+        </div>
+
+        <article class="article">
+
+          <div class="callout">
+            <p class="label">Key idea</p>
+            <p>
+              Metaphor is not decoration. In pain talk, it is often the most information-dense way patients communicate
+              mechanism, urgency, and impact, and it can be modelled without turning into a black box.
+            </p>
+          </div>
+
+          <h2>Overview</h2>
+          <p>
+            Metaphor is the resource patients reach for when literal descriptors are insufficient.
+            In clinical contexts, metaphors transform private sensations into shareable narratives.
+            Preserving them supports clearer listening and documentation; modelling them supports tools that turn figurative
+            language into interpretable signal.
+          </p>
+
+          <h2>Why this matters</h2>
+          <p>
+            Clinicians gain empathy and accuracy when metaphors sit alongside standard notes.
+            Product teams build better triage and dashboards when figurative language is treated as structured information.
+            Researchers get richer datasets when metaphors are handled as patterned, classifiable language, not noise.
+          </p>
+
+          <h2>From methodology to practice</h2>
+
+          <h3>Step 1: collect</h3>
+          <p>Gather authentic patient phrases via interviews, forums, or intake forms. Record them verbatim.</p>
+
+          <h3>Step 2: categorise</h3>
+          <p>
+            Group expressions into families (for example: heat, pressure, intrusion, tearing, weight).
+            Patterns emerge across narratives, even when surface wording varies.
+          </p>
+
+          <h3>Step 3: reframe</h3>
+          <p>
+            Translate into clinical paraphrases while retaining intensity and mechanism.
+            <em>“Like broken glass in the pelvis”</em> becomes <em>“sharp, cutting pelvic pain”</em>.
+          </p>
+
+          <h3>Step 4: flag</h3>
+          <p>
+            Mark metaphors that suggest red-flag conditions.
+            <em>“An elephant on my chest”</em> should trigger urgent triage pathways.
+          </p>
+
+          <h2>Clinical examples</h2>
+          <ul>
+            <li><em>“It feels like glass”</em> → sharp, localised pelvic pain. Guidance: check cyclical patterns.</li>
+            <li><em>“Like a fire in my womb”</em> → burning pelvic pain. Guidance: assess inflammation.</li>
+            <li><em>“An elephant on my chest”</em> → crushing chest pressure. Guidance: triage urgently.</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <h2>Technical implementation</h2>
+          <p>
+            A lightweight pipeline can model metaphor while preserving interpretability:
+          </p>
+          <ul>
+            <li>Normalise and segment text.</li>
+            <li>Detect metaphor candidates via lexicons + curated regex.</li>
+            <li>Maintain a living taxonomy in JSON/YAML for clarity and governance.</li>
+            <li>Use small, auditable disambiguation logic for edge cases (rules first; optional classifiers only when needed).</li>
+            <li>Generate dual outputs: patient-friendly language + clinician-usable structured notes.</li>
+          </ul>
+
+          <pre><code>text → candidate detection → taxonomy mapping → validation → outputs (patient + clinician)</code></pre>
+
+          <p>
+            The design goal is not “cleverness”; it is controlled transformation of figurative language into a traceable representation.
+          </p>
+
+          <h2>Pitfalls and safeguards</h2>
+          <p>
+            Avoid over-interpreting a single metaphor. Avoid flattening narratives into sterile shorthand.
+            Account for emotional, cultural, and social dimensions. Do not assume metaphor categories are universal.
+            The safeguard is simple: listen closely, triangulate, and document.
+          </p>
+
+          <h2>Practical tips</h2>
+          <ul>
+            <li>Allow free-text alongside structured symptom capture.</li>
+            <li>Show metaphors next to clinical paraphrases in dashboards.</li>
+            <li>Use simple signalling (icons/labels) for figurative intensity.</li>
+            <li>Track metaphor frequency to support clinical research.</li>
+            <li>Maintain a taxonomy that can evolve without breaking downstream consistency.</li>
+          </ul>
+
+          <h2>Checklist for clinicians</h2>
+          <ul>
+            <li>Record at least one metaphor verbatim.</li>
+            <li>Add a neutral paraphrase for clinical clarity.</li>
+            <li>Treat figurative intensity as a potential severity marker.</li>
+            <li>Use metaphors to open a conversation about functional impact.</li>
+            <li>Share anonymised examples for training and research.</li>
+          </ul>
+
+          <h2>Conclusion</h2>
+          <p>
+            Metaphor is not noise; it is signal. Embedding it into clinical practice and digital systems makes care more accurate and humane.
+            For clinicians, it sharpens listening. For builders, it sharpens tools. Together, they ensure that when patients reach for metaphor,
+            their meaning is not lost in translation.
+          </p>
+
+        </article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© <span id="year"></span> Stella Bullo</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

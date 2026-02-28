@@ -1,0 +1,127 @@
+<!-- FILE: /annotation-evaluation/annotation-snippets-and-heuristics.html -->
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Annotation Heuristics: Small Rules That Prevent Big Drift | Stella Bullo</title>
+  <meta name="description" content="Practical annotation heuristics I reuse across projects: span discipline, comparability, minimal edits, and audit friendly notes." />
+
+  <link rel="stylesheet" href="../assets/article.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="site-header">
+  <div class="container">
+    <div class="header-row">
+
+      <a class="brand" href="/index.html">Stella Bullo</a>
+
+      <div class="header-actions">
+        <a class="back" href="/articles.html">Back to Articles</a>
+
+        <div class="lang" aria-label="Language switcher">
+          <span class="active">EN</span>
+          <span>/</span>
+          <a href="/es/annotation-evaluation/annotation-snippets-and-heuristics.html">ES</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+    <main>
+      <div class="container">
+
+        <p class="kicker">Annotation and Evaluation</p>
+        <h1>Annotation Heuristics: Small Rules That Prevent Big Drift</h1>
+
+        <p class="subtitle">
+          In real datasets, drift comes from tiny inconsistencies repeated thousands of times. These are the small, reusable rules I apply to keep annotation stable.
+        </p>
+
+        <div class="meta">
+          <span>By Stella Bullo</span>
+          <span>·</span>
+          <span>Updated: 2026-02-20</span>
+          <span>·</span>
+          <span>Tags: heuristics, QA notes, span selection, consistency</span>
+        </div>
+
+        <article class="article">
+
+          <p>
+            Annotation guidelines tend to grow over time. They start as a simple page and become a document full of exceptions. That is normal, because language is full of exceptions. What is less normal is that many teams let the guideline grow without building reusable habits that keep decisions stable.
+          </p>
+
+          <p>
+            I work with a set of heuristics. They are not substitutes for guidelines. They are operational guardrails. They help me apply rules consistently and spot drift early, especially when tasks involve high volume verification.
+          </p>
+
+          <div class="callout">
+            <p class="label">Key idea</p>
+            <p>
+              Most annotation errors are pattern errors. Heuristics help you catch patterns before they become “the dataset”.
+            </p>
+          </div>
+
+          <h2>Heuristic 1: Treat span boundaries as a first class decision</h2>
+          <p>
+            Many annotation disagreements are not about category but about span. If one person marks “burning pain” and another marks “burning”, your labels may look similar but your data will not align. I decide early whether spans should be minimal or inclusive, and I keep that rule stable. When in doubt, I prefer minimal spans that capture the trigger without swallowing context.
+          </p>
+
+          <h2>Heuristic 2: Preserve meaning over form, but only when the guideline allows it</h2>
+          <p>
+            In speech and text verification tasks, the temptation is to accept normalisation because it feels “close enough”. I only accept a change when the guideline explicitly allows it and meaning is preserved. If the change alters tense, intent, negation, names, quantities, or speaker stance, it is not a cosmetic edit. It is a meaning event.
+          </p>
+
+          <h2>Heuristic 3: Make comparisons explicit when the task is comparative</h2>
+          <p>
+            In evaluation contexts where two outputs are being compared, a common failure mode is vague commentary. I force myself to state comparable properties. This does not mean writing long lists. It means choosing a small set of stable dimensions and using them consistently, such as clarity, completeness, constraint following, tone, or faithfulness to evidence.
+          </p>
+
+          <h2>Heuristic 4: Prefer short notes that justify, not narrate</h2>
+          <p>
+            Notes can help QA. Notes can also create noise. I keep notes short and rule based. A useful note points to the reason a label was chosen, or the rule that made a case fail. It does not tell the story of how I felt about the item.
+          </p>
+
+          <h2>Heuristic 5: Track recurring errors as a living list</h2>
+          <p>
+            The most valuable QA insight is recurrence. If you see the same issue three times, it is no longer an isolated mistake. It is a pattern. I keep a small list of recurring errors and link them to guideline sections. This turns QA into system improvement rather than inspection.
+          </p>
+
+          <pre><code>Recurring error log
+1. Span inflation: annotators capture full clause instead of trigger.
+2. Accepting meaning shift as normalisation: tense and negation drift.
+3. Category collapse: two labels used interchangeably without rule.
+4. Missing evidence: labels chosen without pointing to a guideline definition.</code></pre>
+
+          <div class="hr"></div>
+
+          <h2>So what</h2>
+          <p>
+            Annotation is a reliability problem at scale. Guidelines are necessary, but habits are what keep work stable when volume rises. Heuristics turn the guideline into something operational. They make decisions faster without making them sloppy. They also make QA easier because the logic of the work stays visible.
+          </p>
+
+        </article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© <span id="year"></span> Stella Bullo</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

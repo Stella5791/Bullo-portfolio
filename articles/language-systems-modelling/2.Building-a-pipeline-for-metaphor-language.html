@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Building a Pipeline for Metaphor Language | Stella Bullo</title>
+  <meta name="description" content="Designing a linguistically grounded pipeline for metaphor analysis: schema-driven annotation, rule-based tagging, and human-facing applications." />
+
+  <link rel="stylesheet" href="../assets/article.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="site-header">
+  <div class="container">
+    <div class="header-row">
+
+      <a class="brand" href="/index.html">Stella Bullo</a>
+
+      <div class="header-actions">
+        <a class="back" href="/articles.html">Back to Articles</a>
+
+        <div class="lang" aria-label="Language switcher">
+          <span class="active">EN</span>
+          <span>/</span>
+          <a href="/es/building-a-pipeline-for-metaphor-language.html">ES</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+    <main>
+      <div class="container">
+
+        <p class="kicker">Applied Language Systems</p>
+        <h1>Building a Pipeline for Metaphor Language</h1>
+
+        <p class="subtitle">
+          A structured workflow linking schema-driven annotation, rule-based metaphor detection, and human-facing interpretation.
+        </p>
+
+        <div class="meta">
+          <span>By Stella Bullo</span>
+          <span>·</span>
+          <span>Updated: 2026-02-20</span>
+          <span>·</span>
+          <span>Tags: annotation, metaphor modelling, rule-based NLP, localisation</span>
+        </div>
+
+        <article class="article">
+
+          <p>
+            Metaphors shape how we describe ambition, responsibility, guilt, illness, and political change. They are cognitively powerful but computationally difficult. A robust modelling approach requires more than keyword matching; it requires structured linguistic design.
+          </p>
+
+          <div class="callout">
+            <p class="label">Key idea</p>
+            <p>
+              Effective metaphor analysis requires infrastructure: human annotation → structured taxonomy → rule-based tagging → interpretable output.
+            </p>
+          </div>
+
+          <h2>1 · Schema-Driven Annotation</h2>
+
+          <p>
+            Most annotation platforms prioritise speed and label collection. Linguistic modelling requires something different: explicit theoretical categories that preserve interpretive assumptions.
+          </p>
+
+          <ul>
+            <li>Fields derived from metaphor theory and stance analysis</li>
+            <li>Encoding of <code>phenomenon</code>, <code>stance_tone</code>, and <code>translation_shift</code></li>
+            <li>Version-controlled schemas preserving modelling logic</li>
+          </ul>
+
+          <p>
+            Categories are not neutral. They shape what researchers can observe and what systems can learn. A schema-driven interface makes those assumptions visible.
+          </p>
+
+          <div class="hr"></div>
+
+          <h2>2 · Rule-Based Metaphor Tagger</h2>
+
+          <p>
+            The Metaphor Tagger formalises conceptual domains such as FIRE (intensity), WEIGHT (burden), and SHARP OBJECTS (intrusion). Detection rules distinguish figurative from literal usage through contextual constraints.
+          </p>
+
+          <ul>
+            <li>Taxonomy derived from corpus-based metaphor research</li>
+            <li>Rule logic informed by narrative analysis</li>
+            <li>Evaluation using Precision, Recall, F1, and agreement metrics</li>
+          </ul>
+
+<pre><code>Annotation App
+        ↓
+Gold-standard dataset
+        ↓
+Rule-based tagger
+        ↓
+Evaluation (Precision / Recall / F1 / κ)</code></pre>
+
+          <div class="hr"></div>
+
+          <h2>3 · Human-Facing Application</h2>
+
+          <p>
+            Explain My Pain demonstrates how modelling infrastructure becomes interpretable output. Model results are translated into accessible explanations for clinicians and patients.
+          </p>
+
+          <ul>
+            <li>Highlight metaphor usage</li>
+            <li>Explain semantic entailments</li>
+            <li>Support clearer communication</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <h2>Localisation Layer</h2>
+
+          <p>
+            Extending the pipeline across English and Spanish enables comparative metaphor modelling. Parallel annotation allows analysis of translation shifts, register variation, and conceptual divergence.
+          </p>
+
+<pre><code>EN / ES parallel corpus
+        ↓
+Schema with translation_shift field
+        ↓
+Tagger (EN + ES)
+        ↓
+Cross-cultural comparison</code></pre>
+
+          <div class="hr"></div>
+
+          <h2>Conclusion</h2>
+
+          <p>
+            Metaphor modelling is not a single tool but a structured workflow. When annotation design, taxonomy construction, and rule logic are aligned, linguistic theory becomes executable infrastructure.
+          </p>
+
+          <p>
+            This pipeline demonstrates how qualitative insight can be formalised, evaluated, and translated into systems that remain transparent and interpretable.
+          </p>
+
+        </article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© <span id="year"></span> Stella Bullo</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

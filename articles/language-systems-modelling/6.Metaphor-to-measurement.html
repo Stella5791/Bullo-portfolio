@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Metaphor to Measurement · Building a Pain Tagger | Stella Bullo</title>
+  <meta name="description" content="From metaphorical pain descriptions to a compact taxonomy, consistent annotations, and a small rule-based pain tagger prototype." />
+
+  <link rel="stylesheet" href="../assets/article.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="site-header">
+  <div class="container">
+    <div class="header-row">
+
+      <a class="brand" href="/index.html">Stella Bullo</a>
+
+      <div class="header-actions">
+        <a class="back" href="/articles.html">Back to Articles</a>
+
+        <div class="lang" aria-label="Language switcher">
+          <span class="active">EN</span>
+          <span>/</span>
+          <a href="/es/metaphor-to-measurement.html">ES</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+    <main>
+      <div class="container">
+
+        <p class="kicker">Applied Language Systems · Case Study</p>
+        <h1>Metaphor to Measurement · Building a Pain Tagger</h1>
+
+        <p class="subtitle">
+          Moving from figurative pain descriptions to taxonomy design, reproducible annotations, and a minimal prototype tagger.
+        </p>
+
+        <div class="meta">
+          <span>By Stella Bullo</span>
+          <span>·</span>
+          <span>Updated: 2026-02-20</span>
+          <span>·</span>
+          <span>Tags: pain language, taxonomy design, rule-based NLP, annotation QA</span>
+        </div>
+
+        <article class="article">
+
+          <p>
+            Pain language is highly metaphorical. Patients describe pain as if it were a weapon, a wild animal, or fire consuming the body. These descriptions are vivid, but they are also variable: no two people use exactly the same phrasing. For research, clinical communication, and NLP prototyping, the challenge is practical: how do you transform figurative language into something measurable without flattening meaning?
+          </p>
+
+          <div class="callout">
+            <p class="label">Key idea</p>
+            <p>
+              The path from narrative to features is design work: taxonomy → annotation → QA → minimal tagger → interpretable output.
+            </p>
+          </div>
+
+          <h2>From metaphor to taxonomy</h2>
+          <p>
+            The first step is a taxonomy that covers literal and figurative pain language. In a compact schema, I used five core category families plus a layer for metaphor entailments (the conceptual consequences a metaphor implies).
+          </p>
+
+          <ul>
+            <li>Pain qualities</li>
+            <li>Body location</li>
+            <li>Intensity markers</li>
+            <li>Temporal markers</li>
+            <li>Figurative expressions with entailment families (violence, weight/pressure, heat, animal, containment)</li>
+          </ul>
+
+          <p>
+            In the Language of Endometriosis data, metaphor is not noise. It functions as a precision strategy when literal language feels insufficient. Capturing entailments makes it possible to quantify what the speaker is actually expressing.
+          </p>
+
+          <div class="hr"></div>
+
+          <h2>From taxonomy to annotations</h2>
+          <p>
+            With the categories defined, the next step is consistent annotation and lightweight QA. Below are simplified examples showing how figurative language becomes structured data:
+          </p>
+
+          <ul>
+            <li>“It feels like a knife stabbing my womb” → Quality: stabbing; Location: womb; Entailment: violence</li>
+            <li>“A burning rope around my stomach” → Quality: burning; Location: stomach; Entailment: heat + containment</li>
+            <li>“A heavy rock pressing on me” → Quality: heavy/pressing; Entailment: weight/pressure</li>
+          </ul>
+
+          <p>
+            The result is a dataset where narrative variation is preserved but represented through comparable category selections.
+          </p>
+
+          <div class="hr"></div>
+
+          <h2>From annotations to a prototype tagger</h2>
+          <p>
+            The first prototype is deliberately small and rule-based. Using the annotated data, I built feature lists and mappings that are easy to audit and iterate:
+          </p>
+
+          <ul>
+            <li>Lexicons for pain qualities (burning, stabbing, throbbing)</li>
+            <li>Patterns for intensity (very, unbearable, mild)</li>
+            <li>Mappings from figurative triggers to entailments (knife → violence, fire → heat)</li>
+          </ul>
+
+          <p>
+            On new input, the tagger scans for these signals and returns a structured pain profile:
+          </p>
+
+          <ul>
+            <li>Detected qualities</li>
+            <li>Location mentions</li>
+            <li>Intensity markers</li>
+            <li>Metaphor entailments</li>
+            <li>Temporal markers</li>
+          </ul>
+
+          <p>
+            Example input: “It is like fire ripping through my stomach at night.”
+          </p>
+
+          <ul>
+            <li>Quality: burning / ripping</li>
+            <li>Location: stomach</li>
+            <li>Entailment: heat/fire + violence</li>
+            <li>Temporal: at night</li>
+          </ul>
+
+          <div class="hr"></div>
+
+          <h2>Why this matters</h2>
+          <p>
+            For annotators, this shows how careful tagging captures conceptual structure, not just surface words. For project leads, it demonstrates that a small, well-scoped annotation effort can power a working prototype. For developers, it provides an explicit bridge from narrative pain descriptions to computational features that can support human-facing tools.
+          </p>
+
+          <div class="hr"></div>
+
+          <h2>Closing</h2>
+          <p>
+            This pain tagger is a proof of concept: figurative pain descriptions can be transformed into structured data without losing their expressive richness. The corpus provides the language, the taxonomy provides the categories, QA provides consistency, and the prototype demonstrates feasibility.
+          </p>
+
+        </article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© <span id="year"></span> Stella Bullo</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

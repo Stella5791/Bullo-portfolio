@@ -1,0 +1,144 @@
+<!-- FILE: /annotation-evaluation/annotation-in-practice.html -->
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Annotation in Practice: Where Quality Actually Lives | Stella Bullo</title>
+  <meta name="description" content="A narrative look at annotation as decision making: edge cases, consistency, and what token level work reveals about quality." />
+
+  <link rel="stylesheet" href="../assets/article.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="site-header">
+  <div class="container">
+    <div class="header-row">
+
+      <a class="brand" href="/index.html">Stella Bullo</a>
+
+      <div class="header-actions">
+        <a class="back" href="/articles.html">Back to Articles</a>
+
+        <div class="lang" aria-label="Language switcher">
+          <span class="active">EN</span>
+          <span>/</span>
+          <a href="/es/annotation-evaluation/annotation-in-practice.html">ES</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+    <main>
+      <div class="container">
+
+        <p class="kicker">Annotation and Evaluation</p>
+        <h1>Annotation in Practice: Where Quality Actually Lives</h1>
+
+        <p class="subtitle">
+          Annotation is not a single label. It is a chain of micro decisions. This article shows what that looks like and why it matters for trustworthy data.
+        </p>
+
+        <div class="meta">
+          <span>By Stella Bullo</span>
+          <span>·</span>
+          <span>Updated: 2026-02-20</span>
+          <span>·</span>
+          <span>Tags: annotation, QA, guidelines, data quality</span>
+        </div>
+
+        <article class="article">
+
+          <p>
+            People often talk about annotation as if it were simple. Apply a label. Move on. In real projects, annotation is decision making under constraint. It happens in the spaces where language is ambiguous, audio is messy, and guidelines have to be applied consistently by humans who are not machines.
+          </p>
+
+          <p>
+            That is why quality is not an abstract metric. It lives in small moments. The moment you decide whether a span begins here or there. The moment you decide whether this is a normalisation or a meaning shift. The moment you decide whether you understand the guideline well enough to commit a label, or whether the correct move is to flag the case for review.
+          </p>
+
+          <div class="callout">
+            <p class="label">Key idea</p>
+            <p>
+              Dataset quality comes from consistent micro decisions, not from a final score.
+            </p>
+          </div>
+
+          <h2>A pain language example: one phrase, multiple signals</h2>
+          <p>
+            Pain descriptions are a good lens because they are rich and layered. People rarely speak in neat single categories. They combine sensation, emotion, location, timing, and implied mechanism in the same sentence.
+          </p>
+
+          <p>
+            Take a short phrase such as “burning needles”. At one level, it belongs to a heat domain. At another, it belongs to sharp objects. At yet another, it may align with a clinical reading of neuropathic pain. Whether you encode one label or several depends on what the dataset is for, but the decision must be explicit. Otherwise two annotators will each be correct in their own head and inconsistent in the data.
+          </p>
+
+          <pre><code>{
+  "text": "burning needles",
+  "signals": [
+    {"layer": "metaphor", "category": "heat", "trigger": "burning"},
+    {"layer": "metaphor", "category": "sharp-object", "trigger": "needles"}
+  ],
+  "note": "if a clinical layer exists, map the span to the project’s pain taxonomy"
+}</code></pre>
+
+          <p>
+            The point here is not to create complexity for its own sake. The point is that language already contains complexity, and annotation should decide what to preserve and what to collapse. Quality emerges when those choices are stable and justified.
+          </p>
+
+          <h2>A speech verification example: normalisation is not always harmless</h2>
+          <p>
+            Speech tasks often look different because the target is not meaning modelling but accuracy. You are comparing an audio input to a textual output. Yet the same reliability logic applies. Small deviations can be benign, or they can be systematic and damaging.
+          </p>
+
+          <p>
+            A common confusion is treating normalisation as automatically acceptable. In many projects, some normalisations are allowed when meaning is preserved. But the guideline must say this clearly. Otherwise decisions become subjective and drift sets in.
+          </p>
+
+          <pre><code>audio:  "I'm gonna get it."
+text:   "I am going to get it."
+decision: acceptable if guideline allows expansion and meaning is preserved</code></pre>
+
+          <p>
+            The important habit is to separate acceptable transformation from meaning shift. If the output adds content, removes content, changes tense, changes speaker intent, or regularises dialect selectively, those are not harmless edits. They are quality events. They need to be marked and tracked.
+          </p>
+
+          <h2>The hidden work: making decisions teachable</h2>
+          <p>
+            The difference between a good annotator and a fast annotator is often documentation. A good annotator can explain a decision in a way another person could reproduce. That means labels must be tied to definitions and examples, not to intuition. It also means edge cases need a place to go.
+          </p>
+
+          <p>
+            In my own workflow, I treat uncertain cases as data. If a category boundary is unclear, I flag the instance and record why. Those flags become the material for guideline refinement. Over time, the guideline stops being a static PDF and becomes an operational record of how the dataset learned to be consistent.
+          </p>
+
+          <div class="hr"></div>
+
+          <h2>So what</h2>
+          <p>
+            Annotation quality is built, not declared. It comes from decision discipline, stable units, consistent category boundaries, and a feedback loop between errors and guidelines. That is true whether the work is metaphor annotation, sentiment and stance labelling, or speech verification. The tasks differ, but the reliability problem is the same.
+          </p>
+
+        </article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© <span id="year"></span> Stella Bullo</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

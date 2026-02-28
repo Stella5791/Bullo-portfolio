@@ -96,6 +96,26 @@ body{
 }
 .lang a:hover{ color: var(--brand); }
 
+/* header actions: back link + language switch */
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+}
+
+.back{
+  font-size: 12px;
+  font-weight: 600;
+  color: #78716c; /* stone-500 */
+  text-decoration: none;
+}
+
+.back:hover{
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 /* main */
 main{
   padding: 56px 0 84px;

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" id="top">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>A Practical NLP Primer for Real Projects | Stella Bullo</title>
+  <meta name="description" content="A pragmatic introduction to NLP project design: user stories, minimal datasets, simple baselines, and meaningful evaluation metrics." />
+
+  <link rel="stylesheet" href="../assets/article.css" />
+</head>
+
+<body>
+  <div class="page">
+
+    <header class="site-header">
+  <div class="container">
+    <div class="header-row">
+
+      <a class="brand" href="/index.html">Stella Bullo</a>
+
+      <div class="header-actions">
+        <a class="back" href="/articles.html">Back to Articles</a>
+
+        <div class="lang" aria-label="Language switcher">
+          <span class="active">EN</span>
+          <span>/</span>
+          <a href="/es/practical-nlp-primer.html">ES</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+    <main>
+      <div class="container">
+
+        <p class="kicker">Language Systems & Modelling</p>
+
+        <h1>A Practical NLP Primer for Real Projects</h1>
+
+        <p class="subtitle">
+          How to move from “we should use NLP” to a small, measurable prototype you can evaluate, explain, and improve.
+        </p>
+
+        <div class="meta">
+          <span>By Stella Bullo</span>
+          <span>·</span>
+          <span>Updated: 2026-02-20</span>
+          <span>·</span>
+          <span>Tags: NLP, baselines, evaluation, modelling systems</span>
+        </div>
+
+        <article class="article">
+
+          <p>
+            NLP is easy to overcomplicate. The fastest way to lose time and trust is to start big, vague, and expensive. The fastest way to learn is to start small, honest, and measurable. This article outlines a disciplined approach to building text-based systems that can be evaluated and iterated with confidence.
+          </p>
+
+          <div class="callout">
+            <p class="label">Core principle</p>
+            <p>
+              Start with a clear user story, build a minimal dataset, establish a simple baseline, and measure one metric that actually matters.
+            </p>
+          </div>
+
+          <h2>1. Frame the problem in user terms</h2>
+          <p>
+            Every project should begin with a concrete user story. For example: “As a support manager, I want incoming emails tagged by urgency so that critical issues are prioritised.” This keeps the task bounded and measurable.
+          </p>
+
+          <h2>2. Choose a single task</h2>
+          <p>
+            Classification, extraction, or matching. Not all three. Clear task definition prevents scope drift and keeps evaluation meaningful.
+          </p>
+
+          <h2>3. Build a minimal dataset</h2>
+          <p>
+            Hand-label 100 to 200 examples. Prioritise clarity of labels over scale. Ambiguous categories will undermine model performance long before data volume becomes relevant.
+          </p>
+
+          <h2>4. Establish a baseline</h2>
+          <p>
+            A logistic regression or Naive Bayes classifier is often enough to establish feasibility. The goal is not sophistication. The goal is a reference point that future improvements can beat.
+          </p>
+
+<pre><code>from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import make_pipeline
+
+model = make_pipeline(CountVectorizer(), LogisticRegression())
+model.fit(texts, labels)
+predictions = model.predict(test_texts)
+</code></pre>
+
+          <h2>5. Measure what matters</h2>
+          <p>
+            Accuracy alone is rarely sufficient. If missing urgent cases is costly, prioritise recall. If false alarms are disruptive, focus on precision. The metric should reflect the operational consequence of mistakes.
+          </p>
+
+          <div class="callout">
+            <p class="label">Evaluation logic</p>
+            <p>
+              A metric is only meaningful when it reflects the real cost structure of the task.
+            </p>
+          </div>
+
+          <h2>Common pitfalls</h2>
+          <ul>
+            <li>Scaling before proving value.</li>
+            <li>Unclear label definitions.</li>
+            <li>Optimising the wrong metric.</li>
+          </ul>
+
+          <h2>Why this approach works</h2>
+          <p>
+            Small, interpretable systems create shared understanding across product, data, and engineering teams. They are easier to debug, easier to explain, and easier to trust. Once a baseline is stable and evaluated, complexity can be added deliberately.
+          </p>
+
+          <div class="hr"></div>
+
+          <p>
+            The objective is not to build the largest possible model. It is to build the most dependable system for the problem at hand. Scale should follow evidence, not ambition.
+          </p>
+
+        </article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <span>© <span id="year"></span> Stella Bullo</span>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
