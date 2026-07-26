@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Welcome to the United Kingdom</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #eef4ff;
+            color: #222;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        header {
+            min-height: 100vh;
+            padding: 60px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(
+                135deg,
+                #00247d 0%,
+                #00247d 45%,
+                #ffffff 45%,
+                #ffffff 55%,
+                #c8102e 55%,
+                #c8102e 100%
+            );
+        }
+
+        .welcome-box {
+            width: min(1000px, 92%);
+            padding: 50px 35px;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 30px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.28);
+        }
+
+        h1 {
+            margin: 0 0 25px;
+            color: #00247d;
+            font-size: clamp(48px, 8vw, 90px);
+            line-height: 1.05;
+        }
+
+        .welcome-box p {
+            margin: 15px auto;
+            max-width: 900px;
+            font-size: clamp(25px, 3.2vw, 40px);
+            line-height: 1.4;
+        }
+
+        main {
+            width: min(1400px, 100%);
+            margin: auto;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 70px 30px 100px;
+            border-bottom: 12px solid #00247d;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: white;
+        }
+
+        section:nth-child(even) {
+            background: #f5f8ff;
+        }
+
+        h2 {
+            margin: 0 0 35px;
+            color: #c8102e;
+            font-size: clamp(45px, 7vw, 82px);
+            line-height: 1.05;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            margin: 25px 0 15px;
+            color: #00247d;
+            font-size: clamp(30px, 4vw, 50px);
+        }
+
+        .question {
+            margin: 20px auto 35px;
+            max-width: 1000px;
+            color: #00247d;
+            font-size: clamp(28px, 4vw, 50px);
+            font-weight: bold;
+            line-height: 1.25;
+        }
+
+        .picture {
+            display: block;
+            width: auto;
+            max-width: 95%;
+            max-height: 78vh;
+            margin: 10px auto;
+            object-fit: contain;
+            border-radius: 24px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+        }
+
+        .portrait {
+            max-width: min(700px, 92%);
+            max-height: 78vh;
+        }
+
+        .media-block {
+            width: min(1100px, 96%);
+            margin: 30px auto;
+            padding: 25px;
+            background: #ffffff;
+            border: 5px solid #dce6ff;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+        }
+
+        video {
+            display: block;
+            width: 100%;
+            max-height: 75vh;
+            margin: auto;
+            background: #000;
+            border-radius: 18px;
+        }
+
+        .youtube {
+            position: relative;
+            width: min(1100px, 96%);
+            padding-top: 56.25%;
+            margin: 25px auto;
+            overflow: hidden;
+            background: #000;
+            border-radius: 24px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+        }
+
+        .youtube iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .caption {
+            margin: 20px auto 0;
+            color: #00247d;
+            font-size: clamp(24px, 3vw, 38px);
+            font-weight: bold;
+        }
+
+        .small-text {
+            margin: 20px auto;
+            max-width: 950px;
+            color: #444;
+            font-size: clamp(22px, 2.5vw, 32px);
+            line-height: 1.5;
+        }
+
+        .two-pictures {
+            width: min(1250px, 98%);
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+            align-items: center;
+        }
+
+        .two-pictures img {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            border-radius: 22px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+        }
+
+        .the-end {
+            min-height: 100vh;
+            padding: 70px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #00247d;
+            color: white;
+        }
+
+        .the-end h2 {
+            color: white;
+            font-size: clamp(60px, 10vw, 110px);
+        }
+
+        .the-end p {
+            margin: 10px;
+            font-size: clamp(35px, 6vw, 70px);
+        }
+
+        @media (max-width: 750px) {
+
+            section {
+                min-height: auto;
+                padding: 55px 18px 75px;
+            }
+
+            .two-pictures {
+                grid-template-columns: 1fr;
+            }
+
+            .picture {
+                max-height: 65vh;
+            }
+
+            .media-block {
+                padding: 12px;
+            }
+        }
+
+        @media print {
+
+            section {
+                min-height: auto;
+                page-break-after: always;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- WELCOME -->
+
+    <header>
+
+        <div class="welcome-box">
+
+            <h1>🇬🇧 Welcome to the United Kingdom!</h1>
+
+            <p>
+                Come and spend a day in the UK with me!
+            </p>
+
+            <p class="small-text">
+                I lived in the United Kingdom for more than 20 years.
+                Everything you are about to see comes from my own experience.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- WHERE IS THE UK? -->
+
+        <section>
+
+            <h2>🌍 Where is the United Kingdom?</h2>
+
+            <img
+                class="picture"
+                src="map.png"
+                alt="Map showing Argentina and the United Kingdom"
+            >
+
+            <p class="question">
+                How would we travel from Argentina to the UK?
+            </p>
+
+        </section>
+
+
+        <!-- AIRPLANE -->
+
+        <section>
+
+            <h2>✈️ Airplane</h2>
+
+            <img
+                class="picture"
+                src="airplane.png"
+                alt="Airplane"
+            >
+
+        </section>
+
+
+        <!-- AIRPLANE VIDEO 1 -->
+
+        <section>
+
+            <h2>✈️ Look at the Airplanes!</h2>
+
+            <div class="media-block">
+
+                <video controls preload="metadata">
+
+                    <source
+                        src="airplanes.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser cannot play this video.
+
+                </video>
+
+                <p class="caption">
+                    Airplanes
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- AIRPLANE VIDEO 2 -->
+
+        <section>
+
+            <h2>☁️ Flying Above the Clouds</h2>
+
+            <div class="media-block">
+
+                <video controls preload="metadata">
+
+                    <source
+                        src="fromabove.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser cannot play this video.
+
+                </video>
+
+                <p class="caption">
+                    What can you see?
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- AIRPLANE VIDEO 3 -->
+
+        <section>
+
+            <h2>🪟 Looking from the Plane</h2>
+
+            <div class="media-block">
+
+                <video controls preload="metadata">
+
+                    <source
+                        src="fromplane.mp4"
+                        type="video/mp4"
+                    >
+
+                    Your browser cannot play this video.
+
+                </video>
+
+                <p class="caption">
+                    We are on our way to the UK!
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- BLACK CAB -->
+
+        <section>
+
+            <h2>🚕 Black Cab</h2>
+
+            <img
+                class="picture"
+                src="blackcab.png"
+                alt="A black London taxi"
+            >
+
+            <p class="question">
+                What colour is the taxi?
+            </p>
+
+        </section>
+
+
+        <!-- LONDON CITY -->
+
+        <section>
+
+            <h2>🏙️ Manchester</h2>
+
+            <img
+                class="picture"
+                src="city.png"
+                alt="London city"
+            >
+
+            <p class="question">
+                Welcome to London!
+            </p>
+
+        </section>
+
+
+        <!-- TRAM -->
+
+        <section>
+
+            <h2>🚋 Yellow Tram</h2>
+
+            <img
+                class="picture"
+                src="tram.png"
+                alt="A yellow tram"
+            >
+
+            <p class="question">
+                What colour is the tram?
+            </p>
+
+        </section>
+
+
+        <!-- TRAIN STATION -->
+
+        <section>
+
+            <h2>🚉 Train Station</h2>
+
+            <img
+                class="picture"
+                src="trainstation.png"
+                alt="Train station"
+            >
+
+            <p class="question">
+                Where are we going?
+            </p>
+
+        </section>
+
+
+        <!-- TRAIN -->
+
+        <section>
+
+            <h2>🚆 Train</h2>
+
+            <img
+                class="picture"
+                src="train.png"
+                alt="A train"
+            >
+
+        </section>
+
+
+        <!-- LUCIEN ON TRAIN -->
+
+        <section>
+
+            <h2>🚆 Lucien on the Train</h2>
+
+            <img
+                class="picture portrait"
+                src="lucientrain.png"
+                alt="Lucien travelling on a train"
+            >
+
+            <p class="question">
+                Lucien is travelling by train!
+            </p>
+
+        </section>
+
+
+        <!-- RED TELEPHONE BOX -->
+
+        <section>
+
+            <h2>☎️ Red Telephone Box</h2>
+
+            <img
+                class="picture portrait"
+                src="redbooth.png"
+                alt="Lucien beside a red British telephone box"
+            >
+
+            <p class="question">
+                What colour is the telephone box?
+            </p>
+
+        </section>
+
+
+
+        <!-- OPTIONAL SECOND BUS OR CITY PHOTO -->
+
+        <section>
+
+            <h2>🚌 Travelling Around London</h2>
+
+            
+
+        </section>
+
+<section>
+
+            <h2>🚌 Double-Decker Bus</h2>
+
+            <img
+                class="picture"
+                src="doubledeckerbus.png"
+                alt="A red double-decker bus"
+            >
+
+            <p class="question">
+                Would you like to sit upstairs?
+            </p>
+
+        </section>
+        <!-- UNDERGROUND PHOTO -->
+
+        <section>
+
+            <h2>🚇 London Underground</h2>
+
+            <img
+                class="picture"
+                src="underground.png"
+                alt="London Underground"
+            >
+
+            <p class="question">
+                Let’s travel under the city!
+            </p>
+
+        </section>
+
+
+        <!-- UNDERGROUND VIDEO -->
+
+        <section>
+
+            <h2>🚇 Ride the Underground!</h2>
+
+            <div class="youtube">
+
+                <iframe
+                    src="https://www.youtube.com/embed/eOUajvlLHvc"
+                    title="London Underground video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOAT -->
+
+        <section>
+
+            <h2>⛴️ Boat</h2>
+
+            <img
+                class="picture"
+                src="boat.png"
+                alt="A boat in London"
+            >
+
+            <p class="question">
+                Let’s travel on the river!
+            </p>
+
+        </section>
+
+
+        
+
+
+        <!-- BLIPPI VIDEO -->
+
+        <section>
+
+            <h2>🎬 Blippi in London </h2>
+
+            <div class="youtube">
+
+                <iframe
+                    src="https://www.youtube.com/embed/6TlWnVidm1I?start=771"
+                    title="Blippi in a London Boat"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- END -->
+
+    <div class="the-end">
+
+        <h2>Thank You!</h2>
+
+        <p>🇬🇧</p>
+
+        <p>Goodbye!</p>
+
+    </div>
+
+
+</body>
+
+</html>
